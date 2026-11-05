@@ -1,0 +1,160 @@
+ticker,company,sector,company_article,product_article,company_current,product_current,product_views_12m,company_views_12m,product_first_month,company_first_month,clicks_to_company,conversion_pct,price_first,price_last,flags
+AAPL,Apple,Tech hardware,Apple_Inc.,iPhone,Apple_Inc.,IPhone,113904,197586,2017-01,2017-01,1512,1.71,2017-01-03,2026-11-05,product redirects to IPhone
+AAPL,Apple,Tech hardware,Apple_Inc.,iPad,Apple_Inc.,IPad,42965,197586,2017-01,2017-01,262,0.79,2017-01-03,2026-11-05,product redirects to IPad
+AAPL,Apple,Tech hardware,Apple_Inc.,Apple_Watch,Apple_Inc.,Apple_Watch,38205,197586,2017-01,2017-01,145,0.55,2017-01-03,2026-11-05,
+AAPL,Apple,Tech hardware,Apple_Inc.,AirPods,Apple_Inc.,AirPods,23428,197586,2017-01,2017-01,223,1.33,2017-01-03,2026-11-05,
+MSFT,Microsoft,Tech software,Microsoft,Xbox,Microsoft,Xbox,65150,176392,2017-01,2017-01,937,1.77,2017-01-03,2026-11-05,
+MSFT,Microsoft,Tech software,Microsoft,Microsoft_Excel,Microsoft,Microsoft_Excel,98666,176392,2017-01,2017-01,152,0.41,2017-01-03,2026-11-05,
+MSFT,Microsoft,Tech software,Microsoft,Microsoft_Copilot,Microsoft,Microsoft_Copilot,51043,176392,2023-11,2017-01,189,0.48,2017-01-03,2026-11-05,
+GOOGL,Alphabet,Tech software,Alphabet_Inc.,YouTube,Alphabet_Inc.,YouTube,1385969,100660,2017-01,2017-01,2626,0.17,2017-01-03,2026-11-05,
+GOOGL,Alphabet,Tech software,Alphabet_Inc.,Gmail,Alphabet_Inc.,Gmail,276475,100660,2017-01,2017-01,0,0.0,2017-01-03,2026-11-05,no clicks to company page
+GOOGL,Alphabet,Tech software,Alphabet_Inc.,Google_Pixel,Alphabet_Inc.,Google_Pixel,31106,100660,2017-01,2017-01,0,0.0,2017-01-03,2026-11-05,no clicks to company page
+GOOGL,Alphabet,Tech software,Alphabet_Inc.,Waymo,Alphabet_Inc.,Waymo,58477,100660,2017-01,2017-01,1634,2.88,2017-01-03,2026-11-05,
+META,Meta Platforms,Tech software,Meta_Platforms,Instagram,Meta_Platforms,Instagram,1096956,114959,2017-01,2021-10,3675,0.41,2017-01-03,2026-11-05,company views start 2021-10
+META,Meta Platforms,Tech software,Meta_Platforms,WhatsApp,Meta_Platforms,WhatsApp,401752,114959,2017-01,2021-10,2611,0.36,2017-01-03,2026-11-05,company views start 2021-10
+META,Meta Platforms,Tech software,Meta_Platforms,Meta_Quest,Meta_Platforms,Meta_Quest,5711,114959,2022-02,2021-10,74,1.6,2017-01-03,2026-11-05,company views start 2021-10
+AMZN,Amazon,Retail,Amazon_(company),Amazon_Alexa,Amazon_(company),Amazon_Alexa,15690,211421,2017-01,2017-10,82,0.55,2017-01-03,2026-11-05,company views start 2017-10
+AMZN,Amazon,Retail,Amazon_(company),Amazon_Kindle,Amazon_(company),Amazon_Kindle,32389,211421,2017-01,2017-10,102,0.44,2017-01-03,2026-11-05,company views start 2017-10
+AMZN,Amazon,Retail,Amazon_(company),Amazon_Prime,Amazon_(company),Amazon_Prime,27937,211421,2017-01,2017-10,342,1.33,2017-01-03,2026-11-05,company views start 2017-10
+NVDA,Nvidia,Semiconductors,Nvidia,GeForce,Nvidia,GeForce,9969,207966,2017-01,2017-01,147,1.94,2017-01-03,2026-11-05,
+AMD,AMD,Semiconductors,AMD,Ryzen,AMD,Ryzen,16490,43175,2017-01,2017-01,434,3.36,2017-01-03,2026-11-05,
+AMD,AMD,Semiconductors,AMD,Radeon,AMD,Radeon,6756,43175,2017-01,2017-01,227,4.02,2017-01-03,2026-11-05,
+INTC,Intel,Semiconductors,Intel,Intel_Core,Intel,Intel_Core,22386,44417,2017-01,2017-01,165,1.03,2017-01-03,2026-11-05,
+QCOM,Qualcomm,Semiconductors,Qualcomm,Qualcomm_Snapdragon,Qualcomm,Qualcomm_Snapdragon,23045,31360,2017-01,2017-01,2844,15.28,2017-01-03,2026-11-05,
+ADBE,Adobe,Tech software,Adobe_Inc.,Adobe_Photoshop,Adobe_Inc.,Adobe_Photoshop,37424,29441,2017-01,2018-10,593,2.04,2017-01-03,2026-11-05,company views start 2018-10
+ADBE,Adobe,Tech software,Adobe_Inc.,Adobe_Acrobat,Adobe_Inc.,Adobe_Acrobat,11310,29441,2017-01,2018-10,187,2.33,2017-01-03,2026-11-05,company views start 2018-10
+SNAP,Snap,Tech software,Snap_Inc.,Snapchat,Snap_Inc.,Snapchat,168271,20132,2017-01,2017-01,2823,2.45,2017-03-02,2026-11-05,prices start 2017-03-02
+PYPL,PayPal,Fintech,PayPal,Venmo,PayPal,Venmo,15423,71017,2017-01,2017-01,494,3.69,2017-01-03,2026-11-05,
+XYZ,Block,Fintech,Block_Inc.,Cash_App,"Block,_Inc.",Cash_App,33032,35678,2018-07,2022-02,1004,1.51,2017-01-03,2026-11-05,"company renamed/redirects to Block,_Inc.; company views start 2022-02"
+SONY,Sony,Tech hardware,Sony,PlayStation_5,Sony,PlayStation_5,131855,70445,2019-10,2017-01,224,0.19,2017-01-03,2026-11-05,
+SONY,Sony,Tech hardware,Sony,PlayStation,Sony,PlayStation,49529,70445,2017-01,2017-01,444,1.07,2017-01-03,2026-11-05,
+NTDOY,Nintendo,Games,Nintendo,Nintendo_Switch,Nintendo,Nintendo_Switch,96456,100112,2017-01,2017-01,1060,1.4,2017-01-03,2026-11-05,
+NTDOY,Nintendo,Games,Nintendo,Nintendo_Switch_2,Nintendo,Nintendo_Switch_2,109633,100112,2025-01,2017-01,676,0.72,2017-01-03,2026-11-05,
+NTDOY,Nintendo,Games,Nintendo,Mario_Kart_World,Nintendo,Mario_Kart_World,25004,100112,2025-04,2017-01,53,0.29,2017-01-03,2026-11-05,
+EA,Electronic Arts,Games,Electronic_Arts,The_Sims,Electronic_Arts,The_Sims,23650,54206,2017-01,2017-01,275,1.32,2026-08-04,2026-08-04,prices start 2026-08-04; prices end 2026-08-04 (delisted?)
+EA,Electronic Arts,Games,Electronic_Arts,Apex_Legends,Electronic_Arts,Apex_Legends,17544,54206,2019-02,2017-01,139,0.99,2026-08-04,2026-08-04,prices start 2026-08-04; prices end 2026-08-04 (delisted?)
+EA,Electronic Arts,Games,Electronic_Arts,EA_Sports_FC,Electronic_Arts,EA_Sports_FC,16887,54206,2022-05,2017-01,92,0.73,2026-08-04,2026-08-04,prices start 2026-08-04; prices end 2026-08-04 (delisted?)
+TTWO,Take-Two Interactive,Games,Take-Two_Interactive,Grand_Theft_Auto_VI,Take-Two_Interactive,Grand_Theft_Auto_VI,355870,56930,2023-12,2017-01,244,0.05,2017-01-03,2026-11-05,
+TTWO,Take-Two Interactive,Games,Take-Two_Interactive,Grand_Theft_Auto_V,Take-Two_Interactive,Grand_Theft_Auto_V,254932,56930,2017-01,2017-01,18,0.01,2017-01-03,2026-11-05,
+TTWO,Take-Two Interactive,Games,Take-Two_Interactive,Red_Dead_Redemption_2,Take-Two_Interactive,Red_Dead_Redemption_2,111978,56930,2017-01,2017-01,16,0.02,2017-01-03,2026-11-05,
+MAT,Mattel,Toys,Mattel,Barbie,Mattel,Barbie,40213,39386,2017-01,2017-01,677,2.11,2017-01-03,2026-11-05,
+MAT,Mattel,Toys,Mattel,Hot_Wheels,Mattel,Hot_Wheels,19581,39386,2017-01,2017-01,836,4.46,2017-01-03,2026-11-05,
+HAS,Hasbro,Toys,Hasbro,Monopoly_(game),Hasbro,Monopoly_(game),51685,35998,2017-01,2017-01,610,1.39,2017-01-03,2026-11-05,
+HAS,Hasbro,Toys,Hasbro,Nerf,Hasbro,Nerf,6605,35998,2017-01,2017-01,174,2.8,2017-01-03,2026-11-05,
+HAS,Hasbro,Toys,Hasbro,Dungeons_&_Dragons,Hasbro,Dungeons_&_Dragons,81469,35998,2017-01,2017-01,158,0.29,2017-01-03,2026-11-05,
+DIS,Walt Disney,Media,The_Walt_Disney_Company,Disney+,The_Walt_Disney_Company,Disney+,58921,116524,2018-11,2017-01,283,0.54,2017-01-03,2026-11-05,
+DIS,Walt Disney,Media,The_Walt_Disney_Company,Disneyland,The_Walt_Disney_Company,Disneyland,45951,116524,2017-01,2017-01,713,1.89,2017-01-03,2026-11-05,
+TSLA,Tesla,Autos,"Tesla,_Inc.",Tesla_Model_Y,"Tesla,_Inc.",Tesla_Model_Y,31203,121890,2017-11,2017-02,785,2.3,2017-01-03,2026-11-05,company views start 2017-02
+TSLA,Tesla,Autos,"Tesla,_Inc.",Tesla_Model_3,"Tesla,_Inc.",Tesla_Model_3,27481,121890,2017-01,2017-02,638,2.45,2017-01-03,2026-11-05,company views start 2017-02
+TSLA,Tesla,Autos,"Tesla,_Inc.",Tesla_Cybertruck,"Tesla,_Inc.",Tesla_Cybertruck,37454,121890,2019-11,2017-02,880,2.26,2017-01-03,2026-11-05,company views start 2017-02
+F,Ford,Autos,Ford_Motor_Company,Ford_F-Series,Ford_Motor_Company,Ford_F-Series,49678,81768,2017-01,2017-01,281,0.73,2017-01-03,2026-11-05,
+F,Ford,Autos,Ford_Motor_Company,Ford_Mustang,Ford_Motor_Company,Ford_Mustang,59457,81768,2017-01,2017-01,358,0.76,2017-01-03,2026-11-05,
+F,Ford,Autos,Ford_Motor_Company,Ford_Bronco,Ford_Motor_Company,Ford_Bronco,30996,81768,2017-01,2017-01,136,0.5,2017-01-03,2026-11-05,
+GM,General Motors,Autos,General_Motors,Chevrolet_Silverado,General_Motors,Chevrolet_Silverado,38459,79210,2017-01,2017-01,136,0.45,2017-01-03,2026-11-05,
+GM,General Motors,Autos,General_Motors,Chevrolet_Corvette,General_Motors,Chevrolet_Corvette,40191,79210,2017-01,2017-01,189,0.59,2017-01-03,2026-11-05,
+GM,General Motors,Autos,General_Motors,Cadillac_Escalade,General_Motors,Cadillac_Escalade,27938,79210,2017-01,2017-01,197,0.8,2017-01-03,2026-11-05,
+TM,Toyota,Autos,Toyota,Toyota_Corolla,Toyota,Toyota_Corolla,63983,84233,2017-01,2017-01,483,0.9,2017-01-03,2026-11-05,
+TM,Toyota,Autos,Toyota,Toyota_Camry,Toyota,Toyota_Camry,44440,84233,2017-01,2017-01,203,0.57,2017-01-03,2026-11-05,
+TM,Toyota,Autos,Toyota,Toyota_RAV4,Toyota,Toyota_RAV4,62673,84233,2017-01,2017-01,201,0.42,2017-01-03,2026-11-05,
+TM,Toyota,Autos,Toyota,Toyota_Prius,Toyota,Toyota_Prius,32778,84233,2017-01,2017-01,205,0.73,2017-01-03,2026-11-05,
+HMC,Honda,Autos,Honda,Honda_Civic,Honda,Honda_Civic,62688,52276,2017-01,2017-01,411,0.82,2017-01-03,2026-11-05,
+HMC,Honda,Autos,Honda,Honda_Accord,Honda,Honda_Accord,51441,52276,2017-01,2017-01,239,0.54,2017-01-03,2026-11-05,
+HMC,Honda,Autos,Honda,Honda_CR-V,Honda,Honda_CR-V,49497,52276,2017-01,2017-01,208,0.56,2017-01-03,2026-11-05,
+HOG,Harley-Davidson,Autos,Harley-Davidson,Harley-Davidson_Sportster,Harley-Davidson,Harley-Davidson_Sportster,6914,30762,2017-01,2017-01,107,2.1,2017-01-03,2026-11-05,
+BA,Boeing,Aerospace,Boeing,Boeing_737_MAX,Boeing,Boeing_737_MAX,71441,62367,2017-01,2017-01,11,0.01,2017-01-03,2026-11-05,
+BA,Boeing,Aerospace,Boeing,Boeing_787_Dreamliner,Boeing,Boeing_787_Dreamliner,94961,62367,2017-01,2017-01,11,0.01,2017-01-03,2026-11-05,
+RCL,Royal Caribbean,Travel,Royal_Caribbean_Group,Icon_of_the_Seas,Royal_Caribbean_Group,Icon_of_the_Seas,49601,14533,2022-04,2020-07,418,1.15,2017-01-03,2026-11-05,company views start 2020-07
+NVO,Novo Nordisk,Pharma,Novo_(company),Semaglutide,Novo_(company),Semaglutide,55467,7872,2017-10,2026-09,902,2.5,2017-01-03,2026-11-05,company views start 2026-09
+NVO,Novo Nordisk,Pharma,Novo_(company),Liraglutide,Novo_(company),Liraglutide,4878,7872,2017-01,2026-09,11,0.31,2017-01-03,2026-11-05,company views start 2026-09
+LLY,Eli Lilly,Pharma,Eli_Lilly_and_Company,Tirzepatide,Eli_Lilly_and_Company,Tirzepatide,40851,46017,2022-04,2017-01,176,0.58,2017-01-03,2026-11-05,
+LLY,Eli Lilly,Pharma,Eli_Lilly_and_Company,Dulaglutide,Eli_Lilly_and_Company,Dulaglutide,2958,46017,2017-01,2017-01,0,0.0,2017-01-03,2026-11-05,low product views; no clicks to company page
+LLY,Eli Lilly,Pharma,Eli_Lilly_and_Company,Orforglipron,Eli_Lilly_and_Company,Orforglipron,8606,46017,2023-06,2017-01,55,0.66,2017-01-03,2026-11-05,
+PFE,Pfizer,Pharma,Pfizer,Pfizer–BioNTech_COVID-19_vaccine,Pfizer,Pfizer–BioNTech_COVID-19_vaccine,7421,24454,2021-01,2017-01,143,2.0,2017-01-03,2026-11-05,
+PFE,Pfizer,Pharma,Pfizer,Nirmatrelvir/ritonavir,Pfizer,Nirmatrelvir/ritonavir,1992,24454,2022-01,2017-01,0,0.0,2017-01-03,2026-11-05,low product views; no clicks to company page
+PFE,Pfizer,Pharma,Pfizer,Tafamidis,Pfizer,Tafamidis,1559,24454,2017-01,2017-01,0,0.0,2017-01-03,2026-11-05,low product views; no clicks to company page
+ABBV,AbbVie,Pharma,AbbVie,Adalimumab,AbbVie,Adalimumab,7679,15291,2017-01,2017-01,17,0.29,2017-01-03,2026-11-05,
+ABBV,AbbVie,Pharma,AbbVie,Upadacitinib,AbbVie,Upadacitinib,4170,15291,2017-06,2017-01,0,0.0,2017-01-03,2026-11-05,no clicks to company page
+ABBV,AbbVie,Pharma,AbbVie,Risankizumab,AbbVie,Risankizumab,4662,15291,2017-01,2017-01,0,0.0,2017-01-03,2026-11-05,no clicks to company page
+JNJ,Johnson & Johnson,Pharma,Johnson_&_Johnson,Ustekinumab,Johnson_&_Johnson,Ustekinumab,2896,30552,2017-01,2017-01,0,0.0,2017-01-03,2026-11-05,low product views; no clicks to company page
+JNJ,Johnson & Johnson,Pharma,Johnson_&_Johnson,Daratumumab,Johnson_&_Johnson,Daratumumab,2678,30552,2017-01,2017-01,0,0.0,2017-01-03,2026-11-05,low product views; no clicks to company page
+MRK,Merck & Co.,Pharma,Merck_&_Co.,Pembrolizumab,Merck_&_Co.,Pembrolizumab,12698,16512,2017-01,2017-01,86,0.79,2017-01-03,2026-11-05,
+MRK,Merck & Co.,Pharma,Merck_&_Co.,Sitagliptin,Merck_&_Co.,Sitagliptin,4766,16512,2017-01,2017-01,0,0.0,2017-01-03,2026-11-05,no clicks to company page
+BMY,Bristol Myers Squibb,Pharma,Bristol_Myers_Squibb,Nivolumab,Bristol_Myers_Squibb,Nivolumab,4253,9962,2017-01,2019-10,13,0.37,2017-01-03,2026-11-05,company views start 2019-10
+GILD,Gilead Sciences,Pharma,Gilead_Sciences,Remdesivir,Gilead_Sciences,Remdesivir,7566,8182,2018-05,2017-01,107,1.46,2017-01-03,2026-11-05,
+GILD,Gilead Sciences,Pharma,Gilead_Sciences,Lenacapavir,Gilead_Sciences,Lenacapavir,5763,8182,2021-07,2017-01,116,2.97,2017-01-03,2026-11-05,
+AZN,AstraZeneca,Pharma,AstraZeneca,Oxford–AstraZeneca_COVID-19_vaccine,AstraZeneca,Oxford–AstraZeneca_COVID-19_vaccine,3864,16839,2021-01,2017-01,114,3.65,2017-01-03,2026-11-05,
+AZN,AstraZeneca,Pharma,AstraZeneca,Osimertinib,AstraZeneca,Osimertinib,2502,16839,2017-01,2017-01,13,0.59,2017-01-03,2026-11-05,low product views
+AZN,AstraZeneca,Pharma,AstraZeneca,Dapagliflozin,AstraZeneca,Dapagliflozin,19618,16839,2017-01,2017-01,13,0.06,2017-01-03,2026-11-05,
+BIIB,Biogen,Pharma,Biogen,Aducanumab,Biogen,Aducanumab,1095,3866,2017-01,2017-01,17,1.96,2017-01-03,2026-11-05,low product views
+BIIB,Biogen,Pharma,Biogen,Lecanemab,Biogen,Lecanemab,5775,3866,2022-09,2017-01,53,2.01,2017-01-03,2026-11-05,
+REGN,Regeneron,Pharma,Regeneron_Pharmaceuticals,Aflibercept,Regeneron_Pharmaceuticals,Aflibercept,1862,6590,2017-01,2018-03,13,0.78,2017-01-03,2026-11-05,low product views; company views start 2018-03
+REGN,Regeneron,Pharma,Regeneron_Pharmaceuticals,Dupilumab,Regeneron_Pharmaceuticals,Dupilumab,7412,6590,2017-01,2018-03,67,1.23,2017-01-03,2026-11-05,company views start 2018-03
+VRTX,Vertex,Pharma,Vertex_Pharmaceuticals,Elexacaftor/tezacaftor/ivacaftor,Vertex_Pharmaceuticals,Trikafta,61,5555,2019-10,2017-01,0,0.0,2017-01-03,2026-11-05,product redirects to Trikafta; low product views; no clicks to company page
+VRTX,Vertex,Pharma,Vertex_Pharmaceuticals,Suzetrigine,Vertex_Pharmaceuticals,Suzetrigine,9481,5555,2024-01,2017-01,173,1.85,2017-01-03,2026-11-05,
+ISRG,Intuitive Surgical,Medtech,Intuitive_Surgical,Da_Vinci_Surgical_System,Intuitive_Surgical,Da_Vinci_Surgical_System,7595,6254,2017-01,2017-01,474,7.53,2017-01-03,2026-11-05,
+ALGN,Align Technology,Medtech,Align_Technology,Invisalign,Align_Technology,Align_Technology,3770,3770,2017-05,2017-05,0,0.0,2017-01-03,2026-11-05,product redirects to Align_Technology; no clicks to company page; company views start 2017-05
+KO,Coca-Cola,Beverages,The_Coca-Cola_Company,Coca-Cola,The_Coca-Cola_Company,Coca-Cola,113047,51112,2017-01,2017-01,7402,9.39,2017-01-03,2026-11-05,
+KO,Coca-Cola,Beverages,The_Coca-Cola_Company,Diet_Coke,The_Coca-Cola_Company,Diet_Coke,13209,51112,2017-01,2017-01,217,1.83,2017-01-03,2026-11-05,
+KO,Coca-Cola,Beverages,The_Coca-Cola_Company,Sprite_(drink),The_Coca-Cola_Company,Sprite_(drink),15533,51112,2017-08,2017-01,482,3.71,2017-01-03,2026-11-05,
+KO,Coca-Cola,Beverages,The_Coca-Cola_Company,Fanta,The_Coca-Cola_Company,Fanta,34448,51112,2017-01,2017-01,838,3.02,2017-01-03,2026-11-05,
+PEP,PepsiCo,Beverages,PepsiCo,Pepsi,PepsiCo,Pepsi,47615,55789,2017-01,2017-01,3910,9.16,2017-01-03,2026-11-05,
+PEP,PepsiCo,Beverages,PepsiCo,Doritos,PepsiCo,Doritos,20206,55789,2017-01,2017-01,523,2.47,2017-01-03,2026-11-05,
+PEP,PepsiCo,Beverages,PepsiCo,Gatorade,PepsiCo,Gatorade,25028,55789,2017-01,2017-01,647,3.21,2017-01-03,2026-11-05,
+PEP,PepsiCo,Beverages,PepsiCo,Mountain_Dew,PepsiCo,Mountain_Dew,26832,55789,2017-01,2017-01,597,2.65,2017-01-03,2026-11-05,
+MNST,Monster Beverage,Beverages,Monster_Beverage,Monster_Energy,Monster_Beverage,Monster_Energy,45421,10788,2017-01,2017-01,5208,13.22,2017-01-03,2026-11-05,
+BUD,AB InBev,Beverages,AB_InBev,Budweiser,AB_InBev,Budweiser,27693,20585,2017-01,2017-01,455,2.22,2017-01-03,2026-11-05,
+BUD,AB InBev,Beverages,AB_InBev,Bud_Light,AB_InBev,Anheuser-Busch_brands,14246,20585,2017-01,2017-01,372,4.33,2017-01-03,2026-11-05,product redirects to Anheuser-Busch_brands
+BUD,AB InBev,Beverages,AB_InBev,Stella_Artois,AB_InBev,Stella_Artois,19074,20585,2017-01,2017-01,878,5.65,2017-01-03,2026-11-05,
+STZ,Constellation Brands,Beverages,Constellation_Brands,Modelo_Especial,Constellation_Brands,Grupo_Modelo,10687,7319,2017-01,2017-01,385,4.8,2017-01-03,2026-11-05,product redirects to Grupo_Modelo
+TAP,Molson Coors,Beverages,Molson_Coors_Beverage_Company,Coors_Light,Molson_Coors,Coors_Light,5346,13371,2017-01,2017-01,141,3.0,2017-01-03,2026-11-05,company renamed/redirects to Molson_Coors
+TAP,Molson Coors,Beverages,Molson_Coors_Beverage_Company,Miller_Lite,Molson_Coors,Miller_Lite,6263,13371,2017-01,2017-01,412,5.88,2017-01-03,2026-11-05,company renamed/redirects to Molson_Coors
+SAM,Boston Beer,Beverages,Boston_Beer_Company,Samuel_Adams_(beer),Boston_Beer_Company,Samuel_Adams_(beer),5774,4053,2017-01,2017-01,634,12.98,2017-01-03,2026-11-05,
+SAM,Boston Beer,Beverages,Boston_Beer_Company,Twisted_Tea,Boston_Beer_Company,Twisted_Tea,3078,4053,2017-03,2017-01,154,6.76,2017-01-03,2026-11-05,
+DEO,Diageo,Beverages,Diageo,Guinness,Diageo,Guinness,63258,44340,2017-01,2017-01,2716,7.08,2017-01-03,2026-11-05,
+DEO,Diageo,Beverages,Diageo,Johnnie_Walker,Diageo,Johnnie_Walker,20961,44340,2017-01,2017-01,897,5.71,2017-01-03,2026-11-05,
+DEO,Diageo,Beverages,Diageo,Smirnoff,Diageo,Smirnoff,14367,44340,2017-01,2017-01,857,7.9,2017-01-03,2026-11-05,
+BF-B,Brown-Forman,Beverages,Brown–Forman,Jack_Daniel's,Brown-Forman,Jack_Daniel's,21681,6186,2017-01,2017-01,1051,7.32,2017-01-03,2026-11-05,company renamed/redirects to Brown-Forman
+PM,Philip Morris International,Tobacco,Philip_Morris_International,IQOS,Philip_Morris_International,Iqos,12792,27964,2022-03,2017-01,422,4.73,2017-01-03,2026-11-05,product redirects to Iqos
+PM,Philip Morris International,Tobacco,Philip_Morris_International,Zyn_(nicotine_pouch),Philip_Morris_International,,0,27964,,2017-01,0,,2017-01-03,2026-11-05,product redirects to nan; low product views; no clicks to company page
+PG,Procter & Gamble,Household,Procter_&_Gamble,Tide_(brand),Procter_&_Gamble,Tide_(brand),4934,42205,2017-01,2017-01,318,8.03,2017-01-03,2026-11-05,
+PG,Procter & Gamble,Household,Procter_&_Gamble,Gillette,Procter_&_Gamble,Gillette,12397,42205,2017-01,2017-01,1120,10.79,2017-01-03,2026-11-05,
+PG,Procter & Gamble,Household,Procter_&_Gamble,Pampers,Procter_&_Gamble,Pampers,5473,42205,2017-01,2017-01,346,9.19,2017-01-03,2026-11-05,
+PG,Procter & Gamble,Household,Procter_&_Gamble,Head_&_Shoulders,Procter_&_Gamble,Head_&_Shoulders,4329,42205,2017-01,2017-01,275,8.8,2017-01-03,2026-11-05,
+CL,Colgate-Palmolive,Household,Colgate-Palmolive,Colgate_(toothpaste),Colgate-Palmolive,Colgate_(toothpaste),6356,13188,2017-01,2017-01,1065,16.5,2017-01-03,2026-11-05,
+KMB,Kimberly-Clark,Household,Kimberly-Clark,Kleenex,Kimberly-Clark,Kleenex,4276,16999,2017-01,2017-01,297,8.28,2017-01-03,2026-11-05,
+KMB,Kimberly-Clark,Household,Kimberly-Clark,Huggies,Kimberly-Clark,Huggies,3053,16999,2017-01,2017-01,373,16.45,2017-01-03,2026-11-05,
+CHD,Church & Dwight,Household,Church_&_Dwight,Arm_&_Hammer,Church_&_Dwight,Arm_&_Hammer,4646,5062,2017-07,2017-01,591,15.61,2017-01-03,2026-11-05,
+CHD,Church & Dwight,Household,Church_&_Dwight,OxiClean,Church_&_Dwight,OxiClean,3954,5062,2017-01,2017-01,253,8.21,2017-01-03,2026-11-05,
+UL,Unilever,Household,Unilever,Dove_(brand),Unilever,Dove_(disambiguation),1288,48117,2017-01,2017-01,0,0.0,2017-01-03,2026-11-05,product redirects to Dove_(disambiguation); low product views; no clicks to company page
+UL,Unilever,Household,Unilever,Axe_(brand),Unilever,Axe_(brand),4590,48117,2017-01,2017-01,218,6.2,2017-01-03,2026-11-05,
+UL,Unilever,Household,Unilever,Hellmann's,Unilever,Hellmann's_and_Best_Foods,7497,48117,2017-01,2017-01,411,8.26,2017-01-03,2026-11-05,product redirects to Hellmann's_and_Best_Foods
+EL,Estée Lauder,Household,The_Estée_Lauder_Companies,Clinique,Estée_Lauder_Companies,Clinique,3072,11694,2017-01,2017-01,207,9.1,2017-01-03,2026-11-05,company renamed/redirects to Estée_Lauder_Companies
+EL,Estée Lauder,Household,The_Estée_Lauder_Companies,MAC_Cosmetics,Estée_Lauder_Companies,MAC_Cosmetics,5443,11694,2017-01,2017-01,435,9.54,2017-01-03,2026-11-05,company renamed/redirects to Estée_Lauder_Companies
+WHR,Whirlpool,Household,Whirlpool_Corporation,KitchenAid,Whirlpool_Corporation,KitchenAid,5841,15193,2017-01,2017-01,405,6.5,2017-01-03,2026-11-05,
+MDLZ,Mondelez,Food,Mondelez_International,Oreo,Mondelez_International,Oreo,27978,39824,2017-01,2017-01,1682,7.09,2017-01-03,2026-11-05,
+MDLZ,Mondelez,Food,Mondelez_International,Toblerone,Mondelez_International,Toblerone,22653,39824,2017-01,2017-01,1106,4.8,2017-01-03,2026-11-05,
+HSY,Hershey,Food,The_Hershey_Company,Reese's_Peanut_Butter_Cups,The_Hershey_Company,Reese's_Peanut_Butter_Cups,15342,28132,2017-01,2017-01,889,5.15,2017-01-03,2026-11-05,
+KHC,Kraft Heinz,Food,The_Kraft_Heinz_Company,Heinz_Tomato_Ketchup,Kraft_Heinz,Heinz_Tomato_Ketchup,7944,26533,2017-01,2017-01,673,9.5,2017-01-03,2026-11-05,company renamed/redirects to Kraft_Heinz
+GIS,General Mills,Food,General_Mills,Cheerios,General_Mills,Cheerios,6192,18586,2017-01,2017-01,244,4.49,2017-01-03,2026-11-05,
+GIS,General Mills,Food,General_Mills,Lucky_Charms,General_Mills,Lucky_Charms,7823,18586,2017-01,2017-01,130,2.25,2017-01-03,2026-11-05,
+HRL,Hormel,Food,Hormel,Spam_(food),Hormel_Foods,Spam_(food),45856,6531,2017-01,2021-10,924,2.56,2017-01-03,2026-11-05,company renamed/redirects to Hormel_Foods; company views start 2021-10
+SJM,J.M. Smucker,Food,The_J.M._Smucker_Company,Jif_(peanut_butter),The_J.M._Smucker_Company,Jif_(peanut_butter),3575,8781,2017-01,2017-01,266,9.42,2017-01-03,2026-11-05,
+SJM,J.M. Smucker,Food,The_J.M._Smucker_Company,Uncrustables,The_J.M._Smucker_Company,Uncrustables,3488,8781,2017-01,2017-01,237,6.89,2017-01-03,2026-11-05,
+MCD,McDonald's,Restaurants,McDonald's,Big_Mac,McDonald's,Big_Mac,14478,122165,2017-01,2017-01,407,3.07,2017-01-03,2026-11-05,
+MCD,McDonald's,Restaurants,McDonald's,Chicken_McNuggets,McDonald's,Chicken_McNuggets,7814,122165,2017-01,2017-01,120,1.6,2017-01-03,2026-11-05,
+MCD,McDonald's,Restaurants,McDonald's,Happy_Meal,McDonald's,Happy_Meal,6386,122165,2017-01,2017-01,80,1.58,2017-01-03,2026-11-05,
+YUM,Yum! Brands,Restaurants,Yum!_Brands,KFC,Yum!_Brands,KFC,58087,37966,2017-01,2017-01,6970,13.2,2017-01-03,2026-11-05,
+YUM,Yum! Brands,Restaurants,Yum!_Brands,Taco_Bell,Yum!_Brands,Taco_Bell,35205,37966,2017-01,2017-01,2656,8.02,2017-01-03,2026-11-05,
+YUM,Yum! Brands,Restaurants,Yum!_Brands,Pizza_Hut,Yum!_Brands,Pizza_Hut,31576,37966,2017-01,2017-01,789,3.09,2017-01-03,2026-11-05,
+SBUX,Starbucks,Restaurants,Starbucks,Frappuccino,Starbucks,Frappuccino,7726,67567,2017-01,2017-01,99,1.35,2017-01-03,2026-11-05,
+NKE,Nike,Apparel,"Nike,_Inc.",Air_Jordan,"Nike,_Inc.",Air_Jordan,30832,74088,2017-01,2017-01,655,2.79,2017-01-03,2026-11-05,
+NKE,Nike,Apparel,"Nike,_Inc.",Nike_Air_Max,"Nike,_Inc.",Nike_Air_Max,6643,74088,2017-01,2017-01,98,2.29,2017-01-03,2026-11-05,
+NKE,Nike,Apparel,"Nike,_Inc.",Air_Force_1_(shoe),"Nike,_Inc.",Nike_Air_Force,5474,74088,2023-12,2017-01,65,1.84,2017-01-03,2026-11-05,product redirects to Nike_Air_Force
+DECK,Deckers,Apparel,Deckers_Brands,Hoka_(brand),Deckers_Brands,Hoka,10397,9940,2023-04,2023-09,2858,14.93,2017-01-03,2026-11-05,product redirects to Hoka; company views start 2023-09
+DECK,Deckers,Apparel,Deckers_Brands,Ugg_(brand),Deckers_Brands,,0,9940,,2023-09,0,,2017-01-03,2026-11-05,product redirects to nan; low product views; no clicks to company page; company views start 2023-09
+TPR,Tapestry,Apparel,"Tapestry,_Inc.",Coach_New_York,"Tapestry,_Inc.",Coach_New_York,8793,4705,2018-05,2017-10,516,7.82,2017-01-03,2026-11-05,company views start 2017-10
+TPR,Tapestry,Apparel,"Tapestry,_Inc.",Kate_Spade_New_York,"Tapestry,_Inc.",Kate_Spade_New_York,6548,4705,2017-01,2017-10,311,6.98,2017-01-03,2026-11-05,company views start 2017-10
+VFC,VF Corporation,Apparel,VF_Corporation,The_North_Face,VF_Corporation,The_North_Face,19825,14701,2017-01,2017-01,1521,9.07,2017-01-03,2026-11-05,
+VFC,VF Corporation,Apparel,VF_Corporation,Vans,VF_Corporation,Vans,11252,14701,2017-01,2017-01,866,9.6,2017-01-03,2026-11-05,
+VFC,VF Corporation,Apparel,VF_Corporation,Timberland_(company),VF_Corporation,Timberland_(company),7824,14701,2022-05,2017-01,813,11.01,2017-01-03,2026-11-05,
+COST,Costco,Retail,Costco,Kirkland_Signature,Costco,Costco,77716,77716,2017-01,2017-01,0,0.0,2017-01-03,2026-11-05,product redirects to Costco; no clicks to company page

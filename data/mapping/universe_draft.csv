@@ -1,0 +1,160 @@
+ticker,company,sector,company_article,product_article
+AAPL,Apple,Tech hardware,Apple_Inc.,iPhone
+AAPL,Apple,Tech hardware,Apple_Inc.,iPad
+AAPL,Apple,Tech hardware,Apple_Inc.,Apple_Watch
+AAPL,Apple,Tech hardware,Apple_Inc.,AirPods
+MSFT,Microsoft,Tech software,Microsoft,Xbox
+MSFT,Microsoft,Tech software,Microsoft,Microsoft_Excel
+MSFT,Microsoft,Tech software,Microsoft,Microsoft_Copilot
+GOOGL,Alphabet,Tech software,Alphabet_Inc.,YouTube
+GOOGL,Alphabet,Tech software,Alphabet_Inc.,Gmail
+GOOGL,Alphabet,Tech software,Alphabet_Inc.,Google_Pixel
+GOOGL,Alphabet,Tech software,Alphabet_Inc.,Waymo
+META,Meta Platforms,Tech software,Meta_Platforms,Instagram
+META,Meta Platforms,Tech software,Meta_Platforms,WhatsApp
+META,Meta Platforms,Tech software,Meta_Platforms,Meta_Quest
+AMZN,Amazon,Retail,Amazon_(company),Amazon_Alexa
+AMZN,Amazon,Retail,Amazon_(company),Amazon_Kindle
+AMZN,Amazon,Retail,Amazon_(company),Amazon_Prime
+NVDA,Nvidia,Semiconductors,Nvidia,GeForce
+AMD,AMD,Semiconductors,AMD,Ryzen
+AMD,AMD,Semiconductors,AMD,Radeon
+INTC,Intel,Semiconductors,Intel,Intel_Core
+QCOM,Qualcomm,Semiconductors,Qualcomm,Qualcomm_Snapdragon
+ADBE,Adobe,Tech software,Adobe_Inc.,Adobe_Photoshop
+ADBE,Adobe,Tech software,Adobe_Inc.,Adobe_Acrobat
+SNAP,Snap,Tech software,Snap_Inc.,Snapchat
+PYPL,PayPal,Fintech,PayPal,Venmo
+XYZ,Block,Fintech,Block_Inc.,Cash_App
+SONY,Sony,Tech hardware,Sony,PlayStation_5
+SONY,Sony,Tech hardware,Sony,PlayStation
+NTDOY,Nintendo,Games,Nintendo,Nintendo_Switch
+NTDOY,Nintendo,Games,Nintendo,Nintendo_Switch_2
+NTDOY,Nintendo,Games,Nintendo,Mario_Kart_World
+EA,Electronic Arts,Games,Electronic_Arts,The_Sims
+EA,Electronic Arts,Games,Electronic_Arts,Apex_Legends
+EA,Electronic Arts,Games,Electronic_Arts,EA_Sports_FC
+TTWO,Take-Two Interactive,Games,Take-Two_Interactive,Grand_Theft_Auto_VI
+TTWO,Take-Two Interactive,Games,Take-Two_Interactive,Grand_Theft_Auto_V
+TTWO,Take-Two Interactive,Games,Take-Two_Interactive,Red_Dead_Redemption_2
+MAT,Mattel,Toys,Mattel,Barbie
+MAT,Mattel,Toys,Mattel,Hot_Wheels
+HAS,Hasbro,Toys,Hasbro,Monopoly_(game)
+HAS,Hasbro,Toys,Hasbro,Nerf
+HAS,Hasbro,Toys,Hasbro,Dungeons_&_Dragons
+DIS,Walt Disney,Media,The_Walt_Disney_Company,Disney+
+DIS,Walt Disney,Media,The_Walt_Disney_Company,Disneyland
+TSLA,Tesla,Autos,"Tesla,_Inc.",Tesla_Model_Y
+TSLA,Tesla,Autos,"Tesla,_Inc.",Tesla_Model_3
+TSLA,Tesla,Autos,"Tesla,_Inc.",Tesla_Cybertruck
+F,Ford,Autos,Ford_Motor_Company,Ford_F-Series
+F,Ford,Autos,Ford_Motor_Company,Ford_Mustang
+F,Ford,Autos,Ford_Motor_Company,Ford_Bronco
+GM,General Motors,Autos,General_Motors,Chevrolet_Silverado
+GM,General Motors,Autos,General_Motors,Chevrolet_Corvette
+GM,General Motors,Autos,General_Motors,Cadillac_Escalade
+TM,Toyota,Autos,Toyota,Toyota_Corolla
+TM,Toyota,Autos,Toyota,Toyota_Camry
+TM,Toyota,Autos,Toyota,Toyota_RAV4
+TM,Toyota,Autos,Toyota,Toyota_Prius
+HMC,Honda,Autos,Honda,Honda_Civic
+HMC,Honda,Autos,Honda,Honda_Accord
+HMC,Honda,Autos,Honda,Honda_CR-V
+HOG,Harley-Davidson,Autos,Harley-Davidson,Harley-Davidson_Sportster
+BA,Boeing,Aerospace,Boeing,Boeing_737_MAX
+BA,Boeing,Aerospace,Boeing,Boeing_787_Dreamliner
+RCL,Royal Caribbean,Travel,Royal_Caribbean_Group,Icon_of_the_Seas
+NVO,Novo Nordisk,Pharma,Novo_(company),Semaglutide
+NVO,Novo Nordisk,Pharma,Novo_(company),Liraglutide
+LLY,Eli Lilly,Pharma,Eli_Lilly_and_Company,Tirzepatide
+LLY,Eli Lilly,Pharma,Eli_Lilly_and_Company,Dulaglutide
+LLY,Eli Lilly,Pharma,Eli_Lilly_and_Company,Orforglipron
+PFE,Pfizer,Pharma,Pfizer,Pfizer–BioNTech_COVID-19_vaccine
+PFE,Pfizer,Pharma,Pfizer,Nirmatrelvir/ritonavir
+PFE,Pfizer,Pharma,Pfizer,Tafamidis
+ABBV,AbbVie,Pharma,AbbVie,Adalimumab
+ABBV,AbbVie,Pharma,AbbVie,Upadacitinib
+ABBV,AbbVie,Pharma,AbbVie,Risankizumab
+JNJ,Johnson & Johnson,Pharma,Johnson_&_Johnson,Ustekinumab
+JNJ,Johnson & Johnson,Pharma,Johnson_&_Johnson,Daratumumab
+MRK,Merck & Co.,Pharma,Merck_&_Co.,Pembrolizumab
+MRK,Merck & Co.,Pharma,Merck_&_Co.,Sitagliptin
+BMY,Bristol Myers Squibb,Pharma,Bristol_Myers_Squibb,Nivolumab
+GILD,Gilead Sciences,Pharma,Gilead_Sciences,Remdesivir
+GILD,Gilead Sciences,Pharma,Gilead_Sciences,Lenacapavir
+AZN,AstraZeneca,Pharma,AstraZeneca,Oxford–AstraZeneca_COVID-19_vaccine
+AZN,AstraZeneca,Pharma,AstraZeneca,Osimertinib
+AZN,AstraZeneca,Pharma,AstraZeneca,Dapagliflozin
+BIIB,Biogen,Pharma,Biogen,Aducanumab
+BIIB,Biogen,Pharma,Biogen,Lecanemab
+REGN,Regeneron,Pharma,Regeneron_Pharmaceuticals,Aflibercept
+REGN,Regeneron,Pharma,Regeneron_Pharmaceuticals,Dupilumab
+VRTX,Vertex,Pharma,Vertex_Pharmaceuticals,Elexacaftor/tezacaftor/ivacaftor
+VRTX,Vertex,Pharma,Vertex_Pharmaceuticals,Suzetrigine
+ISRG,Intuitive Surgical,Medtech,Intuitive_Surgical,Da_Vinci_Surgical_System
+ALGN,Align Technology,Medtech,Align_Technology,Invisalign
+KO,Coca-Cola,Beverages,The_Coca-Cola_Company,Coca-Cola
+KO,Coca-Cola,Beverages,The_Coca-Cola_Company,Diet_Coke
+KO,Coca-Cola,Beverages,The_Coca-Cola_Company,Sprite_(drink)
+KO,Coca-Cola,Beverages,The_Coca-Cola_Company,Fanta
+PEP,PepsiCo,Beverages,PepsiCo,Pepsi
+PEP,PepsiCo,Beverages,PepsiCo,Doritos
+PEP,PepsiCo,Beverages,PepsiCo,Gatorade
+PEP,PepsiCo,Beverages,PepsiCo,Mountain_Dew
+MNST,Monster Beverage,Beverages,Monster_Beverage,Monster_Energy
+BUD,AB InBev,Beverages,AB_InBev,Budweiser
+BUD,AB InBev,Beverages,AB_InBev,Bud_Light
+BUD,AB InBev,Beverages,AB_InBev,Stella_Artois
+STZ,Constellation Brands,Beverages,Constellation_Brands,Modelo_Especial
+TAP,Molson Coors,Beverages,Molson_Coors_Beverage_Company,Coors_Light
+TAP,Molson Coors,Beverages,Molson_Coors_Beverage_Company,Miller_Lite
+SAM,Boston Beer,Beverages,Boston_Beer_Company,Samuel_Adams_(beer)
+SAM,Boston Beer,Beverages,Boston_Beer_Company,Twisted_Tea
+DEO,Diageo,Beverages,Diageo,Guinness
+DEO,Diageo,Beverages,Diageo,Johnnie_Walker
+DEO,Diageo,Beverages,Diageo,Smirnoff
+BF-B,Brown-Forman,Beverages,Brown–Forman,Jack_Daniel's
+PM,Philip Morris International,Tobacco,Philip_Morris_International,IQOS
+PM,Philip Morris International,Tobacco,Philip_Morris_International,Zyn_(nicotine_pouch)
+PG,Procter & Gamble,Household,Procter_&_Gamble,Tide_(brand)
+PG,Procter & Gamble,Household,Procter_&_Gamble,Gillette
+PG,Procter & Gamble,Household,Procter_&_Gamble,Pampers
+PG,Procter & Gamble,Household,Procter_&_Gamble,Head_&_Shoulders
+CL,Colgate-Palmolive,Household,Colgate-Palmolive,Colgate_(toothpaste)
+KMB,Kimberly-Clark,Household,Kimberly-Clark,Kleenex
+KMB,Kimberly-Clark,Household,Kimberly-Clark,Huggies
+CHD,Church & Dwight,Household,Church_&_Dwight,Arm_&_Hammer
+CHD,Church & Dwight,Household,Church_&_Dwight,OxiClean
+UL,Unilever,Household,Unilever,Dove_(brand)
+UL,Unilever,Household,Unilever,Axe_(brand)
+UL,Unilever,Household,Unilever,Hellmann's
+EL,Estée Lauder,Household,The_Estée_Lauder_Companies,Clinique
+EL,Estée Lauder,Household,The_Estée_Lauder_Companies,MAC_Cosmetics
+WHR,Whirlpool,Household,Whirlpool_Corporation,KitchenAid
+MDLZ,Mondelez,Food,Mondelez_International,Oreo
+MDLZ,Mondelez,Food,Mondelez_International,Toblerone
+HSY,Hershey,Food,The_Hershey_Company,Reese's_Peanut_Butter_Cups
+KHC,Kraft Heinz,Food,The_Kraft_Heinz_Company,Heinz_Tomato_Ketchup
+GIS,General Mills,Food,General_Mills,Cheerios
+GIS,General Mills,Food,General_Mills,Lucky_Charms
+HRL,Hormel,Food,Hormel,Spam_(food)
+SJM,J.M. Smucker,Food,The_J.M._Smucker_Company,Jif_(peanut_butter)
+SJM,J.M. Smucker,Food,The_J.M._Smucker_Company,Uncrustables
+MCD,McDonald's,Restaurants,McDonald's,Big_Mac
+MCD,McDonald's,Restaurants,McDonald's,Chicken_McNuggets
+MCD,McDonald's,Restaurants,McDonald's,Happy_Meal
+YUM,Yum! Brands,Restaurants,Yum!_Brands,KFC
+YUM,Yum! Brands,Restaurants,Yum!_Brands,Taco_Bell
+YUM,Yum! Brands,Restaurants,Yum!_Brands,Pizza_Hut
+SBUX,Starbucks,Restaurants,Starbucks,Frappuccino
+NKE,Nike,Apparel,"Nike,_Inc.",Air_Jordan
+NKE,Nike,Apparel,"Nike,_Inc.",Nike_Air_Max
+NKE,Nike,Apparel,"Nike,_Inc.",Air_Force_1_(shoe)
+DECK,Deckers,Apparel,Deckers_Brands,Hoka_(brand)
+DECK,Deckers,Apparel,Deckers_Brands,Ugg_(brand)
+TPR,Tapestry,Apparel,"Tapestry,_Inc.",Coach_New_York
+TPR,Tapestry,Apparel,"Tapestry,_Inc.",Kate_Spade_New_York
+VFC,VF Corporation,Apparel,VF_Corporation,The_North_Face
+VFC,VF Corporation,Apparel,VF_Corporation,Vans
+VFC,VF Corporation,Apparel,VF_Corporation,Timberland_(company)
+COST,Costco,Retail,Costco,Kirkland_Signature
