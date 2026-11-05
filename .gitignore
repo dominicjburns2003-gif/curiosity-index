@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Editors / macOS
+.idea/
+.DS_Store
+
+# Large raw downloads (e.g. clickstream dumps) - never commit these
+data/raw/
+*.tsv.gz
+
+# Secrets
+.env
