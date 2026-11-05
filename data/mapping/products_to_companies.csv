@@ -1,0 +1,141 @@
+ticker,company,sector,company_article,company_titles,company_from,product_article
+BA,Boeing,Aerospace,Boeing,Boeing,,Boeing_737_MAX
+BA,Boeing,Aerospace,Boeing,Boeing,,Boeing_787_Dreamliner
+DECK,Deckers,Apparel,Deckers_Brands,Deckers_Brands|Deckers_Outdoor_Corporation,,Hoka
+DECK,Deckers,Apparel,Deckers_Brands,Deckers_Brands|Deckers_Outdoor_Corporation,,UGG_(brand)
+NKE,Nike,Apparel,"Nike,_Inc.","Nike,_Inc.",,Air_Jordan
+NKE,Nike,Apparel,"Nike,_Inc.","Nike,_Inc.",,Nike_Air_Force
+NKE,Nike,Apparel,"Nike,_Inc.","Nike,_Inc.",,Nike_Air_Max
+TPR,Tapestry,Apparel,"Tapestry,_Inc.","Tapestry,_Inc.|Coach,_Inc.",,Coach_New_York
+TPR,Tapestry,Apparel,"Tapestry,_Inc.","Tapestry,_Inc.|Coach,_Inc.",,Kate_Spade_New_York
+VFC,VF Corporation,Apparel,VF_Corporation,VF_Corporation,,The_North_Face
+VFC,VF Corporation,Apparel,VF_Corporation,VF_Corporation,,Timberland_(company)
+VFC,VF Corporation,Apparel,VF_Corporation,VF_Corporation,,Vans
+F,Ford,Autos,Ford_Motor_Company,Ford_Motor_Company,,Ford_Bronco
+F,Ford,Autos,Ford_Motor_Company,Ford_Motor_Company,,Ford_F-Series
+F,Ford,Autos,Ford_Motor_Company,Ford_Motor_Company,,Ford_Mustang
+GM,General Motors,Autos,General_Motors,General_Motors,,Cadillac_Escalade
+GM,General Motors,Autos,General_Motors,General_Motors,,Chevrolet_Corvette
+GM,General Motors,Autos,General_Motors,General_Motors,,Chevrolet_Silverado
+HMC,Honda,Autos,Honda,Honda,,Honda_Accord
+HMC,Honda,Autos,Honda,Honda,,Honda_CR-V
+HMC,Honda,Autos,Honda,Honda,,Honda_Civic
+HOG,Harley-Davidson,Autos,Harley-Davidson,Harley-Davidson,,Harley-Davidson_Sportster
+TM,Toyota,Autos,Toyota,Toyota,,Toyota_Camry
+TM,Toyota,Autos,Toyota,Toyota,,Toyota_Corolla
+TM,Toyota,Autos,Toyota,Toyota,,Toyota_Prius
+TM,Toyota,Autos,Toyota,Toyota,,Toyota_RAV4
+TSLA,Tesla,Autos,"Tesla,_Inc.","Tesla,_Inc.|Tesla_Motors",,Tesla_Cybertruck
+TSLA,Tesla,Autos,"Tesla,_Inc.","Tesla,_Inc.|Tesla_Motors",,Tesla_Model_3
+TSLA,Tesla,Autos,"Tesla,_Inc.","Tesla,_Inc.|Tesla_Motors",,Tesla_Model_Y
+BF-B,Brown-Forman,Beverages,Brown-Forman,Brown-Forman,,Jack_Daniel's
+BUD,AB InBev,Beverages,AB_InBev,AB_InBev,,Budweiser
+BUD,AB InBev,Beverages,AB_InBev,AB_InBev,,Stella_Artois
+DEO,Diageo,Beverages,Diageo,Diageo,,Guinness
+DEO,Diageo,Beverages,Diageo,Diageo,,Johnnie_Walker
+DEO,Diageo,Beverages,Diageo,Diageo,,Smirnoff
+KO,Coca-Cola,Beverages,The_Coca-Cola_Company,The_Coca-Cola_Company,,Coca-Cola
+KO,Coca-Cola,Beverages,The_Coca-Cola_Company,The_Coca-Cola_Company,,Diet_Coke
+KO,Coca-Cola,Beverages,The_Coca-Cola_Company,The_Coca-Cola_Company,,Fanta
+KO,Coca-Cola,Beverages,The_Coca-Cola_Company,The_Coca-Cola_Company,,Sprite_(drink)
+MNST,Monster Beverage,Beverages,Monster_Beverage,Monster_Beverage,,Monster_Energy
+PEP,PepsiCo,Beverages,PepsiCo,PepsiCo,,Doritos
+PEP,PepsiCo,Beverages,PepsiCo,PepsiCo,,Gatorade
+PEP,PepsiCo,Beverages,PepsiCo,PepsiCo,,Mountain_Dew
+PEP,PepsiCo,Beverages,PepsiCo,PepsiCo,,Pepsi
+SAM,Boston Beer,Beverages,Boston_Beer_Company,Boston_Beer_Company,,Samuel_Adams_(beer)
+SAM,Boston Beer,Beverages,Boston_Beer_Company,Boston_Beer_Company,,Twisted_Tea
+TAP,Molson Coors,Beverages,Molson_Coors,Molson_Coors,,Coors_Light
+TAP,Molson Coors,Beverages,Molson_Coors,Molson_Coors,,Miller_Lite
+PYPL,PayPal,Fintech,PayPal,PayPal,,Venmo
+XYZ,Block,Fintech,"Block,_Inc.","Block,_Inc.|Square_(financial_services_company)",,Cash_App
+GIS,General Mills,Food,General_Mills,General_Mills,,Cheerios
+GIS,General Mills,Food,General_Mills,General_Mills,,Lucky_Charms
+HRL,Hormel,Food,Hormel_Foods,Hormel_Foods|Hormel,,Spam_(food)
+HSY,Hershey,Food,The_Hershey_Company,The_Hershey_Company,,Reese's_Peanut_Butter_Cups
+KHC,Kraft Heinz,Food,Kraft_Heinz,Kraft_Heinz,,Heinz_Tomato_Ketchup
+MDLZ,Mondelez,Food,Mondelez_International,Mondelez_International,,Oreo
+MDLZ,Mondelez,Food,Mondelez_International,Mondelez_International,,Toblerone
+SJM,J.M. Smucker,Food,The_J.M._Smucker_Company,The_J.M._Smucker_Company,,Jif_(peanut_butter)
+SJM,J.M. Smucker,Food,The_J.M._Smucker_Company,The_J.M._Smucker_Company,,Uncrustables
+NTDOY,Nintendo,Games,Nintendo,Nintendo,,Mario_Kart_World
+NTDOY,Nintendo,Games,Nintendo,Nintendo,,Nintendo_Switch
+NTDOY,Nintendo,Games,Nintendo,Nintendo,,Nintendo_Switch_2
+TTWO,Take-Two Interactive,Games,Take-Two_Interactive,Take-Two_Interactive,,Grand_Theft_Auto_V
+TTWO,Take-Two Interactive,Games,Take-Two_Interactive,Take-Two_Interactive,,Grand_Theft_Auto_VI
+TTWO,Take-Two Interactive,Games,Take-Two_Interactive,Take-Two_Interactive,,Red_Dead_Redemption_2
+CHD,Church & Dwight,Household,Church_&_Dwight,Church_&_Dwight,,Arm_&_Hammer
+CHD,Church & Dwight,Household,Church_&_Dwight,Church_&_Dwight,,OxiClean
+CL,Colgate-Palmolive,Household,Colgate-Palmolive,Colgate-Palmolive,,Colgate_(toothpaste)
+EL,Estée Lauder,Household,Estée_Lauder_Companies,Estée_Lauder_Companies,,Clinique
+EL,Estée Lauder,Household,Estée_Lauder_Companies,Estée_Lauder_Companies,,MAC_Cosmetics
+KMB,Kimberly-Clark,Household,Kimberly-Clark,Kimberly-Clark,,Huggies
+KMB,Kimberly-Clark,Household,Kimberly-Clark,Kimberly-Clark,,Kleenex
+PG,Procter & Gamble,Household,Procter_&_Gamble,Procter_&_Gamble,,Gillette
+PG,Procter & Gamble,Household,Procter_&_Gamble,Procter_&_Gamble,,Head_&_Shoulders
+PG,Procter & Gamble,Household,Procter_&_Gamble,Procter_&_Gamble,,Pampers
+PG,Procter & Gamble,Household,Procter_&_Gamble,Procter_&_Gamble,,Tide_(brand)
+UL,Unilever,Household,Unilever,Unilever,,Axe_(brand)
+UL,Unilever,Household,Unilever,Unilever,,Dove_(Unilever_brand)
+UL,Unilever,Household,Unilever,Unilever,,Hellmann's_and_Best_Foods
+WHR,Whirlpool,Household,Whirlpool_Corporation,Whirlpool_Corporation,,KitchenAid
+DIS,Walt Disney,Media,The_Walt_Disney_Company,The_Walt_Disney_Company,,Disney+
+DIS,Walt Disney,Media,The_Walt_Disney_Company,The_Walt_Disney_Company,,Disneyland
+ISRG,Intuitive Surgical,Medtech,Intuitive_Surgical,Intuitive_Surgical,,Da_Vinci_Surgical_System
+ABBV,AbbVie,Pharma,AbbVie,AbbVie,,Adalimumab
+AZN,AstraZeneca,Pharma,AstraZeneca,AstraZeneca,,Dapagliflozin
+AZN,AstraZeneca,Pharma,AstraZeneca,AstraZeneca,,Oxford–AstraZeneca_COVID-19_vaccine
+BIIB,Biogen,Pharma,Biogen,Biogen,,Lecanemab
+BMY,Bristol Myers Squibb,Pharma,Bristol_Myers_Squibb,Bristol_Myers_Squibb|Bristol-Myers_Squibb,,Nivolumab
+GILD,Gilead Sciences,Pharma,Gilead_Sciences,Gilead_Sciences,,Lenacapavir
+GILD,Gilead Sciences,Pharma,Gilead_Sciences,Gilead_Sciences,,Remdesivir
+LLY,Eli Lilly,Pharma,Eli_Lilly_and_Company,Eli_Lilly_and_Company,,Orforglipron
+LLY,Eli Lilly,Pharma,Eli_Lilly_and_Company,Eli_Lilly_and_Company,,Tirzepatide
+MRK,Merck & Co.,Pharma,Merck_&_Co.,Merck_&_Co.,,Pembrolizumab
+NVO,Novo Nordisk,Pharma,Novo_(company),Novo_(company)|Novo_Nordisk,,Liraglutide
+NVO,Novo Nordisk,Pharma,Novo_(company),Novo_(company)|Novo_Nordisk,,Semaglutide
+PFE,Pfizer,Pharma,Pfizer,Pfizer,,Pfizer–BioNTech_COVID-19_vaccine
+REGN,Regeneron,Pharma,Regeneron_Pharmaceuticals,Regeneron_Pharmaceuticals|Regeneron,,Dupilumab
+VRTX,Vertex,Pharma,Vertex_Pharmaceuticals,Vertex_Pharmaceuticals,,Suzetrigine
+MCD,McDonald's,Restaurants,McDonald's,McDonald's,,Big_Mac
+MCD,McDonald's,Restaurants,McDonald's,McDonald's,,Chicken_McNuggets
+MCD,McDonald's,Restaurants,McDonald's,McDonald's,,Happy_Meal
+SBUX,Starbucks,Restaurants,Starbucks,Starbucks,,Frappuccino
+YUM,Yum! Brands,Restaurants,Yum!_Brands,Yum!_Brands,,KFC
+YUM,Yum! Brands,Restaurants,Yum!_Brands,Yum!_Brands,,Pizza_Hut
+YUM,Yum! Brands,Restaurants,Yum!_Brands,Yum!_Brands,,Taco_Bell
+AMZN,Amazon,Retail,Amazon_(company),Amazon_(company)|Amazon.com,,Amazon_Alexa
+AMZN,Amazon,Retail,Amazon_(company),Amazon_(company)|Amazon.com,,Amazon_Kindle
+AMZN,Amazon,Retail,Amazon_(company),Amazon_(company)|Amazon.com,,Amazon_Prime
+AMD,AMD,Semiconductors,AMD,AMD,,Radeon
+AMD,AMD,Semiconductors,AMD,AMD,,Ryzen
+INTC,Intel,Semiconductors,Intel,Intel,,Intel_Core
+NVDA,Nvidia,Semiconductors,Nvidia,Nvidia,,GeForce
+QCOM,Qualcomm,Semiconductors,Qualcomm,Qualcomm,,Qualcomm_Snapdragon
+AAPL,Apple,Tech hardware,Apple_Inc.,Apple_Inc.,,AirPods
+AAPL,Apple,Tech hardware,Apple_Inc.,Apple_Inc.,,Apple_Watch
+AAPL,Apple,Tech hardware,Apple_Inc.,Apple_Inc.,,IPad
+AAPL,Apple,Tech hardware,Apple_Inc.,Apple_Inc.,,IPhone
+SONY,Sony,Tech hardware,Sony,Sony,,PlayStation
+SONY,Sony,Tech hardware,Sony,Sony,,PlayStation_5
+ADBE,Adobe,Tech software,Adobe_Inc.,Adobe_Inc.|Adobe_Systems,,Adobe_Acrobat
+ADBE,Adobe,Tech software,Adobe_Inc.,Adobe_Inc.|Adobe_Systems,,Adobe_Photoshop
+GOOGL,Alphabet,Tech software,Google,Google,,Gmail
+GOOGL,Alphabet,Tech software,Google,Google,,Google_Pixel
+GOOGL,Alphabet,Tech software,Google,Google,,Waymo
+GOOGL,Alphabet,Tech software,Google,Google,,YouTube
+META,Meta Platforms,Tech software,Meta_Platforms,"Meta_Platforms|Facebook,_Inc.",2019-12,Instagram
+META,Meta Platforms,Tech software,Meta_Platforms,"Meta_Platforms|Facebook,_Inc.",2019-12,Meta_Quest
+META,Meta Platforms,Tech software,Meta_Platforms,"Meta_Platforms|Facebook,_Inc.",2019-12,WhatsApp
+MSFT,Microsoft,Tech software,Microsoft,Microsoft,,Microsoft_Copilot
+MSFT,Microsoft,Tech software,Microsoft,Microsoft,,Microsoft_Excel
+MSFT,Microsoft,Tech software,Microsoft,Microsoft,,Xbox
+SNAP,Snap,Tech software,Snap_Inc.,Snap_Inc.,,Snapchat
+PM,Philip Morris International,Tobacco,Philip_Morris_International,Philip_Morris_International,,Iqos
+PM,Philip Morris International,Tobacco,Philip_Morris_International,Philip_Morris_International,,Zyn
+HAS,Hasbro,Toys,Hasbro,Hasbro,,Dungeons_&_Dragons
+HAS,Hasbro,Toys,Hasbro,Hasbro,,Monopoly_(game)
+HAS,Hasbro,Toys,Hasbro,Hasbro,,Nerf
+MAT,Mattel,Toys,Mattel,Mattel,,Barbie
+MAT,Mattel,Toys,Mattel,Mattel,,Hot_Wheels
+RCL,Royal Caribbean,Travel,Royal_Caribbean_Group,Royal_Caribbean_Group|Royal_Caribbean_Cruises_Ltd.,,Icon_of_the_Seas

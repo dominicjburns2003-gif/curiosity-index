@@ -91,7 +91,7 @@ def suggest(r: pd.Series) -> tuple[str, str]:
 
 
 def main() -> None:
-    check = pd.read_csv(MAPPING_DIR / "universe_check.csv")
+    check = pd.read_csv(MAPPING_DIR / "universe_draft_check.csv")
     # Where a title couldn't be resolved, show the title from the draft
     check["product_current"] = check["product_current"].fillna(check["product_article"])
     check[["suggestion", "reason"]] = check.apply(suggest, axis=1, result_type="expand")

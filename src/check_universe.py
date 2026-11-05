@@ -17,11 +17,13 @@ Writes data/mapping/universe_check.csv, one row per company-product pair with a
 "flags" column listing anything to look at.
 
 Run it from the project folder:
-    python src/check_universe.py
+    python src/check_universe.py                     # checks the draft
+    python src/check_universe.py data/mapping/products_to_companies.csv
 """
 
 import gzip
 from pathlib import Path
+import sys
 import time
 from urllib.parse import quote
 
@@ -51,9 +53,10 @@ CLICKSTREAM_URL = (
 
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 MAPPING_DIR = PROJECT_DIR / "data" / "mapping"
-DRAFT_PATH = MAPPING_DIR / "universe_draft.csv"
-CLICKS_PATH = MAPPING_DIR / f"clickstream_pairs_{CLICKSTREAM_MONTH}.csv"
-OUT_PATH = MAPPING_DIR / "universe_check.csv"
+DRAFT_PATH = Path(sys.argv[1]) if len(sys.argv) > 1 else MAPPING_DIR / "universe_draft.csv"
+# Results are named after the input file, e.g. universe_draft -> universe_draft_check.csv
+CLICKS_PATH = MAPPING_DIR / f"{DRAFT_PATH.stem}_clicks_{CLICKSTREAM_MONTH}.csv"
+OUT_PATH = MAPPING_DIR / f"{DRAFT_PATH.stem}_check.csv"
 
 
 def polite_get(url: str, **kwargs) -> requests.Response:
