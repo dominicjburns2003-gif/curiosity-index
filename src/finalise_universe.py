@@ -41,7 +41,7 @@ OLD_COMPANY_TITLES = {
     "Meta_Platforms": ["Facebook,_Inc."],             # Oct 2021
     "Amazon_(company)": ["Amazon.com"],               # Oct 2017
     "Adobe_Inc.": ["Adobe_Systems"],                  # Oct 2018
-    "Block,_Inc.": ["Square_(financial_services_company)"],  # Feb 2022
+    "Block,_Inc.": ["Square_(financial_services_company)", "Square,_Inc."],  # 2021-22
     "Royal_Caribbean_Group": ["Royal_Caribbean_Cruises_Ltd."],  # Jul 2020
     "Bristol_Myers_Squibb": ["Bristol-Myers_Squibb"],  # Aug 2020
     "Regeneron_Pharmaceuticals": ["Regeneron"],       # Jul 2019
@@ -56,6 +56,28 @@ OLD_COMPANY_TITLES = {
 # company and Facebook the product shared one article, so there is no clean
 # company-attention series for Meta before then
 COMPANY_FROM = {"META": "2019-12"}
+
+# Old titles of renamed or merged product pages, found by checking which
+# redirects to each product had real traffic before its views started
+OLD_PRODUCT_TITLES = {
+    "Cash_App": ["Square_Cash"],
+    "Disney+": ["Disney_streaming_service"],
+    "Iqos": ["IQOS"],
+    "Timberland_(company)": ["The_Timberland_Company"],
+    "Hoka": ["Hoka_One_One", "Hoka_(brand)"],  # renamed twice: 2025 and May 2026
+    "Microsoft_Copilot": ["Microsoft_365_Copilot"],
+    "Nike_Air_Force": ["Air_Force_(shoe)", "Air_Force_1_(shoe)"],
+    "Dove_(Unilever_brand)": ["Dove_(toiletries)"],
+    "Arm_&_Hammer": ["Arm_&_Hammer_(brand)"],
+    "Budweiser": ["Budweiser_(Anheuser-Busch)", "Budweiser_(AB_InBev)"],
+}
+
+# Product series that only become meaningful later, because the page was
+# created out of a shared article (not a new product)
+PRODUCT_FROM = {
+    "Coach_New_York": "2018-05",  # before: one article with Coach, Inc. (now Tapestry)
+    "Meta_Quest": "2022-02",      # line overview page; before: per-model Oculus pages
+}
 
 
 def main() -> None:
@@ -77,9 +99,13 @@ def main() -> None:
         "|".join([c] + OLD_COMPANY_TITLES.get(c, [])) for c in final["company_article"]
     ]
     final["company_from"] = final["ticker"].map(COMPANY_FROM).fillna("")
+    final["product_titles"] = [
+        "|".join([p] + OLD_PRODUCT_TITLES.get(p, [])) for p in final["product_article"]
+    ]
+    final["product_from"] = final["product_article"].map(PRODUCT_FROM).fillna("")
 
     columns = ["ticker", "company", "sector", "company_article", "company_titles",
-               "company_from", "product_article"]
+               "company_from", "product_article", "product_titles", "product_from"]
     final = final[columns].sort_values(["sector", "ticker", "product_article"])
     final.to_csv(MAPPING_DIR / "products_to_companies.csv", index=False)
 

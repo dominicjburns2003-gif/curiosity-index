@@ -17,14 +17,23 @@ Course project, Machine Learning for Factor Investing, emlyon business school (2
 
 ```
 curiosity-index/
-├── src/        Python scripts
-├── data/       downloaded data (CSV files)
-├── charts/     saved charts
-├── LLM_LOG.md  record of AI tool use (required by the brief)
+├── src/
+│   ├── wiki_api.py            shared helpers for Wikimedia (polite requests, daily views)
+│   ├── check_universe.py      automatic checks on a company/product list
+│   ├── prepare_review.py      keep/drop/fix/decide suggestions for the hand check
+│   ├── finalise_universe.py   applies the decisions -> products_to_companies.csv
+│   ├── fetch_pageviews.py     daily views 2017-now for the whole universe
+│   ├── fetch_clickstream.py   clickstream test (Novo Nordisk)
+│   └── chart_novo_pitch.py    slide-1 chart: Novo Nordisk vs. Semaglutide
+├── data/
+│   ├── mapping/               universe draft, checks, review and final list
+│   └── processed/             page views (daily and monthly), clickstream rows
+├── charts/                    saved charts
+├── LLM_LOG.md                 record of AI tool use (required by the brief)
 └── README.md
 ```
 
-## Running step 1
+## Running the pipeline
 
 From this folder:
 
@@ -32,13 +41,14 @@ From this folder:
 python src/fetch_pageviews.py
 ```
 
-It downloads daily page views since 2017 for Novo Nordisk, Semaglutide and the
-"Ozempic" redirect, saves them to `data/pageviews_novo_nordisk.csv` and draws
-`charts/novo_nordisk_attention.png`.
+Downloads daily page views since 2017 for all 68 companies and 140 products in
+`data/mapping/products_to_companies.csv` (renamed pages have their old titles
+added up) and writes `data/processed/pageviews_daily.csv` and
+`data/processed/pageviews_monthly.csv`.
 
 ## Data sources
 
-- Wikimedia Pageviews API (daily page views, from July 2015)
-- Wikipedia clickstream (monthly link clicks) - coming next
-- Wikidata (product to company mapping) - coming next
-- yfinance (stock prices) - coming next
+- Wikimedia Pageviews API (daily page views, from July 2015; we use 2017 onwards)
+- Wikipedia clickstream (monthly link clicks, available from November 2017)
+- yfinance (stock prices)
+- Kenneth French data library (risk factors) - coming next
