@@ -35,6 +35,7 @@ from wiki_api import HEADERS
 FIRST_MONTH = "2017-11"  # earliest file on the dump server
 URL = "https://dumps.wikimedia.org/other/clickstream/{month}/clickstream-enwiki-{month}.tsv.gz"
 PARALLEL_DOWNLOADS = 2
+TIMEOUT = (30, 180)  # seconds to connect, and to wait for the next piece of data
 
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 UNIVERSE_PATH = PROJECT_DIR / "data" / "mapping" / "products_to_companies.csv"
@@ -53,7 +54,7 @@ def available_months() -> list[str]:
 def stream_rows(month: str, company_titles: set[str]) -> list[tuple]:
     """Stream one month's file once and return the clicks into our company pages."""
     rows = []
-    with requests.get(URL.format(month=month), headers=HEADERS, stream=True, timeout=60) as response:
+    with requests.get(URL.format(month=month), headers=HEADERS, stream=True, timeout=TIMEOUT) as response:
         response.raise_for_status()
         with gzip.open(response.raw, mode="rt", encoding="utf-8") as lines:
             for line in lines:
@@ -63,11 +64,12 @@ def stream_rows(month: str, company_titles: set[str]) -> list[tuple]:
     return rows
 
 
-def fetch_month(month: str, company_titles: set[str]) -> None:
-    """Download one month (retrying if the connection drops) and save it."""
+def fetch_month(month: str, company_titles: set[str]) -> bool:
+    """Download one month (retrying if the connection drops) and save it.
+    Returns False if it still failed, so the other months can carry on."""
     out_path = OUT_DIR / f"{month}.csv.gz"
     if out_path.exists():
-        return
+        return True
     # Long downloads sometimes get cut off or time out; start that month again.
     # Errors in the middle of a download come from urllib3 (the library under requests).
     for attempt in range(1, 5):
@@ -76,15 +78,17 @@ def fetch_month(month: str, company_titles: set[str]) -> None:
             break
         except (requests.RequestException, urllib3.exceptions.HTTPError, OSError, EOFError) as error:
             print(f"{month}: download failed ({type(error).__name__}), attempt {attempt} of 4")
-            time.sleep(30 * attempt)
+            time.sleep(60 * attempt)  # give a busy server time to recover
     else:
-        raise RuntimeError(f"{month}: download failed 4 times")
+        print(f"{month}: download failed 4 times, skipping it for now")
+        return False
     data = pd.DataFrame(rows, columns=["month", "prev", "curr", "type", "n"])
     # Write to a temporary name first, so a crash never leaves a half-written file
     tmp_path = out_path.with_suffix(".tmp")
     data.to_csv(tmp_path, index=False, compression="gzip")
     tmp_path.rename(out_path)
     print(f"{month}: kept {len(data):,} rows")
+    return True
 
 
 def main() -> None:
@@ -98,9 +102,13 @@ def main() -> None:
           f"({len(company_titles)} company titles)")
 
     with ThreadPoolExecutor(max_workers=PARALLEL_DOWNLOADS) as pool:
-        # list() makes any error inside a download show up here
-        list(pool.map(lambda m: fetch_month(m, company_titles), todo))
+        # list() makes any other error inside a download show up here
+        succeeded = list(pool.map(lambda m: fetch_month(m, company_titles), todo))
 
+    failed = [m for m, ok in zip(todo, succeeded) if not ok]
+    if failed:
+        # Exit with an error, so a scheduled run is marked as failed
+        sys.exit(f"Failed months (run the script again to retry them): {', '.join(failed)}")
     print(f"Done. Files in {OUT_DIR}")
 
 
