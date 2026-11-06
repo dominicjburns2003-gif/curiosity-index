@@ -36,6 +36,9 @@ is known.
   censored_share      share of those product views whose clicks to the company
                       were 10 or fewer (removed by Wikimedia, counted as 0 here)
 
+Also writes conversion_monthly.csv: the same click-through numbers by the month
+the clicks happened (not lagged), which the app shows in its charts.
+
 Run it from the project folder:
     python src/build_features.py
 """
@@ -152,6 +155,11 @@ def main() -> None:
     # ---- Click-through ------------------------------------------------------
     # Shifted by one month: on the row of month t, only month t-1 is published
     conversion, censored_share = conversion_tables(views)
+    # Also saved by the month the clicks happened (not lagged), for the app's charts
+    display = pd.concat([to_long(conversion.where(company.notna()), "conversion"),
+                         to_long(censored_share.where(company.notna()), "censored_share")], axis=1)
+    display.index.names = ["month", "ticker"]
+    display.dropna(subset=["conversion"]).reset_index().to_csv(DATA_DIR / "conversion_monthly.csv", index=False)
     # Only where the company page itself is usable (e.g. Meta from Dec 2019)
     conversion = conversion.reindex_like(company).where(company.notna()).shift(1)
     censored_share = censored_share.reindex_like(company).where(company.notna()).shift(1)
