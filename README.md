@@ -39,6 +39,7 @@ curiosity-index/
 │   ├── longer_test.py         the same tests over a longer stretch, from 2020
 │   ├── track_record.py        follows the recorded live picks day by day
 │   ├── clickthrough_tests.py  click-through: volatility and level tests
+│   ├── trending.py            this week's biggest jumps in product attention
 │   └── update_all.py          runs every step: what GitHub Actions runs each morning
 ├── .github/workflows/
 │   └── update.yml             daily update at 06:00 UTC, commits new data
@@ -71,6 +72,7 @@ python src/earnings_test.py
 python src/longer_test.py
 python src/track_record.py
 python src/clickthrough_tests.py
+python src/trending.py
 python src/chart_sorts.py
 ```
 

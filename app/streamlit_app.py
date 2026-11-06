@@ -28,6 +28,14 @@ CLICK_COLOUR = "#52514e"  # click-through and price each get their own colour,
 PRICE_COLOUR = "#6250d6"  # so they are never confused with a page
 GRID = "rgba(128,128,128,0.2)"
 DISCLAIMER = "Student research project. Not investment advice."
+# Wikipedia titles must start with a capital letter, so restore the real names
+TITLE_FIXES = {"IPhone": "iPhone", "IPad": "iPad", "IMac": "iMac", "IPod": "iPod"}
+
+
+def pretty(article: str) -> str:
+    """A Wikipedia title as people write the name."""
+    first, _, rest = article.replace("_", " ").partition(" ")
+    return " ".join(filter(None, [TITLE_FIXES.get(first, first), rest]))
 
 SIGNAL_LABELS = {
     "company_abn": "Unusual company attention",
@@ -199,6 +207,7 @@ DATA_FILES = {
     "track_daily": DATA_DIR / "track_record_daily.csv",
     "track_monthly": DATA_DIR / "track_record_monthly.csv",
     "clickthrough": DATA_DIR / "clickthrough_tests_summary.csv",
+    "trending": DATA_DIR / "trending.csv",
 }
 CLICKTHROUGH_PLAN_URL = GITHUB_URL + "/blob/main/docs/clickthrough_tests_plan.md"
 EARNINGS_PLAN_URL = GITHUB_URL + "/blob/main/docs/earnings_test_plan.md"
@@ -246,7 +255,8 @@ st.html(f"""
 </div>
 """)
 
-explorer, results, track, method = st.tabs(["Explorer", "Results", "Track record", "Method and data"])
+explorer, trending_tab, results, track, method = st.tabs(
+    ["Explorer", "Trending", "Results", "Track record", "Method and data"])
 
 # ---- Explorer -------------------------------------------------------------------
 with explorer:
@@ -304,7 +314,7 @@ with explorer:
     for colour, article in zip(COLOURS, order):
         series = pages[pages["article"] == article]
         kind = series["kind"].iloc[0]
-        name = f"{labels[ticker]} – company page" if kind == "company" else article.replace("_", " ")
+        name = f"{labels[ticker]} – company page" if kind == "company" else pretty(article)
         fig.add_trace(go.Scatter(
             x=series["month"], y=series["views"], name=name, mode="lines",
             line=dict(color=colour, width=3 if kind == "company" else 2),
@@ -348,6 +358,50 @@ with explorer:
             "- **Bottom:** daily share price, adjusted for splits and dividends.\n"
             "- Hover (or tap, on a phone) anywhere to see all three at the same date. Seeing them move together does "
             "**not** show that one causes the other: that is what the **Results** tab tests."
+        )
+
+# ---- Trending ---------------------------------------------------------------------
+with trending_tab:
+    trend = data["trending"]
+
+    def trend_rows(df: pd.DataFrame) -> list[list[str]]:
+        return [[f'{pretty(r.product)}<span class="sub">{r.company} ({r.ticker})</span>',
+                 f"{r.views_week:,.0f}", f"{r.change:+.0%}", f"{r.company_change:+.0%}",
+                 f"{r.price_change:+.1%}"] for r in df.itertuples()]
+
+    headers = ["Product", "Views this week", "vs a usual week", "Company page", "Share price"]
+    spy_week = (trend["price_change"] - trend["price_vs_market"]).iloc[0]
+    week = f"{pd.Timestamp(trend['week_start'].iloc[0]):%-d %b} to {pd.Timestamp(trend['week_end'].iloc[0]):%-d %b %Y}"
+    with st.container(key="card_trending"):
+        st.subheader("Trending products this week")
+        st.markdown(
+            f"Product pages getting much more attention than usual: views from {week}, against the "
+            f"average week over the 8 weeks before. The company page column shows whether interest "
+            f"in the company itself is rising too, and the last column how its shares moved over "
+            f"the same days."
+        )
+        st.html(html_table(headers, trend_rows(trend.head(12)), numeric={1, 2, 3, 4}))
+        st.caption(f"Share prices from the close on {pd.Timestamp(trend['price_from'].iloc[0]):%-d %b} to "
+                   f"{pd.Timestamp(trend['price_to'].iloc[0]):%-d %b}; the S&P 500 moved {spy_week:+.1%} over "
+                   f"the same days. Only the {len(trend)} product pages with at least 2,000 views in a usual "
+                   f"week are included. Seasonal events show up too (for example sweets around Halloween).")
+
+    with st.container(key="card_cooling"):
+        st.subheader("Cooling off")
+        st.html(html_table(headers, trend_rows(trend.tail(6).iloc[::-1]), numeric={1, 2, 3, 4}))
+
+    with st.container(key="card_trend_read"):
+        st.subheader("How to read this")
+        st.markdown(
+            "- **A starting point for research, not a buy list.** A product taking off is a reason "
+            "to look at the company, not proof that its shares will rise.\n"
+            "- **Product rising, company flat** (for example WhatsApp while Meta's page is quiet) "
+            "usually means consumer interest in the product. **Company rising more than its "
+            "products** more often means news about the company itself, good or bad.\n"
+            "- **Watch expectations.** This project's earnings test found that companies whose "
+            "products drew much more attention than a year earlier beat analysts' estimates *less* "
+            "often: analysts may already be expecting a lot.\n"
+            "- Updated every morning. Not investment advice."
         )
 
 # ---- Results ----------------------------------------------------------------------

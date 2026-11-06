@@ -16,6 +16,7 @@ Runs every step of the pipeline in order, so the data, results and charts
  10. the longer test from 2020                 longer_test.py
  11. the live track record                     track_record.py
  12. the final click-through tests             clickthrough_tests.py
+ 13. this week's trending products             trending.py
 
 If a step fails (e.g. Yahoo Finance is down), the later steps still run on
 the last good data, and the update ends with an error so the failure shows
@@ -47,6 +48,7 @@ STEPS = [
     ["longer_test.py"],
     ["track_record.py"],
     ["clickthrough_tests.py"],
+    ["trending.py"],
 ]
 
 
