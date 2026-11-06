@@ -54,7 +54,7 @@ CHART_CONFIG = {"displayModeBar": False, "scrollZoom": False}
 PAGE_CSS = """
 <style>
 [data-testid="stHeader"] { background: transparent; }
-[data-testid="stMainBlockContainer"] { max-width: 1180px; padding-top: 1.2rem; padding-bottom: 2rem; }
+[data-testid="stMainBlockContainer"] { max-width: 1180px; padding-top: 3.4rem; padding-bottom: 2rem; }
 .ci-hero { background: linear-gradient(135deg, #0f1b2d 0%, #16325a 60%, #1f4f8f 100%);
            color: #fff; border-radius: 16px; padding: 44px 44px 32px; }
 .ci-eyebrow { font-size: .76rem; letter-spacing: .12em; text-transform: uppercase;
