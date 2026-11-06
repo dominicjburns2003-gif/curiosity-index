@@ -2,3 +2,5 @@ pandas
 matplotlib
 requests
 yfinance
+streamlit
+plotly
