@@ -1,0 +1,50 @@
+# Curiosity Index - daily update.
+# Every morning GitHub runs src/update_all.py on one of its own computers and
+# commits the new data, results and charts. Streamlit Cloud sees the commit and
+# the live app updates by itself. It can also be started by hand from the
+# repository's Actions tab ("Run workflow").
+
+name: Daily update
+
+on:
+  schedule:
+    - cron: "0 6 * * *"  # 06:00 UTC (07:00 in Lyon in winter), after Wikimedia publishes yesterday's views
+  workflow_dispatch:
+
+permissions:
+  contents: write  # allows the run to commit the updated data back to the repository
+
+concurrency:
+  group: daily-update  # never two updates at once
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install packages
+        run: pip install -r requirements.txt
+
+      - name: Run the pipeline
+        run: python src/update_all.py
+
+      - name: Commit the new data
+        if: always()  # save whatever steps succeeded, even if one failed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/processed charts
+          if git diff --staged --quiet; then
+            echo "Nothing changed"
+          else
+            git commit -m "Daily data update $(date -u +%Y-%m-%d)"
+            git pull --rebase
+            git push
+          fi

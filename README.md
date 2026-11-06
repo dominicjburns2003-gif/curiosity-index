@@ -30,9 +30,12 @@ curiosity-index/
 │   ├── fetch_market_cap.py    monthly market cap from cleaned share counts
 │   ├── build_features.py      the monthly panel: attention features, controls, targets
 │   ├── backtest.py            portfolio sorts (3 groups), long-short t-stats, alpha
-│   ├── walk_forward.py        out-of-sample model, three versions compared, net of costs
 │   ├── chart_sorts.py         chart of the sorts
-│   └── chart_novo_pitch.py    pitch chart: Novo Nordisk vs. Semaglutide
+│   ├── chart_novo_pitch.py    pitch chart: Novo Nordisk vs. Semaglutide
+│   ├── walk_forward.py        out-of-sample model, three versions compared, net of costs
+│   └── update_all.py          runs every step: what GitHub Actions runs each morning
+├── .github/workflows/
+│   └── update.yml             daily update at 06:00 UTC, commits new data
 ├── app/
 │   └── streamlit_app.py       the web app
 ├── data/
@@ -56,6 +59,12 @@ python src/build_features.py
 python src/backtest.py
 python src/walk_forward.py
 python src/chart_sorts.py
+```
+
+Or all of them at once (what GitHub Actions runs every morning):
+
+```
+python src/update_all.py
 ```
 
 Each script says at the top what it reads and writes. The clickstream download

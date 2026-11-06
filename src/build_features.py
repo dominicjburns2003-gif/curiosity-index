@@ -68,6 +68,9 @@ def conversion_tables(views: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     """
     universe = pd.read_csv(UNIVERSE_PATH, keep_default_na=False)
     files = sorted(CLICKSTREAM_DIR.glob("*.csv.gz"))
+    if not files:  # no clickstream history yet: the click-through columns stay empty
+        empty = pd.DataFrame(index=pd.Index([], name="month"), columns=universe["ticker"].unique(), dtype=float)
+        return empty, empty
     clicks = pd.concat([pd.read_csv(f) for f in files])
     clicks = clicks[clicks["type"] == "link"]  # clicks on a link from another article
 

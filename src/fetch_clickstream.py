@@ -18,6 +18,8 @@ time, which is what Wikimedia's dump servers allow.
 Run it from the project folder:
     python src/fetch_clickstream.py                    # every month, Nov 2017 onwards
     python src/fetch_clickstream.py 2024-09 2026-10    # only these months
+    python src/fetch_clickstream.py --new-only         # only months newer than the
+                                                       # latest saved one (daily update)
 """
 
 from concurrent.futures import ThreadPoolExecutor
@@ -96,7 +98,16 @@ def main() -> None:
     company_titles = {t for titles in universe["company_titles"] for t in titles.split("|")}
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    months = sys.argv[1:] or available_months()
+    if sys.argv[1:] == ["--new-only"]:
+        saved = sorted(p.name[:7] for p in OUT_DIR.glob("*.csv.gz"))
+        if not saved:
+            # The full history is downloaded by hand once (it takes hours);
+            # the daily update only adds new months on top of it
+            print("No clickstream history saved yet: run without --new-only first")
+            return
+        months = [m for m in available_months() if m > saved[-1]]
+    else:
+        months = sys.argv[1:] or available_months()
     todo = [m for m in months if not (OUT_DIR / f"{m}.csv.gz").exists()]
     print(f"{len(months)} months requested, {len(todo)} still to download "
           f"({len(company_titles)} company titles)")
