@@ -13,7 +13,6 @@ from pathlib import Path
 
 import pandas as pd
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 import streamlit as st
 
 PROJECT_DIR = Path(__file__).resolve().parent.parent
@@ -65,10 +64,10 @@ ticker = st.selectbox("Company", list(labels), index=default, format_func=labels
 
 pages = views[views["ticker"] == ticker].copy()
 pages["month"] = pd.to_datetime(pages["month"])
-# Attention on top, share price underneath, on the same timeline (two charts,
-# not two y-axes on one, which would let the scales suggest a link)
-fig = make_subplots(rows=2, cols=1, shared_xaxes=True, row_heights=[0.62, 0.38],
-                    vertical_spacing=0.06)
+# Attention on top, share price underneath: two charts stacked (not two
+# y-axes on one, which would let the scales suggest a link), sharing ONE date
+# axis, so the hover line and tooltip cover both at the same date
+fig = go.Figure()
 order = list(pages.loc[pages["kind"] == "company", "article"].unique()) + \
         sorted(pages.loc[pages["kind"] == "product", "article"].unique())
 for colour, article in zip(COLOURS, order):
@@ -78,20 +77,22 @@ for colour, article in zip(COLOURS, order):
     fig.add_trace(go.Scatter(
         x=series["month"], y=series["views"], name=name, mode="lines",
         line=dict(color=colour, width=3 if kind == "company" else 2),
-        hovertemplate="%{x|%b %Y}: %{y:,.0f} views<extra>" + name + "</extra>",
-    ), row=1, col=1)
+        hovertemplate="%{y:,.0f} views<extra>" + name + "</extra>",
+    ))
 price = prices[ticker].loc[str(pages["month"].min().year):].dropna()
 fig.add_trace(go.Scatter(
     x=price.index, y=price, name=f"{ticker} share price", mode="lines",
     line=dict(color=PRICE_COLOUR, width=1.5),
-    hovertemplate="%{x|%d %b %Y}: $%{y:,.2f}<extra>Share price</extra>",
-), row=2, col=1)
+    hovertemplate="$%{y:,.2f}<extra>Share price</extra>", yaxis="y2",
+))
 grid = "rgba(128,128,128,0.2)"
-fig.update_yaxes(title_text="Views per month (log)", type="log", dtick=1, gridcolor=grid, row=1, col=1)
-fig.update_yaxes(title_text="Share price ($)", gridcolor=grid, row=2, col=1)
-fig.update_xaxes(showgrid=False)
 fig.update_layout(
-    hovermode="x unified", height=620,
+    yaxis=dict(title="Views per month (log)", type="log", dtick=1, gridcolor=grid, domain=[0.4, 1]),
+    yaxis2=dict(title="Share price ($)", gridcolor=grid, domain=[0, 0.34]),
+    xaxis=dict(showgrid=False, anchor="y2", hoverformat="%b %Y",
+               showspikes=True, spikemode="across", spikesnap="cursor",
+               spikedash="dot", spikethickness=1, spikecolor="#888"),
+    hovermode="x unified", hoversubplots="axis", height=620,
     legend=dict(orientation="h", y=1.02, yanchor="bottom", x=0), margin=dict(l=10, r=10, t=40, b=10),
 )
 st.plotly_chart(fig, width="stretch")
