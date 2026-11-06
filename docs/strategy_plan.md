@@ -174,3 +174,24 @@ period or the group size, though none is statistically significant (largest
 whole-period t: 1.4, for 3 months). Holding for 3 months cuts costs from about
 0.10% to 0.04% a month. The S&P 500 made $179 over the same period. As planned,
 these do not replace the chosen version.
+
+## Addendum: a longer test starting in 2020 (written on 6 Nov 2026, before running it)
+
+**Why:** the walk-forward test starts in January 2022, giving 57 test months.
+Starting in January 2020 gives about 81, which makes the t-statistics more
+reliable. The cost is that the first models learn from only about 2½ years
+(mid-2017 to late 2019), and the test then includes the COVID crash.
+
+**The test:** exactly the same models and settings, with the first test year
+moved from 2022 to 2020 (trained on data to November 2019, predicting 2020,
+then retrained every January as before):
+
+1. The chosen strategy (A: tree model, top third, 1 month, no filter), in equal
+   amounts vs the 68-company average, and weighted by size (15% cap) vs the 68
+   weighted by size; both also vs the S&P 500.
+2. The three long-short research versions (company only, + products,
+   + click-through).
+
+Reported once, for January 2020 to the latest month, whatever the result. It
+does not change the chosen version or the main results, which keep starting in
+2022; it shows whether they hold over a longer stretch.
