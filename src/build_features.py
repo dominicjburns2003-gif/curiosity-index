@@ -25,7 +25,16 @@ Targets (section 7.2), all over month t+1:
   rank_next           rank of ret_next among the companies that month (0 to 1)
   vol_next            volatility of daily returns (annualised)
 
-Click-through (conversion) features are added once the clickstream is final.
+Click-through features (clickstream), lagged one month: the clickstream for
+month t is published after t ends, so on the row of month t only month t-1
+is known.
+  conversion          share of the company's product-page readers who clicked
+                      through to the company page, in month t-1
+  conversion_change   conversion in t-1 minus conversion in t-2
+  conversion_vs_normal  log(conversion in t-1 / its average over t-7 to t-2):
+                      high = more product readers than usual go on to the company
+  censored_share      share of those product views whose clicks to the company
+                      were 10 or fewer (removed by Wikimedia, counted as 0 here)
 
 Run it from the project folder:
     python src/build_features.py
@@ -40,6 +49,8 @@ WINDOW = 6  # months of history that "normal" attention is measured against
 
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_DIR / "data" / "processed"
+UNIVERSE_PATH = PROJECT_DIR / "data" / "mapping" / "products_to_companies.csv"
+CLICKSTREAM_DIR = DATA_DIR / "clickstream"
 
 
 def trailing_growth(wide: pd.DataFrame) -> pd.DataFrame:
@@ -47,6 +58,42 @@ def trailing_growth(wide: pd.DataFrame) -> pd.DataFrame:
     1 is added to both, so growth from a page with no views yet is finite."""
     past_mean = wide.shift(1).rolling(WINDOW).mean()
     return np.log((wide + 1) / (past_mean + 1))
+
+
+def conversion_tables(views: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Monthly product -> company conversion per company, and the censored share.
+
+    Both are months x tickers, for the month the clicks happened (not lagged).
+    A month without a clickstream file is missing, never zero.
+    """
+    universe = pd.read_csv(UNIVERSE_PATH, keep_default_na=False)
+    files = sorted(CLICKSTREAM_DIR.glob("*.csv.gz"))
+    clicks = pd.concat([pd.read_csv(f) for f in files])
+    clicks = clicks[clicks["type"] == "link"]  # clicks on a link from another article
+
+    # Clicks from each product page (any of its titles) to its company page (any title)
+    pair_clicks = {}
+    for r in universe.itertuples():
+        rows = clicks[clicks["prev"].isin(r.product_titles.split("|"))
+                      & clicks["curr"].isin(r.company_titles.split("|"))]
+        pair_clicks[r.product_article] = rows.groupby("month")["n"].sum()
+    months = [f.name[:7] for f in files]
+    pair_clicks = pd.DataFrame(pair_clicks).reindex(months)
+    censored = pair_clicks.isna()  # no row = 10 clicks or fewer that month
+    pair_clicks = pair_clicks.fillna(0)
+
+    # Clickstream counts every reader, so compare with the raw (uncapped) views
+    product_views = views[views["kind"] == "product"].pivot(index="month", columns="article", values="views_raw")
+    product_views = product_views.reindex(index=months, columns=pair_clicks.columns)
+    usable = product_views > 0  # the product page existed (and is usable) that month
+    ticker_of = universe.set_index("product_article")["ticker"]
+
+    total_clicks = pair_clicks.where(usable).T.groupby(ticker_of).sum(min_count=1).T
+    total_views = product_views.where(usable).T.groupby(ticker_of).sum(min_count=1).T
+    censored_views = product_views.where(usable & censored).T.groupby(ticker_of).sum(min_count=1).T
+    conversion = total_clicks / total_views
+    censored_share = (censored_views.reindex_like(total_views).fillna(0) / total_views)
+    return conversion, censored_share
 
 
 def to_long(wide: pd.DataFrame, name: str) -> pd.Series:
@@ -99,6 +146,17 @@ def main() -> None:
         vol = vol.iloc[:-1]  # the current month is not finished
     log_mcap = np.log(mcap)
 
+    # ---- Click-through ------------------------------------------------------
+    # Shifted by one month: on the row of month t, only month t-1 is published
+    conversion, censored_share = conversion_tables(views)
+    # Only where the company page itself is usable (e.g. Meta from Dec 2019)
+    conversion = conversion.reindex_like(company).where(company.notna()).shift(1)
+    censored_share = censored_share.reindex_like(company).where(company.notna()).shift(1)
+    conversion_change = conversion - conversion.shift(1)
+    past_conversion = conversion.shift(1).rolling(WINDOW).mean()
+    # Undefined when every click was below the threshold (conversion 0): missing
+    conversion_vs_normal = np.log(conversion.where(conversion > 0) / past_conversion.where(past_conversion > 0))
+
     # ---- Targets: month t+1, placed on the row of month t -------------------
     market = factors["Mkt-RF"] + factors["RF"]
     ret_next = returns.shift(-1)
@@ -115,6 +173,10 @@ def main() -> None:
         to_long(momentum, "momentum"),
         to_long(log_mcap, "log_mcap"),
         to_long(vol, "vol"),
+        to_long(conversion, "conversion"),
+        to_long(conversion_change, "conversion_change"),
+        to_long(conversion_vs_normal, "conversion_vs_normal"),
+        to_long(censored_share, "censored_share"),
         to_long(ret_next, "ret_next"),
         to_long(ret_vs_mkt_next, "ret_vs_mkt_next"),
         to_long(rank_next, "rank_next"),
