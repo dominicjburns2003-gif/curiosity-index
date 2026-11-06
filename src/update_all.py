@@ -13,6 +13,7 @@ Runs every step of the pipeline in order, so the data, results and charts
   7. the out-of-sample model             walk_forward.py
   8. the long-only strategy and live picks  strategy.py
   9. earnings dates and the earnings test     fetch_earnings.py, earnings_test.py
+ 10. the longer test from 2020                 longer_test.py
 
 If a step fails (e.g. Yahoo Finance is down), the later steps still run on
 the last good data, and the update ends with an error so the failure shows
@@ -41,6 +42,7 @@ STEPS = [
     ["strategy.py"],
     ["fetch_earnings.py"],
     ["earnings_test.py"],
+    ["longer_test.py"],
 ]
 
 

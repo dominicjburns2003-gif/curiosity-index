@@ -113,11 +113,12 @@ def size_weights(market_caps: pd.Series) -> pd.Series:
 
 
 def portfolio(df: pd.DataFrame, score: pd.Series, use_filter: bool, hold: int,
-              by_size: bool = False, share: float = 1 / 3) -> pd.DataFrame:
+              by_size: bool = False, share: float = 1 / 3,
+              first_year: int = FIRST_TEST_YEAR) -> pd.DataFrame:
     """Monthly returns of buying the top `share` (a third) on `score`, held
     `hold` months, in equal amounts or (by_size) in proportion to market cap."""
     data = df.assign(score=score)
-    data = data[data["month"] >= f"{FIRST_TEST_YEAR}-01"]
+    data = data[data["month"] >= f"{first_year}-01"]
     months = sorted(data["month"].unique())
     cohorts, weights, rows = [], pd.Series(dtype=float), []
     for month in months:

@@ -195,3 +195,24 @@ then retrained every January as before):
 Reported once, for January 2020 to the latest month, whatever the result. It
 does not change the chosen version or the main results, which keep starting in
 2022; it shows whether they hold over a longer stretch.
+
+### Longer test results (added on 6 Nov 2026, after running `src/longer_test.py` once)
+
+January 2020 to September 2026, 81 test months, after costs:
+
+| Test | Result | t | $100 became |
+|---|---|---|---|
+| A, equal amounts, vs the 68-company average | +0.13%/month | 0.6 | $237 vs $218 (S&P 500 $258) |
+| A by size, vs the 68 by size | +0.14%/month | 0.6 | $353 vs $325 (S&P 500 $258) |
+| Long-short: company attention only | −0.17%/month | −0.4 | |
+| Long-short: + product attention | +0.23%/month | 0.6 | |
+| Long-short: + click-through | +0.06%/month | 0.2 | |
+
+- **The same pattern holds over the longer period**: the strategy beats its
+  own benchmark in both forms, product attention beats company attention
+  alone, and click-through adds nothing.
+- **But the edge is smaller and no more significant**: 2020–2021 (COVID, with
+  models trained on only 2½ years) diluted it. More months did not raise the
+  t-statistics, which suggests the edge, if real, is small.
+- Equal amounts still trail the S&P 500; weighted by size the picks beat it,
+  again mostly because of the companies tracked ($325 for the 68 by size).

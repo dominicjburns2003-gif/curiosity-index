@@ -64,11 +64,11 @@ def rank_within_month(panel: pd.DataFrame, columns: list[str]) -> pd.DataFrame:
     return panel[["month", "ticker", "rank_next", "ret_next", "ret_vs_mkt_next"]].join(ranked)
 
 
-def walk_forward(data: pd.DataFrame, features: list[str]) -> pd.DataFrame:
+def walk_forward(data: pd.DataFrame, features: list[str], first_year: int = FIRST_TEST_YEAR) -> pd.DataFrame:
     """Out-of-sample predictions, retraining once a year on the past only."""
     predictions = []
     last_year = int(data["month"].max()[:4])
-    for year in range(FIRST_TEST_YEAR, last_year + 1):
+    for year in range(first_year, last_year + 1):
         # Trained at the end of the previous year: a row's target is the next
         # month's return, so rows up to November are the last ones fully known
         train = data[(data["month"] <= f"{year - 1}-11") & data["rank_next"].notna()]

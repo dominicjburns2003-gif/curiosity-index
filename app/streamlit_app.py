@@ -195,6 +195,7 @@ DATA_FILES = {
     "strategy_monthly": DATA_DIR / "strategy_monthly.csv",
     "live_picks": DATA_DIR / "live_picks_log.csv",
     "earnings": DATA_DIR / "earnings_test_summary.csv",
+    "longer": DATA_DIR / "longer_test_summary.csv",
 }
 EARNINGS_PLAN_URL = GITHUB_URL + "/blob/main/docs/earnings_test_plan.md"
 PLAN_URL = GITHUB_URL + "/blob/main/docs/strategy_plan.md"
@@ -533,6 +534,15 @@ with results:
             "buying only the top quarter, or both. All beat the average company in both periods, "
             "so the small edge does not depend on these choices. Holding for 3 months also cuts "
             "trading costs from about 0.10% to 0.04% a month."
+        )
+        longer = data["longer"].set_index("version")
+        equal = longer.loc["A, equal amounts (vs 68 equal)"]
+        st.markdown(
+            f"- **Longer test from {pd.Period(equal['first_month']):%B %Y}** ({int(equal['months'])} "
+            f"months, also planned first): the same pattern, with a smaller edge: "
+            f"{equal['result'] * 100:+.2f}% a month above the average company (t = {equal['t_stat']:.1f}). "
+            f"Product attention still beats company attention alone, and click-through still adds "
+            f"nothing. More months did not make the result more certain, so the edge, if real, is small."
         )
 
     with st.container(key="card_earnings"):
