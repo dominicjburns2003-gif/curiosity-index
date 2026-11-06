@@ -139,3 +139,21 @@ whether the signal still adds value when the portfolio is built that way.
   **most of that lead comes from the companies tracked**: holding all 68 by
   size made $193. The signal itself added about $8 per $100 (t 0.4).
 - The picks **lagged in 2022–24** and pulled ahead only in 2025–26.
+
+## Addendum: robustness checks on the chosen version (written on 6 Nov 2026, before running them)
+
+**Why:** to see whether the chosen version's small edge depends on two
+arbitrary choices, the holding period (1 month) and the group size (top third).
+Suggested by Dominic.
+
+**The checks**, all with the chosen version's picks (A: tree model, no filter,
+equal amounts), compared with the 68-company average after 0.1% costs:
+
+1. Held for **3 months** (an equal mix of the last 3 months' picks), top third.
+2. Held for 1 month, **top quarter** (17 companies instead of 23).
+3. Held for **3 months**, **top quarter**.
+
+**These do not replace the chosen version**: it was already chosen by the fixed
+rule. They are reported for both periods, once, whatever the result. If the
+edge is similar across them, the signal is robust; if it swings a lot, it is
+fragile.
