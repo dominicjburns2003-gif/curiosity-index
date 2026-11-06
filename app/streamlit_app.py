@@ -47,11 +47,11 @@ st.markdown(
 st.info("Early version, still being built. The live rankings and the full out-of-sample "
         "backtest come later.", icon="🚧")
 
-c1, c2, c3, c4 = st.columns(4)
+c1, c2, c3 = st.columns(3)
 c1.metric("Companies", universe["ticker"].nunique())
 c2.metric("Product pages", len(universe))
 c3.metric("Months of data", views["month"].nunique())
-c4.metric("Page views up to", pd.Timestamp(last_day).strftime("%d %b %Y"))
+st.caption(f"Page views up to {pd.Timestamp(last_day):%-d %B %Y}.")
 
 # ---- Attention explorer -------------------------------------------------------
 st.header("Attention explorer")

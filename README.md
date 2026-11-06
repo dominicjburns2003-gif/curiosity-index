@@ -13,6 +13,8 @@ beyond company attention and standard risk factors?
 
 Course project, Machine Learning for Factor Investing, emlyon business school (2026).
 
+**Live app:** https://curiosity-index.streamlit.app/ (early version)
+
 ## Project structure
 
 ```
@@ -22,12 +24,19 @@ curiosity-index/
 │   ├── check_universe.py      automatic checks on a company/product list
 │   ├── prepare_review.py      keep/drop/fix/decide suggestions for the hand check
 │   ├── finalise_universe.py   applies the decisions -> products_to_companies.csv
-│   ├── fetch_pageviews.py     daily views 2017-now for the whole universe
-│   ├── fetch_clickstream.py   clickstream test (Novo Nordisk)
-│   └── chart_novo_pitch.py    slide-1 chart: Novo Nordisk vs. Semaglutide
+│   ├── fetch_pageviews.py     daily views 2017-now, monthly totals with spikes capped
+│   ├── fetch_clickstream.py   clicks into every company page, Nov 2017-now
+│   ├── fetch_prices.py        share prices, monthly returns, Fama-French factors
+│   ├── fetch_market_cap.py    monthly market cap from cleaned share counts
+│   ├── build_features.py      the monthly panel: attention features, controls, targets
+│   ├── backtest.py            portfolio sorts (3 groups), long-short t-stats, alpha
+│   ├── chart_sorts.py         chart of the sorts
+│   └── chart_novo_pitch.py    pitch chart: Novo Nordisk vs. Semaglutide
+├── app/
+│   └── streamlit_app.py       the web app
 ├── data/
 │   ├── mapping/               universe draft, checks, review and final list
-│   └── processed/             page views (daily and monthly), clickstream rows
+│   └── processed/             page views, clickstream, prices, panel, results
 ├── charts/                    saved charts
 ├── LLM_LOG.md                 record of AI tool use (required by the brief)
 └── README.md
@@ -35,20 +44,30 @@ curiosity-index/
 
 ## Running the pipeline
 
-From this folder:
+From this folder, in this order:
 
 ```
 python src/fetch_pageviews.py
+python src/fetch_clickstream.py
+python src/fetch_prices.py
+python src/fetch_market_cap.py
+python src/build_features.py
+python src/backtest.py
+python src/chart_sorts.py
 ```
 
-Downloads daily page views since 2017 for all 68 companies and 140 products in
-`data/mapping/products_to_companies.csv` (renamed pages have their old titles
-added up) and writes `data/processed/pageviews_daily.csv` and
-`data/processed/pageviews_monthly.csv`.
+Each script says at the top what it reads and writes. The clickstream download
+takes several hours the first time; after that it only fetches new months.
+
+To run the app on your own computer:
+
+```
+streamlit run app/streamlit_app.py
+```
 
 ## Data sources
 
 - Wikimedia Pageviews API (daily page views, from July 2015; we use 2017 onwards)
 - Wikipedia clickstream (monthly link clicks, available from November 2017)
-- yfinance (stock prices)
-- Kenneth French data library (risk factors) - coming next
+- yfinance (stock prices and share counts for market cap)
+- Kenneth French data library (Fama-French 5 factors and momentum)
