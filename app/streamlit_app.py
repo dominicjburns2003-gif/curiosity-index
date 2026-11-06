@@ -43,7 +43,11 @@ VERSION_LABELS = {
     "clicks": "3. + Click-through",
 }
 
-st.set_page_config(page_title="Curiosity Index", page_icon="🔎", layout="wide")
+st.set_page_config(page_title="Curiosity Index", page_icon=":material/query_stats:", layout="wide")
+
+# Charts: no zoom or pan, so touching a chart on a phone shows the values
+# instead of zooming in; and no floating toolbar
+CHART_CONFIG = {"displayModeBar": False, "scrollZoom": False}
 
 DATA_FILES = {
     "universe": PROJECT_DIR / "data" / "mapping" / "products_to_companies.csv",
@@ -78,23 +82,19 @@ universe, views, prices = data["universe"], data["views"], data["prices"]
 last_day = pd.Timestamp(data["daily"])
 
 # ---- Header -------------------------------------------------------------------
-st.title("🔎 Curiosity Index")
-st.markdown("##### Does public curiosity about a company's *products* tell us anything about its stock?")
+st.title("Curiosity Index")
+st.markdown("Wikipedia attention to US companies and their products, and whether it predicts "
+            "stock returns.")
+st.caption(f"Updated daily  ·  Data to {last_day:%-d %B %Y}  ·  {universe['ticker'].nunique()} "
+           f"companies  ·  {len(universe)} products  ·  Preliminary results")
 st.markdown(
-    f":blue-badge[:material/autorenew: Updated daily] "
-    f":gray-badge[Data to {last_day:%-d %b %Y}] "
-    f":gray-badge[{universe['ticker'].nunique()} US companies] "
-    f":gray-badge[{len(universe)} products] "
-    f":orange-badge[:material/construction: Early version]"
-)
-st.markdown(
-    "Every day this site tracks English Wikipedia at three levels: views of each **company's** "
-    "page, views of its **products'** pages (Ozempic, iPhone, Barbie…), and the share of product "
-    "readers who **click through** to the company. Then it tests whether any of it predicts the "
-    "next month's share price."
+    "The index tracks English Wikipedia at three levels: views of each company's page, views of "
+    "its products' pages (for example Ozempic, iPhone or Barbie), and the share of product readers "
+    "who click through to the company's page. It then tests whether these measures help predict "
+    "the following month's returns."
 )
 
-explorer, results, method = st.tabs(["📈 Explorer", "🧪 Results", "📖 Method & data"])
+explorer, results, method = st.tabs(["Explorer", "Results", "Method and data"])
 
 # ---- Explorer -------------------------------------------------------------------
 with explorer:
@@ -176,9 +176,11 @@ with explorer:
                    spikedash="dot", spikethickness=1, spikecolor="#888"),
         hovermode="x unified", hoversubplots="axis", height=720,
         legend=dict(orientation="h", y=1.02, yanchor="bottom", x=0),
-        margin=dict(l=10, r=10, t=40, b=10), plot_bgcolor="rgba(0,0,0,0)",
+        margin=dict(l=10, r=10, t=40, b=10), plot_bgcolor="rgba(0,0,0,0)", dragmode=False,
     )
-    st.plotly_chart(fig, width="stretch")
+    fig.update_xaxes(fixedrange=True)
+    fig.update_yaxes(fixedrange=True)
+    st.plotly_chart(fig, width="stretch", config=CHART_CONFIG)
 
     with st.expander("How to read this chart"):
         st.markdown(
@@ -189,7 +191,7 @@ with explorer:
             "who clicked a link to the company's own page. Months with 10 clicks or fewer are "
             "hidden by Wikipedia, so they count as zero here.\n"
             "- **Bottom:** daily share price, adjusted for splits and dividends.\n"
-            "- Hover anywhere to see all three at the same date. Seeing them move together does "
+            "- Hover (or tap, on a phone) anywhere to see all three at the same date. Seeing them move together does "
             "**not** show that one causes the other: that is what the **Results** tab tests."
         )
     st.caption(DISCLAIMER)
@@ -219,9 +221,11 @@ with results:
     bars.update_layout(
         xaxis=dict(title="High group minus low group, % a month", gridcolor=GRID, zeroline=False),
         yaxis=dict(autorange="reversed"), height=330, margin=dict(l=10, r=10, t=10, b=10),
-        plot_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)", dragmode=False,
     )
-    st.plotly_chart(bars, width="stretch")
+    bars.update_xaxes(fixedrange=True)
+    bars.update_yaxes(fixedrange=True)
+    st.plotly_chart(bars, width="stretch", config=CHART_CONFIG)
     with st.expander("See the low, middle and high groups for each signal"):
         st.image(str(PROJECT_DIR / "charts" / "sorts_next_month_returns.png"), width="stretch")
 

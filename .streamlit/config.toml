@@ -14,3 +14,6 @@ baseRadius = "0.6rem"
 
 [browser]
 gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"  # hide Streamlit's developer menu for visitors
