@@ -106,3 +106,24 @@ average of the 68 companies (t-statistic in brackets):
   very large technology companies drove the index; the 68 companies are
   equally weighted, so they are compared with their own average first.
 
+
+## Addendum: size-weighted version (written on 6 Nov 2026, before running it)
+
+**Why:** every version above lost to the S&P 500 over 2022–2024, mainly because
+the S&P 500 is weighted by company size and was driven by a few very large
+technology companies, while our strategy and benchmark weight every company
+equally. Most funds weight by size, so it is a fair question in its own right
+whether the signal still adds value when the portfolio is built that way.
+
+**The test (one version, no choosing):**
+
+- **Same picks as the chosen version (A)**: the top third of companies by the
+  tree model each month, held for 1 month, no filter.
+- **Weighted by market cap** at the end of the month, with **no company above
+  15%** (anything above is shared out among the others in proportion to their
+  size). 15% is about the largest single weight among the 68 companies.
+- **Benchmark:** all 68 companies weighted the same way (market cap, 15% cap).
+  Also compared with the S&P 500.
+- **Costs:** 0.1% of every amount traded, as before.
+- **Reported for both periods** (2022–24 and 2025–26), once, whatever the
+  result. It does not replace the chosen version; it is shown alongside it.
