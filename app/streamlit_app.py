@@ -59,7 +59,9 @@ def verdict(t: float) -> tuple[str, str]:
         return "Likely real", "yes"
     if t >= 1.5:
         return "Promising, not proven", "maybe"
-    return "No clear effect", "no"
+    if t >= 0.5:
+        return "Positive but weak", "weak"
+    return "No effect", "no"
 
 
 def chip(t: float) -> str:
@@ -129,6 +131,10 @@ PAGE_CSS = """
 .ci-chip { white-space: nowrap; font-size: .8rem; font-weight: 600; padding: 5px 12px; border-radius: 999px; }
 .ci-chip.no { background: #eef1f5; color: #4a5568; }
 .ci-chip.maybe { background: #fdf1dc; color: #8a5a00; }
+.ci-chip.weak { background: #e6eef8; color: #1f4f8f; }
+.ci-picks { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 6px 18px;
+            margin: 8px 0 12px; font-size: .9rem; }
+.ci-picks span { color: #6b7280; font-size: .82rem; }
 .ci-chip.yes { background: #e3f3e8; color: #1d6b3a; }
 
 /* Results tables */
@@ -185,7 +191,12 @@ DATA_FILES = {
     "sorts": DATA_DIR / "sorts_summary.csv",
     "model": DATA_DIR / "walk_forward_summary.csv",
     "model_monthly": DATA_DIR / "walk_forward_monthly.csv",
+    "strategy": DATA_DIR / "strategy_summary.csv",
+    "strategy_monthly": DATA_DIR / "strategy_monthly.csv",
+    "live_picks": DATA_DIR / "live_picks_log.csv",
 }
+PLAN_URL = GITHUB_URL + "/blob/main/docs/strategy_plan.md"
+DEV_END = "2024-12"  # last month of the development period (see src/strategy.py)
 
 
 @st.cache_data
@@ -335,127 +346,160 @@ with explorer:
 # ---- Results ----------------------------------------------------------------------
 with results:
     model = data["model"].set_index("version")
-    model_monthly = data["model_monthly"]
     sorts = data["sorts"].set_index("signal").loc[list(SIGNAL_LABELS)]
-    test_start = pd.Period(model["first_month"].iloc[0])
-    test_end = pd.Period(model["last_month"].iloc[0])
+    strategy = data["strategy"]
+    chosen = strategy.loc[strategy["chosen"], "version"].iloc[0]
+    chosen_name = strategy.loc[strategy["chosen"], "name"].iloc[0]
+    monthly = data["strategy_monthly"]
+    run = monthly[monthly["version"] == chosen].sort_values("month").copy()
+    run["excess"] = run["net"] - run["average_company"]
+    excess_t = run["excess"].mean() / (run["excess"].std() / len(run) ** 0.5)
+    first, last = pd.Period(run["month"].iloc[0]), pd.Period(run["month"].iloc[-1])
 
-    # ---- The short answer
     def answer(question: str, detail: str, t: float, improves: bool = True) -> str:
         label, style = verdict(t) if improves else ("No improvement", "no")
         return (f'<div class="ci-answer"><div><div class="ci-q">{question}</div>'
                 f'<div class="ci-d">{detail}</div></div><span class="ci-chip {style}">{label}</span></div>')
 
-    company, products, clicks_v = model.loc["company"], model.loc["products"], model.loc["clicks"]
+    dev = strategy[strategy["period"] == "development"].set_index("version")
+    best_improved = dev.loc[["B", "C", "D"], "excess"].max()
     with st.container(key="card_summary"):
         st.subheader("The short answer so far")
         st.html(
-            answer("Does attention to a company's own Wikipedia page predict its returns?",
-                   f"A model using company-page attention (plus standard factors such as past "
-                   f"returns and size) earned {company['long_short'] * 100:+.2f}% a month buying its "
-                   f"top picks and selling its bottom ones.", company["t_stat"])
-            + answer("Does attention to its products add anything?",
-                     f"Adding product attention raised that to {products['long_short'] * 100:+.2f}% a "
-                     f"month, positive in most years, but not yet enough to rule out luck.",
-                     products["t_stat"], products["long_short"] > company["long_short"])
+            answer("Does buying the companies with the most product curiosity beat the average company?",
+                   f"Buying the model's top third each month (no short selling, after trading costs) "
+                   f"beat the average of the 68 companies by {run['excess'].mean() * 100:+.2f}% a month "
+                   f"from {first + 1:%B %Y} to {last + 1:%B %Y}, but not by enough to rule out luck.",
+                   excess_t)
+            + answer("Does attention to products add anything to attention to the company?",
+                     f"A model using product attention did {model.loc['products', 'long_short'] * 100:+.2f}% "
+                     f"a month in the research test, against {model.loc['company', 'long_short'] * 100:+.2f}% "
+                     f"for company attention alone.", model.loc["products", "t_stat"],
+                     model.loc["products", "long_short"] > model.loc["company", "long_short"])
             + answer("Does click-through from products to the company add anything?",
-                     f"Adding click-through gave {clicks_v['long_short'] * 100:+.2f}% a month, lower "
-                     f"than with product attention alone.",
-                     clicks_v["t_stat"], clicks_v["long_short"] > products["long_short"])
+                     f"Adding click-through gave {model.loc['clicks', 'long_short'] * 100:+.2f}% a month, "
+                     f"lower than with product attention alone.", model.loc["clicks", "t_stat"],
+                     model.loc["clicks", "long_short"] > model.loc["products", "long_short"])
+            + answer("Did the planned improvements help?",
+                     "A bad-news filter, comparing companies within their sector, a simpler score and "
+                     "holding for 3 months were all planned in advance. None beat the original model "
+                     "over 2022 to 2024.", 0, best_improved > dev.loc["A", "excess"])
         )
-        st.caption(f"Tested from {test_start:%B %Y} to {test_end:%B %Y}, months the model never saw "
-                   f"while learning. These are research results, updated monthly, not investment advice.")
+        st.caption("Research results, updated monthly. Not investment advice.")
 
-    # ---- How the test works
-    with st.container(key="card_how_test"):
-        st.subheader("How the test works")
+    with st.container(key="card_growth"):
+        st.subheader("What $100 would have become")
         st.markdown(
-            "Imagine an investor who, at the end of every month, ranks the 68 companies on a signal "
-            "(for example, how much more attention their products got than usual). They **buy the "
-            "top third and sell the bottom third** for the next month, then repeat. If the signal "
-            "carries real information, this makes money over time. If it doesn't, the result "
-            "hovers around zero."
+            f"Following the strategy from {first + 1:%B %Y}: each month, buy the top third of the "
+            f"68 companies as ranked by the model, in equal amounts, after trading costs. Compared "
+            f"with buying all 68 equally (the fair comparison) and with the S&P 500."
         )
-        st.markdown(
-            "Each result comes with a **confidence score** (the t-statistic). Roughly: **2 or "
-            "more** means the result is unlikely to be luck, **1.5 to 2** is promising but not "
-            "proven, and **below 1.5** could easily be chance."
-        )
-
-    # ---- The model, as growth of $100
-    with st.container(key="card_model"):
-        st.subheader("A model tested on years it never saw")
-        st.markdown(
-            f"A machine-learning model learns from past data only, then makes its picks for the "
-            f"following year, and is retrained each year. The chart shows what **$100** would have "
-            f"become from {test_start:%B %Y} following its picks, after trading costs, in three "
-            f"versions: using only company attention, then adding product attention, then adding "
-            f"click-through."
-        )
+        dates = pd.PeriodIndex(run["month"], freq="M").to_timestamp(how="end").normalize() + pd.offsets.MonthEnd(1)
+        start = dates[0] - pd.offsets.MonthEnd(1)
+        lines = {
+            "Strategy": (run["net"], "#2a78d6", 3),
+            "Average of the 68 companies": (run["average_company"], "#9aa5b1", 2),
+            "S&P 500": (run["spy"], "#0f1b2d", 1.5),
+        }
         growth = go.Figure()
-        for version in model.index:
-            monthly = model_monthly[model_monthly["version"] == version].sort_values("month")
-            dates = pd.PeriodIndex(monthly["month"], freq="M").to_timestamp(how="end") + pd.offsets.MonthEnd(1)
-            value = 100 * (1 + monthly["long_short_net"]).cumprod()
+        for name, (returns, colour, width) in lines.items():
+            value = pd.concat([pd.Series([100.0]), 100 * (1 + returns.reset_index(drop=True)).cumprod()])
             growth.add_trace(go.Scatter(
-                x=dates, y=value, name=VERSION_LABELS[version], mode="lines",
-                line=dict(color=VERSION_COLOURS[version], width=2.5 if version == "products" else 2),
-                hovertemplate="$%{y:.0f}<extra>" + VERSION_LABELS[version] + "</extra>",
+                x=[start, *dates], y=value, name=name, mode="lines", line=dict(color=colour, width=width),
+                hovertemplate="$%{y:.0f}<extra>" + name + "</extra>",
             ))
-        growth.add_hline(y=100, line_color="#888", line_width=1, line_dash="dot")
+        # Value after the last development month's return (end of Jan 2025)
+        final_start = (pd.Period(DEV_END) + 1).to_timestamp(how="end").normalize()
+        growth.add_vline(x=final_start, line_color="#888", line_width=1, line_dash="dot")
+        growth.add_annotation(x=final_start, y=1, yref="paper", text="Final check", showarrow=False,
+                              xanchor="left", xshift=6, font=dict(size=11, color="#6b7280"))
         growth.update_layout(
-            yaxis=dict(title="Value of $100 ($)", gridcolor=GRID), xaxis=dict(showgrid=False,
-            hoverformat="%b %Y"), hovermode="x unified", height=380,
-            legend=dict(orientation="h", y=1.02, yanchor="bottom", x=0),
+            yaxis=dict(title="Value of $100 ($)", gridcolor=GRID), xaxis=dict(showgrid=False, hoverformat="%b %Y"),
+            hovermode="x unified", height=380, legend=dict(orientation="h", y=1.02, yanchor="bottom", x=0),
             margin=dict(l=10, r=10, t=40, b=10), plot_bgcolor="rgba(0,0,0,0)",
             paper_bgcolor="rgba(0,0,0,0)", font=dict(family="Inter, sans-serif"), dragmode=False,
         )
         growth.update_xaxes(fixedrange=True)
         growth.update_yaxes(fixedrange=True)
         st.plotly_chart(growth, width="stretch", config=CHART_CONFIG)
+        st.caption("Before the dotted line: the period used to choose between the planned versions. "
+                   "After it: the final check, run once.")
 
-        years_positive = (model_monthly.assign(year=model_monthly["month"].str[:4])
-                          .groupby(["version", "year"])["long_short"].mean().gt(0)
-                          .groupby("version").agg(["sum", "count"]))
-        st.html(html_table(
-            ["Version", "Return a month", "After costs", "Confidence (t)", "Years positive", "Verdict"],
-            [[VERSION_LABELS[v], f"{model.loc[v, 'long_short'] * 100:+.2f}%",
-              f"{model.loc[v, 'long_short_net'] * 100:+.2f}%", f"{model.loc[v, 't_stat']:.1f}",
-              f"{years_positive.loc[v, 'sum']} of {years_positive.loc[v, 'count']}",
-              chip(model.loc[v, "t_stat"])] for v in model.index],
-            numeric={1, 2, 3, 4},
-        ))
+    with st.container(key="card_picks"):
+        live = data["live_picks"]
+        pick_month = pd.Period(live["month"].max())
+        current = live[live["month"] == live["month"].max()].sort_values("rank")
+        names = universe.drop_duplicates("ticker").set_index("ticker")["company"]
+        st.subheader(f"Current picks for {pick_month + 1:%B %Y}")
+        st.html('<div class="ci-picks">' + "".join(
+            f"<div>{names.get(t, t)} <span>{t}</span></div>" for t in current["ticker"]) + "</div>")
+        st.caption(f"Chosen at the end of {pick_month:%B %Y} and recorded on "
+                   f"{pd.Timestamp(current['recorded_on'].iloc[0]):%-d %B %Y}, before any of the month's "
+                   f"returns were known. Each month's picks are added to a permanent record, so the "
+                   f"strategy's live track record can be checked later. Not investment advice.")
 
-    # ---- Each signal on its own
-    with st.container(key="card_signals"):
-        st.subheader("Each signal on its own")
+    with st.container(key="card_versions"):
+        st.subheader("Versions tested")
         st.markdown(
-            "The same buy-the-top, sell-the-bottom test for each signal separately, over the whole "
-            "history since 2017, with no model involved."
+            f"Five changes were [planned and written down]({PLAN_URL}) before any were tested. "
+            f"Each version was run on 2022 to 2024 and the best one chosen by a fixed rule (highest "
+            f"return above the average company, after costs). Only then was it checked on 2025 to 2026."
+        )
+        rows = []
+        for version in ["A", "B", "C", "D", "B_no_filter", "B_1m"]:
+            d = strategy[(strategy["version"] == version) & (strategy["period"] == "development")].iloc[0]
+            f = strategy[(strategy["version"] == version) & (strategy["period"] == "final")].iloc[0]
+            name = d["name"] + (" (chosen)" if d["chosen"] else "")
+            rows.append([f"<b>{name}</b>" if d["chosen"] else name,
+                         f"{d['excess'] * 100:+.2f}%", f"{d['excess_t']:.1f}",
+                         f"{f['excess'] * 100:+.2f}%", f"{f['excess_t']:.1f}"])
+        st.html(html_table(["Version", "2022–24: vs average", "t", "2025–26: vs average", "t"],
+                           rows, numeric={1, 2, 3, 4}))
+        st.markdown(
+            "- **The bad-news filter hurt.** Companies whose price was falling while their "
+            "attention rose tended to bounce back the next month, so skipping them removed good picks.\n"
+            "- **Comparing within sectors hurt**: part of the signal seems to come from picking whole "
+            "sectors, such as consumer brands with viral products.\n"
+            "- **Holding for 3 months** cut trading costs by more than half, but lowered returns.\n"
+            "- The 1-month check looks best in 2025–26, but it lost in 2022–24 and was not a "
+            "candidate, so choosing it now would be picking results after seeing them."
+        )
+
+    with st.expander("Research detail: each signal on its own, and the long-short model"):
+        st.markdown(
+            "These tests buy the top third **and sell the bottom third**, a standard research "
+            "measure of whether a signal separates winners from losers. They are not the strategy "
+            "above, which only buys."
         )
         st.html(html_table(
-            ["Signal", "Return a month", "Confidence (t)", "Verdict"],
+            ["Signal", "Top minus bottom, a month", "t", "Verdict"],
             [[f'{SIGNAL_LABELS[sig]}<span class="sub">{SIGNAL_MEANINGS[sig]}</span>',
               f"{sorts.loc[sig, 'long_short'] * 100:+.2f}%",
               f"{sorts.loc[sig, 't_stat'] + 0:.1f}".replace("-0.0", "0.0"),
               chip(sorts.loc[sig, "t_stat"])] for sig in sorts.index],
             numeric={1, 2},
         ))
-        with st.expander("See the top, middle and bottom groups for each signal"):
-            st.image(str(PROJECT_DIR / "charts" / "sorts_next_month_returns.png"), width="stretch")
+        st.html(html_table(
+            ["Model version (2022–26)", "Top minus bottom, a month", "After costs", "t", "Verdict"],
+            [[VERSION_LABELS[v], f"{model.loc[v, 'long_short'] * 100:+.2f}%",
+              f"{model.loc[v, 'long_short_net'] * 100:+.2f}%", f"{model.loc[v, 't_stat']:.1f}",
+              chip(model.loc[v, "t_stat"])] for v in model.index],
+            numeric={1, 2, 3},
+        ))
+        st.image(str(PROJECT_DIR / "charts" / "sorts_next_month_returns.png"), width="stretch")
 
     with st.expander("Terms used on this page"):
         st.markdown(
-            "- **Return a month:** the average monthly gain from buying the top third and selling "
-            "the bottom third. Before costs unless stated.\n"
-            "- **Trading costs:** 0.1% of every amount bought or sold, since the groups change "
-            "each month.\n"
-            "- **Confidence (t):** the t-statistic: how far the average return is from zero, "
-            "compared with how much it varies from month to month.\n"
-            "- **Years the model never saw:** the model is trained on data up to the end of one "
-            "year and tested on the next, so it cannot have memorised the results it is judged on.\n"
-            "- **Why caution:** six signals were tried, so one of them doing well by chance is "
-            "quite possible. Results update every month as new data arrives."
+            "- **Top third:** each month the 68 companies are ranked and the best 23 are bought "
+            "in equal amounts.\n"
+            "- **Average of the 68 companies:** buying all of them in equal amounts; the fair "
+            "comparison, because the strategy also uses equal amounts.\n"
+            "- **Trading costs:** 0.1% of every amount bought or sold.\n"
+            "- **t (confidence score):** how far the average result is from zero compared with how "
+            "much it varies month to month. About 2 or more is unlikely to be luck; 1.5 to 2 is "
+            "promising; 0.5 to 1.5 is positive but weak; below 0.5 is no effect.\n"
+            "- **Years the model never saw:** the model is retrained each year on past data only, "
+            "and tested on the following year."
         )
 
 # ---- Method & data -------------------------------------------------------------------

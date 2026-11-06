@@ -33,6 +33,7 @@ curiosity-index/
 │   ├── chart_sorts.py         chart of the sorts
 │   ├── chart_novo_pitch.py    pitch chart: Novo Nordisk vs. Semaglutide
 │   ├── walk_forward.py        out-of-sample model, three versions compared, net of costs
+│   ├── strategy.py            long-only strategy, pre-registered versions, live picks record
 │   └── update_all.py          runs every step: what GitHub Actions runs each morning
 ├── .github/workflows/
 │   └── update.yml             daily update at 06:00 UTC, commits new data
@@ -42,6 +43,7 @@ curiosity-index/
 │   ├── mapping/               universe draft, checks, review and final list
 │   └── processed/             page views, clickstream, prices, panel, results
 ├── charts/                    saved charts
+├── docs/strategy_plan.md      strategy changes planned before testing, and their results
 ├── LLM_LOG.md                 record of AI tool use (required by the brief)
 └── README.md
 ```
@@ -58,6 +60,7 @@ python src/fetch_market_cap.py
 python src/build_features.py
 python src/backtest.py
 python src/walk_forward.py
+python src/strategy.py
 python src/chart_sorts.py
 ```
 

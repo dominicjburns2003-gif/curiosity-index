@@ -73,3 +73,36 @@ the filter, and B held for 1 month.
 
 Tree model settings are unchanged from `src/walk_forward.py`. Nothing is tuned
 on either test period.
+
+## Results (added on 6 Nov 2026, after running `src/strategy.py`)
+
+Long-only, after costs, average monthly return above the equal-weighted
+average of the 68 companies (t-statistic in brackets):
+
+| Version | Development 2022–24 | Final 2025–26 |
+|---|---|---|
+| A. Baseline tree model, monthly | +0.18% (0.6) | +0.40% (0.7) |
+| B. Simple score, filter, 3 months | −0.08% (−0.5) | +0.28% (1.0) |
+| C. As B, vs sector | −0.12% (−0.7) | −0.09% (−0.5) |
+| D. Tree vs sector, filter, 3 months | −0.16% (−1.0) | −0.22% (−0.7) |
+| Check: B without the filter | +0.20% (1.4) | +0.15% (0.7) |
+| Check: B held 1 month | −0.04% (−0.2) | +1.08% (2.2) |
+
+- **Chosen by the rule: A**, the baseline. It beat the average company in
+  both periods, but weakly (t below 1).
+- **None of the planned improvements helped** in the development period.
+- **The bad-news filter hurt.** Among the top third by signal (2022 onwards),
+  companies whose price was falling that month earned +1.27% the next month,
+  against +1.01% for the others: when attention and bad news arrive together
+  the price tends to bounce back, so the filter removed good picks.
+- **Comparing within sectors hurt**: the signals seem to work partly by
+  picking whole sectors (for example consumer brands with viral products).
+- **Holding for 3 months** cut costs from about 0.13% to 0.05% a month.
+- **"B held 1 month" looks best in the final period (t = 2.2) but is not
+  chosen**: it was a check, not a candidate, and it lost in the development
+  period. Picking it now would be exactly the kind of result-shopping this
+  plan was written to prevent.
+- All long-only versions trailed the S&P 500 in 2022–24, when a handful of
+  very large technology companies drove the index; the 68 companies are
+  equally weighted, so they are compared with their own average first.
+
