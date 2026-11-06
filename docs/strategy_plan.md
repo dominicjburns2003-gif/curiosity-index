@@ -157,3 +157,20 @@ equal amounts), compared with the 68-company average after 0.1% costs:
 rule. They are reported for both periods, once, whatever the result. If the
 edge is similar across them, the signal is robust; if it swings a lot, it is
 fragile.
+
+### Robustness results (added on 6 Nov 2026, after running)
+
+Above the 68-company average, after costs (t in brackets):
+
+| Version | 2022–24 | 2025–26 | Whole period, $100 became |
+|---|---|---|---|
+| A (top third, 1 month) | +0.18% (0.6) | +0.40% (0.7) | $163 |
+| Held 3 months | +0.28% (1.3) | +0.37% (0.8) | $169 |
+| Top quarter | +0.09% (0.2) | +0.61% (0.7) | $163 |
+| Top quarter, 3 months | +0.24% (0.9) | +0.65% (0.9) | $175 |
+
+All four are positive in both periods: the edge does not depend on the holding
+period or the group size, though none is statistically significant (largest
+whole-period t: 1.4, for 3 months). Holding for 3 months cuts costs from about
+0.10% to 0.04% a month. The S&P 500 made $179 over the same period. As planned,
+these do not replace the chosen version.

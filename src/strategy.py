@@ -10,8 +10,9 @@ committed on 6 Nov 2026, before any of this was run):
   D. Tree, improved    tree model on sector-relative features and this month's
                        return, bad-news filter, 3-month hold
   plus two checks on B: without the filter, and with a 1-month hold.
-  And (addendum in the plan) A weighted by company size instead of equally,
-  compared with the 68 companies weighted the same way.
+  And (addenda in the plan) A weighted by company size instead of equally,
+  compared with the 68 companies weighted the same way; and robustness checks
+  on A: held 3 months, top quarter instead of top third, and both.
 
 Long-only: buy the top third each month, equally weighted. Compared with the
 equal-weighted average of all 68 companies and with the S&P 500 (SPY), after
@@ -69,6 +70,9 @@ VERSION_NAMES = {
     "B_no_filter": "Check: B without the bad-news filter",
     "B_1m": "Check: B held for 1 month",
     "A_size": "A weighted by company size (vs 68 weighted by size)",
+    "A_3m": "Robustness: A held for 3 months",
+    "A_quarter": "Robustness: A, top quarter only",
+    "A_quarter_3m": "Robustness: A, top quarter, held 3 months",
 }
 CANDIDATES = ["A", "B", "C", "D"]  # the checks are shown but never chosen
 
@@ -109,9 +113,9 @@ def size_weights(market_caps: pd.Series) -> pd.Series:
 
 
 def portfolio(df: pd.DataFrame, score: pd.Series, use_filter: bool, hold: int,
-              by_size: bool = False) -> pd.DataFrame:
-    """Monthly returns of buying the top third on `score`, held `hold` months,
-    in equal amounts or (by_size) in proportion to market cap."""
+              by_size: bool = False, share: float = 1 / 3) -> pd.DataFrame:
+    """Monthly returns of buying the top `share` (a third) on `score`, held
+    `hold` months, in equal amounts or (by_size) in proportion to market cap."""
     data = df.assign(score=score)
     data = data[data["month"] >= f"{FIRST_TEST_YEAR}-01"]
     months = sorted(data["month"].unique())
@@ -119,7 +123,7 @@ def portfolio(df: pd.DataFrame, score: pd.Series, use_filter: bool, hold: int,
     for month in months:
         now = data[data["month"] == month]
         candidates = now.dropna(subset=["score"])
-        n_pick = round(len(candidates) / 3)
+        n_pick = round(len(candidates) * share)
         if use_filter:
             # Bad news: the share price is in the bottom third of the 68 this month
             falling = now["ret_now"] <= now["ret_now"].quantile(1 / 3)
@@ -211,6 +215,9 @@ def main() -> None:
         "B_no_filter": portfolio(df, score_b, use_filter=False, hold=3),
         "B_1m": portfolio(df, score_b, use_filter=True, hold=1),
         "A_size": portfolio(df, score_a, use_filter=False, hold=1, by_size=True),
+        "A_3m": portfolio(df, score_a, use_filter=False, hold=3),
+        "A_quarter": portfolio(df, score_a, use_filter=False, hold=1, share=1 / 4),
+        "A_quarter_3m": portfolio(df, score_a, use_filter=False, hold=3, share=1 / 4),
     }
 
     summary = pd.DataFrame([

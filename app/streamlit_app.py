@@ -495,7 +495,8 @@ with results:
             f"return above the average company, after costs). Only then was it checked on 2025 to 2026."
         )
         rows = []
-        for version in ["A", "B", "C", "D", "B_no_filter", "B_1m", "A_size"]:
+        for version in ["A", "B", "C", "D", "B_no_filter", "B_1m", "A_size",
+                        "A_3m", "A_quarter", "A_quarter_3m"]:
             d = strategy[(strategy["version"] == version) & (strategy["period"] == "development")].iloc[0]
             f = strategy[(strategy["version"] == version) & (strategy["period"] == "final")].iloc[0]
             name = d["name"] + (" (chosen)" if d["chosen"] else "")
@@ -513,7 +514,11 @@ with results:
             "- The 1-month check looks best in 2025–26, but it lost in 2022–24 and was not a "
             "candidate, so choosing it now would be picking results after seeing them.\n"
             "- **Weighted by company size** (planned separately, after the S&P 500 comparison): "
-            "behind the 68 companies weighted by size in 2022–24, ahead in 2025–26."
+            "behind the 68 companies weighted by size in 2022–24, ahead in 2025–26.\n"
+            "- **Robustness checks** (also planned first): holding the chosen picks for 3 months, "
+            "buying only the top quarter, or both. All beat the average company in both periods, "
+            "so the small edge does not depend on these choices. Holding for 3 months also cuts "
+            "trading costs from about 0.10% to 0.04% a month."
         )
 
     with st.expander("Research detail: each signal on its own, and the long-short model"):
