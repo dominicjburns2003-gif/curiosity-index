@@ -363,6 +363,13 @@ with results:
 
     dev = strategy[strategy["period"] == "development"].set_index("version")
     best_improved = dev.loc[["B", "C", "D"], "excess"].max()
+
+    def growth_of_100(returns: pd.Series) -> float:
+        return 100 * (1 + returns).prod()
+
+    by_size = monthly[monthly["version"] == "A_size"].sort_values("month")
+    vs_spy = by_size["net"] - by_size["spy"]
+    vs_spy_t = vs_spy.mean() / (vs_spy.std() / len(vs_spy) ** 0.5)
     with st.container(key="card_summary"):
         st.subheader("The short answer so far")
         st.html(
@@ -380,6 +387,12 @@ with results:
                      f"Adding click-through gave {model.loc['clicks', 'long_short'] * 100:+.2f}% a month, "
                      f"lower than with product attention alone.", model.loc["clicks", "t_stat"],
                      model.loc["clicks", "long_short"] > model.loc["products", "long_short"])
+            + answer("Does it beat the S&P 500?",
+                     f"Weighted by company size, as most funds are, the picks turned $100 into "
+                     f"${growth_of_100(by_size['net']):.0f}, against ${growth_of_100(by_size['spy']):.0f} "
+                     f"for the S&P 500. But simply holding all 68 companies the same way made "
+                     f"${growth_of_100(by_size['benchmark']):.0f}, so most of the lead comes from the "
+                     f"companies tracked, not the signal, and all of it came in 2025–26.", vs_spy_t)
             + answer("Did the planned improvements help?",
                      "A bad-news filter, comparing companies within their sector, a simpler score and "
                      "holding for 3 months were all planned in advance. None beat the original model "
@@ -389,17 +402,26 @@ with results:
 
     with st.container(key="card_growth"):
         st.subheader("What $100 would have become")
+        weighting = st.segmented_control(
+            "Invest in the picks", ["In equal amounts", "In proportion to company size"],
+            default="In equal amounts", key="weighting") or "In equal amounts"
+        size_weighted = weighting != "In equal amounts"
+        shown = by_size if size_weighted else run
         st.markdown(
             f"Following the strategy from {first + 1:%B %Y}: each month, buy the top third of the "
-            f"68 companies as ranked by the model, in equal amounts, after trading costs. Compared "
-            f"with buying all 68 equally (the fair comparison) and with the S&P 500."
+            f"68 companies as ranked by the model, "
+            + ("in proportion to their market value (no company above 15%), "
+               if size_weighted else "in equal amounts, ")
+            + "after trading costs. Compared with holding all 68 companies the same way (the fair "
+            "comparison) and with the S&P 500."
         )
-        dates = pd.PeriodIndex(run["month"], freq="M").to_timestamp(how="end").normalize() + pd.offsets.MonthEnd(1)
+        dates = pd.PeriodIndex(shown["month"], freq="M").to_timestamp(how="end").normalize() + pd.offsets.MonthEnd(1)
         start = dates[0] - pd.offsets.MonthEnd(1)
         lines = {
-            "Strategy": (run["net"], "#2a78d6", 3),
-            "Average of the 68 companies": (run["average_company"], "#9aa5b1", 2),
-            "S&P 500": (run["spy"], "#0f1b2d", 1.5),
+            "Strategy": (shown["net"], "#2a78d6", 3),
+            ("All 68 companies, by size" if size_weighted else "All 68 companies, equal amounts"):
+                (shown["benchmark"], "#9aa5b1", 2),
+            "S&P 500": (shown["spy"], "#0f1b2d", 1.5),
         }
         growth = go.Figure()
         for name, (returns, colour, width) in lines.items():
@@ -446,14 +468,14 @@ with results:
             f"return above the average company, after costs). Only then was it checked on 2025 to 2026."
         )
         rows = []
-        for version in ["A", "B", "C", "D", "B_no_filter", "B_1m"]:
+        for version in ["A", "B", "C", "D", "B_no_filter", "B_1m", "A_size"]:
             d = strategy[(strategy["version"] == version) & (strategy["period"] == "development")].iloc[0]
             f = strategy[(strategy["version"] == version) & (strategy["period"] == "final")].iloc[0]
             name = d["name"] + (" (chosen)" if d["chosen"] else "")
             rows.append([f"<b>{name}</b>" if d["chosen"] else name,
                          f"{d['excess'] * 100:+.2f}%", f"{d['excess_t']:.1f}",
                          f"{f['excess'] * 100:+.2f}%", f"{f['excess_t']:.1f}"])
-        st.html(html_table(["Version", "2022–24: vs average", "t", "2025–26: vs average", "t"],
+        st.html(html_table(["Version", "2022–24: vs the 68", "t", "2025–26: vs the 68", "t"],
                            rows, numeric={1, 2, 3, 4}))
         st.markdown(
             "- **The bad-news filter hurt.** Companies whose price was falling while their "
@@ -462,7 +484,9 @@ with results:
             "sectors, such as consumer brands with viral products.\n"
             "- **Holding for 3 months** cut trading costs by more than half, but lowered returns.\n"
             "- The 1-month check looks best in 2025–26, but it lost in 2022–24 and was not a "
-            "candidate, so choosing it now would be picking results after seeing them."
+            "candidate, so choosing it now would be picking results after seeing them.\n"
+            "- **Weighted by company size** (planned separately, after the S&P 500 comparison): "
+            "behind the 68 companies weighted by size in 2022–24, ahead in 2025–26."
         )
 
     with st.expander("Research detail: each signal on its own, and the long-short model"):

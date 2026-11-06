@@ -10,6 +10,8 @@ committed on 6 Nov 2026, before any of this was run):
   D. Tree, improved    tree model on sector-relative features and this month's
                        return, bad-news filter, 3-month hold
   plus two checks on B: without the filter, and with a 1-month hold.
+  And (addendum in the plan) A weighted by company size instead of equally,
+  compared with the 68 companies weighted the same way.
 
 Long-only: buy the top third each month, equally weighted. Compared with the
 equal-weighted average of all 68 companies and with the S&P 500 (SPY), after
@@ -42,6 +44,7 @@ from walk_forward import FIRST_TEST_YEAR, VERSIONS, rank_within_month, walk_forw
 
 DEV_END = "2024-12"  # development period: Jan 2022 to Dec 2024; final: after
 COST_PER_TRADE = 0.001
+MAX_WEIGHT = 0.15  # size-weighted version: no company above 15%
 
 # 5 broad sectors, so that comparing with sector peers means something
 SECTOR_GROUPS = {
@@ -65,6 +68,7 @@ VERSION_NAMES = {
     "D": "D. Tree model vs sector, filter, 3-month hold",
     "B_no_filter": "Check: B without the bad-news filter",
     "B_1m": "Check: B held for 1 month",
+    "A_size": "A weighted by company size (vs 68 weighted by size)",
 }
 CANDIDATES = ["A", "B", "C", "D"]  # the checks are shown but never chosen
 
@@ -91,8 +95,23 @@ def simple_score(df: pd.DataFrame, sector_relative: bool) -> pd.Series:
     return ranks.mean(axis=1, skipna=True)  # gap alone where click-through is missing
 
 
-def portfolio(df: pd.DataFrame, score: pd.Series, use_filter: bool, hold: int) -> pd.DataFrame:
-    """Monthly returns of buying the top third on `score`, held `hold` months."""
+def size_weights(market_caps: pd.Series) -> pd.Series:
+    """Weights in proportion to market cap, with none above MAX_WEIGHT: the
+    excess is shared out among the others in proportion to their size."""
+    weights = market_caps / market_caps.sum()
+    capped = pd.Series(False, index=weights.index)
+    while (weights > MAX_WEIGHT + 1e-12).any():
+        capped |= weights > MAX_WEIGHT
+        free = weights[~capped]
+        weights[capped] = MAX_WEIGHT
+        weights[~capped] = free / free.sum() * (1 - MAX_WEIGHT * capped.sum())
+    return weights
+
+
+def portfolio(df: pd.DataFrame, score: pd.Series, use_filter: bool, hold: int,
+              by_size: bool = False) -> pd.DataFrame:
+    """Monthly returns of buying the top third on `score`, held `hold` months,
+    in equal amounts or (by_size) in proportion to market cap."""
     data = df.assign(score=score)
     data = data[data["month"] >= f"{FIRST_TEST_YEAR}-01"]
     months = sorted(data["month"].unique())
@@ -106,7 +125,10 @@ def portfolio(df: pd.DataFrame, score: pd.Series, use_filter: bool, hold: int) -
             falling = now["ret_now"] <= now["ret_now"].quantile(1 / 3)
             candidates = candidates[~falling.reindex(candidates.index, fill_value=False)]
         picks = candidates.nlargest(n_pick, "score")["ticker"]
-        cohorts = (cohorts + [pd.Series(1 / len(picks), index=picks.values)])[-hold:]
+        caps = np.exp(now.set_index("ticker")["log_mcap"])
+        cohort = (size_weights(caps.reindex(picks.values)) if by_size
+                  else pd.Series(1 / len(picks), index=picks.values))
+        cohorts = (cohorts + [cohort])[-hold:]
         new_weights = pd.concat(cohorts, axis=1).fillna(0).sum(axis=1) / len(cohorts)
         turnover = new_weights.sub(weights, fill_value=0).abs().sum()
         weights = new_weights
@@ -114,14 +136,19 @@ def portfolio(df: pd.DataFrame, score: pd.Series, use_filter: bool, hold: int) -
         held = returns.reindex(weights.index)
         if held.isna().all():
             break  # next month's returns are not known yet
+        known = returns.dropna().index.intersection(caps.dropna().index)
+        size_average = (size_weights(caps[known]) * returns[known]).sum()
         rows.append({
             "month": month,
             "gross": (weights * held.fillna(0)).sum() / weights[held.notna()].sum(),
             "cost": COST_PER_TRADE * turnover,
             "average_company": returns.mean(),
+            "size_average": size_average,
             "picks": " ".join(sorted(picks)),
         })
     out = pd.DataFrame(rows).set_index("month")
+    # What the strategy is judged against: the 68 companies weighted the same way
+    out["benchmark"] = out["size_average"] if by_size else out["average_company"]
     out["net"] = out["gross"] - out["cost"]
     return out
 
@@ -133,16 +160,16 @@ def t_stat(x: pd.Series) -> float:
 
 def summarise(result: pd.DataFrame, spy: pd.Series, period: str) -> dict:
     r = result.loc[:DEV_END] if period == "development" else result.loc[f"{int(DEV_END[:4]) + 1}-01":]
-    excess = r["net"] - r["average_company"]
+    excess = r["net"] - r["benchmark"]
     excess_spy = r["net"] - spy.reindex(r.index)
     return {
         "period": period, "first_month": r.index.min(), "last_month": r.index.max(), "months": len(r),
-        "return_net": r["net"].mean(), "average_company": r["average_company"].mean(),
+        "return_net": r["net"].mean(), "benchmark": r["benchmark"].mean(),
         "excess": excess.mean(), "excess_t": t_stat(excess), "beat_average_share": (excess > 0).mean(),
         "excess_vs_spy": excess_spy.mean(), "excess_vs_spy_t": t_stat(excess_spy),
         "avg_cost": r["cost"].mean(),
         "growth_100": 100 * (1 + r["net"]).prod(),
-        "growth_100_average": 100 * (1 + r["average_company"]).prod(),
+        "growth_100_benchmark": 100 * (1 + r["benchmark"]).prod(),
         "growth_100_spy": 100 * (1 + spy.reindex(r.index)).prod(),
     }
 
@@ -183,6 +210,7 @@ def main() -> None:
         "D": portfolio(df, score_d, use_filter=True, hold=3),
         "B_no_filter": portfolio(df, score_b, use_filter=False, hold=3),
         "B_1m": portfolio(df, score_b, use_filter=True, hold=1),
+        "A_size": portfolio(df, score_a, use_filter=False, hold=1, by_size=True),
     }
 
     summary = pd.DataFrame([
@@ -229,10 +257,10 @@ def main() -> None:
         print(f"Live record: added the picks for {latest}")
 
     show = summary.set_index(["name", "period"])
-    pct = ["return_net", "average_company", "excess", "excess_vs_spy", "avg_cost"]
+    pct = ["return_net", "benchmark", "excess", "excess_vs_spy", "avg_cost"]
     show[pct] = show[pct] * 100
-    print("Long-only, after costs, % a month (excess = above the 68-company average):")
-    print(show[pct + ["excess_t", "beat_average_share", "growth_100", "growth_100_average",
+    print("Long-only, after costs, % a month (excess = above the 68 companies, weighted the same way):")
+    print(show[pct + ["excess_t", "excess_vs_spy_t", "growth_100", "growth_100_benchmark",
                       "growth_100_spy"]].round(2).to_string())
     print(f"\nChosen by the development-period rule: {VERSION_NAMES[chosen]}")
 

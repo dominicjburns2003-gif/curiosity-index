@@ -127,3 +127,15 @@ whether the signal still adds value when the portfolio is built that way.
 - **Costs:** 0.1% of every amount traded, as before.
 - **Reported for both periods** (2022–24 and 2025–26), once, whatever the
   result. It does not replace the chosen version; it is shown alongside it.
+
+### Size-weighted results (added on 6 Nov 2026, after running)
+
+| Size-weighted picks vs | 2022–24 | 2025–26 | Whole period, $100 became |
+|---|---|---|---|
+| 68 companies weighted by size | −0.24%/month (t −0.6) | +0.74%/month (t 1.6) | $201 vs $193 |
+| S&P 500 | −0.06%/month (t −0.1) | +0.93%/month (t 1.2) | $201 vs $179 |
+
+- Weighted by size, the picks beat the S&P 500 over the whole period, but
+  **most of that lead comes from the companies tracked**: holding all 68 by
+  size made $193. The signal itself added about $8 per $100 (t 0.4).
+- The picks **lagged in 2022–24** and pulled ahead only in 2025–26.
