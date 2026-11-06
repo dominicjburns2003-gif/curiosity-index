@@ -41,15 +41,24 @@ OLD_COMPANY_TITLES = {
     "Meta_Platforms": ["Facebook,_Inc."],             # Oct 2021
     "Amazon_(company)": ["Amazon.com"],               # Oct 2017
     "Adobe_Inc.": ["Adobe_Systems"],                  # Oct 2018
-    "Block,_Inc.": ["Square_(financial_services_company)", "Square,_Inc."],  # 2021-22
+    "Block,_Inc.": ["Square_(financial_services_company)", "Square,_Inc.", "Square_Inc.",
+                    "Block_(financial_services_company)"],  # 2021-22
     "Royal_Caribbean_Group": ["Royal_Caribbean_Cruises_Ltd."],  # Jul 2020
     "Bristol_Myers_Squibb": ["Bristol-Myers_Squibb"],  # Aug 2020
     "Regeneron_Pharmaceuticals": ["Regeneron"],       # Jul 2019
     "Hormel_Foods": ["Hormel"],                       # Oct 2021
     "Deckers_Brands": ["Deckers_Outdoor_Corporation"],  # Sep 2023
     "Tapestry,_Inc.": ["Coach,_Inc."],                # Oct 2017
-    "Tesla,_Inc.": ["Tesla_Motors"],                  # Feb 2017
+    "Tesla,_Inc.": ["Tesla_Motors", "Tesla_Inc."],    # Feb 2017
     "Novo_(company)": ["Novo_Nordisk"],               # Sep 2026
+    # Found on 6 Nov 2026 by scanning every page's move history since 2016
+    "AMD": ["Advanced_Micro_Devices"],                # Dec 2022
+    "Brown-Forman": ["Brown–Forman"],                 # en dash, Sep 2018 to Jun 2025
+    "AB_InBev": ["Anheuser-Busch_InBev"],             # Nov 2019
+    "Molson_Coors": ["Molson_Coors_Brewing_Company", "Molson_Coors_Beverage_Company"],  # 2020, 2021
+    "Estée_Lauder_Companies": ["The_Estée_Lauder_Companies"],  # moved back and forth 2023-26
+    "AbbVie": ["AbbVie_Inc."],                        # Jun 2020
+    "Nike,_Inc.": ["Nike_(company)"],                 # Feb 2023
 }
 
 # Company series that only become meaningful later: before Dec 2019 Facebook the
@@ -70,6 +79,19 @@ OLD_PRODUCT_TITLES = {
     "Dove_(Unilever_brand)": ["Dove_(toiletries)"],
     "Arm_&_Hammer": ["Arm_&_Hammer_(brand)"],
     "Budweiser": ["Budweiser_(Anheuser-Busch)", "Budweiser_(AB_InBev)"],
+    # Found on 6 Nov 2026 by scanning every page's move history since 2016
+    "Axe_(brand)": ["Axe/Lynx_(brand)"],
+    "Sprite_(drink)": ["Sprite_(soft_drink)"],
+    "Zyn": ["Zyn_(nicotine_pouches)"],
+    "Grand_Theft_Auto_VI": ["Untitled_Grand_Theft_Auto_game"],  # named Dec 2023
+    "Red_Dead_Redemption_2": ["Red_Dead_Redemption_II"],
+    "AirPods": ["Apple_AirPods"],
+    "Pfizer–BioNTech_COVID-19_vaccine": ["BNT162b2", "Tozinameran", "Pfizer-BioNTech_COVID-19_vaccine",
+                                         "BioNTech-Pfizer_COVID-19_vaccine"],
+    "Oxford–AstraZeneca_COVID-19_vaccine": ["AZD1222"],
+    "Lecanemab": ["BAN2401"],                         # drug code names before the drug was named
+    "Remdesivir": ["GS-5734"],
+    "Suzetrigine": ["VX-548"],
 }
 
 # Product series that only become meaningful later, because the page was

@@ -24,9 +24,11 @@ from concurrent.futures import ThreadPoolExecutor
 import gzip
 from pathlib import Path
 import sys
+import time
 
 import pandas as pd
 import requests
+import urllib3
 
 from wiki_api import HEADERS
 
@@ -48,11 +50,8 @@ def available_months() -> list[str]:
     return [m for m in months if f'href="{m}/"' in listing]
 
 
-def fetch_month(month: str, company_titles: set[str]) -> None:
-    """Stream one month's file and save the clicks into our company pages."""
-    out_path = OUT_DIR / f"{month}.csv.gz"
-    if out_path.exists():
-        return
+def stream_rows(month: str, company_titles: set[str]) -> list[tuple]:
+    """Stream one month's file once and return the clicks into our company pages."""
     rows = []
     with requests.get(URL.format(month=month), headers=HEADERS, stream=True, timeout=60) as response:
         response.raise_for_status()
@@ -61,6 +60,25 @@ def fetch_month(month: str, company_titles: set[str]) -> None:
                 prev, curr, link_type, n = line.rstrip("\n").split("\t")
                 if curr in company_titles:
                     rows.append((month, prev, curr, link_type, int(n)))
+    return rows
+
+
+def fetch_month(month: str, company_titles: set[str]) -> None:
+    """Download one month (retrying if the connection drops) and save it."""
+    out_path = OUT_DIR / f"{month}.csv.gz"
+    if out_path.exists():
+        return
+    # Long downloads sometimes get cut off or time out; start that month again.
+    # Errors in the middle of a download come from urllib3 (the library under requests).
+    for attempt in range(1, 5):
+        try:
+            rows = stream_rows(month, company_titles)
+            break
+        except (requests.RequestException, urllib3.exceptions.HTTPError, OSError, EOFError) as error:
+            print(f"{month}: download failed ({type(error).__name__}), attempt {attempt} of 4")
+            time.sleep(30 * attempt)
+    else:
+        raise RuntimeError(f"{month}: download failed 4 times")
     data = pd.DataFrame(rows, columns=["month", "prev", "curr", "type", "n"])
     # Write to a temporary name first, so a crash never leaves a half-written file
     tmp_path = out_path.with_suffix(".tmp")
