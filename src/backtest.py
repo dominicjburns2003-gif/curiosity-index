@@ -38,6 +38,8 @@ SIGNALS = {
     "company_growth": "Company attention growth",
     "product_growth": "Product attention growth",
     "gap": "Gap (products vs company)",
+    "conversion_vs_normal": "Click-through vs normal",
+    "conversion_change": "Click-through change",
 }
 FACTORS = ["Mkt-RF", "SMB", "HML", "RMW", "CMA", "Mom"]
 

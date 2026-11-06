@@ -113,14 +113,18 @@ st.markdown(
     "better than the low group."
 )
 st.image(str(PROJECT_DIR / "charts" / "sorts_next_month_returns.png"), width="stretch")
-gap = sorts.set_index("signal").loc["gap"]
+by_signal = sorts.set_index("signal")
+gap, click = by_signal.loc["gap"], by_signal.loc["conversion_change"]
 st.markdown(
     f"- **Company-page attention alone** shows no link with next-month returns.\n"
-    f"- **The gap** (products getting more attention than the company) is the most promising "
-    f"signal: high minus low is **{gap['long_short'] * 100:+.2f}% a month**, with t = "
-    f"{gap['t_stat']:.1f}. That is **not yet statistically significant** (the usual bar is about 2).\n"
-    "- Click-through (product → company) features are added once the clickstream history "
-    "is complete."
+    f"- **The gap** (products getting more attention than the company): high minus low is "
+    f"**{gap['long_short'] * 100:+.2f}% a month** (t = {gap['t_stat']:.1f}).\n"
+    f"- **A change in click-through** (more product readers than last month going on to the "
+    f"company page): **{click['long_short'] * 100:+.2f}% a month** (t = {click['t_stat']:.1f}), "
+    f"mostly because companies whose click-through fell did worse.\n"
+    "- Neither is **statistically significant yet** (the usual bar is about 2), and several "
+    "signals were tried, so one coming close by chance is possible. The out-of-sample test "
+    "will decide."
 )
 
 # ---- About -----------------------------------------------------------------------
