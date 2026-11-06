@@ -1,14 +1,15 @@
 # Curiosity Index - the app's look. Streamlit reads this file automatically.
-# Colours match the charts: blue for the company, a warm off-white background.
+# Light grey page with white cards, dark navy text, blue accents matching the
+# charts, and the Inter typeface.
 
 [theme]
 base = "light"
 primaryColor = "#2a78d6"
-backgroundColor = "#fcfcfb"
-secondaryBackgroundColor = "#f0efec"
-textColor = "#0b0b0b"
-font = "sans serif"
-borderColor = "#e4e3df"
+backgroundColor = "#f3f4f6"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#0f1b2d"
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap, sans-serif"
+borderColor = "#e3e6eb"
 showWidgetBorder = true
 baseRadius = "0.6rem"
 
