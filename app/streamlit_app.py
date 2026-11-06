@@ -26,8 +26,20 @@ PRICE_COLOUR = "#6250d6"  # its own colour, so the price is never confused with 
 st.set_page_config(page_title="Curiosity Index", page_icon="🔎", layout="wide")
 
 
+DATA_FILES = [
+    PROJECT_DIR / "data" / "mapping" / "products_to_companies.csv",
+    DATA_DIR / "pageviews_monthly.csv",
+    DATA_DIR / "pageviews_daily.csv",
+    DATA_DIR / "sorts_summary.csv",
+    DATA_DIR / "prices_daily.csv",
+]
+
+
 @st.cache_data
-def load_data():
+def load_data(versions: tuple):
+    """Read the data files once and keep them in memory. The argument is the
+    files' last-changed times: when the daily update (or a push) changes a
+    file, it changes, so the cache is refreshed instead of serving old data."""
     universe = pd.read_csv(PROJECT_DIR / "data" / "mapping" / "products_to_companies.csv")
     views = pd.read_csv(DATA_DIR / "pageviews_monthly.csv")
     daily_index = pd.read_csv(DATA_DIR / "pageviews_daily.csv", usecols=["date"])
@@ -36,7 +48,7 @@ def load_data():
     return universe, views, daily_index["date"].max(), sorts, prices
 
 
-universe, views, last_day, sorts, prices = load_data()
+universe, views, last_day, sorts, prices = load_data(tuple(f.stat().st_mtime for f in DATA_FILES))
 
 # ---- Header -----------------------------------------------------------------
 st.title("Curiosity Index")
