@@ -13,14 +13,16 @@ from pathlib import Path
 
 import pandas as pd
 import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 import streamlit as st
 
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_DIR / "data" / "processed"
 GITHUB_URL = "https://github.com/dominicjburns2003-gif/curiosity-index"
 
-# Fixed colour order: the company page first, then its products
-COLOURS = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d6", "#e34948"]
+# Fixed colour order: the company page first, then its products (at most 4)
+COLOURS = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4"]
+PRICE_COLOUR = "#6250d6"  # its own colour, so the price is never confused with a page
 
 st.set_page_config(page_title="Curiosity Index", page_icon="🔎", layout="wide")
 
@@ -31,10 +33,11 @@ def load_data():
     views = pd.read_csv(DATA_DIR / "pageviews_monthly.csv")
     daily_index = pd.read_csv(DATA_DIR / "pageviews_daily.csv", usecols=["date"])
     sorts = pd.read_csv(DATA_DIR / "sorts_summary.csv")
-    return universe, views, daily_index["date"].max(), sorts
+    prices = pd.read_csv(DATA_DIR / "prices_daily.csv", index_col="date", parse_dates=True)
+    return universe, views, daily_index["date"].max(), sorts, prices
 
 
-universe, views, last_day, sorts = load_data()
+universe, views, last_day, sorts, prices = load_data()
 
 # ---- Header -----------------------------------------------------------------
 st.title("Curiosity Index")
@@ -62,7 +65,10 @@ ticker = st.selectbox("Company", list(labels), index=default, format_func=labels
 
 pages = views[views["ticker"] == ticker].copy()
 pages["month"] = pd.to_datetime(pages["month"])
-fig = go.Figure()
+# Attention on top, share price underneath, on the same timeline (two charts,
+# not two y-axes on one, which would let the scales suggest a link)
+fig = make_subplots(rows=2, cols=1, shared_xaxes=True, row_heights=[0.62, 0.38],
+                    vertical_spacing=0.06)
 order = list(pages.loc[pages["kind"] == "company", "article"].unique()) + \
         sorted(pages.loc[pages["kind"] == "product", "article"].unique())
 for colour, article in zip(COLOURS, order):
@@ -73,17 +79,30 @@ for colour, article in zip(COLOURS, order):
         x=series["month"], y=series["views"], name=name, mode="lines",
         line=dict(color=colour, width=3 if kind == "company" else 2),
         hovertemplate="%{x|%b %Y}: %{y:,.0f} views<extra>" + name + "</extra>",
-    ))
+    ), row=1, col=1)
+price = prices[ticker].loc[str(pages["month"].min().year):].dropna()
+fig.add_trace(go.Scatter(
+    x=price.index, y=price, name=f"{ticker} share price", mode="lines",
+    line=dict(color=PRICE_COLOUR, width=1.5),
+    hovertemplate="%{x|%d %b %Y}: $%{y:,.2f}<extra>Share price</extra>",
+), row=2, col=1)
+grid = "rgba(128,128,128,0.2)"
+fig.update_yaxes(title_text="Views per month (log)", type="log", dtick=1, gridcolor=grid, row=1, col=1)
+fig.update_yaxes(title_text="Share price ($)", gridcolor=grid, row=2, col=1)
+fig.update_xaxes(showgrid=False)
 fig.update_layout(
-    yaxis=dict(title="Views per month (log scale)", type="log", dtick=1,
-               gridcolor="rgba(128,128,128,0.2)"),
-    xaxis=dict(showgrid=False), hovermode="x unified", height=450,
+    hovermode="x unified", height=620,
     legend=dict(orientation="h", y=1.02, yanchor="bottom", x=0), margin=dict(l=10, r=10, t=40, b=10),
 )
 st.plotly_chart(fig, width="stretch")
-st.caption("Monthly views on English Wikipedia (human readers). Renamed pages have all their "
-           "titles added up, and one-day spikes that look automated are capped. A log scale is "
-           "used so the company and its products, which can differ 100-fold, fit on one chart.")
+
+change = price.iloc[-1] / price.iloc[0] - 1
+st.caption(f"Top: monthly views on English Wikipedia (human readers), on a log scale so the company "
+           f"and its products, which can differ 100-fold, fit on one chart. Renamed pages have all "
+           f"their titles added up, and one-day spikes that look automated are capped. "
+           f"Bottom: daily share price, adjusted for splits and dividends "
+           f"({change:+.0%} since {price.index[0]:%b %Y}). Seeing the two together does not show "
+           f"that one causes the other: that is what the tests below are for.")
 
 # ---- First results -----------------------------------------------------------------
 st.header("First results: portfolio sorts")
