@@ -38,6 +38,7 @@ curiosity-index/
 │   ├── earnings_test.py       does product attention predict earnings surprises?
 │   ├── longer_test.py         the same tests over a longer stretch, from 2020
 │   ├── track_record.py        follows the recorded live picks day by day
+│   ├── clickthrough_tests.py  click-through: volatility and level tests
 │   └── update_all.py          runs every step: what GitHub Actions runs each morning
 ├── .github/workflows/
 │   └── update.yml             daily update at 06:00 UTC, commits new data
@@ -47,7 +48,7 @@ curiosity-index/
 │   ├── mapping/               universe draft, checks, review and final list
 │   └── processed/             page views, clickstream, prices, panel, results
 ├── charts/                    saved charts
-├── docs/                      pre-registered plans (strategy, earnings test) and their results
+├── docs/                      pre-registered plans (strategy, earnings, click-through) and their results
 ├── LLM_LOG.md                 record of AI tool use (required by the brief)
 └── README.md
 ```
@@ -69,6 +70,7 @@ python src/fetch_earnings.py
 python src/earnings_test.py
 python src/longer_test.py
 python src/track_record.py
+python src/clickthrough_tests.py
 python src/chart_sorts.py
 ```
 

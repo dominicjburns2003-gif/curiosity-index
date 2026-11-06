@@ -52,3 +52,41 @@ and will be reported as such. Two parts are new:
      onwards), to see whether it holds in both.
 
 Each test is run once and reported whatever the result.
+
+## Results (added on 6 Nov 2026, after running `src/clickthrough_tests.py` once)
+
+6,775 company-months with usable click-through, November 2017 to September
+2026 (259 left out as mostly hidden).
+
+**Test 1, volatility** (average monthly slope, standardised; t over months):
+
+| Signal | Slope | t |
+|---|---|---|
+| Size of the change in click-through | −0.003 | −1.8 |
+| Size of the gap from normal | +0.000 | 0.2 |
+
+No sign that click-through predicts bigger moves once current volatility and
+the other attention measures are included; if anything, the main signal points
+slightly the wrong way.
+
+**Test 2, level** (top third minus bottom third by click-through, next-month
+return vs the market, % a month):
+
+| Version | Result | t |
+|---|---|---|
+| Click-through level | −0.50% | −1.7 |
+| Against its sector's median (new) | +0.21% | 0.7 |
+| To the end of 2021 (new) | −0.01% | 0.0 |
+| 2022 onwards (new) | −0.93% | −2.2 |
+
+The "high click-through does worse" pattern is a **sector effect**: it
+disappears (and turns slightly positive) once click-through is compared within
+sectors, and it only appears from 2022. Consumer staples (beer, nappies, soap)
+have by far the highest click-through (median about 6%, against about 1% for
+the other sectors) and underperformed the market by about 1.3% a month from
+2022 onwards.
+
+**Conclusion on click-through:** it measures something real (whether readers
+connect a product to the company behind it, highest for consumer staples), but
+it does not predict returns, volatility or, through the model, anything beyond
+product attention.

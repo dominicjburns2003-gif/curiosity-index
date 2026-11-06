@@ -198,7 +198,9 @@ DATA_FILES = {
     "longer": DATA_DIR / "longer_test_summary.csv",
     "track_daily": DATA_DIR / "track_record_daily.csv",
     "track_monthly": DATA_DIR / "track_record_monthly.csv",
+    "clickthrough": DATA_DIR / "clickthrough_tests_summary.csv",
 }
+CLICKTHROUGH_PLAN_URL = GITHUB_URL + "/blob/main/docs/clickthrough_tests_plan.md"
 EARNINGS_PLAN_URL = GITHUB_URL + "/blob/main/docs/earnings_test_plan.md"
 PLAN_URL = GITHUB_URL + "/blob/main/docs/strategy_plan.md"
 DEV_END = "2024-12"  # last month of the development period (see src/strategy.py)
@@ -397,7 +399,10 @@ with results:
                      model.loc["products", "long_short"] > model.loc["company", "long_short"])
             + answer("Does click-through from products to the company add anything?",
                      f"Adding click-through gave {model.loc['clicks', 'long_short'] * 100:+.2f}% a month, "
-                     f"lower than with product attention alone.", model.loc["clicks", "t_stat"],
+                     f"lower than with product attention alone. Two further tests found it does not "
+                     f"predict volatility either, and that high click-through companies only seemed to "
+                     f"do worse because they are mostly consumer staples, which lagged from 2022.",
+                     model.loc["clicks", "t_stat"],
                      model.loc["clicks", "long_short"] > model.loc["products", "long_short"])
             + answer("Does it beat the S&P 500?",
                      f"Weighted by company size, as most funds are, the picks turned $100 into "
@@ -582,6 +587,33 @@ with results:
             f"({reaction_sort['top_minus_bottom'] * 100:+.2f}%, t = {abs(reaction_sort['t_stat']):.1f}).\n"
             "- A likely reading: analysts see the same buzz and raise their forecasts, sometimes too "
             "far, so beating them is harder; and the market, seeing both, is not surprised on average."
+        )
+
+    with st.expander("Research detail: the final click-through tests"):
+        clicks_tests = data["clickthrough"].set_index("signal")
+        st.markdown(
+            f"Two last questions where click-through might show something product attention cannot, "
+            f"[planned in advance]({CLICKTHROUGH_PLAN_URL})."
+        )
+        st.html(html_table(
+            ["Test", "Result", "t"],
+            [["Does a big change in click-through predict a more volatile next month?",
+              f"{clicks_tests.loc['abs_conversion_change', 'result']:+.3f}",
+              f"{clicks_tests.loc['abs_conversion_change', 't_stat']:.1f}"],
+             ["Do companies with high click-through do worse next month?",
+              f"{clicks_tests.loc['conversion', 'result'] * 100:+.2f}% a month",
+              f"{clicks_tests.loc['conversion', 't_stat']:.1f}"],
+             ["The same, compared within sectors",
+              f"{clicks_tests.loc['conversion vs sector', 'result'] * 100:+.2f}% a month",
+              f"{clicks_tests.loc['conversion vs sector', 't_stat']:.1f}"]],
+            numeric={1, 2},
+        ))
+        st.markdown(
+            "Click-through does not predict volatility. The apparent underperformance of high "
+            "click-through companies disappears within sectors: consumer staples (beer, nappies, "
+            "soap) have by far the highest click-through and lagged the market from 2022. "
+            "Click-through measures something real, how strongly readers link a product to the "
+            "company behind it, but it does not predict returns."
         )
 
     with st.expander("Research detail: each signal on its own, and the long-short model"):
