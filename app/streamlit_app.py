@@ -194,7 +194,9 @@ DATA_FILES = {
     "strategy": DATA_DIR / "strategy_summary.csv",
     "strategy_monthly": DATA_DIR / "strategy_monthly.csv",
     "live_picks": DATA_DIR / "live_picks_log.csv",
+    "earnings": DATA_DIR / "earnings_test_summary.csv",
 }
+EARNINGS_PLAN_URL = GITHUB_URL + "/blob/main/docs/earnings_test_plan.md"
 PLAN_URL = GITHUB_URL + "/blob/main/docs/strategy_plan.md"
 DEV_END = "2024-12"  # last month of the development period (see src/strategy.py)
 
@@ -356,11 +358,18 @@ with results:
     excess_t = run["excess"].mean() / (run["excess"].std() / len(run) ** 0.5)
     first, last = pd.Period(run["month"].iloc[0]), pd.Period(run["month"].iloc[-1])
 
-    def answer(question: str, detail: str, t: float, improves: bool = True) -> str:
-        label, style = verdict(t) if improves else ("No improvement", "no")
+    def answer(question: str, detail: str, t: float, improves: bool = True,
+               label: str = "", style: str = "") -> str:
+        if not label:
+            label, style = verdict(t) if improves else ("No improvement", "no")
         return (f'<div class="ci-answer"><div><div class="ci-q">{question}</div>'
                 f'<div class="ci-d">{detail}</div></div><span class="ci-chip {style}">{label}</span></div>')
 
+    earnings = data["earnings"]
+    beat_sort = earnings[(earnings["test"] == "sort") & (earnings["signal"] == "product_surge")
+                         & (earnings["outcome"] == "beat")].iloc[0]
+    reaction_sort = earnings[(earnings["test"] == "sort") & (earnings["signal"] == "product_surge")
+                             & (earnings["outcome"] == "reaction")].iloc[0]
     dev = strategy[strategy["period"] == "development"].set_index("version")
     best_improved = dev.loc[["B", "C", "D"], "excess"].max()
 
@@ -393,6 +402,11 @@ with results:
                      f"for the S&P 500. But simply holding all 68 companies the same way made "
                      f"${growth_of_100(by_size['benchmark']):.0f}, so most of the lead comes from the "
                      f"companies tracked, not the signal, and all of it came in 2025–26.", vs_spy_t)
+            + answer("Does product curiosity before results predict how they go?",
+                     f"Companies whose products drew much more attention than a year earlier beat "
+                     f"analysts' estimates less often ({beat_sort['top']:.0%} against "
+                     f"{beat_sort['bottom']:.0%}), and the share price reaction was no different.",
+                     beat_sort["t_stat"], label="Opposite of expected", style="maybe")
             + answer("Did the planned improvements help?",
                      "A bad-news filter, comparing companies within their sector, a simpler score and "
                      "holding for 3 months were all planned in advance. None beat the original model "
@@ -519,6 +533,40 @@ with results:
             "buying only the top quarter, or both. All beat the average company in both periods, "
             "so the small edge does not depend on these choices. Holding for 3 months also cuts "
             "trading costs from about 0.10% to 0.04% a month."
+        )
+
+    with st.container(key="card_earnings"):
+        st.subheader("Earnings announcements")
+        st.markdown(
+            f"The test [planned in advance]({EARNINGS_PLAN_URL}): for {int(beat_sort['events']):,} "
+            f"quarterly results from {int(beat_sort['quarters'])} quarters since 2018, measure how much "
+            f"attention the company's product pages got in the month before (compared with the same "
+            f"weeks a year earlier), then see how the results went."
+        )
+        thirds = ["Products quieter than a year ago", "About the same", "Products much busier"]
+        beat_chart = go.Figure(go.Bar(
+            x=thirds, y=[beat_sort["bottom"] * 100, beat_sort["middle"] * 100, beat_sort["top"] * 100],
+            marker_color=["#9ec5f4", "#5598e7", "#1c5cab"],
+            text=[f"{v:.1%}" for v in [beat_sort["bottom"], beat_sort["middle"], beat_sort["top"]]],
+            textposition="outside", hovertemplate="%{y:.1f}% beat estimates<extra></extra>",
+        ))
+        beat_chart.update_layout(
+            yaxis=dict(title="Share beating analysts' estimates (%)", range=[0, 100], gridcolor=GRID),
+            height=300, margin=dict(l=10, r=10, t=20, b=10), plot_bgcolor="rgba(0,0,0,0)",
+            paper_bgcolor="rgba(0,0,0,0)", font=dict(family="Inter, sans-serif"), dragmode=False,
+        )
+        beat_chart.update_xaxes(fixedrange=True)
+        beat_chart.update_yaxes(fixedrange=True)
+        st.plotly_chart(beat_chart, width="stretch", config=CHART_CONFIG)
+        st.markdown(
+            f"- **More product buzz, fewer beats:** {beat_sort['top']:.1%} of companies with the busiest "
+            f"product pages beat estimates, against {beat_sort['bottom']:.1%} of the quietest "
+            f"(t = {beat_sort['t_stat']:.1f}, just past the usual bar of 2, though several outcomes were "
+            f"tested), the opposite of what was expected.\n"
+            f"- **No difference in the share-price reaction** around the results "
+            f"({reaction_sort['top_minus_bottom'] * 100:+.2f}%, t = {abs(reaction_sort['t_stat']):.1f}).\n"
+            "- A likely reading: analysts see the same buzz and raise their forecasts, sometimes too "
+            "far, so beating them is harder; and the market, seeing both, is not surprised on average."
         )
 
     with st.expander("Research detail: each signal on its own, and the long-short model"):

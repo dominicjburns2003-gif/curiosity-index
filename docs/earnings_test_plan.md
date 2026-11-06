@@ -61,3 +61,31 @@ Outcomes:
 The main result is test 1 on the main outcome. Everything is run once and
 reported whatever the result. No windows, thresholds or periods are changed
 after seeing results; any change would be reported as a new, separate test.
+
+## Results (added on 6 Nov 2026, after running `src/earnings_test.py` once)
+
+2,252 announcements by 63 companies, January 2018 to November 2026, 36
+quarters. Left out for having fewer than 10 announcements on Yahoo: Diageo,
+Honda, Nintendo, Toyota, Unilever.
+
+| Test | Bottom third | Middle | Top third | Top minus bottom | t |
+|---|---|---|---|---|---|
+| Reaction (vs S&P 500), by product surge | +0.36% | −0.37% | +0.35% | −0.01% | 0.0 |
+| Reaction, by gap | +0.18% | +0.09% | +0.08% | −0.10% | −0.3 |
+| Beat rate, by product surge | 79.6% | 77.6% | 75.6% | −4.0 pts | −2.1 |
+| Beat rate, by gap | 80.4% | 77.3% | 74.9% | −5.5 pts | −2.3 |
+
+Regression with product and company surge together (clustered by quarter):
+product surge on the reaction −0.05% per unit (t −0.2); on the beat rate
+−3.9 points per unit (t −2.5).
+
+- **The share-price reaction is not predicted** by product attention.
+- **The beat rate goes the opposite way to the hypothesis, and it is
+  statistically significant:** companies whose products drew more attention
+  than a year earlier were *less* likely to beat analysts' EPS estimates.
+- A likely reading: analysts see the same product buzz and raise their
+  estimates, sometimes too far, so the bar is higher; the market, seeing both,
+  is not surprised on average.
+- **Exploratory check (not in the plan, so only descriptive):** the effect also
+  holds within companies: a company beat 72.9% of the time when its own product
+  attention was in its top third, against 80.6% in its bottom third.
