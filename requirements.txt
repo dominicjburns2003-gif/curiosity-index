@@ -2,5 +2,6 @@ pandas
 matplotlib
 requests
 yfinance
+scikit-learn
 streamlit
 plotly

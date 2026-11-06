@@ -30,6 +30,7 @@ curiosity-index/
 │   ├── fetch_market_cap.py    monthly market cap from cleaned share counts
 │   ├── build_features.py      the monthly panel: attention features, controls, targets
 │   ├── backtest.py            portfolio sorts (3 groups), long-short t-stats, alpha
+│   ├── walk_forward.py        out-of-sample model, three versions compared, net of costs
 │   ├── chart_sorts.py         chart of the sorts
 │   └── chart_novo_pitch.py    pitch chart: Novo Nordisk vs. Semaglutide
 ├── app/
@@ -53,6 +54,7 @@ python src/fetch_prices.py
 python src/fetch_market_cap.py
 python src/build_features.py
 python src/backtest.py
+python src/walk_forward.py
 python src/chart_sorts.py
 ```
 
