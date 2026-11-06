@@ -400,6 +400,33 @@ with results:
         )
         st.caption("Research results, updated monthly. Not investment advice.")
 
+    with st.container(key="card_strategy"):
+        st.subheader("The strategy")
+        if chosen == "A":
+            st.markdown(
+                "At the end of every month:\n\n"
+                "1. **Measure seven things for each of the 68 companies.** Four are about "
+                "attention: whether the company's own Wikipedia page is unusually busy, whether "
+                "views of it are rising, whether views of its product pages are rising, and whether "
+                "its products are getting more attention than the company itself. Three are "
+                "standard stock measures, so attention is not just standing in for something "
+                "already known: the past year's share-price return, company size and recent "
+                "volatility. Each is ranked against the other companies that month.\n"
+                "2. **Turn them into one score per company** with a machine-learning model "
+                "(gradient-boosted trees). The model learned how these measures related to the "
+                "following month's return from past data only, and is retrained every January.\n"
+                "3. **Buy the 23 highest-scoring companies**, the top third, in equal amounts (or, "
+                "in the size-weighted version, in proportion to their market value).\n"
+                "4. **Hold them for one month**, then repeat with the new scores. Trading costs of "
+                "0.1% are paid on whatever changes."
+            )
+            st.markdown(
+                "It does **not** sell anything short, and it does not use click-through or a "
+                "bad-news filter: both were tested and made results worse."
+            )
+        else:
+            st.markdown(f"Current version: **{chosen_name}**. See the plan linked below for details.")
+
     with st.container(key="card_growth"):
         st.subheader("What $100 would have become")
         weighting = st.segmented_control(
