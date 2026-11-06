@@ -37,6 +37,7 @@ curiosity-index/
 │   ├── fetch_earnings.py      earnings dates and analysts' estimates
 │   ├── earnings_test.py       does product attention predict earnings surprises?
 │   ├── longer_test.py         the same tests over a longer stretch, from 2020
+│   ├── track_record.py        follows the recorded live picks day by day
 │   └── update_all.py          runs every step: what GitHub Actions runs each morning
 ├── .github/workflows/
 │   └── update.yml             daily update at 06:00 UTC, commits new data
@@ -67,6 +68,7 @@ python src/strategy.py
 python src/fetch_earnings.py
 python src/earnings_test.py
 python src/longer_test.py
+python src/track_record.py
 python src/chart_sorts.py
 ```
 

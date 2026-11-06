@@ -216,3 +216,12 @@ January 2020 to September 2026, 81 test months, after costs:
   t-statistics, which suggests the edge, if real, is small.
 - Equal amounts still trail the S&P 500; weighted by size the picks beat it,
   again mostly because of the companies tracked ($325 for the 68 by size).
+
+## Live record: how it is counted (6 Nov 2026)
+
+Monthly picks can only be made once the previous month's data is complete,
+which (with Wikipedia's one-day publishing delay) is a day or two into the
+month. So the live record counts each month's picks **from the close on the day
+they were recorded**, as a real investor could, to the end of that month. Any
+returns that had already happened before the picks were recorded are left out.
+The first picks (for November 2026) were recorded on 6 November 2026.

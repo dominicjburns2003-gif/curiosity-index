@@ -196,6 +196,8 @@ DATA_FILES = {
     "live_picks": DATA_DIR / "live_picks_log.csv",
     "earnings": DATA_DIR / "earnings_test_summary.csv",
     "longer": DATA_DIR / "longer_test_summary.csv",
+    "track_daily": DATA_DIR / "track_record_daily.csv",
+    "track_monthly": DATA_DIR / "track_record_monthly.csv",
 }
 EARNINGS_PLAN_URL = GITHUB_URL + "/blob/main/docs/earnings_test_plan.md"
 PLAN_URL = GITHUB_URL + "/blob/main/docs/strategy_plan.md"
@@ -242,7 +244,7 @@ st.html(f"""
 </div>
 """)
 
-explorer, results, method = st.tabs(["Explorer", "Results", "Method and data"])
+explorer, results, track, method = st.tabs(["Explorer", "Results", "Track record", "Method and data"])
 
 # ---- Explorer -------------------------------------------------------------------
 with explorer:
@@ -497,10 +499,13 @@ with results:
         st.subheader(f"Current picks for {pick_month + 1:%B %Y}")
         st.html('<div class="ci-picks">' + "".join(
             f"<div>{names.get(t, t)} <span>{t}</span></div>" for t in current["ticker"]) + "</div>")
-        st.caption(f"Chosen at the end of {pick_month:%B %Y} and recorded on "
-                   f"{pd.Timestamp(current['recorded_on'].iloc[0]):%-d %B %Y}, before any of the month's "
-                   f"returns were known. Each month's picks are added to a permanent record, so the "
-                   f"strategy's live track record can be checked later. Not investment advice.")
+        recorded = pd.Timestamp(current["recorded_on"].iloc[0])
+        timing = (f"recorded on {recorded:%-d %B %Y}, using data up to the end of {pick_month:%B}; "
+                  f"the live record counts from that day's close, so no {pick_month + 1:%B} returns "
+                  f"that had already happened are included")
+        st.caption(f"Chosen at the end of {pick_month:%B %Y} and {timing}. Each month's picks are "
+                   f"added to a permanent record and never changed, so the strategy's live track "
+                   f"record can be checked later. Not investment advice.")
 
     with st.container(key="card_versions"):
         st.subheader("Versions tested")
@@ -615,6 +620,76 @@ with results:
             "- **Years the model never saw:** the model is retrained each year on past data only, "
             "and tested on the following year."
         )
+
+# ---- Track record -------------------------------------------------------------------
+with track:
+    track_daily = data["track_daily"]
+    track_monthly = data["track_monthly"]
+    names = universe.drop_duplicates("ticker").set_index("ticker")["company"]
+    with st.container(key="card_track"):
+        st.subheader("Live track record")
+        st.markdown(
+            "Every month, as soon as the previous month's data is complete, the strategy's picks "
+            "are recorded and never changed afterwards. This page follows those recorded picks day "
+            "by day: **bought in equal amounts at the close on the day they were recorded**, as a "
+            "real investor could, and held to the end of the month, after 0.1% trading costs. "
+            "Nothing here can be tuned with hindsight."
+        )
+        if track_daily.empty:
+            first = data["live_picks"].iloc[0]
+            st.info(f"The first picks were recorded on {pd.Timestamp(first['recorded_on']):%-d %B %Y} "
+                    f"and bought at that day's close. Results appear here from the next trading day.")
+        else:
+            track_daily["date"] = pd.to_datetime(track_daily["date"])
+            first_day, last_day_held = track_daily["date"].iloc[0], track_daily["date"].iloc[-1]
+            m1, m2, m3 = st.columns(3)
+            for column, key, label in [(m1, "strategy", "Strategy picks"),
+                                       (m2, "average_company", "All 68 companies"),
+                                       (m3, "spy", "S&P 500")]:
+                column.metric(label, f"${track_daily[key].iloc[-1]:,.2f}",
+                              f"{track_daily[key].iloc[-1] / 100 - 1:+.2%} so far", border=True)
+            st.caption(f"Value of $100 invested at the close on {first_day:%-d %B %Y}, as of the close "
+                       f"on {last_day_held:%-d %B %Y}.")
+
+            live_chart = go.Figure()
+            for key, label, colour, width in [("strategy", "Strategy picks", "#2a78d6", 3),
+                                              ("average_company", "All 68 companies", "#9aa5b1", 2),
+                                              ("spy", "S&P 500", "#0f1b2d", 1.5)]:
+                live_chart.add_trace(go.Scatter(
+                    x=track_daily["date"], y=track_daily[key], name=label, mode="lines+markers",
+                    line=dict(color=colour, width=width), marker=dict(size=5),
+                    hovertemplate="$%{y:.2f}<extra>" + label + "</extra>",
+                ))
+            live_chart.add_hline(y=100, line_color="#888", line_width=1, line_dash="dot")
+            live_chart.update_layout(
+                yaxis=dict(title="Value of $100 ($)", gridcolor=GRID), xaxis=dict(showgrid=False, hoverformat="%-d %b %Y"),
+                hovermode="x unified", height=340, legend=dict(orientation="h", y=1.02, yanchor="bottom", x=0),
+                margin=dict(l=10, r=10, t=40, b=10), plot_bgcolor="rgba(0,0,0,0)",
+                paper_bgcolor="rgba(0,0,0,0)", font=dict(family="Inter, sans-serif"), dragmode=False,
+            )
+            live_chart.update_xaxes(fixedrange=True)
+            live_chart.update_yaxes(fixedrange=True)
+            st.plotly_chart(live_chart, width="stretch", config=CHART_CONFIG)
+
+            st.html(html_table(
+                ["Month held", "Picks recorded on", "Strategy", "All 68", "S&P 500", "Status"],
+                [[f"{pd.Period(r.month_held):%B %Y}", f"{pd.Timestamp(r.recorded_on):%-d %b %Y}",
+                  f"{r.strategy:+.2%}", f"{r.average_company:+.2%}", f"{r.spy:+.2%}",
+                  "Complete" if r.complete else f"In progress, to {pd.Timestamp(r.through):%-d %b}"]
+                 for r in track_monthly.itertuples()],
+                numeric={2, 3, 4},
+            ))
+            st.caption("A few weeks, or even a few months, say almost nothing about whether the strategy "
+                       "works: short-term returns are mostly noise. The record becomes meaningful after a "
+                       "year or more.")
+
+    with st.expander("Each month's recorded picks"):
+        for month, picks in data["live_picks"].groupby("month", sort=False):
+            st.markdown(f"**Chosen at the end of {pd.Period(month):%B %Y}**, recorded on "
+                        f"{pd.Timestamp(picks['recorded_on'].iloc[0]):%-d %B %Y}")
+            st.html('<div class="ci-picks">' + "".join(
+                f"<div>{names.get(t, t)} <span>{t}</span></div>" for t in picks.sort_values("rank")["ticker"])
+                + "</div>")
 
 # ---- Method & data -------------------------------------------------------------------
 with method:
