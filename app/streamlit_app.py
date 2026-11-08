@@ -228,6 +228,7 @@ DATA_FILES = {
     "clickthrough": DATA_DIR / "clickthrough_tests_summary.csv",
     "trending": DATA_DIR / "trending.csv",
     "replication": DATA_DIR / "replication_summary.csv",
+    "replication_monthly": DATA_DIR / "replication_monthly.csv",
     "last_update": DATA_DIR / "last_update.json",
 }
 CLICKTHROUGH_PLAN_URL = GITHUB_URL + "/blob/main/docs/clickthrough_tests_plan.md"
@@ -504,6 +505,28 @@ with results:
     excess_t = run["excess"].mean() / (run["excess"].std() / len(run) ** 0.5)
     first, last = pd.Period(run["month"].iloc[0]), pd.Period(run["month"].iloc[-1])
 
+    # Which group of companies the strategy results are shown for
+    st.markdown('<div class="ci-picker-title" style="color:#16325a">Show strategy results for</div>',
+                unsafe_allow_html=True)
+    group = st.segmented_control(
+        "Companies", ["All 112 companies", "Original 68", "44 new companies"],
+        default="All 112 companies", key="group", label_visibility="collapsed") or "All 112 companies"
+    st.caption("Original 68: the companies the strategy was designed and tested on. 44 new: added in "
+               "November 2026 to check it on companies it had never seen. All 112: both together. "
+               "Same strategy and settings in every case.")
+    replication_monthly = data["replication_monthly"]
+    group_runs = {
+        "Original 68": run.assign(benchmark=run["average_company"]),
+        "All 112 companies": replication_monthly[(replication_monthly["group"] == "all 112")
+                                                 & (replication_monthly["detail"] == "trained on this group")],
+        "44 new companies": replication_monthly[(replication_monthly["group"] == "new 44")
+                                                & (replication_monthly["detail"] == "trained on this group")],
+    }
+    group_size = {"Original 68": 68, "All 112 companies": 112, "44 new companies": 44}[group]
+    shown_run = group_runs[group].sort_values("month").copy()
+    shown_run["excess"] = shown_run["net"] - shown_run["benchmark"]
+    shown_t = shown_run["excess"].mean() / (shown_run["excess"].std() / len(shown_run) ** 0.5)
+
     def answer(question: str, detail: str, t: float, improves: bool = True,
                label: str = "", style: str = "") -> str:
         if not label:
@@ -532,36 +555,48 @@ with results:
                            & (replication["detail"] == detail)].iloc[0]
 
     new_strategy = replicated("new 44", "strategy", "trained on this group")
+    # The long-short research comparison for the selected group (company / + products / + clicks)
+    if group == "Original 68":
+        long_short = model[["long_short", "t_stat"]]
+    else:
+        name = {"All 112 companies": "all 112", "44 new companies": "new 44"}[group]
+        long_short = (replication[(replication["group"] == name) & (replication["test"] == "long-short")]
+                      .set_index("detail").rename(columns={"result": "long_short"})[["long_short", "t_stat"]])
     new_beat = replicated("new 44", "earnings", "beat: top minus bottom third")
     all_beat = replicated("all 112", "earnings", "beat: top minus bottom third")
     with st.container(key="card_summary"):
         st.subheader("The short answer so far")
         st.html(
-            answer("Does buying the companies with the most product curiosity beat the average company?",
+            answer(f"Does buying the companies with the most product curiosity beat the average "
+                   f"company? ({group})",
                    f"Buying the model's top third each month (no short selling, after trading costs) "
-                   f"beat the average of the 68 companies by {run['excess'].mean() * 100:+.2f}% a month "
-                   f"from {first + 1:%B %Y} to {last + 1:%B %Y}, but not by enough to rule out luck.",
-                   excess_t)
+                   f"{'beat' if shown_run['excess'].mean() > 0 else 'trailed'} the average of the "
+                   f"{group_size} companies by {abs(shown_run['excess'].mean()) * 100:.2f}% a month from "
+                   f"{first + 1:%B %Y} to {last + 1:%B %Y}"
+                   + (", but not by enough to rule out luck." if shown_t < 2 else "."),
+                   shown_t)
             + answer("Do these results hold on 44 companies they were never tested on?",
                      f"Only the earnings finding did (below). The strategy's small edge almost "
                      f"disappeared on 44 companies added in November 2026 "
                      f"({new_strategy['result'] * 100:+.2f}% a month), and product attention no longer "
                      f"beat company attention. The return results above are most likely luck.",
                      0, label="Only partly", style="maybe")
-            + answer("Does attention to products add anything to attention to the company?",
-                     f"A model using product attention did {model.loc['products', 'long_short'] * 100:+.2f}% "
-                     f"a month in the research test, against {model.loc['company', 'long_short'] * 100:+.2f}% "
-                     f"for company attention alone.", model.loc["products", "t_stat"],
-                     model.loc["products", "long_short"] > model.loc["company", "long_short"])
-            + answer("Does click-through from products to the company add anything?",
-                     f"Adding click-through gave {model.loc['clicks', 'long_short'] * 100:+.2f}% a month, "
-                     f"lower than with product attention alone. Two further tests found it does not "
-                     f"predict volatility either, and that high click-through companies only seemed to "
-                     f"do worse because they are mostly consumer staples, which lagged from 2022.",
-                     model.loc["clicks", "t_stat"],
-                     model.loc["clicks", "long_short"] > model.loc["products", "long_short"])
+            + answer(f"Does attention to products add anything to attention to the company? ({group})",
+                     f"In the research test (buying the top third and selling the bottom third), a model "
+                     f"using product attention did {long_short.loc['products', 'long_short'] * 100:+.2f}% a "
+                     f"month, against {long_short.loc['company', 'long_short'] * 100:+.2f}% for company "
+                     f"attention alone.", long_short.loc["products", "t_stat"],
+                     long_short.loc["products", "long_short"] > long_short.loc["company", "long_short"])
+            + answer(f"Does click-through from products to the company add anything? ({group})",
+                     f"Adding click-through gave {long_short.loc['clicks', 'long_short'] * 100:+.2f}% a month, "
+                     f"against {long_short.loc['products', 'long_short'] * 100:+.2f}% with product attention "
+                     f"alone. Two further tests on the original 68 found it does not predict volatility "
+                     f"either, and that high click-through companies only seemed to do worse because "
+                     f"they are mostly consumer staples, which lagged from 2022.",
+                     long_short.loc["clicks", "t_stat"],
+                     long_short.loc["clicks", "long_short"] > long_short.loc["products", "long_short"])
             + answer("Does it beat the S&P 500?",
-                     f"Weighted by company size, as most funds are, the picks turned $100 into "
+                     f"On the original 68, weighted by company size as most funds are, the picks turned $100 into "
                      f"${growth_of_100(by_size['net']):.0f}, against ${growth_of_100(by_size['spy']):.0f} "
                      f"for the S&P 500. But simply holding all 68 companies the same way made "
                      f"${growth_of_100(by_size['benchmark']):.0f}, so most of the lead comes from the "
@@ -585,7 +620,7 @@ with results:
         if chosen == "A":
             st.markdown(
                 "At the end of every month:\n\n"
-                "1. **Measure seven things for each of the 68 companies.** Four are about "
+                "1. **Measure seven things for each company.** Four are about "
                 "attention: whether the company's own Wikipedia page is unusually busy, whether "
                 "views of it are rising, whether views of its product pages are rising, and whether "
                 "its products are getting more attention than the company itself. Three are "
@@ -595,8 +630,9 @@ with results:
                 "2. **Turn them into one score per company** with a machine-learning model "
                 "(gradient-boosted trees). The model learned how these measures related to the "
                 "following month's return from past data only, and is retrained every January.\n"
-                "3. **Buy the 23 highest-scoring companies**, the top third, in equal amounts (or, "
-                "in the size-weighted version, in proportion to their market value).\n"
+                "3. **Buy the highest-scoring third** (23 of the original 68 companies, 37 of all "
+                "112), in equal amounts (or, in the size-weighted version, in proportion to their "
+                "market value).\n"
                 "4. **Hold them for one month**, then repeat with the new scores. Trading costs of "
                 "0.1% are paid on whatever changes."
             )
@@ -609,24 +645,27 @@ with results:
 
     with st.container(key="card_growth"):
         st.subheader("What $100 would have become")
-        weighting = st.segmented_control(
-            "Invest in the picks", ["In equal amounts", "In proportion to company size"],
-            default="In equal amounts", key="weighting") or "In equal amounts"
-        size_weighted = weighting != "In equal amounts"
-        shown = by_size if size_weighted else run
+        size_weighted = False
+        if group == "Original 68":
+            weighting = st.segmented_control(
+                "Invest in the picks", ["In equal amounts", "In proportion to company size"],
+                default="In equal amounts", key="weighting") or "In equal amounts"
+            size_weighted = weighting != "In equal amounts"
+        shown = by_size if size_weighted else shown_run
         st.markdown(
             f"Following the strategy from {first + 1:%B %Y}: each month, buy the top third of the "
-            f"68 companies as ranked by the model, "
+            f"{group_size} companies as ranked by the model, "
             + ("in proportion to their market value (no company above 15%), "
                if size_weighted else "in equal amounts, ")
-            + "after trading costs. Compared with holding all 68 companies the same way (the fair "
-            "comparison) and with the S&P 500."
+            + f"after trading costs. Compared with holding all {group_size} companies the same way "
+            "(the fair comparison) and with the S&P 500."
+            + (" The size-weighted version was tested on the original 68 only." if group != "Original 68" else "")
         )
         dates = pd.PeriodIndex(shown["month"], freq="M").to_timestamp(how="end").normalize() + pd.offsets.MonthEnd(1)
         start = dates[0] - pd.offsets.MonthEnd(1)
         lines = {
             "Strategy": (shown["net"], "#2a78d6", 3),
-            ("All 68 companies, by size" if size_weighted else "All 68 companies, equal amounts"):
+            (f"All {group_size} companies, by size" if size_weighted else f"All {group_size} companies, equal amounts"):
                 (shown["benchmark"], "#9aa5b1", 2),
             "S&P 500": (shown["spy"], "#0f1b2d", 1.5),
         }
@@ -666,9 +705,10 @@ with results:
         timing = (f"recorded on {recorded:%-d %B %Y}, using data up to the end of {pick_month:%B}; "
                   f"the live record counts from the close on the next trading day, so no returns that "
                   f"had already happened are included")
-        st.caption(f"Chosen at the end of {pick_month:%B %Y} and {timing}. Each month's picks are "
-                   f"added to a permanent record and never changed, so the strategy's live track "
-                   f"record can be checked later. Not investment advice.")
+        st.caption(f"Chosen at the end of {pick_month:%B %Y} from the original 68 companies, as planned "
+                   f"in advance, and {timing}. Each month's picks are added to a permanent record and "
+                   f"never changed, so the strategy's live track record can be checked later. Not "
+                   f"investment advice.")
 
     with st.container(key="card_versions"):
         st.subheader("Versions tested")

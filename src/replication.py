@@ -15,7 +15,9 @@ every setting copied unchanged from the original tests:
 for three groups: the 44 new companies, the new ones without defence, and all
 112 together.
 
-Writes data/processed/replication_summary.csv.
+Writes to data/processed/:
+  replication_summary.csv   one row per group and test
+  replication_monthly.csv   the strategy's monthly returns per group, for the app
 
 Run it from the project folder:
     python src/replication.py
@@ -42,9 +44,13 @@ def t_stat(x: pd.Series) -> float:
     return x.mean() / (x.std() / np.sqrt(len(x)))
 
 
-def strategy_result(panel: pd.DataFrame, score: pd.Series) -> dict:
+MONTHLY = []  # the strategy's monthly returns, collected for replication_monthly.csv
+
+
+def strategy_result(panel: pd.DataFrame, score: pd.Series, group: str = "", detail: str = "") -> dict:
     """Version A's long-only portfolio on `score`, against the group's own average."""
     result = portfolio(panel, score, use_filter=False, hold=1)
+    MONTHLY.append(result[["net", "benchmark"]].assign(group=group, detail=detail).reset_index())
     excess = result["net"] - result["benchmark"]
     return {"result": excess.mean(), "t_stat": t_stat(excess), "months": len(result),
             "growth_100": 100 * (1 + result["net"]).prod(),
@@ -81,13 +87,15 @@ def run_group(name: str, panel: pd.DataFrame, universe: pd.DataFrame, original: 
 
     # 1. Strategy, trained on the group itself
     rows.append({"group": name, "test": "strategy", "detail": "trained on this group",
-                 **strategy_result(panel, as_score(wf.walk_forward(data, features), panel))})
+                 **strategy_result(panel, as_score(wf.walk_forward(data, features), panel),
+                                   name, "trained on this group")})
 
     # 2. Transfer: scored by the model trained on the original 68
     if name != "all 112":
         trained_on = wf.rank_within_month(original, all_features)
         rows.append({"group": name, "test": "strategy", "detail": "model from the original 68",
-                     **strategy_result(panel, as_score(transfer_predictions(trained_on, data, features), panel))})
+                     **strategy_result(panel, as_score(transfer_predictions(trained_on, data, features), panel),
+                                       name, "model from the original 68")})
 
     # 3. Long-short research comparison
     for version, version_features in wf.VERSIONS.items():
@@ -140,6 +148,11 @@ def main() -> None:
 
     summary = pd.DataFrame(rows)
     summary.to_csv(DATA_DIR / "replication_summary.csv", index=False)
+    returns = pd.read_csv(DATA_DIR / "returns_monthly.csv").pivot(index="month", columns="ticker", values="ret")
+    spy_next = returns["SPY"].shift(-1)  # on the row of month t: SPY's return in t+1
+    monthly = pd.concat(MONTHLY)
+    monthly["spy"] = monthly["month"].map(spy_next)
+    monthly.to_csv(DATA_DIR / "replication_monthly.csv", index=False)
     show = summary.copy()
     pct = show["test"].isin(["strategy", "long-short", "sort"]) | show["detail"].str.startswith("reaction")
     show.loc[pct, "result"] *= 100
