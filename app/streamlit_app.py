@@ -583,10 +583,10 @@ with results:
                    + (", but not by enough to rule out luck." if shown_t < 2 else "."),
                    shown_t)
             + answer("Do these results hold on 44 companies they were never tested on?",
-                     f"Only the earnings finding did (below). The strategy's small edge almost "
-                     f"disappeared on 44 companies added in November 2026 "
-                     f"({new_strategy['result'] * 100:+.2f}% a month), and product attention no longer "
-                     f"beat company attention. The return results above are most likely luck.",
+                     f"Only the earnings finding did (below). On 44 companies added in November 2026 "
+                     f"the strategy's edge did not hold ({new_strategy['result'] * 100:+.2f}% a month "
+                     f"against its own average), and product attention no longer beat company "
+                     f"attention. The return results on the original 68 were most likely luck.",
                      0, label="Only partly", style="maybe")
             + answer(f"Does attention to products add anything to attention to the company? ({group})",
                      f"In the research test (buying the top third and selling the bottom third), a model "
@@ -806,26 +806,39 @@ with results:
             f"every setting unchanged. A finding counts as replicated if it points the same way."
         )
 
-        def row(finding: str, original: str, detail_test: str, detail: str, pct: bool, verdict: str) -> list[str]:
+        def row(finding: str, original: str, detail_test: str, detail: str, pct: bool,
+                original_value: float) -> list[str]:
+            """One finding: its value in the original 68 and the new 44, and whether it replicates
+            (same direction), worked out from the current numbers."""
             r = replicated("new 44", detail_test, detail)
             value = f"{r['result'] * 100:+.2f}% a month" if pct else f"{r['result'] * 100:+.1f} pts"
-            return [finding, original, f"{value} (t = {r['t_stat']:.1f})", verdict]
+            if abs(r["t_stat"]) < 0.5:
+                outcome = "Does not replicate (about zero)"
+            elif (r["result"] > 0) != (original_value > 0):
+                outcome = "Does not replicate (opposite direction)"
+            elif abs(r["t_stat"]) >= 2:
+                outcome = "Replicates strongly"
+            elif abs(r["result"]) < abs(original_value) / 2:
+                outcome = "Same direction, much smaller"
+            else:
+                outcome = "Replicates"
+            return [finding, original, f"{value} (t = {r['t_stat']:.1f})", outcome]
 
         strategy_68 = run["excess"]
         st.html(html_table(
             ["Finding", "Original 68", "44 new companies", "Verdict"],
             [row("Strategy beats its own average", f"{strategy_68.mean() * 100:+.2f}% a month (t = {excess_t:.1f})",
-                 "strategy", "trained on this group", True, "Same direction, much smaller"),
+                 "strategy", "trained on this group", True, strategy_68.mean()),
              row("Products ahead of company (single signal)",
                  f"{sorts.loc['gap', 'long_short'] * 100:+.2f}% a month (t = {sorts.loc['gap', 't_stat']:.1f})",
-                 "sort", "Gap (products vs company)", True, "Does not replicate"),
+                 "sort", "Gap (products vs company)", True, sorts.loc["gap", "long_short"]),
              row("Rising click-through (single signal)",
                  f"{sorts.loc['conversion_change', 'long_short'] * 100:+.2f}% a month "
                  f"(t = {sorts.loc['conversion_change', 't_stat']:.1f})",
-                 "sort", "Click-through change", True, "Does not replicate"),
+                 "sort", "Click-through change", True, sorts.loc["conversion_change", "long_short"]),
              row("Product buzz before results means fewer beats",
                  f"{beat_sort['top_minus_bottom'] * 100:+.1f} pts (t = {beat_sort['t_stat']:.1f})",
-                 "earnings", "beat: top minus bottom third", False, "Replicates")],
+                 "earnings", "beat: top minus bottom third", False, beat_sort["top_minus_bottom"])],
             numeric=set()))
         st.markdown(
             f"- **The earnings finding is the one that survives**: almost the same gap in the new "
@@ -835,7 +848,11 @@ with results:
             "- **The return results do not carry over**: the strategy's edge and the two promising "
             "signals were most likely luck in the original 68.\n"
             "- The strategy and its live record stay on the original 68, as planned; changing them "
-            "now would mean choosing after seeing results."
+            "now would mean choosing after seeing results.\n"
+            "- These figures are recomputed every day. The machine-learning results can move by "
+            "about ±0.3% a month when Yahoo revises past prices or share counts, which is itself a "
+            "sign that the edge is too small to rely on. The results as first run are recorded in "
+            "the plan, linked above."
         )
 
     with st.expander("Research detail: the final click-through tests"):
@@ -1043,7 +1060,8 @@ with method:
             "10 or fewer in a month.\n"
             "- **Share counts** from Yahoo needed cleaning; market cap is accurate to a few percent.\n"
             "- **Today's product list** is used for the whole history, a mild form of hindsight.\n"
-            "- **Results move a little** when Yahoo revises past data, by about ±0.15% a month."
+            "- **Model results move** by about ±0.3% a month when Yahoo revises past prices or share "
+            "counts: the tree model is sensitive to small changes in how companies rank."
         )
 
 # ---- Footer ---------------------------------------------------------------------------
