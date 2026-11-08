@@ -102,8 +102,9 @@ def clustered_regression(events: pd.DataFrame, outcome: str, signals: list[str])
             for name, c, s in zip(["intercept", *signals], coef, se)]
 
 
-def main() -> None:
-    universe = pd.read_csv(UNIVERSE_PATH, keep_default_na=False)
+def build_events(universe: pd.DataFrame) -> tuple[pd.DataFrame, list[str]]:
+    """One row per earnings announcement of the companies in `universe`, with all
+    measures; and the companies left out for having too few announcements."""
     earnings = pd.read_csv(DATA_DIR / "earnings_dates.csv", parse_dates=["date"])
     prices = pd.read_csv(DATA_DIR / "prices_daily.csv", index_col="date", parse_dates=True)
     daily = pd.read_csv(DATA_DIR / "pageviews_daily.csv", index_col="date", parse_dates=True)
@@ -116,7 +117,7 @@ def main() -> None:
             if start:
                 daily.loc[daily.index < start, article] = np.nan
 
-    earnings = earnings[earnings["date"] >= START]
+    earnings = earnings[(earnings["date"] >= START) & earnings["ticker"].isin(universe["ticker"])]
     counts = earnings.groupby("ticker").size()
     left_out = sorted(set(universe["ticker"]) - set(counts[counts >= MIN_ANNOUNCEMENTS].index))
     earnings = earnings[earnings["ticker"].isin(counts[counts >= MIN_ANNOUNCEMENTS].index)]
@@ -139,7 +140,13 @@ def main() -> None:
         })
     events = pd.DataFrame(rows)
     events["gap"] = events["product_surge"] - events["company_surge"]
-    events = events.dropna(subset=["reaction"])
+    return events.dropna(subset=["reaction"]), left_out
+
+
+def main() -> None:
+    universe = pd.read_csv(UNIVERSE_PATH, keep_default_na=False)
+    universe = universe[universe["cohort"] == "original"]  # the pre-registered tests use the original 68 companies
+    events, left_out = build_events(universe)
     events.to_csv(DATA_DIR / "earnings_events.csv", index=False)
 
     sorts = [top_minus_bottom(events, signal, outcome)

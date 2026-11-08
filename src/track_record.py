@@ -42,7 +42,8 @@ def growth(prices: pd.DataFrame, tickers: list[str], start: pd.Timestamp, end: p
 def main() -> None:
     log = pd.read_csv(DATA_DIR / "live_picks_log.csv")
     prices = pd.read_csv(DATA_DIR / "prices_daily.csv", index_col="date", parse_dates=True)
-    companies = sorted(pd.read_csv(UNIVERSE_PATH)["ticker"].unique())
+    universe = pd.read_csv(UNIVERSE_PATH)
+    companies = sorted(universe.loc[universe["cohort"] == "original", "ticker"].unique())  # the strategy's 68
     last_close = prices.index.max()
 
     value = {"strategy": 100.0, "average_company": 100.0, "spy": 100.0}

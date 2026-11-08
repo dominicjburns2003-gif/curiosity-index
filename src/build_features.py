@@ -49,6 +49,9 @@ import numpy as np
 import pandas as pd
 
 WINDOW = 6  # months of history that "normal" attention is measured against
+# Months that belong to a different company under the same ticker: Match Group
+# separated from IAC in July 2020, and Yahoo's earlier MTCH history mixes the two
+EXCLUDE_BEFORE = {"MTCH": "2020-07"}
 
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_DIR / "data" / "processed"
@@ -172,7 +175,13 @@ def main() -> None:
     market = factors["Mkt-RF"] + factors["RF"]
     ret_next = returns.shift(-1)
     ret_vs_mkt_next = ret_next.sub(market.reindex(returns.index).shift(-1), axis=0)
-    rank_next = ret_next.rank(axis=1, pct=True)
+    # Ranked within each group of companies (original 68, expansion), so adding
+    # companies never changes the original group's targets
+    cohorts = pd.read_csv(UNIVERSE_PATH).drop_duplicates("ticker").set_index("ticker")["cohort"]
+    rank_next = pd.concat([ret_next[cols].rank(axis=1, pct=True)
+                           for cols in cohorts.groupby(cohorts).groups.values()
+                           if len(ret_next.columns.intersection(cols))], axis=1)
+    rank_next = rank_next.reindex(columns=ret_next.columns)
     vol_next = vol.shift(-1)
 
     panel = pd.concat([
@@ -196,6 +205,11 @@ def main() -> None:
     panel.index.names = ["month", "ticker"]
     panel["gap"] = panel["product_growth"] - panel["company_growth"]
     panel = panel.reset_index()
+    for ticker, start in EXCLUDE_BEFORE.items():
+        panel = panel[~((panel["ticker"] == ticker) & (panel["month"] < start))]
+    groups = pd.read_csv(UNIVERSE_PATH).drop_duplicates("ticker").set_index("ticker")
+    panel["cohort"] = panel["ticker"].map(groups["cohort"])
+    panel["consumer"] = panel["ticker"].map(groups["consumer"])
 
     # Keep months where attention data exists (pageviews start Jan 2017)
     panel = panel[(panel["month"] >= views["month"].min()) & (panel["month"] <= views["month"].max())]

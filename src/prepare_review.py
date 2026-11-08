@@ -13,10 +13,12 @@ suggested decision and a plain-English reason for every company-product row:
 Dominic edits the "final" column of data/mapping/universe_review.csv by hand.
 
 Run it from the project folder:
-    python src/prepare_review.py
+    python src/prepare_review.py                                         # the original draft
+    python src/prepare_review.py data/mapping/expansion_draft_check.csv  # writes expansion_review.csv
 """
 
 from pathlib import Path
+import sys
 
 import pandas as pd
 
@@ -91,7 +93,9 @@ def suggest(r: pd.Series) -> tuple[str, str]:
 
 
 def main() -> None:
-    check = pd.read_csv(MAPPING_DIR / "universe_draft_check.csv")
+    check_path = Path(sys.argv[1]) if len(sys.argv) > 1 else MAPPING_DIR / "universe_draft_check.csv"
+    out_path = MAPPING_DIR / check_path.name.replace("_draft_check", "_review")
+    check = pd.read_csv(check_path)
     # Where a title couldn't be resolved, show the title from the draft
     check["product_current"] = check["product_current"].fillna(check["product_article"])
     check[["suggestion", "reason"]] = check.apply(suggest, axis=1, result_type="expand")
@@ -105,7 +109,8 @@ def main() -> None:
     review = check[columns].rename(
         columns={"company_current": "company_article", "product_current": "product_article"}
     )
-    review.to_csv(MAPPING_DIR / "universe_review.csv", index=False)
+    review.to_csv(out_path, index=False)
+    print(f"Saved {out_path}")
 
     print(review["suggestion"].value_counts().to_string())
     kept = review[review["suggestion"] != "drop"]

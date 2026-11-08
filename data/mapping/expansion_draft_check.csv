@@ -1,0 +1,135 @@
+ticker,company,sector,company_article,product_article,company_current,product_current,product_views_12m,company_views_12m,product_first_month,company_first_month,clicks_to_company,conversion_pct,price_first,price_last,flags
+NFLX,Netflix,Media,Netflix,Stranger_Things,Netflix,Stranger_Things,968147,239758,2017-03,2017-01,353,0.22,2017-01-03,2026-11-06,
+NFLX,Netflix,Media,Netflix,Squid_Game,Netflix,Squid_Game,92832,239758,2021-08,2017-01,156,0.22,2017-01-03,2026-11-06,
+NFLX,Netflix,Media,Netflix,Wednesday_(TV_series),Netflix,Wednesday_(TV_series),132414,239758,2021-10,2017-01,121,0.08,2017-01-03,2026-11-06,
+CMCSA,Comcast,Media,Comcast,Peacock_(streaming_service),Comcast,Peacock_(streaming_service),38847,54583,2019-09,2017-01,507,1.43,2017-01-03,2026-11-06,
+CMCSA,Comcast,Media,Comcast,Xfinity,Comcast,Xfinity,14871,54583,2017-01,2017-01,743,6.29,2017-01-03,2026-11-06,
+CMCSA,Comcast,Media,Comcast,Universal_Studios_Hollywood,Comcast,Universal_Studios_Hollywood,16944,54583,2017-01,2017-01,50,0.32,2017-01-03,2026-11-06,
+NYT,The New York Times Company,Media,The_New_York_Times_Company,The_New_York_Times,The_New_York_Times_Company,The_New_York_Times,130344,11150,2017-01,2017-01,3164,2.79,2017-01-03,2026-11-06,
+NYT,The New York Times Company,Media,The_New_York_Times_Company,Wordle,The_New_York_Times_Company,Wordle,712262,11150,2022-01,2017-01,427,0.1,2017-01-03,2026-11-06,
+NYT,The New York Times Company,Media,The_New_York_Times_Company,The_Athletic,The_New_York_Times_Company,The_Athletic,8237,11150,2017-09,2017-01,162,2.05,2017-01-03,2026-11-06,
+NWSA,News Corp,Media,News_Corp,The_Wall_Street_Journal,News_Corp,The_Wall_Street_Journal,34213,21239,2017-01,2017-01,666,2.06,2017-01-03,2026-11-06,
+NWSA,News Corp,Media,News_Corp,New_York_Post,News_Corp,New_York_Post,31598,21239,2017-01,2017-01,558,2.21,2017-01-03,2026-11-06,
+NWSA,News Corp,Media,News_Corp,HarperCollins,News_Corp,HarperCollins,16755,21239,2017-01,2017-01,804,5.47,2017-01-03,2026-11-06,
+LYV,Live Nation Entertainment,Media,Live_Nation_Entertainment,Ticketmaster,Live_Nation_Entertainment,Ticketmaster,15595,20473,2017-01,2017-01,695,6.1,2017-01-03,2026-11-06,
+CRM,Salesforce,Tech software,Salesforce,Slack_(software),Salesforce,Slack_(software),23953,49328,2017-01,2018-09,1012,4.74,2017-01-03,2026-11-06,company views start 2018-09
+CRM,Salesforce,Tech software,Salesforce,Tableau_Software,Salesforce,Tableau_Software,7535,49328,2017-01,2018-09,199,3.9,2017-01-03,2026-11-06,company views start 2018-09
+ORCL,Oracle,Tech software,Oracle_Corporation,Oracle_Database,Oracle_Corporation,Oracle_Database,10590,105334,2017-01,2017-01,306,3.68,2017-01-03,2026-11-06,
+ORCL,Oracle,Tech software,Oracle_Corporation,MySQL,Oracle_Corporation,MySQL,19169,105334,2017-01,2017-01,122,0.82,2017-01-03,2026-11-06,
+ORCL,Oracle,Tech software,Oracle_Corporation,Java_(programming_language),Oracle_Corporation,Java_(programming_language),43295,105334,2017-01,2017-01,577,1.48,2017-01-03,2026-11-06,
+INTU,Intuit,Tech software,Intuit,TurboTax,Intuit,TurboTax,4951,15520,2017-01,2017-01,169,7.71,2017-01-03,2026-11-06,
+INTU,Intuit,Tech software,Intuit,QuickBooks,Intuit,QuickBooks,8326,15520,2017-01,2017-01,265,3.91,2017-01-03,2026-11-06,
+INTU,Intuit,Tech software,Intuit,Mailchimp,Intuit,Mailchimp,4980,15520,2018-10,2017-01,174,4.26,2017-01-03,2026-11-06,
+ADSK,Autodesk,Tech software,Autodesk,AutoCAD,Autodesk,AutoCAD,13707,15526,2017-01,2017-01,644,6.18,2017-01-03,2026-11-06,
+ADSK,Autodesk,Tech software,Autodesk,Autodesk_Maya,Autodesk,Autodesk_Maya,7160,15526,2017-01,2017-01,348,5.46,2017-01-03,2026-11-06,
+ADSK,Autodesk,Tech software,Autodesk,Autodesk_Revit,Autodesk,Autodesk_Revit,4462,15526,2017-01,2017-01,128,3.68,2017-01-03,2026-11-06,
+MTCH,Match Group,Tech software,Match_Group,Tinder_(app),Match_Group,Tinder_(app),25883,15442,2017-01,2017-01,1185,6.42,2017-01-03,2026-11-06,
+MTCH,Match Group,Tech software,Match_Group,Hinge_(app),Match_Group,Hinge_(app),29043,15442,2018-04,2017-01,1477,7.95,2017-01-03,2026-11-06,
+MTCH,Match Group,Tech software,Match_Group,OkCupid,Match_Group,OkCupid,5238,15442,2017-01,2017-01,180,4.97,2017-01-03,2026-11-06,
+CSCO,Cisco,Tech hardware,Cisco,Webex,Cisco,Webex,3376,31955,2017-01,2017-01,178,5.97,2017-01-03,2026-11-06,
+CSCO,Cisco,Tech hardware,Cisco,Cisco_Meraki,Cisco,Cisco_Meraki,2336,31955,2017-01,2017-01,65,3.55,2017-01-03,2026-11-06,low product views
+HPQ,HP Inc.,Tech hardware,HP_Inc.,HP_Pavilion,HP_Inc.,HP_Pavilion,2641,23807,2017-03,2017-01,38,1.65,2017-01-03,2026-11-06,low product views
+HPQ,HP Inc.,Tech hardware,HP_Inc.,HP_Spectre,HP_Inc.,HP_Spectre,1399,23807,2019-04,2017-01,11,0.99,2017-01-03,2026-11-06,low product views
+GRMN,Garmin,Tech hardware,Garmin,Garmin_Forerunner,Garmin,Garmin_Forerunner,9094,19666,2017-01,2017-01,116,2.41,2017-01-03,2026-11-06,
+GRMN,Garmin,Tech hardware,Garmin,Garmin_Fenix,Garmin,Garmin_Fenix,4089,19666,2021-04,2017-01,53,2.19,2017-01-03,2026-11-06,
+LOGI,Logitech,Tech hardware,Logitech,Logitech_G,Logitech,Logitech_G,248,13026,2019-12,2017-01,31,5.62,2017-01-03,2026-11-06,low product views
+LOGI,Logitech,Tech hardware,Logitech,Logitech_Harmony,Logitech,Logitech_Harmony,1094,13026,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,low product views; no clicks to company page
+MU,Micron Technology,Semiconductors,Micron_Technology,Crucial_(brand),Micron_Technology,Micron_Technology,48087,48087,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Micron_Technology; no clicks to company page
+COST,Costco,Retail,Costco,Kirkland_Signature,Costco,Costco,77716,77716,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Costco; no clicks to company page
+WMT,Walmart,Retail,Walmart,Sam's_Club,Walmart,Sam's_Club,21468,103554,2017-01,2017-01,726,3.75,2017-01-03,2026-11-06,
+WMT,Walmart,Retail,Walmart,Great_Value,Walmart,List_of_Walmart_brands,5729,103554,2017-01,2017-01,66,1.43,2017-01-03,2026-11-06,product redirects to List_of_Walmart_brands
+PVH,PVH,Apparel,PVH_(company),Calvin_Klein_(company),PVH_Corp.,Calvin_Klein_(fashion_house),22330,5918,2021-04,2019-12,679,6.91,2017-01-03,2026-11-06,company renamed/redirects to PVH_Corp.; product redirects to Calvin_Klein_(fashion_house); company views start 2019-12
+PVH,PVH,Apparel,PVH_(company),Tommy_Hilfiger_(company),PVH_Corp.,Tommy_Hilfiger_(company),8662,5918,2017-01,2019-12,598,8.71,2017-01-03,2026-11-06,company renamed/redirects to PVH_Corp.; company views start 2019-12
+CPRI,Capri Holdings,Apparel,Capri_Holdings,Michael_Kors_(brand),Capri_Holdings,Capri_Holdings,3852,3852,2019-01,2019-01,0,0.0,2017-01-03,2026-11-06,product redirects to Capri_Holdings; no clicks to company page; company views start 2019-01
+CPRI,Capri Holdings,Apparel,Capri_Holdings,Jimmy_Choo_(company),Capri_Holdings,Jimmy_Choo_(fashion_house),4321,3852,2021-04,2019-01,345,10.54,2017-01-03,2026-11-06,product redirects to Jimmy_Choo_(fashion_house); company views start 2019-01
+HBI,Hanesbrands,Apparel,Hanesbrands,Hanes,Hanesbrands,Hanes,2387,2693,2017-01,2017-01,270,11.45,,,low product views; no price data
+HBI,Hanesbrands,Apparel,Hanesbrands,Maidenform,Hanesbrands,Maidenform,656,2693,2017-01,2017-01,26,4.25,,,low product views; no price data
+COLM,Columbia Sportswear,Apparel,Columbia_Sportswear,Sorel_(brand),Columbia_Sportswear,Sorel_(brand),2203,9202,2018-12,2017-01,167,9.07,2017-01-03,2026-11-06,low product views
+COLM,Columbia Sportswear,Apparel,Columbia_Sportswear,Mountain_Hardwear,Columbia_Sportswear,Mountain_Hardwear,1543,9202,2017-01,2017-01,98,7.89,2017-01-03,2026-11-06,low product views
+KDP,Keurig Dr Pepper,Beverages,Keurig_Dr_Pepper,Dr_Pepper,Keurig_Dr_Pepper,Dr_Pepper,61096,29606,2017-01,2018-07,4300,9.02,2017-01-03,2026-11-06,company views start 2018-07
+KDP,Keurig Dr Pepper,Beverages,Keurig_Dr_Pepper,Keurig,Keurig_Dr_Pepper,Keurig,6848,29606,2017-01,2018-07,945,13.14,2017-01-03,2026-11-06,company views start 2018-07
+KDP,Keurig Dr Pepper,Beverages,Keurig_Dr_Pepper,Snapple,Keurig_Dr_Pepper,Snapple,13388,29606,2017-01,2018-07,544,7.61,2017-01-03,2026-11-06,company views start 2018-07
+KDP,Keurig Dr Pepper,Beverages,Keurig_Dr_Pepper,Canada_Dry,Keurig_Dr_Pepper,Canada_Dry,9692,29606,2017-01,2018-07,488,5.55,2017-01-03,2026-11-06,company views start 2018-07
+FIZZ,National Beverage,Beverages,National_Beverage,LaCroix_(sparkling_water),National_Beverage,,0,2644,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+FIZZ,National Beverage,Beverages,National_Beverage,Shasta_(soft_drink),National_Beverage,Shasta_Beverages,1212,2644,2023-02,2017-01,338,9.55,2017-01-03,2026-11-06,product redirects to Shasta_Beverages; low product views
+CLX,Clorox,Household,Clorox,Brita,Clorox,Brita,244,6774,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,low product views; no clicks to company page
+CLX,Clorox,Household,Clorox,Burt's_Bees,Clorox,Burt's_Bees,3710,6774,2017-01,2017-01,262,9.2,2017-01-03,2026-11-06,
+CLX,Clorox,Household,Clorox,Glad_(brand),Clorox,,0,6774,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+COTY,Coty,Household,Coty_Inc.,CoverGirl,Coty,CoverGirl,2548,7065,2017-01,2020-07,85,4.29,2017-01-03,2026-11-06,company renamed/redirects to Coty; low product views; company views start 2020-07
+COTY,Coty,Household,Coty_Inc.,Max_Factor,Coty,Max_Factor,9454,7065,2017-01,2020-07,763,4.38,2017-01-03,2026-11-06,company renamed/redirects to Coty; company views start 2020-07
+COTY,Coty,Household,Coty_Inc.,Rimmel,Coty,Rimmel,1099,7065,2017-01,2020-07,86,10.17,2017-01-03,2026-11-06,company renamed/redirects to Coty; low product views; company views start 2020-07
+NWL,Newell Brands,Household,Newell_Brands,Sharpie,Newell_Brands,Sharpie,282,8376,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,low product views; no clicks to company page
+NWL,Newell Brands,Household,Newell_Brands,Yankee_Candle,Newell_Brands,Yankee_Candle,3408,8376,2017-01,2017-01,182,6.34,2017-01-03,2026-11-06,
+NWL,Newell Brands,Household,Newell_Brands,Crock-Pot,Newell_Brands,Slow_cooker,5288,8376,2017-01,2017-01,21,0.44,2017-01-03,2026-11-06,product redirects to Slow_cooker
+HELE,Helen of Troy,Household,Helen_of_Troy_Limited,OXO_(kitchen_utensils_brand),Helen_of_Troy_Limited,OXO_(kitchen_utensils_brand),2468,3649,2017-12,2017-01,247,12.96,2017-01-03,2026-11-06,low product views
+HELE,Helen of Troy,Household,Helen_of_Troy_Limited,Hydro_Flask,Helen_of_Troy_Limited,Hydro_Flask,3085,3649,2020-10,2017-01,218,9.73,2017-01-03,2026-11-06,
+CPB,Campbell's,Food,Campbell_Soup_Company,Goldfish_(cracker),Campbell's,Goldfish_(cracker),7668,13415,2017-02,2024-11,140,1.95,2017-01-03,2026-11-06,company renamed/redirects to Campbell's; company views start 2024-11
+CPB,Campbell's,Food,Campbell_Soup_Company,Pepperidge_Farm,Campbell's,Pepperidge_Farm,6135,13415,2017-01,2024-11,536,10.01,2017-01-03,2026-11-06,company renamed/redirects to Campbell's; company views start 2024-11
+CPB,Campbell's,Food,Campbell_Soup_Company,V8_(beverage),Campbell's,V8_(drink),3582,13415,2024-01,2024-11,98,2.83,2017-01-03,2026-11-06,company renamed/redirects to Campbell's; product redirects to V8_(drink); company views start 2024-11
+CAG,Conagra Brands,Food,Conagra_Brands,Slim_Jim_(snack_food),Conagra_Brands,Slim_Jim_(snack_food),6326,8306,2017-01,2017-02,260,4.74,2017-01-03,2026-11-06,company views start 2017-02
+CAG,Conagra Brands,Food,Conagra_Brands,Birds_Eye,Conagra_Brands,Birds_Eye,3800,8306,2017-01,2017-02,143,4.28,2017-01-03,2026-11-06,company views start 2017-02
+CAG,Conagra Brands,Food,Conagra_Brands,Duncan_Hines,Conagra_Brands,Duncan_Hines,2832,8306,2017-01,2017-02,91,3.33,2017-01-03,2026-11-06,low product views; company views start 2017-02
+TSN,Tyson Foods,Food,Tyson_Foods,Jimmy_Dean,Tyson_Foods,Jimmy_Dean,19575,11878,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,no clicks to company page
+TSN,Tyson Foods,Food,Tyson_Foods,Hillshire_Brands,Tyson_Foods,Hillshire_Brands,909,11878,2017-01,2017-01,212,25.0,2017-01-03,2026-11-06,low product views
+TSN,Tyson Foods,Food,Tyson_Foods,Ball_Park_Franks,Tyson_Foods,Ball_Park_Franks,1284,11878,2017-01,2017-01,43,3.37,2017-01-03,2026-11-06,low product views
+MKC,McCormick,Food,McCormick_&_Company,French's,McCormick_&_Company,French's,3274,12247,2017-01,2017-01,270,10.51,2017-01-03,2026-11-06,
+MKC,McCormick,Food,McCormick_&_Company,Cholula_Hot_Sauce,McCormick_&_Company,Cholula_Hot_Sauce,5763,12247,2017-01,2017-01,201,4.11,2017-01-03,2026-11-06,
+MKC,McCormick,Food,McCormick_&_Company,Old_Bay_Seasoning,McCormick_&_Company,Old_Bay_Seasoning,12986,12247,2017-01,2017-01,269,2.63,2017-01-03,2026-11-06,
+POST,Post Holdings,Food,Post_Holdings,Honey_Bunches_of_Oats,Post_Holdings,Honey_Bunches_of_Oats,819,3604,2017-01,2017-01,46,4.24,2017-01-03,2026-11-06,low product views
+POST,Post Holdings,Food,Post_Holdings,Fruity_Pebbles,Post_Holdings,Pebbles_(cereal),3457,3604,2021-12,2017-01,48,1.54,2017-01-03,2026-11-06,product redirects to Pebbles_(cereal)
+POST,Post Holdings,Food,Post_Holdings,Grape-Nuts,Post_Holdings,Grape-Nuts,8893,3604,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,no clicks to company page
+MO,Altria,Tobacco,Altria,Marlboro,Altria,Marlboro,36425,12472,2021-10,2017-01,911,3.11,2017-01-03,2026-11-06,
+MO,Altria,Tobacco,Altria,Copenhagen_(tobacco),Altria,Copenhagen_(tobacco),3734,12472,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,no clicks to company page
+BTI,British American Tobacco,Tobacco,British_American_Tobacco,Lucky_Strike,British_American_Tobacco,Lucky_Strike,17953,17795,2017-01,2017-01,700,4.63,2017-01-03,2026-11-06,
+BTI,British American Tobacco,Tobacco,British_American_Tobacco,Vuse,British_American_Tobacco,Vuse,2037,17795,2018-09,2017-01,65,4.3,2017-01-03,2026-11-06,low product views
+BTI,British American Tobacco,Tobacco,British_American_Tobacco,Dunhill_(cigarette),British_American_Tobacco,Dunhill_(cigarette),6826,17795,2017-01,2017-01,154,2.91,2017-01-03,2026-11-06,
+QSR,Restaurant Brands International,Restaurants,Restaurant_Brands_International,Burger_King,Restaurant_Brands_International,Burger_King,44747,20911,2017-01,2017-01,2897,7.66,2017-01-03,2026-11-06,
+QSR,Restaurant Brands International,Restaurants,Restaurant_Brands_International,Tim_Hortons,Restaurant_Brands_International,Tim_Hortons,35300,20911,2017-01,2017-01,3810,12.35,2017-01-03,2026-11-06,
+QSR,Restaurant Brands International,Restaurants,Restaurant_Brands_International,Popeyes,Restaurant_Brands_International,Popeyes,25352,20911,2017-09,2017-01,1912,8.45,2017-01-03,2026-11-06,
+DRI,Darden Restaurants,Restaurants,Darden_Restaurants,Olive_Garden,Darden_Restaurants,Olive_Garden,14104,13266,2017-01,2017-01,1149,9.44,2017-01-03,2026-11-06,
+DRI,Darden Restaurants,Restaurants,Darden_Restaurants,LongHorn_Steakhouse,Darden_Restaurants,LongHorn_Steakhouse,4789,13266,2017-01,2017-01,493,12.89,2017-01-03,2026-11-06,
+DIN,Dine Brands,Restaurants,Dine_Brands_Global,IHOP,Dine_Brands,IHOP,11962,3609,2017-01,2022-08,674,5.55,2017-01-03,2026-11-06,company renamed/redirects to Dine_Brands; company views start 2022-08
+DIN,Dine Brands,Restaurants,Dine_Brands_Global,Applebee's,Dine_Brands,Applebee's,10562,3609,2017-01,2022-08,814,10.2,2017-01-03,2026-11-06,company renamed/redirects to Dine_Brands; company views start 2022-08
+CCL,Carnival,Travel,Carnival_Corporation_&_plc,Carnival_Cruise_Line,Carnival_Corporation,Carnival_Cruise_Line,22848,5683,2017-01,2017-01,1317,7.47,2017-01-03,2026-11-06,company renamed/redirects to Carnival_Corporation
+CCL,Carnival,Travel,Carnival_Corporation_&_plc,Princess_Cruises,Carnival_Corporation,Princess_Cruises,16013,5683,2017-01,2017-01,598,4.85,2017-01-03,2026-11-06,company renamed/redirects to Carnival_Corporation
+CCL,Carnival,Travel,Carnival_Corporation_&_plc,P&O_Cruises,Carnival_Corporation,P&O_Cruises,7681,5683,2017-01,2017-01,628,6.18,2017-01-03,2026-11-06,company renamed/redirects to Carnival_Corporation
+NCLH,Norwegian Cruise Line Holdings,Travel,Norwegian_Cruise_Line_Holdings,Norwegian_Cruise_Line,Norwegian_Cruise_Line_Holdings,Norwegian_Cruise_Line,17213,3513,2017-01,2019-01,966,6.64,2017-01-03,2026-11-06,company views start 2019-01
+NCLH,Norwegian Cruise Line Holdings,Travel,Norwegian_Cruise_Line_Holdings,Oceania_Cruises,Norwegian_Cruise_Line_Holdings,Oceania_Cruises,4846,3513,2017-01,2019-01,147,3.51,2017-01-03,2026-11-06,company views start 2019-01
+MAR,Marriott International,Travel,Marriott_International,Ritz-Carlton_Hotel_Company,Marriott_International,The_Ritz-Carlton_Hotel_Company,16016,32948,2017-01,2017-01,1077,8.66,2017-01-03,2026-11-06,product redirects to The_Ritz-Carlton_Hotel_Company
+MAR,Marriott International,Travel,Marriott_International,Sheraton_Hotels_and_Resorts,Marriott_International,Sheraton_Hotels_and_Resorts,7700,32948,2017-01,2017-01,679,11.91,2017-01-03,2026-11-06,
+MAR,Marriott International,Travel,Marriott_International,W_Hotels,Marriott_International,W_Hotels,3546,32948,2017-01,2017-01,128,4.73,2017-01-03,2026-11-06,
+HLT,Hilton Worldwide,Travel,Hilton_Worldwide,Hampton_by_Hilton,Hilton_Worldwide,Hampton_Inn,1114,17520,2017-01,2017-01,182,5.35,2017-01-03,2026-11-06,product redirects to Hampton_Inn; low product views
+HLT,Hilton Worldwide,Travel,Hilton_Worldwide,Waldorf_Astoria_Hotels_&_Resorts,Hilton_Worldwide,Waldorf_Astoria_Hotels_&_Resorts,6569,17520,2017-01,2017-01,295,5.11,2017-01-03,2026-11-06,
+HLT,Hilton Worldwide,Travel,Hilton_Worldwide,DoubleTree,Hilton_Worldwide,DoubleTree,3239,17520,2017-01,2017-01,158,6.06,2017-01-03,2026-11-06,
+BKNG,Booking Holdings,Travel,Booking_Holdings,Booking.com,Booking_Holdings,Booking.com,19970,10889,2017-01,2018-02,1727,8.53,2017-01-03,2026-11-06,company views start 2018-02
+BKNG,Booking Holdings,Travel,Booking_Holdings,Kayak.com,Booking_Holdings,Kayak_(company),6013,10889,2020-01,2018-02,166,4.8,2017-01-03,2026-11-06,product redirects to Kayak_(company); company views start 2018-02
+BKNG,Booking Holdings,Travel,Booking_Holdings,OpenTable,Booking_Holdings,OpenTable,3146,10889,2017-01,2018-02,195,8.01,2017-01-03,2026-11-06,company views start 2018-02
+EXPE,Expedia Group,Travel,Expedia_Group,Expedia,Expedia_Group,Expedia,9743,13842,2017-01,2018-03,669,10.07,2017-01-03,2026-11-06,company views start 2018-03
+EXPE,Expedia Group,Travel,Expedia_Group,Hotels.com,Expedia_Group,Hotels.com,3580,13842,2017-01,2018-03,254,10.55,2017-01-03,2026-11-06,company views start 2018-03
+EXPE,Expedia Group,Travel,Expedia_Group,Vrbo,Expedia_Group,Vrbo,10057,13842,2019-06,2018-03,236,4.85,2017-01-03,2026-11-06,company views start 2018-03
+STLA,Stellantis,Autos,Stellantis,Jeep,Stellantis,Jeep,35196,108131,2017-01,2020-07,1902,6.36,2017-01-03,2026-11-06,company views start 2020-07
+STLA,Stellantis,Autos,Stellantis,Ram_Trucks,Stellantis,Ram_Trucks,18886,108131,2017-01,2020-07,25,0.15,2017-01-03,2026-11-06,company views start 2020-07
+STLA,Stellantis,Autos,Stellantis,Dodge,Stellantis,Dodge,29516,108131,2017-01,2020-07,978,3.99,2017-01-03,2026-11-06,company views start 2020-07
+BC,Brunswick,Autos,Brunswick_Corporation,Sea_Ray,Brunswick_Corporation,Sea_Ray,1011,5122,2017-01,2017-01,27,3.77,2017-01-03,2026-11-06,low product views
+BC,Brunswick,Autos,Brunswick_Corporation,Mercury_Marine,Brunswick_Corporation,Mercury_Marine,4179,5122,2017-01,2017-01,314,8.9,2017-01-03,2026-11-06,
+PII,Polaris,Autos,Polaris_Inc.,Indian_Motorcycle,Polaris_Inc.,Indian_Motorcycle,15861,7168,2024-04,2019-10,232,1.92,2017-01-03,2026-11-06,company views start 2019-10
+PII,Polaris,Autos,Polaris_Inc.,Polaris_Slingshot,Polaris_Inc.,Polaris_Slingshot,4386,7168,2017-01,2019-10,237,6.03,2017-01-03,2026-11-06,company views start 2019-10
+AMGN,Amgen,Pharma,Amgen,Evolocumab,Amgen,Evolocumab,3418,10866,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,no clicks to company page
+AMGN,Amgen,Pharma,Amgen,Etanercept,Amgen,Etanercept,2456,10866,2017-01,2017-01,20,1.19,2017-01-03,2026-11-06,low product views
+AMGN,Amgen,Pharma,Amgen,Denosumab,Amgen,Denosumab,3973,10866,2017-01,2017-01,12,0.35,2017-01-03,2026-11-06,
+NVS,Novartis,Pharma,Novartis,Sacubitril/valsartan,Novartis,Sacubitril/valsartan,2945,16742,2017-08,2017-01,0,0.0,2017-01-03,2026-11-06,low product views; no clicks to company page
+NVS,Novartis,Pharma,Novartis,Secukinumab,Novartis,Secukinumab,1929,16742,2017-01,2017-01,10,0.61,2017-01-03,2026-11-06,low product views
+GSK,GSK,Pharma,GSK,Zoster_vaccine,GSK,Zoster_vaccine,4003,246,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,no clicks to company page
+GSK,GSK,Pharma,GSK,Fluticasone/salmeterol,GSK,Fluticasone/salmeterol,850,246,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,low product views; no clicks to company page
+SNY,Sanofi,Pharma,Sanofi,Nirsevimab,Sanofi,Nirsevimab,878,13274,2022-04,2017-01,0,0.0,2017-01-03,2026-11-06,low product views; no clicks to company page
+SNY,Sanofi,Pharma,Sanofi,Insulin_glargine,Sanofi,Insulin_glargine,3738,13274,2017-01,2017-01,21,0.67,2017-01-03,2026-11-06,
+ABT,Abbott Laboratories,Medtech,Abbott_Laboratories,FreeStyle_Libre,Abbott_Laboratories,Continuous_glucose_monitor,3782,18381,2018-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Continuous_glucose_monitor; no clicks to company page
+ABT,Abbott Laboratories,Medtech,Abbott_Laboratories,Similac,Abbott_Laboratories,Similac,1675,18381,2017-01,2017-01,85,6.96,2017-01-03,2026-11-06,low product views
+ABT,Abbott Laboratories,Medtech,Abbott_Laboratories,Ensure,Abbott_Laboratories,Ensure,3575,18381,2017-01,2017-01,92,3.14,2017-01-03,2026-11-06,
+LMT,Lockheed Martin,Aerospace,Lockheed_Martin,Lockheed_Martin_F-35_Lightning_II,Lockheed_Martin,Lockheed_Martin_F-35_Lightning_II,208800,67971,2017-01,2017-01,2245,1.41,2017-01-03,2026-11-06,
+LMT,Lockheed Martin,Aerospace,Lockheed_Martin,Lockheed_Martin_F-22_Raptor,Lockheed_Martin,Lockheed_Martin_F-22_Raptor,128990,67971,2017-01,2017-01,16,0.02,2017-01-03,2026-11-06,
+LMT,Lockheed Martin,Aerospace,Lockheed_Martin,Lockheed_C-130_Hercules,Lockheed_Martin,Lockheed_C-130_Hercules,86640,67971,2017-01,2017-01,414,0.73,2017-01-03,2026-11-06,
+GD,General Dynamics,Aerospace,General_Dynamics,Gulfstream_Aerospace,General_Dynamics,Gulfstream_Aerospace,16566,29510,2017-01,2017-01,1321,8.78,2017-01-03,2026-11-06,
+GD,General Dynamics,Aerospace,General_Dynamics,M1_Abrams,General_Dynamics,M1_Abrams,78614,29510,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,no clicks to company page
+NOC,Northrop Grumman,Aerospace,Northrop_Grumman,Northrop_Grumman_B-21_Raider,Northrop_Grumman,Northrop_Grumman_B-21_Raider,101309,42641,2017-01,2017-01,879,1.1,2017-01-03,2026-11-06,
+NOC,Northrop Grumman,Aerospace,Northrop_Grumman,Northrop_Grumman_B-2_Spirit,Northrop_Grumman,Northrop_B-2_Spirit,127037,42641,2024-05,2017-01,1225,1.51,2017-01-03,2026-11-06,product redirects to Northrop_B-2_Spirit

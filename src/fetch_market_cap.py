@@ -20,7 +20,13 @@ history of shares outstanding, but it needs three clean-ups:
    so they stay.
 
 Companies whose ticker changed also use the counts under their old ticker
-(Facebook FB -> META, Square SQ -> XYZ, Sony SNE -> SONY).
+(Facebook FB -> META, Square SQ -> XYZ, Sony SNE -> SONY, Michael Kors KORS ->
+Capri CPRI, Dr Pepper Snapple DPS -> KDP, Fiat Chrysler FCAU -> Stellantis STLA),
+where Yahoo still has them.
+
+Restaurant Brands (QSR) has about 455 million shares counting the partnership
+units exchangeable into shares; for long stretches Yahoo reports ordinary
+shares only, so counts below 400 million are treated as errors.
 
 The price used is the closing price adjusted for splits only, not dividends,
 because market cap is about the actual value of the shares on that day.
@@ -41,7 +47,8 @@ import yfinance as yf
 START = "2016-01-01"
 MAX_GAP = 0.25  # drop share counts more than 25% away from their neighbours
 MAX_JUMP = 0.15  # a monthly change this big that later reverses is an error
-OLD_TICKERS = {"META": "FB", "XYZ": "SQ", "SONY": "SNE"}
+OLD_TICKERS = {"META": "FB", "XYZ": "SQ", "SONY": "SNE", "CPRI": "KORS", "KDP": "DPS", "STLA": "FCAU"}
+MIN_SHARES = {"QSR": 400e6}  # counts below this leave out exchangeable partnership units
 
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 UNIVERSE_PATH = PROJECT_DIR / "data" / "mapping" / "products_to_companies.csv"
@@ -61,8 +68,13 @@ def clean_shares(ticker: yf.Ticker) -> pd.Series:
     """Shares outstanding over time, in today's units, with bad points removed."""
     shares = share_counts(ticker.ticker)
     if ticker.ticker in OLD_TICKERS:  # counts from before the ticker changed
-        old = share_counts(OLD_TICKERS[ticker.ticker])
-        shares = pd.concat([old[old.index < shares.index.min()], shares])
+        try:
+            old = share_counts(OLD_TICKERS[ticker.ticker])
+            shares = pd.concat([old[old.index < shares.index.min()], shares])
+        except RuntimeError:
+            pass  # Yahoo no longer has the old ticker
+    if ticker.ticker in MIN_SHARES:
+        shares = shares[shares >= MIN_SHARES[ticker.ticker]]
 
     # Convert counts from before each split into today's units
     for split_date, ratio in ticker.splits.items():
@@ -102,6 +114,17 @@ def main() -> None:
 
     print(f"Downloading split-adjusted prices for {len(tickers)} tickers ...")
     prices = yf.download(tickers, start=START, auto_adjust=False, progress=False)["Close"]
+    # Yahoo sometimes fails on a ticker for no reason; retry those one by one
+    for ticker in prices.columns[prices.isna().all()]:
+        for attempt in range(3):
+            print(f"  retrying prices for {ticker} ...")
+            single = yf.download(ticker, start=START, auto_adjust=False, progress=False)
+            if len(single):
+                prices[ticker] = single["Close"][ticker]
+                break
+            time.sleep(5)
+        else:
+            raise RuntimeError(f"No prices for {ticker} after 3 retries")
     month_end = prices.resample("ME").last()
     if month_end.index[-1] >= pd.Timestamp.today().normalize():
         month_end = month_end.iloc[:-1]  # current month not finished

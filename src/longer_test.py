@@ -34,6 +34,7 @@ def t_stat(x: pd.Series) -> float:
 
 def main() -> None:
     panel = pd.read_csv(DATA_DIR / "panel_monthly.csv")
+    panel = panel[panel["cohort"] == "original"]  # the pre-registered tests use the original 68 companies
     returns = pd.read_csv(DATA_DIR / "returns_monthly.csv").pivot(index="month", columns="ticker", values="ret")
     spy_next = returns["SPY"].shift(-1)  # on the row of month t: SPY's return in t+1
     all_features = sorted({f for features in wf.VERSIONS.values() for f in features})

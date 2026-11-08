@@ -46,3 +46,50 @@ companies together**.
   (test 1) and product buzz before results meaning fewer beats (test 5).
 - Everything is run once and reported whatever the result. The original
   68-company results are not changed.
+
+## Results (added on 8 Nov 2026, after running `src/replication.py` once)
+
+44 new companies (41 without defence); all settings as in the original tests.
+Earnings dates were too few on Yahoo for British American Tobacco and
+Stellantis, which are left out of test 5.
+
+| Test | Original 68 | New 44 | New, consumer only | All 112 |
+|---|---|---|---|---|
+| 1. Strategy vs own average, % a month (t) | +0.31 (1.0) | +0.08 (0.4) | +0.18 (0.8) | +0.03 (0.1) |
+| 2. Transfer: model from the original 68 | — | +0.14 (0.5) | +0.16 (0.6) | — |
+| 3. Long-short, company only | +0.05 (0.1) | +0.74 (1.9) | +0.51 (1.2) | +0.27 (0.7) |
+| 3. Long-short, + products | +0.51 (0.9) | +0.60 (1.5) | +0.50 (1.5) | +0.18 (0.5) |
+| 3. Long-short, + click-through | +0.23 (0.5) | +0.21 (0.4) | +0.63 (1.4) | +0.47 (1.4) |
+| 4. Sort: products ahead of company | +0.46 (1.8) | +0.01 (0.0) | −0.02 (−0.1) | +0.15 (0.8) |
+| 4. Sort: rising click-through | +0.44 (1.8) | −0.10 (−0.3) | +0.05 (0.1) | +0.15 (0.8) |
+| 5. Beat rate, busiest minus quietest products | −4.0 pts (−2.1) | −4.2 pts (−1.8) | −3.7 pts (−1.4) | −3.9 pts (−2.4) |
+| 5. Beat rate, regression on product surge | −3.9 pts (−2.5) | −0.3 pts (−0.1) | +0.1 pts (0.0) | −3.2 pts (−2.1) |
+
+(The original 68's strategy row is the whole period, Jan 2022 – Sep 2026, after the
+8 Nov data refresh.)
+
+**Verdicts, using the rule fixed in advance (same sign = replicates; also
+|t| ≥ 2 in the new group = strong):**
+
+- **Strategy (test 1): replicates in sign only, and is very small.** The edge
+  in the new companies (+0.08% a month) is about a quarter of the original and far
+  from significant. Pooled over all 112 it is essentially zero. **The
+  original strategy edge is most likely luck.**
+- **"Products add to company attention" (test 3): does not replicate.** In the
+  new companies, company attention alone did best.
+- **The two promising single signals (test 4): do not replicate**, both about
+  zero in the new companies.
+- **Product buzz before results means fewer beats (test 5): replicates in the
+  sort**, with almost the same size (−4.2 vs −4.0 points), though not
+  significant on the new companies alone (t −1.8); pooled over 112 companies it
+  is significant (t −2.4). The regression version does **not** replicate in the
+  new group (t −0.1, and still about zero with the most extreme values capped,
+  an exploratory check): in the new companies the difference shows up between
+  the busiest and the quietest third, but not as a steady straight-line
+  relationship. The finding is therefore weaker than the original test
+  suggested.
+
+**Overall:** the one finding that survives a fair test on new companies is
+the earnings one: when a company's products draw unusually much attention,
+analysts' expectations tend to be set too high. The return-prediction
+results from the original 68 do not carry over.

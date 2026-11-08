@@ -77,6 +77,7 @@ def sort_on(panel: pd.DataFrame, signal: str, target: str) -> pd.DataFrame:
 
 def main() -> None:
     panel = pd.read_csv(DATA_DIR / "panel_monthly.csv")
+    panel = panel[panel["cohort"] == "original"]  # the pre-registered tests use the original 68 companies
     factors = pd.read_csv(DATA_DIR / "ff_factors_monthly.csv", index_col="month")
     # The factors are for month t+1, because returns are measured over t+1
     factors_next = factors.copy()

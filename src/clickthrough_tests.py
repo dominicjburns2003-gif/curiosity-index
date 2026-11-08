@@ -70,6 +70,7 @@ def top_minus_bottom(df: pd.DataFrame, signal: str, outcome: str, label: str) ->
 
 def main() -> None:
     panel = pd.read_csv(DATA_DIR / "panel_monthly.csv")
+    panel = panel[panel["cohort"] == "original"]  # the pre-registered tests use the original 68 companies
     sectors = pd.read_csv(UNIVERSE_PATH).drop_duplicates("ticker").set_index("ticker")["sector"]
     df = panel[panel["conversion"].notna() & (panel["censored_share"] <= MAX_CENSORED)].copy()
     df["sector_group"] = df["ticker"].map(sectors).map(SECTOR_GROUPS)

@@ -1,0 +1,135 @@
+ticker,company,sector,company_article,product_article
+NFLX,Netflix,Media,Netflix,Stranger_Things
+NFLX,Netflix,Media,Netflix,Squid_Game
+NFLX,Netflix,Media,Netflix,Wednesday_(TV_series)
+CMCSA,Comcast,Media,Comcast,Peacock_(streaming_service)
+CMCSA,Comcast,Media,Comcast,Xfinity
+CMCSA,Comcast,Media,Comcast,Universal_Studios_Hollywood
+NYT,The New York Times Company,Media,The_New_York_Times_Company,The_New_York_Times
+NYT,The New York Times Company,Media,The_New_York_Times_Company,Wordle
+NYT,The New York Times Company,Media,The_New_York_Times_Company,The_Athletic
+NWSA,News Corp,Media,News_Corp,The_Wall_Street_Journal
+NWSA,News Corp,Media,News_Corp,New_York_Post
+NWSA,News Corp,Media,News_Corp,HarperCollins
+LYV,Live Nation Entertainment,Media,Live_Nation_Entertainment,Ticketmaster
+CRM,Salesforce,Tech software,Salesforce,Slack_(software)
+CRM,Salesforce,Tech software,Salesforce,Tableau_Software
+ORCL,Oracle,Tech software,Oracle_Corporation,Oracle_Database
+ORCL,Oracle,Tech software,Oracle_Corporation,MySQL
+ORCL,Oracle,Tech software,Oracle_Corporation,Java_(programming_language)
+INTU,Intuit,Tech software,Intuit,TurboTax
+INTU,Intuit,Tech software,Intuit,QuickBooks
+INTU,Intuit,Tech software,Intuit,Mailchimp
+ADSK,Autodesk,Tech software,Autodesk,AutoCAD
+ADSK,Autodesk,Tech software,Autodesk,Autodesk_Maya
+ADSK,Autodesk,Tech software,Autodesk,Autodesk_Revit
+MTCH,Match Group,Tech software,Match_Group,Tinder_(app)
+MTCH,Match Group,Tech software,Match_Group,Hinge_(app)
+MTCH,Match Group,Tech software,Match_Group,OkCupid
+CSCO,Cisco,Tech hardware,Cisco,Webex
+CSCO,Cisco,Tech hardware,Cisco,Cisco_Meraki
+HPQ,HP Inc.,Tech hardware,HP_Inc.,HP_Pavilion
+HPQ,HP Inc.,Tech hardware,HP_Inc.,HP_Spectre
+GRMN,Garmin,Tech hardware,Garmin,Garmin_Forerunner
+GRMN,Garmin,Tech hardware,Garmin,Garmin_Fenix
+LOGI,Logitech,Tech hardware,Logitech,Logitech_G
+LOGI,Logitech,Tech hardware,Logitech,Logitech_Harmony
+MU,Micron Technology,Semiconductors,Micron_Technology,Crucial_(brand)
+COST,Costco,Retail,Costco,Kirkland_Signature
+WMT,Walmart,Retail,Walmart,Sam's_Club
+WMT,Walmart,Retail,Walmart,Great_Value
+PVH,PVH,Apparel,PVH_(company),Calvin_Klein_(company)
+PVH,PVH,Apparel,PVH_(company),Tommy_Hilfiger_(company)
+CPRI,Capri Holdings,Apparel,Capri_Holdings,Michael_Kors_(brand)
+CPRI,Capri Holdings,Apparel,Capri_Holdings,Jimmy_Choo_(company)
+HBI,Hanesbrands,Apparel,Hanesbrands,Hanes
+HBI,Hanesbrands,Apparel,Hanesbrands,Maidenform
+COLM,Columbia Sportswear,Apparel,Columbia_Sportswear,Sorel_(brand)
+COLM,Columbia Sportswear,Apparel,Columbia_Sportswear,Mountain_Hardwear
+KDP,Keurig Dr Pepper,Beverages,Keurig_Dr_Pepper,Dr_Pepper
+KDP,Keurig Dr Pepper,Beverages,Keurig_Dr_Pepper,Keurig
+KDP,Keurig Dr Pepper,Beverages,Keurig_Dr_Pepper,Snapple
+KDP,Keurig Dr Pepper,Beverages,Keurig_Dr_Pepper,Canada_Dry
+FIZZ,National Beverage,Beverages,National_Beverage,LaCroix_(sparkling_water)
+FIZZ,National Beverage,Beverages,National_Beverage,Shasta_(soft_drink)
+CLX,Clorox,Household,Clorox,Brita
+CLX,Clorox,Household,Clorox,Burt's_Bees
+CLX,Clorox,Household,Clorox,Glad_(brand)
+COTY,Coty,Household,Coty_Inc.,CoverGirl
+COTY,Coty,Household,Coty_Inc.,Max_Factor
+COTY,Coty,Household,Coty_Inc.,Rimmel
+NWL,Newell Brands,Household,Newell_Brands,Sharpie
+NWL,Newell Brands,Household,Newell_Brands,Yankee_Candle
+NWL,Newell Brands,Household,Newell_Brands,Crock-Pot
+HELE,Helen of Troy,Household,Helen_of_Troy_Limited,OXO_(kitchen_utensils_brand)
+HELE,Helen of Troy,Household,Helen_of_Troy_Limited,Hydro_Flask
+CPB,Campbell's,Food,Campbell_Soup_Company,Goldfish_(cracker)
+CPB,Campbell's,Food,Campbell_Soup_Company,Pepperidge_Farm
+CPB,Campbell's,Food,Campbell_Soup_Company,V8_(beverage)
+CAG,Conagra Brands,Food,Conagra_Brands,Slim_Jim_(snack_food)
+CAG,Conagra Brands,Food,Conagra_Brands,Birds_Eye
+CAG,Conagra Brands,Food,Conagra_Brands,Duncan_Hines
+TSN,Tyson Foods,Food,Tyson_Foods,Jimmy_Dean
+TSN,Tyson Foods,Food,Tyson_Foods,Hillshire_Brands
+TSN,Tyson Foods,Food,Tyson_Foods,Ball_Park_Franks
+MKC,McCormick,Food,McCormick_&_Company,French's
+MKC,McCormick,Food,McCormick_&_Company,Cholula_Hot_Sauce
+MKC,McCormick,Food,McCormick_&_Company,Old_Bay_Seasoning
+POST,Post Holdings,Food,Post_Holdings,Honey_Bunches_of_Oats
+POST,Post Holdings,Food,Post_Holdings,Fruity_Pebbles
+POST,Post Holdings,Food,Post_Holdings,Grape-Nuts
+MO,Altria,Tobacco,Altria,Marlboro
+MO,Altria,Tobacco,Altria,Copenhagen_(tobacco)
+BTI,British American Tobacco,Tobacco,British_American_Tobacco,Lucky_Strike
+BTI,British American Tobacco,Tobacco,British_American_Tobacco,Vuse
+BTI,British American Tobacco,Tobacco,British_American_Tobacco,Dunhill_(cigarette)
+QSR,Restaurant Brands International,Restaurants,Restaurant_Brands_International,Burger_King
+QSR,Restaurant Brands International,Restaurants,Restaurant_Brands_International,Tim_Hortons
+QSR,Restaurant Brands International,Restaurants,Restaurant_Brands_International,Popeyes
+DRI,Darden Restaurants,Restaurants,Darden_Restaurants,Olive_Garden
+DRI,Darden Restaurants,Restaurants,Darden_Restaurants,LongHorn_Steakhouse
+DIN,Dine Brands,Restaurants,Dine_Brands_Global,IHOP
+DIN,Dine Brands,Restaurants,Dine_Brands_Global,Applebee's
+CCL,Carnival,Travel,Carnival_Corporation_&_plc,Carnival_Cruise_Line
+CCL,Carnival,Travel,Carnival_Corporation_&_plc,Princess_Cruises
+CCL,Carnival,Travel,Carnival_Corporation_&_plc,P&O_Cruises
+NCLH,Norwegian Cruise Line Holdings,Travel,Norwegian_Cruise_Line_Holdings,Norwegian_Cruise_Line
+NCLH,Norwegian Cruise Line Holdings,Travel,Norwegian_Cruise_Line_Holdings,Oceania_Cruises
+MAR,Marriott International,Travel,Marriott_International,Ritz-Carlton_Hotel_Company
+MAR,Marriott International,Travel,Marriott_International,Sheraton_Hotels_and_Resorts
+MAR,Marriott International,Travel,Marriott_International,W_Hotels
+HLT,Hilton Worldwide,Travel,Hilton_Worldwide,Hampton_by_Hilton
+HLT,Hilton Worldwide,Travel,Hilton_Worldwide,Waldorf_Astoria_Hotels_&_Resorts
+HLT,Hilton Worldwide,Travel,Hilton_Worldwide,DoubleTree
+BKNG,Booking Holdings,Travel,Booking_Holdings,Booking.com
+BKNG,Booking Holdings,Travel,Booking_Holdings,Kayak.com
+BKNG,Booking Holdings,Travel,Booking_Holdings,OpenTable
+EXPE,Expedia Group,Travel,Expedia_Group,Expedia
+EXPE,Expedia Group,Travel,Expedia_Group,Hotels.com
+EXPE,Expedia Group,Travel,Expedia_Group,Vrbo
+STLA,Stellantis,Autos,Stellantis,Jeep
+STLA,Stellantis,Autos,Stellantis,Ram_Trucks
+STLA,Stellantis,Autos,Stellantis,Dodge
+BC,Brunswick,Autos,Brunswick_Corporation,Sea_Ray
+BC,Brunswick,Autos,Brunswick_Corporation,Mercury_Marine
+PII,Polaris,Autos,Polaris_Inc.,Indian_Motorcycle
+PII,Polaris,Autos,Polaris_Inc.,Polaris_Slingshot
+AMGN,Amgen,Pharma,Amgen,Evolocumab
+AMGN,Amgen,Pharma,Amgen,Etanercept
+AMGN,Amgen,Pharma,Amgen,Denosumab
+NVS,Novartis,Pharma,Novartis,Sacubitril/valsartan
+NVS,Novartis,Pharma,Novartis,Secukinumab
+GSK,GSK,Pharma,GSK,Zoster_vaccine
+GSK,GSK,Pharma,GSK,Fluticasone/salmeterol
+SNY,Sanofi,Pharma,Sanofi,Nirsevimab
+SNY,Sanofi,Pharma,Sanofi,Insulin_glargine
+ABT,Abbott Laboratories,Medtech,Abbott_Laboratories,FreeStyle_Libre
+ABT,Abbott Laboratories,Medtech,Abbott_Laboratories,Similac
+ABT,Abbott Laboratories,Medtech,Abbott_Laboratories,Ensure
+LMT,Lockheed Martin,Aerospace,Lockheed_Martin,Lockheed_Martin_F-35_Lightning_II
+LMT,Lockheed Martin,Aerospace,Lockheed_Martin,Lockheed_Martin_F-22_Raptor
+LMT,Lockheed Martin,Aerospace,Lockheed_Martin,Lockheed_C-130_Hercules
+GD,General Dynamics,Aerospace,General_Dynamics,Gulfstream_Aerospace
+GD,General Dynamics,Aerospace,General_Dynamics,M1_Abrams
+NOC,Northrop Grumman,Aerospace,Northrop_Grumman,Northrop_Grumman_B-21_Raider
+NOC,Northrop Grumman,Aerospace,Northrop_Grumman,Northrop_Grumman_B-2_Spirit

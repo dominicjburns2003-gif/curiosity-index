@@ -181,6 +181,7 @@ def summarise(result: pd.DataFrame, spy: pd.Series, period: str) -> dict:
 
 def main() -> None:
     panel = pd.read_csv(DATA_DIR / "panel_monthly.csv")
+    panel = panel[panel["cohort"] == "original"]  # the pre-registered tests use the original 68 companies
     sectors = pd.read_csv(UNIVERSE_PATH).drop_duplicates("ticker").set_index("ticker")["sector"]
     returns = pd.read_csv(DATA_DIR / "returns_monthly.csv").pivot(index="month", columns="ticker", values="ret")
     spy_next = returns["SPY"].shift(-1)  # on the row of month t: SPY's return in t+1

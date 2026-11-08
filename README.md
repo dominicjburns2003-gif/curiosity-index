@@ -24,6 +24,7 @@ curiosity-index/
 │   ├── check_universe.py      automatic checks on a company/product list
 │   ├── prepare_review.py      keep/drop/fix/decide suggestions for the hand check
 │   ├── finalise_universe.py   applies the decisions -> products_to_companies.csv
+│   ├── finalise_expansion.py  adds the 44 companies of the November 2026 expansion
 │   ├── fetch_pageviews.py     daily views 2017-now, monthly totals with spikes capped
 │   ├── fetch_clickstream.py   clicks into every company page, Nov 2017-now
 │   ├── fetch_prices.py        share prices, monthly returns, Fama-French factors
@@ -40,6 +41,7 @@ curiosity-index/
 │   ├── track_record.py        follows the recorded live picks day by day
 │   ├── clickthrough_tests.py  click-through: volatility and level tests
 │   ├── trending.py            this week's biggest jumps in product attention
+│   ├── replication.py         the same tests on the 44 new companies
 │   └── update_all.py          runs every step: what GitHub Actions runs each morning
 ├── .github/workflows/
 │   └── update.yml             daily update at 06:00 UTC, commits new data
@@ -49,7 +51,7 @@ curiosity-index/
 │   ├── mapping/               universe draft, checks, review and final list
 │   └── processed/             page views, clickstream, prices, panel, results
 ├── charts/                    saved charts
-├── docs/                      pre-registered plans (strategy, earnings, click-through) and their results
+├── docs/                      pre-registered plans (strategy, earnings, click-through, replication) and their results
 ├── LLM_LOG.md                 record of AI tool use (required by the brief)
 └── README.md
 ```
@@ -73,6 +75,7 @@ python src/longer_test.py
 python src/track_record.py
 python src/clickthrough_tests.py
 python src/trending.py
+python src/replication.py
 python src/chart_sorts.py
 ```
 

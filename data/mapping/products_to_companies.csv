@@ -1,141 +1,233 @@
-ticker,company,sector,company_article,company_titles,company_from,product_article,product_titles,product_from
-BA,Boeing,Aerospace,Boeing,Boeing,,Boeing_737_MAX,Boeing_737_MAX,
-BA,Boeing,Aerospace,Boeing,Boeing,,Boeing_787_Dreamliner,Boeing_787_Dreamliner,
-DECK,Deckers,Apparel,Deckers_Brands,Deckers_Brands|Deckers_Outdoor_Corporation,,Hoka,Hoka|Hoka_One_One|Hoka_(brand),
-DECK,Deckers,Apparel,Deckers_Brands,Deckers_Brands|Deckers_Outdoor_Corporation,,UGG_(brand),UGG_(brand),
-NKE,Nike,Apparel,"Nike,_Inc.","Nike,_Inc.|Nike_(company)",,Air_Jordan,Air_Jordan,
-NKE,Nike,Apparel,"Nike,_Inc.","Nike,_Inc.|Nike_(company)",,Nike_Air_Force,Nike_Air_Force|Air_Force_(shoe)|Air_Force_1_(shoe),
-NKE,Nike,Apparel,"Nike,_Inc.","Nike,_Inc.|Nike_(company)",,Nike_Air_Max,Nike_Air_Max,
-TPR,Tapestry,Apparel,"Tapestry,_Inc.","Tapestry,_Inc.|Coach,_Inc.",,Coach_New_York,Coach_New_York,2018-05
-TPR,Tapestry,Apparel,"Tapestry,_Inc.","Tapestry,_Inc.|Coach,_Inc.",,Kate_Spade_New_York,Kate_Spade_New_York,
-VFC,VF Corporation,Apparel,VF_Corporation,VF_Corporation,,The_North_Face,The_North_Face,
-VFC,VF Corporation,Apparel,VF_Corporation,VF_Corporation,,Timberland_(company),Timberland_(company)|The_Timberland_Company,
-VFC,VF Corporation,Apparel,VF_Corporation,VF_Corporation,,Vans,Vans,
-F,Ford,Autos,Ford_Motor_Company,Ford_Motor_Company,,Ford_Bronco,Ford_Bronco,
-F,Ford,Autos,Ford_Motor_Company,Ford_Motor_Company,,Ford_F-Series,Ford_F-Series,
-F,Ford,Autos,Ford_Motor_Company,Ford_Motor_Company,,Ford_Mustang,Ford_Mustang,
-GM,General Motors,Autos,General_Motors,General_Motors,,Cadillac_Escalade,Cadillac_Escalade,
-GM,General Motors,Autos,General_Motors,General_Motors,,Chevrolet_Corvette,Chevrolet_Corvette,
-GM,General Motors,Autos,General_Motors,General_Motors,,Chevrolet_Silverado,Chevrolet_Silverado,
-HMC,Honda,Autos,Honda,Honda,,Honda_Accord,Honda_Accord,
-HMC,Honda,Autos,Honda,Honda,,Honda_CR-V,Honda_CR-V,
-HMC,Honda,Autos,Honda,Honda,,Honda_Civic,Honda_Civic,
-HOG,Harley-Davidson,Autos,Harley-Davidson,Harley-Davidson,,Harley-Davidson_Sportster,Harley-Davidson_Sportster,
-TM,Toyota,Autos,Toyota,Toyota,,Toyota_Camry,Toyota_Camry,
-TM,Toyota,Autos,Toyota,Toyota,,Toyota_Corolla,Toyota_Corolla,
-TM,Toyota,Autos,Toyota,Toyota,,Toyota_Prius,Toyota_Prius,
-TM,Toyota,Autos,Toyota,Toyota,,Toyota_RAV4,Toyota_RAV4,
-TSLA,Tesla,Autos,"Tesla,_Inc.","Tesla,_Inc.|Tesla_Motors|Tesla_Inc.",,Tesla_Cybertruck,Tesla_Cybertruck,
-TSLA,Tesla,Autos,"Tesla,_Inc.","Tesla,_Inc.|Tesla_Motors|Tesla_Inc.",,Tesla_Model_3,Tesla_Model_3,
-TSLA,Tesla,Autos,"Tesla,_Inc.","Tesla,_Inc.|Tesla_Motors|Tesla_Inc.",,Tesla_Model_Y,Tesla_Model_Y,
-BF-B,Brown-Forman,Beverages,Brown-Forman,Brown-Forman|Brown–Forman,,Jack_Daniel's,Jack_Daniel's,
-BUD,AB InBev,Beverages,AB_InBev,AB_InBev|Anheuser-Busch_InBev,,Budweiser,Budweiser|Budweiser_(Anheuser-Busch)|Budweiser_(AB_InBev),
-BUD,AB InBev,Beverages,AB_InBev,AB_InBev|Anheuser-Busch_InBev,,Stella_Artois,Stella_Artois,
-DEO,Diageo,Beverages,Diageo,Diageo,,Guinness,Guinness,
-DEO,Diageo,Beverages,Diageo,Diageo,,Johnnie_Walker,Johnnie_Walker,
-DEO,Diageo,Beverages,Diageo,Diageo,,Smirnoff,Smirnoff,
-KO,Coca-Cola,Beverages,The_Coca-Cola_Company,The_Coca-Cola_Company,,Coca-Cola,Coca-Cola,
-KO,Coca-Cola,Beverages,The_Coca-Cola_Company,The_Coca-Cola_Company,,Diet_Coke,Diet_Coke,
-KO,Coca-Cola,Beverages,The_Coca-Cola_Company,The_Coca-Cola_Company,,Fanta,Fanta,
-KO,Coca-Cola,Beverages,The_Coca-Cola_Company,The_Coca-Cola_Company,,Sprite_(drink),Sprite_(drink)|Sprite_(soft_drink),
-MNST,Monster Beverage,Beverages,Monster_Beverage,Monster_Beverage,,Monster_Energy,Monster_Energy,
-PEP,PepsiCo,Beverages,PepsiCo,PepsiCo,,Doritos,Doritos,
-PEP,PepsiCo,Beverages,PepsiCo,PepsiCo,,Gatorade,Gatorade,
-PEP,PepsiCo,Beverages,PepsiCo,PepsiCo,,Mountain_Dew,Mountain_Dew,
-PEP,PepsiCo,Beverages,PepsiCo,PepsiCo,,Pepsi,Pepsi,
-SAM,Boston Beer,Beverages,Boston_Beer_Company,Boston_Beer_Company,,Samuel_Adams_(beer),Samuel_Adams_(beer),
-SAM,Boston Beer,Beverages,Boston_Beer_Company,Boston_Beer_Company,,Twisted_Tea,Twisted_Tea,
-TAP,Molson Coors,Beverages,Molson_Coors,Molson_Coors|Molson_Coors_Brewing_Company|Molson_Coors_Beverage_Company,,Coors_Light,Coors_Light,
-TAP,Molson Coors,Beverages,Molson_Coors,Molson_Coors|Molson_Coors_Brewing_Company|Molson_Coors_Beverage_Company,,Miller_Lite,Miller_Lite,
-PYPL,PayPal,Fintech,PayPal,PayPal,,Venmo,Venmo,
-XYZ,Block,Fintech,"Block,_Inc.","Block,_Inc.|Square_(financial_services_company)|Square,_Inc.|Square_Inc.|Block_(financial_services_company)",,Cash_App,Cash_App|Square_Cash,
-GIS,General Mills,Food,General_Mills,General_Mills,,Cheerios,Cheerios,
-GIS,General Mills,Food,General_Mills,General_Mills,,Lucky_Charms,Lucky_Charms,
-HRL,Hormel,Food,Hormel_Foods,Hormel_Foods|Hormel,,Spam_(food),Spam_(food),
-HSY,Hershey,Food,The_Hershey_Company,The_Hershey_Company,,Reese's_Peanut_Butter_Cups,Reese's_Peanut_Butter_Cups,
-KHC,Kraft Heinz,Food,Kraft_Heinz,Kraft_Heinz,,Heinz_Tomato_Ketchup,Heinz_Tomato_Ketchup,
-MDLZ,Mondelez,Food,Mondelez_International,Mondelez_International,,Oreo,Oreo,
-MDLZ,Mondelez,Food,Mondelez_International,Mondelez_International,,Toblerone,Toblerone,
-SJM,J.M. Smucker,Food,The_J.M._Smucker_Company,The_J.M._Smucker_Company,,Jif_(peanut_butter),Jif_(peanut_butter),
-SJM,J.M. Smucker,Food,The_J.M._Smucker_Company,The_J.M._Smucker_Company,,Uncrustables,Uncrustables,
-NTDOY,Nintendo,Games,Nintendo,Nintendo,,Mario_Kart_World,Mario_Kart_World,
-NTDOY,Nintendo,Games,Nintendo,Nintendo,,Nintendo_Switch,Nintendo_Switch,
-NTDOY,Nintendo,Games,Nintendo,Nintendo,,Nintendo_Switch_2,Nintendo_Switch_2,
-TTWO,Take-Two Interactive,Games,Take-Two_Interactive,Take-Two_Interactive,,Grand_Theft_Auto_V,Grand_Theft_Auto_V,
-TTWO,Take-Two Interactive,Games,Take-Two_Interactive,Take-Two_Interactive,,Grand_Theft_Auto_VI,Grand_Theft_Auto_VI|Untitled_Grand_Theft_Auto_game,
-TTWO,Take-Two Interactive,Games,Take-Two_Interactive,Take-Two_Interactive,,Red_Dead_Redemption_2,Red_Dead_Redemption_2|Red_Dead_Redemption_II,
-CHD,Church & Dwight,Household,Church_&_Dwight,Church_&_Dwight,,Arm_&_Hammer,Arm_&_Hammer|Arm_&_Hammer_(brand),
-CHD,Church & Dwight,Household,Church_&_Dwight,Church_&_Dwight,,OxiClean,OxiClean,
-CL,Colgate-Palmolive,Household,Colgate-Palmolive,Colgate-Palmolive,,Colgate_(toothpaste),Colgate_(toothpaste),
-EL,Estée Lauder,Household,Estée_Lauder_Companies,Estée_Lauder_Companies|The_Estée_Lauder_Companies,,Clinique,Clinique,
-EL,Estée Lauder,Household,Estée_Lauder_Companies,Estée_Lauder_Companies|The_Estée_Lauder_Companies,,MAC_Cosmetics,MAC_Cosmetics,
-KMB,Kimberly-Clark,Household,Kimberly-Clark,Kimberly-Clark,,Huggies,Huggies,
-KMB,Kimberly-Clark,Household,Kimberly-Clark,Kimberly-Clark,,Kleenex,Kleenex,
-PG,Procter & Gamble,Household,Procter_&_Gamble,Procter_&_Gamble,,Gillette,Gillette,
-PG,Procter & Gamble,Household,Procter_&_Gamble,Procter_&_Gamble,,Head_&_Shoulders,Head_&_Shoulders,
-PG,Procter & Gamble,Household,Procter_&_Gamble,Procter_&_Gamble,,Pampers,Pampers,
-PG,Procter & Gamble,Household,Procter_&_Gamble,Procter_&_Gamble,,Tide_(brand),Tide_(brand),
-UL,Unilever,Household,Unilever,Unilever,,Axe_(brand),Axe_(brand)|Axe/Lynx_(brand),
-UL,Unilever,Household,Unilever,Unilever,,Dove_(Unilever_brand),Dove_(Unilever_brand)|Dove_(toiletries),
-UL,Unilever,Household,Unilever,Unilever,,Hellmann's_and_Best_Foods,Hellmann's_and_Best_Foods,
-WHR,Whirlpool,Household,Whirlpool_Corporation,Whirlpool_Corporation,,KitchenAid,KitchenAid,
-DIS,Walt Disney,Media,The_Walt_Disney_Company,The_Walt_Disney_Company,,Disney+,Disney+|Disney_streaming_service,
-DIS,Walt Disney,Media,The_Walt_Disney_Company,The_Walt_Disney_Company,,Disneyland,Disneyland,
-ISRG,Intuitive Surgical,Medtech,Intuitive_Surgical,Intuitive_Surgical,,Da_Vinci_Surgical_System,Da_Vinci_Surgical_System,
-ABBV,AbbVie,Pharma,AbbVie,AbbVie|AbbVie_Inc.,,Adalimumab,Adalimumab,
-AZN,AstraZeneca,Pharma,AstraZeneca,AstraZeneca,,Dapagliflozin,Dapagliflozin,
-AZN,AstraZeneca,Pharma,AstraZeneca,AstraZeneca,,Oxford–AstraZeneca_COVID-19_vaccine,Oxford–AstraZeneca_COVID-19_vaccine|AZD1222,
-BIIB,Biogen,Pharma,Biogen,Biogen,,Lecanemab,Lecanemab|BAN2401,
-BMY,Bristol Myers Squibb,Pharma,Bristol_Myers_Squibb,Bristol_Myers_Squibb|Bristol-Myers_Squibb,,Nivolumab,Nivolumab,
-GILD,Gilead Sciences,Pharma,Gilead_Sciences,Gilead_Sciences,,Lenacapavir,Lenacapavir,
-GILD,Gilead Sciences,Pharma,Gilead_Sciences,Gilead_Sciences,,Remdesivir,Remdesivir|GS-5734,
-LLY,Eli Lilly,Pharma,Eli_Lilly_and_Company,Eli_Lilly_and_Company,,Orforglipron,Orforglipron,
-LLY,Eli Lilly,Pharma,Eli_Lilly_and_Company,Eli_Lilly_and_Company,,Tirzepatide,Tirzepatide,
-MRK,Merck & Co.,Pharma,Merck_&_Co.,Merck_&_Co.,,Pembrolizumab,Pembrolizumab,
-NVO,Novo Nordisk,Pharma,Novo_(company),Novo_(company)|Novo_Nordisk,,Liraglutide,Liraglutide,
-NVO,Novo Nordisk,Pharma,Novo_(company),Novo_(company)|Novo_Nordisk,,Semaglutide,Semaglutide,
-PFE,Pfizer,Pharma,Pfizer,Pfizer,,Pfizer–BioNTech_COVID-19_vaccine,Pfizer–BioNTech_COVID-19_vaccine|BNT162b2|Tozinameran|Pfizer-BioNTech_COVID-19_vaccine|BioNTech-Pfizer_COVID-19_vaccine,
-REGN,Regeneron,Pharma,Regeneron_Pharmaceuticals,Regeneron_Pharmaceuticals|Regeneron,,Dupilumab,Dupilumab,
-VRTX,Vertex,Pharma,Vertex_Pharmaceuticals,Vertex_Pharmaceuticals,,Suzetrigine,Suzetrigine|VX-548,
-MCD,McDonald's,Restaurants,McDonald's,McDonald's,,Big_Mac,Big_Mac,
-MCD,McDonald's,Restaurants,McDonald's,McDonald's,,Chicken_McNuggets,Chicken_McNuggets,
-MCD,McDonald's,Restaurants,McDonald's,McDonald's,,Happy_Meal,Happy_Meal,
-SBUX,Starbucks,Restaurants,Starbucks,Starbucks,,Frappuccino,Frappuccino,
-YUM,Yum! Brands,Restaurants,Yum!_Brands,Yum!_Brands,,KFC,KFC,
-YUM,Yum! Brands,Restaurants,Yum!_Brands,Yum!_Brands,,Pizza_Hut,Pizza_Hut,
-YUM,Yum! Brands,Restaurants,Yum!_Brands,Yum!_Brands,,Taco_Bell,Taco_Bell,
-AMZN,Amazon,Retail,Amazon_(company),Amazon_(company)|Amazon.com,,Amazon_Alexa,Amazon_Alexa,
-AMZN,Amazon,Retail,Amazon_(company),Amazon_(company)|Amazon.com,,Amazon_Kindle,Amazon_Kindle,
-AMZN,Amazon,Retail,Amazon_(company),Amazon_(company)|Amazon.com,,Amazon_Prime,Amazon_Prime,
-AMD,AMD,Semiconductors,AMD,AMD|Advanced_Micro_Devices,,Radeon,Radeon,
-AMD,AMD,Semiconductors,AMD,AMD|Advanced_Micro_Devices,,Ryzen,Ryzen,
-INTC,Intel,Semiconductors,Intel,Intel,,Intel_Core,Intel_Core,
-NVDA,Nvidia,Semiconductors,Nvidia,Nvidia,,GeForce,GeForce,
-QCOM,Qualcomm,Semiconductors,Qualcomm,Qualcomm,,Qualcomm_Snapdragon,Qualcomm_Snapdragon,
-AAPL,Apple,Tech hardware,Apple_Inc.,Apple_Inc.,,AirPods,AirPods|Apple_AirPods,
-AAPL,Apple,Tech hardware,Apple_Inc.,Apple_Inc.,,Apple_Watch,Apple_Watch,
-AAPL,Apple,Tech hardware,Apple_Inc.,Apple_Inc.,,IPad,IPad,
-AAPL,Apple,Tech hardware,Apple_Inc.,Apple_Inc.,,IPhone,IPhone,
-SONY,Sony,Tech hardware,Sony,Sony,,PlayStation,PlayStation,
-SONY,Sony,Tech hardware,Sony,Sony,,PlayStation_5,PlayStation_5,
-ADBE,Adobe,Tech software,Adobe_Inc.,Adobe_Inc.|Adobe_Systems,,Adobe_Acrobat,Adobe_Acrobat,
-ADBE,Adobe,Tech software,Adobe_Inc.,Adobe_Inc.|Adobe_Systems,,Adobe_Photoshop,Adobe_Photoshop,
-GOOGL,Alphabet,Tech software,Google,Google,,Gmail,Gmail,
-GOOGL,Alphabet,Tech software,Google,Google,,Google_Pixel,Google_Pixel,
-GOOGL,Alphabet,Tech software,Google,Google,,Waymo,Waymo,
-GOOGL,Alphabet,Tech software,Google,Google,,YouTube,YouTube,
-META,Meta Platforms,Tech software,Meta_Platforms,"Meta_Platforms|Facebook,_Inc.",2019-12,Instagram,Instagram,
-META,Meta Platforms,Tech software,Meta_Platforms,"Meta_Platforms|Facebook,_Inc.",2019-12,Meta_Quest,Meta_Quest,2022-02
-META,Meta Platforms,Tech software,Meta_Platforms,"Meta_Platforms|Facebook,_Inc.",2019-12,WhatsApp,WhatsApp,
-MSFT,Microsoft,Tech software,Microsoft,Microsoft,,Microsoft_Copilot,Microsoft_Copilot|Microsoft_365_Copilot,
-MSFT,Microsoft,Tech software,Microsoft,Microsoft,,Microsoft_Excel,Microsoft_Excel,
-MSFT,Microsoft,Tech software,Microsoft,Microsoft,,Xbox,Xbox,
-SNAP,Snap,Tech software,Snap_Inc.,Snap_Inc.,,Snapchat,Snapchat,
-PM,Philip Morris International,Tobacco,Philip_Morris_International,Philip_Morris_International,,Iqos,Iqos|IQOS,
-PM,Philip Morris International,Tobacco,Philip_Morris_International,Philip_Morris_International,,Zyn,Zyn|Zyn_(nicotine_pouches),
-HAS,Hasbro,Toys,Hasbro,Hasbro,,Dungeons_&_Dragons,Dungeons_&_Dragons,
-HAS,Hasbro,Toys,Hasbro,Hasbro,,Monopoly_(game),Monopoly_(game),
-HAS,Hasbro,Toys,Hasbro,Hasbro,,Nerf,Nerf,
-MAT,Mattel,Toys,Mattel,Mattel,,Barbie,Barbie,
-MAT,Mattel,Toys,Mattel,Mattel,,Hot_Wheels,Hot_Wheels,
-RCL,Royal Caribbean,Travel,Royal_Caribbean_Group,Royal_Caribbean_Group|Royal_Caribbean_Cruises_Ltd.,,Icon_of_the_Seas,Icon_of_the_Seas,
+ticker,company,sector,company_article,company_titles,company_from,product_article,product_titles,product_from,cohort,consumer
+BA,Boeing,Aerospace,Boeing,Boeing,,Boeing_737_MAX,Boeing_737_MAX,,original,True
+BA,Boeing,Aerospace,Boeing,Boeing,,Boeing_787_Dreamliner,Boeing_787_Dreamliner,,original,True
+DECK,Deckers,Apparel,Deckers_Brands,Deckers_Brands|Deckers_Outdoor_Corporation,,Hoka,Hoka|Hoka_One_One|Hoka_(brand),,original,True
+DECK,Deckers,Apparel,Deckers_Brands,Deckers_Brands|Deckers_Outdoor_Corporation,,UGG_(brand),UGG_(brand),,original,True
+NKE,Nike,Apparel,"Nike,_Inc.","Nike,_Inc.|Nike_(company)",,Air_Jordan,Air_Jordan,,original,True
+NKE,Nike,Apparel,"Nike,_Inc.","Nike,_Inc.|Nike_(company)",,Nike_Air_Force,Nike_Air_Force|Air_Force_(shoe)|Air_Force_1_(shoe),,original,True
+NKE,Nike,Apparel,"Nike,_Inc.","Nike,_Inc.|Nike_(company)",,Nike_Air_Max,Nike_Air_Max,,original,True
+TPR,Tapestry,Apparel,"Tapestry,_Inc.","Tapestry,_Inc.|Coach,_Inc.",,Coach_New_York,Coach_New_York,2018-05,original,True
+TPR,Tapestry,Apparel,"Tapestry,_Inc.","Tapestry,_Inc.|Coach,_Inc.",,Kate_Spade_New_York,Kate_Spade_New_York,,original,True
+VFC,VF Corporation,Apparel,VF_Corporation,VF_Corporation,,The_North_Face,The_North_Face,,original,True
+VFC,VF Corporation,Apparel,VF_Corporation,VF_Corporation,,Timberland_(company),Timberland_(company)|The_Timberland_Company,,original,True
+VFC,VF Corporation,Apparel,VF_Corporation,VF_Corporation,,Vans,Vans,,original,True
+F,Ford,Autos,Ford_Motor_Company,Ford_Motor_Company,,Ford_Bronco,Ford_Bronco,,original,True
+F,Ford,Autos,Ford_Motor_Company,Ford_Motor_Company,,Ford_F-Series,Ford_F-Series,,original,True
+F,Ford,Autos,Ford_Motor_Company,Ford_Motor_Company,,Ford_Mustang,Ford_Mustang,,original,True
+GM,General Motors,Autos,General_Motors,General_Motors,,Cadillac_Escalade,Cadillac_Escalade,,original,True
+GM,General Motors,Autos,General_Motors,General_Motors,,Chevrolet_Corvette,Chevrolet_Corvette,,original,True
+GM,General Motors,Autos,General_Motors,General_Motors,,Chevrolet_Silverado,Chevrolet_Silverado,,original,True
+HMC,Honda,Autos,Honda,Honda,,Honda_Accord,Honda_Accord,,original,True
+HMC,Honda,Autos,Honda,Honda,,Honda_CR-V,Honda_CR-V,,original,True
+HMC,Honda,Autos,Honda,Honda,,Honda_Civic,Honda_Civic,,original,True
+HOG,Harley-Davidson,Autos,Harley-Davidson,Harley-Davidson,,Harley-Davidson_Sportster,Harley-Davidson_Sportster,,original,True
+TM,Toyota,Autos,Toyota,Toyota,,Toyota_Camry,Toyota_Camry,,original,True
+TM,Toyota,Autos,Toyota,Toyota,,Toyota_Corolla,Toyota_Corolla,,original,True
+TM,Toyota,Autos,Toyota,Toyota,,Toyota_Prius,Toyota_Prius,,original,True
+TM,Toyota,Autos,Toyota,Toyota,,Toyota_RAV4,Toyota_RAV4,,original,True
+TSLA,Tesla,Autos,"Tesla,_Inc.","Tesla,_Inc.|Tesla_Motors|Tesla_Inc.",,Tesla_Cybertruck,Tesla_Cybertruck,,original,True
+TSLA,Tesla,Autos,"Tesla,_Inc.","Tesla,_Inc.|Tesla_Motors|Tesla_Inc.",,Tesla_Model_3,Tesla_Model_3,,original,True
+TSLA,Tesla,Autos,"Tesla,_Inc.","Tesla,_Inc.|Tesla_Motors|Tesla_Inc.",,Tesla_Model_Y,Tesla_Model_Y,,original,True
+BF-B,Brown-Forman,Beverages,Brown-Forman,Brown-Forman|Brown–Forman,,Jack_Daniel's,Jack_Daniel's,,original,True
+BUD,AB InBev,Beverages,AB_InBev,AB_InBev|Anheuser-Busch_InBev,,Budweiser,Budweiser|Budweiser_(Anheuser-Busch)|Budweiser_(AB_InBev),,original,True
+BUD,AB InBev,Beverages,AB_InBev,AB_InBev|Anheuser-Busch_InBev,,Stella_Artois,Stella_Artois,,original,True
+DEO,Diageo,Beverages,Diageo,Diageo,,Guinness,Guinness,,original,True
+DEO,Diageo,Beverages,Diageo,Diageo,,Johnnie_Walker,Johnnie_Walker,,original,True
+DEO,Diageo,Beverages,Diageo,Diageo,,Smirnoff,Smirnoff,,original,True
+KO,Coca-Cola,Beverages,The_Coca-Cola_Company,The_Coca-Cola_Company,,Coca-Cola,Coca-Cola,,original,True
+KO,Coca-Cola,Beverages,The_Coca-Cola_Company,The_Coca-Cola_Company,,Diet_Coke,Diet_Coke,,original,True
+KO,Coca-Cola,Beverages,The_Coca-Cola_Company,The_Coca-Cola_Company,,Fanta,Fanta,,original,True
+KO,Coca-Cola,Beverages,The_Coca-Cola_Company,The_Coca-Cola_Company,,Sprite_(drink),Sprite_(drink)|Sprite_(soft_drink),,original,True
+MNST,Monster Beverage,Beverages,Monster_Beverage,Monster_Beverage,,Monster_Energy,Monster_Energy,,original,True
+PEP,PepsiCo,Beverages,PepsiCo,PepsiCo,,Doritos,Doritos,,original,True
+PEP,PepsiCo,Beverages,PepsiCo,PepsiCo,,Gatorade,Gatorade,,original,True
+PEP,PepsiCo,Beverages,PepsiCo,PepsiCo,,Mountain_Dew,Mountain_Dew,,original,True
+PEP,PepsiCo,Beverages,PepsiCo,PepsiCo,,Pepsi,Pepsi,,original,True
+SAM,Boston Beer,Beverages,Boston_Beer_Company,Boston_Beer_Company,,Samuel_Adams_(beer),Samuel_Adams_(beer),,original,True
+SAM,Boston Beer,Beverages,Boston_Beer_Company,Boston_Beer_Company,,Twisted_Tea,Twisted_Tea,,original,True
+TAP,Molson Coors,Beverages,Molson_Coors,Molson_Coors|Molson_Coors_Brewing_Company|Molson_Coors_Beverage_Company,,Coors_Light,Coors_Light,,original,True
+TAP,Molson Coors,Beverages,Molson_Coors,Molson_Coors|Molson_Coors_Brewing_Company|Molson_Coors_Beverage_Company,,Miller_Lite,Miller_Lite,,original,True
+PYPL,PayPal,Fintech,PayPal,PayPal,,Venmo,Venmo,,original,True
+XYZ,Block,Fintech,"Block,_Inc.","Block,_Inc.|Square_(financial_services_company)|Square,_Inc.|Square_Inc.|Block_(financial_services_company)",,Cash_App,Cash_App|Square_Cash,,original,True
+GIS,General Mills,Food,General_Mills,General_Mills,,Cheerios,Cheerios,,original,True
+GIS,General Mills,Food,General_Mills,General_Mills,,Lucky_Charms,Lucky_Charms,,original,True
+HRL,Hormel,Food,Hormel_Foods,Hormel_Foods|Hormel,,Spam_(food),Spam_(food),,original,True
+HSY,Hershey,Food,The_Hershey_Company,The_Hershey_Company,,Reese's_Peanut_Butter_Cups,Reese's_Peanut_Butter_Cups,,original,True
+KHC,Kraft Heinz,Food,Kraft_Heinz,Kraft_Heinz,,Heinz_Tomato_Ketchup,Heinz_Tomato_Ketchup,,original,True
+MDLZ,Mondelez,Food,Mondelez_International,Mondelez_International,,Oreo,Oreo,,original,True
+MDLZ,Mondelez,Food,Mondelez_International,Mondelez_International,,Toblerone,Toblerone,,original,True
+SJM,J.M. Smucker,Food,The_J.M._Smucker_Company,The_J.M._Smucker_Company,,Jif_(peanut_butter),Jif_(peanut_butter),,original,True
+SJM,J.M. Smucker,Food,The_J.M._Smucker_Company,The_J.M._Smucker_Company,,Uncrustables,Uncrustables,,original,True
+NTDOY,Nintendo,Games,Nintendo,Nintendo,,Mario_Kart_World,Mario_Kart_World,,original,True
+NTDOY,Nintendo,Games,Nintendo,Nintendo,,Nintendo_Switch,Nintendo_Switch,,original,True
+NTDOY,Nintendo,Games,Nintendo,Nintendo,,Nintendo_Switch_2,Nintendo_Switch_2,,original,True
+TTWO,Take-Two Interactive,Games,Take-Two_Interactive,Take-Two_Interactive,,Grand_Theft_Auto_V,Grand_Theft_Auto_V,,original,True
+TTWO,Take-Two Interactive,Games,Take-Two_Interactive,Take-Two_Interactive,,Grand_Theft_Auto_VI,Grand_Theft_Auto_VI|Untitled_Grand_Theft_Auto_game,,original,True
+TTWO,Take-Two Interactive,Games,Take-Two_Interactive,Take-Two_Interactive,,Red_Dead_Redemption_2,Red_Dead_Redemption_2|Red_Dead_Redemption_II,,original,True
+CHD,Church & Dwight,Household,Church_&_Dwight,Church_&_Dwight,,Arm_&_Hammer,Arm_&_Hammer|Arm_&_Hammer_(brand),,original,True
+CHD,Church & Dwight,Household,Church_&_Dwight,Church_&_Dwight,,OxiClean,OxiClean,,original,True
+CL,Colgate-Palmolive,Household,Colgate-Palmolive,Colgate-Palmolive,,Colgate_(toothpaste),Colgate_(toothpaste),,original,True
+EL,Estée Lauder,Household,Estée_Lauder_Companies,Estée_Lauder_Companies|The_Estée_Lauder_Companies,,Clinique,Clinique,,original,True
+EL,Estée Lauder,Household,Estée_Lauder_Companies,Estée_Lauder_Companies|The_Estée_Lauder_Companies,,MAC_Cosmetics,MAC_Cosmetics,,original,True
+KMB,Kimberly-Clark,Household,Kimberly-Clark,Kimberly-Clark,,Huggies,Huggies,,original,True
+KMB,Kimberly-Clark,Household,Kimberly-Clark,Kimberly-Clark,,Kleenex,Kleenex,,original,True
+PG,Procter & Gamble,Household,Procter_&_Gamble,Procter_&_Gamble,,Gillette,Gillette,,original,True
+PG,Procter & Gamble,Household,Procter_&_Gamble,Procter_&_Gamble,,Head_&_Shoulders,Head_&_Shoulders,,original,True
+PG,Procter & Gamble,Household,Procter_&_Gamble,Procter_&_Gamble,,Pampers,Pampers,,original,True
+PG,Procter & Gamble,Household,Procter_&_Gamble,Procter_&_Gamble,,Tide_(brand),Tide_(brand),,original,True
+UL,Unilever,Household,Unilever,Unilever,,Axe_(brand),Axe_(brand)|Axe/Lynx_(brand),,original,True
+UL,Unilever,Household,Unilever,Unilever,,Dove_(Unilever_brand),Dove_(Unilever_brand)|Dove_(toiletries),,original,True
+UL,Unilever,Household,Unilever,Unilever,,Hellmann's_and_Best_Foods,Hellmann's_and_Best_Foods,,original,True
+WHR,Whirlpool,Household,Whirlpool_Corporation,Whirlpool_Corporation,,KitchenAid,KitchenAid,,original,True
+DIS,Walt Disney,Media,The_Walt_Disney_Company,The_Walt_Disney_Company,,Disney+,Disney+|Disney_streaming_service,,original,True
+DIS,Walt Disney,Media,The_Walt_Disney_Company,The_Walt_Disney_Company,,Disneyland,Disneyland,,original,True
+ISRG,Intuitive Surgical,Medtech,Intuitive_Surgical,Intuitive_Surgical,,Da_Vinci_Surgical_System,Da_Vinci_Surgical_System,,original,True
+ABBV,AbbVie,Pharma,AbbVie,AbbVie|AbbVie_Inc.,,Adalimumab,Adalimumab,,original,True
+AZN,AstraZeneca,Pharma,AstraZeneca,AstraZeneca,,Dapagliflozin,Dapagliflozin,,original,True
+AZN,AstraZeneca,Pharma,AstraZeneca,AstraZeneca,,Oxford–AstraZeneca_COVID-19_vaccine,Oxford–AstraZeneca_COVID-19_vaccine|AZD1222,,original,True
+BIIB,Biogen,Pharma,Biogen,Biogen,,Lecanemab,Lecanemab|BAN2401,,original,True
+BMY,Bristol Myers Squibb,Pharma,Bristol_Myers_Squibb,Bristol_Myers_Squibb|Bristol-Myers_Squibb,,Nivolumab,Nivolumab,,original,True
+GILD,Gilead Sciences,Pharma,Gilead_Sciences,Gilead_Sciences,,Lenacapavir,Lenacapavir,,original,True
+GILD,Gilead Sciences,Pharma,Gilead_Sciences,Gilead_Sciences,,Remdesivir,Remdesivir|GS-5734,,original,True
+LLY,Eli Lilly,Pharma,Eli_Lilly_and_Company,Eli_Lilly_and_Company,,Orforglipron,Orforglipron,,original,True
+LLY,Eli Lilly,Pharma,Eli_Lilly_and_Company,Eli_Lilly_and_Company,,Tirzepatide,Tirzepatide,,original,True
+MRK,Merck & Co.,Pharma,Merck_&_Co.,Merck_&_Co.,,Pembrolizumab,Pembrolizumab,,original,True
+NVO,Novo Nordisk,Pharma,Novo_(company),Novo_(company)|Novo_Nordisk,,Liraglutide,Liraglutide,,original,True
+NVO,Novo Nordisk,Pharma,Novo_(company),Novo_(company)|Novo_Nordisk,,Semaglutide,Semaglutide,,original,True
+PFE,Pfizer,Pharma,Pfizer,Pfizer,,Pfizer–BioNTech_COVID-19_vaccine,Pfizer–BioNTech_COVID-19_vaccine|BNT162b2|Tozinameran|Pfizer-BioNTech_COVID-19_vaccine|BioNTech-Pfizer_COVID-19_vaccine,,original,True
+REGN,Regeneron,Pharma,Regeneron_Pharmaceuticals,Regeneron_Pharmaceuticals|Regeneron,,Dupilumab,Dupilumab,,original,True
+VRTX,Vertex,Pharma,Vertex_Pharmaceuticals,Vertex_Pharmaceuticals,,Suzetrigine,Suzetrigine|VX-548,,original,True
+MCD,McDonald's,Restaurants,McDonald's,McDonald's,,Big_Mac,Big_Mac,,original,True
+MCD,McDonald's,Restaurants,McDonald's,McDonald's,,Chicken_McNuggets,Chicken_McNuggets,,original,True
+MCD,McDonald's,Restaurants,McDonald's,McDonald's,,Happy_Meal,Happy_Meal,,original,True
+SBUX,Starbucks,Restaurants,Starbucks,Starbucks,,Frappuccino,Frappuccino,,original,True
+YUM,Yum! Brands,Restaurants,Yum!_Brands,Yum!_Brands,,KFC,KFC,,original,True
+YUM,Yum! Brands,Restaurants,Yum!_Brands,Yum!_Brands,,Pizza_Hut,Pizza_Hut,,original,True
+YUM,Yum! Brands,Restaurants,Yum!_Brands,Yum!_Brands,,Taco_Bell,Taco_Bell,,original,True
+AMZN,Amazon,Retail,Amazon_(company),Amazon_(company)|Amazon.com,,Amazon_Alexa,Amazon_Alexa,,original,True
+AMZN,Amazon,Retail,Amazon_(company),Amazon_(company)|Amazon.com,,Amazon_Kindle,Amazon_Kindle,,original,True
+AMZN,Amazon,Retail,Amazon_(company),Amazon_(company)|Amazon.com,,Amazon_Prime,Amazon_Prime,,original,True
+AMD,AMD,Semiconductors,AMD,AMD|Advanced_Micro_Devices,,Radeon,Radeon,,original,True
+AMD,AMD,Semiconductors,AMD,AMD|Advanced_Micro_Devices,,Ryzen,Ryzen,,original,True
+INTC,Intel,Semiconductors,Intel,Intel,,Intel_Core,Intel_Core,,original,True
+NVDA,Nvidia,Semiconductors,Nvidia,Nvidia,,GeForce,GeForce,,original,True
+QCOM,Qualcomm,Semiconductors,Qualcomm,Qualcomm,,Qualcomm_Snapdragon,Qualcomm_Snapdragon,,original,True
+AAPL,Apple,Tech hardware,Apple_Inc.,Apple_Inc.,,AirPods,AirPods|Apple_AirPods,,original,True
+AAPL,Apple,Tech hardware,Apple_Inc.,Apple_Inc.,,Apple_Watch,Apple_Watch,,original,True
+AAPL,Apple,Tech hardware,Apple_Inc.,Apple_Inc.,,IPad,IPad,,original,True
+AAPL,Apple,Tech hardware,Apple_Inc.,Apple_Inc.,,IPhone,IPhone,,original,True
+SONY,Sony,Tech hardware,Sony,Sony,,PlayStation,PlayStation,,original,True
+SONY,Sony,Tech hardware,Sony,Sony,,PlayStation_5,PlayStation_5,,original,True
+ADBE,Adobe,Tech software,Adobe_Inc.,Adobe_Inc.|Adobe_Systems,,Adobe_Acrobat,Adobe_Acrobat,,original,True
+ADBE,Adobe,Tech software,Adobe_Inc.,Adobe_Inc.|Adobe_Systems,,Adobe_Photoshop,Adobe_Photoshop,,original,True
+GOOGL,Alphabet,Tech software,Google,Google,,Gmail,Gmail,,original,True
+GOOGL,Alphabet,Tech software,Google,Google,,Google_Pixel,Google_Pixel,,original,True
+GOOGL,Alphabet,Tech software,Google,Google,,Waymo,Waymo,,original,True
+GOOGL,Alphabet,Tech software,Google,Google,,YouTube,YouTube,,original,True
+META,Meta Platforms,Tech software,Meta_Platforms,"Meta_Platforms|Facebook,_Inc.",2019-12,Instagram,Instagram,,original,True
+META,Meta Platforms,Tech software,Meta_Platforms,"Meta_Platforms|Facebook,_Inc.",2019-12,Meta_Quest,Meta_Quest,2022-02,original,True
+META,Meta Platforms,Tech software,Meta_Platforms,"Meta_Platforms|Facebook,_Inc.",2019-12,WhatsApp,WhatsApp,,original,True
+MSFT,Microsoft,Tech software,Microsoft,Microsoft,,Microsoft_Copilot,Microsoft_Copilot|Microsoft_365_Copilot,,original,True
+MSFT,Microsoft,Tech software,Microsoft,Microsoft,,Microsoft_Excel,Microsoft_Excel,,original,True
+MSFT,Microsoft,Tech software,Microsoft,Microsoft,,Xbox,Xbox,,original,True
+SNAP,Snap,Tech software,Snap_Inc.,Snap_Inc.,,Snapchat,Snapchat,,original,True
+PM,Philip Morris International,Tobacco,Philip_Morris_International,Philip_Morris_International,,Iqos,Iqos|IQOS,,original,True
+PM,Philip Morris International,Tobacco,Philip_Morris_International,Philip_Morris_International,,Zyn,Zyn|Zyn_(nicotine_pouches),,original,True
+HAS,Hasbro,Toys,Hasbro,Hasbro,,Dungeons_&_Dragons,Dungeons_&_Dragons,,original,True
+HAS,Hasbro,Toys,Hasbro,Hasbro,,Monopoly_(game),Monopoly_(game),,original,True
+HAS,Hasbro,Toys,Hasbro,Hasbro,,Nerf,Nerf,,original,True
+MAT,Mattel,Toys,Mattel,Mattel,,Barbie,Barbie,,original,True
+MAT,Mattel,Toys,Mattel,Mattel,,Hot_Wheels,Hot_Wheels,,original,True
+RCL,Royal Caribbean,Travel,Royal_Caribbean_Group,Royal_Caribbean_Group|Royal_Caribbean_Cruises_Ltd.,,Icon_of_the_Seas,Icon_of_the_Seas,,original,True
+GD,General Dynamics,Aerospace,General_Dynamics,General_Dynamics,,Gulfstream_Aerospace,Gulfstream_Aerospace,,expansion,False
+LMT,Lockheed Martin,Aerospace,Lockheed_Martin,Lockheed_Martin,,Lockheed_C-130_Hercules,Lockheed_C-130_Hercules,,expansion,False
+LMT,Lockheed Martin,Aerospace,Lockheed_Martin,Lockheed_Martin,,Lockheed_Martin_F-22_Raptor,Lockheed_Martin_F-22_Raptor,,expansion,False
+LMT,Lockheed Martin,Aerospace,Lockheed_Martin,Lockheed_Martin,,Lockheed_Martin_F-35_Lightning_II,Lockheed_Martin_F-35_Lightning_II,,expansion,False
+NOC,Northrop Grumman,Aerospace,Northrop_Grumman,Northrop_Grumman,,Northrop_B-2_Spirit,Northrop_B-2_Spirit|Northrop_Grumman_B-2_Spirit,,expansion,False
+NOC,Northrop Grumman,Aerospace,Northrop_Grumman,Northrop_Grumman,,Northrop_Grumman_B-21_Raider,Northrop_Grumman_B-21_Raider|Northrop_Grumman_B-21,,expansion,False
+CPRI,Capri Holdings,Apparel,Capri_Holdings,Capri_Holdings|Michael_Kors_(brand),,Jimmy_Choo_(fashion_house),Jimmy_Choo_(fashion_house)|Jimmy_Choo_(company)|Jimmy_Choo_Ltd,,expansion,True
+PVH,PVH,Apparel,PVH_Corp.,PVH_Corp.|PVH_(company),,Calvin_Klein_(fashion_house),Calvin_Klein_(fashion_house)|Calvin_Klein_(company)|Calvin_Klein_Inc.,,expansion,True
+PVH,PVH,Apparel,PVH_Corp.,PVH_Corp.|PVH_(company),,Tommy_Hilfiger_(company),Tommy_Hilfiger_(company),,expansion,True
+BC,Brunswick,Autos,Brunswick_Corporation,Brunswick_Corporation,,Mercury_Marine,Mercury_Marine,,expansion,True
+PII,Polaris,Autos,Polaris_Inc.,Polaris_Inc.|Polaris_Industries,,Indian_Motorcycle,Indian_Motorcycle|Indian_Motocycle_Manufacturing_Company|Indian_Motorcycle_Manufacturing_Company|Indian_Motorcycle_Manufacturing_Company_(Company),,expansion,True
+PII,Polaris,Autos,Polaris_Inc.,Polaris_Inc.|Polaris_Industries,,Polaris_Slingshot,Polaris_Slingshot,,expansion,True
+STLA,Stellantis,Autos,Stellantis,Stellantis,2021-01,Dodge,Dodge,,expansion,True
+STLA,Stellantis,Autos,Stellantis,Stellantis,2021-01,Jeep,Jeep,,expansion,True
+STLA,Stellantis,Autos,Stellantis,Stellantis,2021-01,Ram_Trucks,Ram_Trucks,,expansion,True
+KDP,Keurig Dr Pepper,Beverages,Keurig_Dr_Pepper,Keurig_Dr_Pepper|Keurig_Green_Mountain,,Canada_Dry,Canada_Dry,,expansion,True
+KDP,Keurig Dr Pepper,Beverages,Keurig_Dr_Pepper,Keurig_Dr_Pepper|Keurig_Green_Mountain,,Dr_Pepper,Dr_Pepper,,expansion,True
+KDP,Keurig Dr Pepper,Beverages,Keurig_Dr_Pepper,Keurig_Dr_Pepper|Keurig_Green_Mountain,,Keurig,Keurig,,expansion,True
+KDP,Keurig Dr Pepper,Beverages,Keurig_Dr_Pepper,Keurig_Dr_Pepper|Keurig_Green_Mountain,,Snapple,Snapple,,expansion,True
+CAG,Conagra Brands,Food,Conagra_Brands,Conagra_Brands|ConAgra_Brands|ConAgra_Foods,,Birds_Eye,Birds_Eye,,expansion,True
+CAG,Conagra Brands,Food,Conagra_Brands,Conagra_Brands|ConAgra_Brands|ConAgra_Foods,,Slim_Jim_(snack_food),Slim_Jim_(snack_food),,expansion,True
+CPB,Campbell's,Food,Campbell's,Campbell's|Campbell_Soup_Company,,Goldfish_(cracker),Goldfish_(cracker)|Goldfish_(snack),,expansion,True
+CPB,Campbell's,Food,Campbell's,Campbell's|Campbell_Soup_Company,,Pepperidge_Farm,Pepperidge_Farm,,expansion,True
+CPB,Campbell's,Food,Campbell's,Campbell's|Campbell_Soup_Company,,V8_(drink),V8_(drink)|V8_(beverage),,expansion,True
+MKC,McCormick,Food,McCormick_&_Company,McCormick_&_Company,,Cholula_Hot_Sauce,Cholula_Hot_Sauce,,expansion,True
+MKC,McCormick,Food,McCormick_&_Company,McCormick_&_Company,,French's,French's,,expansion,True
+MKC,McCormick,Food,McCormick_&_Company,McCormick_&_Company,,Old_Bay_Seasoning,Old_Bay_Seasoning,,expansion,True
+POST,Post Holdings,Food,Post_Holdings,Post_Holdings,,Pebbles_(cereal),Pebbles_(cereal)|Pebbles_cereal,,expansion,True
+CLX,Clorox,Household,Clorox,Clorox,,Burt's_Bees,Burt's_Bees,,expansion,True
+COTY,Coty,Household,Coty,"Coty|Coty,_Inc.|Coty_(beauty_company)|Coty_Inc.",,Max_Factor,Max_Factor,,expansion,True
+HELE,Helen of Troy,Household,Helen_of_Troy_Limited,Helen_of_Troy_Limited,,Hydro_Flask,Hydro_Flask,,expansion,True
+NWL,Newell Brands,Household,Newell_Brands,Newell_Brands,,Yankee_Candle,Yankee_Candle,,expansion,True
+CMCSA,Comcast,Media,Comcast,Comcast,,Peacock_(streaming_service),Peacock_(streaming_service)|Peacock_(service),,expansion,True
+CMCSA,Comcast,Media,Comcast,Comcast,,Universal_Studios_Hollywood,Universal_Studios_Hollywood,,expansion,True
+CMCSA,Comcast,Media,Comcast,Comcast,,Xfinity,Xfinity|Comcast_Cable,,expansion,True
+LYV,Live Nation Entertainment,Media,Live_Nation_Entertainment,Live_Nation_Entertainment,,Ticketmaster,Ticketmaster,,expansion,True
+NFLX,Netflix,Media,Netflix,Netflix,,Squid_Game,Squid_Game,,expansion,True
+NFLX,Netflix,Media,Netflix,Netflix,,Stranger_Things,Stranger_Things|Stranger_Things_(TV_series),,expansion,True
+NFLX,Netflix,Media,Netflix,Netflix,,Wednesday_(TV_series),Wednesday_(TV_series),,expansion,True
+NWSA,News Corp,Media,News_Corp,News_Corp|News_Corp_(2013–present),,HarperCollins,HarperCollins,,expansion,True
+NWSA,News Corp,Media,News_Corp,News_Corp|News_Corp_(2013–present),,New_York_Post,New_York_Post,,expansion,True
+NWSA,News Corp,Media,News_Corp,News_Corp|News_Corp_(2013–present),,The_Wall_Street_Journal,The_Wall_Street_Journal,,expansion,True
+NYT,The New York Times Company,Media,The_New_York_Times_Company,The_New_York_Times_Company,,The_Athletic,The_Athletic,,expansion,True
+NYT,The New York Times Company,Media,The_New_York_Times_Company,The_New_York_Times_Company,,The_New_York_Times,The_New_York_Times,,expansion,True
+NYT,The New York Times Company,Media,The_New_York_Times_Company,The_New_York_Times_Company,,Wordle,Wordle|Wordle_(online_game)|Wordle_(video_game)|Wordle_(word_game),,expansion,True
+ABT,Abbott Laboratories,Medtech,Abbott_Laboratories,Abbott_Laboratories,,Ensure,Ensure,,expansion,True
+AMGN,Amgen,Pharma,Amgen,Amgen,,Denosumab,Denosumab,,expansion,True
+SNY,Sanofi,Pharma,Sanofi,Sanofi,,Insulin_glargine,Insulin_glargine,,expansion,True
+DIN,Dine Brands,Restaurants,Dine_Brands,Dine_Brands|DineEquity|Dine_Brands_Global,,Applebee's,Applebee's,,expansion,True
+DIN,Dine Brands,Restaurants,Dine_Brands,Dine_Brands|DineEquity|Dine_Brands_Global,,IHOP,IHOP|International_House_Of_Pancakes|International_House_of_Pancakes,,expansion,True
+DRI,Darden Restaurants,Restaurants,Darden_Restaurants,Darden_Restaurants,,LongHorn_Steakhouse,LongHorn_Steakhouse,,expansion,True
+DRI,Darden Restaurants,Restaurants,Darden_Restaurants,Darden_Restaurants,,Olive_Garden,Olive_Garden,,expansion,True
+QSR,Restaurant Brands International,Restaurants,Restaurant_Brands_International,Restaurant_Brands_International,,Burger_King,Burger_King,,expansion,True
+QSR,Restaurant Brands International,Restaurants,Restaurant_Brands_International,Restaurant_Brands_International,,Popeyes,Popeyes|Popeyes_Louisiana_Kitchen,,expansion,True
+QSR,Restaurant Brands International,Restaurants,Restaurant_Brands_International,Restaurant_Brands_International,,Tim_Hortons,Tim_Hortons,,expansion,True
+WMT,Walmart,Retail,Walmart,Walmart,,Sam's_Club,Sam's_Club,,expansion,True
+CSCO,Cisco,Tech hardware,Cisco,Cisco|Cisco_Systems,,Webex,Webex|Cisco_Webex|WebEx,,expansion,True
+GRMN,Garmin,Tech hardware,Garmin,Garmin,,Garmin_Fenix,Garmin_Fenix,,expansion,True
+GRMN,Garmin,Tech hardware,Garmin,Garmin,,Garmin_Forerunner,Garmin_Forerunner,,expansion,True
+ADSK,Autodesk,Tech software,Autodesk,Autodesk,,AutoCAD,AutoCAD,,expansion,True
+ADSK,Autodesk,Tech software,Autodesk,Autodesk,,Autodesk_Maya,Autodesk_Maya,,expansion,True
+ADSK,Autodesk,Tech software,Autodesk,Autodesk,,Autodesk_Revit,Autodesk_Revit,,expansion,True
+CRM,Salesforce,Tech software,Salesforce,Salesforce|Salesforce.com,,Slack_(software),Slack_(software),,expansion,True
+CRM,Salesforce,Tech software,Salesforce,Salesforce|Salesforce.com,,Tableau_Software,Tableau_Software,,expansion,True
+INTU,Intuit,Tech software,Intuit,Intuit,,Mailchimp,Mailchimp|MailChimp,,expansion,True
+INTU,Intuit,Tech software,Intuit,Intuit,,QuickBooks,QuickBooks,,expansion,True
+INTU,Intuit,Tech software,Intuit,Intuit,,TurboTax,TurboTax,,expansion,True
+MTCH,Match Group,Tech software,Match_Group,Match_Group,,Hinge_(app),Hinge_(app),,expansion,True
+MTCH,Match Group,Tech software,Match_Group,Match_Group,,OkCupid,OkCupid,,expansion,True
+MTCH,Match Group,Tech software,Match_Group,Match_Group,,Tinder_(app),Tinder_(app),,expansion,True
+ORCL,Oracle,Tech software,Oracle_Corporation,Oracle_Corporation,,Java_(programming_language),Java_(programming_language),,expansion,True
+ORCL,Oracle,Tech software,Oracle_Corporation,Oracle_Corporation,,MySQL,MySQL,,expansion,True
+ORCL,Oracle,Tech software,Oracle_Corporation,Oracle_Corporation,,Oracle_Database,Oracle_Database,,expansion,True
+BTI,British American Tobacco,Tobacco,British_American_Tobacco,British_American_Tobacco,,Dunhill_(cigarette),Dunhill_(cigarette),,expansion,True
+BTI,British American Tobacco,Tobacco,British_American_Tobacco,British_American_Tobacco,,Lucky_Strike,Lucky_Strike,,expansion,True
+MO,Altria,Tobacco,Altria,Altria,,Marlboro,Marlboro|Marlboro_(cigarette),,expansion,True
+BKNG,Booking Holdings,Travel,Booking_Holdings,Booking_Holdings|The_Priceline_Group,,Booking.com,Booking.com,,expansion,True
+BKNG,Booking Holdings,Travel,Booking_Holdings,Booking_Holdings|The_Priceline_Group,,Kayak_(company),Kayak_(company)|Kayak.com,,expansion,True
+BKNG,Booking Holdings,Travel,Booking_Holdings,Booking_Holdings|The_Priceline_Group,,OpenTable,OpenTable,,expansion,True
+CCL,Carnival,Travel,Carnival_Corporation,Carnival_Corporation|Carnival_Corporation_&_plc,,Carnival_Cruise_Line,Carnival_Cruise_Line,,expansion,True
+CCL,Carnival,Travel,Carnival_Corporation,Carnival_Corporation|Carnival_Corporation_&_plc,,P&O_Cruises,P&O_Cruises,,expansion,True
+CCL,Carnival,Travel,Carnival_Corporation,Carnival_Corporation|Carnival_Corporation_&_plc,,Princess_Cruises,Princess_Cruises,,expansion,True
+EXPE,Expedia Group,Travel,Expedia_Group,"Expedia_Group|Expedia,_Inc.",,Expedia,Expedia|Expedia_(website),,expansion,True
+EXPE,Expedia Group,Travel,Expedia_Group,"Expedia_Group|Expedia,_Inc.",,Hotels.com,Hotels.com,,expansion,True
+EXPE,Expedia Group,Travel,Expedia_Group,"Expedia_Group|Expedia,_Inc.",,Vrbo,Vrbo,,expansion,True
+HLT,Hilton Worldwide,Travel,Hilton_Worldwide,Hilton_Worldwide|Hilton_Inc.|Hilton_Worldwide_Holdings,,DoubleTree,DoubleTree,,expansion,True
+HLT,Hilton Worldwide,Travel,Hilton_Worldwide,Hilton_Worldwide|Hilton_Inc.|Hilton_Worldwide_Holdings,,Waldorf_Astoria_Hotels_&_Resorts,Waldorf_Astoria_Hotels_&_Resorts,,expansion,True
+MAR,Marriott International,Travel,Marriott_International,Marriott_International,,Sheraton_Hotels_and_Resorts,Sheraton_Hotels_and_Resorts,,expansion,True
+MAR,Marriott International,Travel,Marriott_International,Marriott_International,,The_Ritz-Carlton_Hotel_Company,The_Ritz-Carlton_Hotel_Company,,expansion,True
+MAR,Marriott International,Travel,Marriott_International,Marriott_International,,W_Hotels,W_Hotels,,expansion,True
+NCLH,Norwegian Cruise Line Holdings,Travel,Norwegian_Cruise_Line_Holdings,Norwegian_Cruise_Line_Holdings,2019-01,Norwegian_Cruise_Line,Norwegian_Cruise_Line,,expansion,True
+NCLH,Norwegian Cruise Line Holdings,Travel,Norwegian_Cruise_Line_Holdings,Norwegian_Cruise_Line_Holdings,2019-01,Oceania_Cruises,Oceania_Cruises,,expansion,True

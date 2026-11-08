@@ -117,6 +117,7 @@ def t_stat(x: pd.Series) -> float:
 
 def main() -> None:
     panel = pd.read_csv(DATA_DIR / "panel_monthly.csv")
+    panel = panel[panel["cohort"] == "original"]  # the pre-registered tests use the original 68 companies
     all_features = sorted({f for features in VERSIONS.values() for f in features})
     present = [f for f in all_features if f in panel.columns]
     data = rank_within_month(panel, present)
