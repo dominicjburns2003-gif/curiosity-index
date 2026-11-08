@@ -6,11 +6,12 @@ be made, before the month's returns exist, and never changes them. This script
 follows those recorded picks day by day:
 
   - each month, the recorded picks are bought in equal amounts at the close
-    on the day they were recorded (the next trading day if markets were shut),
-    and held to the last close of that month (or to the latest close, while
-    the month is still running). Picks can only be made once the previous
-    month's data is complete, a day or two into the month, so buying any
-    earlier would use returns that had already happened;
+    on the first trading day after the day they were recorded, and held to the
+    last close of that month (or to the latest close, while the month is
+    still running). Picks can only be made once the previous month's data is
+    complete, a day or two into the month, and the daily update runs after the
+    US market close, so the next close is the first price anyone acting on the
+    picks could actually trade at;
   - compared with buying all 68 companies in equal amounts, and the S&P 500;
   - trading costs of 0.1% of the amount traded are taken at each change.
 
@@ -52,10 +53,10 @@ def main() -> None:
         held_month = pd.Period(chosen_month, freq="M") + 1
         days = prices.index
         recorded = pd.Timestamp(picks["recorded_on"].iloc[0])
-        on_or_after = days[days >= recorded]
-        if on_or_after.empty:
-            continue  # no close since the picks were recorded
-        start = on_or_after[0]  # bought at the close on the day they were recorded
+        after = days[days > recorded]
+        if after.empty:
+            continue  # no trading day since the picks were recorded
+        start = after[0]  # bought at the close on the next trading day
         end = days[days <= held_month.end_time].max()
         if end <= start:
             continue  # no full trading day held yet

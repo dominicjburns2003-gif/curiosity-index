@@ -479,7 +479,7 @@ with trending_tab:
             "- **Watch expectations.** This project's earnings test found that companies whose "
             "products drew much more attention than a year earlier beat analysts' estimates *less* "
             "often: analysts may already be expecting a lot.\n"
-            "- Updated every morning. Not investment advice."
+            "- Updated every evening, after the US market close. Not investment advice."
         )
 
 # ---- Results ----------------------------------------------------------------------
@@ -655,8 +655,8 @@ with results:
             f"<div>{names.get(t, t)} <span>{t}</span></div>" for t in current["ticker"]) + "</div>")
         recorded = pd.Timestamp(current["recorded_on"].iloc[0])
         timing = (f"recorded on {recorded:%-d %B %Y}, using data up to the end of {pick_month:%B}; "
-                  f"the live record counts from that day's close, so no {pick_month + 1:%B} returns "
-                  f"that had already happened are included")
+                  f"the live record counts from the close on the next trading day, so no returns that "
+                  f"had already happened are included")
         st.caption(f"Chosen at the end of {pick_month:%B %Y} and {timing}. Each month's picks are "
                    f"added to a permanent record and never changed, so the strategy's live track "
                    f"record can be checked later. Not investment advice.")
@@ -854,14 +854,16 @@ with track:
         st.markdown(
             "Every month, as soon as the previous month's data is complete, the strategy's picks "
             "are recorded and never changed afterwards. This page follows those recorded picks day "
-            "by day: **bought in equal amounts at the close on the day they were recorded**, as a "
-            "real investor could, and held to the end of the month, after 0.1% trading costs. "
+            "by day: **bought in equal amounts at the close on the next trading day after they are "
+            "recorded**, as a real investor could, and held to the end of the month, after 0.1% "
+            "trading costs. "
             "Nothing here can be tuned with hindsight."
         )
         if track_daily.empty:
             first = data["live_picks"].iloc[0]
             st.info(f"The first picks were recorded on {pd.Timestamp(first['recorded_on']):%-d %B %Y} "
-                    f"and bought at that day's close. Results appear here from the next trading day.")
+                    f"and are bought at the close on the next trading day. Results appear here from "
+                    f"the trading day after that.")
         else:
             track_daily["date"] = pd.to_datetime(track_daily["date"])
             first_day, last_day_held = track_daily["date"].iloc[0], track_daily["date"].iloc[-1]
@@ -929,7 +931,8 @@ with method:
             "and small companies can be compared.\n"
             "4. **Tests:** portfolio sorts, risk-factor alpha (Fama-French 5 factors and "
             "momentum), and an out-of-sample machine-learning model, net of trading costs.\n"
-            "5. **Automation:** every morning a script on GitHub downloads the new data, "
+            "5. **Automation:** every evening, after the US market close, a script on GitHub "
+            "downloads the new data, "
             "recomputes everything and updates this site."
         )
     with st.container(key="card_timeframes"):
@@ -955,7 +958,8 @@ with method:
              ["Earnings test", "Product views 35 to 6 days before each results date",
               "The same days a year earlier", "Year on year handles seasonal products; ends before "
               "previews of the results"],
-             ["Track record", "From the close on the day picks are recorded", "All 68 companies and the "
+             ["Track record", "From the close on the next trading day after picks are recorded",
+              "All 68 companies and the "
               "S&P 500 over the same days", "Only returns that had not happened yet"]],
             numeric=set(),
         ))

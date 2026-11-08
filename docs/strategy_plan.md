@@ -225,3 +225,11 @@ month. So the live record counts each month's picks **from the close on the day
 they were recorded**, as a real investor could, to the end of that month. Any
 returns that had already happened before the picks were recorded are left out.
 The first picks (for November 2026) were recorded on 6 November 2026.
+
+**Changed on 8 Nov 2026, before the record had a single completed day:** the
+daily update now runs at 22:00 UTC, after the US market close (a 07:00 run
+always missed the latest Wikipedia day). Picks recorded in the evening come
+after that day's close, which can no longer be traded, so each month's picks
+are now counted from the close on the **next** trading day after they are
+recorded. November's picks (recorded on 6 Nov 2026, after the close) are
+therefore counted from the close on 9 Nov 2026.

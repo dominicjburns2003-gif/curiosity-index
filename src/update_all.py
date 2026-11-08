@@ -1,5 +1,6 @@
 """
-Curiosity Index - the daily update. This is what GitHub Actions runs each morning.
+Curiosity Index - the daily update. This is what GitHub Actions runs each evening,
+after the US market close.
 
 Runs every step of the pipeline in order, so the data, results and charts
 (and so the live app) are always up to date:

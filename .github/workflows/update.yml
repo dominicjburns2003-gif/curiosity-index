@@ -1,5 +1,5 @@
 # Curiosity Index - daily update.
-# Every morning GitHub runs src/update_all.py on one of its own computers and
+# Every evening GitHub runs src/update_all.py on one of its own computers and
 # commits the new data, results and charts. Streamlit Cloud sees the commit and
 # the live app updates by itself. It can also be started by hand from the
 # repository's Actions tab ("Run workflow").
@@ -8,7 +8,10 @@ name: Daily update
 
 on:
   schedule:
-    - cron: "0 6 * * *"  # 06:00 UTC (07:00 in Lyon in winter), after Wikimedia publishes yesterday's views
+    # 22:00 UTC (23:00 in Lyon in winter): after the US market close (21:00 UTC in
+    # winter, 20:00 in summer) and after Wikimedia publishes the previous day's views,
+    # which happens in the afternoon or evening UTC (a 07:00 run always missed a day)
+    - cron: "0 22 * * *"
   workflow_dispatch:
 
 permissions:
