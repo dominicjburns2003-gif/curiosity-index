@@ -93,3 +93,13 @@ Stellantis, which are left out of test 5.
 the earnings one: when a company's products draw unusually much attention,
 analysts' expectations tend to be set too high. The return-prediction
 results from the original 68 do not carry over.
+
+## Addendum: size-weighted strategy for every group (written on 8 Nov 2026, before running it)
+
+The size-weighted version of the strategy (plan addendum in
+`docs/strategy_plan.md`) was only run on the original 68. It is now run the
+same way for the 44 new companies, the 41 without defence, and all 112: the
+same picks as test 1, weighted by market cap with no company above 15%,
+compared with all of the group's companies weighted the same way and with the
+S&P 500, after costs, January 2022 to the latest month. Reported once,
+whatever the result; it is not used to choose anything.
