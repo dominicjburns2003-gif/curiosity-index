@@ -29,12 +29,15 @@ Run it from the project folder:
     python src/update_all.py --skip-clickstream   # e.g. while the full history downloads
 """
 
+from datetime import datetime, timezone
+import json
 from pathlib import Path
 import subprocess
 import sys
 import time
 
 SRC_DIR = Path(__file__).resolve().parent
+LAST_UPDATE_PATH = SRC_DIR.parent / "data" / "processed" / "last_update.json"
 STEPS = [
     ["fetch_pageviews.py"],
     ["fetch_clickstream.py", "--new-only"],
@@ -69,6 +72,13 @@ def main() -> None:
         print(f"== {step[0]}: {status} ({time.time() - start:.0f} s)\n", flush=True)
         if result.returncode != 0:
             failed.append(step[0])
+
+    # When the site last checked for new data, shown in the app's banner next
+    # to the date of the newest data (which lags: see the app's Time frames)
+    LAST_UPDATE_PATH.write_text(json.dumps({
+        "checked_at_utc": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M"),
+        "failed_steps": failed,
+    }, indent=2) + "\n")
 
     if failed:
         sys.exit(f"Update finished with failures: {', '.join(failed)}")

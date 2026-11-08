@@ -225,6 +225,7 @@ DATA_FILES = {
     "clickthrough": DATA_DIR / "clickthrough_tests_summary.csv",
     "trending": DATA_DIR / "trending.csv",
     "replication": DATA_DIR / "replication_summary.csv",
+    "last_update": DATA_DIR / "last_update.json",
 }
 CLICKTHROUGH_PLAN_URL = GITHUB_URL + "/blob/main/docs/clickthrough_tests_plan.md"
 EARNINGS_PLAN_URL = GITHUB_URL + "/blob/main/docs/earnings_test_plan.md"
@@ -242,6 +243,8 @@ def load_data(versions: tuple) -> dict:
     for name, path in DATA_FILES.items():
         if name == "daily":
             data[name] = pd.read_csv(path, usecols=["date"])["date"].max()
+        elif name == "last_update":
+            data[name] = pd.read_json(path, typ="series")
         elif name == "prices":
             data[name] = pd.read_csv(path, index_col="date", parse_dates=True)
         else:
@@ -275,6 +278,9 @@ def price_status(day: pd.Timestamp) -> str:
 data = load_data(tuple(path.stat().st_mtime for path in DATA_FILES.values()))
 universe, views, prices = data["universe"], data["views"], data["prices"]
 last_day = pd.Timestamp(data["daily"])
+# When the daily update last ran (it runs every evening, even when there is no new
+# data, e.g. at weekends); the newest data itself lags by a day or two
+checked = pd.Timestamp(data["last_update"]["checked_at_utc"])
 
 # ---- Header -------------------------------------------------------------------
 st.html(PAGE_CSS)
@@ -291,7 +297,7 @@ st.html(f"""
     <div class="ci-stat"><span class="n">{universe['ticker'].nunique()}</span><span class="l">US companies</span></div>
     <div class="ci-stat"><span class="n">{len(universe)}</span><span class="l">product pages</span></div>
     <div class="ci-stat"><span class="n">Since {views['month'].min()[:4]}</span><span class="l">daily attention data</span></div>
-    <div class="ci-stat"><span class="n">{last_day:%-d %b %Y}</span><span class="l">latest data, updated daily</span></div>
+    <div class="ci-stat"><span class="n">Updated {checked:%-d %b %Y}</span><span class="l">data to {last_day:%-d %b}; checked every evening</span></div>
   </div>
 </div>
 """)
