@@ -176,6 +176,9 @@ PAGE_CSS = """
 [data-testid="stMetric"] { background: #e6eef8; border-color: #cfdcec !important; }
 [data-testid="stMetricLabel"] p { color: #16325a; font-weight: 600; }
 [data-testid="stMetricValue"] { color: #0f1b2d; }
+.st-key-metrics_row [data-testid="stMetricValue"] { font-size: 1.75rem; }
+.st-key-metrics_row [data-testid="stMetricValue"] *, .st-key-metrics_row [data-testid="stMetricLabel"] * {
+    white-space: normal; overflow: visible; text-overflow: clip; }
 
 /* Drop-down sections */
 [data-testid="stExpander"] details { background: #fff; border-color: #dbe3ee; }
@@ -200,7 +203,7 @@ PAGE_CSS = """
   .st-key-metrics_row [data-testid="stHorizontalBlock"] { flex-wrap: wrap; gap: 10px; }
   .st-key-metrics_row [data-testid="stColumn"] { flex: 1 1 calc(50% - 10px) !important;
                                                  min-width: calc(50% - 10px) !important; }
-  .st-key-metrics_row [data-testid="stMetricValue"] { font-size: 1.5rem; }
+  .st-key-metrics_row [data-testid="stMetricValue"] { font-size: 1.25rem; }
 }
 </style>
 """
@@ -337,15 +340,15 @@ with explorer:
         return f"{series.iloc[-1] / normal - 1:+.0%} vs normal"
 
     c1, c2, c3, c4 = st.container(key="metrics_row").columns(4)
-    c1.metric("Company page", f"{company_series.iloc[-1]:,.0f}",
+    c1.metric("Company page", f"{company_series.iloc[-1]:,.0f} views",
               vs_normal(company_series), border=True)
-    c2.metric("Product pages", f"{product_series.iloc[-1]:,.0f}",
+    c2.metric("Product pages", f"{product_series.iloc[-1]:,.0f} views",
               vs_normal(product_series), border=True)
     if len(clicks) >= 2:
         change = (clicks["conversion"].iloc[-1] - clicks["conversion"].iloc[-2]) * 100
-        c3.metric("Click-through", f"{clicks['conversion'].iloc[-1]:.2%}", f"{change:+.2f} pts", border=True)
+        c3.metric("Click-through rate", f"{clicks['conversion'].iloc[-1]:.2%}", f"{change:+.2f} pts", border=True)
     else:
-        c3.metric("Click-through", "n/a", border=True)
+        c3.metric("Click-through rate", "n/a", border=True)
     year_ago = price.loc[: price.index[-1] - pd.DateOffset(years=1)]
     c4.metric(f"Share price, {'live' if price_note.startswith('live') else 'last close'}",
               f"${price.iloc[-1]:,.2f}",
