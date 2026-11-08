@@ -233,3 +233,19 @@ after that day's close, which can no longer be traded, so each month's picks
 are now counted from the close on the **next** trading day after they are
 recorded. November's picks (recorded on 6 Nov 2026, after the close) are
 therefore counted from the close on 9 Nov 2026.
+
+## Change to the live strategy: all 112 companies from December 2026 (written on 9 Nov 2026)
+
+From the picks chosen at the end of November 2026 (held in December) onwards,
+the live strategy uses **all 112 companies**: the same version A (tree model,
+same settings, top third, equal amounts, 1 month), trained walk-forward on all
+112 and choosing from all 112. Its track record is compared with the
+equal-weighted average of all 112 and with the S&P 500.
+
+**Why:** for users of the app there is one universe of 112 companies, and the
+replication (`docs/expansion_replication_plan.md`) showed no edge in either
+the original 68 or the new 44, so this is not chosen to improve results.
+**It only affects future months**, whose returns did not exist when this was
+written, so it cannot use hindsight. November 2026's picks (from the original
+68, recorded on 6 Nov 2026) stay in the record unchanged. All backtest and
+replication results above stay as they are.
