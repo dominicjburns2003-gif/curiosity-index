@@ -47,9 +47,11 @@ def t_stat(x: pd.Series) -> float:
 MONTHLY = []  # the strategy's monthly returns, collected for replication_monthly.csv
 
 
-def strategy_result(panel: pd.DataFrame, score: pd.Series, group: str = "", detail: str = "") -> dict:
-    """Version A's long-only portfolio on `score`, against the group's own average."""
-    result = portfolio(panel, score, use_filter=False, hold=1)
+def strategy_result(panel: pd.DataFrame, score: pd.Series, group: str = "", detail: str = "",
+                    by_size: bool = False) -> dict:
+    """Version A's long-only portfolio on `score`, against the group's own average
+    (equal amounts, or with by_size, weighted by market cap against the group weighted the same way)."""
+    result = portfolio(panel, score, use_filter=False, hold=1, by_size=by_size)
     MONTHLY.append(result[["net", "benchmark"]].assign(group=group, detail=detail).reset_index())
     excess = result["net"] - result["benchmark"]
     return {"result": excess.mean(), "t_stat": t_stat(excess), "months": len(result),
@@ -85,10 +87,12 @@ def run_group(name: str, panel: pd.DataFrame, universe: pd.DataFrame, original: 
     all_features = sorted({f for fs in wf.VERSIONS.values() for f in fs})
     data = wf.rank_within_month(panel, all_features)
 
-    # 1. Strategy, trained on the group itself
+    # 1. Strategy, trained on the group itself; and the same picks weighted by size
+    own_score = as_score(wf.walk_forward(data, features), panel)
     rows.append({"group": name, "test": "strategy", "detail": "trained on this group",
-                 **strategy_result(panel, as_score(wf.walk_forward(data, features), panel),
-                                   name, "trained on this group")})
+                 **strategy_result(panel, own_score, name, "trained on this group")})
+    rows.append({"group": name, "test": "strategy", "detail": "by size",
+                 **strategy_result(panel, own_score, name, "by size", by_size=True)})
 
     # 2. Transfer: scored by the model trained on the original 68
     if name != "all 112":

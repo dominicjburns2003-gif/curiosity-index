@@ -103,3 +103,16 @@ same picks as test 1, weighted by market cap with no company above 15%,
 compared with all of the group's companies weighted the same way and with the
 S&P 500, after costs, January 2022 to the latest month. Reported once,
 whatever the result; it is not used to choose anything.
+
+### Size-weighted results (added on 8 Nov 2026, after running once)
+
+| Group | Picks by size vs the group by size | $100 became | Group by size | S&P 500 |
+|---|---|---|---|---|
+| Original 68 | see `docs/strategy_plan.md` | | | |
+| New 44 | −0.10% a month (t −0.3) | $144 | $155 | $179 |
+| New, consumer only | −0.10% a month (t −0.3) | $144 | $154 | $179 |
+| All 112 | −0.06% a month (t −0.2) | $175 | $186 | $179 |
+
+Weighted by size, the picks slightly trail simply holding the same companies
+by size in every new group, and over all 112 they end just below the S&P 500.
+The original 68's lead over the S&P 500 does not carry over.

@@ -523,6 +523,13 @@ with results:
                                                 & (replication_monthly["detail"] == "trained on this group")],
     }
     group_size = {"Original 68": 68, "All 112 companies": 112, "44 new companies": 44}[group]
+    size_runs = {
+        "Original 68": monthly[monthly["version"] == "A_size"],
+        "All 112 companies": replication_monthly[(replication_monthly["group"] == "all 112")
+                                                 & (replication_monthly["detail"] == "by size")],
+        "44 new companies": replication_monthly[(replication_monthly["group"] == "new 44")
+                                                & (replication_monthly["detail"] == "by size")],
+    }
     shown_run = group_runs[group].sort_values("month").copy()
     shown_run["excess"] = shown_run["net"] - shown_run["benchmark"]
     shown_t = shown_run["excess"].mean() / (shown_run["excess"].std() / len(shown_run) ** 0.5)
@@ -545,7 +552,7 @@ with results:
     def growth_of_100(returns: pd.Series) -> float:
         return 100 * (1 + returns).prod()
 
-    by_size = monthly[monthly["version"] == "A_size"].sort_values("month")
+    by_size = size_runs[group].sort_values("month")
     vs_spy = by_size["net"] - by_size["spy"]
     vs_spy_t = vs_spy.mean() / (vs_spy.std() / len(vs_spy) ** 0.5)
     replication = data["replication"]
@@ -595,12 +602,16 @@ with results:
                      f"they are mostly consumer staples, which lagged from 2022.",
                      long_short.loc["clicks", "t_stat"],
                      long_short.loc["clicks", "long_short"] > long_short.loc["products", "long_short"])
-            + answer("Does it beat the S&P 500?",
-                     f"On the original 68, weighted by company size as most funds are, the picks turned $100 into "
+            + answer(f"Does it beat the S&P 500? ({group})",
+                     f"Weighted by company size, as most funds are, the picks turned $100 into "
                      f"${growth_of_100(by_size['net']):.0f}, against ${growth_of_100(by_size['spy']):.0f} "
-                     f"for the S&P 500. But simply holding all 68 companies the same way made "
-                     f"${growth_of_100(by_size['benchmark']):.0f}, so most of the lead comes from the "
-                     f"companies tracked, not the signal, and all of it came in 2025–26.", vs_spy_t)
+                     f"for the S&P 500. Simply holding all {group_size} companies the same way made "
+                     f"${growth_of_100(by_size['benchmark']):.0f}, so "
+                     + ("most of the lead comes from the companies tracked, not the signal."
+                        if growth_of_100(by_size['benchmark']) > growth_of_100(by_size['spy'])
+                        and growth_of_100(by_size['net']) > growth_of_100(by_size['spy'])
+                        else "the picks add nothing over the companies they are chosen from."),
+                     vs_spy_t)
             + answer("Does product curiosity before results predict how they go?",
                      f"Companies whose products drew much more attention than a year earlier beat "
                      f"analysts' estimates less often ({beat_sort['top']:.0%} against "
@@ -645,12 +656,10 @@ with results:
 
     with st.container(key="card_growth"):
         st.subheader("What $100 would have become")
-        size_weighted = False
-        if group == "Original 68":
-            weighting = st.segmented_control(
-                "Invest in the picks", ["In equal amounts", "In proportion to company size"],
-                default="In equal amounts", key="weighting") or "In equal amounts"
-            size_weighted = weighting != "In equal amounts"
+        weighting = st.segmented_control(
+            "Invest in the picks", ["In equal amounts", "In proportion to company size"],
+            default="In equal amounts", key="weighting") or "In equal amounts"
+        size_weighted = weighting != "In equal amounts"
         shown = by_size if size_weighted else shown_run
         st.markdown(
             f"Following the strategy from {first + 1:%B %Y}: each month, buy the top third of the "
@@ -659,7 +668,7 @@ with results:
                if size_weighted else "in equal amounts, ")
             + f"after trading costs. Compared with holding all {group_size} companies the same way "
             "(the fair comparison) and with the S&P 500."
-            + (" The size-weighted version was tested on the original 68 only." if group != "Original 68" else "")
+
         )
         dates = pd.PeriodIndex(shown["month"], freq="M").to_timestamp(how="end").normalize() + pd.offsets.MonthEnd(1)
         start = dates[0] - pd.offsets.MonthEnd(1)
