@@ -121,7 +121,8 @@ def run_group(name: str, panel: pd.DataFrame, universe: pd.DataFrame, original: 
         sort = top_minus_bottom(events, "product_surge", outcome)
         rows.append({"group": name, "test": "earnings", "detail": f"{outcome}: top minus bottom third",
                      "result": sort["top_minus_bottom"], "t_stat": sort["t_stat"], "months": sort["quarters"],
-                     "events": sort["events"], "bottom": sort["bottom"], "top": sort["top"]})
+                     "events": sort["events"], "bottom": sort["bottom"], "middle": sort["middle"],
+                     "top": sort["top"]})
     regression = clustered_regression(events, "beat", ["product_surge", "company_surge"])
     product = next(r for r in regression if r["variable"] == "product_surge")
     rows.append({"group": name, "test": "earnings", "detail": "beat: regression on product surge",

@@ -44,6 +44,10 @@ import pandas as pd
 from walk_forward import FIRST_TEST_YEAR, VERSIONS, rank_within_month, walk_forward
 
 DEV_END = "2024-12"  # development period: Jan 2022 to Dec 2024; final: after
+# From the picks chosen at the end of November 2026, the live strategy uses all
+# 112 companies (docs/strategy_plan.md, written on 9 Nov 2026); earlier months'
+# picks, and every backtest, use the original 68
+LIVE_ALL_FROM = "2026-11"
 COST_PER_TRADE = 0.001
 MAX_WEIGHT = 0.15  # size-weighted version: no company above 15%
 
@@ -253,14 +257,28 @@ def main() -> None:
     picks = pd.DataFrame(picks, columns=["month", "rank", "ticker", "score"])
     picks.to_csv(DATA_DIR / "strategy_picks.csv", index=False)
 
+    # Live picks from LIVE_ALL_FROM: version A trained on and choosing from all 112
+    everyone = pd.read_csv(DATA_DIR / "panel_monthly.csv")
+    everyone["rank_next"] = everyone.groupby("month")["ret_next"].rank(pct=True)  # across all 112
+    all_scores = walk_forward(rank_within_month(everyone, VERSIONS["products"]), VERSIONS["products"])
+    live_112 = []
+    for month, now in all_scores[all_scores["month"] >= LIVE_ALL_FROM].groupby("month"):
+        n_pick = round(len(now.dropna(subset=["prediction"])) / 3)
+        for rank, row in enumerate(now.nlargest(n_pick, "prediction").itertuples(), start=1):
+            live_112.append((month, rank, row.ticker, row.prediction))
+    live_112 = pd.DataFrame(live_112, columns=["month", "rank", "ticker", "score"])
+
     # Live record: add the latest month's picks once, and never change them
     log_path = DATA_DIR / "live_picks_log.csv"
     log = pd.read_csv(log_path) if log_path.exists() else pd.DataFrame(
         columns=["recorded_on", "month", "version", "rank", "ticker"])
-    latest = picks["month"].max()
+    latest = max(picks["month"].max(), live_112["month"].max() if len(live_112) else "")
     if latest not in set(log["month"]):
-        new = picks[picks["month"] == latest].assign(
-            recorded_on=pd.Timestamp.today().strftime("%Y-%m-%d"), version=chosen)
+        if latest >= LIVE_ALL_FROM:
+            new = live_112[live_112["month"] == latest].assign(version=f"{chosen}, all 112")
+        else:
+            new = picks[picks["month"] == latest].assign(version=chosen)
+        new = new.assign(recorded_on=pd.Timestamp.today().strftime("%Y-%m-%d"))
         log = pd.concat([log, new[log.columns]])
         log.to_csv(log_path, index=False)
         print(f"Live record: added the picks for {latest}")

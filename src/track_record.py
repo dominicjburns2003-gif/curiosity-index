@@ -12,7 +12,9 @@ follows those recorded picks day by day:
     complete, a day or two into the month, and the daily update runs after the
     US market close, so the next close is the first price anyone acting on the
     picks could actually trade at;
-  - compared with buying all 68 companies in equal amounts, and the S&P 500;
+  - compared with buying, in equal amounts, all the companies the picks were
+    chosen from (the original 68 until November 2026, all 112 from December),
+    and with the S&P 500;
   - trading costs of 0.1% of the amount traded are taken at each change.
 
 Writes to data/processed/:
@@ -44,7 +46,8 @@ def main() -> None:
     log = pd.read_csv(DATA_DIR / "live_picks_log.csv")
     prices = pd.read_csv(DATA_DIR / "prices_daily.csv", index_col="date", parse_dates=True)
     universe = pd.read_csv(UNIVERSE_PATH)
-    companies = sorted(universe.loc[universe["cohort"] == "original", "ticker"].unique())  # the strategy's 68
+    original_68 = sorted(universe.loc[universe["cohort"] == "original", "ticker"].unique())
+    all_112 = sorted(universe["ticker"].unique())
     last_close = prices.index.max()
 
     value = {"strategy": 100.0, "average_company": 100.0, "spy": 100.0}
@@ -66,7 +69,10 @@ def main() -> None:
         cost = COST_PER_TRADE * turnover  # first month: buying only; then selling and buying
         paths = {
             "strategy": growth(prices, tickers, start, end) * (1 - cost),
-            "average_company": growth(prices, companies, start, end),
+            # Compared with the companies the picks were chosen from that month:
+            # the original 68 until November 2026, all 112 from December
+            "average_company": growth(prices, all_112 if "all 112" in str(picks["version"].iloc[0])
+                                      else original_68, start, end),
             "spy": growth(prices, ["SPY"], start, end),
         }
         if not daily:

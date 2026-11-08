@@ -505,15 +505,9 @@ with results:
     excess_t = run["excess"].mean() / (run["excess"].std() / len(run) ** 0.5)
     first, last = pd.Period(run["month"].iloc[0]), pd.Period(run["month"].iloc[-1])
 
-    # Which group of companies the strategy results are shown for
-    st.markdown('<div class="ci-picker-title" style="color:#16325a">Show strategy results for</div>',
-                unsafe_allow_html=True)
-    group = st.segmented_control(
-        "Companies", ["All 112 companies", "Original 68", "44 new companies"],
-        default="All 112 companies", key="group", label_visibility="collapsed") or "All 112 companies"
-    st.caption("Original 68: the companies the strategy was designed and tested on. 44 new: added in "
-               "November 2026 to check it on companies it had never seen. All 112: both together. "
-               "Same strategy and settings in every case.")
+    # Users see one universe of 112 companies; how the results were built up (first
+    # 68, then 44 more) is in the research detail sections lower down
+    group = "All 112 companies"
     replication_monthly = data["replication_monthly"]
     group_runs = {
         "Original 68": run.assign(benchmark=run["average_company"]),
@@ -574,35 +568,28 @@ with results:
     with st.container(key="card_summary"):
         st.subheader("The short answer so far")
         st.html(
-            answer(f"Does buying the companies with the most product curiosity beat the average "
-                   f"company? ({group})",
+            answer("Does buying the companies with the most product curiosity beat the average company?",
                    f"Buying the model's top third each month (no short selling, after trading costs) "
                    f"{'beat' if shown_run['excess'].mean() > 0 else 'trailed'} the average of the "
                    f"{group_size} companies by {abs(shown_run['excess'].mean()) * 100:.2f}% a month from "
                    f"{first + 1:%B %Y} to {last + 1:%B %Y}"
                    + (", but not by enough to rule out luck." if shown_t < 2 else "."),
                    shown_t)
-            + answer("Do these results hold on 44 companies they were never tested on?",
-                     f"Only the earnings finding did (below). On 44 companies added in November 2026 "
-                     f"the strategy's edge did not hold ({new_strategy['result'] * 100:+.2f}% a month "
-                     f"against its own average), and product attention no longer beat company "
-                     f"attention. The return results on the original 68 were most likely luck.",
-                     0, label="Only partly", style="maybe")
-            + answer(f"Does attention to products add anything to attention to the company? ({group})",
+            + answer("Does attention to products add anything to attention to the company?",
                      f"In the research test (buying the top third and selling the bottom third), a model "
                      f"using product attention did {long_short.loc['products', 'long_short'] * 100:+.2f}% a "
                      f"month, against {long_short.loc['company', 'long_short'] * 100:+.2f}% for company "
                      f"attention alone.", long_short.loc["products", "t_stat"],
                      long_short.loc["products", "long_short"] > long_short.loc["company", "long_short"])
-            + answer(f"Does click-through from products to the company add anything? ({group})",
+            + answer("Does click-through from products to the company add anything?",
                      f"Adding click-through gave {long_short.loc['clicks', 'long_short'] * 100:+.2f}% a month, "
                      f"against {long_short.loc['products', 'long_short'] * 100:+.2f}% with product attention "
-                     f"alone. Two further tests on the original 68 found it does not predict volatility "
+                     f"alone. Two further tests found it does not predict volatility "
                      f"either, and that high click-through companies only seemed to do worse because "
                      f"they are mostly consumer staples, which lagged from 2022.",
                      long_short.loc["clicks", "t_stat"],
                      long_short.loc["clicks", "long_short"] > long_short.loc["products", "long_short"])
-            + answer(f"Does it beat the S&P 500? ({group})",
+            + answer("Does it beat the S&P 500?",
                      f"Weighted by company size, as most funds are, the picks turned $100 into "
                      f"${growth_of_100(by_size['net']):.0f}, against ${growth_of_100(by_size['spy']):.0f} "
                      f"for the S&P 500. Simply holding all {group_size} companies the same way made "
@@ -613,16 +600,13 @@ with results:
                         else "the picks add nothing over the companies they are chosen from."),
                      vs_spy_t)
             + answer("Does product curiosity before results predict how they go?",
-                     f"Companies whose products drew much more attention than a year earlier beat "
-                     f"analysts' estimates less often ({beat_sort['top']:.0%} against "
-                     f"{beat_sort['bottom']:.0%}), and the share price reaction was no different. The "
-                     f"same gap appeared in the 44 new companies ({new_beat['top']:.0%} against "
-                     f"{new_beat['bottom']:.0%}).",
-                     beat_sort["t_stat"], label="Opposite of expected", style="maybe")
-            + answer("Did the planned improvements help?",
-                     "A bad-news filter, comparing companies within their sector, a simpler score and "
-                     "holding for 3 months were all planned in advance. None beat the original model "
-                     "over 2022 to 2024.", 0, best_improved > dev.loc["A", "excess"])
+                     f"Yes, but not the way you might expect. Across {int(all_beat['events']):,} quarterly "
+                     f"results, companies whose products drew much more attention than a year earlier "
+                     f"beat analysts' estimates less often ({all_beat['top']:.0%} against "
+                     f"{all_beat['bottom']:.0%}). The share price reaction was no different. The pattern "
+                     f"was found in the first 68 companies and held in the 44 added later.",
+                     all_beat["t_stat"], label=verdict(abs(all_beat["t_stat"]))[0],
+                     style=verdict(abs(all_beat["t_stat"]))[1])
         )
         st.caption("Research results, updated monthly. Not investment advice.")
 
@@ -641,9 +625,8 @@ with results:
                 "2. **Turn them into one score per company** with a machine-learning model "
                 "(gradient-boosted trees). The model learned how these measures related to the "
                 "following month's return from past data only, and is retrained every January.\n"
-                "3. **Buy the highest-scoring third** (23 of the original 68 companies, 37 of all "
-                "112), in equal amounts (or, in the size-weighted version, in proportion to their "
-                "market value).\n"
+                "3. **Buy the highest-scoring third** (37 of the 112 companies), in equal amounts "
+                "(or, in the size-weighted version, in proportion to their market value).\n"
                 "4. **Hold them for one month**, then repeat with the new scores. Trading costs of "
                 "0.1% are paid on whatever changes."
             )
@@ -685,11 +668,6 @@ with results:
                 x=[start, *dates], y=value, name=name, mode="lines", line=dict(color=colour, width=width),
                 hovertemplate="$%{y:.0f}<extra>" + name + "</extra>",
             ))
-        # Value after the last development month's return (end of Jan 2025)
-        final_start = (pd.Period(DEV_END) + 1).to_timestamp(how="end").normalize()
-        growth.add_vline(x=final_start, line_color="#888", line_width=1, line_dash="dot")
-        growth.add_annotation(x=final_start, y=1, yref="paper", text="Final check", showarrow=False,
-                              xanchor="left", xshift=6, font=dict(size=11, color="#6b7280"))
         growth.update_layout(
             yaxis=dict(title="Value of $100 ($)", gridcolor=GRID), xaxis=dict(showgrid=False, hoverformat="%b %Y"),
             hovermode="x unified", height=380, legend=dict(orientation="h", y=1.02, yanchor="bottom", x=0),
@@ -699,8 +677,9 @@ with results:
         growth.update_xaxes(fixedrange=True)
         growth.update_yaxes(fixedrange=True)
         st.plotly_chart(growth, width="stretch", config=CHART_CONFIG)
-        st.caption("Before the dotted line: the period used to choose between the planned versions. "
-                   "After it: the final check, run once.")
+        st.caption("Out of sample: the model behind each month's picks was trained only on earlier "
+                   "years. Equal amounts compare with all 112 companies held equally; by size, with "
+                   "all 112 weighted by market value (no company above 15%).")
 
     with st.container(key="card_picks"):
         live = data["live_picks"]
@@ -714,15 +693,17 @@ with results:
         timing = (f"recorded on {recorded:%-d %B %Y}, using data up to the end of {pick_month:%B}; "
                   f"the live record counts from the close on the next trading day, so no returns that "
                   f"had already happened are included")
-        st.caption(f"Chosen at the end of {pick_month:%B %Y} from the original 68 companies, as planned "
-                   f"in advance, and {timing}. Each month's picks are added to a permanent record and "
-                   f"never changed, so the strategy's live track record can be checked later. Not "
-                   f"investment advice.")
+        source = ("all 112 companies" if "all 112" in str(current["version"].iloc[0])
+                  else "the first 68 companies (the live strategy covers all 112 from December 2026)")
+        st.caption(f"Chosen at the end of {pick_month:%B %Y} from {source}, and {timing}. Each month's "
+                   f"picks are added to a permanent record and never changed, so the strategy's live "
+                   f"track record can be checked later. Not investment advice.")
 
-    with st.container(key="card_versions"):
-        st.subheader("Versions tested")
+    with st.expander("Research detail: how the strategy was developed (on the first 68 companies)"):
         st.markdown(
-            f"Five changes were [planned and written down]({PLAN_URL}) before any were tested. "
+            f"The strategy was designed on the first 68 companies. Five changes were "
+            f"[planned and written down]({PLAN_URL}) before any were tested; none beat the original "
+            f"model over 2022 to 2024, so the original was kept. "
             f"Each version was run on 2022 to 2024 and the best one chosen by a fixed rule (highest "
             f"return above the average company, after costs). Only then was it checked on 2025 to 2026."
         )
@@ -764,9 +745,13 @@ with results:
 
     with st.container(key="card_earnings"):
         st.subheader("Earnings announcements")
+        all_reaction = replicated("all 112", "earnings", "reaction: top minus bottom third")
+        beat_sort, reaction_sort = all_beat, all_reaction.rename({"result": "top_minus_bottom"})
+        beat_sort = beat_sort.rename({"result": "top_minus_bottom"})
         st.markdown(
             f"The test [planned in advance]({EARNINGS_PLAN_URL}): for {int(beat_sort['events']):,} "
-            f"quarterly results from {int(beat_sort['quarters'])} quarters since 2018, measure how much "
+            f"quarterly results of the 112 companies, from {int(beat_sort['months'])} quarters since "
+            f"2018, measure how much "
             f"attention the company's product pages got from 35 to 6 days before the results date, "
             f"compared with the same days a year earlier, then see how the results went. The share-price "
             f"reaction is measured from the close 2 trading days before the results to the close 1 day after."
@@ -789,18 +774,17 @@ with results:
         st.markdown(
             f"- **More product buzz, fewer beats:** {beat_sort['top']:.1%} of companies with the busiest "
             f"product pages beat estimates, against {beat_sort['bottom']:.1%} of the quietest "
-            f"(t = {beat_sort['t_stat']:.1f}, just past the usual bar of 2, though several outcomes were "
-            f"tested), the opposite of what was expected.\n"
+            f"(t = {beat_sort['t_stat']:.1f}), the opposite of what was expected. It was first found in "
+            f"the first 68 companies and held in the 44 added later.\n"
             f"- **No difference in the share-price reaction** around the results "
-            f"({reaction_sort['top_minus_bottom'] * 100:+.2f}%, t = {abs(reaction_sort['t_stat']):.1f}).\n"
+            f"({reaction_sort['top_minus_bottom'] * 100:+.2f}%, t = {reaction_sort['t_stat']:.1f}).\n"
             "- A likely reading: analysts see the same buzz and raise their forecasts, sometimes too "
             "far, so beating them is harder; and the market, seeing both, is not surprised on average."
         )
 
-    with st.container(key="card_replication"):
-        st.subheader("Replication on 44 new companies")
+    with st.expander("Research detail: checking the findings on companies the tests had never seen"):
         st.markdown(
-            f"Every test above was designed on the same 68 companies. In November 2026, 44 more "
+            f"Every test was first designed on 68 companies. In November 2026, 44 more "
             f"companies with 92 product pages were added and checked by the same rules, and the "
             f"same tests were [planned in advance]({REPLICATION_PLAN_URL}) and run once on them, with "
             f"every setting unchanged. A finding counts as replicated if it points the same way."
@@ -847,8 +831,8 @@ with results:
             f"another version of the test, so it should still be read with care.\n"
             "- **The return results do not carry over**: the strategy's edge and the two promising "
             "signals were most likely luck in the original 68.\n"
-            "- The strategy and its live record stay on the original 68, as planned; changing them "
-            "now would mean choosing after seeing results.\n"
+            "- From December 2026 the live strategy covers all 112 companies (decided on 9 Nov 2026, "
+            "before any December returns existed); November's picks came from the first 68.\n"
             "- These figures are recomputed every day. The machine-learning results can move by "
             "about ±0.3% a month when Yahoo revises past prices or share counts, which is itself a "
             "sign that the edge is too small to rely on. The results as first run are recorded in "
