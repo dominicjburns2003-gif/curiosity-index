@@ -17,6 +17,7 @@ from pathlib import Path
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
+import yfinance as yf
 
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_DIR / "data" / "processed"
@@ -27,6 +28,9 @@ COLOURS = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4"]
 CLICK_COLOUR = "#52514e"  # click-through and price each get their own colour,
 PRICE_COLOUR = "#6250d6"  # so they are never confused with a page
 GRID = "rgba(128,128,128,0.2)"
+# Hover boxes: small and see-through, so they cover as little of the chart as possible
+HOVER_LABEL = dict(bgcolor="rgba(255,255,255,0.82)", bordercolor="#dbe3ee",
+                   font=dict(size=11, family="Inter, sans-serif", color="#0f1b2d"))
 DISCLAIMER = "Student research project. Not investment advice."
 # Wikipedia titles must start with a capital letter, so restore the real names
 TITLE_FIXES = {"IPhone": "iPhone", "IPad": "iPad", "IMac": "iMac", "IPod": "iPod"}
@@ -156,6 +160,18 @@ PAGE_CSS = """
 .ci-table .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .ci-table .sub { display: block; color: #6b7280; font-size: .83rem; margin-top: 2px; }
 
+/* Company picker: a highlighted panel so visitors notice it straight away */
+.st-key-picker { background: #16325a; border-radius: 12px; padding: 18px 22px 20px; }
+.ci-picker-title { color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: 2px; }
+.ci-picker-hint { color: #c9d6e8; font-size: .9rem; margin-bottom: 10px; }
+.st-key-company_picker [role="group"] { background: #fff; border: 2px solid #9ec5f4; border-radius: 10px;
+    min-height: 54px; box-shadow: 0 2px 10px rgba(0,0,0,.18); }
+.st-key-company_picker [role="group"]:hover, .st-key-company_picker [role="group"]:focus-within {
+    border-color: #fff; }
+.st-key-company_picker input[role="combobox"] { font-size: 1.1rem; font-weight: 600; color: #0f1b2d;
+    height: 50px; }
+.st-key-company_picker button svg { width: 26px; height: 26px; color: #2a78d6; }
+
 /* Key-number cards: a light navy tint */
 [data-testid="stMetric"] { background: #e6eef8; border-color: #cfdcec !important; }
 [data-testid="stMetricLabel"] p { color: #16325a; font-weight: 600; }
@@ -208,9 +224,11 @@ DATA_FILES = {
     "track_monthly": DATA_DIR / "track_record_monthly.csv",
     "clickthrough": DATA_DIR / "clickthrough_tests_summary.csv",
     "trending": DATA_DIR / "trending.csv",
+    "replication": DATA_DIR / "replication_summary.csv",
 }
 CLICKTHROUGH_PLAN_URL = GITHUB_URL + "/blob/main/docs/clickthrough_tests_plan.md"
 EARNINGS_PLAN_URL = GITHUB_URL + "/blob/main/docs/earnings_test_plan.md"
+REPLICATION_PLAN_URL = GITHUB_URL + "/blob/main/docs/expansion_replication_plan.md"
 PLAN_URL = GITHUB_URL + "/blob/main/docs/strategy_plan.md"
 DEV_END = "2024-12"  # last month of the development period (see src/strategy.py)
 
@@ -229,6 +247,29 @@ def load_data(versions: tuple) -> dict:
         else:
             data[name] = pd.read_csv(path)
     return data
+
+
+@st.cache_data(ttl=900, show_spinner=False)
+def latest_prices(tickers: tuple) -> pd.DataFrame:
+    """Latest price and its date for each ticker from Yahoo (about 15 minutes
+    delayed during trading), kept for 15 minutes. For display only: every test
+    uses daily closing prices. Empty if Yahoo does not answer."""
+    try:
+        bars = yf.download(list(tickers), period="5d", interval="1d", progress=False,
+                           auto_adjust=True, threads=True)["Close"].ffill()
+    except Exception:
+        return pd.DataFrame(columns=["price", "date"])
+    last = bars.iloc[-1].dropna()
+    return pd.DataFrame({"price": last, "date": bars.index[-1].normalize()})
+
+
+def price_status(day: pd.Timestamp) -> str:
+    """'live' wording during US trading hours, otherwise the close it refers to."""
+    now = pd.Timestamp.now(tz="America/New_York")
+    trading = now.weekday() < 5 and (9, 30) <= (now.hour, now.minute) < (16, 0)
+    if trading and day.date() == now.date():
+        return f"live, about {now - pd.Timedelta(minutes=15):%-H:%M} New York time (15-minute delay)"
+    return f"at the close on {day:%-d %b %Y}"
 
 
 data = load_data(tuple(path.stat().st_mtime for path in DATA_FILES.values()))
@@ -263,13 +304,22 @@ with explorer:
     companies = universe.drop_duplicates("ticker").sort_values("company")
     labels = {r.ticker: f"{r.company} ({r.ticker})" for r in companies.itertuples()}
     default = list(labels).index("NVO") if "NVO" in labels else 0
-    ticker = st.selectbox("Choose a company", list(labels), index=default, format_func=labels.get)
+    with st.container(key="picker"):
+        st.markdown('<div class="ci-picker-title">Choose a company to explore</div>'
+                    f'<div class="ci-picker-hint">{len(labels)} companies. Click the box below, or start '
+                    'typing a name or ticker to search.</div>', unsafe_allow_html=True)
+        ticker = st.selectbox("Company", list(labels), index=default, format_func=labels.get,
+                              label_visibility="collapsed", key="company_picker")
 
     pages = views[views["ticker"] == ticker].copy()
     pages["month"] = pd.to_datetime(pages["month"])
     clicks = data["conversion"][data["conversion"]["ticker"] == ticker].copy()
     clicks["month"] = pd.to_datetime(clicks["month"])
     price = prices[ticker].loc[str(pages["month"].min().year):].dropna()
+    live = latest_prices((ticker,))
+    if ticker in live.index and live.at[ticker, "date"] >= price.index[-1]:
+        price.loc[live.at[ticker, "date"]] = live.at[ticker, "price"]  # today's latest price
+    price_note = price_status(price.index[-1])
 
     # Key numbers for the latest complete month, each against its own recent past
     company_series = pages[pages["kind"] == "company"].groupby("month")["views"].sum(min_count=1).dropna()
@@ -291,7 +341,8 @@ with explorer:
     else:
         c3.metric("Click-through", "n/a", border=True)
     year_ago = price.loc[: price.index[-1] - pd.DateOffset(years=1)]
-    c4.metric("Share price", f"${price.iloc[-1]:,.2f}",
+    c4.metric(f"Share price, {'live' if price_note.startswith('live') else 'last close'}",
+              f"${price.iloc[-1]:,.2f}",
               f"{price.iloc[-1] / year_ago.iloc[-1] - 1:+.0%} in a year" if len(year_ago) else None,
               border=True)
     # Wikipedia's overall traffic moves too (it fell through 2026), so give the
@@ -299,10 +350,14 @@ with explorer:
     all_companies = views[views["kind"] == "company"].pivot_table(
         index="month", columns="ticker", values="views", aggfunc="sum")
     typical = (all_companies.iloc[-1] / all_companies.iloc[-7:-1].mean() - 1).median()
-    st.caption(f"Views and click-through for {latest:%B %Y}; \"normal\" = the 6 months before; "
-               f"click-through change vs the month before; share price on {price.index[-1]:%-d %b %Y}. "
-               f"For comparison, the typical company page was {typical:+.0%} vs normal that month, "
-               f"as Wikipedia's overall traffic changes too.")
+    normal_from, normal_to = (latest - pd.DateOffset(months=6)), (latest - pd.DateOffset(months=1))
+    click_note = (f"Click-through: {clicks['month'].iloc[-1]:%B %Y}, change in percentage points from "
+                  f"{clicks['month'].iloc[-2]:%B %Y}. " if len(clicks) >= 2 else "")
+    st.caption(f"**Time frames.** Page views: {latest:%B %Y}, against their average over the 6 months "
+               f"before ({normal_from:%B} to {normal_to:%B %Y}), shown as \"vs normal\". {click_note}"
+               f"Share price: {price_note}; change over the 12 months to that date. For comparison, the "
+               f"typical company page was {typical:+.0%} vs normal in {latest:%B}, as Wikipedia's overall "
+               f"traffic changes too.")
 
     chart_card = st.container(key="card_chart")
     # Three stacked charts sharing ONE date axis, so the hover line and tooltip
@@ -314,19 +369,19 @@ with explorer:
     for colour, article in zip(COLOURS, order):
         series = pages[pages["article"] == article]
         kind = series["kind"].iloc[0]
-        name = f"{labels[ticker]} – company page" if kind == "company" else pretty(article)
+        name = "Company page" if kind == "company" else pretty(article)
         fig.add_trace(go.Scatter(
             x=series["month"], y=series["views"], name=name, mode="lines",
             line=dict(color=colour, width=3 if kind == "company" else 2),
-            hovertemplate="%{y:,.0f} views<extra>" + name + "</extra>",
+            hovertemplate="%{y:.3s} views<extra>" + name + "</extra>",
         ))
     fig.add_trace(go.Scatter(
-        x=clicks["month"], y=clicks["conversion"] * 100, name="Click-through to company", mode="lines",
+        x=clicks["month"], y=clicks["conversion"] * 100, name="Click-through", mode="lines",
         line=dict(color=CLICK_COLOUR, width=2), yaxis="y2",
         hovertemplate="%{y:.2f}%<extra>Click-through</extra>",
     ))
     fig.add_trace(go.Scatter(
-        x=price.index, y=price, name=f"{ticker} share price", mode="lines",
+        x=price.index, y=price, name="Share price", mode="lines",
         line=dict(color=PRICE_COLOUR, width=1.5), yaxis="y3",
         hovertemplate="$%{y:,.2f}<extra>Share price</extra>",
     ))
@@ -339,7 +394,7 @@ with explorer:
                    spikedash="dot", spikethickness=1, spikecolor="#888"),
         hovermode="x unified", hoversubplots="axis", height=720,
         legend=dict(orientation="h", y=1.02, yanchor="bottom", x=0),
-        margin=dict(l=10, r=10, t=40, b=10), plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)", font=dict(family="Inter, sans-serif"), dragmode=False,
+        margin=dict(l=10, r=10, t=40, b=10), plot_bgcolor="rgba(0,0,0,0)", paper_bgcolor="rgba(0,0,0,0)", font=dict(family="Inter, sans-serif"), dragmode=False, hoverlabel=HOVER_LABEL,
     )
     fig.update_xaxes(fixedrange=True)
     fig.update_yaxes(fixedrange=True)
@@ -364,12 +419,35 @@ with explorer:
 with trending_tab:
     trend = data["trending"]
 
+    shown = pd.concat([trend.head(12), trend.tail(6)])
+    live = latest_prices(tuple(sorted(shown["ticker"].unique())))
+
+    def latest_session(ticker: str) -> str:
+        """Change on the latest trading day: live price (or last close) vs the close before."""
+        if ticker not in live.index:
+            return "n/a"
+        day = live.at[ticker, "date"]
+        before = prices.loc[prices.index < day, ticker].dropna()
+        return f"{live.at[ticker, 'price'] / before.iloc[-1] - 1:+.1%}" if len(before) else "n/a"
+
     def trend_rows(df: pd.DataFrame) -> list[list[str]]:
         return [[f'{pretty(r.product)}<span class="sub">{r.company} ({r.ticker})</span>',
                  f"{r.views_week:,.0f}", f"{r.change:+.0%}", f"{r.company_change:+.0%}",
-                 f"{r.price_change:+.1%}"] for r in df.itertuples()]
+                 f"{r.price_change:+.1%}", latest_session(r.ticker)] for r in df.itertuples()]
 
-    headers = ["Product", "Views this week", "vs a usual week", "Company page", "Share price"]
+    headers = ["Product", "Views, latest week", "vs usual week", "Company page vs usual week",
+               "Share price, latest week", "Share price, latest day"]
+    week_start, week_end = pd.Timestamp(trend["week_start"].iloc[0]), pd.Timestamp(trend["week_end"].iloc[0])
+    usual_start, usual_end = week_start - pd.Timedelta(days=56), week_start - pd.Timedelta(days=1)
+    price_from, price_to = pd.Timestamp(trend["price_from"].iloc[0]), pd.Timestamp(trend["price_to"].iloc[0])
+    latest_day_label = (price_status(live["date"].max()) if len(live) else "not available right now")
+    time_frames = (
+        f"**Time frames.** Latest week: {week_start:%-d %b} to {week_end:%-d %b %Y} (the 7 most recent "
+        f"days of Wikipedia data). Usual week: the average week over the 8 weeks before, "
+        f"{usual_start:%-d %b} to {usual_end:%-d %b}. The company page column uses the same two "
+        f"periods. Share price, latest week: close on {price_from:%-d %b} to close on {price_to:%-d %b}. "
+        f"Share price, latest day: {latest_day_label}, against the previous close."
+    )
     spy_week = (trend["price_change"] - trend["price_vs_market"]).iloc[0]
     week = f"{pd.Timestamp(trend['week_start'].iloc[0]):%-d %b} to {pd.Timestamp(trend['week_end'].iloc[0]):%-d %b %Y}"
     with st.container(key="card_trending"):
@@ -377,18 +455,18 @@ with trending_tab:
         st.markdown(
             f"Product pages getting much more attention than usual: views from {week}, against the "
             f"average week over the 8 weeks before. The company page column shows whether interest "
-            f"in the company itself is rising too, and the last column how its shares moved over "
-            f"the same days."
+            f"in the company itself is rising too, and the share price columns how its shares moved "
+            f"over the same week and on the latest trading day."
         )
-        st.html(html_table(headers, trend_rows(trend.head(12)), numeric={1, 2, 3, 4}))
-        st.caption(f"Share prices from the close on {pd.Timestamp(trend['price_from'].iloc[0]):%-d %b} to "
-                   f"{pd.Timestamp(trend['price_to'].iloc[0]):%-d %b}; the S&P 500 moved {spy_week:+.1%} over "
-                   f"the same days. Only the {len(trend)} product pages with at least 2,000 views in a usual "
-                   f"week are included. Seasonal events show up too (for example sweets around Halloween).")
+        st.markdown(time_frames)
+        st.html(html_table(headers, trend_rows(trend.head(12)), numeric={1, 2, 3, 4, 5}))
+        st.caption(f"The S&P 500 moved {spy_week:+.1%} over the latest week. Only the {len(trend)} product "
+                   f"pages with at least 2,000 views in a usual week are included. Seasonal events show up "
+                   f"too (for example sweets around Halloween).")
 
     with st.container(key="card_cooling"):
         st.subheader("Cooling off")
-        st.html(html_table(headers, trend_rows(trend.tail(6).iloc[::-1]), numeric={1, 2, 3, 4}))
+        st.html(html_table(headers, trend_rows(trend.tail(6).iloc[::-1]), numeric={1, 2, 3, 4, 5}))
 
     with st.container(key="card_trend_read"):
         st.subheader("How to read this")
@@ -438,6 +516,15 @@ with results:
     by_size = monthly[monthly["version"] == "A_size"].sort_values("month")
     vs_spy = by_size["net"] - by_size["spy"]
     vs_spy_t = vs_spy.mean() / (vs_spy.std() / len(vs_spy) ** 0.5)
+    replication = data["replication"]
+
+    def replicated(group: str, test: str, detail: str) -> pd.Series:
+        return replication[(replication["group"] == group) & (replication["test"] == test)
+                           & (replication["detail"] == detail)].iloc[0]
+
+    new_strategy = replicated("new 44", "strategy", "trained on this group")
+    new_beat = replicated("new 44", "earnings", "beat: top minus bottom third")
+    all_beat = replicated("all 112", "earnings", "beat: top minus bottom third")
     with st.container(key="card_summary"):
         st.subheader("The short answer so far")
         st.html(
@@ -446,6 +533,12 @@ with results:
                    f"beat the average of the 68 companies by {run['excess'].mean() * 100:+.2f}% a month "
                    f"from {first + 1:%B %Y} to {last + 1:%B %Y}, but not by enough to rule out luck.",
                    excess_t)
+            + answer("Do these results hold on 44 companies they were never tested on?",
+                     f"Only the earnings finding did (below). The strategy's small edge almost "
+                     f"disappeared on 44 companies added in November 2026 "
+                     f"({new_strategy['result'] * 100:+.2f}% a month), and product attention no longer "
+                     f"beat company attention. The return results above are most likely luck.",
+                     0, label="Only partly", style="maybe")
             + answer("Does attention to products add anything to attention to the company?",
                      f"A model using product attention did {model.loc['products', 'long_short'] * 100:+.2f}% "
                      f"a month in the research test, against {model.loc['company', 'long_short'] * 100:+.2f}% "
@@ -467,7 +560,9 @@ with results:
             + answer("Does product curiosity before results predict how they go?",
                      f"Companies whose products drew much more attention than a year earlier beat "
                      f"analysts' estimates less often ({beat_sort['top']:.0%} against "
-                     f"{beat_sort['bottom']:.0%}), and the share price reaction was no different.",
+                     f"{beat_sort['bottom']:.0%}), and the share price reaction was no different. The "
+                     f"same gap appeared in the 44 new companies ({new_beat['top']:.0%} against "
+                     f"{new_beat['bottom']:.0%}).",
                      beat_sort["t_stat"], label="Opposite of expected", style="maybe")
             + answer("Did the planned improvements help?",
                      "A bad-news filter, comparing companies within their sector, a simpler score and "
@@ -542,7 +637,7 @@ with results:
             yaxis=dict(title="Value of $100 ($)", gridcolor=GRID), xaxis=dict(showgrid=False, hoverformat="%b %Y"),
             hovermode="x unified", height=380, legend=dict(orientation="h", y=1.02, yanchor="bottom", x=0),
             margin=dict(l=10, r=10, t=40, b=10), plot_bgcolor="rgba(0,0,0,0)",
-            paper_bgcolor="rgba(0,0,0,0)", font=dict(family="Inter, sans-serif"), dragmode=False,
+            paper_bgcolor="rgba(0,0,0,0)", font=dict(family="Inter, sans-serif"), dragmode=False, hoverlabel=HOVER_LABEL,
         )
         growth.update_xaxes(fixedrange=True)
         growth.update_yaxes(fixedrange=True)
@@ -614,8 +709,9 @@ with results:
         st.markdown(
             f"The test [planned in advance]({EARNINGS_PLAN_URL}): for {int(beat_sort['events']):,} "
             f"quarterly results from {int(beat_sort['quarters'])} quarters since 2018, measure how much "
-            f"attention the company's product pages got in the month before (compared with the same "
-            f"weeks a year earlier), then see how the results went."
+            f"attention the company's product pages got from 35 to 6 days before the results date, "
+            f"compared with the same days a year earlier, then see how the results went. The share-price "
+            f"reaction is measured from the close 2 trading days before the results to the close 1 day after."
         )
         thirds = ["Products quieter than a year ago", "About the same", "Products much busier"]
         beat_chart = go.Figure(go.Bar(
@@ -627,7 +723,7 @@ with results:
         beat_chart.update_layout(
             yaxis=dict(title="Share beating analysts' estimates (%)", range=[0, 100], gridcolor=GRID),
             height=300, margin=dict(l=10, r=10, t=20, b=10), plot_bgcolor="rgba(0,0,0,0)",
-            paper_bgcolor="rgba(0,0,0,0)", font=dict(family="Inter, sans-serif"), dragmode=False,
+            paper_bgcolor="rgba(0,0,0,0)", font=dict(family="Inter, sans-serif"), dragmode=False, hoverlabel=HOVER_LABEL,
         )
         beat_chart.update_xaxes(fixedrange=True)
         beat_chart.update_yaxes(fixedrange=True)
@@ -641,6 +737,47 @@ with results:
             f"({reaction_sort['top_minus_bottom'] * 100:+.2f}%, t = {abs(reaction_sort['t_stat']):.1f}).\n"
             "- A likely reading: analysts see the same buzz and raise their forecasts, sometimes too "
             "far, so beating them is harder; and the market, seeing both, is not surprised on average."
+        )
+
+    with st.container(key="card_replication"):
+        st.subheader("Replication on 44 new companies")
+        st.markdown(
+            f"Every test above was designed on the same 68 companies. In November 2026, 44 more "
+            f"companies with 92 product pages were added and checked by the same rules, and the "
+            f"same tests were [planned in advance]({REPLICATION_PLAN_URL}) and run once on them, with "
+            f"every setting unchanged. A finding counts as replicated if it points the same way."
+        )
+
+        def row(finding: str, original: str, detail_test: str, detail: str, pct: bool, verdict: str) -> list[str]:
+            r = replicated("new 44", detail_test, detail)
+            value = f"{r['result'] * 100:+.2f}% a month" if pct else f"{r['result'] * 100:+.1f} pts"
+            return [finding, original, f"{value} (t = {r['t_stat']:.1f})", verdict]
+
+        strategy_68 = run["excess"]
+        st.html(html_table(
+            ["Finding", "Original 68", "44 new companies", "Verdict"],
+            [row("Strategy beats its own average", f"{strategy_68.mean() * 100:+.2f}% a month (t = {excess_t:.1f})",
+                 "strategy", "trained on this group", True, "Same direction, much smaller"),
+             row("Products ahead of company (single signal)",
+                 f"{sorts.loc['gap', 'long_short'] * 100:+.2f}% a month (t = {sorts.loc['gap', 't_stat']:.1f})",
+                 "sort", "Gap (products vs company)", True, "Does not replicate"),
+             row("Rising click-through (single signal)",
+                 f"{sorts.loc['conversion_change', 'long_short'] * 100:+.2f}% a month "
+                 f"(t = {sorts.loc['conversion_change', 't_stat']:.1f})",
+                 "sort", "Click-through change", True, "Does not replicate"),
+             row("Product buzz before results means fewer beats",
+                 f"{beat_sort['top_minus_bottom'] * 100:+.1f} pts (t = {beat_sort['t_stat']:.1f})",
+                 "earnings", "beat: top minus bottom third", False, "Replicates")],
+            numeric=set()))
+        st.markdown(
+            f"- **The earnings finding is the one that survives**: almost the same gap in the new "
+            f"companies, and over all 112 companies together it is statistically significant "
+            f"({all_beat['result'] * 100:+.1f} points, t = {all_beat['t_stat']:.1f}). It is weaker in "
+            f"another version of the test, so it should still be read with care.\n"
+            "- **The return results do not carry over**: the strategy's edge and the two promising "
+            "signals were most likely luck in the original 68.\n"
+            "- The strategy and its live record stay on the original 68, as planned; changing them "
+            "now would mean choosing after seeing results."
         )
 
     with st.expander("Research detail: the final click-through tests"):
@@ -751,7 +888,7 @@ with track:
                 yaxis=dict(title="Value of $100 ($)", gridcolor=GRID), xaxis=dict(showgrid=False, hoverformat="%-d %b %Y"),
                 hovermode="x unified", height=340, legend=dict(orientation="h", y=1.02, yanchor="bottom", x=0),
                 margin=dict(l=10, r=10, t=40, b=10), plot_bgcolor="rgba(0,0,0,0)",
-                paper_bgcolor="rgba(0,0,0,0)", font=dict(family="Inter, sans-serif"), dragmode=False,
+                paper_bgcolor="rgba(0,0,0,0)", font=dict(family="Inter, sans-serif"), dragmode=False, hoverlabel=HOVER_LABEL,
             )
             live_chart.update_xaxes(fixedrange=True)
             live_chart.update_yaxes(fixedrange=True)
@@ -782,8 +919,10 @@ with method:
     with st.container(key="card_how"):
         st.subheader("How it works")
         st.markdown(
-            "1. **Universe:** 68 US-listed companies with well-known products on Wikipedia, "
-            "checked by hand (140 product pages, e.g. Novo Nordisk → Ozempic and Semaglutide).\n"
+            "1. **Universe:** 112 US-listed companies with well-known products on Wikipedia, "
+            "checked by hand (232 product pages, e.g. Novo Nordisk → Ozempic and Semaglutide). The "
+            "first 68 were used to design and run every test; 44 were added in November 2026 to "
+            "check the results on companies the tests had never seen.\n"
             "2. **Attention:** daily page views since 2017, and the monthly clickstream (how many "
             "readers clicked from which page to which) since November 2017.\n"
             "3. **Signals:** each company's attention compared with its own recent past, so large "
@@ -793,6 +932,36 @@ with method:
             "5. **Automation:** every morning a script on GitHub downloads the new data, "
             "recomputes everything and updates this site."
         )
+    with st.container(key="card_timeframes"):
+        st.subheader("Time frames")
+        st.markdown("Every comparison on this site, and the period it covers.")
+        st.html(html_table(
+            ["Where", "What is measured", "Compared with", "Why this window"],
+            [["Explorer: number cards", "Page views in the latest complete month",
+              "Their average over the 6 months before", "Six monthly points define a stable normal; "
+              "this is the window the strategy uses"],
+             ["Explorer: click-through card", "Click-through in the latest month",
+              "The month before", "Shows the most recent change"],
+             ["Explorer: share price card", "Latest price (live in US trading hours, 15-min delay)",
+              "The price 12 months earlier", "Long enough to see the trend"],
+             ["Trending", "Views in the 7 most recent days of data", "The average week over the 8 weeks "
+              "before", "Recent enough to catch sudden jumps without reaching into another season"],
+             ["Trending: share price", "Latest week (close to close), and the latest trading day",
+              "The S&P 500 over the same week", "Matches the attention week"],
+             ["Strategy and research tests", "Attention signals at each month end", "The 6 months before; "
+              "returns over the following month", "Set by the project brief; decided before testing"],
+             ["Out-of-sample test", "January 2022 to the latest month", "Models trained only on earlier "
+              "years, retrained each January", "Never judged on data the model has seen"],
+             ["Earnings test", "Product views 35 to 6 days before each results date",
+              "The same days a year earlier", "Year on year handles seasonal products; ends before "
+              "previews of the results"],
+             ["Track record", "From the close on the day picks are recorded", "All 68 companies and the "
+              "S&P 500 over the same days", "Only returns that had not happened yet"]],
+            numeric=set(),
+        ))
+        st.caption("The 8-week Trending window is a display choice for spotting change; it is not a "
+                   "tested trading signal.")
+
     left, right = st.columns(2)
     with left.container(key="card_sources"):
         st.subheader("Data sources")
@@ -805,8 +974,8 @@ with method:
     with right.container(key="card_limits"):
         st.subheader("Known limits")
         st.markdown(
-            "- **Small universe** (68 large companies, about 9 years): real but small effects "
-            "are hard to prove.\n"
+            "- **Small universe** (112 large companies, about 9 years): real but small effects "
+            "are hard to prove, and most results did not hold on the 44 companies added later.\n"
             "- **Wikipedia quirks:** renamed pages (old titles added up), automated traffic "
             "counted as human before 2020 (one-day spikes capped), clicks hidden when a link has "
             "10 or fewer in a month.\n"
