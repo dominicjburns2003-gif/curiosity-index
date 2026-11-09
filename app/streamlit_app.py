@@ -229,11 +229,14 @@ DATA_FILES = {
     "trending": DATA_DIR / "trending.csv",
     "replication": DATA_DIR / "replication_summary.csv",
     "replication_monthly": DATA_DIR / "replication_monthly.csv",
+    "broad": DATA_DIR / "broad_summary.csv",
+    "broad_monthly": DATA_DIR / "broad_monthly.csv",
     "last_update": DATA_DIR / "last_update.json",
 }
 CLICKTHROUGH_PLAN_URL = GITHUB_URL + "/blob/main/docs/clickthrough_tests_plan.md"
 EARNINGS_PLAN_URL = GITHUB_URL + "/blob/main/docs/earnings_test_plan.md"
 REPLICATION_PLAN_URL = GITHUB_URL + "/blob/main/docs/expansion_replication_plan.md"
+BROAD_PLAN_URL = GITHUB_URL + "/blob/main/docs/broad_universe_plan.md"
 PLAN_URL = GITHUB_URL + "/blob/main/docs/strategy_plan.md"
 DEV_END = "2024-12"  # last month of the development period (see src/strategy.py)
 
@@ -511,9 +514,15 @@ with results:
     excess_t = run["excess"].mean() / (run["excess"].std() / len(run) ** 0.5)
     first, last = pd.Period(run["month"].iloc[0]), pd.Period(run["month"].iloc[-1])
 
-    # Users see one universe of 112 companies; how the results were built up (first
-    # 68, then 44 more) is in the research detail sections lower down
-    group = "All 112 companies"
+    # Users see one universe (every S&P 500 and Nasdaq-100 company); how the
+    # results were built up is in the research detail sections lower down
+    broad, broad_monthly = data["broad"], data["broad_monthly"]
+
+    def broad_row(group: str, test: str, detail: str) -> pd.Series:
+        return broad[(broad["group"] == group) & (broad["test"] == test) & (broad["detail"] == detail)].iloc[0]
+
+    group_size = universe["ticker"].nunique()
+    with_products = universe.loc[universe["product_article"].fillna("") != "", "ticker"].nunique()
     replication_monthly = data["replication_monthly"]
     group_runs = {
         "Original 68": run.assign(benchmark=run["average_company"]),
@@ -522,7 +531,6 @@ with results:
         "44 new companies": replication_monthly[(replication_monthly["group"] == "new 44")
                                                 & (replication_monthly["detail"] == "trained on this group")],
     }
-    group_size = {"Original 68": 68, "All 112 companies": 112, "44 new companies": 44}[group]
     size_runs = {
         "Original 68": monthly[monthly["version"] == "A_size"],
         "All 112 companies": replication_monthly[(replication_monthly["group"] == "all 112")
@@ -530,7 +538,8 @@ with results:
         "44 new companies": replication_monthly[(replication_monthly["group"] == "new 44")
                                                 & (replication_monthly["detail"] == "by size")],
     }
-    shown_run = group_runs[group].sort_values("month").copy()
+    shown_run = broad_monthly[(broad_monthly["group"] == "all")
+                              & (broad_monthly["detail"] == "equal amounts")].sort_values("month").copy()
     shown_run["excess"] = shown_run["net"] - shown_run["benchmark"]
     shown_t = shown_run["excess"].mean() / (shown_run["excess"].std() / len(shown_run) ** 0.5)
 
@@ -552,7 +561,8 @@ with results:
     def growth_of_100(returns: pd.Series) -> float:
         return 100 * (1 + returns).prod()
 
-    by_size = size_runs[group].sort_values("month")
+    by_size = broad_monthly[(broad_monthly["group"] == "all")
+                            & (broad_monthly["detail"] == "by size")].sort_values("month")
     vs_spy = by_size["net"] - by_size["spy"]
     vs_spy_t = vs_spy.mean() / (vs_spy.std() / len(vs_spy) ** 0.5)
     replication = data["replication"]
@@ -562,15 +572,17 @@ with results:
                            & (replication["detail"] == detail)].iloc[0]
 
     new_strategy = replicated("new 44", "strategy", "trained on this group")
-    # The long-short research comparison for the selected group (company / + products / + clicks)
-    if group == "Original 68":
-        long_short = model[["long_short", "t_stat"]]
-    else:
-        name = {"All 112 companies": "all 112", "44 new companies": "new 44"}[group]
-        long_short = (replication[(replication["group"] == name) & (replication["test"] == "long-short")]
-                      .set_index("detail").rename(columns={"result": "long_short"})[["long_short", "t_stat"]])
+    # The long-short research comparison on all companies (company / + products)
+    long_short = (broad[(broad["group"] == "all") & (broad["test"] == "long-short")]
+                  .set_index("detail").rename(columns={"result": "long_short"})[["long_short", "t_stat"]])
+    first_clicks = (replication[(replication["group"] == "all 112") & (replication["test"] == "long-short")]
+                    .set_index("detail")["result"])
+    product_strategy = broad_row("broad new, with products", "strategy", "equal amounts")
+    new_products = broad_row("broad new", "long-short", "products")
+    new_company = broad_row("broad new", "long-short", "company")
     new_beat = replicated("new 44", "earnings", "beat: top minus bottom third")
-    all_beat = replicated("all 112", "earnings", "beat: top minus bottom third")
+    earlier_beat = replicated("all 112", "earnings", "beat: top minus bottom third")
+    all_beat = broad_row("all", "earnings", "beat: top minus bottom third")
     with st.container(key="card_summary"):
         st.subheader("The short answer so far")
         st.html(
@@ -579,22 +591,28 @@ with results:
                    f"{'beat' if shown_run['excess'].mean() > 0 else 'trailed'} the average of the "
                    f"{group_size} companies by {abs(shown_run['excess'].mean()) * 100:.2f}% a month from "
                    f"{first + 1:%B %Y} to {last + 1:%B %Y}"
-                   + (", but not by enough to rule out luck." if shown_t < 2 else "."),
+                   + (", but not by enough to rule out luck." if shown_t < 2 else ".")
+                   + f" The edge comes from attention to companies' own pages, not their products: among "
+                   f"the companies with product pages added in November 2026 the picks "
+                   f"{'lagged' if product_strategy['result'] < 0 else 'beat'} their average "
+                   f"({product_strategy['result'] * 100:+.2f}% a month).",
                    shown_t)
             + answer("Does attention to products add anything to attention to the company?",
                      f"In the research test (buying the top third and selling the bottom third), a model "
                      f"using product attention did {long_short.loc['products', 'long_short'] * 100:+.2f}% a "
-                     f"month, against {long_short.loc['company', 'long_short'] * 100:+.2f}% for company "
-                     f"attention alone.", long_short.loc["products", "t_stat"],
-                     long_short.loc["products", "long_short"] > long_short.loc["company", "long_short"])
+                     f"month over all companies, against {long_short.loc['company', 'long_short'] * 100:+.2f}% "
+                     f"for company attention alone. But the gain comes from the first companies studied: in "
+                     f"the companies added in November 2026, products added "
+                     + ("nothing" if new_products["result"] <= new_company["result"] else "almost nothing")
+                     + f" ({new_products['result'] * 100:+.2f}% against {new_company['result'] * 100:+.2f}%).",
+                     # The verdict recorded in docs/broad_universe_plan.md: does not replicate
+                     0, label="Not confirmed", style="maybe")
             + answer("Does click-through from products to the company add anything?",
-                     f"Adding click-through gave {long_short.loc['clicks', 'long_short'] * 100:+.2f}% a month, "
-                     f"against {long_short.loc['products', 'long_short'] * 100:+.2f}% with product attention "
-                     f"alone. Two further tests found it does not predict volatility "
-                     f"either, and that high click-through companies only seemed to do worse because "
-                     f"they are mostly consumer staples, which lagged from 2022.",
-                     long_short.loc["clicks", "t_stat"],
-                     long_short.loc["clicks", "long_short"] > long_short.loc["products", "long_short"])
+                     f"Being tested on all {with_products} companies with product pages (the click "
+                     f"history for the newest pages is still downloading). On the first companies "
+                     f"studied, adding click-through gave {first_clicks['clicks'] * 100:+.2f}% a month in the "
+                     f"research test, against {first_clicks['products'] * 100:+.2f}% without it, and it did "
+                     f"not predict volatility either.", 0, label="Being tested", style="maybe")
             + answer("Does it beat the S&P 500?",
                      f"Weighted by company size, as most funds are, the picks turned $100 into "
                      f"${growth_of_100(by_size['net']):.0f}, against ${growth_of_100(by_size['spy']):.0f} "
@@ -606,14 +624,13 @@ with results:
                         else "the picks add nothing over the companies they are chosen from."),
                      vs_spy_t)
             + answer("Does a surge of interest in a company's products tell you anything before its results?",
-                     f"Yes. When a company's product pages get much more attention than a year earlier "
-                     f"in the weeks before it reports, it is less likely to beat analysts' forecasts: "
-                     f"{all_beat['top']:.0%} did, against {all_beat['bottom']:.0%} when its products "
-                     f"were getting less attention ({int(all_beat['events']):,} quarterly results since "
-                     f"2018). A likely reason: analysts notice the buzz too and raise their forecasts too "
-                     f"far. The share price did not react differently, so the market seems to expect it.",
-                     all_beat["t_stat"], label=verdict(abs(all_beat["t_stat"]))[0],
-                     style=verdict(abs(all_beat["t_stat"]))[1])
+                     f"Not reliably. On the first companies studied, a surge in product attention in the "
+                     f"weeks before results came with fewer beats of analysts' forecasts "
+                     f"({earlier_beat['top']:.0%} against {earlier_beat['bottom']:.0%}). Across all "
+                     f"{int(all_beat['events']):,} quarterly results of the companies with product pages "
+                     f"it no longer holds: {all_beat['top']:.0%} against {all_beat['bottom']:.0%}, and in "
+                     f"the companies added in November 2026 it pointed the other way.",
+                     all_beat["t_stat"])
         )
         st.caption("Research results, updated monthly. Not investment advice.")
 
@@ -632,7 +649,8 @@ with results:
                 "2. **Turn them into one score per company** with a machine-learning model "
                 "(gradient-boosted trees). The model learned how these measures related to the "
                 "following month's return from past data only, and is retrained every January.\n"
-                "3. **Buy the highest-scoring third** (37 of the 112 companies), in equal amounts "
+                f"3. **Buy the highest-scoring third** (about {round(group_size / 3)} of the {group_size} "
+                "companies), in equal amounts "
                 "(or, in the size-weighted version, in proportion to their market value).\n"
                 "4. **Hold them for one month**, then repeat with the new scores. Trading costs of "
                 "0.1% are paid on whatever changes."
@@ -684,9 +702,11 @@ with results:
         growth.update_xaxes(fixedrange=True)
         growth.update_yaxes(fixedrange=True)
         st.plotly_chart(growth, width="stretch", config=CHART_CONFIG)
-        st.caption("Out of sample: the model behind each month's picks was trained only on earlier "
-                   "years. Equal amounts compare with all 112 companies held equally; by size, with "
-                   "all 112 weighted by market value (no company above 15%).")
+        st.caption(f"Out of sample: the model behind each month's picks was trained only on earlier "
+                   f"years. Equal amounts compare with all {group_size} companies held equally; by size, "
+                   f"with all {group_size} weighted by market value (no company above 15%). Today's index "
+                   f"members are used for the whole period, which flatters every line a little "
+                   f"(companies that fell out of the index are missing).")
 
     with st.container(key="card_picks"):
         live = data["live_picks"]
@@ -750,12 +770,13 @@ with results:
 
     with st.container(key="card_earnings"):
         st.subheader("Earnings announcements")
-        all_reaction = replicated("all 112", "earnings", "reaction: top minus bottom third")
+        all_reaction = broad_row("all", "earnings", "reaction: top minus bottom third")
         beat_sort, reaction_sort = all_beat, all_reaction.rename({"result": "top_minus_bottom"})
         beat_sort = beat_sort.rename({"result": "top_minus_bottom"})
         st.markdown(
             f"The test [planned in advance]({EARNINGS_PLAN_URL}): for {int(beat_sort['events']):,} "
-            f"quarterly results of the 112 companies, from {int(beat_sort['months'])} quarters since "
+            f"quarterly results of the {with_products} companies with product pages, from "
+            f"{int(beat_sort['months'])} quarters since "
             f"2018, measure how much "
             f"attention the company's product pages got from 35 to 6 days before the results date, "
             f"compared with the same days a year earlier, then see how the results went. The share-price "
@@ -777,13 +798,47 @@ with results:
         beat_chart.update_yaxes(fixedrange=True)
         st.plotly_chart(beat_chart, width="stretch", config=CHART_CONFIG)
         st.markdown(
-            f"- **More product buzz, fewer beats:** {beat_sort['top']:.1%} of companies with the busiest "
-            f"product pages beat estimates, against {beat_sort['bottom']:.1%} of the quietest "
-            f"(t = {beat_sort['t_stat']:.1f}), the opposite of what was expected.\n"
+            f"- **No reliable link:** {beat_sort['top']:.1%} of companies with the busiest product pages "
+            f"beat estimates, against {beat_sort['bottom']:.1%} of the quietest (t = {beat_sort['t_stat']:.1f}). "
+            f"On the first companies studied the gap was larger ({earlier_beat['top']:.0%} against "
+            f"{earlier_beat['bottom']:.0%}), but it did not hold on the companies added later.\n"
             f"- **No difference in the share-price reaction** around the results "
             f"({reaction_sort['top_minus_bottom'] * 100:+.2f}%, t = {reaction_sort['t_stat']:.1f}).\n"
-            "- A likely reading: analysts see the same buzz and raise their forecasts, sometimes too "
-            "far, so beating them is harder; and the market, seeing both, is not surprised on average."
+            "- The first result was most likely luck, or particular to well-known consumer brands; "
+            "on a broader set, product buzz says little about how results go."
+        )
+
+    with st.expander("Research detail: the test on every S&P 500 and Nasdaq-100 company"):
+        st.markdown(
+            f"On 9 November 2026 the universe grew from 112 companies to {group_size}: every S&P 500 "
+            f"company and the Nasdaq-100. The same tests were [planned in advance]({BROAD_PLAN_URL}) and "
+            f"run once on the {group_size - 112} new companies, every setting unchanged. Most of them "
+            f"have no product pages on Wikipedia and are followed by their company page alone."
+        )
+
+        def broad_line(finding: str, test: str, detail: str, pct: bool = True) -> list[str]:
+            cells = []
+            for g in ["broad new", "broad new, with products"]:
+                r = broad_row(g, test, detail)
+                value = f"{r['result'] * 100:+.2f}%" if pct else f"{r['result'] * 100:+.1f} pts"
+                cells.append(f"{value} (t = {r['t_stat']:.1f})")
+            return [finding, *cells]
+
+        st.html(html_table(
+            ["Finding", "New companies", "New, with product pages"],
+            [broad_line("Strategy beats its own average (a month)", "strategy", "equal amounts"),
+             broad_line("Long-short, company attention only", "long-short", "company"),
+             broad_line("Long-short, with product attention", "long-short", "products"),
+             broad_line("Products getting more attention than the company", "sort", "Gap (products vs company)"),
+             broad_line("Product buzz before results: change in beat rate", "earnings",
+                        "beat: top minus bottom third", pct=False)],
+            numeric={1, 2},
+        ))
+        st.markdown(
+            "- **The strategy's edge holds in the new companies, but only where there are no product "
+            "pages:** it comes from attention to the company itself.\n"
+            "- **None of the product findings hold**, including the earnings one.\n"
+            "- Many tests have now been run, so a t of about 2 is weaker evidence than it looks."
         )
 
     with st.expander("Research detail: checking the findings on fresh companies"):
@@ -895,9 +950,9 @@ with results:
 
     with st.expander("Terms used on this page"):
         st.markdown(
-            "- **Top third:** each month the 112 companies are ranked and the best 37 are bought "
-            "in equal amounts.\n"
-            "- **Average company:** buying all 112 in equal amounts; the fair "
+            f"- **Top third:** each month the {group_size} companies are ranked and the best third "
+            "are bought in equal amounts.\n"
+            f"- **Average company:** buying all {group_size} in equal amounts; the fair "
             "comparison, because the strategy also uses equal amounts.\n"
             "- **Trading costs:** 0.1% of every amount bought or sold.\n"
             "- **t (confidence score):** how far the average result is from zero compared with how "
@@ -984,8 +1039,10 @@ with method:
     with st.container(key="card_how"):
         st.subheader("How it works")
         st.markdown(
-            "1. **Universe:** 112 US-listed companies with well-known products on Wikipedia, "
-            "checked by hand (232 product pages, e.g. Novo Nordisk → Ozempic and Semaglutide).\n"
+            f"1. **Universe:** every S&P 500 company and the Nasdaq-100, {universe['ticker'].nunique()} "
+            f"US-listed companies. {with_products} of them have product pages on Wikipedia, checked by "
+            f"hand ({(universe['product_article'].fillna('') != '').sum()} pages, e.g. Novo Nordisk → "
+            "Ozempic, SpaceX → Starlink); the others are followed by their company page alone.\n"
             "2. **Attention:** daily page views since 2017, and the monthly clickstream (how many "
             "readers clicked from which page to which) since November 2017.\n"
             "3. **Signals:** each company's attention compared with its own recent past, so large "
@@ -1039,8 +1096,12 @@ with method:
     with right.container(key="card_limits"):
         st.subheader("Known limits")
         st.markdown(
-            "- **Small universe** (112 large companies, about 9 years): real but small effects "
-            "are hard to prove, and most results did not hold when checked on fresh companies (see Results).\n"
+            "- **About 9 years of data:** real but small effects are hard to prove, and most results "
+            "did not hold when checked on fresh companies (see Results).\n"
+            "- **Today's index members** are used back to 2017, so companies that left the index are "
+            "missing; this flatters average returns a little.\n"
+            "- **Analysts' past estimates** on Yahoo are sometimes revised years later (161 were in "
+            "one week of November 2026), which moves the earnings test.\n"
             "- **Wikipedia quirks:** renamed pages (old titles added up), automated traffic "
             "counted as human before 2020 (one-day spikes capped), clicks hidden when a link has "
             "10 or fewer in a month.\n"
