@@ -711,11 +711,19 @@ with results:
     with st.container(key="card_picks"):
         live = data["live_picks"]
         pick_month = pd.Period(live["month"].max())
-        current = live[live["month"] == live["month"].max()].sort_values("rank")
+        latest_month = live[live["month"] == live["month"].max()]
+        # The latest record for the month (on 9 Nov 2026 the strategy switched to all companies)
+        current = latest_month[latest_month["recorded_on"] == latest_month["recorded_on"].max()].sort_values("rank")
         names = universe.drop_duplicates("ticker").set_index("ticker")["company"]
         st.subheader(f"Current picks for {pick_month + 1:%B %Y}")
+        SHOW_FIRST = 30
         st.html('<div class="ci-picks">' + "".join(
-            f"<div>{names.get(t, t)} <span>{t}</span></div>" for t in current["ticker"]) + "</div>")
+            f"<div>{names.get(t, t)} <span>{t}</span></div>" for t in current["ticker"].iloc[:SHOW_FIRST]) + "</div>")
+        if len(current) > SHOW_FIRST:
+            with st.expander(f"All {len(current)} picks (the {SHOW_FIRST} highest-scoring are shown above)"):
+                st.html('<div class="ci-picks">' + "".join(
+                    f"<div>{names.get(t, t)} <span>{t}</span></div>" for t in current["ticker"].iloc[SHOW_FIRST:])
+                    + "</div>")
         recorded = pd.Timestamp(current["recorded_on"].iloc[0])
         timing = (f"recorded on {recorded:%-d %B %Y}, using data up to the end of {pick_month:%B}; "
                   f"the live record counts from the close on the next trading day, so no returns that "
@@ -890,8 +898,9 @@ with results:
             f"another version of the test, so it should still be read with care.\n"
             "- **The return results do not carry over**: the strategy's edge and the two promising "
             "signals were most likely luck in the original 68.\n"
-            "- From December 2026 the live strategy covers all 112 companies (decided on 9 Nov 2026, "
-            "before any December returns existed); November's picks came from the first 68.\n"
+            "- From the close on 10 November 2026 the live strategy covers every company in the "
+            "universe (decided on 9 Nov 2026, before any of those returns existed); before that, its "
+            "picks came from the first 68.\n"
             "- These figures are recomputed every day. The machine-learning results can move by "
             "about ±0.3% a month when Yahoo revises past prices or share counts, which is itself a "
             "sign that the edge is too small to rely on. The results as first run are recorded in "
@@ -1018,7 +1027,10 @@ with track:
                 ["Month held", "Picks recorded on", "Strategy", "Average company", "S&P 500", "Status"],
                 [[f"{pd.Period(r.month_held):%B %Y}", f"{pd.Timestamp(r.recorded_on):%-d %b %Y}",
                   f"{r.strategy:+.2%}", f"{r.average_company:+.2%}", f"{r.spy:+.2%}",
-                  "Complete" if r.complete else f"In progress, to {pd.Timestamp(r.through):%-d %b}"]
+                  (f"Held to {pd.Timestamp(r.through):%-d %b}, then switched to all companies"
+                   if r.complete and pd.Timestamp(r.through) < pd.Period(r.month_held).end_time.normalize()
+                   - pd.offsets.BDay(1) else "Complete" if r.complete
+                   else f"In progress, to {pd.Timestamp(r.through):%-d %b}")]
                  for r in track_monthly.itertuples()],
                 numeric={2, 3, 4},
             ))
@@ -1027,7 +1039,7 @@ with track:
                        "year or more.")
 
     with st.expander("Each month's recorded picks"):
-        for month, picks in data["live_picks"].groupby("month", sort=False):
+        for (month, _), picks in data["live_picks"].groupby(["month", "recorded_on"], sort=False):
             st.markdown(f"**Chosen at the end of {pd.Period(month):%B %Y}**, recorded on "
                         f"{pd.Timestamp(picks['recorded_on'].iloc[0]):%-d %B %Y}")
             st.html('<div class="ci-picks">' + "".join(

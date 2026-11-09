@@ -47,7 +47,11 @@ DEV_END = "2024-12"  # development period: Jan 2022 to Dec 2024; final: after
 # From the picks chosen at the end of November 2026, the live strategy uses all
 # 112 companies (docs/strategy_plan.md, written on 9 Nov 2026); earlier months'
 # picks, and every backtest, use the original 68
-LIVE_ALL_FROM = "2026-11"
+LIVE_ALL_FROM = "2026-11"  # picks chosen from all companies from this month on
+# The switch to all companies (docs/strategy_plan.md, 9 Nov 2026): picks for the
+# rest of November, chosen from all companies with data to the end of October,
+# recorded once on this date and bought at the next close (10 Nov 2026)
+SWITCH_MONTH, SWITCH_RECORDED = "2026-10", "2026-11-09"
 COST_PER_TRADE = 0.001
 MAX_WEIGHT = 0.15  # size-weighted version: no company above 15%
 
@@ -257,15 +261,14 @@ def main() -> None:
     picks = pd.DataFrame(picks, columns=["month", "rank", "ticker", "score"])
     picks.to_csv(DATA_DIR / "strategy_picks.csv", index=False)
 
-    # Live picks from LIVE_ALL_FROM: version A trained on and choosing from all 112
+    # Live picks: version A trained on and choosing from every company in the universe
     everyone = pd.read_csv(DATA_DIR / "panel_monthly.csv")
-    # The live strategy covers the 112 (docs/strategy_plan.md); the 435 added on
-    # 9 Nov 2026 are only in the broad-universe tests unless a switch is recorded
-    everyone = everyone[everyone["cohort"].isin(["original", "expansion"])].reset_index(drop=True)
-    everyone["rank_next"] = everyone.groupby("month")["ret_next"].rank(pct=True)  # across all 112
+    tracked = set(pd.read_csv(PROJECT_DIR / "data" / "mapping" / "products_to_companies.csv")["ticker"])
+    everyone = everyone[everyone["ticker"].isin(tracked)].reset_index(drop=True)
+    everyone["rank_next"] = everyone.groupby("month")["ret_next"].rank(pct=True)  # across all companies
     all_scores = walk_forward(rank_within_month(everyone, VERSIONS["products"]), VERSIONS["products"])
     live_112 = []
-    for month, now in all_scores[all_scores["month"] >= LIVE_ALL_FROM].groupby("month"):
+    for month, now in all_scores[all_scores["month"] >= SWITCH_MONTH].groupby("month"):
         n_pick = round(len(now.dropna(subset=["prediction"])) / 3)
         for rank, row in enumerate(now.nlargest(n_pick, "prediction").itertuples(), start=1):
             live_112.append((month, rank, row.ticker, row.prediction))
@@ -276,12 +279,20 @@ def main() -> None:
     log = pd.read_csv(log_path) if log_path.exists() else pd.DataFrame(
         columns=["recorded_on", "month", "version", "rank", "ticker"])
     latest = max(picks["month"].max(), live_112["month"].max() if len(live_112) else "")
+    label = f"{chosen}, all companies"
+    today = pd.Timestamp.today().strftime("%Y-%m-%d")
+    switched = ((log["month"] == SWITCH_MONTH) & (log["version"] == label)).any()
+    if not switched and today == SWITCH_RECORDED:
+        new = live_112[live_112["month"] == SWITCH_MONTH].assign(version=label, recorded_on=today)
+        log = pd.concat([log, new[log.columns]])
+        log.to_csv(log_path, index=False)
+        print(f"Live record: switched to all companies, picks for {SWITCH_MONTH} added")
     if latest not in set(log["month"]):
         if latest >= LIVE_ALL_FROM:
-            new = live_112[live_112["month"] == latest].assign(version=f"{chosen}, all 112")
+            new = live_112[live_112["month"] == latest].assign(version=label)
         else:
             new = picks[picks["month"] == latest].assign(version=chosen)
-        new = new.assign(recorded_on=pd.Timestamp.today().strftime("%Y-%m-%d"))
+        new = new.assign(recorded_on=today)
         log = pd.concat([log, new[log.columns]])
         log.to_csv(log_path, index=False)
         print(f"Live record: added the picks for {latest}")
