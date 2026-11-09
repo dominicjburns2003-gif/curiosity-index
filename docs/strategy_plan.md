@@ -277,3 +277,22 @@ already been seen, so a good result here could be luck from trying one more
 version. It is run once and reported whatever the result. It does not change
 the live strategy; any switch would be a separate decision, recorded here with
 this caveat.
+
+### Result (added on 9 Nov 2026, after running `src/threshold_test.py` once)
+
+57 months (picks from January 2022 to September 2026), after costs. In 17
+months fewer than 5 picks qualified and the S&P 500 was held; in the others
+the strategy held 7.8 companies on average.
+
+| | $100 became | vs version A, % a month (t) | vs average company (t) | vs S&P 500 (t) |
+|---|---|---|---|---|
+| Minimum interest version | $97 | −0.65 (−1.5) | −0.58 (−1.2) | −1.03 (−2.2) |
+| Version A, all 112 (current) | $143 | | +0.07 (0.3) | −0.38 (−1.4) |
+| Average of the 112 | $139 | | | |
+| S&P 500 | $179 | | | |
+
+It did worse than the current strategy in four of the five years. Keeping
+only the picks with a product-attention surge left a handful of companies
+that, on average, then did worse, consistent with the earnings finding (a
+surge in product attention tends to come before disappointing results). The
+live strategy is not changed.
