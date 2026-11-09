@@ -77,3 +77,18 @@ from 2022, retrained each January), for three groups:
 - The live strategy is **not** changed by this. Switching it to the broad
   universe would be a separate decision, recorded in `docs/strategy_plan.md`
   before the month it applies to.
+
+## Addendum: universe as built, and timing (written on 9 Nov 2026, before running any test)
+
+- **As built:** 547 companies: the 112, plus 435 new. 72 of the new companies
+  have product pages (136 pages, after the checks and the review in
+  `data/mapping/broad_decisions.csv`, confirmed by Dominic); the other 363
+  are tracked by their company page alone. Ferrovial has no price history on
+  Yahoo and so drops out of every test.
+- **Timing:** the click-through history for the new companies' pages needs
+  every monthly clickstream file again (about 50 GB), which takes a night. So
+  the tests are run in two parts, each **once**: tonight, everything that
+  does not use click-through (tests 1, 3, 4 and the company-only and
+  + products versions of test 2); once the download is complete, the
+  + click-through version of test 2 and test 5. Nothing in the first part is
+  changed after the second.
