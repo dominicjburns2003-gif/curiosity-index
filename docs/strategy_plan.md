@@ -249,3 +249,31 @@ the original 68 or the new 44, so this is not chosen to improve results.
 written, so it cannot use hindsight. November 2026's picks (from the original
 68, recorded on 6 Nov 2026) stay in the record unchanged. All backtest and
 replication results above stay as they are.
+
+## Addendum: a minimum level of product interest (written on 9 Nov 2026, before running it)
+
+**Idea (Dominic's):** the top third is a relative cut-off, so in a quiet month
+the lowest of the picks may have almost no unusual interest. This version only
+buys picks whose products are genuinely drawing more attention than usual.
+
+**Rule, fixed before running:**
+1. Take version A's top third on all 112 companies (same model, same settings,
+   trained walk-forward on all 112, as in the all-112 replication).
+2. Keep only the picks whose **product page views in the month are at least
+   20% above their average over the previous 6 months** (`product_growth` ≥
+   ln 1.2, the same measure the model already uses).
+3. If **5 or more** qualify, buy them in equal amounts. If **fewer than 5**
+   qualify, hold the **S&P 500 (SPY)** for that month instead.
+4. Hold for one month; 0.1% trading costs on everything that changes,
+   including moves into and out of SPY.
+
+**Compared with:** version A on all 112 (the current strategy), the
+equal-weighted average of the 112, and the S&P 500, after costs, from January
+2022 picks to the latest month. Reported: return above each, t, how many
+months were held in SPY, and the average number of companies held.
+
+**Caveat, written in advance:** the 2022–2026 results of many versions have
+already been seen, so a good result here could be luck from trying one more
+version. It is run once and reported whatever the result. It does not change
+the live strategy; any switch would be a separate decision, recorded here with
+this caveat.
