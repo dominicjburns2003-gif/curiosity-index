@@ -1,0 +1,436 @@
+ticker,listed_as,company,sector,sub_industry,index,company_article,qid,company_titles
+MMM,3M,3M,Industrials,Industrial Conglomerates,S&P 500,3M,Q159433,3M
+AOS,A._O._Smith,A. O. Smith,Industrials,Building Products,S&P 500,A._O._Smith,Q4648219,A._O._Smith
+ACN,Accenture,Accenture,Information Technology,IT Consulting & Other Services,S&P 500,Accenture,Q338825,Accenture
+AES,AES_Corporation,AES Corporation,Utilities,Independent Power Producers & Energy Traders,S&P 500,AES_Corporation,Q291508,AES_Corporation
+AFL,Aflac,Aflac,Financials,Life & Health Insurance,S&P 500,Aflac,Q26311,Aflac
+A,Agilent_Technologies,Agilent Technologies,Health Care,Life Sciences Tools & Services,S&P 500,Agilent_Technologies,Q393762,Agilent_Technologies
+APD,Air_Products,Air Products,Materials,Industrial Gases,S&P 500,Air_Products,Q407744,Air_Products|Air_Products_&_Chemicals|Air_Products_and_Chemicals
+ABNB,Airbnb,Airbnb,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",S&P 500,Airbnb,Q63327,Airbnb
+AKAM,Akamai_Technologies,Akamai Technologies,Information Technology,Internet Services & Infrastructure,S&P 500,Akamai_Technologies,Q415598,Akamai_Technologies
+ALB,Albemarle_Corporation,Albemarle Corporation,Materials,Specialty Chemicals,S&P 500,Albemarle_Corporation,Q127074,Albemarle_Corporation
+ARE,Alexandria_Real_Estate_Equities,Alexandria Real Estate Equities,Real Estate,Office REITs,S&P 500,Alexandria_Real_Estate_Equities,Q48739877,Alexandria_Real_Estate_Equities|Draft:Alexandria_Real_Estate_Equities
+ALGN,Align_Technology,Align Technology,Health Care,Health Care Supplies,S&P 500,Align_Technology,Q30272258,Align_Technology
+ALLE,Allegion,Allegion,Industrials,Building Products,S&P 500,Allegion,Q16738121,Allegion
+LNT,Alliant_Energy,Alliant Energy,Utilities,Electric Utilities,S&P 500,Alliant_Energy,Q4732492,Alliant_Energy
+ALL,Allstate,Allstate,Financials,Property & Casualty Insurance,S&P 500,Allstate,Q2645636,Allstate
+AMCR,Amcor,Amcor,Materials,Paper & Plastic Packaging Products & Materials,S&P 500,Amcor,Q460307,Amcor
+AEE,Ameren,Ameren,Utilities,Multi-Utilities,S&P 500,Ameren,Q462984,Ameren
+AEP,American_Electric_Power,American Electric Power,Utilities,Electric Utilities,S&P 500,American_Electric_Power,Q464092,American_Electric_Power
+AXP,American_Express,American Express,Financials,Consumer Finance,S&P 500,American_Express,Q194360,American_Express
+AIG,American_International_Group,American International Group,Financials,Multi-line Insurance,S&P 500,American_International_Group,Q212235,American_International_Group
+AMT,American_Tower,American Tower,Real Estate,Telecom Tower REITs,S&P 500,American_Tower,Q4745263,American_Tower|American_Tower_Corporation
+AWK,American_Water_Works,American Water Works,Utilities,Water Utilities,S&P 500,American_Water_Works,Q467238,American_Water_Works|American_Water_(company)
+AMP,Ameriprise_Financial,Ameriprise Financial,Financials,Asset Management & Custody Banks,S&P 500,Ameriprise_Financial,Q2843129,Ameriprise_Financial
+AME,Ametek,Ametek,Industrials,Electrical Components & Equipment,S&P 500,Ametek,Q470317,Ametek
+APH,Amphenol,Amphenol,Information Technology,Electronic Components,S&P 500,Amphenol,Q474621,Amphenol
+ADI,Analog_Devices,Analog Devices,Information Technology,Semiconductors,S&P 500,Analog_Devices,Q484930,Analog_Devices
+AON,Aon_(company),Aon plc,Financials,Insurance Brokers,S&P 500,Aon_plc,Q739518,Aon_plc|Aon_(company)
+APA,APA_Corporation,APA Corporation,Energy,Oil & Gas Exploration & Production,S&P 500,APA_Corporation,Q119991,APA_Corporation|Apache_Corporation
+APO,Apollo_Global_Management,Apollo Global Management,Financials,Asset Management & Custody Banks,S&P 500,Apollo_Global_Management,Q619121,Apollo_Global_Management
+AMAT,Applied_Materials,Applied Materials,Information Technology,Semiconductor Materials & Equipment,S&P 500,Applied_Materials,Q621610,Applied_Materials
+APP,AppLovin,AppLovin,Communication Services,Advertising,S&P 500,AppLovin,Q27150212,AppLovin
+APTV,Aptiv,Aptiv,Consumer Discretionary,Automotive Parts & Equipment,S&P 500,Aptiv,Q643626,Aptiv|Delphi_Automotive
+ACGL,Arch_Capital_Group,Arch Capital Group,Financials,Property & Casualty Insurance,S&P 500,Arch_Capital_Group,Q28155430,Arch_Capital_Group
+ADM,Archer_Daniels_Midland,Archer Daniels Midland,Consumer Staples,Agricultural Products & Services,S&P 500,Archer_Daniels_Midland,Q632694,Archer_Daniels_Midland|ADM_(company)
+ARES,Ares_Management,Ares Management,Financials,Asset Management & Custody Banks,S&P 500,Ares_Management,Q4789079,Ares_Management
+ANET,Arista_Networks,Arista Networks,Information Technology,Communications Equipment,S&P 500,Arista_Networks,Q2861324,Arista_Networks
+AJG,Arthur_J._Gallagher_&_Co.,Arthur J. Gallagher & Co.,Financials,Insurance Brokers,S&P 500,Arthur_J._Gallagher_&_Co.,Q4799191,Arthur_J._Gallagher_&_Co.
+AIZ,Assurant,Assurant,Financials,Multi-line Insurance,S&P 500,Assurant,Q4810399,Assurant
+T,AT&T,AT&T,Communication Services,Integrated Telecommunication Services,S&P 500,AT&T,Q35476,AT&T
+ATO,Atmos_Energy,Atmos Energy,Utilities,Gas Utilities,S&P 500,Atmos_Energy,Q4817084,Atmos_Energy
+ADP,ADP_(company),Automatic Data Processing,Industrials,Human Resource & Employment Services,S&P 500,ADP_(company),Q489080,"ADP_(company)|ADP,_Inc.|Automatic_Data_Processing"
+AZO,AutoZone,AutoZone,Consumer Discretionary,Automotive Retail,S&P 500,AutoZone,Q4826087,AutoZone
+AVY,Avery_Dennison,Avery Dennison,Materials,Paper & Plastic Packaging Products & Materials,S&P 500,Avery_Dennison,Q790650,Avery_Dennison
+AXON,Axon_Enterprise,Axon Enterprise,Industrials,Aerospace & Defense,S&P 500,Axon_Enterprise,Q690604,Axon_Enterprise|Axon_(company)|Taser_International
+BKR,Baker_Hughes,Baker Hughes,Energy,Oil & Gas Equipment & Services,S&P 500,Baker_Hughes,Q804353,Baker_Hughes
+BALL,Ball_Corporation,Ball Corporation,Materials,"Metal, Glass & Plastic Containers",S&P 500,Ball_Corporation,Q4034815,Ball_Corporation
+BAC,Bank_of_America,Bank of America,Financials,Diversified Banks,S&P 500,Bank_of_America,Q487907,Bank_of_America
+BAX,Baxter_International,Baxter International,Health Care,Health Care Equipment,S&P 500,Baxter_International,Q761965,Baxter_International
+BDX,BD_(company),Becton Dickinson,Health Care,Health Care Equipment,S&P 500,BD_(company),Q813780,BD_(company)|Becton_Dickinson
+BRK-B,Berkshire_Hathaway,Berkshire Hathaway,Financials,Multi-Sector Holdings,S&P 500,Berkshire_Hathaway,Q217583,Berkshire_Hathaway
+BBY,Best_Buy,Best Buy,Consumer Discretionary,Computer & Electronics Retail,S&P 500,Best_Buy,Q533415,Best_Buy
+TECH,Bio-Techne,Bio-Techne,Health Care,Life Sciences Tools & Services,S&P 500,Bio-Techne,Q19873469,Bio-Techne
+BLK,BlackRock,BlackRock,Financials,Asset Management & Custody Banks,S&P 500,BlackRock,Q219635,BlackRock
+BX,Blackstone_Inc.,Blackstone Inc.,Financials,Asset Management & Custody Banks,S&P 500,Blackstone_Inc.,Q880942,Blackstone_Inc.|Blackstone_Inc|The_Blackstone_Group
+BE,Bloom_Energy,Bloom Energy,Industrials,Electrical Components & Equipment,S&P 500,Bloom_Energy,Q29526078,Bloom_Energy
+BNY,BNY,BNY Mellon,Financials,Asset Management & Custody Banks,S&P 500,BNY,Q589288,BNY|BNY_Mellon|The_Bank_of_New_York_Mellon
+BSX,Boston_Scientific,Boston Scientific,Health Care,Health Care Equipment,S&P 500,Boston_Scientific,Q894585,Boston_Scientific
+AVGO,Broadcom,Broadcom,Information Technology,Semiconductors,S&P 500,Broadcom,Q790060,Broadcom|Avago|Broadcom_Inc.|Broadcom_Limited
+BR,Broadridge_Financial_Solutions,Broadridge Financial Solutions,Industrials,Data Processing & Outsourced Services,S&P 500,Broadridge_Financial_Solutions,Q4972280,Broadridge_Financial_Solutions
+BRO,Brown_&_Brown,Brown & Brown,Financials,Insurance Brokers,S&P 500,Brown_&_Brown,Q4976010,Brown_&_Brown
+BG,Bunge_Global,Bunge Global,Consumer Staples,Agricultural Products & Services,S&P 500,Bunge_Global,Q1009458,Bunge_Global|Bunge_Limited
+BXP,"BXP,_Inc.","BXP, Inc.",Real Estate,Office REITs,S&P 500,"BXP,_Inc.",Q4844439,"BXP,_Inc.|Boston_Properties"
+CHRW,C.H._Robinson,C.H. Robinson,Industrials,Air Freight & Logistics,S&P 500,C._H._Robinson,Q931200,C._H._Robinson|C.H._Robinson
+CDNS,Cadence_Design_Systems,Cadence Design Systems,Information Technology,Application Software,S&P 500,Cadence_Design_Systems,Q608776,Cadence_Design_Systems
+CPT,Camden_Property_Trust,Camden Property Trust,Real Estate,Multi-Family Residential REITs,S&P 500,Camden_Property_Trust,Q5025803,Camden_Property_Trust
+COF,Capital_One,Capital One,Financials,Consumer Finance,S&P 500,Capital_One,Q1034654,Capital_One
+CAH,Cardinal_Health,Cardinal Health,Health Care,Health Care Distributors,S&P 500,Cardinal_Health,Q902397,Cardinal_Health
+CARR,Carrier_Global,Carrier Global,Industrials,Building Products,S&P 500,Carrier_Global,Q731912,Carrier_Global|Carrier_Corporation
+CVNA,Carvana,Carvana,Consumer Discretionary,Automotive Retail,S&P 500,Carvana,Q16247191,Carvana
+CASY,Casey's,Casey's,Consumer Staples,Food Retail,S&P 500,Casey's,Q2940968,Casey's|Casey's_General_Stores
+CAT,Caterpillar_Inc.,Caterpillar Inc.,Industrials,Construction Machinery & Heavy Transportation Equipment,S&P 500,Caterpillar_Inc.,Q459965,Caterpillar_Inc.
+CBOE,Cboe_Global_Markets,Cboe Global Markets,Financials,Financial Exchanges & Data,S&P 500,Cboe_Global_Markets,Q30635731,Cboe_Global_Markets|CBOE_Holdings
+CBRE,CBRE_Group,CBRE Group,Real Estate,Real Estate Services,S&P 500,CBRE_Group,Q1023013,CBRE_Group
+CDW,CDW,CDW Corporation,Information Technology,Technology Distributors,S&P 500,CDW,Q1023155,CDW
+COR,Cencora,Cencora,Health Care,Health Care Distributors,S&P 500,Cencora,Q470156,Cencora|AmerisourceBergen
+CNC,Centene_Corporation,Centene Corporation,Health Care,Managed Health Care,S&P 500,Centene_Corporation,Q5059102,Centene_Corporation
+CNP,CenterPoint_Energy,CenterPoint Energy,Utilities,Multi-Utilities,S&P 500,CenterPoint_Energy,Q1053560,CenterPoint_Energy
+CF,CF_Industries,CF Industries,Materials,Fertilizers & Agricultural Chemicals,S&P 500,CF_Industries,Q905806,CF_Industries
+CRL,Charles_River_Laboratories,Charles River Laboratories,Health Care,Life Sciences Tools & Services,S&P 500,Charles_River_Laboratories,Q5082076,Charles_River_Laboratories
+SCHW,Charles_Schwab_Corporation,Charles Schwab Corporation,Financials,Investment Banking & Brokerage,S&P 500,Charles_Schwab_Corporation,Q1066028,Charles_Schwab_Corporation
+CHTR,Charter_Communications,Charter Communications,Communication Services,Cable & Satellite,S&P 500,Charter_Communications,Q2961234,"Charter_Communications|Charter_Communications,_Inc."
+CVX,Chevron_Corporation,Chevron Corporation,Energy,Integrated Oil & Gas,S&P 500,Chevron_Corporation,Q319642,Chevron_Corporation
+CMG,Chipotle_Mexican_Grill,Chipotle Mexican Grill,Consumer Discretionary,Restaurants,S&P 500,Chipotle_Mexican_Grill,Q465751,Chipotle_Mexican_Grill
+CB,Chubb_Limited,Chubb Limited,Financials,Property & Casualty Insurance,S&P 500,Chubb_Limited,Q1089060,Chubb_Limited|Chubb_(company)|Chubb_Corp.
+CIEN,Ciena,Ciena,Information Technology,Communications Equipment,S&P 500,Ciena,Q1091783,Ciena
+CI,Cigna,Cigna,Health Care,Health Care Services,S&P 500,The_Cigna_Group,Q642271,The_Cigna_Group|Cigna
+CINF,Cincinnati_Financial,Cincinnati Financial,Financials,Property & Casualty Insurance,S&P 500,Cincinnati_Financial,Q5120253,Cincinnati_Financial
+CTAS,Cintas,Cintas,Industrials,Diversified Support Services,S&P 500,Cintas,Q1092571,Cintas
+C,Citigroup,Citigroup,Financials,Diversified Banks,S&P 500,Citigroup,Q219508,Citigroup
+CFG,Citizens_Financial_Group,Citizens Financial Group,Financials,Regional Banks,S&P 500,Citizens_Financial_Group,Q5122694,Citizens_Financial_Group
+CME,CME_Group,CME Group,Financials,Financial Exchanges & Data,S&P 500,CME_Group,Q1023876,CME_Group
+CMS,CMS_Energy,CMS Energy,Utilities,Multi-Utilities,S&P 500,CMS_Energy,Q5013012,CMS_Energy
+CTSH,Cognizant,Cognizant,Information Technology,IT Consulting & Other Services,S&P 500,Cognizant,Q1107035,Cognizant
+COHR,Coherent_Corp.,Coherent Corp.,Information Technology,Electronic Components,S&P 500,Coherent_Corp.,Q15109887,Coherent_Corp.|Draft:II-VI_Incorporated|II-VI_Incorporated
+COIN,Coinbase,Coinbase,Financials,Financial Exchanges & Data,S&P 500,Coinbase,Q16972754,Coinbase
+FIX,Comfort_Systems_USA,Comfort Systems USA,Industrials,Construction & Engineering,S&P 500,Comfort_Systems_USA,Q5151691,Comfort_Systems_USA
+COP,ConocoPhillips,ConocoPhillips,Energy,Oil & Gas Exploration & Production,S&P 500,ConocoPhillips,Q214763,ConocoPhillips
+ED,Consolidated_Edison,Consolidated Edison,Utilities,Multi-Utilities,S&P 500,Consolidated_Edison,Q1127536,Consolidated_Edison
+STZ,Constellation_Brands,Constellation Brands,Consumer Staples,Distillers & Vintners,S&P 500,Constellation_Brands,Q1128160,Constellation_Brands
+CEG,Constellation_Energy,Constellation Energy,Utilities,Electric Utilities,S&P 500,Constellation_Energy,Q259195,Constellation_Energy|Constellation_(An_Exelon_Company)|Constellation_(energy_company)|Constellation_Energy_Group
+COO,The_Cooper_Companies,Cooper Companies (The),Health Care,Health Care Supplies,S&P 500,The_Cooper_Companies,Q1129792,The_Cooper_Companies|CooperCompanies
+CPRT,Copart,Copart,Industrials,Diversified Support Services,S&P 500,Copart,Q16951448,Copart
+GLW,Corning_Inc.,Corning Inc.,Information Technology,Electronic Components,S&P 500,Corning_Inc.,Q5842736,Corning_Inc.
+CPAY,Corpay,Corpay,Financials,Transaction & Payment Processing Services,S&P 500,Corpay,Q16838618,Corpay|Fleetcor
+CSGP,CoStar_Group,CoStar Group,Real Estate,Real Estate Services,S&P 500,CoStar_Group,Q16988748,CoStar_Group
+COST,Costco,Costco,Consumer Staples,Consumer Staples Merchandise Retail,S&P 500,Costco,Q715583,Costco
+CRH,CRH_plc,CRH plc,Materials,Construction Materials,S&P 500,CRH_plc,Q1053299,CRH_plc|CRH_(company)
+CRWD,CrowdStrike,CrowdStrike,Information Technology,Systems Software,S&P 500,CrowdStrike,Q24890758,"CrowdStrike|CrowdStrike,_Inc."
+CCI,Crown_Castle,Crown Castle,Real Estate,Telecom Tower REITs,S&P 500,Crown_Castle,Q5189320,Crown_Castle|Crown_Castle_International_Corp.
+CSX,CSX_Corporation,CSX Corporation,Industrials,Rail Transportation,S&P 500,CSX_Corporation,Q1024454,CSX_Corporation
+CMI,Cummins,Cummins,Industrials,Construction Machinery & Heavy Transportation Equipment,S&P 500,Cummins,Q173476,Cummins|Cummins_(corporation)
+CVS,CVS_Health,CVS Health,Health Care,Health Care Services,S&P 500,CVS_Health,Q624375,CVS_Health
+DHR,Danaher_Corporation,Danaher Corporation,Health Care,Life Sciences Tools & Services,S&P 500,Danaher_Corporation,Q1159256,Danaher_Corporation
+DDOG,Datadog,Datadog,Information Technology,Application Software,S&P 500,Datadog,Q16248637,Datadog
+DVA,DaVita,DaVita,Health Care,Health Care Services,S&P 500,DaVita,Q5207184,DaVita|DaVita_Inc.|DaVita_Medical_Group
+DE,John_Deere,Deere & Company,Industrials,Agricultural & Farm Machinery,S&P 500,John_Deere,Q496302,John_Deere
+DELL,Dell_Technologies,Dell Technologies,Information Technology,"Technology Hardware, Storage & Peripherals",S&P 500,Dell_Technologies,Q27500963,Dell_Technologies
+DAL,Delta_Air_Lines,Delta Air Lines,Industrials,Passenger Airlines,S&P 500,Delta_Air_Lines,Q188920,Delta_Air_Lines
+DVN,Devon_Energy,Devon Energy,Energy,Oil & Gas Exploration & Production,S&P 500,Devon_Energy,Q1206980,Devon_Energy
+DXCM,Dexcom,Dexcom,Health Care,Health Care Equipment,S&P 500,Dexcom,Q15109865,Dexcom
+FANG,Diamondback_Energy,Diamondback Energy,Energy,Oil & Gas Exploration & Production,S&P 500,Diamondback_Energy,Q65091423,Diamondback_Energy
+DLR,Digital_Realty,Digital Realty,Real Estate,Data Center REITs,S&P 500,Digital_Realty,Q5275969,Digital_Realty
+DG,Dollar_General,Dollar General,Consumer Staples,Consumer Staples Merchandise Retail,S&P 500,Dollar_General,Q145168,Dollar_General
+DLTR,Dollar_Tree,Dollar Tree,Consumer Staples,Consumer Staples Merchandise Retail,S&P 500,Dollar_Tree,Q5289230,Dollar_Tree
+D,Dominion_Energy,Dominion Energy,Utilities,Multi-Utilities,S&P 500,Dominion_Energy,Q677464,Dominion_Energy|Dominion_Resources
+DPZ,Domino's,Domino's,Consumer Discretionary,Restaurants,S&P 500,Domino's,Q839466,Domino's|Domino's_(restaurant_chain)|Domino's_Pizza
+DASH,DoorDash,DoorDash,Consumer Discretionary,Specialized Consumer Services,S&P 500,DoorDash,Q20714323,DoorDash|Doordash
+DOV,Dover_Corporation,Dover Corporation,Industrials,Industrial Machinery & Supplies & Components,S&P 500,Dover_Corporation,Q16974527,Dover_Corporation
+DOW,Dow_Chemical_Company,Dow Inc.,Materials,Commodity Chemicals,S&P 500,Dow_Chemical_Company,Q855639,Dow_Chemical_Company
+DHI,D._R._Horton,D. R. Horton,Consumer Discretionary,Homebuilding,S&P 500,D._R._Horton,Q5203782,D._R._Horton
+DTE,DTE_Energy,DTE Energy,Utilities,Multi-Utilities,S&P 500,DTE_Energy,Q5206232,DTE_Energy
+DUK,Duke_Energy,Duke Energy,Utilities,Electric Utilities,S&P 500,Duke_Energy,Q1264404,Duke_Energy
+DD,DuPont,DuPont,Industrials,Industrial Conglomerates,S&P 500,DuPont,Q221062,DuPont|DowDuPont|Dow_DuPont_merger|Dow_Dupont_merger
+ETN,Eaton_Corporation,Eaton Corporation,Industrials,Electrical Components & Equipment,S&P 500,Eaton_Corporation,Q48872,Eaton_Corporation
+EBAY,eBay,eBay Inc.,Consumer Discretionary,Broadline Retail,S&P 500,EBay,Q58024,EBay
+ECHO,EchoStar,EchoStar,Communication Services,Wireless Telecommunication Services,S&P 500,EchoStar,Q1280748,EchoStar
+ECL,Ecolab,Ecolab,Materials,Specialty Chemicals,S&P 500,Ecolab,Q1282031,Ecolab
+EIX,Edison_International,Edison International,Utilities,Electric Utilities,S&P 500,Edison_International,Q662095,Edison_International
+EW,Edwards_Lifesciences,Edwards Lifesciences,Health Care,Health Care Equipment,S&P 500,Edwards_Lifesciences,Q16966841,Edwards_Lifesciences
+ELV,Elevance_Health,Elevance Health,Health Care,Managed Health Care,S&P 500,Elevance_Health,Q677488,Elevance_Health|Anthem_(company)|Anthem_Inc.
+EME,Emcor,Emcor,Construction & Engineering,"[[Norwalk, Connecticut]]",S&P 500,Emcor,Q5370289,Emcor
+EMR,Emerson_Electric,Emerson Electric,Industrials,Electrical Components & Equipment,S&P 500,Emerson_Electric,Q1335585,Emerson_Electric
+ETR,Entergy,Entergy,Utilities,Electric Utilities,S&P 500,Entergy,Q1344587,Entergy
+EOG,EOG_Resources,EOG Resources,Energy,Oil & Gas Exploration & Production,S&P 500,EOG_Resources,Q1275577,EOG_Resources
+EQT,EQT_Corporation,EQT Corporation,Energy,Oil & Gas Exploration & Production,S&P 500,EQT_Corporation,Q5323987,EQT_Corporation
+EFX,Equifax,Equifax,Industrials,Research & Consulting Services,S&P 500,Equifax,Q5384453,Equifax
+EQIX,Equinix,Equinix,Real Estate,Data Center REITs,S&P 500,Equinix,Q851641,Equinix
+ERIE,Erie_Insurance_Group,Erie Indemnity,Financials,Insurance Brokers,S&P 500,Erie_Insurance_Group,Q5388314,Erie_Insurance_Group
+ESS,Essex_Property_Trust,Essex Property Trust,Real Estate,Multi-Family Residential REITs,S&P 500,Essex_Property_Trust,Q27964091,"Essex_Property_Trust|Essex_Property_Trust,_Inc."
+EG,Everest_Group,Everest Group,Financials,Reinsurance,S&P 500,Everest_Group,Q1381973,Everest_Group|Everest_Re|User:Mparrault/Everest_Re
+EVRG,Evergy,Evergy,Utilities,Electric Utilities,S&P 500,Evergy,Q7987107,Evergy|Westar_Energy
+P,Everpure,Everpure,Information Technology,"Technology Hardware, Storage & Peripherals",S&P 500,Everpure,Q7261135,Everpure|Pure_Storage
+ES,Eversource_Energy,Eversource Energy,Utilities,Electric Utilities,S&P 500,Eversource_Energy,Q3344199,Eversource_Energy
+EXC,Exelon,Exelon,Utilities,Electric Utilities,S&P 500,Exelon,Q1383669,Exelon
+EXE,Expand_Energy,Expand Energy,Energy,Oil & Gas Exploration & Production,S&P 500,Expand_Energy,Q2962826,Expand_Energy|Chesapeake_Energy
+EXPD,Expeditors_International,Expeditors International,Industrials,Air Freight & Logistics,S&P 500,Expeditors_International,Q1384324,Expeditors_International
+EXR,Extra_Space_Storage,Extra Space Storage,Real Estate,Self-Storage REITs,S&P 500,Extra_Space_Storage,Q5422162,Extra_Space_Storage
+XOM,ExxonMobil,ExxonMobil,Energy,Integrated Oil & Gas,S&P 500,ExxonMobil,Q156238,ExxonMobil
+FFIV,"F5,_Inc.","F5, Inc.",Information Technology,Communications Equipment,S&P 500,"F5,_Inc.",Q3029296,"F5,_Inc.|F5_Networks"
+FDS,FactSet,FactSet,Financials,Financial Exchanges & Data,S&P 500,FactSet,Q1885491,FactSet
+FICO,FICO,Fair Isaac,Information Technology,Application Software,S&P 500,FICO,Q1392999,FICO
+FAST,Fastenal,Fastenal,Industrials,Trading Companies & Distributors,S&P 500,Fastenal,Q3067119,Fastenal
+FRT,Federal_Realty_Investment_Trust,Federal Realty Investment Trust,Real Estate,Retail REITs,S&P 500,Federal_Realty_Investment_Trust,Q27988152,Federal_Realty_Investment_Trust
+FDX,FedEx,FedEx,Industrials,Air Freight & Logistics,S&P 500,FedEx,Q459477,FedEx
+FERG,Ferguson_Enterprises,Ferguson Enterprises,Industrials,Trading Companies & Distributors,S&P 500,Ferguson_Enterprises,Q5444235,Ferguson_Enterprises
+FIS,FIS_(company),Fidelity National Information Services,Financials,Transaction & Payment Processing Services,S&P 500,FIS_(company),Q1411295,FIS_(company)
+FITB,Fifth_Third_Bancorp,Fifth Third Bancorp,Financials,Regional Banks,S&P 500,Fifth_Third_Bank,Q1411810,Fifth_Third_Bank
+FSLR,First_Solar,First Solar,Information Technology,Semiconductors,S&P 500,First_Solar,Q1138888,First_Solar
+FE,FirstEnergy,FirstEnergy,Utilities,Electric Utilities,S&P 500,FirstEnergy,Q1419248,FirstEnergy
+FISV,Fiserv,Fiserv,Financials,Transaction & Payment Processing Services,S&P 500,Fiserv,Q1420513,Fiserv
+FLEX,Flex_Ltd.,Flex Ltd.,Information Technology,Electronic Manufacturing Services,S&P 500,Flex_Ltd.,Q1140680,Flex_Ltd.|Flex_(company)|Flextronics
+FTNT,Fortinet,Fortinet,Information Technology,Systems Software,S&P 500,Fortinet,Q2749364,Fortinet
+FTV,Fortive,Fortive,Industrials,Industrial Machinery & Supplies & Components,S&P 500,Fortive,Q27919383,Fortive|Fortive_Corp
+FOXA,Fox_Corporation,Fox Corporation,Communication Services,Broadcasting,S&P 500,Fox_Corporation,Q60238941,Fox_Corporation|Draft:New_Fox|Fox_(company)|New_Fox
+BEN,Franklin_Templeton_Investments,Franklin Resources,Financials,Asset Management & Custody Banks,S&P 500,Franklin_Templeton,Q744683,Franklin_Templeton|Franklin_Templeton_Investments
+FCX,Freeport-McMoRan,Freeport-McMoRan,Materials,Copper,S&P 500,Freeport-McMoRan,Q1453620,Freeport-McMoRan
+IT,Gartner,Gartner,Information Technology,IT Consulting & Other Services,S&P 500,Gartner,Q174198,Gartner
+GE,GE_Aerospace,GE Aerospace,Industrials,Aerospace & Defense,S&P 500,GE_Aerospace,Q1485061,GE_Aerospace|GE_Aviation
+GEHC,GE_HealthCare,GE HealthCare,Health Care,Health Care Equipment,S&P 500,GE_HealthCare,Q1152374,GE_HealthCare|GE_Healthcare
+GEV,GE_Vernova,GE Vernova,Industrials,Heavy Electrical Equipment,S&P 500,GE_Vernova,Q118957699,GE_Vernova|Draft:GE_Vernova
+GEN,Gen_Digital,Gen Digital,Information Technology,Systems Software,S&P 500,Gen_Digital,Q677085,Gen_Digital|Gen_Digital_Inc.|NortonLifeLock
+GNRC,Generac,Generac,Industrials,Heavy Electrical Equipment,S&P 500,Generac,Q5531627,Generac|Generac_Holdings|Generac_Power_Systems
+GPC,Genuine_Parts_Company,Genuine Parts Company,Consumer Discretionary,Distributors,S&P 500,Genuine_Parts_Company,Q5533818,Genuine_Parts_Company
+GPN,Global_Payments,Global Payments,Financials,Transaction & Payment Processing Services,S&P 500,Global_Payments,Q5570544,Global_Payments|Draft:Global_Payments
+GL,Globe_Life,Globe Life,Financials,Life & Health Insurance,S&P 500,Globe_Life,Q7825574,Globe_Life|Torchmark
+GDDY,GoDaddy,GoDaddy,Information Technology,Internet Services & Infrastructure,S&P 500,GoDaddy,Q1416215,GoDaddy
+GS,Goldman_Sachs,Goldman Sachs,Financials,Investment Banking & Brokerage,S&P 500,Goldman_Sachs,Q193326,Goldman_Sachs
+HAL,Halliburton,Halliburton,Energy,Oil & Gas Equipment & Services,S&P 500,Halliburton,Q656165,Halliburton
+HIG,The_Hartford,Hartford (The),Financials,Property & Casualty Insurance,S&P 500,The_Hartford,Q444110,The_Hartford
+HCA,HCA_Healthcare,HCA Healthcare,Health Care,Health Care Facilities,S&P 500,HCA_Healthcare,Q1630431,HCA_Healthcare|Hospital_Corporation_of_America
+DOC,Healthpeak_Properties,Healthpeak Properties,Real Estate,Health Care REITs,S&P 500,Healthpeak_Properties,Q16975567,"Healthpeak_Properties|HCP,_Inc.|Healthpeak_Properties,_Inc."
+HSIC,Henry_Schein,Henry Schein,Health Care,Health Care Distributors,S&P 500,Henry_Schein,Q905086,Henry_Schein
+HPE,Hewlett_Packard_Enterprise,Hewlett Packard Enterprise,Information Technology,"Technology Hardware, Storage & Peripherals",S&P 500,Hewlett_Packard_Enterprise,Q19923099,Hewlett_Packard_Enterprise
+HD,Home_Depot,Home Depot (The),Consumer Discretionary,Home Improvement Retail,S&P 500,Home_Depot,Q864407,Home_Depot|The_Home_Depot
+HONA,Honeywell_Aerospace,Honeywell Aerospace,Industrials,Aerospace & Defense,S&P 500,Honeywell_Aerospace,Q5893992,Honeywell_Aerospace|Honeywell_Aerospace_Technologies
+HON,Honeywell,Honeywell Technologies,Industrials,Industrial Conglomerates,S&P 500,Honeywell,Q898208,Honeywell
+HST,Host_Hotels_&_Resorts,Host Hotels & Resorts,Real Estate,Hotel & Resort REITs,S&P 500,Host_Hotels_&_Resorts,Q1630559,Host_Hotels_&_Resorts
+HWM,Howmet_Aerospace,Howmet Aerospace,Industrials,Aerospace & Defense,S&P 500,Howmet_Aerospace,Q25104597,Howmet_Aerospace
+HPQ,HP_Inc.,HP Inc.,Information Technology,"Technology Hardware, Storage & Peripherals",S&P 500,HP_Inc.,Q21404084,HP_Inc.
+HUBB,Hubbell_Incorporated,Hubbell Incorporated,Industrials,Industrial Machinery & Supplies & Components,S&P 500,Hubbell_Incorporated,Q21036456,Hubbell_Incorporated
+HUM,Humana,Humana,Health Care,Managed Health Care,S&P 500,Humana,Q910866,Humana
+HBAN,Huntington_Bancshares,Huntington Bancshares,Financials,Regional Banks,S&P 500,Huntington_Bancshares,Q798819,Huntington_Bancshares
+HII,Huntington_Ingalls_Industries,Huntington Ingalls Industries,Industrials,Aerospace & Defense,S&P 500,Huntington_Ingalls_Industries,Q7257522,Huntington_Ingalls_Industries
+IBM,IBM,IBM,Information Technology,IT Consulting & Other Services,S&P 500,IBM,Q37156,IBM
+IEX,IDEX_Corporation,IDEX Corporation,Industrials,Industrial Machinery & Supplies & Components,S&P 500,IDEX_Corporation,Q5970002,IDEX_Corporation
+IDXX,Idexx_Laboratories,Idexx Laboratories,Health Care,Health Care Equipment,S&P 500,Idexx_Laboratories,Q1758392,Idexx_Laboratories
+ITW,Illinois_Tool_Works,Illinois Tool Works,Industrials,Industrial Machinery & Supplies & Components,S&P 500,Illinois_Tool_Works,Q1510378,Illinois_Tool_Works
+ILMN,"Illumina,_Inc.","Illumina, Inc.",Health Care,Life Sciences Tools & Services,S&P 500,"Illumina,_Inc.",Q2068984,"Illumina,_Inc.|Illumina_(company)"
+INCY,Incyte,Incyte,Health Care,Biotechnology,S&P 500,Incyte,Q6015591,Incyte
+IR,Ingersoll_Rand,Ingersoll Rand,Industrials,Industrial Machinery & Supplies & Components,S&P 500,Ingersoll_Rand,Q55453962,Ingersoll_Rand|Gardner_Denver
+PODD,Insulet_Corporation,Insulet Corporation,Health Care,Health Care Equipment,S&P 500,Insulet_Corporation,,Insulet_Corporation
+IBKR,Interactive_Brokers,Interactive Brokers,Financials,Investment Banking & Brokerage,S&P 500,Interactive_Brokers,Q20011294,Interactive_Brokers
+ICE,Intercontinental_Exchange,Intercontinental Exchange,Financials,Financial Exchanges & Data,S&P 500,Intercontinental_Exchange,Q841458,Intercontinental_Exchange
+IFF,International_Flavors_&_Fragrances,International Flavors & Fragrances,Materials,Specialty Chemicals,S&P 500,International_Flavors_&_Fragrances,Q1666568,International_Flavors_&_Fragrances
+IP,International_Paper,International Paper,Materials,Paper & Plastic Packaging Products & Materials,S&P 500,International_Paper,Q202972,International_Paper
+IVZ,Invesco,Invesco,Financials,Asset Management & Custody Banks,S&P 500,Invesco,Q522617,Invesco
+INVH,Invitation_Homes,Invitation Homes,Real Estate,Single-Family Residential REITs,S&P 500,Invitation_Homes,Q85769855,Invitation_Homes
+IQV,IQVIA,IQVIA,Health Care,Life Sciences Tools & Services,S&P 500,IQVIA,Q305473,IQVIA|Quintiles|QuintilesIMS
+IRM,Iron_Mountain_(company),Iron Mountain,Real Estate,Other Specialized REITs,S&P 500,Iron_Mountain_(company),Q1673079,Iron_Mountain_(company)|Iron_Mountain_Incorporated
+JBHT,J.B._Hunt,J.B. Hunt,Industrials,Cargo Ground Transportation,S&P 500,J._B._Hunt,Q4041705,J._B._Hunt
+JBL,Jabil,Jabil,Information Technology,Electronic Manufacturing Services,S&P 500,Jabil,Q2171646,Jabil|Jabil_Circuit
+JKHY,Jack_Henry_&_Associates,Jack Henry & Associates,Financials,Transaction & Payment Processing Services,S&P 500,Jack_Henry_&_Associates,Q6113060,Jack_Henry_&_Associates
+J,Jacobs_Solutions,Jacobs Solutions,Industrials,Construction & Engineering,S&P 500,Jacobs_Solutions,Q3157622,Jacobs_Solutions|Jacobs_Engineering_Group
+JNJ,Johnson_&_Johnson,Johnson & Johnson,Health Care,Pharmaceuticals,S&P 500,Johnson_&_Johnson,Q333718,Johnson_&_Johnson
+JCI,Johnson_Controls,Johnson Controls,Industrials,Building Products,S&P 500,Johnson_Controls,Q667865,Johnson_Controls
+JPM,JPMorgan_Chase,JPMorgan Chase,Financials,Diversified Banks,S&P 500,JPMorgan_Chase,Q192314,JPMorgan_Chase
+KEY,KeyCorp,KeyCorp,Financials,Regional Banks,S&P 500,KeyBank,Q1740314,KeyBank
+KEYS,Keysight_Technologies,Keysight Technologies,Information Technology,Electronic Equipment & Instruments,S&P 500,Keysight,Q17551096,Keysight
+KIM,Kimco_Realty,Kimco Realty,Real Estate,Retail REITs,S&P 500,Kimco_Realty,Q6410043,Kimco_Realty
+KMI,Kinder_Morgan,Kinder Morgan,Energy,Oil & Gas Storage & Transportation,S&P 500,Kinder_Morgan,Q931032,Kinder_Morgan
+KKR,Kohlberg_Kravis_Roberts,KKR & Co.,Financials,Asset Management & Custody Banks,S&P 500,KKR_&_Co.,Q1570773,KKR_&_Co.|Kohlberg_Kravis_Roberts
+KLAC,KLA_Corporation,KLA Corporation,Information Technology,Semiconductor Materials & Equipment,S&P 500,KLA_Corporation,Q624649,KLA_Corporation|KLA-Tencor
+KR,Kroger,Kroger,Consumer Staples,Food Retail,S&P 500,Kroger,Q153417,Kroger
+LHX,L3Harris,L3Harris,Industrials,Aerospace & Defense,S&P 500,L3Harris,Q30291091,L3Harris|L3Harris_Technologies
+LH,Labcorp,Labcorp,Health Care,Health Care Services,S&P 500,Labcorp,Q6466630,Labcorp|LabCorp
+LRCX,Lam_Research,Lam Research,Information Technology,Semiconductor Materials & Equipment,S&P 500,Lam_Research,Q1342041,Lam_Research
+LVS,Las_Vegas_Sands,Las Vegas Sands,Consumer Discretionary,Casinos & Gaming,S&P 500,Las_Vegas_Sands,Q1506045,Las_Vegas_Sands
+LDOS,Leidos,Leidos,Industrials,Diversified Support Services,S&P 500,Leidos,Q502132,Leidos
+LEN,Lennar,Lennar,Consumer Discretionary,Homebuilding,S&P 500,Lennar,Q16981175,Lennar|Lennar_Corporation
+LII,Lennox_International,Lennox International,Industrials,Building Products,S&P 500,Lennox_International,Q224751,Lennox_International
+LIN,Linde_plc,Linde plc,Materials,Industrial Gases,S&P 500,Linde_plc,Q682759,Linde_plc|The_Linde_Group
+L,Loews_Corporation,Loews Corporation,Financials,Multi-line Insurance,S&P 500,Loews_Corporation,Q826526,Loews_Corporation
+LOW,Lowe's,Lowe's,Consumer Discretionary,Home Improvement Retail,S&P 500,Lowe's,Q1373493,"Lowe's|Lowes_Companies,_Inc.|Lowes_Home_Improvement"
+LULU,Lululemon,Lululemon Athletica,Consumer Discretionary,"Apparel, Accessories & Luxury Goods",S&P 500,Lululemon,Q6702957,Lululemon|Lululemon_Athletica
+LITE,Lumentum,Lumentum,Information Technology,Communications Equipment,S&P 500,Lumentum,Q138786899,Lumentum|Lumentum_Holdings|User:TonyTheTiger/Sandbox/Lumentum|User:TonyTheTiger/Sandbox/Lumentum_Holdings
+LYB,LyondellBasell,LyondellBasell,Materials,Specialty Chemicals,S&P 500,LyondellBasell,Q899255,LyondellBasell
+MTB,M&T_Bank,M&T Bank,Financials,Regional Banks,S&P 500,M&T_Bank,Q3272257,M&T_Bank
+MPC,Marathon_Petroleum,Marathon Petroleum,Energy,Oil & Gas Refining & Marketing,S&P 500,Marathon_Petroleum,Q458363,Marathon_Petroleum
+MRSH,Marsh_McLennan,Marsh McLennan,Financials,Insurance Brokers,S&P 500,Marsh_McLennan,Q1786345,Marsh_McLennan|Marsh_&_McLennan_Companies
+MLM,Martin_Marietta_Materials,Martin Marietta Materials,Materials,Construction Materials,S&P 500,Martin_Marietta_Materials,Q6776123,Martin_Marietta_Materials|Martin_Marietta_Inc.
+MRVL,Marvell_Technology,Marvell Technology,Information Technology,Semiconductors,S&P 500,Marvell_Technology,Q1347782,"Marvell_Technology|Marvell_Technology,_Inc.|Marvell_Technology_Group"
+MAS,Masco,Masco,Industrials,Building Products,S&P 500,Masco,Q6782872,Masco
+MA,Mastercard,Mastercard,Financials,Transaction & Payment Processing Services,S&P 500,Mastercard,Q489921,Mastercard|MasterCard
+MCK,McKesson,McKesson,Health Care,Health Care Distributors,S&P 500,McKesson,Q570473,McKesson|McKesson_Corporation
+MDT,Medtronic,Medtronic,Health Care,Health Care Equipment,S&P 500,Medtronic,Q642189,Medtronic
+MET,MetLife,MetLife,Financials,Life & Health Insurance,S&P 500,MetLife,Q607131,MetLife
+MTD,Mettler_Toledo,Mettler Toledo,Health Care,Life Sciences Tools & Services,S&P 500,Mettler_Toledo,Q680186,Mettler_Toledo
+MGM,MGM_Resorts,MGM Resorts,Consumer Discretionary,Casinos & Gaming,S&P 500,MGM_Resorts_International,Q568532,MGM_Resorts_International
+MCHP,Microchip_Technology,Microchip Technology,Information Technology,Semiconductors,S&P 500,Microchip_Technology,Q1545076,Microchip_Technology
+MU,Micron_Technology,Micron Technology,Information Technology,Semiconductors,S&P 500,Micron_Technology,Q1197548,Micron_Technology
+MAA,Mid-America_Apartment_Communities,Mid-America Apartment Communities,Real Estate,Multi-Family Residential REITs,S&P 500,Mid-America_Apartment_Communities,Q27988239,Mid-America_Apartment_Communities|Mid-America_Apartments
+MRNA,Moderna,Moderna,Health Care,Biotechnology,S&P 500,Moderna,Q17081612,Moderna|Moderna_Therapeutics
+MPWR,Monolithic_Power_Systems,Monolithic Power Systems,Information Technology,Semiconductors,S&P 500,Monolithic_Power_Systems,Q22058448,"Monolithic_Power_Systems|Monolithic_Power_Systems,_Inc."
+MCO,Moody's_Corporation,Moody's Corporation,Financials,Financial Exchanges & Data,S&P 500,Moody's_Corporation,Q675585,Moody's_Corporation
+MS,Morgan_Stanley,Morgan Stanley,Financials,Investment Banking & Brokerage,S&P 500,Morgan_Stanley,Q334204,Morgan_Stanley
+MOS,The_Mosaic_Company,Mosaic Company (The),Materials,Fertilizers & Agricultural Chemicals,S&P 500,The_Mosaic_Company,Q7752327,The_Mosaic_Company
+MSI,Motorola_Solutions,Motorola Solutions,Information Technology,Communications Equipment,S&P 500,Motorola_Solutions,Q634815,Motorola_Solutions
+MSCI,MSCI,MSCI,Financials,Financial Exchanges & Data,S&P 500,MSCI,Q768773,MSCI
+NDAQ,"Nasdaq,_Inc.","Nasdaq, Inc.",Financials,Financial Exchanges & Data,S&P 500,"Nasdaq,_Inc.",Q1472929,"Nasdaq,_Inc."
+NTAP,NetApp,NetApp,Information Technology,"Technology Hardware, Storage & Peripherals",S&P 500,NetApp,Q727883,NetApp
+NEM,Newmont,Newmont,Materials,Gold,S&P 500,Newmont,Q1785405,Newmont|Newmont_Corporation|Newmont_Goldcorp|Newmont_Mining_Corporation
+NEE,NextEra_Energy,NextEra Energy,Utilities,Multi-Utilities,S&P 500,NextEra_Energy,Q967868,NextEra_Energy
+NI,NiSource,NiSource,Utilities,Multi-Utilities,S&P 500,NiSource,Q1984481,NiSource
+NDSN,Nordson_Corporation,Nordson Corporation,Industrials,Industrial Machinery & Supplies & Components,S&P 500,Nordson_Corporation,Q1998662,Nordson_Corporation
+NSC,Norfolk_Southern_Railway,Norfolk Southern,Industrials,Rail Transportation,S&P 500,Norfolk_Southern_Railway,Q1321054,Norfolk_Southern_Railway
+NTRS,Northern_Trust,Northern Trust,Financials,Asset Management & Custody Banks,S&P 500,Northern_Trust,Q970695,Northern_Trust
+NRG,NRG_Energy,NRG Energy,Utilities,Independent Power Producers & Energy Traders,S&P 500,NRG_Energy,Q6955139,NRG_Energy
+NUE,Nucor,Nucor,Materials,Steel,S&P 500,Nucor,Q1645081,Nucor
+NVR,"NVR,_Inc.","NVR, Inc.",Consumer Discretionary,Homebuilding,S&P 500,"NVR,_Inc.",Q6955706,"NVR,_Inc."
+NXPI,NXP_Semiconductors,NXP Semiconductors,Information Technology,Semiconductors,S&P 500,NXP_Semiconductors,Q1155668,NXP_Semiconductors
+ORLY,O'Reilly_Auto_Parts,O'Reilly Automotive,Consumer Discretionary,Automotive Retail,S&P 500,O'Reilly_Auto_Parts,Q7071951,O'Reilly_Auto_Parts|O'Reilly_Automotive
+OXY,Occidental_Petroleum,Occidental Petroleum,Energy,Oil & Gas Exploration & Production,S&P 500,Occidental_Petroleum,Q2013357,Occidental_Petroleum
+OKTA,"Okta,_Inc.","Okta, Inc.",Information Technology,Application Software,S&P 500,"Okta,_Inc.",Q55627388,"Okta,_Inc.|Okta_(identity_management)|Okta_Inc."
+ODFL,Old_Dominion_Freight_Line,Old Dominion,Industrials,Cargo Ground Transportation,S&P 500,Old_Dominion_Freight_Line,Q7083862,Old_Dominion_Freight_Line
+OMC,Omnicom_Group,Omnicom Group,Communication Services,Advertising,S&P 500,Omnicom_Group,Q1519267,Omnicom_Group
+ON,onsemi,ON Semiconductor,Information Technology,Semiconductors,S&P 500,Onsemi,Q1671509,Onsemi|ON_Semiconductor
+OKE,Oneok,Oneok,Energy,Oil & Gas Storage & Transportation,S&P 500,Oneok,Q11074156,Oneok|ONEOK
+OTIS,Otis_Worldwide,Otis Worldwide,Industrials,Industrial Machinery & Supplies & Components,S&P 500,Otis_Worldwide,Q1134069,Otis_Worldwide|Otis_Elevator_Company
+PCAR,Paccar,Paccar,Industrials,Construction Machinery & Heavy Transportation Equipment,S&P 500,Paccar,Q1477661,Paccar
+PKG,Packaging_Corporation_of_America,Packaging Corporation of America,Materials,Paper & Plastic Packaging Products & Materials,S&P 500,Packaging_Corporation_of_America,Q16983334,Packaging_Corporation_of_America
+PLTR,Palantir_Technologies,Palantir Technologies,Information Technology,Application Software,S&P 500,Palantir,Q2047336,Palantir|Palantir_Technologies
+PANW,Palo_Alto_Networks,Palo Alto Networks,Information Technology,Systems Software,S&P 500,Palo_Alto_Networks,Q7128508,Palo_Alto_Networks
+PH,Parker_Hannifin,Parker Hannifin,Industrials,Industrial Machinery & Supplies & Components,S&P 500,Parker_Hannifin,Q1470619,Parker_Hannifin
+PAYX,Paychex,Paychex,Industrials,Human Resource & Employment Services,S&P 500,Paychex,Q946080,Paychex
+PNR,Pentair,Pentair,Industrials,Industrial Machinery & Supplies & Components,S&P 500,Pentair,Q7165001,Pentair
+PCG,PG&E,PG&E Corporation,Utilities,Multi-Utilities,S&P 500,Pacific_Gas_and_Electric_Company,Q1815011,Pacific_Gas_and_Electric_Company
+PSX,Phillips_66,Phillips 66,Energy,Oil & Gas Refining & Marketing,S&P 500,Phillips_66,Q1656230,Phillips_66
+PNW,Pinnacle_West_Capital,Pinnacle West Capital,Utilities,Multi-Utilities,S&P 500,Pinnacle_West_Capital,Q26110522,Pinnacle_West_Capital
+PNC,PNC_Financial_Services,PNC Financial Services,Financials,Diversified Banks,S&P 500,PNC_Financial_Services,Q38928,PNC_Financial_Services
+PPG,PPG_Industries,PPG Industries,Materials,Specialty Chemicals,S&P 500,PPG_Industries,Q48754,PPG_Industries
+PPL,PPL_Corporation,PPL Corporation,Utilities,Electric Utilities,S&P 500,PPL_Corporation,Q2044512,PPL_Corporation
+PFG,Principal_Financial_Group,Principal Financial Group,Financials,Life & Health Insurance,S&P 500,Principal_Financial_Group,Q3403513,Principal_Financial_Group
+PGR,Progressive_Corporation,Progressive Corporation,Financials,Property & Casualty Insurance,S&P 500,Progressive_Corporation,Q7248721,Progressive_Corporation
+PLD,Prologis,Prologis,Real Estate,Industrial REITs,S&P 500,Prologis,Q16983765,Prologis
+PRU,Prudential_Financial,Prudential Financial,Financials,Life & Health Insurance,S&P 500,Prudential_Financial,Q2114414,Prudential_Financial
+PTC,PTC_Inc.,PTC Inc.,Information Technology,Application Software,S&P 500,PTC_Inc.,Q1760641,PTC_Inc.|PTC_(software_company)
+PEG,Public_Service_Enterprise_Group,Public Service Enterprise Group,Utilities,Electric Utilities,S&P 500,Public_Service_Enterprise_Group,Q930919,Public_Service_Enterprise_Group
+PSA,Public_Storage,Public Storage,Real Estate,Self-Storage REITs,S&P 500,Public_Storage,Q1156045,Public_Storage
+PHM,PulteGroup,PulteGroup,Consumer Discretionary,Homebuilding,S&P 500,PulteGroup,Q7259716,PulteGroup
+Q,Qnity_Electronics,Qnity Electronics,Information Technology,Semiconductor Materials & Equipment,S&P 500,Qnity_Electronics,Q138685636,Qnity_Electronics
+PWR,Quanta_Services,Quanta Services,Industrials,Construction & Engineering,S&P 500,Quanta_Services,Q7268886,Quanta_Services
+DGX,Quest_Diagnostics,Quest Diagnostics,Health Care,Health Care Services,S&P 500,Quest_Diagnostics,Q7271456,Quest_Diagnostics
+RL,Ralph_Lauren_Corporation,Ralph Lauren Corporation,Consumer Discretionary,"Apparel, Accessories & Luxury Goods",S&P 500,Ralph_Lauren_Corporation,Q1641437,Ralph_Lauren_Corporation|Ralph_Lauren_(brand)
+RJF,Raymond_James_Financial,Raymond James Financial,Financials,Investment Banking & Brokerage,S&P 500,Raymond_James_Financial,Q7298901,Raymond_James_Financial
+RDDT,Reddit,Reddit,Communication Services,Interactive Media & Services,S&P 500,Reddit,Q1136,Reddit
+O,Realty_Income,Realty Income,Real Estate,Retail REITs,S&P 500,Realty_Income,Q7301386,Realty_Income|Realty_Income_Corporation
+REG,Regency_Centers,Regency Centers,Real Estate,Retail REITs,S&P 500,Regency_Centers,Q7308000,Regency_Centers|Regency_Centers_Corporation
+RF,Regions_Financial_Corporation,Regions Financial Corporation,Financials,Regional Banks,S&P 500,Regions_Financial_Corporation,Q917131,Regions_Financial_Corporation
+RSG,Republic_Services,Republic Services,Industrials,Environmental & Facilities Services,S&P 500,Republic_Services,Q7314415,Republic_Services
+RMD,ResMed,ResMed,Health Care,Health Care Equipment,S&P 500,ResMed,Q7314903,ResMed
+RVTY,Revvity,Revvity,Health Care,Health Care Equipment,S&P 500,Revvity,Q120467527,Revvity
+HOOD,Robinhood_(company),Robinhood Markets,Financials,Investment Banking & Brokerage,S&P 500,Robinhood_(company),Q18155123,Robinhood_(company)|Robinhood_(Company)|Robinhood_Markets
+ROK,Rockwell_Automation,Rockwell Automation,Industrials,Electrical Components & Equipment,S&P 500,Rockwell_Automation,Q1529234,Rockwell_Automation
+ROL,"Rollins,_Inc.","Rollins, Inc.",Industrials,Environmental & Facilities Services,S&P 500,"Rollins,_Inc.",Q7361273,"Rollins,_Inc.|Rollins_Inc."
+ROP,Roper_Technologies,Roper Technologies,Information Technology,Electronic Equipment & Instruments,S&P 500,Roper_Technologies,Q16932392,Roper_Technologies
+ROST,Ross_Stores,Ross Stores,Consumer Discretionary,Apparel Retail,S&P 500,Ross_Stores,Q3442791,Ross_Stores|Ross_Dress_for_Less
+RTX,RTX_Corporation,RTX Corporation,Industrials,Aerospace & Defense,S&P 500,RTX_Corporation,Q89368734,RTX_Corporation|RTX_(company)|Raytheon_Technologies
+SPGI,S&P_Global,S&P Global,Financials,Financial Exchanges & Data,S&P 500,S&P_Global,Q868587,S&P_Global|McGraw_Hill_Financial
+SNDK,Sandisk,Sandisk,Information Technology,"Technology Hardware, Storage & Peripherals",S&P 500,Sandisk,Q260833,Sandisk|SanDisk
+SBAC,SBA_Communications,SBA Communications,Real Estate,Telecom Tower REITs,S&P 500,SBA_Communications,Q7388926,SBA_Communications
+SLB,Schlumberger,Schlumberger,Energy,Oil & Gas Equipment & Services,S&P 500,SLB,Q1425316,SLB|Schlumberger
+STX,Seagate_Technology,Seagate Technology,Information Technology,"Technology Hardware, Storage & Peripherals",S&P 500,Seagate_Technology,Q705392,Seagate_Technology
+SRE,Sempra,Sempra,Utilities,Multi-Utilities,S&P 500,Sempra,Q7449804,Sempra|Sempra_Energy
+NOW,ServiceNow,ServiceNow,Information Technology,Systems Software,S&P 500,ServiceNow,Q7455653,ServiceNow
+SHW,Sherwin-Williams,Sherwin-Williams,Materials,Specialty Chemicals,S&P 500,Sherwin-Williams,Q48881,Sherwin-Williams
+SPG,Simon_Property_Group,Simon Property Group,Real Estate,Retail REITs,S&P 500,Simon_Property_Group,Q2287759,Simon_Property_Group
+SKYD,Skydance,Skydance,Communication Services,Movies & Entertainment,S&P 500,Skydance,Q141613344,Skydance|Paramount_Skydance|Paramount_Skydance_Corporation|Skydance_Corp
+SWKS,Skyworks_Solutions,Skyworks Solutions,Information Technology,Semiconductors,S&P 500,Skyworks_Solutions,Q7538146,Skyworks_Solutions
+SW,Smurfit_Westrock,Smurfit Westrock,Materials,Paper & Plastic Packaging Products & Materials,S&P 500,Smurfit_Westrock,Q1536176,Smurfit_Westrock|Smurfit_Kappa|Smurfit_Kappa_Group|Smurfit_WestRock
+SNA,Snap-on,Snap-on,Industrials,Industrial Machinery & Supplies & Components,S&P 500,Snap-on,Q1631922,Snap-on
+SOLV,Solventum,Solventum,Health Care,Health Care Technology,S&P 500,Solventum,Q124795355,Solventum
+SO,Southern_Company,Southern Company,Utilities,Electric Utilities,S&P 500,Southern_Company,Q2304693,Southern_Company
+LUV,Southwest_Airlines,Southwest Airlines,Industrials,Passenger Airlines,S&P 500,Southwest_Airlines,Q503308,Southwest_Airlines
+SWK,Stanley_Black_&_Decker,Stanley Black & Decker,Industrials,Industrial Machinery & Supplies & Components,S&P 500,Stanley_Black_&_Decker,Q706094,Stanley_Black_&_Decker
+STT,State_Street_Corporation,State Street Corporation,Financials,Asset Management & Custody Banks,S&P 500,State_Street_Corporation,Q2037125,State_Street_Corporation
+STLD,Steel_Dynamics,Steel Dynamics,Materials,Steel,S&P 500,Steel_Dynamics,Q7605667,Steel_Dynamics
+STE,Steris,Steris,Health Care,Health Care Equipment,S&P 500,Steris,Q80947821,Steris|STERIS_plc
+SYK,Stryker_Corporation,Stryker Corporation,Health Care,Health Care Equipment,S&P 500,Stryker_Corporation,Q2357515,Stryker_Corporation
+SMCI,Supermicro,Supermicro,Information Technology,"Technology Hardware, Storage & Peripherals",S&P 500,Supermicro,Q1817174,"Supermicro|SuperMicro|Super_Micro_Computer,_Inc."
+SYF,Synchrony_Financial,Synchrony Financial,Financials,Consumer Finance,S&P 500,Synchrony_Financial,Q18387139,Synchrony_Financial
+SNPS,Synopsys,Synopsys,Information Technology,Application Software,S&P 500,Synopsys,Q2303478,Synopsys
+SYY,Sysco,Sysco,Consumer Staples,Food Distributors,S&P 500,Sysco,Q2376711,Sysco
+TMUS,T-Mobile_US,T-Mobile US,Communication Services,Wireless Telecommunication Services,S&P 500,T-Mobile_US,Q3511885,T-Mobile_US|T-Mobile_USA
+TROW,T._Rowe_Price,T. Rowe Price,Financials,Asset Management & Custody Banks,S&P 500,T._Rowe_Price,Q3511946,T._Rowe_Price
+TRGP,Targa_Resources,Targa Resources,Energy,Oil & Gas Storage & Transportation,S&P 500,Targa_Resources,Q7685824,Targa_Resources
+TGT,Target_Corporation,Target Corporation,Consumer Staples,Consumer Staples Merchandise Retail,S&P 500,Target_Corporation,Q1046951,Target_Corporation
+TEL,TE_Connectivity,TE Connectivity,Information Technology,Electronic Manufacturing Services,S&P 500,TE_Connectivity,Q663452,TE_Connectivity
+TDY,Teledyne_Technologies,Teledyne Technologies,Information Technology,Electronic Equipment & Instruments,S&P 500,Teledyne_Technologies,Q7696127,Teledyne_Technologies
+TER,Teradyne,Teradyne,Information Technology,Semiconductor Materials & Equipment,S&P 500,Teradyne,Q2404292,Teradyne
+TXN,Texas_Instruments,Texas Instruments,Information Technology,Semiconductors,S&P 500,Texas_Instruments,Q193412,Texas_Instruments
+TPL,Texas_Pacific_Land_Corporation,Texas Pacific Land Corporation,Energy,Oil & Gas Exploration & Production,S&P 500,Texas_Pacific_Land_Corporation,Q7707900,Texas_Pacific_Land_Corporation|Texas_Pacific_Land_Trust
+TXT,Textron,Textron,Industrials,Aerospace & Defense,S&P 500,Textron,Q2140315,Textron
+TMO,Thermo_Fisher_Scientific,Thermo Fisher Scientific,Health Care,Life Sciences Tools & Services,S&P 500,Thermo_Fisher_Scientific,Q643674,Thermo_Fisher_Scientific
+TJX,TJX_Companies,TJX Companies,Consumer Discretionary,Apparel Retail,S&P 500,TJX,Q1285819,TJX|TJX_Companies
+TKO,TKO_Group_Holdings,TKO Group Holdings,Communication Services,Movies & Entertainment,S&P 500,TKO_Group_Holdings,Q120435068,TKO_Group_Holdings
+TSCO,Tractor_Supply,Tractor Supply,Consumer Discretionary,Other Specialty Retail,S&P 500,Tractor_Supply_Company,Q15109925,Tractor_Supply_Company
+TT,Trane_Technologies,Trane Technologies,Industrials,Building Products,S&P 500,Trane_Technologies,Q131744111,Trane_Technologies
+TDG,TransDigm_Group,TransDigm Group,Industrials,Aerospace & Defense,S&P 500,TransDigm_Group,Q7833612,TransDigm_Group
+TRV,The_Travelers_Companies,Travelers Companies (The),Financials,Property & Casualty Insurance,S&P 500,The_Travelers_Companies,Q942471,The_Travelers_Companies
+TRMB,Trimble_Inc.,Trimble Inc.,Information Technology,Application Software,S&P 500,Trimble_Inc.,Q2297063,Trimble_Inc.|Trimble_(company)|Trimble_Navigation
+TFC,Truist_Financial,Truist Financial,Financials,Diversified Banks,S&P 500,Truist,Q795486,Truist|Truist_Financial
+TWLO,Twilio,Twilio,Information Technology,Systems Software,S&P 500,Twilio,Q7858039,Twilio
+TYL,Tyler_Technologies,Tyler Technologies,Information Technology,Application Software,S&P 500,Tyler_Technologies,Q48802335,Tyler_Technologies
+TSN,Tyson_Foods,Tyson Foods,Consumer Staples,Packaged Foods & Meats,S&P 500,Tyson_Foods,Q1325987,Tyson_Foods
+USB,U.S._Bancorp,U.S. Bancorp,Financials,Diversified Banks,S&P 500,U.S._Bancorp,Q739084,U.S._Bancorp
+UBER,Uber,Uber,Industrials,Passenger Ground Transportation,S&P 500,Uber,Q780442,Uber|Uber_(company)
+UDR,"UDR,_Inc.","UDR, Inc.",Real Estate,Multi-Family Residential REITs,S&P 500,"UDR,_Inc.",Q27988153,"UDR,_Inc.|UDR_Inc"
+ULTA,Ulta_Beauty,Ulta Beauty,Consumer Discretionary,Other Specialty Retail,S&P 500,Ulta_Beauty,Q7880076,Ulta_Beauty
+UNP,Union_Pacific_Corporation,Union Pacific Corporation,Industrials,Rail Transportation,S&P 500,Union_Pacific_Corporation,Q20183163,Union_Pacific_Corporation
+UAL,United_Airlines_Holdings,United Airlines Holdings,Industrials,Passenger Airlines,S&P 500,United_Airlines,Q174769,United_Airlines
+UPS,United_Parcel_Service,United Parcel Service,Industrials,Air Freight & Logistics,S&P 500,United_Parcel_Service,Q155026,United_Parcel_Service
+URI,United_Rentals,United Rentals,Industrials,Trading Companies & Distributors,S&P 500,United_Rentals,Q7889101,United_Rentals
+UNH,UnitedHealth_Group,UnitedHealth Group,Health Care,Managed Health Care,S&P 500,UnitedHealth_Group,Q2103926,UnitedHealth_Group
+UHS,Universal_Health_Services,Universal Health Services,Health Care,Health Care Facilities,S&P 500,Universal_Health_Services,Q7893967,Universal_Health_Services
+VLO,Valero_Energy,Valero Energy,Energy,Oil & Gas Refining & Marketing,S&P 500,Valero_Energy,Q1283291,Valero_Energy
+VEEV,Veeva_Systems,Veeva Systems,Health Care,Health Care Technology,S&P 500,Veeva_Systems,Q24204493,Veeva_Systems
+VTR,Ventas_(company),Ventas,Real Estate,Health Care REITs,S&P 500,Ventas_(company),Q19865761,Ventas_(company)
+VLTO,Veralto,Veralto,Industrials,Environmental & Facilities Services,S&P 500,Veralto,Q124721239,Veralto
+VRSN,Verisign,Verisign,Information Technology,Internet Services & Infrastructure,S&P 500,Verisign,Q734338,Verisign
+VRSK,Verisk_Analytics,Verisk Analytics,Industrials,Research & Consulting Services,S&P 500,Verisk_Analytics,Q7921370,Verisk_Analytics
+VZ,Verizon,Verizon,Communication Services,Integrated Telecommunication Services,S&P 500,Verizon,Q467752,Verizon|Verizon_Communications
+VRT,Vertiv,Vertiv,Industrials,Electrical Components & Equipment,S&P 500,Vertiv,Q5370909,Vertiv
+VTRS,Viatris,Viatris,Health Care,Pharmaceuticals,S&P 500,Viatris,Q101983981,Viatris
+VICI,Vici_Properties,Vici Properties,Real Estate,Hotel & Resort REITs,S&P 500,Vici_Properties,Q54263910,Vici_Properties
+V,Visa_Inc.,Visa Inc.,Financials,Transaction & Payment Processing Services,S&P 500,Visa_Inc.,Q328840,Visa_Inc.
+VST,Vistra_Corp,Vistra Corp,Utilities,Electric Utilities,S&P 500,Vistra_Corp.,Q104158381,Vistra_Corp.|Vistra_Corp
+VMRK,Vivmark_Residential,Vivmark Residential,Real Estate,Multi-Family Residential REITs,S&P 500,Vivmark_Residential,Q187740,Vivmark_Residential|Equity_Residential
+VMC,Vulcan_Materials_Company,Vulcan Materials Company,Materials,Construction Materials,S&P 500,Vulcan_Materials_Company,Q1685287,Vulcan_Materials_Company
+VYLR,Vylor,Vylor,Consumer Staples,Agricultural Products & Services,S&P 500,Corteva,Q63197674,Corteva|Corteva_Agriscience
+WRB,W._R._Berkley_Corporation,W. R. Berkley Corporation,Financials,Property & Casualty Insurance,S&P 500,W._R._Berkley_Corporation,Q1369955,W._R._Berkley_Corporation
+GWW,W._W._Grainger,W. W. Grainger,Industrials,Industrial Machinery & Supplies & Components,S&P 500,W._W._Grainger,Q1627894,W._W._Grainger
+WAB,Wabtec,Wabtec,Industrials,Construction Machinery & Heavy Transportation Equipment,S&P 500,Wabtec,Q741707,Wabtec|Wabtec_Corporation
+WM,"Waste_Management,_Inc.",Waste Management,Industrials,Environmental & Facilities Services,S&P 500,"Waste_Management,_Inc.",Q2552219,"Waste_Management,_Inc.|WM_(Waste_Management)_(company)|Waste_Management_(company)|Waste_Management_(corporation)"
+WAT,Waters_Corporation,Waters Corporation,Health Care,Life Sciences Tools & Services,S&P 500,Waters_Corporation,Q1322011,Waters_Corporation
+WEC,WEC_Energy_Group,WEC Energy Group,Utilities,Electric Utilities,S&P 500,WEC_Energy_Group,Q8027166,WEC_Energy_Group
+WFC,Wells_Fargo,Wells Fargo,Financials,Diversified Banks,S&P 500,Wells_Fargo,Q744149,Wells_Fargo
+WELL,Welltower,Welltower,Real Estate,Health Care REITs,S&P 500,Welltower,Q20486917,Welltower
+WST,West_Pharmaceutical_Services,West Pharmaceutical Services,Health Care,Health Care Supplies,S&P 500,West_Pharmaceutical_Services,Q30338243,West_Pharmaceutical_Services
+WDC,Western_Digital,Western Digital,Information Technology,"Technology Hardware, Storage & Peripherals",S&P 500,Western_Digital,Q738770,Western_Digital
+WY,Weyerhaeuser,Weyerhaeuser,Real Estate,Timber REITs,S&P 500,Weyerhaeuser,Q1780382,Weyerhaeuser
+WSM,"Williams-Sonoma,_Inc.","Williams-Sonoma, Inc.",Consumer Discretionary,Homefurnishing Retail,S&P 500,"Williams-Sonoma,_Inc.",Q2581220,"Williams-Sonoma,_Inc.|Williams-Sonoma,_Inc"
+WMB,Williams_Companies,Williams Companies,Energy,Oil & Gas Storage & Transportation,S&P 500,Williams_Companies,Q930639,Williams_Companies
+WTW,Willis_Towers_Watson,Willis Towers Watson,Financials,Insurance Brokers,S&P 500,Willis_Towers_Watson,Q21189883,Willis_Towers_Watson
+WDAY,"Workday,_Inc.","Workday, Inc.",Information Technology,Application Software,S&P 500,"Workday,_Inc.",Q8034666,"Workday,_Inc."
+WYNN,Wynn_Resorts,Wynn Resorts,Consumer Discretionary,Casinos & Gaming,S&P 500,Wynn_Resorts,Q2274089,Wynn_Resorts
+XEL,Xcel_Energy,Xcel Energy,Utilities,Multi-Utilities,S&P 500,Xcel_Energy,Q1486956,Xcel_Energy
+XYL,Xylem_Inc.,Xylem Inc.,Industrials,Industrial Machinery & Supplies & Components,S&P 500,Xylem_Inc.,Q3146975,Xylem_Inc.
+ZBRA,Zebra_Technologies,Zebra Technologies,Information Technology,Electronic Equipment & Instruments,S&P 500,Zebra_Technologies,Q2443609,Zebra_Technologies
+ZBH,Zimmer_Biomet,Zimmer Biomet,Health Care,Health Care Equipment,S&P 500,Zimmer_Biomet,Q203552,Zimmer_Biomet
+ZTS,Zoetis,Zoetis,Health Care,Pharmaceuticals,S&P 500,Zoetis,Q8073337,Zoetis
+ASML,ASML,ASML,Information Technology,,Nasdaq-100,ASML,Q297879,ASML|ASML_Holding
+ALNY,Alnylam_Pharmaceuticals,Alnylam Pharmaceuticals,Health Care,,Nasdaq-100,Alnylam_Pharmaceuticals,Q16974682,Alnylam_Pharmaceuticals
+ARM,Arm_Holdings,Arm Holdings,Information Technology,,Nasdaq-100,Arm_Holdings,Q296782,Arm_Holdings|ARM_Holdings|Arm_(company)|Arm_Ltd.
+ALAB,Astera_Labs,Astera Labs,Information Technology,,Nasdaq-100,Astera_Labs,Q125028873,Astera_Labs|Astera
+CCEP,Coca-Cola_Europacific_Partners,Coca-Cola Europacific Partners,Consumer Staples,,Nasdaq-100,Coca-Cola_Europacific_Partners,Q20811256,Coca-Cola_Europacific_Partners|Coca-Cola_European_Partners
+CRWV,CoreWeave,CoreWeave,Information Technology,,Nasdaq-100,CoreWeave,Q121875386,CoreWeave|Draft:CoreWeave
+FER,Ferrovial,Ferrovial,Industrials,,Nasdaq-100,Ferrovial,Q1408037,Ferrovial
+MELI,MercadoLibre,MercadoLibre,Consumer Discretionary,,Nasdaq-100,MercadoLibre,Q950419,MercadoLibre|MercadoLibre.com|Mercado_Libre
+MSTR,MicroStrategy,MicroStrategy,Information Technology,,Nasdaq-100,MicroStrategy,Q1192211,MicroStrategy
+NBIS,Nebius_Group,Nebius Group,Communication Services,,Nasdaq-100,Nebius_Group,Q47120756,Nebius_Group
+PDD,Pinduoduo,Pinduoduo,Consumer Discretionary,,Nasdaq-100,Pinduoduo,Q47015652,Pinduoduo|Draft:Pinduoduo
+RKLB,Rocket_Lab,Rocket Lab,Industrials,,Nasdaq-100,Rocket_Lab,Q116319,Rocket_Lab
+SHOP,Shopify,Shopify,Information Technology,,Nasdaq-100,Shopify,Q7501150,Shopify
+SPCX,SpaceX,SpaceX,Industrials,,Nasdaq-100,SpaceX,Q193701,SpaceX
+TRI,Thomson_Reuters,Thomson Reuters,Industrials,,Nasdaq-100,Thomson_Reuters,Q1141267,Thomson_Reuters

@@ -92,6 +92,8 @@ def main() -> None:
             "titles": r["company_titles"].split("|"), "ticker": r["ticker"],
             "kind": "company", "from": r["company_from"],
         }
+        if not r["product_article"]:  # a company tracked by its own page only
+            continue
         articles[r["product_article"]] = {
             "titles": r["product_titles"].split("|"), "ticker": r["ticker"],
             "kind": "product", "from": r["product_from"],

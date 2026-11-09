@@ -1,0 +1,328 @@
+ticker,company,sector,company_article,product_article
+MMM,3M,Industrials,3M,Post-it_note
+MMM,3M,Industrials,3M,Scotch_Tape
+MMM,3M,Industrials,3M,Scotch-Brite
+MMM,3M,Industrials,3M,N95_respirator
+MMM,3M,Industrials,3M,Thinsulate
+ACN,Accenture,Information Technology,Accenture,Accenture_Song
+AES,AES Corporation,Utilities,AES_Corporation,AES_Andes
+AFL,Aflac,Financials,Aflac,Aflac_Duck
+ALGN,Align Technology,Health Care,Align_Technology,Invisalign
+ALGN,Align Technology,Health Care,Align_Technology,iTero
+ALL,Allstate,Financials,Allstate,Esurance
+ALL,Allstate,Financials,Allstate,Allstate_Mayhem
+AXP,American Express,Financials,American_Express,American_Express_Platinum_Card
+AXP,American Express,Financials,American_Express,American_Express_Gold_Card
+APP,AppLovin,Communication Services,AppLovin,AppLovin_MAX
+ANET,Arista Networks,Information Technology,Arista_Networks,Arista_EOS
+T,AT&T,Communication Services,AT&T,AT&T_Mobility
+T,AT&T,Communication Services,AT&T,Cricket_Wireless
+T,AT&T,Communication Services,AT&T,DirecTV
+ADP,Automatic Data Processing,Industrials,ADP_(company),ADP_National_Employment_Report
+AVY,Avery Dennison,Materials,Avery_Dennison,Avery_Dennison_labels
+AXON,Axon Enterprise,Industrials,Axon_Enterprise,Taser
+AXON,Axon Enterprise,Industrials,Axon_Enterprise,Axon_Body
+BALL,Ball Corporation,Materials,Ball_Corporation,Ball_jar
+BRK-B,Berkshire Hathaway,Financials,Berkshire_Hathaway,GEICO
+BRK-B,Berkshire Hathaway,Financials,Berkshire_Hathaway,Dairy_Queen
+BRK-B,Berkshire Hathaway,Financials,Berkshire_Hathaway,Duracell
+BRK-B,Berkshire Hathaway,Financials,Berkshire_Hathaway,See's_Candies
+BRK-B,Berkshire Hathaway,Financials,Berkshire_Hathaway,NetJets
+BBY,Best Buy,Consumer Discretionary,Best_Buy,Geek_Squad
+BLK,BlackRock,Financials,BlackRock,IShares
+BLK,BlackRock,Financials,BlackRock,Aladdin_(BlackRock)
+BSX,Boston Scientific,Health Care,Boston_Scientific,Watchman_(medical_device)
+AVGO,Broadcom,Information Technology,Broadcom,VMware
+AVGO,Broadcom,Information Technology,Broadcom,Broadcom_Tomahawk
+CDNS,Cadence Design Systems,Information Technology,Cadence_Design_Systems,Cadence_Allegro
+COF,Capital One,Financials,Capital_One,Capital_One_Venture
+CARR,Carrier Global,Industrials,Carrier_Global,Carrier_air_conditioner
+CARR,Carrier Global,Industrials,Carrier_Global,Kidde
+CAT,Caterpillar Inc.,Industrials,Caterpillar_Inc.,Caterpillar_D9
+CAT,Caterpillar Inc.,Industrials,Caterpillar_Inc.,Caterpillar_797
+CAT,Caterpillar Inc.,Industrials,Caterpillar_Inc.,Caterpillar_D11
+SCHW,Charles Schwab Corporation,Financials,Charles_Schwab_Corporation,TD_Ameritrade
+SCHW,Charles Schwab Corporation,Financials,Charles_Schwab_Corporation,Thinkorswim
+CHTR,Charter Communications,Communication Services,Charter_Communications,Spectrum_(brand)
+CVX,Chevron Corporation,Energy,Chevron_Corporation,Texaco
+CVX,Chevron Corporation,Energy,Chevron_Corporation,Chevron_with_Techron
+CI,Cigna,Health Care,The_Cigna_Group,Express_Scripts
+CI,Cigna,Health Care,The_Cigna_Group,Evernorth
+CTAS,Cintas,Industrials,Cintas,Cintas_uniforms
+CME,CME Group,Financials,CME_Group,Chicago_Mercantile_Exchange
+CME,CME Group,Financials,CME_Group,E-mini
+COIN,Coinbase,Financials,Coinbase,Coinbase_Wallet
+COIN,Coinbase,Financials,Coinbase,Base_(blockchain)
+ED,Consolidated Edison,Utilities,Consolidated_Edison,Con_Edison_steam_system
+STZ,Constellation Brands,Consumer Staples,Constellation_Brands,Corona_(beer)
+STZ,Constellation Brands,Consumer Staples,Constellation_Brands,Modelo_Especial
+STZ,Constellation Brands,Consumer Staples,Constellation_Brands,Pacifico_(beer)
+STZ,Constellation Brands,Consumer Staples,Constellation_Brands,Robert_Mondavi_Winery
+CEG,Constellation Energy,Utilities,Constellation_Energy,Calvert_Cliffs_Nuclear_Power_Plant
+GLW,Corning Inc.,Information Technology,Corning_Inc.,Gorilla_Glass
+GLW,Corning Inc.,Information Technology,Corning_Inc.,Pyrex
+GLW,Corning Inc.,Information Technology,Corning_Inc.,CorningWare
+COST,Costco,Consumer Staples,Costco,Kirkland_Signature
+COST,Costco,Consumer Staples,Costco,Costco_hot_dog
+CRWD,CrowdStrike,Information Technology,CrowdStrike,CrowdStrike_Falcon
+CRWD,CrowdStrike,Information Technology,CrowdStrike,2024_CrowdStrike-related_IT_outages
+CVS,CVS Health,Health Care,CVS_Health,CVS_Pharmacy
+CVS,CVS Health,Health Care,CVS_Health,Aetna
+CVS,CVS Health,Health Care,CVS_Health,MinuteClinic
+DHR,Danaher Corporation,Health Care,Danaher_Corporation,Beckman_Coulter
+DHR,Danaher Corporation,Health Care,Danaher_Corporation,Cepheid_(company)
+DE,Deere & Company,Industrials,John_Deere,John_Deere_tractors
+DE,Deere & Company,Industrials,John_Deere,John_Deere_4020
+DELL,Dell Technologies,Information Technology,Dell_Technologies,Alienware
+DELL,Dell Technologies,Information Technology,Dell_Technologies,Dell_XPS
+DELL,Dell Technologies,Information Technology,Dell_Technologies,Dell_Inspiron
+DELL,Dell Technologies,Information Technology,Dell_Technologies,Dell_Latitude
+DELL,Dell Technologies,Information Technology,Dell_Technologies,PowerEdge
+DAL,Delta Air Lines,Industrials,Delta_Air_Lines,Delta_SkyMiles
+DAL,Delta Air Lines,Industrials,Delta_Air_Lines,Delta_Connection
+DXCM,Dexcom,Health Care,Dexcom,Dexcom_G7
+DLTR,Dollar Tree,Consumer Staples,Dollar_Tree,Family_Dollar
+DASH,DoorDash,Consumer Discretionary,DoorDash,Wolt
+DASH,DoorDash,Consumer Discretionary,DoorDash,Caviar_(company)
+DOW,Dow Inc.,Materials,Dow_Chemical_Company,Styrofoam
+DOW,Dow Inc.,Materials,Dow_Chemical_Company,Saran_(plastic)
+DUK,Duke Energy,Utilities,Duke_Energy,Duke_Energy_Florida
+DD,DuPont,Industrials,DuPont,Kevlar
+DD,DuPont,Industrials,DuPont,Tyvek
+DD,DuPont,Industrials,DuPont,Nomex
+DD,DuPont,Industrials,DuPont,Corian
+EBAY,eBay Inc.,Consumer Discretionary,EBay,StubHub
+ECHO,EchoStar,Communication Services,EchoStar,Dish_Network
+ECHO,EchoStar,Communication Services,EchoStar,Boost_Mobile
+ECHO,EchoStar,Communication Services,EchoStar,Sling_TV
+ECL,Ecolab,Materials,Ecolab,Nalco_Water
+EW,Edwards Lifesciences,Health Care,Edwards_Lifesciences,Sapien_3
+ELV,Elevance Health,Health Care,Elevance_Health,Anthem_Blue_Cross
+EXC,Exelon,Utilities,Exelon,Commonwealth_Edison
+EXC,Exelon,Utilities,Exelon,PECO_Energy_Company
+XOM,ExxonMobil,Energy,ExxonMobil,Esso
+XOM,ExxonMobil,Energy,ExxonMobil,Mobil
+XOM,ExxonMobil,Energy,ExxonMobil,Mobil_1
+FDX,FedEx,Industrials,FedEx,FedEx_Express
+FDX,FedEx,Industrials,FedEx,FedEx_Ground
+FDX,FedEx,Industrials,FedEx,FedEx_Office
+FTNT,Fortinet,Information Technology,Fortinet,FortiGate
+FOXA,Fox Corporation,Communication Services,Fox_Corporation,Fox_News
+FOXA,Fox Corporation,Communication Services,Fox_Corporation,Fox_Broadcasting_Company
+FOXA,Fox Corporation,Communication Services,Fox_Corporation,Tubi
+FOXA,Fox Corporation,Communication Services,Fox_Corporation,Fox_Sports_(United_States)
+FCX,Freeport-McMoRan,Materials,Freeport-McMoRan,Grasberg_mine
+GE,GE Aerospace,Industrials,GE_Aerospace,General_Electric_GE9X
+GE,GE Aerospace,Industrials,GE_Aerospace,CFM_International_LEAP
+GE,GE Aerospace,Industrials,GE_Aerospace,General_Electric_GE90
+GEHC,GE HealthCare,Health Care,GE_HealthCare,Vscan
+GEV,GE Vernova,Industrials,GE_Vernova,Haliade-X
+GEN,Gen Digital,Information Technology,Gen_Digital,Norton_AntiVirus
+GEN,Gen Digital,Information Technology,Gen_Digital,Avast_Antivirus
+GEN,Gen Digital,Information Technology,Gen_Digital,LifeLock
+GEN,Gen Digital,Information Technology,Gen_Digital,CCleaner
+GNRC,Generac,Industrials,Generac,Generac_generator
+HPE,Hewlett Packard Enterprise,Information Technology,Hewlett_Packard_Enterprise,Aruba_Networks
+HPE,Hewlett Packard Enterprise,Information Technology,Hewlett_Packard_Enterprise,Frontier_(supercomputer)
+HPE,Hewlett Packard Enterprise,Information Technology,Hewlett_Packard_Enterprise,El_Capitan_(supercomputer)
+HD,Home Depot (The),Consumer Discretionary,Home_Depot,Husky_(tools)
+HD,Home Depot (The),Consumer Discretionary,Home_Depot,Ryobi
+HONA,Honeywell Aerospace,Industrials,Honeywell_Aerospace,Honeywell_HTF7000
+HON,Honeywell Technologies,Industrials,Honeywell,Honeywell_thermostat
+HST,Host Hotels & Resorts,Real Estate,Host_Hotels_&_Resorts,Hotel_del_Coronado
+HPQ,HP Inc.,Information Technology,HP_Inc.,HP_Spectre
+HPQ,HP Inc.,Information Technology,HP_Inc.,HP_Pavilion
+HPQ,HP Inc.,Information Technology,HP_Inc.,HP_LaserJet
+HPQ,HP Inc.,Information Technology,HP_Inc.,HP_Envy
+HPQ,HP Inc.,Information Technology,HP_Inc.,HP_Omen
+HUM,Humana,Health Care,Humana,Humana_Military
+HII,Huntington Ingalls Industries,Industrials,Huntington_Ingalls_Industries,Newport_News_Shipbuilding
+HII,Huntington Ingalls Industries,Industrials,Huntington_Ingalls_Industries,Ingalls_Shipbuilding
+IBM,IBM,Information Technology,IBM,IBM_Watson
+IBM,IBM,Information Technology,IBM,IBM_Z
+IBM,IBM,Information Technology,IBM,Red_Hat
+IBM,IBM,Information Technology,IBM,Red_Hat_Enterprise_Linux
+IBM,IBM,Information Technology,IBM,IBM_Quantum_System_One
+IDXX,Idexx Laboratories,Health Care,Idexx_Laboratories,SNAP_test
+ILMN,"Illumina, Inc.",Health Care,"Illumina,_Inc.",Illumina_dye_sequencing
+INCY,Incyte,Health Care,Incyte,Ruxolitinib
+PODD,Insulet Corporation,Health Care,Insulet_Corporation,Omnipod
+ICE,Intercontinental Exchange,Financials,Intercontinental_Exchange,New_York_Stock_Exchange
+IP,International Paper,Materials,International_Paper,Hammermill_paper
+JNJ,Johnson & Johnson,Health Care,Johnson_&_Johnson,Tylenol
+JNJ,Johnson & Johnson,Health Care,Johnson_&_Johnson,Listerine
+JNJ,Johnson & Johnson,Health Care,Johnson_&_Johnson,Band-Aid
+JNJ,Johnson & Johnson,Health Care,Johnson_&_Johnson,Stelara
+JNJ,Johnson & Johnson,Health Care,Johnson_&_Johnson,Darzalex
+JPM,JPMorgan Chase,Financials,JPMorgan_Chase,Chase_Bank
+JPM,JPMorgan Chase,Financials,JPMorgan_Chase,Chase_Sapphire
+KR,Kroger,Consumer Staples,Kroger,Ralphs
+KR,Kroger,Consumer Staples,Kroger,Fred_Meyer
+KR,Kroger,Consumer Staples,Kroger,Harris_Teeter
+KR,Kroger,Consumer Staples,Kroger,King_Soopers
+LHX,L3Harris,Industrials,L3Harris,AN/PRC-152
+LHX,L3Harris,Industrials,L3Harris,L3Harris_EA-37B_Compass_Call
+LVS,Las Vegas Sands,Consumer Discretionary,Las_Vegas_Sands,Marina_Bay_Sands
+LVS,Las Vegas Sands,Consumer Discretionary,Las_Vegas_Sands,The_Venetian_Macao
+LII,Lennox International,Industrials,Lennox_International,Lennox_furnace
+LOW,Lowe's,Consumer Discretionary,Lowe's,Kobalt_(tools)
+LULU,Lululemon Athletica,Consumer Discretionary,Lululemon,Mirror_(company)
+MPC,Marathon Petroleum,Energy,Marathon_Petroleum,ARCO
+MPC,Marathon Petroleum,Energy,Marathon_Petroleum,Speedway_LLC
+MAS,Masco,Industrials,Masco,Behr_Process_Corporation
+MAS,Masco,Industrials,Masco,Delta_Faucet_Company
+MA,Mastercard,Financials,Mastercard,Maestro_(debit_card)
+MA,Mastercard,Financials,Mastercard,Cirrus_(interbank_network)
+MDT,Medtronic,Health Care,Medtronic,MiniMed
+MDT,Medtronic,Health Care,Medtronic,Micra_(pacemaker)
+MGM,MGM Resorts,Consumer Discretionary,MGM_Resorts_International,Bellagio_(resort)
+MGM,MGM Resorts,Consumer Discretionary,MGM_Resorts_International,MGM_Grand_Las_Vegas
+MGM,MGM Resorts,Consumer Discretionary,MGM_Resorts_International,BetMGM
+MU,Micron Technology,Information Technology,Micron_Technology,Crucial_Technology
+MRNA,Moderna,Health Care,Moderna,Moderna_COVID-19_vaccine
+MRNA,Moderna,Health Care,Moderna,MRNA-1283
+MCO,Moody's Corporation,Financials,Moody's_Corporation,Moody's_Analytics
+MSI,Motorola Solutions,Information Technology,Motorola_Solutions,Motorola_Solutions_APX
+MSCI,MSCI,Financials,MSCI,MSCI_World
+MSCI,MSCI,Financials,MSCI,MSCI_EAFE
+NDAQ,"Nasdaq, Inc.",Financials,"Nasdaq,_Inc.",Nasdaq-100
+NDAQ,"Nasdaq, Inc.",Financials,"Nasdaq,_Inc.",Nasdaq_Composite
+NEM,Newmont,Materials,Newmont,Boddington_Gold_Mine
+NEE,NextEra Energy,Utilities,NextEra_Energy,Florida_Power_&_Light
+OKTA,"Okta, Inc.",Information Technology,"Okta,_Inc.",Auth0
+OMC,Omnicom Group,Communication Services,Omnicom_Group,BBDO
+OMC,Omnicom Group,Communication Services,Omnicom_Group,DDB_Worldwide
+OMC,Omnicom Group,Communication Services,Omnicom_Group,TBWA_Worldwide
+OTIS,Otis Worldwide,Industrials,Otis_Worldwide,Otis_Elevator_Company
+PCAR,Paccar,Industrials,Paccar,Kenworth
+PCAR,Paccar,Industrials,Paccar,Peterbilt
+PCAR,Paccar,Industrials,Paccar,DAF_Trucks
+PLTR,Palantir Technologies,Information Technology,Palantir,Palantir_Gotham
+PLTR,Palantir Technologies,Information Technology,Palantir,Palantir_Foundry
+PANW,Palo Alto Networks,Information Technology,Palo_Alto_Networks,Prisma_Cloud
+PSX,Phillips 66,Energy,Phillips_66,76_(gas_station)
+PSX,Phillips 66,Energy,Phillips_66,Conoco
+PPG,PPG Industries,Materials,PPG_Industries,Glidden
+PPG,PPG Industries,Materials,PPG_Industries,Olympic_paint
+PGR,Progressive Corporation,Financials,Progressive_Corporation,Flo_(Progressive)
+PTC,PTC Inc.,Information Technology,PTC_Inc.,Creo_(software)
+PTC,PTC Inc.,Information Technology,PTC_Inc.,Onshape
+RL,Ralph Lauren Corporation,Consumer Discretionary,Ralph_Lauren_Corporation,Polo_Ralph_Lauren
+RMD,ResMed,Health Care,ResMed,AirSense
+HOOD,Robinhood Markets,Financials,Robinhood_(company),Robinhood_(app)
+ROL,"Rollins, Inc.",Industrials,"Rollins,_Inc.",Orkin
+ROST,Ross Stores,Consumer Discretionary,Ross_Stores,Ross_Dress_for_Less
+ROST,Ross Stores,Consumer Discretionary,Ross_Stores,DD's_Discounts
+RTX,RTX Corporation,Industrials,RTX_Corporation,Pratt_&_Whitney
+RTX,RTX Corporation,Industrials,RTX_Corporation,Collins_Aerospace
+RTX,RTX Corporation,Industrials,RTX_Corporation,Raytheon
+RTX,RTX Corporation,Industrials,RTX_Corporation,FIM-92_Stinger
+RTX,RTX Corporation,Industrials,RTX_Corporation,MIM-104_Patriot
+SPGI,S&P Global,Financials,S&P_Global,S&P_500
+SPGI,S&P Global,Financials,S&P_Global,Dow_Jones_Industrial_Average
+SNDK,Sandisk,Information Technology,Sandisk,SanDisk_Extreme
+SNDK,Sandisk,Information Technology,Sandisk,SD_card
+STX,Seagate Technology,Information Technology,Seagate_Technology,Seagate_Barracuda
+SHW,Sherwin-Williams,Materials,Sherwin-Williams,Dutch_Boy_Paints
+SHW,Sherwin-Williams,Materials,Sherwin-Williams,Valspar
+SHW,Sherwin-Williams,Materials,Sherwin-Williams,Krylon
+SPG,Simon Property Group,Real Estate,Simon_Property_Group,King_of_Prussia_(mall)
+SPG,Simon Property Group,Real Estate,Simon_Property_Group,Woodbury_Common_Premium_Outlets
+SPG,Simon Property Group,Real Estate,Simon_Property_Group,The_Forum_Shops_at_Caesars
+SKYD,Skydance,Communication Services,Skydance,Paramount+
+SKYD,Skydance,Communication Services,Skydance,CBS
+SKYD,Skydance,Communication Services,Skydance,MTV
+SKYD,Skydance,Communication Services,Skydance,Nickelodeon
+SKYD,Skydance,Communication Services,Skydance,Pluto_TV
+SNA,Snap-on,Industrials,Snap-on,Snap-on_tools
+SOLV,Solventum,Health Care,Solventum,Littmann_(stethoscope)
+SO,Southern Company,Utilities,Southern_Company,Vogtle_Electric_Generating_Plant
+SO,Southern Company,Utilities,Southern_Company,Georgia_Power
+LUV,Southwest Airlines,Industrials,Southwest_Airlines,Rapid_Rewards
+SWK,Stanley Black & Decker,Industrials,Stanley_Black_&_Decker,DeWalt
+SWK,Stanley Black & Decker,Industrials,Stanley_Black_&_Decker,Craftsman_(tools)
+SWK,Stanley Black & Decker,Industrials,Stanley_Black_&_Decker,Black_&_Decker
+SYK,Stryker Corporation,Health Care,Stryker_Corporation,Mako_robot
+SYF,Synchrony Financial,Financials,Synchrony_Financial,CareCredit
+SNPS,Synopsys,Information Technology,Synopsys,Synopsys_Design_Compiler
+TMUS,T-Mobile US,Communication Services,T-Mobile_US,Metro_by_T-Mobile
+TMUS,T-Mobile US,Communication Services,T-Mobile_US,Mint_Mobile
+TGT,Target Corporation,Consumer Staples,Target_Corporation,Target_Circle
+TGT,Target Corporation,Consumer Staples,Target_Corporation,Up_&_Up
+TXN,Texas Instruments,Information Technology,Texas_Instruments,TI-84_Plus_series
+TXN,Texas Instruments,Information Technology,Texas_Instruments,TI-83_series
+TXN,Texas Instruments,Information Technology,Texas_Instruments,TI-Nspire_series
+TXT,Textron,Industrials,Textron,Cessna
+TXT,Textron,Industrials,Textron,Bell_Textron
+TXT,Textron,Industrials,Textron,Beechcraft
+TXT,Textron,Industrials,Textron,Cessna_Citation
+TMO,Thermo Fisher Scientific,Health Care,Thermo_Fisher_Scientific,Fisher_Scientific
+TMO,Thermo Fisher Scientific,Health Care,Thermo_Fisher_Scientific,Applied_Biosystems
+TMO,Thermo Fisher Scientific,Health Care,Thermo_Fisher_Scientific,Invitrogen
+TJX,TJX Companies,Consumer Discretionary,TJX,TJ_Maxx
+TJX,TJX Companies,Consumer Discretionary,TJX,Marshalls
+TJX,TJX Companies,Consumer Discretionary,TJX,HomeGoods
+TJX,TJX Companies,Consumer Discretionary,TJX,TK_Maxx
+TKO,TKO Group Holdings,Communication Services,TKO_Group_Holdings,Ultimate_Fighting_Championship
+TKO,TKO Group Holdings,Communication Services,TKO_Group_Holdings,WWE
+TSCO,Tractor Supply,Consumer Discretionary,Tractor_Supply_Company,Petsense
+TT,Trane Technologies,Industrials,Trane_Technologies,Trane
+TT,Trane Technologies,Industrials,Trane_Technologies,Thermo_King
+TRV,Travelers Companies (The),Financials,The_Travelers_Companies,Travelers_umbrella
+TRMB,Trimble Inc.,Information Technology,Trimble_Inc.,SketchUp
+TWLO,Twilio,Information Technology,Twilio,SendGrid
+TSN,Tyson Foods,Consumer Staples,Tyson_Foods,Jimmy_Dean
+TSN,Tyson Foods,Consumer Staples,Tyson_Foods,Hillshire_Brands
+TSN,Tyson Foods,Consumer Staples,Tyson_Foods,Ball_Park_Franks
+TSN,Tyson Foods,Consumer Staples,Tyson_Foods,Tyson_chicken_nuggets
+UBER,Uber,Industrials,Uber,Uber_Eats
+UAL,United Airlines Holdings,Industrials,United_Airlines,MileagePlus
+UAL,United Airlines Holdings,Industrials,United_Airlines,United_Express
+UPS,United Parcel Service,Industrials,United_Parcel_Service,UPS_Airlines
+UPS,United Parcel Service,Industrials,United_Parcel_Service,The_UPS_Store
+UNH,UnitedHealth Group,Health Care,UnitedHealth_Group,Optum
+UNH,UnitedHealth Group,Health Care,UnitedHealth_Group,UnitedHealthcare
+VLO,Valero Energy,Energy,Valero_Energy,Valero_(gas_station)
+VRSN,Verisign,Information Technology,Verisign,.com
+VZ,Verizon,Communication Services,Verizon,Verizon_(wireless_service)
+VZ,Verizon,Communication Services,Verizon,Fios
+VZ,Verizon,Communication Services,Verizon,Visible_(wireless_service)
+VTRS,Viatris,Health Care,Viatris,EpiPen
+VTRS,Viatris,Health Care,Viatris,Viagra
+V,Visa Inc.,Financials,Visa_Inc.,Visa_Electron
+V,Visa Inc.,Financials,Visa_Inc.,Visa_Debit
+V,Visa Inc.,Financials,Visa_Inc.,Plus_(interbank_network)
+VST,Vistra Corp,Utilities,Vistra_Corp.,Comanche_Peak_Nuclear_Power_Plant
+VYLR,Vylor,Consumer Staples,Corteva,Pioneer_Hi-Bred
+WAB,Wabtec,Industrials,Wabtec,Evolution_Series
+WM,Waste Management,Industrials,"Waste_Management,_Inc.",Waste_Management_Phoenix_Open
+WFC,Wells Fargo,Financials,Wells_Fargo,Wells_Fargo_Advisors
+WDC,Western Digital,Information Technology,Western_Digital,WD_Black
+WSM,"Williams-Sonoma, Inc.",Consumer Discretionary,"Williams-Sonoma,_Inc.",Pottery_Barn
+WSM,"Williams-Sonoma, Inc.",Consumer Discretionary,"Williams-Sonoma,_Inc.",West_Elm
+WSM,"Williams-Sonoma, Inc.",Consumer Discretionary,"Williams-Sonoma,_Inc.",Williams_Sonoma
+WYNN,Wynn Resorts,Consumer Discretionary,Wynn_Resorts,Wynn_Las_Vegas
+WYNN,Wynn Resorts,Consumer Discretionary,Wynn_Resorts,Encore_Las_Vegas
+WYNN,Wynn Resorts,Consumer Discretionary,Wynn_Resorts,Encore_Boston_Harbor
+ZBRA,Zebra Technologies,Information Technology,Zebra_Technologies,Zebra_printers
+ZTS,Zoetis,Health Care,Zoetis,Apoquel
+ZTS,Zoetis,Health Care,Zoetis,Simparica
+ZTS,Zoetis,Health Care,Zoetis,Revolution_(medication)
+ASML,ASML,Information Technology,ASML,Extreme_ultraviolet_lithography
+ALNY,Alnylam Pharmaceuticals,Health Care,Alnylam_Pharmaceuticals,Patisiran
+ALNY,Alnylam Pharmaceuticals,Health Care,Alnylam_Pharmaceuticals,Vutrisiran
+ARM,Arm Holdings,Information Technology,Arm_Holdings,ARM_Cortex-A
+ARM,Arm Holdings,Information Technology,Arm_Holdings,ARM_architecture_family
+CCEP,Coca-Cola Europacific Partners,Consumer Staples,Coca-Cola_Europacific_Partners,Coca-Cola
+MELI,MercadoLibre,Consumer Discretionary,MercadoLibre,Mercado_Pago
+PDD,Pinduoduo,Consumer Discretionary,Pinduoduo,Temu
+RKLB,Rocket Lab,Industrials,Rocket_Lab,Rocket_Lab_Electron
+RKLB,Rocket Lab,Industrials,Rocket_Lab,Rocket_Lab_Neutron
+SHOP,Shopify,Information Technology,Shopify,Shop_Pay
+SPCX,SpaceX,Industrials,SpaceX,Falcon_9
+SPCX,SpaceX,Industrials,SpaceX,SpaceX_Starship
+SPCX,SpaceX,Industrials,SpaceX,Starlink
+SPCX,SpaceX,Industrials,SpaceX,SpaceX_Dragon_2
+SPCX,SpaceX,Industrials,SpaceX,Falcon_Heavy
+TRI,Thomson Reuters,Industrials,Thomson_Reuters,Reuters
+TRI,Thomson Reuters,Industrials,Thomson_Reuters,Westlaw

@@ -259,6 +259,9 @@ def main() -> None:
 
     # Live picks from LIVE_ALL_FROM: version A trained on and choosing from all 112
     everyone = pd.read_csv(DATA_DIR / "panel_monthly.csv")
+    # The live strategy covers the 112 (docs/strategy_plan.md); the 435 added on
+    # 9 Nov 2026 are only in the broad-universe tests unless a switch is recorded
+    everyone = everyone[everyone["cohort"].isin(["original", "expansion"])].reset_index(drop=True)
     everyone["rank_next"] = everyone.groupby("month")["ret_next"].rank(pct=True)  # across all 112
     all_scores = walk_forward(rank_within_month(everyone, VERSIONS["products"]), VERSIONS["products"])
     live_112 = []

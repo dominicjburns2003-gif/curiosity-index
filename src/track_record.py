@@ -47,7 +47,7 @@ def main() -> None:
     prices = pd.read_csv(DATA_DIR / "prices_daily.csv", index_col="date", parse_dates=True)
     universe = pd.read_csv(UNIVERSE_PATH)
     original_68 = sorted(universe.loc[universe["cohort"] == "original", "ticker"].unique())
-    all_112 = sorted(universe["ticker"].unique())
+    all_112 = sorted(universe.loc[universe["cohort"].isin(["original", "expansion"]), "ticker"].unique())
     last_close = prices.index.max()
 
     value = {"strategy": 100.0, "average_company": 100.0, "spy": 100.0}

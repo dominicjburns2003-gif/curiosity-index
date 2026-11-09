@@ -92,3 +92,53 @@ from 2022, retrained each January), for three groups:
   + products versions of test 2); once the download is complete, the
   + click-through version of test 2 and test 5. Nothing in the first part is
   changed after the second.
+
+## Results, part 1 (added on 9 Nov 2026, after running `src/broad_tests.py` once)
+
+January 2022 to October 2026 (57 months) for the strategy and long-short;
+2017 to 2026 for the sorts; 36 quarters for earnings. Per cent a month (t).
+Insulet (PODD) turned out to have no Wikipedia page; it was in this run with
+no attention data, and is left out of the universe from now on.
+
+| Test | Original 68 (for comparison) | Broad new (435) | Broad new, with products (72) | All (547) |
+|---|---|---|---|---|
+| 1. Strategy vs own average, equal amounts | +0.31 (1.0) | **+0.28 (2.2)** | −0.36 (−1.7) | +0.28 (2.0) |
+| 1. Strategy vs own average, by size | | +0.33 (1.4) | −0.29 (−0.9) | +0.04 (0.1) |
+| 2. Long-short, company only | +0.05 (0.1) | **+0.55 (2.5)** | −0.78 (−2.0) | +0.35 (1.6) |
+| 2. Long-short, + products | +0.51 (0.9) | **+0.52 (2.6)** | −0.71 (−1.8) | **+0.54 (2.2)** |
+| 3. Sort: abnormal company attention | | +0.32 (1.9) | 0.00 (0.0) | +0.26 (1.6) |
+| 3. Sort: company attention growth | | +0.31 (1.7) | −0.22 (−0.6) | +0.25 (1.4) |
+| 3. Sort: product attention growth | | +0.03 (0.1) | +0.03 (0.1) | −0.01 (0.0) |
+| 3. Sort: products ahead of company | +0.46 (1.8) | +0.04 (0.1) | +0.04 (0.1) | +0.09 (0.5) |
+| 4. Beat rate, busiest minus quietest products | −4.0 pts (−2.1) | +2.8 pts (1.1) | +2.8 pts (1.1) | −1.0 pts (−0.7) |
+| 4. Reaction, busiest minus quietest | | +0.45 (1.2) | +0.45 (1.2) | −0.04 (−0.2) |
+| 4. Beat rate, regression on product surge | −3.9 pts (−2.5) | +1.7 pts (1.1) | +1.7 pts (1.1) | −1.2 pts (−1.0) |
+
+(Test 4 needs product pages, so "broad new" and "broad new, with products"
+are the same 72 companies there.)
+
+**Verdicts, by the rule fixed in advance:**
+
+- **Strategy (1): replicates, and is strong in the new companies** (+0.28% a
+  month, t 2.2). But it comes entirely from the companies **without** product
+  pages: in the 72 new companies with product pages it is negative. So the
+  edge is not product curiosity; the model is picking up company attention
+  and the standard stock measures in banks, utilities, industrials and the
+  like. Weighted by size it is not significant.
+- **Products adding to company attention (2): does not replicate.** In the
+  new companies the model with products does no better than company
+  attention alone (+0.52 against +0.55).
+- **Product signals on their own (3): do not replicate** (all about zero).
+  **Company attention does better** in the new companies (abnormal company
+  attention +0.32, t 1.9), unlike in the 112.
+- **Product buzz before results means fewer beats (4): does not replicate.**
+  In the new companies it points the other way (+2.8 points, t 1.1), and
+  pooled over all 547 it is no longer significant (−1.0 points, t −0.7). In
+  the same run, after Yahoo revised 161 past analyst estimates, the 112's own
+  result moved from t −2.8 to t −2.4.
+
+**Overall:** on a much larger and fairer set, the product-curiosity findings
+do not hold up; what shows up instead is a modest effect of attention to the
+company itself, mainly among companies the public does not otherwise follow.
+Many tests have now been run, so even t 2.2 is weaker evidence than it looks.
+Part 2 (click-through) follows once the download is complete.

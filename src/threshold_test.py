@@ -57,6 +57,7 @@ def threshold_portfolio(panel: pd.DataFrame, score: pd.Series, spy_next: pd.Seri
 
 def main() -> None:
     panel = pd.read_csv(DATA_DIR / "panel_monthly.csv")
+    panel = panel[panel["cohort"].isin(["original", "expansion"])].reset_index(drop=True)  # the 112
     panel["rank_next"] = panel.groupby("month")["ret_next"].rank(pct=True)  # across all 112
     features = wf.VERSIONS["products"]
     score = as_score(wf.walk_forward(wf.rank_within_month(panel, features), features), panel)

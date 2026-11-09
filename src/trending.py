@@ -56,7 +56,7 @@ def main() -> None:
     price_change = trading.loc[price_end] / trading.loc[price_start] - 1
 
     rows = []
-    for r in universe.itertuples():
+    for r in universe[universe["product_article"].notna()].itertuples():
         rows.append({
             "product": r.product_article, "company": r.company, "ticker": r.ticker, "sector": r.sector,
             "views_week": this_week[r.product_article], "usual_week": usual_week[r.product_article],

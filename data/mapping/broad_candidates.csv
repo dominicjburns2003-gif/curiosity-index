@@ -1,0 +1,559 @@
+ticker,company_article,product_article,product_qid,relation,sitelinks,types
+A,Agilent_Technologies,5DX,Q4641049,manufacturer,1,robot
+A,Agilent_Technologies,Agilent_ChemStation,Q4692545,developer,1,chromatography software
+ABNB,Airbnb,Lottie_(file_format),Q98855048,developer,5,vector graphics file format
+ABNB,Airbnb,Presto_(SQL_query_engine),Q22328598,developer,5,free software
+ABNB,Airbnb,DailyBooth,Q13512397,parent organisation,3,website
+ACN,Accenture,Nokia_Browser_for_Symbian,Q1046944,developer,7,mobile browser
+ACN,Accenture,Ookla,Q86753573,owned by,5,business; enterprise; mobile app developer; web developer
+ACN,Accenture,Droga5,Q5308179,owned by,3,advertising agency; business
+ACN,Accenture,TradElect,Q16957867,developer,1,software
+AEE,Ameren,Union_Electric_Company,Q7885672,parent organisation,2,business; electricity supply company; natural gas distributor
+AEP,American_Electric_Power,John_E._Amos_Power_Plant,Q11978950,owned by,7,coal-fired power station
+AEP,American_Electric_Power,Rockport_Generating_Station,Q3438152,owned by,5,coal-fired power station
+AEP,American_Electric_Power,Cardinal_Power_Plant,Q19372239,owned by,4,coal-fired power station
+AES,AES_Corporation,Drax_Power_Station,Q1629859,owned by,9,biomass-fired power station
+AES,AES_Corporation,Lalpir_Power,Q15983598,owned by,6,business; oil-fired power station
+AKAM,Akamai_Technologies,Linode,Q6554704,parent organisation,10,business; computing platform
+AKAM,Akamai_Technologies,Red_Swoosh,Q7303572,owned by,3,software company
+AKAM,Akamai_Technologies,SOASTA,Q7391983,parent organisation,1,business; software company
+ALGN,Align_Technology,Invisalign,Q23766506,owned by,5,brand; trademark
+ALLE,Allegion,Costruzioni_Italiane_Serrature_e_Affini,Q3695821,parent organisation,4,business; manufacturing company; private security company; società per azioni
+ALLE,Allegion,Kryptonite_lock,Q6439720,manufacturer,1,brand
+AMT,American_Tower,Vodafone_Idea,Q1656673,owned by,10,telecommunications company
+AOS,A._O._Smith,Smith_Flyer,Q659133,manufacturer,8,car model
+APH,Amphenol,BNC_connector,Q906097,manufacturer,28,RF connector
+APH,Amphenol,Amphenol_connector,Q4748155,manufacturer,2,
+APO,Apollo_Global_Management,Blackwater_(company),Q337233,parent organisation,38,business; enterprise; private military company
+APO,Apollo_Global_Management,McGraw_Hill,Q17153156,parent organisation,17,book publisher; business; enterprise
+ARM,Arm_Holdings,Clang,Q864915,developer,26,compiler
+ARM,Arm_Holdings,Mali_(processor),Q2620412,developer,19,model series
+ARM,Arm_Holdings,ARM_Cortex-A9,Q1997451,developer,15,integrated circuit model
+ARM,Arm_Holdings,ARM_Cortex-A7,Q2819372,developer,14,product model
+ARM,Arm_Holdings,ARM_Cortex-A8,Q4653852,developer,14,product model
+ARM,Arm_Holdings,ARM_Cortex-A5,Q1101415,developer,12,product model
+ARM,Arm_Holdings,Mbed,Q17144173,developer,10,software
+ARM,Arm_Holdings,ARM_Cortex-A,Q2819366,manufacturer,8,model series
+AVGO,Broadcom,Easytrieve,Q1278381,developer,3,report generator
+AWK,American_Water_Works,Kentucky_American_Water,Q65070779,parent organisation,2,subsidiary company; water utility
+AXON,Axon_Enterprise,Taser,Q9137247,manufacturer,29,firearm model
+AXP,American_Express,Traveller's_cheque,Q1061429,manufacturer,26,
+BAC,Bank_of_America,Bank_of_America_Merchant_Services,Q47504638,parent organisation,1,business; enterprise; merchant services; payment processing
+BALL,Ball_Corporation,Ball_Aerospace_&_Technologies,Q805116,parent organisation,18,aerospace manufacturer; former entity; subsidiary company
+BBY,Best_Buy,Dynex,Q23672405,manufacturer,1,brand
+BBY,Best_Buy,Lively_(company),Q5598606,parent organisation,1,business; mobile virtual network operator
+BE,Bloom_Energy,Bloom_Energy_Server,Q885321,manufacturer,5,product model
+BNY,BNY,Irving_Trust,Q6074831,subsidiary,2,business; credit institution; global systemically important bank
+BRK-B,Berkshire_Hathaway,Duracell,Q858702,manufacturer,41,brand; business; trademark
+BRK-B,Berkshire_Hathaway,Dairy_Queen,Q1141226,subsidiary,32,fast food restaurant chain; ice cream parlor chain; restaurant chain
+BRK-B,Berkshire_Hathaway,Business_Wire,Q636192,parent organisation,15,business; information resource; website
+BRK-B,Berkshire_Hathaway,The_Buffalo_News,Q1390786,subsidiary,13,daily newspaper; newspaper
+BRK-B,Berkshire_Hathaway,NetJets,Q1504132,parent organisation,12,airline; business
+BRK-B,Berkshire_Hathaway,Pilot_Flying_J,Q1434601,parent organisation,6,business; gas station chain
+BRK-B,Berkshire_Hathaway,FlightSafety_International,Q1428683,subsidiary,2,business; vocational education institution
+BRK-B,Berkshire_Hathaway,Rio_Grande_(company),Q7335202,parent organisation,2,business; online service; tool manufacturing company
+BX,Blackstone_Inc.,Death_Row_Records,Q847018,parent organisation,29,record label
+BX,Blackstone_Inc.,Trans_Maldivian_Airways,Q927640,parent organisation,16,airline
+BX,Blackstone_Inc.,Motel_6,Q2188884,subsidiary,7,motel chain
+BX,Blackstone_Inc.,SESAC,Q7389867,parent organisation,4,performing rights organization
+BXP,"BXP,_Inc.",Tower_Oaks,Q48768684,developer,1,planned community
+C,Citigroup,Citibank_(China),Q5122443,parent organisation,4,commercial bank
+CASY,Casey's,Goodstop_by_Casey's,Q137726272,owned by,1,brand
+CAT,Caterpillar_Inc.,Stryker,Q612829,manufacturer,37,combat vehicle model
+CAT,Caterpillar_Inc.,Electro-Motive_Diesel,Q568501,owned by,24,brand; business
+CAT,Caterpillar_Inc.,IDF_Caterpillar_D9,Q3945628,manufacturer,14,military vehicle model
+CAT,Caterpillar_Inc.,Caterpillar_797,Q2031092,manufacturer,10,dump truck
+CAT,Caterpillar_Inc.,Caterpillar_D11,Q1115203,manufacturer,8,tractor
+CAT,Caterpillar_Inc.,M520_Goer,Q1090937,manufacturer,8,heavy equipment
+CAT,Caterpillar_Inc.,Caterpillar_D7,Q5051948,manufacturer,6,tractor
+CAT,Caterpillar_Inc.,Caterpillar_D8,Q2941769,manufacturer,6,tractor model
+CBRE,CBRE_Group,"Warner_Theatre_(Washington,_D.C.)",Q7969769,owned by,4,movie theater; theatre building
+CBRE,CBRE_Group,Trammell_Crow_Company,Q7833161,subsidiary,1,real estate company
+CDNS,Cadence_Design_Systems,OrCAD,Q1197865,developer,17,electronics circuit design software
+CDNS,Cadence_Design_Systems,PSpice,Q2665168,developer,8,software
+CDNS,Cadence_Design_Systems,NCSim,Q6953219,developer,1,software
+CHTR,Charter_Communications,Cox_Communications,Q5179879,parent organisation,10,business; internet service provider
+CHTR,Charter_Communications,MLB_Network,Q1661550,owned by,8,specialty channel
+CHTR,Charter_Communications,Spectrum_(brand),Q7805197,subsidiary,5,brick and mortar; business; internet service provider
+CHTR,Charter_Communications,Spectrum_News,Q16986548,owned by,5,brand; specialty channel
+CHTR,Charter_Communications,NY1_Noticias,Q6956023,owned by,4,
+CHTR,Charter_Communications,Spectrum_News_NECN,Q7007173,owned by,4,cable channel
+CHTR,Charter_Communications,SNY,Q426638,parent organisation,2,specialty channel
+CHTR,Charter_Communications,Spectrum_News_1_North_Carolina,Q7019315,owned by,2,television channel
+CIEN,Ciena,Vyatta,Q1267596,owned by,12,Linux distribution; business; software suite
+CME,CME_Group,Chicago_Mercantile_Exchange,Q1071967,parent organisation,25,business; futures exchange
+CMI,Cummins,Cummins_Quantum_Series,Q96375738,manufacturer,3,engine family
+CMI,Cummins,Cummins_Aeos,Q43080186,manufacturer,2,car model
+COST,Costco,Kirkland_Signature,Q120451114,owned by,5,private label; trademark
+COST,Costco,Costco_hot_dog,Q122423459,manufacturer,4,
+CSGP,CoStar_Group,Homes.com,Q5890392,subsidiary,1,business; online real estate database; subsidiary company
+CSX,CSX_Corporation,CSX_Transportation,Q856783,parent organisation,20,railway company
+CSX,CSX_Corporation,"High_Point,_Thomasville_and_Denton_Railroad",Q5756166,parent organisation,1,railway company
+CVS,CVS_Health,CVS_Pharmacy,Q2078880,owned by,12,business; pharmacy chain
+CVS,CVS_Health,Longs_Drugs,Q16931196,subsidiary,2,pharmacy chain
+CVS,CVS_Health,MinuteClinic,Q6871141,subsidiary,1,business; healthcare provider
+CVX,Chevron_Corporation,Texaco,Q775060,owned by,37,brand; business; enterprise; gas station chain
+CVX,Chevron_Corporation,Embassy_Gulf_Service_Station,Q5369515,owned by,2,filling station
+CVX,Chevron_Corporation,Techron,Q7692682,owned by,2,brand; fuel additive
+CVX,Chevron_Corporation,Perth_Amboy_Refinery,Q7170816,owned by,1,oil refinery
+D,Dominion_Energy,Fowler_Ridge_Wind_Farm,Q1420189,owned by,8,onshore wind farm
+D,Dominion_Energy,Mount_Storm_Power_Station,Q6923900,owned by,4,coal-fired power station; oil-fired power station
+D,Dominion_Energy,Dominion_Transmission,Q5291084,subsidiary,3,piping
+D,Dominion_Energy,Coastal_Virginia_Offshore_Wind,Q105563723,owned by,2,offshore wind power
+DAL,Delta_Air_Lines,Northwest_Airlines,Q309174,parent organisation,43,airline
+DAL,Delta_Air_Lines,Comair_(United_States),Q1113243,parent organisation,15,airline; defunct organization; wholly owned subsidiary
+DAL,Delta_Air_Lines,Endeavor_Air,Q1145445,parent organisation,13,airline; regional airline
+DAL,Delta_Air_Lines,Atlantic_Southeast_Airlines,Q178765,subsidiary,11,airline
+DAL,Delta_Air_Lines,Northeast_Airlines,Q1642115,parent organisation,9,airline
+DAL,Delta_Air_Lines,Freedom_Airlines,Q1453518,parent organisation,7,airline
+DAL,Delta_Air_Lines,Worldport_(Pan_Am),Q4020978,owned by,5,airport terminal
+DASH,DoorDash,Wolt,Q30024526,parent organisation,27,business; food delivery; mobile app; startup company
+DD,DuPont,Kevlar,Q207344,developer,52,aramid; fiber
+DD,DuPont,Tyvek,Q1283225,developer,19,material; trademark
+DD,DuPont,Nomex,Q2319815,owned by,17,polymer; type of chemical entity
+DD,DuPont,Kapton,Q3192874,owned by,16,material; plastic foil
+DD,DuPont,Cordura,Q772580,owned by,14,trademark
+DD,DuPont,Sorona,Q4968566,manufacturer,3,chemical substance
+DD,DuPont,Taslanizing,Q7687376,owned by,2,trademark
+DD,DuPont,Zyron,Q17143564,manufacturer,1,trademark
+DE,John_Deere,John_Deere_9630,Q2795839,manufacturer,8,tractor model
+DE,John_Deere,John_Deere_Model_A,Q16997811,manufacturer,6,tractor model
+DE,John_Deere,John_Deere_3020,Q6229056,manufacturer,6,tractor model
+DE,John_Deere,John_Deere_4020,Q6229075,manufacturer,5,tractor model
+DE,John_Deere,Fall_Plowing,Q62066852,owned by,4,painting
+DE,John_Deere,John_Deere_Model_D,Q108704183,manufacturer,4,tractor model
+DE,John_Deere,John_Deere_435,Q18379582,manufacturer,4,tractor model
+DE,John_Deere,John_Deere_4010,Q23637370,manufacturer,4,tractor model
+DELL,Dell_Technologies,Dell_G_Series,Q60746722,manufacturer,2,brand; computer model series
+DG,Dollar_General,Dollar_General_Market,Q134563489,parent organisation,2,grocery store chain; hypermarket; retail chain
+DOV,Dover_Corporation,LaserWash,Q17124746,owned by,1,brand
+DOW,Dow_Chemical_Company,Styrofoam,Q1194725,owned by,9,brand
+DUK,Duke_Energy,Cowans_Ford_Hydroelectric_Station,Q5179465,owned by,6,hydroelectric dam; hydroelectric power station
+DUK,Duke_Energy,Jocassee_Dam,Q6207062,owned by,5,embankment dam; pumped-storage power station
+DUK,Duke_Energy,Roxboro_Power_Station,Q19387017,owned by,2,coal-fired power station
+DUK,Duke_Energy,Marshall_Steam_Station,Q6773788,owned by,2,coal-fired power station
+DXCM,Dexcom,Dexcom_CGM,Q136359511,manufacturer,1,continuous glucose monitor
+EBAY,EBay,StumbleUpon,Q911595,subsidiary,22,business; website
+EBAY,EBay,StubHub,Q7627285,subsidiary,6,website
+EBAY,EBay,Qoo10,Q16172136,subsidiary,5,business; online marketplace
+EBAY,EBay,Marktplaats.nl,Q2381841,parent organisation,5,business; classified advertising website
+EBAY,EBay,Epinions,Q4038149,owned by,4,website
+EBAY,EBay,Half.com,Q5641633,owned by,2,website
+ECHO,EchoStar,Hopper_(DVR),Q15995138,manufacturer,1,product model
+ECHO,EchoStar,DTVPal,Q5206260,manufacturer,1,product lining
+ECHO,EchoStar,Gen_Mobile,Q110482254,parent organisation,1,company; mobile virtual network operator
+EMR,Emerson_Electric,Consolidated_B-24_Liberator,Q220759,manufacturer,45,aircraft family
+EMR,Emerson_Electric,AGM-123_Skipper_II,Q292397,manufacturer,10,missile model
+EMR,Emerson_Electric,MGR-3_Little_John,Q667776,manufacturer,9,missile model
+EMR,Emerson_Electric,AN/APQ-153,Q4652819,manufacturer,5,
+EMR,Emerson_Electric,Birmingham_Sound_Reproducers,Q4916808,owned by,3,brand; business
+EMR,Emerson_Electric,AMS_Device_Manager,Q4652727,developer,2,software
+ETR,Entergy,White_Bluff_Power_Plant,Q2188703,owned by,3,coal-fired power station
+ETR,Entergy,Entergy_New_Orleans,Q7010776,subsidiary,2,electricity supply company; natural gas distributor
+EXC,Exelon,Pepco,Q7166207,parent organisation,4,electricity supply company; public utility
+EXC,Exelon,Delmarva_Power,Q33127799,parent organisation,2,public utility
+FDX,FedEx,FedEx_Express,Q782557,subsidiary,30,airline; cargo airline
+FDX,FedEx,TNT_Express,Q1105744,owned by,20,business; enterprise; package delivery
+FDX,FedEx,FedEx_Office,Q474379,subsidiary,8,business; retail chain
+FDX,FedEx,KIAC,Q6330506,developer,1,system
+FE,FirstEnergy,Bruce_Mansfield_Power_Plant,Q991403,owned by,4,coal-fired power station
+FE,FirstEnergy,Pleasants_Power_Station,Q7204138,owned by,4,coal-fired power station
+FE,FirstEnergy,WA_Parish_Generating_Station,Q12010297,owned by,4,coal-fired power station; gas turbine power station; natural gas-fired power station
+FER,Ferrovial,Heathrow_Airport_Holdings,Q795363,subsidiary,18,fixed-base operator; privately held company
+FER,Ferrovial,AGS_Airports,Q18712098,subsidiary,1,business; fixed-base operator
+FICO,FICO,FICO_Xpress,Q22908372,developer,1,software
+FISV,Fiserv,Clover_Network,Q16988376,parent organisation,1,dot-com company
+FLEX,Flex_Ltd.,Xbox_360,Q48263,manufacturer,85,model series; video game console model
+FLEX,Flex_Ltd.,Xbox_One,Q13361286,manufacturer,77,model series; video game console model
+FLEX,Flex_Ltd.,Xbox_(console),Q132020,manufacturer,71,video game console model
+FLEX,Flex_Ltd.,T-Mobile_Sidekick,Q440947,manufacturer,6,smartphone model series
+FLEX,Flex_Ltd.,Olio_Model_One,Q96397326,manufacturer,2,smartwatch model
+FOXA,Fox_Corporation,Fox_Broadcasting_Company,Q166419,parent organisation,92,television network; television production company
+FOXA,Fox_Corporation,Fox_News,Q186068,owned by,70,cable news in the United States; specialty channel
+FOXA,Fox_Corporation,MyNetworkTV,Q1148579,subsidiary,17,television network
+FOXA,Fox_Corporation,New_World_Pictures,Q3067564,parent organisation,13,film distributor; film production company; holding company
+FOXA,Fox_Corporation,Tubi,Q21189826,subsidiary,12,company; video streaming service
+FOXA,Fox_Corporation,Fox_Entertainment,Q96378247,parent organisation,4,business; film production company; television production company
+FOXA,Fox_Corporation,Fox_Nation,Q7735102,owned by,4,mobile app; streaming service; subscription video on demand service; video streaming service; video streaming service app
+FOXA,Fox_Corporation,OutKick,Q99298425,owned by,3,blog; business; sports journalism; website
+GDDY,GoDaddy,.wiki,Q16049573,owned by,17,sponsored top-level domain
+GE,GE_Aerospace,General_Electric_CF6,Q1501579,manufacturer,22,engine family
+GE,GE_Aerospace,General_Electric_GEnx,Q1501584,manufacturer,21,jet engine
+GE,GE_Aerospace,General_Electric_F404,Q947434,manufacturer,20,engine family
+GE,GE_Aerospace,General_Electric_LM2500,Q1195923,manufacturer,19,
+GE,GE_Aerospace,General_Electric_F414,Q1501574,manufacturer,17,engine family
+GE,GE_Aerospace,General_Electric_TF34,Q17103978,manufacturer,12,
+GE,GE_Aerospace,General_Electric_YJ93,Q641962,manufacturer,11,engine model
+GE,GE_Aerospace,Walter_Aircraft_Engines,Q59186,subsidiary,11,business; commercial organization
+GEHC,GE_HealthCare,Centricity,Q5062743,developer,1,software
+GEN,Gen_Digital,Avast,Q2247432,parent organisation,30,business; enterprise; software company
+GEN,Gen_Digital,Avira,Q468381,owned by,26,business; enterprise; software company
+GEN,Gen_Digital,Norton_AntiVirus,Q741128,developer,26,antivirus software; computer security software; mobile app
+GEN,Gen_Digital,Norton_Commander,Q776479,developer,25,orthodox file manager; proprietary software
+GEN,Gen_Digital,Ghost_(disk_utility),Q1058586,developer,17,backup software; disk cloning software
+GEN,Gen_Digital,Norton_Internet_Security,Q1370256,developer,17,computer security software
+GEN,Gen_Digital,Norton_Utilities,Q1370549,developer,14,software; utility software
+GEN,Gen_Digital,PartitionMagic,Q1473586,developer,14,partition editor; software
+GLW,Corning_Inc.,Gorilla_Glass,Q268706,owned by,31,brand
+GLW,Corning_Inc.,Ultra_low_expansion_glass,Q7880497,manufacturer,4,glass
+GLW,Corning_Inc.,Pyroceram,Q7263628,manufacturer,1,brand
+GNRC,Generac,Small_engine,Q7543054,manufacturer,5,
+GPC,Genuine_Parts_Company,Repco,Q173425,parent organisation,19,automotive supplier; retail chain
+GPC,Genuine_Parts_Company,Motion_Industries,Q17108808,parent organisation,2,business; business service provider
+GS,Goldman_Sachs,Hawker_Beechcraft,Q1510005,parent organisation,13,aerospace manufacturer
+HD,Home_Depot,Husky_(tool_brand),Q5949376,owned by,1,private label
+HD,Home_Depot,Skelly_(Halloween_decoration),Q123370654,manufacturer,1,
+HII,Huntington_Ingalls_Industries,Arleigh_Burke-class_destroyer,Q674909,manufacturer,35,ship class
+HII,Huntington_Ingalls_Industries,Zumwalt-class_destroyer,Q229770,manufacturer,32,ship class
+HII,Huntington_Ingalls_Industries,Newport_News_Shipbuilding,Q82610,subsidiary,21,shipbuilding company; shipyard
+HII,Huntington_Ingalls_Industries,America-class_amphibious_assault_ship,Q463072,manufacturer,20,ship class
+HII,Huntington_Ingalls_Industries,Ingalls_Shipbuilding,Q1193195,subsidiary,19,shipyard
+HII,Huntington_Ingalls_Industries,Cleveland-class_cruiser,Q637426,manufacturer,18,ship class
+HII,Huntington_Ingalls_Industries,California-class_cruiser,Q1026776,manufacturer,16,ship class
+HII,Huntington_Ingalls_Industries,USS_America_(LHA-6),Q7408497,manufacturer,14,amphibious assault ship
+HON,Honeywell,AT4,Q29105,manufacturer,29,firearm model
+HON,Honeywell,Mark_48_torpedo,Q1194008,manufacturer,21,torpedo model
+HON,Honeywell,Mark_46_torpedo,Q1316198,manufacturer,19,torpedo model
+HON,Honeywell,RUR-5_ASROC,Q76917,manufacturer,18,missile model
+HON,Honeywell,Honeywell_316,Q623187,manufacturer,10,computer model
+HON,Honeywell,Mk_18_Mod_0_grenade_launcher,Q6885428,manufacturer,5,
+HON,Honeywell,Fine_Guidance_Sensor_and_Near_Infrared_Imager_and_Slitless_Spectrograph,Q28233306,manufacturer,4,astronomical instrument; fine guidance sensor; spectrograph
+HON,Honeywell,Honeywell_200,Q5893982,manufacturer,4,computer model
+HONA,Honeywell_Aerospace,Northrop_Grumman_RQ-4_Global_Hawk,Q162066,manufacturer,37,aircraft family
+HONA,Honeywell_Aerospace,Lycoming_LTS101,Q752100,manufacturer,9,engine family
+HONA,Honeywell_Aerospace,Honeywell_FX5,Q30681358,manufacturer,1,engine family; product model
+HPE,Hewlett_Packard_Enterprise,HP-UX,Q847593,developer,28,Unix-like operating system; proprietary operating system
+HPE,Hewlett_Packard_Enterprise,Titan_(supercomputer),Q44070,manufacturer,25,one-of-a-kind computer; supercomputer
+HPE,Hewlett_Packard_Enterprise,Frontier_(supercomputer),Q55231581,manufacturer,20,one-of-a-kind computer; supercomputer
+HPE,Hewlett_Packard_Enterprise,Columbia_(supercomputer),Q1112414,manufacturer,12,supercomputer
+HPE,Hewlett_Packard_Enterprise,El_Capitan_(supercomputer),Q112189045,manufacturer,12,one-of-a-kind computer; supercomputer
+HPE,Hewlett_Packard_Enterprise,Pleiades_(supercomputer),Q2442043,developer,11,supercomputer
+HPE,Hewlett_Packard_Enterprise,HPE_Integrated_Lights-Out,Q528024,developer,9,out-of-band management
+HPE,Hewlett_Packard_Enterprise,LUMI,Q107619153,manufacturer,9,supercomputer
+HPQ,HP_Inc.,HP_Pavilion,Q3125178,manufacturer,11,brand; computer model series; product model
+HPQ,HP_Inc.,HP_Linux_Imaging_and_Printing,Q1048995,developer,6,free software; printer driver
+HPQ,HP_Inc.,HP_LaserJet,Q4040290,manufacturer,6,electronic device model series
+HPQ,HP_Inc.,HP_ProBook,Q5635725,developer,5,brand; computer model series
+HPQ,HP_Inc.,HP_Omen,Q63860568,manufacturer,5,brand; computer model series
+HPQ,HP_Inc.,HP_Elite_x3,Q28127147,manufacturer,5,smartphone model
+HPQ,HP_Inc.,HP_Z,Q96380190,manufacturer,4,computer model series; model series
+HPQ,HP_Inc.,HP_ZBook,Q16927832,developer,3,brand; computer model series; product model
+HSIC,Henry_Schein,Dentrix,Q5259636,developer,1,medical practice management software
+IBM,IBM,Floppy_disk,Q5293,developer,81,
+IBM,IBM,Fedora_Linux,Q48267,developer,76,Linux distribution; digital As good; free operating system
+IBM,IBM,Saturn_V,Q54363,manufacturer,62,rocket model
+IBM,IBM,Deep_Blue_(chess_computer),Q187899,manufacturer,59,chess computer; one-of-a-kind computer; supercomputer
+IBM,IBM,IBM_Personal_Computer,Q202712,manufacturer,54,computer model
+IBM,IBM,APL_(programming_language),Q296187,developer,50,ISO standard; array programming language; functional programming language; interpreted language; modular programming language; multi-paradigm programming language; structured programming language
+IBM,IBM,OS/2,Q189794,developer,46,operating system
+IBM,IBM,I386,Q237794,manufacturer,41,model series
+ICE,Intercontinental_Exchange,NYSE_American,Q846626,parent organisation,29,futures exchange; stock exchange; stock market
+ICE,Intercontinental_Exchange,New_York_Board_of_Trade,Q1519402,parent organisation,7,futures exchange
+IT,Gartner,Magic_Quadrant,Q17157268,owned by,5,
+IT,Gartner,Capterra,Q5036903,subsidiary,3,business; enterprise; online marketplace; review site
+JNJ,Johnson_&_Johnson,Listerine,Q944073,manufacturer,20,brand; business
+JNJ,Johnson_&_Johnson,Neomycin/polymyxin_B/bacitracin,Q6994170,owned by,12,combination drug
+JNJ,Johnson_&_Johnson,Clean_&_Clear,Q3502747,owned by,11,brand
+JNJ,Johnson_&_Johnson,Band-Aid,Q2737652,manufacturer,11,brand
+JNJ,Johnson_&_Johnson,Actelion,Q343217,parent organisation,10,business; pharmaceutical company
+JNJ,Johnson_&_Johnson,Johnson's_Baby,Q18208332,owned by,10,brand
+JNJ,Johnson_&_Johnson,Acuvue,Q3288413,owned by,9,brand; business; trademark
+JNJ,Johnson_&_Johnson,O.b._(brand),Q1773800,owned by,9,tampon; trademark
+KIM,Kimco_Realty,Westlake_Shopping_Center,Q7988989,owned by,2,outdoor shopping centre
+KKR,KKR_&_Co.,Simon_&_Schuster,Q1756332,parent organisation,40,book publisher; publishing house
+KKR,KKR_&_Co.,"Toys_""R""_Us",Q696334,parent organisation,38,baby goods shop; clothing store chain; toy store chain
+KKR,KKR_&_Co.,Seiyu_Group,Q3108542,parent organisation,10,business; supermarket chain
+KKR,KKR_&_Co.,Selecta_(company),Q472153,parent organisation,7,trading company
+KKR,KKR_&_Co.,Trainline,Q7783585,parent organisation,6,business; mobile app; ticket sales service; train and rail category
+KKR,KKR_&_Co.,Superstruct_Entertainment,Q127785331,subsidiary,1,event management company
+KMI,Kinder_Morgan,Trans_Mountain_pipeline,Q23074089,owned by,5,oil pipeline
+KMI,Kinder_Morgan,Florida_Gas_Transmission,Q5461387,owned by,4,gas pipeline
+KMI,Kinder_Morgan,Tennessee_Gas_Pipeline,Q7700085,owned by,3,energy company; gas pipeline; pipeline operator
+KR,Kroger,Fred_Meyer,Q5495932,parent organisation,8,hypermarket chain
+KR,Kroger,King_Soopers,Q6412065,parent organisation,6,supermarket chain
+KR,Kroger,Ralphs,Q3929820,parent organisation,6,supermarket chain
+KR,Kroger,Harris_Teeter,Q5665067,owned by,4,supermarket chain
+KR,Kroger,City_Market_(US_grocery_store_chain),Q5123299,parent organisation,3,business; supermarket chain
+KR,Kroger,Fry's_Food_and_Drug,Q5506547,parent organisation,3,supermarket chain
+KR,Kroger,Fred_Meyer_Jewelers,Q5495935,owned by,3,business; retail chain
+KR,Kroger,Smith's_Food_and_Drug,Q7544856,subsidiary,2,supermarket chain
+L,Loews_Corporation,Loews_Cineplex_Entertainment,Q738883,parent organisation,12,business; cinema chain; production company
+LDOS,Leidos,Sea_Hunter,Q23806451,developer,10,technology demonstration; testbed; trimaran; unmanned surface vehicle
+LDOS,Leidos,AGM-190_Black_Arrow,Q134086867,manufacturer,3,cruise missile
+LDOS,Leidos,TeraText,Q7701465,developer,1,software
+LH,Labcorp,DynaLIFE,Q104866734,owned by,1,enterprise; healthcare provider; medical laboratory
+LHX,L3Harris,L3Harris_OA-1K_Skyraider_II,Q115809816,developer,10,aircraft model
+LHX,L3Harris,AN/ALQ-99,Q833259,manufacturer,9,electronic countermeasure
+LHX,L3Harris,L3Harris_EA-37B_Compass_Call,Q130223178,manufacturer,9,aircraft model
+LHX,L3Harris,Biomass_(satellite),Q16039672,manufacturer,8,synthetic aperture radar satellite
+LHX,L3Harris,AN/PSQ-20,Q4652872,manufacturer,7,
+LHX,L3Harris,AN/PRC-150,Q4652869,manufacturer,5,radio
+LHX,L3Harris,AN/PRC-152,Q4032977,manufacturer,5,two-way radio
+LHX,L3Harris,AN/PEQ-15,Q15905423,manufacturer,3,laser sight
+LOW,Lowe's,Kobalt_(tools),Q6424262,owned by,4,brand
+LOW,Lowe's,Réno-Dépôt,Q3456209,parent organisation,3,business; hardware store chain
+LOW,Lowe's,Lowe's_Canada,Q118905363,parent organisation,2,hardware store chain
+LUV,Southwest_Airlines,AirTran_Airways,Q406695,parent organisation,25,airline
+LUV,Southwest_Airlines,ATA_Airlines,Q298738,parent organisation,11,airline
+LUV,Southwest_Airlines,Morris_Air,Q12062042,parent organisation,4,airline
+LVS,Las_Vegas_Sands,Copa_Room,Q5168219,owned by,1,venue
+MA,Mastercard,Maestro_(debit_card),Q1350133,manufacturer,18,debit card
+MA,Mastercard,Cirrus_(interbank_network),Q1093128,parent organisation,17,interbank network
+MAS,Masco,Bristan,Q19871557,parent organisation,3,brand; business
+MCHP,Microchip_Technology,PIC_microcontrollers,Q650553,manufacturer,28,
+MCHP,Microchip_Technology,MPLAB,Q3622166,developer,6,integrated development environment
+MCHP,Microchip_Technology,MiWi,Q6826959,developer,5,Internet Protocol
+MCK,McKesson,Rexall_(Canada),Q39045377,parent organisation,4,pharmacy chain; subsidiary company
+MCK,McKesson,Health_Mart,Q5690597,subsidiary,1,pharmacy chain
+MDT,Medtronic,MiniMed_780G,Q116447321,manufacturer,2,insulin pump
+MGM,MGM_Resorts_International,Michelob_Ultra_Arena,Q1888848,owned by,15,event venue; multi-purpose stadium
+MGM,MGM_Resorts_International,Mandalay_Bay_Tram,Q2302214,owned by,5,Cable Liner
+MGM,MGM_Resorts_International,Aria_Express,Q61757409,owned by,3,Cable Liner; people mover
+MGM,MGM_Resorts_International,Las_Vegas_Festival_Grounds,Q16972610,owned by,2,venue
+MGM,MGM_Resorts_International,Julian_Serrano_Tapas,Q61758706,owned by,2,restaurant
+MGM,MGM_Resorts_International,Lance_Burton_Theatre,Q6483341,owned by,1,theatre building
+MMM,3M,Post-it_note,Q181331,owned by,38,invention; office supply; product category; trademark
+MMM,3M,Scotch_tape,Q259589,owned by,13,generic trademark; trademark
+MMM,3M,Thinsulate,Q867137,owned by,7,trademark
+MMM,3M,Fluorinert,Q5462855,owned by,6,brand
+MMM,3M,Wollensak,Q8030340,parent organisation,3,brand; business; trademark
+MMM,3M,Cantata_700,Q26721254,manufacturer,2,model series; trademark
+MMM,3M,Contigo_(board_game),Q641916,manufacturer,2,board game
+MMM,3M,Racal_suit,Q23582714,manufacturer,1,
+MPC,Marathon_Petroleum,ARCO,Q304769,subsidiary,10,business; enterprise; gas station chain; oil company
+MPC,Marathon_Petroleum,Garyville_Refinery,Q5526240,owned by,3,oil refinery
+MRNA,Moderna,Moderna_COVID-19_vaccine,Q87775025,manufacturer,55,funded product
+MRNA,Moderna,MRNA-1283,Q110263526,developer,4,vaccine candidate
+MRSH,Marsh_McLennan,Oliver_Wyman,Q1726060,parent organisation,7,management consulting company
+MRVL,Marvell_Technology,XScale,Q133493,owned by,19,
+MRVL,Marvell_Technology,SheevaPlug,Q1481530,manufacturer,7,product model
+MRVL,Marvell_Technology,GuruPlug,Q1325092,manufacturer,5,product model
+MSCI,MSCI,MERVAL,Q366943,developer,14,stock market index
+MSI,Motorola_Solutions,Motorola_Talkabout,Q137653153,manufacturer,1,walkie-talkie
+MSTR,MicroStrategy,MicroStrategy_Analytics,Q18344572,developer,1,software
+MU,Micron_Technology,Random-access_memory,Q5295,manufacturer,110,type of computer memory or storage
+MU,Micron_Technology,3D_XPoint,Q20738631,developer,14,
+MU,Micron_Technology,Crucial_(brand),Q96631842,owned by,4,brand
+NDAQ,"Nasdaq,_Inc.",Nasdaq_Commodities,Q1997526,parent organisation,5,business; enterprise; futures exchange
+NDAQ,"Nasdaq,_Inc.",GlobeNewswire,Q5570956,subsidiary,3,business; press release distributor
+NRG,NRG_Energy,Chalk_Point_Generating_Station,Q5068815,owned by,3,coal-fired power station; natural gas-fired power station; oil-fired power station
+NRG,NRG_Energy,EVgo,Q61803820,parent organisation,2,brand; electric vehicle charging network; subsidiary company
+NRG,NRG_Energy,Brunot_Island_Generating_Station,Q17760415,owned by,2,gas turbine power station; natural gas-fired power station; oil-fired power station
+NSC,Norfolk_Southern_Railway,Newark_Light_Rail,Q3078283,owned by,10,light rail
+NSC,Norfolk_Southern_Railway,Port_Jervis_Line,Q7230730,owned by,5,train service
+NSC,Norfolk_Southern_Railway,SouthWest_Service,Q7565331,owned by,4,commuter rail service
+NSC,Norfolk_Southern_Railway,Keystone_Corridor,Q1108078,owned by,4,railroad corridor
+NSC,Norfolk_Southern_Railway,Manassas_Line,Q6747017,owned by,4,train service
+NSC,Norfolk_Southern_Railway,Gallitzin_Tunnels,Q1492491,owned by,4,railway tunnel
+NSC,Norfolk_Southern_Railway,"Cincinnati,_New_Orleans_and_Texas_Pacific_Railway",Q2972706,parent organisation,3,business; railway company
+NSC,Norfolk_Southern_Railway,Georgia_Southern_and_Florida_Railway,Q3103777,parent organisation,3,railway company
+NTAP,NetApp,Write_Anywhere_File_Layout,Q963254,developer,5,multi-device file system; proprietary software
+NTAP,NetApp,ONTAP,Q48988760,developer,2,operating system; proprietary software
+NTAP,NetApp,NetCache,Q6998199,developer,1,software
+NXPI,NXP_Semiconductors,MIFARE,Q1405976,owned by,12,brand
+NXPI,NXP_Semiconductors,Motorola_68HC11,Q1949893,manufacturer,11,integrated circuit series
+NXPI,NXP_Semiconductors,I.MX,Q82516,owned by,9,integrated circuit series; trademark
+NXPI,NXP_Semiconductors,Motorola_56000,Q1949861,manufacturer,9,integrated circuit series
+NXPI,NXP_Semiconductors,Motorola_68HC12,Q3268793,manufacturer,6,integrated circuit series
+NXPI,NXP_Semiconductors,NXP_LPC,Q6956007,developer,4,
+NXPI,NXP_Semiconductors,TriMedia_(media_processor),Q2311899,manufacturer,4,model series
+NXPI,NXP_Semiconductors,Philips_68070,Q2205331,manufacturer,4,integrated circuit model
+OMC,Omnicom_Group,BBDO,Q571438,subsidiary,14,advertising agency
+OMC,Omnicom_Group,"Goodby,_Silverstein_&_Partners",Q5583188,subsidiary,4,advertising agency; business
+OMC,Omnicom_Group,AMV_BBDO,Q306769,parent organisation,3,advertising agency
+OTIS,Otis_Worldwide,Otis_Hovair,Q7108794,manufacturer,4,rolling stock class
+PCAR,Paccar,DAF_Trucks,Q27489,owned by,43,automobile manufacturer
+PCAR,Paccar,T28_super-heavy_tank,Q81460,manufacturer,25,combat vehicle model
+PCAR,Paccar,M110_howitzer,Q315586,manufacturer,25,combat vehicle model
+PCAR,Paccar,M55_self-propelled_howitzer,Q75610,manufacturer,9,combat vehicle model
+PCAR,Paccar,M25_tank_transporter,Q2040457,manufacturer,9,truck model
+PCAR,Paccar,Heavy_Equipment_Transport_System,Q15613350,manufacturer,5,military vehicle family
+PNW,Pinnacle_West_Capital,Four_Corners_Generating_Station,Q5475105,owned by,6,coal-fired power station
+PNW,Pinnacle_West_Capital,Arizona_Public_Service,Q1242804,parent organisation,2,electricity supply company
+PPG,PPG_Industries,Johnstone's_Paint,Q121742106,parent organisation,1,business; paint store chain
+PPL,PPL_Corporation,Brunner_Island_Steam_Electric_Station,Q992876,owned by,3,coal-fired power station
+PPL,PPL_Corporation,Lake_Chillisquaque,Q17484989,owned by,2,reservoir
+PSX,Phillips_66,Jet_(brand),Q568940,owned by,9,brand; business; gas station chain
+PSX,Phillips_66,76_(gas_station),Q1658320,owned by,7,brand; business; gas station chain; trademark
+PSX,Phillips_66,Bayway_Refinery,Q3014399,owned by,3,oil refinery
+PSX,Phillips_66,Wood_River_Refinery,Q8032265,owned by,2,oil refinery
+PSX,Phillips_66,Phillips_66ers,Q7185874,owned by,2,basketball team
+PTC,PTC_Inc.,Creo_Parametric,Q926821,developer,17,3D computer graphics software; computer-aided design software
+PTC,PTC_Inc.,MKS_Toolkit,Q4272073,developer,5,software
+PTC,PTC_Inc.,PTC_Creo,Q4299727,developer,4,computer-aided design software
+PTC,PTC_Inc.,Windchill_(software),Q8024086,developer,4,software
+PTC,PTC_Inc.,Pro/DESKTOP,Q7246628,developer,2,video game
+PTC,PTC_Inc.,Arbortext_Advanced_Print_Publisher,Q630561,developer,2,typesetting software
+PTC,PTC_Inc.,Creo_Elements/View,Q5184179,developer,1,software
+RKLB,Rocket_Lab,Rocket_Lab_Electron,Q18471030,developer,29,rocket family
+RKLB,Rocket_Lab,Rocket_Lab_Neutron,Q105722174,manufacturer,15,proposed entity; rocket model
+RKLB,Rocket_Lab,Rutherford_(rocket_engine),Q22145759,manufacturer,11,engine model
+RKLB,Rocket_Lab,Venus_Life_Finder,Q111211433,manufacturer,7,space probe
+RKLB,Rocket_Lab,Curie_(rocket_engine),Q48815701,manufacturer,5,engine model
+RKLB,Rocket_Lab,Rocket_Lab_Photon,Q106610366,manufacturer,3,spacecraft family
+RKLB,Rocket_Lab,Archimedes_(rocket_engine),Q109888137,manufacturer,3,engine model
+RKLB,Rocket_Lab,LOXSAT,Q108470491,manufacturer,2,proposed entity; small satellite; technology demonstration spacecraft
+RL,Ralph_Lauren_Corporation,Club_Monaco,Q2979949,subsidiary,8,brick and mortar; business; clothing store chain; subsidiary company
+RL,Ralph_Lauren_Corporation,Polo_(fragrance),Q135971486,owned by,1,
+ROK,Rockwell_Automation,Rockwell_B-1_Lancer,Q218636,developer,56,aircraft family
+ROK,Rockwell_Automation,AGM-130,Q292424,developer,12,missile family
+ROP,Roper_Technologies,NationalPass,Q55624701,manufacturer,1,electronic toll collection system
+RTX,RTX_Corporation,AIM-9_Sidewinder,Q235396,manufacturer,41,missile family
+RTX,RTX_Corporation,AN/SPS-49,Q1150366,manufacturer,11,marine radar
+RTX,RTX_Corporation,AN/SPY-3,Q2335697,manufacturer,11,marine radar
+RTX,RTX_Corporation,AN/MPQ-64_Sentinel,Q564415,manufacturer,10,
+RTX,RTX_Corporation,Collins_Aerospace,Q358594,owned by,9,aerospace manufacturer; defense contractor
+RTX,RTX_Corporation,Thermal_Emission_Imaging_System,Q1108979,manufacturer,7,space instrument; still camera
+RTX,RTX_Corporation,Cobra_Dane,Q1104759,manufacturer,7,passive electronically scanned array
+RTX,RTX_Corporation,AN/APG-79,Q3416343,manufacturer,6,radar model
+RVTY,Revvity,BioLegend,Q4914628,subsidiary,3,biotechnology company; business
+SKYD,Skydance,CNN,Q48340,subsidiary,118,cable news in the United States; film production company; news website; specialty channel
+SKYD,Skydance,Warner_Bros._Entertainment,Q126399,parent organisation,101,entertainment company; film production company
+SKYD,Skydance,CBS,Q43380,owned by,98,radio network; television network
+SKYD,Skydance,Cartoon_Network,Q708290,subsidiary,98,children's interest channel; specialty channel
+SKYD,Skydance,MTV,Q43359,subsidiary,96,cable channel; specialty channel
+SKYD,Skydance,Paramount_Pictures,Q159846,subsidiary,87,film distributor; film production company; major film studios
+SKYD,Skydance,DC_Comics,Q2924461,owned by,85,book publisher; comics publishing company
+SKYD,Skydance,The_CW,Q212252,owned by,64,television network
+SLB,SLB,Petrel_(reservoir_software),Q2153989,developer,5,software
+SLB,SLB,OLGA_(technology),Q7072656,owned by,3,software
+SLB,SLB,Dipmeter_Advisor,Q5280016,developer,2,software
+SNDK,Sandisk,SD_card,Q466977,developer,44,
+SNDK,Sandisk,SanDisk_portable_media_players,Q967571,manufacturer,10,model series; trademark
+SNDK,Sandisk,Gruvi,Q5612372,manufacturer,3,memory card
+SNDK,Sandisk,Sansa_e200_series,Q16255049,manufacturer,1,product model
+SNDK,Sandisk,Sansa_c200_series,Q7418957,manufacturer,1,product model
+SNDK,Sandisk,Sansa_Fuze,Q7418955,manufacturer,1,computer hardware
+SNDK,Sandisk,Sansa_Fuze+,Q7418956,manufacturer,1,product model
+SNDK,Sandisk,SlotRadio,Q12069280,developer,1,
+SNPS,Synopsys,ARC_(processor),Q22041439,owned by,5,reduced instruction set computing
+SNPS,Synopsys,Synopsys_Code_V,Q5140056,developer,1,software
+SNPS,Synopsys,ScanIP,Q7429882,developer,1,software
+SOLV,Solventum,Tegaderm,Q7694654,manufacturer,3,
+SOLV,Solventum,Bair_Hugger,Q25326663,manufacturer,2,
+SPCX,SpaceX,Falcon_9,Q249091,manufacturer,63,rocket series
+SPCX,SpaceX,SpaceX_Starship,Q62833385,owned by,58,rocket family
+SPCX,SpaceX,Falcon_Heavy,Q1093627,manufacturer,56,vehicle model
+SPCX,SpaceX,SpaceX_Dragon,Q236448,manufacturer,50,spacecraft model
+SPCX,SpaceX,SpaceX_Dragon_2,Q17122887,manufacturer,44,spacecraft family
+SPCX,SpaceX,The_Boring_Company,Q28874479,owned by,39,business; transport company
+SPCX,SpaceX,Falcon_1,Q648606,manufacturer,37,rocket model
+SPCX,SpaceX,X_Corp.,Q117617480,parent organisation,33,business; privately held company; technology company
+SPG,Simon_Property_Group,Merrimack_Premium_Outlets,Q6820281,owned by,3,outlet mall
+SPG,Simon_Property_Group,Sugarloaf_Mills,Q14686847,owned by,2,shopping mall
+SPG,Simon_Property_Group,Potomac_Mills,Q7235071,owned by,2,outlet mall
+SPG,Simon_Property_Group,Grove_City_Premium_Outlets,Q5611384,owned by,2,outlet mall
+SPG,Simon_Property_Group,Wrentham_Village_Premium_Outlets,Q8037762,owned by,1,outlet mall; retail park
+SPG,Simon_Property_Group,"White_Oaks_Mall_(Springfield,_Illinois)",Q7995159,owned by,1,shopping mall
+SPGI,S&P_Global,S&P_Global_Energy,Q2668128,parent organisation,9,business unit
+SPGI,S&P_Global,S&P_Global_Market_Intelligence,Q29468795,subsidiary,2,business unit
+STX,Seagate_Technology,ST-506/ST-412,Q1927767,manufacturer,12,full-height 5.25-inch drive; hard disk
+STX,Seagate_Technology,Seagate_Barracuda,Q4049217,manufacturer,4,model series
+STX,Seagate_Technology,ST3000DM001,Q26707119,manufacturer,3,product model
+STZ,Constellation_Brands,Opus_One_Winery,Q448588,subsidiary,6,winery
+STZ,Constellation_Brands,St._Pauli_Girl,Q239804,owned by,4,trademark
+STZ,Constellation_Brands,Simi_Winery,Q2287130,owned by,3,winery
+STZ,Constellation_Brands,Ballast_Point_Brewing_Company,Q4851544,owned by,2,brewery
+STZ,Constellation_Brands,Svedka,Q7651819,owned by,1,alcohol brand; brand
+SWK,Stanley_Black_&_Decker,DeWalt,Q847270,subsidiary,25,brand; enterprise
+SWK,Stanley_Black_&_Decker,Craftsman_(tools),Q5180573,owned by,4,brand
+SWK,Stanley_Black_&_Decker,Blackhawk_(tools),Q4922952,owned by,1,brand
+T,AT&T,UNIX_System_V,Q633192,developer,28,operating system
+T,AT&T,AT&T_Mobility,Q298594,parent organisation,18,mobile network operator; telecommunications company
+T,AT&T,AT&T_Corporation,Q2843047,subsidiary,17,business; concern; enterprise
+T,AT&T,A.out,Q279254,developer,16,executable file format
+T,AT&T,TAT-1,Q1955931,owned by,11,transatlantic communications cable
+T,AT&T,Cricket_Wireless,Q5184987,parent organisation,10,business; mobile phone store chain; mobile virtual network operator; telecommunications company
+T,AT&T,Audience_(TV_network),Q2870738,owned by,8,specialty channel
+T,AT&T,AT&T_UNIX_PC,Q4636217,manufacturer,4,computer model
+TDY,Teledyne_Technologies,Wide-field_Infrared_Survey_Explorer,Q693552,manufacturer,37,former entity; space telescope
+TDY,Teledyne_Technologies,IBM_PCjr,Q1155069,manufacturer,22,computer model
+TDY,Teledyne_Technologies,Ryan_Firebee,Q2906749,manufacturer,13,aircraft family
+TDY,Teledyne_Technologies,Continental_Aerospace_Technologies,Q2092079,owned by,12,aerospace manufacturer
+TDY,Teledyne_Technologies,NEO_Surveyor,Q6984358,manufacturer,10,infrared telescope; proposed entity; space telescope
+TDY,Teledyne_Technologies,EXACTO,Q4037856,developer,9,weapon model
+TEL,TE_Connectivity,Molex_connector,Q2354861,developer,17,
+TGT,Target_Corporation,Target_Canada,Q4140889,owned by,6,supermarket chain
+TGT,Target_Corporation,SuperTarget,Q84767070,parent organisation,2,department store chain
+TJX,TJX,TJ_Maxx,Q10860683,subsidiary,10,business; department store chain
+TJX,TJX,Marshalls,Q15903261,subsidiary,8,department store chain
+TJX,TJX,TK_Maxx,Q23823668,subsidiary,5,clothing store chain; subsidiary company
+TJX,TJX,Sierra_(retailer),Q7511598,subsidiary,5,business; retail chain
+TJX,TJX,HomeGoods,Q5887941,subsidiary,3,retail chain
+TKO,TKO_Group_Holdings,Ultimate_Fighting_Championship,Q186471,owned by,63,enterprise; mixed martial arts organization
+TMO,Thermo_Fisher_Scientific,Inovio_COVID-19_vaccine,Q96695266,manufacturer,5,funded product; vaccine type
+TMO,Thermo_Fisher_Scientific,Fisher_Scientific,Q16838552,parent organisation,4,biotechnology company
+TMO,Thermo_Fisher_Scientific,Fermentas,Q30338585,parent organisation,3,biotechnology company; business
+TMO,Thermo_Fisher_Scientific,Amira_(software),Q4746668,developer,3,software
+TMO,Thermo_Fisher_Scientific,Spectronic_20,Q7575251,manufacturer,3,scientific instrument model series
+TMUS,T-Mobile_US,Metro_by_T-Mobile,Q1925685,owned by,8,business; mobile phone store chain; mobile virtual network operator
+TMUS,T-Mobile_US,Mint_Mobile,Q30595490,owned by,4,company; mobile virtual network operator
+TMUS,T-Mobile_US,IWireless,Q5980246,owned by,2,business; mobile virtual network operator
+TMUS,T-Mobile_US,Ultra_Mobile,Q105702054,parent organisation,2,company; mobile virtual network operator
+TRI,Thomson_Reuters,Reuters,Q130879,subsidiary,90,business; news agency
+TRI,Thomson_Reuters,ITN,Q1210241,owned by,15,television production company
+TRI,Thomson_Reuters,Westlaw,Q7989031,subsidiary,7,legal information system; publishing house
+TRI,Thomson_Reuters,Web_of_Knowledge,Q2143156,owned by,6,bibliographic database
+TRI,Thomson_Reuters,Thomson_Reuters_Aranzadi,Q12253856,parent organisation,5,book publisher; imprint; publishing house
+TRI,Thomson_Reuters,FindLaw,Q5103958,owned by,5,legal information system; website
+TRI,Thomson_Reuters,World-Check,Q8035273,owned by,4,database
+TRI,Thomson_Reuters,West_(publisher),Q7984204,parent organisation,2,publishing house
+TRMB,Trimble_Inc.,SketchUp,Q79604,developer,45,3D modeling software
+TRMB,Trimble_Inc.,3D_Warehouse,Q1537675,owned by,10,software; website
+TRV,The_Travelers_Companies,Simply_Business,Q7520987,parent organisation,1,business; insurance agency
+TT,Trane_Technologies,HVAC_(organization),Q28451453,parent organisation,1,business; online service
+TWLO,Twilio,Authy,Q104841408,developer,2,desktop application; mobile app
+TXN,Texas_Instruments,AGM-88_HARM,Q292601,developer,34,missile family
+TXN,Texas_Instruments,7400-series_integrated_circuits,Q265899,developer,23,de facto standard; integrated circuit series
+TXN,Texas_Instruments,AGM-45_Shrike,Q292494,manufacturer,22,missile family
+TXN,Texas_Instruments,TI-99/4A,Q454390,manufacturer,19,computer model
+TXN,Texas_Instruments,OMAP,Q1151413,manufacturer,17,model series
+TXN,Texas_Instruments,TI-89_series,Q2295981,manufacturer,16,calculator model; model series
+TXN,Texas_Instruments,Derive_(computer_algebra_system),Q1200212,developer,14,application software; computer algebra system; proprietary software
+TXN,Texas_Instruments,TI-86,Q13847191,manufacturer,13,calculator model
+TXT,Textron,Cessna,Q308889,parent organisation,42,aerospace manufacturer; trademark
+TXT,Textron,Bell_Textron,Q815723,subsidiary,38,aerospace manufacturer
+TXT,Textron,Textron_AirLand_Scorpion,Q15263200,developer,13,aircraft model
+TXT,Textron,Textron_Aviation,Q16985472,owned by,5,aerospace manufacturer; commercial organization
+UAL,United_Airlines,CommuteAir,Q528492,parent organisation,10,regional airline
+UAL,United_Airlines,Hemispheres_(magazine),Q2422150,owned by,3,inflight magazine; literary work
+UAL,United_Airlines,United_Club,Q7887610,parent organisation,3,retail chain
+UAL,United_Airlines,Shuttle_by_United,Q7505706,parent organisation,2,airline
+UAL,United_Airlines,Rhapsody_(magazine),Q48742865,owned by,1,magazine
+UBER,Uber,Uber_Eats,Q21462723,owned by,30,delivery app; food delivery; mobile app; online food ordering; service on Internet; subsidiary company
+UHS,Universal_Health_Services,Psychiatric_Institute_of_Washington,Q7256225,owned by,1,psychiatric hospital
+UNH,UnitedHealth_Group,Golden_Rule_Insurance_Company,Q5579769,parent organisation,2,business; enterprise; website
+UPS,United_Parcel_Service,UPS_Airlines,Q1318737,owned by,26,cargo airline
+UPS,United_Parcel_Service,Worldport_(UPS_air_hub),Q5357899,owned by,4,logistics hub
+UPS,United_Parcel_Service,The_UPS_Store,Q7771029,parent organisation,3,brick and mortar; business; retail chain
+UPS,United_Parcel_Service,Chicago_Area_Consolidation_Hub,Q5008529,owned by,1,fixed construction
+VRSK,Verisk_Analytics,AIR_Worldwide,Q55316619,owned by,1,business; corporation; software company
+VTRS,Viatris,Upjohn,Q16266700,subsidiary,14,business; company; pharmaceutical company
+VYLR,Corteva,Garlon,Q125972943,manufacturer,2,brand
+VZ,Verizon,Yahoo,Q37093,subsidiary,125,web portal; web service
+VZ,Verizon,Netscape,Q210057,owned by,43,enterprise; trademark
+VZ,Verizon,TechCrunch,Q1022366,parent organisation,28,online newspaper
+VZ,Verizon,Verizon_(wireless_service),Q919641,subsidiary,24,brick and mortar; mobile network operator; retail chain
+VZ,Verizon,Moviefone,Q6926887,owned by,4,company; online film database
+VZ,Verizon,FiOS1,Q5446255,owned by,2,television channel
+VZ,Verizon,Verizon_Ventures,Q30645876,parent organisation,1,
+VZ,Verizon,Verizon_Hub,Q7921432,manufacturer,1,cell phone model
+WAB,Wabtec,EMD_GP15D,Q5323425,manufacturer,4,locomotive class
+WDAY,"Workday,_Inc.",PulsePoint,Q19866527,developer,1,501(c)(3) organization; mobile app; software
+WDC,Western_Digital,LPX_(form_factor),Q72415,developer,7,
+WDC,Western_Digital,MCP-1600,Q4019178,manufacturer,5,microprocessor
+WDC,Western_Digital,WD_TV,Q941372,manufacturer,4,media player software
+WDC,Western_Digital,Western_Digital_My_Book,Q3567493,manufacturer,4,external hard disk drive
+WDC,Western_Digital,My_Cloud,Q23909112,developer,3,product model
+WDC,Western_Digital,Western_Digital_FD1771,Q7987782,manufacturer,3,integrated circuit model
+WDC,Western_Digital,My_Passport,Q6946261,manufacturer,2,
+WDC,Western_Digital,Western_Digital_Media_Center,Q7987781,manufacturer,1,hard disk
+WM,"Waste_Management,_Inc.",Mount_Trashmore_(Florida),Q6924179,owned by,2,landfill
+WSM,"Williams-Sonoma,_Inc.",Pottery_Barn,Q3400126,parent organisation,8,business; retail chain
+WSM,"Williams-Sonoma,_Inc.",Williams_Sonoma,Q96415240,subsidiary,3,home decor retailer; organization
+WY,Weyerhaeuser,Hayden_Railroad_Bridge,Q107778411,owned by,2,footbridge; railway bridge; truss bridge
+XOM,ExxonMobil,Esso,Q867662,brand,26,brand; gas station chain
+XOM,ExxonMobil,Speedpass,Q7575646,owned by,4,radio-frequency identification
+XOM,ExxonMobil,Baytown_Refinery,Q4874965,owned by,4,oil refinery
+XOM,ExxonMobil,Forbes_Travel_Guide,Q5467279,owned by,4,enterprise; guide book
+XOM,ExxonMobil,German-American_Petroleum_Company,Q1201722,parent organisation,3,business; gas station chain

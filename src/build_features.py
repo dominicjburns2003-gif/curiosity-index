@@ -78,10 +78,16 @@ def conversion_tables(views: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
         empty = pd.DataFrame(index=pd.Index([], name="month"), columns=universe["ticker"].unique(), dtype=float)
         return empty, empty
     clicks = pd.concat([pd.read_csv(f) for f in files])
+    # A company page that was part of the download always has some clicks into it
+    # (from search engines at least); if it has none at all, it was not downloaded
+    # yet (e.g. companies just added), so its click-through is missing, not zero
+    downloaded = set(clicks["curr"].unique())
     clicks = clicks[clicks["type"] == "link"]  # clicks on a link from another article
 
     # Clicks from each product page (any of its titles) to its company page (any title)
     pair_clicks = {}
+    universe = universe[universe["product_article"] != ""]  # companies with product pages
+    universe = universe[universe["company_titles"].map(lambda t: bool(set(t.split("|")) & downloaded))]
     for r in universe.itertuples():
         rows = clicks[clicks["prev"].isin(r.product_titles.split("|"))
                       & clicks["curr"].isin(r.company_titles.split("|"))]

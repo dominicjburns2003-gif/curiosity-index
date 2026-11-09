@@ -134,6 +134,9 @@ def main() -> None:
     panel = pd.read_csv(DATA_DIR / "panel_monthly.csv")
     universe = pd.read_csv(UNIVERSE_PATH, keep_default_na=False)
     universe["consumer"] = universe["consumer"].astype(str) == "True"
+    # The replication is about the 112 (the broad universe has its own tests, src/broad_tests.py)
+    panel = panel[panel["cohort"].isin(["original", "expansion"])].reset_index(drop=True)
+    universe = universe[universe["cohort"].isin(["original", "expansion"])].reset_index(drop=True)
     original = panel[panel["cohort"] == "original"]
 
     groups = {

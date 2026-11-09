@@ -1,0 +1,328 @@
+ticker,company,sector,company_article,product_article,company_current,product_current,product_views_12m,company_views_12m,product_first_month,company_first_month,clicks_to_company,conversion_pct,price_first,price_last,flags
+MMM,3M,Industrials,3M,Post-it_note,3M,Post-it_note,7055,24571,2017-01,2017-01,248,3.6,2017-01-03,2026-11-06,
+MMM,3M,Industrials,3M,Scotch_Tape,3M,Scotch_tape,3132,24571,2017-01,2017-01,158,6.03,2017-01-03,2026-11-06,product redirects to Scotch_tape
+MMM,3M,Industrials,3M,Scotch-Brite,3M,Scotch-Brite,1429,24571,2017-01,2017-01,124,9.48,2017-01-03,2026-11-06,low product views
+MMM,3M,Industrials,3M,N95_respirator,3M,N95_respirator,5454,24571,2020-04,2017-01,0,0.0,2017-01-03,2026-11-06,no clicks to company page
+MMM,3M,Industrials,3M,Thinsulate,3M,Thinsulate,1285,24571,2017-01,2017-01,32,3.01,2017-01-03,2026-11-06,low product views
+ACN,Accenture,Information Technology,Accenture,Accenture_Song,Accenture,Accenture,49922,49922,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Accenture; no clicks to company page
+AES,AES Corporation,Utilities,AES_Corporation,AES_Andes,AES_Corporation,AES_Andes,245,4843,2021-08,2017-01,15,6.64,2017-01-03,2026-11-06,low product views
+AFL,Aflac,Financials,Aflac,Aflac_Duck,Aflac,Aflac,4601,4601,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Aflac; no clicks to company page
+ALGN,Align Technology,Health Care,Align_Technology,Invisalign,Align_Technology,Align_Technology,3770,3770,2017-05,2017-05,0,0.0,2017-01-03,2026-11-06,product redirects to Align_Technology; no clicks to company page; company views start 2017-05
+ALGN,Align Technology,Health Care,Align_Technology,iTero,Align_Technology,,0,3770,,2017-05,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page; company views start 2017-05
+ALL,Allstate,Financials,Allstate,Esurance,Allstate,Esurance,1282,7392,2017-01,2017-01,53,4.45,2017-01-03,2026-11-06,low product views
+ALL,Allstate,Financials,Allstate,Allstate_Mayhem,Allstate,,0,7392,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+AXP,American Express,Financials,American_Express,American_Express_Platinum_Card,American_Express,,0,43914,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+AXP,American Express,Financials,American_Express,American_Express_Gold_Card,American_Express,American_Express,43914,43914,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to American_Express; no clicks to company page
+APP,AppLovin,Communication Services,AppLovin,AppLovin_MAX,AppLovin,,0,11183,,2018-07,0,,2021-04-15,2026-11-06,product redirects to nan; low product views; no clicks to company page; company views start 2018-07; prices start 2021-04-15
+ANET,Arista Networks,Information Technology,Arista_Networks,Arista_EOS,Arista_Networks,,0,8374,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+T,AT&T,Communication Services,AT&T,AT&T_Mobility,AT&T,AT&T_Mobility,7194,47106,2017-01,2017-01,398,6.49,2017-01-03,2026-11-06,
+T,AT&T,Communication Services,AT&T,Cricket_Wireless,AT&T,Cricket_Wireless,4999,47106,2017-01,2017-01,120,2.93,2017-01-03,2026-11-06,
+T,AT&T,Communication Services,AT&T,DirecTV,AT&T,DirecTV,11873,47106,2017-01,2017-01,118,1.16,2017-01-03,2026-11-06,
+ADP,Automatic Data Processing,Industrials,ADP_(company),ADP_National_Employment_Report,ADP_(company),,0,11652,,2018-12,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page; company views start 2018-12
+AVY,Avery Dennison,Materials,Avery_Dennison,Avery_Dennison_labels,Avery_Dennison,,0,3335,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+AXON,Axon Enterprise,Industrials,Axon_Enterprise,Taser,Axon_Enterprise,Taser,16162,8772,2017-01,2020-06,518,3.93,2017-01-03,2026-11-06,company views start 2020-06
+AXON,Axon Enterprise,Industrials,Axon_Enterprise,Axon_Body,Axon_Enterprise,Axon_Enterprise,8772,8772,2020-06,2020-06,0,0.0,2017-01-03,2026-11-06,product redirects to Axon_Enterprise; no clicks to company page; company views start 2020-06
+BALL,Ball Corporation,Materials,Ball_Corporation,Ball_jar,Ball_Corporation,Mason_jar,6006,9482,2017-01,2017-01,130,2.44,2017-01-03,2026-11-06,product redirects to Mason_jar
+BRK-B,Berkshire Hathaway,Financials,Berkshire_Hathaway,GEICO,Berkshire_Hathaway,GEICO,12682,95204,2017-01,2017-01,467,4.59,2017-01-03,2026-11-06,
+BRK-B,Berkshire Hathaway,Financials,Berkshire_Hathaway,Dairy_Queen,Berkshire_Hathaway,Dairy_Queen,22323,95204,2017-01,2017-01,859,5.01,2017-01-03,2026-11-06,
+BRK-B,Berkshire Hathaway,Financials,Berkshire_Hathaway,Duracell,Berkshire_Hathaway,Duracell,6665,95204,2017-01,2017-01,566,9.65,2017-01-03,2026-11-06,
+BRK-B,Berkshire Hathaway,Financials,Berkshire_Hathaway,See's_Candies,Berkshire_Hathaway,See's_Candies,11161,95204,2017-01,2017-01,263,3.09,2017-01-03,2026-11-06,
+BRK-B,Berkshire Hathaway,Financials,Berkshire_Hathaway,NetJets,Berkshire_Hathaway,NetJets,9468,95204,2017-01,2017-01,218,3.12,2017-01-03,2026-11-06,
+BBY,Best Buy,Consumer Discretionary,Best_Buy,Geek_Squad,Best_Buy,Geek_Squad,4187,23548,2017-01,2017-01,106,2.69,2017-01-03,2026-11-06,
+BLK,BlackRock,Financials,BlackRock,IShares,BlackRock,IShares,7522,130750,2017-01,2017-01,517,10.25,2017-01-03,2026-11-06,
+BLK,BlackRock,Financials,BlackRock,Aladdin_(BlackRock),BlackRock,Aladdin_(BlackRock),8987,130750,2017-01,2017-01,220,3.61,2017-01-03,2026-11-06,
+BSX,Boston Scientific,Health Care,Boston_Scientific,Watchman_(medical_device),Boston_Scientific,,0,9868,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+AVGO,Broadcom,Information Technology,Broadcom,VMware,Broadcom,VMware,16505,34849,2017-01,2017-01,1101,6.34,2017-01-03,2026-11-06,
+AVGO,Broadcom,Information Technology,Broadcom,Broadcom_Tomahawk,Broadcom,,0,34849,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+CDNS,Cadence Design Systems,Information Technology,Cadence_Design_Systems,Cadence_Allegro,Cadence_Design_Systems,Cadence_Design_Systems,9011,9011,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Cadence_Design_Systems; no clicks to company page
+COF,Capital One,Financials,Capital_One,Capital_One_Venture,Capital_One,,0,29900,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+CARR,Carrier Global,Industrials,Carrier_Global,Carrier_air_conditioner,Carrier_Global,,0,10968,,2020-04,0,,2020-03-19,2026-11-06,product redirects to nan; low product views; no clicks to company page; company views start 2020-04; prices start 2020-03-19
+CARR,Carrier Global,Industrials,Carrier_Global,Kidde,Carrier_Global,Kidde,1525,10968,2017-01,2020-04,46,3.72,2020-03-19,2026-11-06,low product views; company views start 2020-04; prices start 2020-03-19
+CAT,Caterpillar Inc.,Industrials,Caterpillar_Inc.,Caterpillar_D9,Caterpillar_Inc.,Caterpillar_D9,4405,31159,2017-01,2017-01,160,4.48,2017-01-03,2026-11-06,
+CAT,Caterpillar Inc.,Industrials,Caterpillar_Inc.,Caterpillar_797,Caterpillar_Inc.,Caterpillar_797,6107,31159,2017-01,2017-01,240,3.34,2017-01-03,2026-11-06,
+CAT,Caterpillar Inc.,Industrials,Caterpillar_Inc.,Caterpillar_D11,Caterpillar_Inc.,Caterpillar_D11,4899,31159,2017-01,2017-01,50,1.2,2017-01-03,2026-11-06,
+SCHW,Charles Schwab Corporation,Financials,Charles_Schwab_Corporation,TD_Ameritrade,Charles_Schwab_Corporation,TD_Ameritrade,4398,19000,2017-01,2017-01,401,9.16,2017-01-03,2026-11-06,
+SCHW,Charles Schwab Corporation,Financials,Charles_Schwab_Corporation,Thinkorswim,Charles_Schwab_Corporation,Thinkorswim,2126,19000,2017-01,2017-01,40,2.52,2017-01-03,2026-11-06,low product views
+CHTR,Charter Communications,Communication Services,Charter_Communications,Spectrum_(brand),Charter_Communications,Spectrum_(brand),8263,15185,2022-06,2017-01,1842,21.15,2017-01-03,2026-11-06,
+CVX,Chevron Corporation,Energy,Chevron_Corporation,Texaco,Chevron_Corporation,Texaco,12354,36354,2017-01,2017-01,970,7.94,2017-01-03,2026-11-06,
+CVX,Chevron Corporation,Energy,Chevron_Corporation,Chevron_with_Techron,Chevron_Corporation,Techron,1743,36354,2017-01,2017-01,42,3.14,2017-01-03,2026-11-06,product redirects to Techron; low product views
+CI,Cigna,Health Care,The_Cigna_Group,Express_Scripts,The_Cigna_Group,Express_Scripts,4395,5630,2017-01,2025-03,211,6.96,2017-01-03,2026-11-06,company views start 2025-03
+CI,Cigna,Health Care,The_Cigna_Group,Evernorth,The_Cigna_Group,The_Cigna_Group,5630,5630,2025-03,2025-03,0,0.0,2017-01-03,2026-11-06,product redirects to The_Cigna_Group; no clicks to company page; company views start 2025-03
+CTAS,Cintas,Industrials,Cintas,Cintas_uniforms,Cintas,,0,5258,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+CME,CME Group,Financials,CME_Group,Chicago_Mercantile_Exchange,CME_Group,Chicago_Mercantile_Exchange,5262,9653,2017-01,2017-01,187,3.36,2017-01-03,2026-11-06,
+CME,CME Group,Financials,CME_Group,E-mini,CME_Group,E-mini,609,9653,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,low product views; no clicks to company page
+COIN,Coinbase,Financials,Coinbase,Coinbase_Wallet,Coinbase,,0,19151,,2017-01,0,,2021-04-14,2026-11-06,product redirects to nan; low product views; no clicks to company page; prices start 2021-04-14
+COIN,Coinbase,Financials,Coinbase,Base_(blockchain),Coinbase,List_of_blockchains,1002,19151,2022-07,2017-01,0,0.0,2021-04-14,2026-11-06,product redirects to List_of_blockchains; low product views; no clicks to company page; prices start 2021-04-14
+ED,Consolidated Edison,Utilities,Consolidated_Edison,Con_Edison_steam_system,Consolidated_Edison,,0,6609,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+STZ,Constellation Brands,Consumer Staples,Constellation_Brands,Corona_(beer),Constellation_Brands,Corona_(beer),19945,7319,2017-01,2017-01,354,2.34,2017-01-03,2026-11-06,
+STZ,Constellation Brands,Consumer Staples,Constellation_Brands,Modelo_Especial,Constellation_Brands,Grupo_Modelo,10687,7319,2017-01,2017-01,385,4.8,2017-01-03,2026-11-06,product redirects to Grupo_Modelo
+STZ,Constellation Brands,Consumer Staples,Constellation_Brands,Pacifico_(beer),Constellation_Brands,Pacífico_(beer),4091,7319,2017-01,2017-01,127,3.43,2017-01-03,2026-11-06,product redirects to Pacífico_(beer)
+STZ,Constellation Brands,Consumer Staples,Constellation_Brands,Robert_Mondavi_Winery,Constellation_Brands,Robert_Mondavi,3416,7319,2017-01,2017-01,43,1.4,2017-01-03,2026-11-06,product redirects to Robert_Mondavi
+CEG,Constellation Energy,Utilities,Constellation_Energy,Calvert_Cliffs_Nuclear_Power_Plant,Constellation_Energy,Calvert_Cliffs_Nuclear_Power_Plant,1737,7355,2017-01,2019-10,43,2.53,2022-01-19,2026-11-06,low product views; company views start 2019-10; prices start 2022-01-19
+GLW,Corning Inc.,Information Technology,Corning_Inc.,Gorilla_Glass,Corning_Inc.,Gorilla_Glass,8963,12722,2017-01,2017-01,612,9.41,2017-01-03,2026-11-06,
+GLW,Corning Inc.,Information Technology,Corning_Inc.,Pyrex,Corning_Inc.,Pyrex,9412,12722,2017-01,2017-01,331,4.96,2017-01-03,2026-11-06,
+GLW,Corning Inc.,Information Technology,Corning_Inc.,CorningWare,Corning_Inc.,CorningWare,4181,12722,2017-01,2017-01,139,3.45,2017-01-03,2026-11-06,
+COST,Costco,Consumer Staples,Costco,Kirkland_Signature,Costco,Costco,77716,77716,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Costco; no clicks to company page
+COST,Costco,Consumer Staples,Costco,Costco_hot_dog,Costco,Costco_hot_dog,9257,77716,2023-09,2017-01,323,4.31,2017-01-03,2026-11-06,
+CRWD,CrowdStrike,Information Technology,CrowdStrike,CrowdStrike_Falcon,CrowdStrike,CrowdStrike,16891,16891,2017-01,2017-01,0,0.0,2019-06-12,2026-11-06,product redirects to CrowdStrike; no clicks to company page; prices start 2019-06-12
+CRWD,CrowdStrike,Information Technology,CrowdStrike,2024_CrowdStrike-related_IT_outages,CrowdStrike,2024_CrowdStrike-related_IT_outages,13246,16891,2024-09,2017-01,504,3.96,2019-06-12,2026-11-06,prices start 2019-06-12
+CVS,CVS Health,Health Care,CVS_Health,CVS_Pharmacy,CVS_Health,CVS_Pharmacy,16210,13051,2017-01,2017-01,2017,7.99,2017-01-03,2026-11-06,
+CVS,CVS Health,Health Care,CVS_Health,Aetna,CVS_Health,Aetna,8241,13051,2017-01,2017-01,587,8.31,2017-01-03,2026-11-06,
+CVS,CVS Health,Health Care,CVS_Health,MinuteClinic,CVS_Health,MinuteClinic,764,13051,2017-01,2017-01,21,3.42,2017-01-03,2026-11-06,low product views
+DHR,Danaher Corporation,Health Care,Danaher_Corporation,Beckman_Coulter,Danaher_Corporation,Beckman_Coulter,2402,11724,2017-01,2017-01,167,8.47,2017-01-03,2026-11-06,low product views
+DHR,Danaher Corporation,Health Care,Danaher_Corporation,Cepheid_(company),Danaher_Corporation,Cepheid_(company),1491,11724,2020-10,2017-01,77,7.78,2017-01-03,2026-11-06,low product views
+DE,Deere & Company,Industrials,John_Deere,John_Deere_tractors,John_Deere,John_Deere_tractors,955,25640,2026-08,2017-01,73,3.99,2017-01-03,2026-11-06,low product views
+DE,Deere & Company,Industrials,John_Deere,John_Deere_4020,John_Deere,John_Deere_4020,1059,25640,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,low product views; no clicks to company page
+DELL,Dell Technologies,Information Technology,Dell_Technologies,Alienware,Dell_Technologies,Alienware,6910,15404,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,no clicks to company page
+DELL,Dell Technologies,Information Technology,Dell_Technologies,Dell_XPS,Dell_Technologies,Dell_XPS,6050,15404,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,no clicks to company page
+DELL,Dell Technologies,Information Technology,Dell_Technologies,Dell_Inspiron,Dell_Technologies,Dell_Inspiron,1676,15404,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,low product views; no clicks to company page
+DELL,Dell Technologies,Information Technology,Dell_Technologies,Dell_Latitude,Dell_Technologies,Dell_Latitude,11621,15404,2017-01,2017-01,45,0.52,2017-01-03,2026-11-06,
+DELL,Dell Technologies,Information Technology,Dell_Technologies,PowerEdge,Dell_Technologies,PowerEdge,746,15404,2019-07,2017-01,0,0.0,2017-01-03,2026-11-06,low product views; no clicks to company page
+DAL,Delta Air Lines,Industrials,Delta_Air_Lines,Delta_SkyMiles,Delta_Air_Lines,SkyMiles,1378,78790,2017-01,2017-01,29,2.75,2017-01-03,2026-11-06,product redirects to SkyMiles; low product views
+DAL,Delta Air Lines,Industrials,Delta_Air_Lines,Delta_Connection,Delta_Air_Lines,Delta_Connection,6715,78790,2017-01,2017-01,272,4.76,2017-01-03,2026-11-06,
+DXCM,Dexcom,Health Care,Dexcom,Dexcom_G7,Dexcom,Dexcom_G7,76,4931,2025-04,2017-01,12,1.91,2017-01-03,2026-11-06,low product views
+DLTR,Dollar Tree,Consumer Staples,Dollar_Tree,Family_Dollar,Dollar_Tree,Family_Dollar,5082,10878,2017-01,2017-01,555,12.39,2017-01-03,2026-11-06,
+DASH,DoorDash,Consumer Discretionary,DoorDash,Wolt,DoorDash,Wolt,11045,30000,2018-03,2017-01,771,9.05,2020-12-09,2026-11-06,prices start 2020-12-09
+DASH,DoorDash,Consumer Discretionary,DoorDash,Caviar_(company),DoorDash,Caviar_(company),310,30000,2025-05,2017-01,0,0.0,2020-12-09,2026-11-06,low product views; no clicks to company page; prices start 2020-12-09
+DOW,Dow Inc.,Materials,Dow_Chemical_Company,Styrofoam,Dow_Chemical_Company,Styrofoam,5912,15655,2017-01,2017-01,26,0.49,2019-03-20,2026-11-06,prices start 2019-03-20
+DOW,Dow Inc.,Materials,Dow_Chemical_Company,Saran_(plastic),Dow_Chemical_Company,Saran_(plastic),2630,15655,2017-01,2017-01,50,2.02,2019-03-20,2026-11-06,low product views; prices start 2019-03-20
+DUK,Duke Energy,Utilities,Duke_Energy,Duke_Energy_Florida,Duke_Energy,Duke_Energy,8079,8079,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Duke_Energy; no clicks to company page
+DD,DuPont,Industrials,DuPont,Kevlar,DuPont,Kevlar,17574,32930,2017-01,2017-01,253,1.6,2017-01-03,2026-11-06,
+DD,DuPont,Industrials,DuPont,Tyvek,DuPont,Tyvek,4243,32930,2017-01,2017-01,111,2.9,2017-01-03,2026-11-06,
+DD,DuPont,Industrials,DuPont,Nomex,DuPont,Nomex,4420,32930,2017-01,2017-01,58,1.44,2017-01-03,2026-11-06,
+DD,DuPont,Industrials,DuPont,Corian,DuPont,Corian,2663,32930,2017-01,2017-01,51,2.31,2017-01-03,2026-11-06,low product views
+EBAY,eBay Inc.,Consumer Discretionary,EBay,StubHub,EBay,StubHub,4895,71856,2017-01,2017-01,12,0.4,2017-01-03,2026-11-06,
+ECHO,EchoStar,Communication Services,EchoStar,Dish_Network,EchoStar,Dish_Network,9999,7047,2017-01,2017-01,873,11.01,2017-01-03,2026-11-06,
+ECHO,EchoStar,Communication Services,EchoStar,Boost_Mobile,EchoStar,Boost_Mobile,8750,7047,2017-01,2017-01,791,11.67,2017-01-03,2026-11-06,
+ECHO,EchoStar,Communication Services,EchoStar,Sling_TV,EchoStar,Sling_TV,7050,7047,2017-01,2017-01,254,4.45,2017-01-03,2026-11-06,
+ECL,Ecolab,Materials,Ecolab,Nalco_Water,Ecolab,Nalco_Water,992,5740,2020-06,2017-01,107,9.7,2017-01-03,2026-11-06,low product views
+EW,Edwards Lifesciences,Health Care,Edwards_Lifesciences,Sapien_3,Edwards_Lifesciences,,0,2793,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+ELV,Elevance Health,Health Care,Elevance_Health,Anthem_Blue_Cross,Elevance_Health,Elevance_Health,8130,8130,2022-06,2022-06,0,0.0,2017-01-03,2026-11-06,product redirects to Elevance_Health; no clicks to company page; company views start 2022-06
+EXC,Exelon,Utilities,Exelon,Commonwealth_Edison,Exelon,Commonwealth_Edison,2621,4721,2017-01,2017-01,218,10.29,2017-01-03,2026-11-06,low product views
+EXC,Exelon,Utilities,Exelon,PECO_Energy_Company,Exelon,PECO_Energy_Company,1806,4721,2017-01,2017-01,104,8.25,2017-01-03,2026-11-06,low product views
+XOM,ExxonMobil,Energy,ExxonMobil,Esso,ExxonMobil,Esso,13062,43540,2017-01,2017-01,1002,8.89,2017-01-03,2026-11-06,
+XOM,ExxonMobil,Energy,ExxonMobil,Mobil,ExxonMobil,Mobil_Oil_Corporation,4084,43540,2025-12,2017-01,1073,20.94,2017-01-03,2026-11-06,product redirects to Mobil_Oil_Corporation
+XOM,ExxonMobil,Energy,ExxonMobil,Mobil_1,ExxonMobil,Mobil_1,2906,43540,2017-01,2017-01,275,9.85,2017-01-03,2026-11-06,low product views
+FDX,FedEx,Industrials,FedEx,FedEx_Express,FedEx,FedEx_Express,19797,30694,2017-01,2017-01,726,4.85,2017-01-03,2026-11-06,
+FDX,FedEx,Industrials,FedEx,FedEx_Ground,FedEx,FedEx_Ground,1691,30694,2017-01,2017-01,69,4.91,2017-01-03,2026-11-06,low product views
+FDX,FedEx,Industrials,FedEx,FedEx_Office,FedEx,FedEx_Office,2647,30694,2017-01,2017-01,62,2.8,2017-01-03,2026-11-06,low product views
+FTNT,Fortinet,Information Technology,Fortinet,FortiGate,Fortinet,Fortinet,8337,8337,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Fortinet; no clicks to company page
+FOXA,Fox Corporation,Communication Services,Fox_Corporation,Fox_News,Fox_Corporation,Fox_News,78897,34002,2017-01,2019-01,3864,7.9,2019-03-12,2026-11-06,company views start 2019-01; prices start 2019-03-12
+FOXA,Fox Corporation,Communication Services,Fox_Corporation,Fox_Broadcasting_Company,Fox_Corporation,Fox_Broadcasting_Company,66949,34002,2017-01,2019-01,2064,3.17,2019-03-12,2026-11-06,company views start 2019-01; prices start 2019-03-12
+FOXA,Fox Corporation,Communication Services,Fox_Corporation,Tubi,Fox_Corporation,Tubi,38259,34002,2018-06,2019-01,1640,5.12,2019-03-12,2026-11-06,company views start 2019-01; prices start 2019-03-12
+FOXA,Fox Corporation,Communication Services,Fox_Corporation,Fox_Sports_(United_States),Fox_Corporation,Fox_Sports_(United_States),7797,34002,2017-01,2019-01,424,7.41,2019-03-12,2026-11-06,company views start 2019-01; prices start 2019-03-12
+FCX,Freeport-McMoRan,Materials,Freeport-McMoRan,Grasberg_mine,Freeport-McMoRan,Grasberg_mine,5821,6845,2017-01,2017-01,452,7.35,2017-01-03,2026-11-06,
+GE,GE Aerospace,Industrials,GE_Aerospace,General_Electric_GE9X,GE_Aerospace,General_Electric_GE9X,10670,20596,2017-01,2019-10,169,2.14,2017-01-03,2026-11-06,company views start 2019-10
+GE,GE Aerospace,Industrials,GE_Aerospace,CFM_International_LEAP,GE_Aerospace,CFM_International_LEAP,15187,20596,2017-01,2019-10,96,0.8,2017-01-03,2026-11-06,company views start 2019-10
+GE,GE Aerospace,Industrials,GE_Aerospace,General_Electric_GE90,GE_Aerospace,General_Electric_GE90,10562,20596,2017-01,2019-10,174,2.11,2017-01-03,2026-11-06,company views start 2019-10
+GEHC,GE HealthCare,Health Care,GE_HealthCare,Vscan,GE_HealthCare,,0,11026,,2022-11,0,,2022-12-15,2026-11-06,product redirects to nan; low product views; no clicks to company page; company views start 2022-11; prices start 2022-12-15
+GEV,GE Vernova,Industrials,GE_Vernova,Haliade-X,GE_Vernova,GE_Wind,640,23113,2024-06,2024-04,58,11.96,2024-03-27,2026-11-06,product redirects to GE_Wind; low product views; company views start 2024-04; prices start 2024-03-27
+GEN,Gen Digital,Information Technology,Gen_Digital,Norton_AntiVirus,Gen_Digital,Norton_AntiVirus,2982,7179,2017-01,2022-11,232,9.08,2017-01-03,2026-11-06,low product views; company views start 2022-11
+GEN,Gen Digital,Information Technology,Gen_Digital,Avast_Antivirus,Gen_Digital,Avast_Antivirus,3846,7179,2017-01,2022-11,151,5.5,2017-01-03,2026-11-06,company views start 2022-11
+GEN,Gen Digital,Information Technology,Gen_Digital,LifeLock,Gen_Digital,LifeLock,2617,7179,2017-01,2022-11,81,4.3,2017-01-03,2026-11-06,low product views; company views start 2022-11
+GEN,Gen Digital,Information Technology,Gen_Digital,CCleaner,Gen_Digital,CCleaner,4426,7179,2017-01,2022-11,22,0.78,2017-01-03,2026-11-06,company views start 2022-11
+GNRC,Generac,Industrials,Generac,Generac_generator,Generac,,0,2616,,2022-03,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page; company views start 2022-03
+HPE,Hewlett Packard Enterprise,Information Technology,Hewlett_Packard_Enterprise,Aruba_Networks,Hewlett_Packard_Enterprise,Aruba_Networks,2925,16896,2017-01,2017-01,117,4.87,2017-01-03,2026-11-06,low product views
+HPE,Hewlett Packard Enterprise,Information Technology,Hewlett_Packard_Enterprise,Frontier_(supercomputer),Hewlett_Packard_Enterprise,Frontier_(supercomputer),5619,16896,2018-06,2017-01,0,0.0,2017-01-03,2026-11-06,no clicks to company page
+HPE,Hewlett Packard Enterprise,Information Technology,Hewlett_Packard_Enterprise,El_Capitan_(supercomputer),Hewlett_Packard_Enterprise,El_Capitan_(supercomputer),12084,16896,2023-05,2017-01,21,0.26,2017-01-03,2026-11-06,
+HD,Home Depot (The),Consumer Discretionary,Home_Depot,Husky_(tools),Home_Depot,Husky_(disambiguation),396,45438,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Husky_(disambiguation); low product views; no clicks to company page
+HD,Home Depot (The),Consumer Discretionary,Home_Depot,Ryobi,Home_Depot,Ryobi,8338,45438,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,no clicks to company page
+HONA,Honeywell Aerospace,Industrials,Honeywell_Aerospace,Honeywell_HTF7000,Honeywell_Aerospace,Honeywell_HTF7000,1930,5789,2017-01,2017-01,89,5.52,2026-06-15,2026-11-06,low product views; prices start 2026-06-15
+HON,Honeywell Technologies,Industrials,Honeywell,Honeywell_thermostat,Honeywell,,0,27423,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+HST,Host Hotels & Resorts,Real Estate,Host_Hotels_&_Resorts,Hotel_del_Coronado,Host_Hotels_&_Resorts,Hotel_del_Coronado,7342,1555,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,no clicks to company page
+HPQ,HP Inc.,Information Technology,HP_Inc.,HP_Spectre,HP_Inc.,HP_Spectre,1399,23807,2019-04,2017-01,11,0.99,2017-01-03,2026-11-06,low product views
+HPQ,HP Inc.,Information Technology,HP_Inc.,HP_Pavilion,HP_Inc.,HP_Pavilion,2641,23807,2017-03,2017-01,38,1.65,2017-01-03,2026-11-06,low product views
+HPQ,HP Inc.,Information Technology,HP_Inc.,HP_LaserJet,HP_Inc.,HP_LaserJet,1993,23807,2017-01,2017-01,18,1.09,2017-01-03,2026-11-06,low product views
+HPQ,HP Inc.,Information Technology,HP_Inc.,HP_Envy,HP_Inc.,HP_Envy,1895,23807,2017-01,2017-01,24,1.65,2017-01-03,2026-11-06,low product views
+HPQ,HP Inc.,Information Technology,HP_Inc.,HP_Omen,HP_Inc.,HP_Omen,1996,23807,2019-07,2017-01,0,0.0,2017-01-03,2026-11-06,low product views; no clicks to company page
+HUM,Humana,Health Care,Humana,Humana_Military,Humana,Humana,6454,6454,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Humana; no clicks to company page
+HII,Huntington Ingalls Industries,Industrials,Huntington_Ingalls_Industries,Newport_News_Shipbuilding,Huntington_Ingalls_Industries,Newport_News_Shipbuilding,11711,12091,2017-01,2017-01,856,10.05,2017-01-03,2026-11-06,
+HII,Huntington Ingalls Industries,Industrials,Huntington_Ingalls_Industries,Ingalls_Shipbuilding,Huntington_Ingalls_Industries,Ingalls_Shipbuilding,7430,12091,2017-01,2017-01,395,8.26,2017-01-03,2026-11-06,
+IBM,IBM,Information Technology,IBM,IBM_Watson,IBM,IBM_Watson,6165,74022,2017-01,2017-01,144,2.65,2017-01-03,2026-11-06,
+IBM,IBM,Information Technology,IBM,IBM_Z,IBM,IBM_Z,5168,74022,2018-01,2017-01,63,1.45,2017-01-03,2026-11-06,
+IBM,IBM,Information Technology,IBM,Red_Hat,IBM,Red_Hat,17028,74022,2017-01,2017-01,721,5.24,2017-01-03,2026-11-06,
+IBM,IBM,Information Technology,IBM,Red_Hat_Enterprise_Linux,IBM,Red_Hat_Enterprise_Linux,15704,74022,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,no clicks to company page
+IBM,IBM,Information Technology,IBM,IBM_Quantum_System_One,IBM,IBM_Q_System_One,1722,74022,2019-01,2017-01,30,2.11,2017-01-03,2026-11-06,product redirects to IBM_Q_System_One; low product views
+IDXX,Idexx Laboratories,Health Care,Idexx_Laboratories,SNAP_test,Idexx_Laboratories,,0,1843,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+ILMN,"Illumina, Inc.",Health Care,"Illumina,_Inc.",Illumina_dye_sequencing,"Illumina,_Inc.",Illumina_dye_sequencing,1327,4232,2017-01,2019-02,27,2.47,2017-01-03,2026-11-06,low product views; company views start 2019-02
+INCY,Incyte,Health Care,Incyte,Ruxolitinib,Incyte,Ruxolitinib,3993,1714,2017-01,2017-01,13,0.43,2017-01-03,2026-11-06,
+PODD,Insulet Corporation,Health Care,Insulet_Corporation,Omnipod,,,0,0,,,0,,2017-01-03,2026-11-06,company renamed/redirects to nan; product redirects to nan; low product views; no clicks to company page
+ICE,Intercontinental Exchange,Financials,Intercontinental_Exchange,New_York_Stock_Exchange,Intercontinental_Exchange,New_York_Stock_Exchange,40057,12875,2017-01,2017-01,1855,5.53,2017-01-03,2026-11-06,
+IP,International Paper,Materials,International_Paper,Hammermill_paper,International_Paper,International_Paper,4022,4022,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to International_Paper; no clicks to company page
+JNJ,Johnson & Johnson,Health Care,Johnson_&_Johnson,Tylenol,Johnson_&_Johnson,Tylenol,28406,30552,2017-01,2017-01,146,0.67,2017-01-03,2026-11-06,
+JNJ,Johnson & Johnson,Health Care,Johnson_&_Johnson,Listerine,Johnson_&_Johnson,Listerine,6492,30552,2017-01,2017-01,64,1.33,2017-01-03,2026-11-06,
+JNJ,Johnson & Johnson,Health Care,Johnson_&_Johnson,Band-Aid,Johnson_&_Johnson,Band-Aid,5113,30552,2017-01,2017-01,119,2.77,2017-01-03,2026-11-06,
+JNJ,Johnson & Johnson,Health Care,Johnson_&_Johnson,Stelara,Johnson_&_Johnson,Ustekinumab,2896,30552,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Ustekinumab; low product views; no clicks to company page
+JNJ,Johnson & Johnson,Health Care,Johnson_&_Johnson,Darzalex,Johnson_&_Johnson,Daratumumab,2678,30552,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Daratumumab; low product views; no clicks to company page
+JPM,JPMorgan Chase,Financials,JPMorgan_Chase,Chase_Bank,JPMorgan_Chase,Chase_Bank,25719,76641,2017-01,2017-01,1391,6.23,2017-01-03,2026-11-06,
+JPM,JPMorgan Chase,Financials,JPMorgan_Chase,Chase_Sapphire,JPMorgan_Chase,Chase_Bank,25719,76641,2017-01,2017-01,1391,6.23,2017-01-03,2026-11-06,product redirects to Chase_Bank
+KR,Kroger,Consumer Staples,Kroger,Ralphs,Kroger,Ralphs,5073,31044,2017-01,2017-01,359,8.89,2017-01-03,2026-11-06,
+KR,Kroger,Consumer Staples,Kroger,Fred_Meyer,Kroger,Fred_Meyer,6557,31044,2017-01,2017-01,425,7.23,2017-01-03,2026-11-06,
+KR,Kroger,Consumer Staples,Kroger,Harris_Teeter,Kroger,Harris_Teeter,6337,31044,2017-01,2017-01,382,6.77,2017-01-03,2026-11-06,
+KR,Kroger,Consumer Staples,Kroger,King_Soopers,Kroger,King_Soopers,3521,31044,2017-01,2017-01,217,6.96,2017-01-03,2026-11-06,
+LHX,L3Harris,Industrials,L3Harris,AN/PRC-152,L3Harris,AN/PRC-152,3056,19480,2017-01,2023-01,34,1.18,2017-01-03,2026-11-06,company views start 2023-01
+LHX,L3Harris,Industrials,L3Harris,L3Harris_EA-37B_Compass_Call,L3Harris,L3Harris_EA-37B_Compass_Call,17166,19480,2024-11,2023-01,183,1.7,2017-01-03,2026-11-06,company views start 2023-01
+LVS,Las Vegas Sands,Consumer Discretionary,Las_Vegas_Sands,Marina_Bay_Sands,Las_Vegas_Sands,Marina_Bay_Sands,22900,13863,2017-01,2017-01,1339,6.02,2017-01-03,2026-11-06,
+LVS,Las Vegas Sands,Consumer Discretionary,Las_Vegas_Sands,The_Venetian_Macao,Las_Vegas_Sands,The_Venetian_Macao,5708,13863,2017-01,2017-01,290,6.03,2017-01-03,2026-11-06,
+LII,Lennox International,Industrials,Lennox_International,Lennox_furnace,Lennox_International,,0,2155,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+LOW,Lowe's,Consumer Discretionary,Lowe's,Kobalt_(tools),Lowe's,Kobalt_(tools),2570,29036,2017-01,2017-01,45,2.87,2017-01-03,2026-11-06,low product views
+LULU,Lululemon Athletica,Consumer Discretionary,Lululemon,Mirror_(company),Lululemon,,0,45050,,2025-03,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page; company views start 2025-03
+MPC,Marathon Petroleum,Energy,Marathon_Petroleum,ARCO,Marathon_Petroleum,ARCO,5577,7636,2017-01,2017-01,548,12.16,2017-01-03,2026-11-06,
+MPC,Marathon Petroleum,Energy,Marathon_Petroleum,Speedway_LLC,Marathon_Petroleum,Speedway_(store),6024,7636,2021-07,2017-01,209,4.13,2017-01-03,2026-11-06,product redirects to Speedway_(store)
+MAS,Masco,Industrials,Masco,Behr_Process_Corporation,Masco,,0,2186,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+MAS,Masco,Industrials,Masco,Delta_Faucet_Company,Masco,Delta_Faucet_Company,1272,2186,2017-01,2017-01,164,16.29,2017-01-03,2026-11-06,low product views
+MA,Mastercard,Financials,Mastercard,Maestro_(debit_card),Mastercard,Maestro_(debit_card),4375,22860,2017-01,2017-01,276,7.71,2017-01-03,2026-11-06,
+MA,Mastercard,Financials,Mastercard,Cirrus_(interbank_network),Mastercard,Cirrus_(interbank_network),2026,22860,2017-01,2017-01,110,6.94,2017-01-03,2026-11-06,low product views
+MDT,Medtronic,Health Care,Medtronic,MiniMed,Medtronic,Medtronic,12608,12608,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Medtronic; no clicks to company page
+MDT,Medtronic,Health Care,Medtronic,Micra_(pacemaker),Medtronic,,0,12608,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+MGM,MGM Resorts,Consumer Discretionary,MGM_Resorts_International,Bellagio_(resort),MGM_Resorts_International,Bellagio_(resort),11671,13731,2017-01,2017-01,371,3.8,2017-01-03,2026-11-06,
+MGM,MGM Resorts,Consumer Discretionary,MGM_Resorts_International,MGM_Grand_Las_Vegas,MGM_Resorts_International,MGM_Grand_Las_Vegas,12530,13731,2017-01,2017-01,744,6.99,2017-01-03,2026-11-06,
+MGM,MGM Resorts,Consumer Discretionary,MGM_Resorts_International,BetMGM,MGM_Resorts_International,MGM_Resorts_International,13731,13731,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to MGM_Resorts_International; no clicks to company page
+MU,Micron Technology,Information Technology,Micron_Technology,Crucial_Technology,Micron_Technology,Micron_Technology,48087,48087,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Micron_Technology; no clicks to company page
+MRNA,Moderna,Health Care,Moderna,Moderna_COVID-19_vaccine,Moderna,Moderna_COVID-19_vaccine,4227,8856,2021-01,2018-12,217,4.94,2018-12-07,2026-11-06,company views start 2018-12; prices start 2018-12-07
+MRNA,Moderna,Health Care,Moderna,MRNA-1283,Moderna,MRNA-1283,143,8856,2021-05,2018-12,0,0.0,2018-12-07,2026-11-06,low product views; no clicks to company page; company views start 2018-12; prices start 2018-12-07
+MCO,Moody's Corporation,Financials,Moody's_Corporation,Moody's_Analytics,Moody's_Corporation,Moody's_Analytics,1205,5402,2017-01,2017-01,101,10.3,2017-01-03,2026-11-06,low product views
+MSI,Motorola Solutions,Information Technology,Motorola_Solutions,Motorola_Solutions_APX,Motorola_Solutions,,0,10572,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+MSCI,MSCI,Financials,MSCI,MSCI_World,MSCI,MSCI_World,6784,8884,2017-01,2017-01,260,4.85,2017-01-03,2026-11-06,
+MSCI,MSCI,Financials,MSCI,MSCI_EAFE,MSCI,MSCI_EAFE,1098,8884,2017-01,2017-01,22,2.7,2017-01-03,2026-11-06,low product views
+NDAQ,"Nasdaq, Inc.",Financials,"Nasdaq,_Inc.",Nasdaq-100,"Nasdaq,_Inc.",Nasdaq-100,178148,6480,2021-03,2017-01,85,0.04,2017-01-03,2026-11-06,
+NDAQ,"Nasdaq, Inc.",Financials,"Nasdaq,_Inc.",Nasdaq_Composite,"Nasdaq,_Inc.",Nasdaq_Composite,12652,6480,2017-01,2017-01,216,2.1,2017-01-03,2026-11-06,
+NEM,Newmont,Materials,Newmont,Boddington_Gold_Mine,Newmont,Boddington_gold_mine,732,4612,2022-11,2021-07,25,4.7,2017-01-03,2026-11-06,product redirects to Boddington_gold_mine; low product views; company views start 2021-07
+NEE,NextEra Energy,Utilities,NextEra_Energy,Florida_Power_&_Light,NextEra_Energy,Florida_Power_&_Light,4308,9130,2017-01,2017-01,370,9.63,2017-01-03,2026-11-06,
+OKTA,"Okta, Inc.",Information Technology,"Okta,_Inc.",Auth0,"Okta,_Inc.","Okta,_Inc.",9670,9670,2022-04,2022-04,0,0.0,2017-04-07,2026-11-06,"product redirects to Okta,_Inc.; no clicks to company page; company views start 2022-04; prices start 2017-04-07"
+OMC,Omnicom Group,Communication Services,Omnicom_Group,BBDO,Omnicom_Group,BBDO,4298,12049,2017-01,2017-01,208,6.77,2017-01-03,2026-11-06,
+OMC,Omnicom Group,Communication Services,Omnicom_Group,DDB_Worldwide,Omnicom_Group,DDB_Worldwide,3082,12049,2017-01,2017-01,103,4.03,2017-01-03,2026-11-06,
+OMC,Omnicom Group,Communication Services,Omnicom_Group,TBWA_Worldwide,Omnicom_Group,TBWA_Worldwide,2001,12049,2017-01,2017-01,270,19.08,2017-01-03,2026-11-06,low product views
+OTIS,Otis Worldwide,Industrials,Otis_Worldwide,Otis_Elevator_Company,Otis_Worldwide,Otis_Worldwide,9400,9400,2020-04,2020-04,0,0.0,2020-03-19,2026-11-06,product redirects to Otis_Worldwide; no clicks to company page; company views start 2020-04; prices start 2020-03-19
+PCAR,Paccar,Industrials,Paccar,Kenworth,Paccar,Kenworth,9122,10887,2017-01,2017-01,789,8.58,2017-01-03,2026-11-06,
+PCAR,Paccar,Industrials,Paccar,Peterbilt,Paccar,Peterbilt,11892,10887,2017-01,2017-01,1266,9.54,2017-01-03,2026-11-06,
+PCAR,Paccar,Industrials,Paccar,DAF_Trucks,Paccar,DAF_Trucks,11284,10887,2017-01,2017-01,1201,11.23,2017-01-03,2026-11-06,
+PLTR,Palantir Technologies,Information Technology,Palantir,Palantir_Gotham,Palantir,Palantir,114206,114206,2026-02,2026-02,0,0.0,2020-09-30,2026-11-06,product redirects to Palantir; no clicks to company page; company views start 2026-02; prices start 2020-09-30
+PLTR,Palantir Technologies,Information Technology,Palantir,Palantir_Foundry,Palantir,Palantir,114206,114206,2026-02,2026-02,0,0.0,2020-09-30,2026-11-06,product redirects to Palantir; no clicks to company page; company views start 2026-02; prices start 2020-09-30
+PANW,Palo Alto Networks,Information Technology,Palo_Alto_Networks,Prisma_Cloud,Palo_Alto_Networks,Palo_Alto_Networks,17660,17660,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Palo_Alto_Networks; no clicks to company page
+PSX,Phillips 66,Energy,Phillips_66,76_(gas_station),Phillips_66,76_(gas_station),5239,9514,2017-01,2017-01,509,10.84,2017-01-03,2026-11-06,
+PSX,Phillips 66,Energy,Phillips_66,Conoco,Phillips_66,Conoco,3509,9514,2017-01,2017-01,262,9.27,2017-01-03,2026-11-06,
+PPG,PPG Industries,Materials,PPG_Industries,Glidden,PPG_Industries,Glidden,75,11579,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,low product views; no clicks to company page
+PPG,PPG Industries,Materials,PPG_Industries,Olympic_paint,PPG_Industries,,0,11579,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+PGR,Progressive Corporation,Financials,Progressive_Corporation,Flo_(Progressive),Progressive_Corporation,Flo_(Progressive_Insurance),11440,7952,2017-01,2017-01,273,2.07,2017-01-03,2026-11-06,product redirects to Flo_(Progressive_Insurance)
+PTC,PTC Inc.,Information Technology,PTC_Inc.,Creo_(software),PTC_Inc.,,0,4011,,2025-03,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page; company views start 2025-03
+PTC,PTC Inc.,Information Technology,PTC_Inc.,Onshape,PTC_Inc.,Onshape,3827,4011,2017-01,2025-03,242,7.21,2017-01-03,2026-11-06,company views start 2025-03
+RL,Ralph Lauren Corporation,Consumer Discretionary,Ralph_Lauren_Corporation,Polo_Ralph_Lauren,Ralph_Lauren_Corporation,Ralph_Lauren_Corporation,16615,16615,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Ralph_Lauren_Corporation; no clicks to company page
+RMD,ResMed,Health Care,ResMed,AirSense,ResMed,,0,2763,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+HOOD,Robinhood Markets,Financials,Robinhood_(company),Robinhood_(app),Robinhood_(company),,0,1473,,2018-07,0,,2021-07-29,2026-11-06,product redirects to nan; low product views; no clicks to company page; company views start 2018-07; prices start 2021-07-29
+ROL,"Rollins, Inc.",Industrials,"Rollins,_Inc.",Orkin,"Rollins,_Inc.",Orkin,1556,1449,2017-01,2018-12,133,10.07,2017-01-03,2026-11-06,low product views; company views start 2018-12
+ROST,Ross Stores,Consumer Discretionary,Ross_Stores,Ross_Dress_for_Less,Ross_Stores,Ross_Stores,10338,10338,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Ross_Stores; no clicks to company page
+ROST,Ross Stores,Consumer Discretionary,Ross_Stores,DD's_Discounts,Ross_Stores,Ross_Stores,10338,10338,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Ross_Stores; no clicks to company page
+RTX,RTX Corporation,Industrials,RTX_Corporation,Pratt_&_Whitney,RTX_Corporation,Pratt_&_Whitney,21783,36323,2017-01,2023-07,2319,12.62,2017-01-03,2026-11-06,company views start 2023-07
+RTX,RTX Corporation,Industrials,RTX_Corporation,Collins_Aerospace,RTX_Corporation,Collins_Aerospace,10634,36323,2018-11,2023-07,1404,14.65,2017-01-03,2026-11-06,company views start 2023-07
+RTX,RTX Corporation,Industrials,RTX_Corporation,Raytheon,RTX_Corporation,Raytheon,26811,36323,2017-01,2023-07,3760,17.31,2017-01-03,2026-11-06,company views start 2023-07
+RTX,RTX Corporation,Industrials,RTX_Corporation,FIM-92_Stinger,RTX_Corporation,FIM-92_Stinger,24326,36323,2017-01,2023-07,14,0.07,2017-01-03,2026-11-06,company views start 2023-07
+RTX,RTX Corporation,Industrials,RTX_Corporation,MIM-104_Patriot,RTX_Corporation,MIM-104_Patriot,67853,36323,2017-01,2023-07,0,0.0,2017-01-03,2026-11-06,no clicks to company page; company views start 2023-07
+SPGI,S&P Global,Financials,S&P_Global,S&P_500,S&P_Global,S&P_500,77117,14438,2017-01,2017-01,37,0.06,2017-01-03,2026-11-06,
+SPGI,S&P Global,Financials,S&P_Global,Dow_Jones_Industrial_Average,S&P_Global,Dow_Jones_Industrial_Average,97766,14438,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,no clicks to company page
+SNDK,Sandisk,Information Technology,Sandisk,SanDisk_Extreme,Sandisk,,0,21091,,2025-04,0,,2025-02-13,2026-11-06,product redirects to nan; low product views; no clicks to company page; company views start 2025-04; prices start 2025-02-13
+SNDK,Sandisk,Information Technology,Sandisk,SD_card,Sandisk,SD_card,23948,21091,2019-02,2025-04,165,0.71,2025-02-13,2026-11-06,company views start 2025-04; prices start 2025-02-13
+STX,Seagate Technology,Information Technology,Seagate_Technology,Seagate_Barracuda,Seagate_Technology,Seagate_Barracuda,982,9400,2017-01,2017-01,38,5.01,2017-01-03,2026-11-06,low product views
+SHW,Sherwin-Williams,Materials,Sherwin-Williams,Dutch_Boy_Paints,Sherwin-Williams,,0,8699,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+SHW,Sherwin-Williams,Materials,Sherwin-Williams,Valspar,Sherwin-Williams,Valspar,1664,8699,2017-01,2017-01,115,9.64,2017-01-03,2026-11-06,low product views
+SHW,Sherwin-Williams,Materials,Sherwin-Williams,Krylon,Sherwin-Williams,Sherwin-Williams,8699,8699,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Sherwin-Williams; no clicks to company page
+SPG,Simon Property Group,Real Estate,Simon_Property_Group,King_of_Prussia_(mall),Simon_Property_Group,King_of_Prussia_(shopping_mall),6159,9721,2021-04,2017-01,95,2.01,2017-01-03,2026-11-06,product redirects to King_of_Prussia_(shopping_mall)
+SPG,Simon Property Group,Real Estate,Simon_Property_Group,Woodbury_Common_Premium_Outlets,Simon_Property_Group,Woodbury_Common_Premium_Outlets,1490,9721,2017-01,2017-01,54,4.15,2017-01-03,2026-11-06,low product views
+SPG,Simon Property Group,Real Estate,Simon_Property_Group,The_Forum_Shops_at_Caesars,Simon_Property_Group,The_Forum_Shops_at_Caesars,1118,9721,2017-01,2017-01,14,1.49,2017-01-03,2026-11-06,low product views
+SKYD,Skydance,Communication Services,Skydance,Paramount+,Skydance,Paramount+,46146,8959,2020-12,2019-11,2219,4.27,2017-01-03,2026-11-06,company views start 2019-11
+SKYD,Skydance,Communication Services,Skydance,CBS,Skydance,CBS,63901,8959,2017-01,2019-11,4447,7.08,2017-01-03,2026-11-06,company views start 2019-11
+SKYD,Skydance,Communication Services,Skydance,MTV,Skydance,MTV,87551,8959,2017-01,2019-11,849,1.7,2017-01-03,2026-11-06,company views start 2019-11
+SKYD,Skydance,Communication Services,Skydance,Nickelodeon,Skydance,Nickelodeon,88594,8959,2017-01,2019-11,5109,5.11,2017-01-03,2026-11-06,company views start 2019-11
+SKYD,Skydance,Communication Services,Skydance,Pluto_TV,Skydance,Pluto_TV,20577,8959,2017-01,2019-11,1197,6.01,2017-01-03,2026-11-06,company views start 2019-11
+SNA,Snap-on,Industrials,Snap-on,Snap-on_tools,Snap-on,,0,5885,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+SOLV,Solventum,Health Care,Solventum,Littmann_(stethoscope),Solventum,,0,3285,,2024-03,0,,2024-03-26,2026-11-06,product redirects to nan; low product views; no clicks to company page; company views start 2024-03; prices start 2024-03-26
+SO,Southern Company,Utilities,Southern_Company,Vogtle_Electric_Generating_Plant,Southern_Company,Vogtle_Electric_Generating_Plant,9256,6342,2017-01,2017-01,37,0.52,2017-01-03,2026-11-06,
+SO,Southern Company,Utilities,Southern_Company,Georgia_Power,Southern_Company,Georgia_Power,2034,6342,2017-01,2017-01,304,17.29,2017-01-03,2026-11-06,low product views
+LUV,Southwest Airlines,Industrials,Southwest_Airlines,Rapid_Rewards,Southwest_Airlines,Southwest_Airlines,42880,42880,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Southwest_Airlines; no clicks to company page
+SWK,Stanley Black & Decker,Industrials,Stanley_Black_&_Decker,DeWalt,Stanley_Black_&_Decker,DeWalt,10706,11405,2017-01,2017-01,1355,17.1,2017-01-03,2026-11-06,
+SWK,Stanley Black & Decker,Industrials,Stanley_Black_&_Decker,Craftsman_(tools),Stanley_Black_&_Decker,Craftsman_(tools),6659,11405,2017-01,2017-01,610,11.47,2017-01-03,2026-11-06,
+SWK,Stanley Black & Decker,Industrials,Stanley_Black_&_Decker,Black_&_Decker,Stanley_Black_&_Decker,Black+Decker,6162,11405,2020-03,2017-01,458,9.08,2017-01-03,2026-11-06,product redirects to Black+Decker
+SYK,Stryker Corporation,Health Care,Stryker_Corporation,Mako_robot,Stryker_Corporation,,0,12538,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+SYF,Synchrony Financial,Financials,Synchrony_Financial,CareCredit,Synchrony_Financial,Synchrony_Financial,6133,6133,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Synchrony_Financial; no clicks to company page
+SNPS,Synopsys,Information Technology,Synopsys,Synopsys_Design_Compiler,Synopsys,,0,9476,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+TMUS,T-Mobile US,Communication Services,T-Mobile_US,Metro_by_T-Mobile,T-Mobile_US,Metro_by_T-Mobile,5632,29946,2018-09,2017-01,277,5.08,2017-01-03,2026-11-06,
+TMUS,T-Mobile US,Communication Services,T-Mobile_US,Mint_Mobile,T-Mobile_US,Mint_Mobile,9874,29946,2019-12,2017-01,294,4.04,2017-01-03,2026-11-06,
+TGT,Target Corporation,Consumer Staples,Target_Corporation,Target_Circle,Target_Corporation,Target_circle,38,45917,2020-12,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Target_circle; low product views; no clicks to company page
+TGT,Target Corporation,Consumer Staples,Target_Corporation,Up_&_Up,Target_Corporation,Up&Up,1031,45917,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Up&Up; low product views; no clicks to company page
+TXN,Texas Instruments,Information Technology,Texas_Instruments,TI-84_Plus_series,Texas_Instruments,TI-84_Plus_series,5021,24110,2017-01,2017-01,128,2.62,2017-01-03,2026-11-06,
+TXN,Texas Instruments,Information Technology,Texas_Instruments,TI-83_series,Texas_Instruments,TI-83_series,2480,24110,2017-01,2017-01,49,2.28,2017-01-03,2026-11-06,low product views
+TXN,Texas Instruments,Information Technology,Texas_Instruments,TI-Nspire_series,Texas_Instruments,TI-Nspire_series,3488,24110,2017-01,2017-01,66,2.19,2017-01-03,2026-11-06,
+TXT,Textron,Industrials,Textron,Cessna,Textron,Cessna,16048,9541,2017-01,2017-01,124,0.92,2017-01-03,2026-11-06,
+TXT,Textron,Industrials,Textron,Bell_Textron,Textron,Bell_Textron,6560,9541,2019-12,2017-01,959,17.39,2017-01-03,2026-11-06,
+TXT,Textron,Industrials,Textron,Beechcraft,Textron,Beechcraft,7673,9541,2017-01,2017-01,17,0.27,2017-01-03,2026-11-06,
+TXT,Textron,Industrials,Textron,Cessna_Citation,Textron,Cessna_Citation_family,6691,9541,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Cessna_Citation_family; no clicks to company page
+TMO,Thermo Fisher Scientific,Health Care,Thermo_Fisher_Scientific,Fisher_Scientific,Thermo_Fisher_Scientific,Fisher_Scientific,1973,16111,2017-01,2017-01,155,9.5,2017-01-03,2026-11-06,low product views
+TMO,Thermo Fisher Scientific,Health Care,Thermo_Fisher_Scientific,Applied_Biosystems,Thermo_Fisher_Scientific,Applied_Biosystems,690,16111,2017-01,2017-01,26,4.93,2017-01-03,2026-11-06,low product views
+TMO,Thermo Fisher Scientific,Health Care,Thermo_Fisher_Scientific,Invitrogen,Thermo_Fisher_Scientific,Invitrogen,738,16111,2017-01,2017-01,27,5.45,2017-01-03,2026-11-06,low product views
+TJX,TJX Companies,Consumer Discretionary,TJX,TJ_Maxx,TJX,TJ_Maxx,11659,12175,2017-08,2024-11,1288,11.88,2017-01-03,2026-11-06,company views start 2024-11
+TJX,TJX Companies,Consumer Discretionary,TJX,Marshalls,TJX,Marshalls,7221,12175,2017-01,2024-11,496,6.75,2017-01-03,2026-11-06,company views start 2024-11
+TJX,TJX Companies,Consumer Discretionary,TJX,HomeGoods,TJX,HomeGoods,3519,12175,2017-01,2024-11,268,8.44,2017-01-03,2026-11-06,company views start 2024-11
+TJX,TJX Companies,Consumer Discretionary,TJX,TK_Maxx,TJX,TK_Maxx,11544,12175,2017-08,2024-11,530,4.65,2017-01-03,2026-11-06,company views start 2024-11
+TKO,TKO Group Holdings,Communication Services,TKO_Group_Holdings,Ultimate_Fighting_Championship,TKO_Group_Holdings,Ultimate_Fighting_Championship,106140,41562,2017-01,2023-07,2350,3.41,2017-01-03,2026-11-06,company views start 2023-07
+TKO,TKO Group Holdings,Communication Services,TKO_Group_Holdings,WWE,TKO_Group_Holdings,WWE,169412,41562,2017-01,2023-07,4210,3.4,2017-01-03,2026-11-06,company views start 2023-07
+TSCO,Tractor Supply,Consumer Discretionary,Tractor_Supply_Company,Petsense,Tractor_Supply_Company,,0,5370,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+TT,Trane Technologies,Industrials,Trane_Technologies,Trane,Trane_Technologies,Trane,3483,4411,2017-01,2020-03,394,13.55,2017-01-03,2026-11-06,company views start 2020-03
+TT,Trane Technologies,Industrials,Trane_Technologies,Thermo_King,Trane_Technologies,Thermo_King,2075,4411,2017-01,2020-03,146,9.19,2017-01-03,2026-11-06,low product views; company views start 2020-03
+TRV,Travelers Companies (The),Financials,The_Travelers_Companies,Travelers_umbrella,The_Travelers_Companies,,0,6544,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+TRMB,Trimble Inc.,Information Technology,Trimble_Inc.,SketchUp,Trimble_Inc.,SketchUp,11089,5271,2017-01,2020-08,252,3.14,2017-01-03,2026-11-06,company views start 2020-08
+TWLO,Twilio,Information Technology,Twilio,SendGrid,Twilio,SendGrid,2409,9848,2017-01,2017-01,48,2.56,2017-01-03,2026-11-06,low product views
+TSN,Tyson Foods,Consumer Staples,Tyson_Foods,Jimmy_Dean,Tyson_Foods,Jimmy_Dean,19575,11878,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,no clicks to company page
+TSN,Tyson Foods,Consumer Staples,Tyson_Foods,Hillshire_Brands,Tyson_Foods,Hillshire_Brands,909,11878,2017-01,2017-01,212,25.0,2017-01-03,2026-11-06,low product views
+TSN,Tyson Foods,Consumer Staples,Tyson_Foods,Ball_Park_Franks,Tyson_Foods,Ball_Park_Franks,1284,11878,2017-01,2017-01,43,3.37,2017-01-03,2026-11-06,low product views
+TSN,Tyson Foods,Consumer Staples,Tyson_Foods,Tyson_chicken_nuggets,Tyson_Foods,,0,11878,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+UBER,Uber,Industrials,Uber,Uber_Eats,Uber,Uber_Eats,9663,51006,2018-01,2017-01,557,6.6,2019-05-10,2026-11-06,prices start 2019-05-10
+UAL,United Airlines Holdings,Industrials,United_Airlines,MileagePlus,United_Airlines,MileagePlus,1471,87138,2017-01,2017-01,23,1.9,2017-01-03,2026-11-06,low product views
+UAL,United Airlines Holdings,Industrials,United_Airlines,United_Express,United_Airlines,United_Express,8011,87138,2017-01,2017-01,258,3.8,2017-01-03,2026-11-06,
+UPS,United Parcel Service,Industrials,United_Parcel_Service,UPS_Airlines,United_Parcel_Service,UPS_Airlines,20964,25168,2017-01,2017-01,514,5.11,2017-01-03,2026-11-06,
+UPS,United Parcel Service,Industrials,United_Parcel_Service,The_UPS_Store,United_Parcel_Service,The_UPS_Store,1452,25168,2017-01,2017-01,120,9.43,2017-01-03,2026-11-06,low product views
+UNH,UnitedHealth Group,Health Care,UnitedHealth_Group,Optum,UnitedHealth_Group,Optum,10088,28134,2018-05,2017-01,720,9.85,2017-01-03,2026-11-06,
+UNH,UnitedHealth Group,Health Care,UnitedHealth_Group,UnitedHealthcare,UnitedHealth_Group,UnitedHealth_Group,28134,28134,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to UnitedHealth_Group; no clicks to company page
+VLO,Valero Energy,Energy,Valero_Energy,Valero_(gas_station),Valero_Energy,,0,8047,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+VRSN,Verisign,Information Technology,Verisign,.com,Verisign,.com,47718,4661,2017-01,2017-01,877,2.05,2017-01-03,2026-11-06,
+VZ,Verizon,Communication Services,Verizon,Verizon_(wireless_service),Verizon,Verizon_(wireless_service),6526,26806,2024-12,2017-01,748,14.1,2017-01-03,2026-11-06,
+VZ,Verizon,Communication Services,Verizon,Fios,Verizon,Fios,94,26806,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,low product views; no clicks to company page
+VZ,Verizon,Communication Services,Verizon,Visible_(wireless_service),Verizon,Visible_by_Verizon,3090,26806,2022-11,2017-01,54,2.38,2017-01-03,2026-11-06,product redirects to Visible_by_Verizon
+VTRS,Viatris,Health Care,Viatris,EpiPen,Viatris,Epinephrine_autoinjector,6119,5733,2017-01,2020-11,0,0.0,2017-01-03,2026-11-06,product redirects to Epinephrine_autoinjector; no clicks to company page; company views start 2020-11
+VTRS,Viatris,Health Care,Viatris,Viagra,Viatris,Sildenafil,29339,5733,2017-01,2020-11,0,0.0,2017-01-03,2026-11-06,product redirects to Sildenafil; no clicks to company page; company views start 2020-11
+V,Visa Inc.,Financials,Visa_Inc.,Visa_Electron,Visa_Inc.,Visa_Electron,1239,27242,2017-01,2017-01,38,3.53,2017-01-03,2026-11-06,low product views
+V,Visa Inc.,Financials,Visa_Inc.,Visa_Debit,Visa_Inc.,Visa_Debit,1296,27242,2017-01,2017-01,87,8.3,2017-01-03,2026-11-06,low product views
+V,Visa Inc.,Financials,Visa_Inc.,Plus_(interbank_network),Visa_Inc.,Plus_(interbank_network),1064,27242,2017-01,2017-01,20,2.32,2017-01-03,2026-11-06,low product views
+VST,Vistra Corp,Utilities,Vistra_Corp.,Comanche_Peak_Nuclear_Power_Plant,Vistra_Corp.,Comanche_Peak_Nuclear_Power_Plant,1769,3747,2017-01,2025-06,23,1.5,2017-01-03,2026-11-06,low product views; company views start 2025-06
+VYLR,Vylor,Consumer Staples,Corteva,Pioneer_Hi-Bred,Corteva,Pioneer_Hi_Bred_International,1468,4880,2019-08,2019-05,204,13.83,2026-10-01,2026-11-06,product redirects to Pioneer_Hi_Bred_International; low product views; company views start 2019-05; prices start 2026-10-01
+WAB,Wabtec,Industrials,Wabtec,Evolution_Series,Wabtec,GE_Evolution_Series,7393,7605,2017-01,2017-01,83,1.35,2017-01-03,2026-11-06,product redirects to GE_Evolution_Series
+WM,Waste Management,Industrials,"Waste_Management,_Inc.",Waste_Management_Phoenix_Open,"Waste_Management,_Inc.",Phoenix_Open,5987,7502,2017-01,2017-01,17,1.52,2017-01-03,2026-11-06,product redirects to Phoenix_Open
+WFC,Wells Fargo,Financials,Wells_Fargo,Wells_Fargo_Advisors,Wells_Fargo,Wells_Fargo_Advisors,900,39924,2017-01,2017-01,47,6.84,2017-01-03,2026-11-06,low product views
+WDC,Western Digital,Information Technology,Western_Digital,WD_Black,Western_Digital,,0,12477,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+WSM,"Williams-Sonoma, Inc.",Consumer Discretionary,"Williams-Sonoma,_Inc.",Pottery_Barn,"Williams-Sonoma,_Inc.",Pottery_Barn,3682,3845,2017-01,2017-01,324,11.29,2017-01-03,2026-11-06,
+WSM,"Williams-Sonoma, Inc.",Consumer Discretionary,"Williams-Sonoma,_Inc.",West_Elm,"Williams-Sonoma,_Inc.",West_Elm,1758,3845,2017-01,2017-01,100,7.3,2017-01-03,2026-11-06,low product views
+WSM,"Williams-Sonoma, Inc.",Consumer Discretionary,"Williams-Sonoma,_Inc.",Williams_Sonoma,"Williams-Sonoma,_Inc.",Williams_Sonoma,1829,3845,2021-08,2017-01,350,15.83,2017-01-03,2026-11-06,low product views
+WYNN,Wynn Resorts,Consumer Discretionary,Wynn_Resorts,Wynn_Las_Vegas,Wynn_Resorts,Wynn_Las_Vegas,8301,6696,2017-01,2017-01,677,8.96,2017-01-03,2026-11-06,
+WYNN,Wynn Resorts,Consumer Discretionary,Wynn_Resorts,Encore_Las_Vegas,Wynn_Resorts,Encore_Las_Vegas,2597,6696,2017-01,2017-01,120,4.91,2017-01-03,2026-11-06,low product views
+WYNN,Wynn Resorts,Consumer Discretionary,Wynn_Resorts,Encore_Boston_Harbor,Wynn_Resorts,Encore_Boston_Harbor,2390,6696,2018-04,2017-01,141,5.16,2017-01-03,2026-11-06,low product views
+ZBRA,Zebra Technologies,Information Technology,Zebra_Technologies,Zebra_printers,Zebra_Technologies,,0,4715,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+ZTS,Zoetis,Health Care,Zoetis,Apoquel,Zoetis,Oclacitinib,1735,3344,2017-03,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Oclacitinib; low product views; no clicks to company page
+ZTS,Zoetis,Health Care,Zoetis,Simparica,Zoetis,Sarolaner,670,3344,2021-06,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Sarolaner; low product views; no clicks to company page
+ZTS,Zoetis,Health Care,Zoetis,Revolution_(medication),Zoetis,Selamectin,1016,3344,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Selamectin; low product views; no clicks to company page
+ASML,ASML,Information Technology,ASML,Extreme_ultraviolet_lithography,ASML,EUV_lithography,3822,28167,2023-09,2026-01,1193,11.09,2017-01-03,2026-11-06,product redirects to EUV_lithography; company views start 2026-01
+ALNY,Alnylam Pharmaceuticals,Health Care,Alnylam_Pharmaceuticals,Patisiran,Alnylam_Pharmaceuticals,Patisiran,807,2759,2018-08,2017-01,21,3.6,2017-01-03,2026-11-06,low product views
+ALNY,Alnylam Pharmaceuticals,Health Care,Alnylam_Pharmaceuticals,Vutrisiran,Alnylam_Pharmaceuticals,Vutrisiran,774,2759,2022-06,2017-01,0,0.0,2017-01-03,2026-11-06,low product views; no clicks to company page
+ARM,Arm Holdings,Information Technology,Arm_Holdings,ARM_Cortex-A,Arm_Holdings,ARM_Cortex-A,2039,20762,2017-01,2017-09,35,2.15,2023-09-14,2026-11-06,low product views; company views start 2017-09; prices start 2023-09-14
+ARM,Arm Holdings,Information Technology,Arm_Holdings,ARM_architecture_family,Arm_Holdings,ARM_architecture_family,31250,20762,2022-02,2017-09,2245,8.46,2023-09-14,2026-11-06,company views start 2017-09; prices start 2023-09-14
+CCEP,Coca-Cola Europacific Partners,Consumer Staples,Coca-Cola_Europacific_Partners,Coca-Cola,Coca-Cola_Europacific_Partners,Coca-Cola,113047,3094,2017-01,2021-05,0,0.0,2017-01-03,2026-11-06,no clicks to company page; company views start 2021-05
+MELI,MercadoLibre,Consumer Discretionary,MercadoLibre,Mercado_Pago,MercadoLibre,MercadoLibre,4537,4537,2017-06,2017-06,0,0.0,2017-01-03,2026-11-06,product redirects to MercadoLibre; no clicks to company page; company views start 2017-06
+PDD,Pinduoduo,Consumer Discretionary,Pinduoduo,Temu,Pinduoduo,Temu,49572,15165,2022-09,2018-08,2008,4.79,2018-07-26,2026-11-06,company views start 2018-08; prices start 2018-07-26
+RKLB,Rocket Lab,Industrials,Rocket_Lab,Rocket_Lab_Electron,Rocket_Lab,Rocket_Lab_Electron,7503,23910,2020-01,2017-01,508,9.75,2020-11-24,2026-11-06,prices start 2020-11-24
+RKLB,Rocket Lab,Industrials,Rocket_Lab,Rocket_Lab_Neutron,Rocket_Lab,Rocket_Lab_Neutron,7022,23910,2021-03,2017-01,490,5.94,2020-11-24,2026-11-06,prices start 2020-11-24
+SHOP,Shopify,Information Technology,Shopify,Shop_Pay,Shopify,Shop_Pay,2818,30559,2024-11,2017-01,186,7.72,2017-01-03,2026-11-06,low product views
+SPCX,SpaceX,Industrials,SpaceX,Falcon_9,SpaceX,Falcon_9,28631,129308,2017-01,2017-01,830,3.44,2026-06-12,2026-11-06,prices start 2026-06-12
+SPCX,SpaceX,Industrials,SpaceX,SpaceX_Starship,SpaceX,SpaceX_Starship,73833,129308,2019-09,2017-01,859,1.63,2026-06-12,2026-11-06,prices start 2026-06-12
+SPCX,SpaceX,Industrials,SpaceX,Starlink,SpaceX,Starlink,98115,129308,2018-02,2017-01,8449,7.31,2026-06-12,2026-11-06,prices start 2026-06-12
+SPCX,SpaceX,Industrials,SpaceX,SpaceX_Dragon_2,SpaceX,SpaceX_Dragon_2,14615,129308,2020-07,2017-01,314,2.61,2026-06-12,2026-11-06,prices start 2026-06-12
+SPCX,SpaceX,Industrials,SpaceX,Falcon_Heavy,SpaceX,Falcon_Heavy,23754,129308,2017-01,2017-01,419,2.79,2026-06-12,2026-11-06,prices start 2026-06-12
+TRI,Thomson Reuters,Industrials,Thomson_Reuters,Reuters,Thomson_Reuters,Reuters,41252,18490,2017-01,2017-01,3925,10.89,2017-01-03,2026-11-06,
+TRI,Thomson Reuters,Industrials,Thomson_Reuters,Westlaw,Thomson_Reuters,Westlaw,1876,18490,2017-01,2017-01,101,7.02,2017-01-03,2026-11-06,low product views

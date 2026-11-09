@@ -1,0 +1,328 @@
+ticker,company,sector,company_article,product_article,product_views_12m,company_views_12m,clicks_to_company,conversion_pct,suggestion,reason,final,decision
+MMM,3M,Industrials,3M,Post-it_note,7055,24571,248,3.6,keep,,,keep
+MMM,3M,Industrials,3M,Scotch_tape,3132,24571,158,6.03,fix,Product title is now Scotch_tape,,fix
+MMM,3M,Industrials,3M,Scotch-Brite,1429,24571,124,9.48,drop,"Too few views (1,429/month)",,drop
+MMM,3M,Industrials,3M,N95_respirator,5454,24571,0,0.0,drop,No clicks to the company page in Oct 2026,,drop
+MMM,3M,Industrials,3M,Thinsulate,1285,24571,32,3.01,drop,"Too few views (1,285/month)",,drop
+ACN,Accenture,Information Technology,Accenture,Accenture,49922,49922,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+AES,AES Corporation,Utilities,AES_Corporation,AES_Andes,245,4843,15,6.64,drop,Too few views (245/month),,drop
+AFL,Aflac,Financials,Aflac,Aflac,4601,4601,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+ALGN,Align Technology,Health Care,Align_Technology,Align_Technology,3770,3770,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+ALGN,Align Technology,Health Care,Align_Technology,iTero,0,3770,0,,drop,Too few views (0/month),,drop
+ALL,Allstate,Financials,Allstate,Esurance,1282,7392,53,4.45,drop,"Too few views (1,282/month)",,drop
+ALL,Allstate,Financials,Allstate,Allstate_Mayhem,0,7392,0,,drop,Too few views (0/month),,drop
+AXP,American Express,Financials,American_Express,American_Express_Platinum_Card,0,43914,0,,drop,Too few views (0/month),,drop
+AXP,American Express,Financials,American_Express,American_Express,43914,43914,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+APP,AppLovin,Communication Services,AppLovin,AppLovin_MAX,0,11183,0,,drop,Too few views (0/month),,drop
+ANET,Arista Networks,Information Technology,Arista_Networks,Arista_EOS,0,8374,0,,drop,Too few views (0/month),,drop
+T,AT&T,Communication Services,AT&T,AT&T_Mobility,7194,47106,398,6.49,keep,,,keep
+T,AT&T,Communication Services,AT&T,Cricket_Wireless,4999,47106,120,2.93,keep,,,keep
+T,AT&T,Communication Services,AT&T,DirecTV,11873,47106,118,1.16,keep,,,keep
+ADP,Automatic Data Processing,Industrials,ADP_(company),ADP_National_Employment_Report,0,11652,0,,drop,Too few views (0/month),,drop
+AVY,Avery Dennison,Materials,Avery_Dennison,Avery_Dennison_labels,0,3335,0,,drop,Too few views (0/month),,drop
+AXON,Axon Enterprise,Industrials,Axon_Enterprise,Taser,16162,8772,518,3.93,keep,,,keep
+AXON,Axon Enterprise,Industrials,Axon_Enterprise,Axon_Enterprise,8772,8772,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+BALL,Ball Corporation,Materials,Ball_Corporation,Mason_jar,6006,9482,130,2.44,fix,Product title is now Mason_jar,,drop
+BRK-B,Berkshire Hathaway,Financials,Berkshire_Hathaway,GEICO,12682,95204,467,4.59,keep,,,keep
+BRK-B,Berkshire Hathaway,Financials,Berkshire_Hathaway,Dairy_Queen,22323,95204,859,5.01,keep,,,keep
+BRK-B,Berkshire Hathaway,Financials,Berkshire_Hathaway,Duracell,6665,95204,566,9.65,keep,,,keep
+BRK-B,Berkshire Hathaway,Financials,Berkshire_Hathaway,See's_Candies,11161,95204,263,3.09,keep,,,keep
+BRK-B,Berkshire Hathaway,Financials,Berkshire_Hathaway,NetJets,9468,95204,218,3.12,keep,,,keep
+BBY,Best Buy,Consumer Discretionary,Best_Buy,Geek_Squad,4187,23548,106,2.69,keep,,,keep
+BLK,BlackRock,Financials,BlackRock,IShares,7522,130750,517,10.25,keep,,,keep
+BLK,BlackRock,Financials,BlackRock,Aladdin_(BlackRock),8987,130750,220,3.61,keep,,,keep
+BSX,Boston Scientific,Health Care,Boston_Scientific,Watchman_(medical_device),0,9868,0,,drop,Too few views (0/month),,drop
+AVGO,Broadcom,Information Technology,Broadcom,VMware,16505,34849,1101,6.34,keep,,,keep
+AVGO,Broadcom,Information Technology,Broadcom,Broadcom_Tomahawk,0,34849,0,,drop,Too few views (0/month),,drop
+CDNS,Cadence Design Systems,Information Technology,Cadence_Design_Systems,Cadence_Design_Systems,9011,9011,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+COF,Capital One,Financials,Capital_One,Capital_One_Venture,0,29900,0,,drop,Too few views (0/month),,drop
+CARR,Carrier Global,Industrials,Carrier_Global,Carrier_air_conditioner,0,10968,0,,drop,Too few views (0/month),,drop
+CARR,Carrier Global,Industrials,Carrier_Global,Kidde,1525,10968,46,3.72,drop,"Too few views (1,525/month)",,drop
+CAT,Caterpillar Inc.,Industrials,Caterpillar_Inc.,Caterpillar_D9,4405,31159,160,4.48,keep,,,keep
+CAT,Caterpillar Inc.,Industrials,Caterpillar_Inc.,Caterpillar_797,6107,31159,240,3.34,keep,,,keep
+CAT,Caterpillar Inc.,Industrials,Caterpillar_Inc.,Caterpillar_D11,4899,31159,50,1.2,keep,,,keep
+SCHW,Charles Schwab Corporation,Financials,Charles_Schwab_Corporation,TD_Ameritrade,4398,19000,401,9.16,keep,,,keep
+SCHW,Charles Schwab Corporation,Financials,Charles_Schwab_Corporation,Thinkorswim,2126,19000,40,2.52,drop,"Too few views (2,126/month)",,drop
+CHTR,Charter Communications,Communication Services,Charter_Communications,Spectrum_(brand),8263,15185,1842,21.15,keep,,,keep
+CVX,Chevron Corporation,Energy,Chevron_Corporation,Texaco,12354,36354,970,7.94,keep,,,keep
+CVX,Chevron Corporation,Energy,Chevron_Corporation,Techron,1743,36354,42,3.14,drop,"Too few views (1,743/month)",,drop
+CI,Cigna,Health Care,The_Cigna_Group,Express_Scripts,4395,5630,211,6.96,keep,,,keep
+CI,Cigna,Health Care,The_Cigna_Group,The_Cigna_Group,5630,5630,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+CTAS,Cintas,Industrials,Cintas,Cintas_uniforms,0,5258,0,,drop,Too few views (0/month),,drop
+CME,CME Group,Financials,CME_Group,Chicago_Mercantile_Exchange,5262,9653,187,3.36,keep,,,drop
+CME,CME Group,Financials,CME_Group,E-mini,609,9653,0,0.0,drop,Too few views (609/month),,drop
+COIN,Coinbase,Financials,Coinbase,Coinbase_Wallet,0,19151,0,,drop,Too few views (0/month),,drop
+COIN,Coinbase,Financials,Coinbase,List_of_blockchains,1002,19151,0,0.0,drop,"Too few views (1,002/month)",,drop
+ED,Consolidated Edison,Utilities,Consolidated_Edison,Con_Edison_steam_system,0,6609,0,,drop,Too few views (0/month),,drop
+STZ,Constellation Brands,Consumer Staples,Constellation_Brands,Corona_(beer),19945,7319,354,2.34,keep,,,keep
+STZ,Constellation Brands,Consumer Staples,Constellation_Brands,Grupo_Modelo,10687,7319,385,4.8,decide,"Article merged into 'Grupo Modelo' (the brewer, owned by AB InBev outside the US); STZ only sells it in the US",,drop
+STZ,Constellation Brands,Consumer Staples,Constellation_Brands,Pacífico_(beer),4091,7319,127,3.43,fix,Product title is now Pacífico_(beer),,fix
+STZ,Constellation Brands,Consumer Staples,Constellation_Brands,Robert_Mondavi,3416,7319,43,1.4,fix,Product title is now Robert_Mondavi,,fix
+CEG,Constellation Energy,Utilities,Constellation_Energy,Calvert_Cliffs_Nuclear_Power_Plant,1737,7355,43,2.53,drop,"Too few views (1,737/month)",,drop
+GLW,Corning Inc.,Information Technology,Corning_Inc.,Gorilla_Glass,8963,12722,612,9.41,keep,,,keep
+GLW,Corning Inc.,Information Technology,Corning_Inc.,Pyrex,9412,12722,331,4.96,keep,,,keep
+GLW,Corning Inc.,Information Technology,Corning_Inc.,CorningWare,4181,12722,139,3.45,keep,,,keep
+COST,Costco,Consumer Staples,Costco,Costco,77716,77716,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+COST,Costco,Consumer Staples,Costco,Costco_hot_dog,9257,77716,323,4.31,keep,,,keep
+CRWD,CrowdStrike,Information Technology,CrowdStrike,CrowdStrike,16891,16891,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+CRWD,CrowdStrike,Information Technology,CrowdStrike,2024_CrowdStrike-related_IT_outages,13246,16891,504,3.96,keep,,,drop
+CVS,CVS Health,Health Care,CVS_Health,CVS_Pharmacy,16210,13051,2017,7.99,keep,,,keep
+CVS,CVS Health,Health Care,CVS_Health,Aetna,8241,13051,587,8.31,keep,,,keep
+CVS,CVS Health,Health Care,CVS_Health,MinuteClinic,764,13051,21,3.42,drop,Too few views (764/month),,drop
+DHR,Danaher Corporation,Health Care,Danaher_Corporation,Beckman_Coulter,2402,11724,167,8.47,drop,"Too few views (2,402/month)",,drop
+DHR,Danaher Corporation,Health Care,Danaher_Corporation,Cepheid_(company),1491,11724,77,7.78,drop,"Too few views (1,491/month)",,drop
+DE,Deere & Company,Industrials,John_Deere,John_Deere_tractors,955,25640,73,3.99,drop,Too few views (955/month),,drop
+DE,Deere & Company,Industrials,John_Deere,John_Deere_4020,1059,25640,0,0.0,drop,"Too few views (1,059/month)",,drop
+DELL,Dell Technologies,Information Technology,Dell_Technologies,Alienware,6910,15404,0,0.0,drop,No clicks to the company page in Oct 2026,,drop
+DELL,Dell Technologies,Information Technology,Dell_Technologies,Dell_XPS,6050,15404,0,0.0,drop,No clicks to the company page in Oct 2026,,drop
+DELL,Dell Technologies,Information Technology,Dell_Technologies,Dell_Inspiron,1676,15404,0,0.0,drop,"Too few views (1,676/month)",,drop
+DELL,Dell Technologies,Information Technology,Dell_Technologies,Dell_Latitude,11621,15404,45,0.52,keep,,,keep
+DELL,Dell Technologies,Information Technology,Dell_Technologies,PowerEdge,746,15404,0,0.0,drop,Too few views (746/month),,drop
+DAL,Delta Air Lines,Industrials,Delta_Air_Lines,SkyMiles,1378,78790,29,2.75,drop,"Too few views (1,378/month)",,drop
+DAL,Delta Air Lines,Industrials,Delta_Air_Lines,Delta_Connection,6715,78790,272,4.76,keep,,,keep
+DXCM,Dexcom,Health Care,Dexcom,Dexcom_G7,76,4931,12,1.91,drop,Too few views (76/month),,drop
+DLTR,Dollar Tree,Consumer Staples,Dollar_Tree,Family_Dollar,5082,10878,555,12.39,keep,,,keep
+DASH,DoorDash,Consumer Discretionary,DoorDash,Wolt,11045,30000,771,9.05,keep,,,keep
+DASH,DoorDash,Consumer Discretionary,DoorDash,Caviar_(company),310,30000,0,0.0,drop,Too few views (310/month),,drop
+DOW,Dow Inc.,Materials,Dow_Chemical_Company,Styrofoam,5912,15655,26,0.49,keep,,,keep
+DOW,Dow Inc.,Materials,Dow_Chemical_Company,Saran_(plastic),2630,15655,50,2.02,drop,"Too few views (2,630/month)",,drop
+DUK,Duke Energy,Utilities,Duke_Energy,Duke_Energy,8079,8079,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+DD,DuPont,Industrials,DuPont,Kevlar,17574,32930,253,1.6,keep,,,keep
+DD,DuPont,Industrials,DuPont,Tyvek,4243,32930,111,2.9,keep,,,keep
+DD,DuPont,Industrials,DuPont,Nomex,4420,32930,58,1.44,keep,,,keep
+DD,DuPont,Industrials,DuPont,Corian,2663,32930,51,2.31,drop,"Too few views (2,663/month)",,drop
+EBAY,eBay Inc.,Consumer Discretionary,EBay,StubHub,4895,71856,12,0.4,keep,,,keep
+ECHO,EchoStar,Communication Services,EchoStar,Dish_Network,9999,7047,873,11.01,keep,,,keep
+ECHO,EchoStar,Communication Services,EchoStar,Boost_Mobile,8750,7047,791,11.67,keep,,,keep
+ECHO,EchoStar,Communication Services,EchoStar,Sling_TV,7050,7047,254,4.45,keep,,,keep
+ECL,Ecolab,Materials,Ecolab,Nalco_Water,992,5740,107,9.7,drop,Too few views (992/month),,drop
+EW,Edwards Lifesciences,Health Care,Edwards_Lifesciences,Sapien_3,0,2793,0,,drop,Too few views (0/month),,drop
+ELV,Elevance Health,Health Care,Elevance_Health,Elevance_Health,8130,8130,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+EXC,Exelon,Utilities,Exelon,Commonwealth_Edison,2621,4721,218,10.29,drop,"Too few views (2,621/month)",,drop
+EXC,Exelon,Utilities,Exelon,PECO_Energy_Company,1806,4721,104,8.25,drop,"Too few views (1,806/month)",,drop
+XOM,ExxonMobil,Energy,ExxonMobil,Esso,13062,43540,1002,8.89,keep,,,keep
+XOM,ExxonMobil,Energy,ExxonMobil,Mobil_Oil_Corporation,4084,43540,1073,20.94,fix,Product title is now Mobil_Oil_Corporation,,fix
+XOM,ExxonMobil,Energy,ExxonMobil,Mobil_1,2906,43540,275,9.85,drop,"Too few views (2,906/month)",,drop
+FDX,FedEx,Industrials,FedEx,FedEx_Express,19797,30694,726,4.85,keep,,,keep
+FDX,FedEx,Industrials,FedEx,FedEx_Ground,1691,30694,69,4.91,drop,"Too few views (1,691/month)",,drop
+FDX,FedEx,Industrials,FedEx,FedEx_Office,2647,30694,62,2.8,drop,"Too few views (2,647/month)",,drop
+FTNT,Fortinet,Information Technology,Fortinet,Fortinet,8337,8337,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+FOXA,Fox Corporation,Communication Services,Fox_Corporation,Fox_News,78897,34002,3864,7.9,keep,,,keep
+FOXA,Fox Corporation,Communication Services,Fox_Corporation,Fox_Broadcasting_Company,66949,34002,2064,3.17,keep,,,keep
+FOXA,Fox Corporation,Communication Services,Fox_Corporation,Tubi,38259,34002,1640,5.12,keep,,,keep
+FOXA,Fox Corporation,Communication Services,Fox_Corporation,Fox_Sports_(United_States),7797,34002,424,7.41,keep,,,keep
+FCX,Freeport-McMoRan,Materials,Freeport-McMoRan,Grasberg_mine,5821,6845,452,7.35,keep,,,drop
+GE,GE Aerospace,Industrials,GE_Aerospace,General_Electric_GE9X,10670,20596,169,2.14,keep,,,keep
+GE,GE Aerospace,Industrials,GE_Aerospace,CFM_International_LEAP,15187,20596,96,0.8,keep,,,keep
+GE,GE Aerospace,Industrials,GE_Aerospace,General_Electric_GE90,10562,20596,174,2.11,keep,,,keep
+GEHC,GE HealthCare,Health Care,GE_HealthCare,Vscan,0,11026,0,,drop,Too few views (0/month),,drop
+GEV,GE Vernova,Industrials,GE_Vernova,GE_Wind,640,23113,58,11.96,drop,Too few views (640/month),,drop
+GEN,Gen Digital,Information Technology,Gen_Digital,Norton_AntiVirus,2982,7179,232,9.08,drop,"Too few views (2,982/month)",,drop
+GEN,Gen Digital,Information Technology,Gen_Digital,Avast_Antivirus,3846,7179,151,5.5,keep,,,keep
+GEN,Gen Digital,Information Technology,Gen_Digital,LifeLock,2617,7179,81,4.3,drop,"Too few views (2,617/month)",,drop
+GEN,Gen Digital,Information Technology,Gen_Digital,CCleaner,4426,7179,22,0.78,keep,,,keep
+GNRC,Generac,Industrials,Generac,Generac_generator,0,2616,0,,drop,Too few views (0/month),,drop
+HPE,Hewlett Packard Enterprise,Information Technology,Hewlett_Packard_Enterprise,Aruba_Networks,2925,16896,117,4.87,drop,"Too few views (2,925/month)",,drop
+HPE,Hewlett Packard Enterprise,Information Technology,Hewlett_Packard_Enterprise,Frontier_(supercomputer),5619,16896,0,0.0,drop,No clicks to the company page in Oct 2026,,drop
+HPE,Hewlett Packard Enterprise,Information Technology,Hewlett_Packard_Enterprise,El_Capitan_(supercomputer),12084,16896,21,0.26,keep,,,keep
+HD,Home Depot (The),Consumer Discretionary,Home_Depot,Husky_(disambiguation),396,45438,0,0.0,drop,Too few views (396/month),,drop
+HD,Home Depot (The),Consumer Discretionary,Home_Depot,Ryobi,8338,45438,0,0.0,drop,No clicks to the company page in Oct 2026,,drop
+HONA,Honeywell Aerospace,Industrials,Honeywell_Aerospace,Honeywell_HTF7000,1930,5789,89,5.52,drop,"Too few views (1,930/month)",,drop
+HON,Honeywell Technologies,Industrials,Honeywell,Honeywell_thermostat,0,27423,0,,drop,Too few views (0/month),,drop
+HST,Host Hotels & Resorts,Real Estate,Host_Hotels_&_Resorts,Hotel_del_Coronado,7342,1555,0,0.0,drop,No clicks to the company page in Oct 2026,,drop
+HPQ,HP Inc.,Information Technology,HP_Inc.,HP_Spectre,1399,23807,11,0.99,drop,"Too few views (1,399/month)",,drop
+HPQ,HP Inc.,Information Technology,HP_Inc.,HP_Pavilion,2641,23807,38,1.65,drop,"Too few views (2,641/month)",,drop
+HPQ,HP Inc.,Information Technology,HP_Inc.,HP_LaserJet,1993,23807,18,1.09,drop,"Too few views (1,993/month)",,drop
+HPQ,HP Inc.,Information Technology,HP_Inc.,HP_Envy,1895,23807,24,1.65,drop,"Too few views (1,895/month)",,drop
+HPQ,HP Inc.,Information Technology,HP_Inc.,HP_Omen,1996,23807,0,0.0,drop,"Too few views (1,996/month)",,drop
+HUM,Humana,Health Care,Humana,Humana,6454,6454,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+HII,Huntington Ingalls Industries,Industrials,Huntington_Ingalls_Industries,Newport_News_Shipbuilding,11711,12091,856,10.05,keep,,,drop
+HII,Huntington Ingalls Industries,Industrials,Huntington_Ingalls_Industries,Ingalls_Shipbuilding,7430,12091,395,8.26,keep,,,drop
+IBM,IBM,Information Technology,IBM,IBM_Watson,6165,74022,144,2.65,keep,,,keep
+IBM,IBM,Information Technology,IBM,IBM_Z,5168,74022,63,1.45,keep,,,keep
+IBM,IBM,Information Technology,IBM,Red_Hat,17028,74022,721,5.24,keep,,,keep
+IBM,IBM,Information Technology,IBM,Red_Hat_Enterprise_Linux,15704,74022,0,0.0,drop,No clicks to the company page in Oct 2026,,drop
+IBM,IBM,Information Technology,IBM,IBM_Q_System_One,1722,74022,30,2.11,drop,"Too few views (1,722/month)",,drop
+IDXX,Idexx Laboratories,Health Care,Idexx_Laboratories,SNAP_test,0,1843,0,,drop,Too few views (0/month),,drop
+ILMN,"Illumina, Inc.",Health Care,"Illumina,_Inc.",Illumina_dye_sequencing,1327,4232,27,2.47,drop,"Too few views (1,327/month)",,drop
+INCY,Incyte,Health Care,Incyte,Ruxolitinib,3993,1714,13,0.43,keep,,,keep
+PODD,Insulet Corporation,Health Care,,Omnipod,0,0,0,,drop,Too few views (0/month),,drop
+ICE,Intercontinental Exchange,Financials,Intercontinental_Exchange,New_York_Stock_Exchange,40057,12875,1855,5.53,keep,,,drop
+IP,International Paper,Materials,International_Paper,International_Paper,4022,4022,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+JNJ,Johnson & Johnson,Health Care,Johnson_&_Johnson,Tylenol,28406,30552,146,0.67,keep,,,keep
+JNJ,Johnson & Johnson,Health Care,Johnson_&_Johnson,Listerine,6492,30552,64,1.33,keep,,,keep
+JNJ,Johnson & Johnson,Health Care,Johnson_&_Johnson,Band-Aid,5113,30552,119,2.77,keep,,,keep
+JNJ,Johnson & Johnson,Health Care,Johnson_&_Johnson,Ustekinumab,2896,30552,0,0.0,drop,"Too few views (2,896/month)",,drop
+JNJ,Johnson & Johnson,Health Care,Johnson_&_Johnson,Daratumumab,2678,30552,0,0.0,drop,"Too few views (2,678/month)",,drop
+JPM,JPMorgan Chase,Financials,JPMorgan_Chase,Chase_Bank,25719,76641,1391,6.23,keep,,,keep
+JPM,JPMorgan Chase,Financials,JPMorgan_Chase,Chase_Bank,25719,76641,1391,6.23,fix,Product title is now Chase_Bank,,fix
+KR,Kroger,Consumer Staples,Kroger,Ralphs,5073,31044,359,8.89,keep,,,keep
+KR,Kroger,Consumer Staples,Kroger,Fred_Meyer,6557,31044,425,7.23,keep,,,keep
+KR,Kroger,Consumer Staples,Kroger,Harris_Teeter,6337,31044,382,6.77,keep,,,keep
+KR,Kroger,Consumer Staples,Kroger,King_Soopers,3521,31044,217,6.96,keep,,,keep
+LHX,L3Harris,Industrials,L3Harris,AN/PRC-152,3056,19480,34,1.18,keep,,,keep
+LHX,L3Harris,Industrials,L3Harris,L3Harris_EA-37B_Compass_Call,17166,19480,183,1.7,keep,,,keep
+LVS,Las Vegas Sands,Consumer Discretionary,Las_Vegas_Sands,Marina_Bay_Sands,22900,13863,1339,6.02,keep,,,keep
+LVS,Las Vegas Sands,Consumer Discretionary,Las_Vegas_Sands,The_Venetian_Macao,5708,13863,290,6.03,keep,,,keep
+LII,Lennox International,Industrials,Lennox_International,Lennox_furnace,0,2155,0,,drop,Too few views (0/month),,drop
+LOW,Lowe's,Consumer Discretionary,Lowe's,Kobalt_(tools),2570,29036,45,2.87,drop,"Too few views (2,570/month)",,drop
+LULU,Lululemon Athletica,Consumer Discretionary,Lululemon,Mirror_(company),0,45050,0,,drop,Too few views (0/month),,drop
+MPC,Marathon Petroleum,Energy,Marathon_Petroleum,ARCO,5577,7636,548,12.16,keep,,,keep
+MPC,Marathon Petroleum,Energy,Marathon_Petroleum,Speedway_(store),6024,7636,209,4.13,fix,Product title is now Speedway_(store),,fix
+MAS,Masco,Industrials,Masco,Behr_Process_Corporation,0,2186,0,,drop,Too few views (0/month),,drop
+MAS,Masco,Industrials,Masco,Delta_Faucet_Company,1272,2186,164,16.29,drop,"Too few views (1,272/month)",,drop
+MA,Mastercard,Financials,Mastercard,Maestro_(debit_card),4375,22860,276,7.71,keep,,,keep
+MA,Mastercard,Financials,Mastercard,Cirrus_(interbank_network),2026,22860,110,6.94,drop,"Too few views (2,026/month)",,drop
+MDT,Medtronic,Health Care,Medtronic,Medtronic,12608,12608,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+MDT,Medtronic,Health Care,Medtronic,Micra_(pacemaker),0,12608,0,,drop,Too few views (0/month),,drop
+MGM,MGM Resorts,Consumer Discretionary,MGM_Resorts_International,Bellagio_(resort),11671,13731,371,3.8,keep,,,keep
+MGM,MGM Resorts,Consumer Discretionary,MGM_Resorts_International,MGM_Grand_Las_Vegas,12530,13731,744,6.99,keep,,,keep
+MGM,MGM Resorts,Consumer Discretionary,MGM_Resorts_International,MGM_Resorts_International,13731,13731,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+MU,Micron Technology,Information Technology,Micron_Technology,Micron_Technology,48087,48087,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+MRNA,Moderna,Health Care,Moderna,Moderna_COVID-19_vaccine,4227,8856,217,4.94,keep,,,keep
+MRNA,Moderna,Health Care,Moderna,MRNA-1283,143,8856,0,0.0,drop,Too few views (143/month),,drop
+MCO,Moody's Corporation,Financials,Moody's_Corporation,Moody's_Analytics,1205,5402,101,10.3,drop,"Too few views (1,205/month)",,drop
+MSI,Motorola Solutions,Information Technology,Motorola_Solutions,Motorola_Solutions_APX,0,10572,0,,drop,Too few views (0/month),,drop
+MSCI,MSCI,Financials,MSCI,MSCI_World,6784,8884,260,4.85,keep,,,drop
+MSCI,MSCI,Financials,MSCI,MSCI_EAFE,1098,8884,22,2.7,drop,"Too few views (1,098/month)",,drop
+NDAQ,"Nasdaq, Inc.",Financials,"Nasdaq,_Inc.",Nasdaq-100,178148,6480,85,0.04,keep,,,drop
+NDAQ,"Nasdaq, Inc.",Financials,"Nasdaq,_Inc.",Nasdaq_Composite,12652,6480,216,2.1,keep,,,drop
+NEM,Newmont,Materials,Newmont,Boddington_gold_mine,732,4612,25,4.7,drop,Too few views (732/month),,drop
+NEE,NextEra Energy,Utilities,NextEra_Energy,Florida_Power_&_Light,4308,9130,370,9.63,keep,,,keep
+OKTA,"Okta, Inc.",Information Technology,"Okta,_Inc.","Okta,_Inc.",9670,9670,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+OMC,Omnicom Group,Communication Services,Omnicom_Group,BBDO,4298,12049,208,6.77,keep,,,keep
+OMC,Omnicom Group,Communication Services,Omnicom_Group,DDB_Worldwide,3082,12049,103,4.03,keep,,,keep
+OMC,Omnicom Group,Communication Services,Omnicom_Group,TBWA_Worldwide,2001,12049,270,19.08,drop,"Too few views (2,001/month)",,drop
+OTIS,Otis Worldwide,Industrials,Otis_Worldwide,Otis_Worldwide,9400,9400,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+PCAR,Paccar,Industrials,Paccar,Kenworth,9122,10887,789,8.58,keep,,,keep
+PCAR,Paccar,Industrials,Paccar,Peterbilt,11892,10887,1266,9.54,keep,,,keep
+PCAR,Paccar,Industrials,Paccar,DAF_Trucks,11284,10887,1201,11.23,keep,,,keep
+PLTR,Palantir Technologies,Information Technology,Palantir,Palantir,114206,114206,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+PLTR,Palantir Technologies,Information Technology,Palantir,Palantir,114206,114206,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+PANW,Palo Alto Networks,Information Technology,Palo_Alto_Networks,Palo_Alto_Networks,17660,17660,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+PSX,Phillips 66,Energy,Phillips_66,76_(gas_station),5239,9514,509,10.84,keep,,,keep
+PSX,Phillips 66,Energy,Phillips_66,Conoco,3509,9514,262,9.27,keep,,,keep
+PPG,PPG Industries,Materials,PPG_Industries,Glidden,75,11579,0,0.0,drop,Too few views (75/month),,drop
+PPG,PPG Industries,Materials,PPG_Industries,Olympic_paint,0,11579,0,,drop,Too few views (0/month),,drop
+PGR,Progressive Corporation,Financials,Progressive_Corporation,Flo_(Progressive_Insurance),11440,7952,273,2.07,fix,Product title is now Flo_(Progressive_Insurance),,fix
+PTC,PTC Inc.,Information Technology,PTC_Inc.,Creo_(software),0,4011,0,,drop,Too few views (0/month),,drop
+PTC,PTC Inc.,Information Technology,PTC_Inc.,Onshape,3827,4011,242,7.21,keep,,,keep
+RL,Ralph Lauren Corporation,Consumer Discretionary,Ralph_Lauren_Corporation,Ralph_Lauren_Corporation,16615,16615,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+RMD,ResMed,Health Care,ResMed,AirSense,0,2763,0,,drop,Too few views (0/month),,drop
+HOOD,Robinhood Markets,Financials,Robinhood_(company),Robinhood_(app),0,1473,0,,drop,Too few views (0/month),,drop
+ROL,"Rollins, Inc.",Industrials,"Rollins,_Inc.",Orkin,1556,1449,133,10.07,drop,"Too few views (1,556/month)",,drop
+ROST,Ross Stores,Consumer Discretionary,Ross_Stores,Ross_Stores,10338,10338,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+ROST,Ross Stores,Consumer Discretionary,Ross_Stores,Ross_Stores,10338,10338,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+RTX,RTX Corporation,Industrials,RTX_Corporation,Pratt_&_Whitney,21783,36323,2319,12.62,keep,,,keep
+RTX,RTX Corporation,Industrials,RTX_Corporation,Collins_Aerospace,10634,36323,1404,14.65,keep,,,keep
+RTX,RTX Corporation,Industrials,RTX_Corporation,Raytheon,26811,36323,3760,17.31,keep,,,keep
+RTX,RTX Corporation,Industrials,RTX_Corporation,FIM-92_Stinger,24326,36323,14,0.07,keep,,,keep
+RTX,RTX Corporation,Industrials,RTX_Corporation,MIM-104_Patriot,67853,36323,0,0.0,drop,No clicks to the company page in Oct 2026,,drop
+SPGI,S&P Global,Financials,S&P_Global,S&P_500,77117,14438,37,0.06,keep,,,drop
+SPGI,S&P Global,Financials,S&P_Global,Dow_Jones_Industrial_Average,97766,14438,0,0.0,drop,No clicks to the company page in Oct 2026,,drop
+SNDK,Sandisk,Information Technology,Sandisk,SanDisk_Extreme,0,21091,0,,drop,Too few views (0/month),,drop
+SNDK,Sandisk,Information Technology,Sandisk,SD_card,23948,21091,165,0.71,keep,,,keep
+STX,Seagate Technology,Information Technology,Seagate_Technology,Seagate_Barracuda,982,9400,38,5.01,drop,Too few views (982/month),,drop
+SHW,Sherwin-Williams,Materials,Sherwin-Williams,Dutch_Boy_Paints,0,8699,0,,drop,Too few views (0/month),,drop
+SHW,Sherwin-Williams,Materials,Sherwin-Williams,Valspar,1664,8699,115,9.64,drop,"Too few views (1,664/month)",,drop
+SHW,Sherwin-Williams,Materials,Sherwin-Williams,Sherwin-Williams,8699,8699,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+SPG,Simon Property Group,Real Estate,Simon_Property_Group,King_of_Prussia_(shopping_mall),6159,9721,95,2.01,fix,Product title is now King_of_Prussia_(shopping_mall),,fix
+SPG,Simon Property Group,Real Estate,Simon_Property_Group,Woodbury_Common_Premium_Outlets,1490,9721,54,4.15,drop,"Too few views (1,490/month)",,drop
+SPG,Simon Property Group,Real Estate,Simon_Property_Group,The_Forum_Shops_at_Caesars,1118,9721,14,1.49,drop,"Too few views (1,118/month)",,drop
+SKYD,Skydance,Communication Services,Skydance,Paramount+,46146,8959,2219,4.27,keep,,,keep
+SKYD,Skydance,Communication Services,Skydance,CBS,63901,8959,4447,7.08,keep,,,keep
+SKYD,Skydance,Communication Services,Skydance,MTV,87551,8959,849,1.7,keep,,,keep
+SKYD,Skydance,Communication Services,Skydance,Nickelodeon,88594,8959,5109,5.11,keep,,,keep
+SKYD,Skydance,Communication Services,Skydance,Pluto_TV,20577,8959,1197,6.01,keep,,,keep
+SNA,Snap-on,Industrials,Snap-on,Snap-on_tools,0,5885,0,,drop,Too few views (0/month),,drop
+SOLV,Solventum,Health Care,Solventum,Littmann_(stethoscope),0,3285,0,,drop,Too few views (0/month),,drop
+SO,Southern Company,Utilities,Southern_Company,Vogtle_Electric_Generating_Plant,9256,6342,37,0.52,keep,,,drop
+SO,Southern Company,Utilities,Southern_Company,Georgia_Power,2034,6342,304,17.29,drop,"Too few views (2,034/month)",,drop
+LUV,Southwest Airlines,Industrials,Southwest_Airlines,Southwest_Airlines,42880,42880,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+SWK,Stanley Black & Decker,Industrials,Stanley_Black_&_Decker,DeWalt,10706,11405,1355,17.1,keep,,,keep
+SWK,Stanley Black & Decker,Industrials,Stanley_Black_&_Decker,Craftsman_(tools),6659,11405,610,11.47,keep,,,keep
+SWK,Stanley Black & Decker,Industrials,Stanley_Black_&_Decker,Black+Decker,6162,11405,458,9.08,fix,Product title is now Black+Decker,,fix
+SYK,Stryker Corporation,Health Care,Stryker_Corporation,Mako_robot,0,12538,0,,drop,Too few views (0/month),,drop
+SYF,Synchrony Financial,Financials,Synchrony_Financial,Synchrony_Financial,6133,6133,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+SNPS,Synopsys,Information Technology,Synopsys,Synopsys_Design_Compiler,0,9476,0,,drop,Too few views (0/month),,drop
+TMUS,T-Mobile US,Communication Services,T-Mobile_US,Metro_by_T-Mobile,5632,29946,277,5.08,keep,,,keep
+TMUS,T-Mobile US,Communication Services,T-Mobile_US,Mint_Mobile,9874,29946,294,4.04,keep,,,keep
+TGT,Target Corporation,Consumer Staples,Target_Corporation,Target_circle,38,45917,0,0.0,drop,Too few views (38/month),,drop
+TGT,Target Corporation,Consumer Staples,Target_Corporation,Up&Up,1031,45917,0,0.0,drop,"Too few views (1,031/month)",,drop
+TXN,Texas Instruments,Information Technology,Texas_Instruments,TI-84_Plus_series,5021,24110,128,2.62,keep,,,keep
+TXN,Texas Instruments,Information Technology,Texas_Instruments,TI-83_series,2480,24110,49,2.28,drop,"Too few views (2,480/month)",,drop
+TXN,Texas Instruments,Information Technology,Texas_Instruments,TI-Nspire_series,3488,24110,66,2.19,keep,,,keep
+TXT,Textron,Industrials,Textron,Cessna,16048,9541,124,0.92,keep,,,keep
+TXT,Textron,Industrials,Textron,Bell_Textron,6560,9541,959,17.39,keep,,,keep
+TXT,Textron,Industrials,Textron,Beechcraft,7673,9541,17,0.27,keep,,,keep
+TXT,Textron,Industrials,Textron,Cessna_Citation_family,6691,9541,0,0.0,drop,No clicks to the company page in Oct 2026,,drop
+TMO,Thermo Fisher Scientific,Health Care,Thermo_Fisher_Scientific,Fisher_Scientific,1973,16111,155,9.5,drop,"Too few views (1,973/month)",,drop
+TMO,Thermo Fisher Scientific,Health Care,Thermo_Fisher_Scientific,Applied_Biosystems,690,16111,26,4.93,drop,Too few views (690/month),,drop
+TMO,Thermo Fisher Scientific,Health Care,Thermo_Fisher_Scientific,Invitrogen,738,16111,27,5.45,drop,Too few views (738/month),,drop
+TJX,TJX Companies,Consumer Discretionary,TJX,TJ_Maxx,11659,12175,1288,11.88,keep,,,keep
+TJX,TJX Companies,Consumer Discretionary,TJX,Marshalls,7221,12175,496,6.75,keep,,,keep
+TJX,TJX Companies,Consumer Discretionary,TJX,HomeGoods,3519,12175,268,8.44,keep,,,keep
+TJX,TJX Companies,Consumer Discretionary,TJX,TK_Maxx,11544,12175,530,4.65,keep,,,keep
+TKO,TKO Group Holdings,Communication Services,TKO_Group_Holdings,Ultimate_Fighting_Championship,106140,41562,2350,3.41,keep,,,keep
+TKO,TKO Group Holdings,Communication Services,TKO_Group_Holdings,WWE,169412,41562,4210,3.4,keep,,,keep
+TSCO,Tractor Supply,Consumer Discretionary,Tractor_Supply_Company,Petsense,0,5370,0,,drop,Too few views (0/month),,drop
+TT,Trane Technologies,Industrials,Trane_Technologies,Trane,3483,4411,394,13.55,keep,,,keep
+TT,Trane Technologies,Industrials,Trane_Technologies,Thermo_King,2075,4411,146,9.19,drop,"Too few views (2,075/month)",,drop
+TRV,Travelers Companies (The),Financials,The_Travelers_Companies,Travelers_umbrella,0,6544,0,,drop,Too few views (0/month),,drop
+TRMB,Trimble Inc.,Information Technology,Trimble_Inc.,SketchUp,11089,5271,252,3.14,keep,,,keep
+TWLO,Twilio,Information Technology,Twilio,SendGrid,2409,9848,48,2.56,drop,"Too few views (2,409/month)",,drop
+TSN,Tyson Foods,Consumer Staples,Tyson_Foods,Jimmy_Dean,19575,11878,0,0.0,drop,No clicks to the company page in Oct 2026,,drop
+TSN,Tyson Foods,Consumer Staples,Tyson_Foods,Hillshire_Brands,909,11878,212,25.0,drop,Too few views (909/month),,drop
+TSN,Tyson Foods,Consumer Staples,Tyson_Foods,Ball_Park_Franks,1284,11878,43,3.37,drop,"Too few views (1,284/month)",,drop
+TSN,Tyson Foods,Consumer Staples,Tyson_Foods,Tyson_chicken_nuggets,0,11878,0,,drop,Too few views (0/month),,drop
+UBER,Uber,Industrials,Uber,Uber_Eats,9663,51006,557,6.6,keep,,,keep
+UAL,United Airlines Holdings,Industrials,United_Airlines,MileagePlus,1471,87138,23,1.9,drop,"Too few views (1,471/month)",,drop
+UAL,United Airlines Holdings,Industrials,United_Airlines,United_Express,8011,87138,258,3.8,keep,,,keep
+UPS,United Parcel Service,Industrials,United_Parcel_Service,UPS_Airlines,20964,25168,514,5.11,keep,,,keep
+UPS,United Parcel Service,Industrials,United_Parcel_Service,The_UPS_Store,1452,25168,120,9.43,drop,"Too few views (1,452/month)",,drop
+UNH,UnitedHealth Group,Health Care,UnitedHealth_Group,Optum,10088,28134,720,9.85,keep,,,keep
+UNH,UnitedHealth Group,Health Care,UnitedHealth_Group,UnitedHealth_Group,28134,28134,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+VLO,Valero Energy,Energy,Valero_Energy,Valero_(gas_station),0,8047,0,,drop,Too few views (0/month),,drop
+VRSN,Verisign,Information Technology,Verisign,.com,47718,4661,877,2.05,keep,,,drop
+VZ,Verizon,Communication Services,Verizon,Verizon_(wireless_service),6526,26806,748,14.1,keep,,,keep
+VZ,Verizon,Communication Services,Verizon,Fios,94,26806,0,0.0,drop,Too few views (94/month),,drop
+VZ,Verizon,Communication Services,Verizon,Visible_by_Verizon,3090,26806,54,2.38,fix,Product title is now Visible_by_Verizon,,fix
+VTRS,Viatris,Health Care,Viatris,Epinephrine_autoinjector,6119,5733,0,0.0,drop,No clicks to the company page in Oct 2026,,drop
+VTRS,Viatris,Health Care,Viatris,Sildenafil,29339,5733,0,0.0,drop,No clicks to the company page in Oct 2026,,drop
+V,Visa Inc.,Financials,Visa_Inc.,Visa_Electron,1239,27242,38,3.53,drop,"Too few views (1,239/month)",,drop
+V,Visa Inc.,Financials,Visa_Inc.,Visa_Debit,1296,27242,87,8.3,drop,"Too few views (1,296/month)",,drop
+V,Visa Inc.,Financials,Visa_Inc.,Plus_(interbank_network),1064,27242,20,2.32,drop,"Too few views (1,064/month)",,drop
+VST,Vistra Corp,Utilities,Vistra_Corp.,Comanche_Peak_Nuclear_Power_Plant,1769,3747,23,1.5,drop,"Too few views (1,769/month)",,drop
+VYLR,Vylor,Consumer Staples,Corteva,Pioneer_Hi_Bred_International,1468,4880,204,13.83,drop,"Too few views (1,468/month)",,drop
+WAB,Wabtec,Industrials,Wabtec,GE_Evolution_Series,7393,7605,83,1.35,fix,Product title is now GE_Evolution_Series,,fix
+WM,Waste Management,Industrials,"Waste_Management,_Inc.",Phoenix_Open,5987,7502,17,1.52,fix,Product title is now Phoenix_Open,,drop
+WFC,Wells Fargo,Financials,Wells_Fargo,Wells_Fargo_Advisors,900,39924,47,6.84,drop,Too few views (900/month),,drop
+WDC,Western Digital,Information Technology,Western_Digital,WD_Black,0,12477,0,,drop,Too few views (0/month),,drop
+WSM,"Williams-Sonoma, Inc.",Consumer Discretionary,"Williams-Sonoma,_Inc.",Pottery_Barn,3682,3845,324,11.29,keep,,,keep
+WSM,"Williams-Sonoma, Inc.",Consumer Discretionary,"Williams-Sonoma,_Inc.",West_Elm,1758,3845,100,7.3,drop,"Too few views (1,758/month)",,drop
+WSM,"Williams-Sonoma, Inc.",Consumer Discretionary,"Williams-Sonoma,_Inc.",Williams_Sonoma,1829,3845,350,15.83,drop,"Too few views (1,829/month)",,drop
+WYNN,Wynn Resorts,Consumer Discretionary,Wynn_Resorts,Wynn_Las_Vegas,8301,6696,677,8.96,keep,,,keep
+WYNN,Wynn Resorts,Consumer Discretionary,Wynn_Resorts,Encore_Las_Vegas,2597,6696,120,4.91,drop,"Too few views (2,597/month)",,drop
+WYNN,Wynn Resorts,Consumer Discretionary,Wynn_Resorts,Encore_Boston_Harbor,2390,6696,141,5.16,drop,"Too few views (2,390/month)",,drop
+ZBRA,Zebra Technologies,Information Technology,Zebra_Technologies,Zebra_printers,0,4715,0,,drop,Too few views (0/month),,drop
+ZTS,Zoetis,Health Care,Zoetis,Oclacitinib,1735,3344,0,0.0,drop,"Too few views (1,735/month)",,drop
+ZTS,Zoetis,Health Care,Zoetis,Sarolaner,670,3344,0,0.0,drop,Too few views (670/month),,drop
+ZTS,Zoetis,Health Care,Zoetis,Selamectin,1016,3344,0,0.0,drop,"Too few views (1,016/month)",,drop
+ASML,ASML,Information Technology,ASML,EUV_lithography,3822,28167,1193,11.09,fix,Product title is now EUV_lithography,,drop
+ALNY,Alnylam Pharmaceuticals,Health Care,Alnylam_Pharmaceuticals,Patisiran,807,2759,21,3.6,drop,Too few views (807/month),,drop
+ALNY,Alnylam Pharmaceuticals,Health Care,Alnylam_Pharmaceuticals,Vutrisiran,774,2759,0,0.0,drop,Too few views (774/month),,drop
+ARM,Arm Holdings,Information Technology,Arm_Holdings,ARM_Cortex-A,2039,20762,35,2.15,drop,"Too few views (2,039/month)",,drop
+ARM,Arm Holdings,Information Technology,Arm_Holdings,ARM_architecture_family,31250,20762,2245,8.46,keep,,,keep
+CCEP,Coca-Cola Europacific Partners,Consumer Staples,Coca-Cola_Europacific_Partners,Coca-Cola,113047,3094,0,0.0,drop,No clicks to the company page in Oct 2026,,drop
+MELI,MercadoLibre,Consumer Discretionary,MercadoLibre,MercadoLibre,4537,4537,0,0.0,drop,"Product page redirects to the company page, so no click-through",,drop
+PDD,Pinduoduo,Consumer Discretionary,Pinduoduo,Temu,49572,15165,2008,4.79,keep,,,keep
+RKLB,Rocket Lab,Industrials,Rocket_Lab,Rocket_Lab_Electron,7503,23910,508,9.75,keep,,,keep
+RKLB,Rocket Lab,Industrials,Rocket_Lab,Rocket_Lab_Neutron,7022,23910,490,5.94,keep,,,keep
+SHOP,Shopify,Information Technology,Shopify,Shop_Pay,2818,30559,186,7.72,drop,"Too few views (2,818/month)",,drop
+SPCX,SpaceX,Industrials,SpaceX,Falcon_9,28631,129308,830,3.44,keep,,,keep
+SPCX,SpaceX,Industrials,SpaceX,SpaceX_Starship,73833,129308,859,1.63,keep,,,keep
+SPCX,SpaceX,Industrials,SpaceX,Starlink,98115,129308,8449,7.31,keep,,,keep
+SPCX,SpaceX,Industrials,SpaceX,SpaceX_Dragon_2,14615,129308,314,2.61,keep,,,keep
+SPCX,SpaceX,Industrials,SpaceX,Falcon_Heavy,23754,129308,419,2.79,keep,,,keep
+TRI,Thomson Reuters,Industrials,Thomson_Reuters,Reuters,41252,18490,3925,10.89,keep,,,keep
+TRI,Thomson Reuters,Industrials,Thomson_Reuters,Westlaw,1876,18490,101,7.02,drop,"Too few views (1,876/month)",,drop

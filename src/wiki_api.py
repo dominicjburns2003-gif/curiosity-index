@@ -26,7 +26,14 @@ DAILY_VIEWS_API = (
 def polite_get(url: str, **kwargs) -> requests.Response:
     """GET a URL; if the server says "too many requests" (429), wait and try again."""
     for attempt in range(6):
-        response = requests.get(url, headers=HEADERS, timeout=30, **kwargs)
+        try:
+            response = requests.get(url, headers=HEADERS, timeout=30, **kwargs)
+        except (requests.ConnectionError, requests.Timeout):
+            if attempt == 5:
+                raise
+            print(f"  no answer, trying again in {10 * (attempt + 1)}s ...")
+            time.sleep(10 * (attempt + 1))
+            continue
         if response.status_code != 429:
             return response
         wait = int(response.headers.get("Retry-After", 0)) or 5 * 2**attempt

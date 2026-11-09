@@ -55,6 +55,7 @@ STEPS = [
     ["clickthrough_tests.py"],
     ["trending.py"],
     ["replication.py"],
+    ["broad_tests.py"],
 ]
 
 

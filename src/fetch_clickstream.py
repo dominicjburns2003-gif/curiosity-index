@@ -20,6 +20,9 @@ Run it from the project folder:
     python src/fetch_clickstream.py 2024-09 2026-10    # only these months
     python src/fetch_clickstream.py --new-only         # only months newer than the
                                                        # latest saved one (daily update)
+    python src/fetch_clickstream.py --into DIR         # every month, into another folder
+                                                       # (e.g. when companies are added: the
+                                                       # current files stay in use until done)
 """
 
 from concurrent.futures import ThreadPoolExecutor
@@ -94,6 +97,11 @@ def fetch_month(month: str, company_titles: set[str]) -> bool:
 
 
 def main() -> None:
+    global OUT_DIR
+    if "--into" in sys.argv:
+        position = sys.argv.index("--into")
+        OUT_DIR = Path(sys.argv[position + 1]).resolve()
+        del sys.argv[position:position + 2]
     universe = pd.read_csv(UNIVERSE_PATH, keep_default_na=False)
     company_titles = {t for titles in universe["company_titles"] for t in titles.split("|")}
     OUT_DIR.mkdir(parents=True, exist_ok=True)

@@ -231,3 +231,501 @@ MAR,Marriott International,Travel,Marriott_International,Marriott_International,
 MAR,Marriott International,Travel,Marriott_International,Marriott_International,,W_Hotels,W_Hotels,,expansion,True
 NCLH,Norwegian Cruise Line Holdings,Travel,Norwegian_Cruise_Line_Holdings,Norwegian_Cruise_Line_Holdings,2019-01,Norwegian_Cruise_Line,Norwegian_Cruise_Line,,expansion,True
 NCLH,Norwegian Cruise Line Holdings,Travel,Norwegian_Cruise_Line_Holdings,Norwegian_Cruise_Line_Holdings,2019-01,Oceania_Cruises,Oceania_Cruises,,expansion,True
+MMM,3M,Industrials,3M,3M,,Post-it_note,Post-it_note|Post-it_Note,,broad,True
+MMM,3M,Industrials,3M,3M,,Scotch_tape,Scotch_tape|Scotch_Tape|Scotch_tape_(brand),,broad,True
+AOS,A. O. Smith,Industrials,A._O._Smith,A._O._Smith,,,,,broad,True
+ACN,Accenture,Information Technology,Accenture,Accenture,,,,,broad,True
+AES,AES Corporation,Utilities,AES_Corporation,AES_Corporation,,,,,broad,True
+AFL,Aflac,Financials,Aflac,Aflac,,,,,broad,True
+A,Agilent Technologies,Health Care,Agilent_Technologies,Agilent_Technologies,,,,,broad,True
+APD,Air Products,Materials,Air_Products,Air_Products|Air_Products_&_Chemicals|Air_Products_and_Chemicals,,,,,broad,True
+ABNB,Airbnb,Consumer Discretionary,Airbnb,Airbnb,,,,,broad,True
+AKAM,Akamai Technologies,Information Technology,Akamai_Technologies,Akamai_Technologies,,,,,broad,True
+ALB,Albemarle Corporation,Materials,Albemarle_Corporation,Albemarle_Corporation,,,,,broad,True
+ARE,Alexandria Real Estate Equities,Real Estate,Alexandria_Real_Estate_Equities,Alexandria_Real_Estate_Equities|Draft:Alexandria_Real_Estate_Equities,,,,,broad,True
+ALGN,Align Technology,Health Care,Align_Technology,Align_Technology,,,,,broad,True
+ALLE,Allegion,Industrials,Allegion,Allegion,,,,,broad,True
+LNT,Alliant Energy,Utilities,Alliant_Energy,Alliant_Energy,,,,,broad,True
+ALL,Allstate,Financials,Allstate,Allstate,,,,,broad,True
+AMCR,Amcor,Materials,Amcor,Amcor,,,,,broad,True
+AEE,Ameren,Utilities,Ameren,Ameren,,,,,broad,True
+AEP,American Electric Power,Utilities,American_Electric_Power,American_Electric_Power,,,,,broad,True
+AXP,American Express,Financials,American_Express,American_Express,,,,,broad,True
+AIG,American International Group,Financials,American_International_Group,American_International_Group,,,,,broad,True
+AMT,American Tower,Real Estate,American_Tower,American_Tower|American_Tower_Corporation,,,,,broad,True
+AWK,American Water Works,Utilities,American_Water_Works,American_Water_Works|American_Water_(company),,,,,broad,True
+AMP,Ameriprise Financial,Financials,Ameriprise_Financial,Ameriprise_Financial,,,,,broad,True
+AME,Ametek,Industrials,Ametek,Ametek,,,,,broad,True
+APH,Amphenol,Information Technology,Amphenol,Amphenol,,,,,broad,True
+ADI,Analog Devices,Information Technology,Analog_Devices,Analog_Devices,,,,,broad,True
+AON,Aon plc,Financials,Aon_plc,Aon_plc|Aon_(company),,,,,broad,True
+APA,APA Corporation,Energy,APA_Corporation,APA_Corporation|Apache_Corporation,,,,,broad,True
+APO,Apollo Global Management,Financials,Apollo_Global_Management,Apollo_Global_Management,,,,,broad,True
+AMAT,Applied Materials,Information Technology,Applied_Materials,Applied_Materials,,,,,broad,True
+APP,AppLovin,Communication Services,AppLovin,AppLovin,,,,,broad,True
+APTV,Aptiv,Consumer Discretionary,Aptiv,Aptiv|Delphi_Automotive,,,,,broad,True
+ACGL,Arch Capital Group,Financials,Arch_Capital_Group,Arch_Capital_Group,,,,,broad,True
+ADM,Archer Daniels Midland,Consumer Staples,Archer_Daniels_Midland,Archer_Daniels_Midland|ADM_(company),,,,,broad,True
+ARES,Ares Management,Financials,Ares_Management,Ares_Management,,,,,broad,True
+ANET,Arista Networks,Information Technology,Arista_Networks,Arista_Networks,,,,,broad,True
+AJG,Arthur J. Gallagher & Co.,Financials,Arthur_J._Gallagher_&_Co.,Arthur_J._Gallagher_&_Co.,,,,,broad,True
+AIZ,Assurant,Financials,Assurant,Assurant,,,,,broad,True
+T,AT&T,Communication Services,AT&T,AT&T,,AT&T_Mobility,AT&T_Mobility,,broad,True
+T,AT&T,Communication Services,AT&T,AT&T,,Cricket_Wireless,Cricket_Wireless,,broad,True
+T,AT&T,Communication Services,AT&T,AT&T,,DirecTV,DirecTV|DIRECTV,,broad,True
+ATO,Atmos Energy,Utilities,Atmos_Energy,Atmos_Energy,,,,,broad,True
+ADP,Automatic Data Processing,Industrials,ADP_(company),"ADP_(company)|ADP,_Inc.|Automatic_Data_Processing",,,,,broad,True
+AZO,AutoZone,Consumer Discretionary,AutoZone,AutoZone,,,,,broad,True
+AVY,Avery Dennison,Materials,Avery_Dennison,Avery_Dennison,,,,,broad,True
+AXON,Axon Enterprise,Industrials,Axon_Enterprise,Axon_Enterprise|Axon_(company)|Taser_International,,Taser,Taser,,broad,False
+BKR,Baker Hughes,Energy,Baker_Hughes,Baker_Hughes,,,,,broad,True
+BALL,Ball Corporation,Materials,Ball_Corporation,Ball_Corporation,,,,,broad,True
+BAC,Bank of America,Financials,Bank_of_America,Bank_of_America,,,,,broad,True
+BAX,Baxter International,Health Care,Baxter_International,Baxter_International,,,,,broad,True
+BDX,Becton Dickinson,Health Care,BD_(company),BD_(company)|Becton_Dickinson,,,,,broad,True
+BRK-B,Berkshire Hathaway,Financials,Berkshire_Hathaway,Berkshire_Hathaway,,GEICO,GEICO,,broad,True
+BRK-B,Berkshire Hathaway,Financials,Berkshire_Hathaway,Berkshire_Hathaway,,Dairy_Queen,Dairy_Queen,,broad,True
+BRK-B,Berkshire Hathaway,Financials,Berkshire_Hathaway,Berkshire_Hathaway,,Duracell,Duracell,,broad,True
+BRK-B,Berkshire Hathaway,Financials,Berkshire_Hathaway,Berkshire_Hathaway,,See's_Candies,See's_Candies,,broad,True
+BRK-B,Berkshire Hathaway,Financials,Berkshire_Hathaway,Berkshire_Hathaway,,NetJets,NetJets,,broad,True
+BBY,Best Buy,Consumer Discretionary,Best_Buy,Best_Buy,,Geek_Squad,Geek_Squad,,broad,True
+TECH,Bio-Techne,Health Care,Bio-Techne,Bio-Techne,,,,,broad,True
+BLK,BlackRock,Financials,BlackRock,BlackRock,,IShares,IShares,,broad,True
+BLK,BlackRock,Financials,BlackRock,BlackRock,,Aladdin_(BlackRock),Aladdin_(BlackRock),,broad,True
+BX,Blackstone Inc.,Financials,Blackstone_Inc.,Blackstone_Inc.|Blackstone_Inc|The_Blackstone_Group,,,,,broad,True
+BE,Bloom Energy,Industrials,Bloom_Energy,Bloom_Energy,,,,,broad,True
+BNY,BNY Mellon,Financials,BNY,BNY|BNY_Mellon|The_Bank_of_New_York_Mellon,,,,,broad,True
+BSX,Boston Scientific,Health Care,Boston_Scientific,Boston_Scientific,,,,,broad,True
+AVGO,Broadcom,Information Technology,Broadcom,Broadcom|Avago|Broadcom_Inc.|Broadcom_Limited,,VMware,VMware,,broad,True
+BR,Broadridge Financial Solutions,Industrials,Broadridge_Financial_Solutions,Broadridge_Financial_Solutions,,,,,broad,True
+BRO,Brown & Brown,Financials,Brown_&_Brown,Brown_&_Brown,,,,,broad,True
+BG,Bunge Global,Consumer Staples,Bunge_Global,Bunge_Global|Bunge_Limited,,,,,broad,True
+BXP,"BXP, Inc.",Real Estate,"BXP,_Inc.","BXP,_Inc.|Boston_Properties",,,,,broad,True
+CHRW,C.H. Robinson,Industrials,C._H._Robinson,C._H._Robinson|C.H._Robinson,,,,,broad,True
+CDNS,Cadence Design Systems,Information Technology,Cadence_Design_Systems,Cadence_Design_Systems,,,,,broad,True
+CPT,Camden Property Trust,Real Estate,Camden_Property_Trust,Camden_Property_Trust,,,,,broad,True
+COF,Capital One,Financials,Capital_One,Capital_One,,,,,broad,True
+CAH,Cardinal Health,Health Care,Cardinal_Health,Cardinal_Health,,,,,broad,True
+CARR,Carrier Global,Industrials,Carrier_Global,Carrier_Global|Carrier_Corporation,,,,,broad,True
+CVNA,Carvana,Consumer Discretionary,Carvana,Carvana,,,,,broad,True
+CASY,Casey's,Consumer Staples,Casey's,Casey's|Casey's_General_Stores,,,,,broad,True
+CAT,Caterpillar Inc.,Industrials,Caterpillar_Inc.,Caterpillar_Inc.,,Caterpillar_D9,Caterpillar_D9,,broad,True
+CAT,Caterpillar Inc.,Industrials,Caterpillar_Inc.,Caterpillar_Inc.,,Caterpillar_797,Caterpillar_797,,broad,True
+CAT,Caterpillar Inc.,Industrials,Caterpillar_Inc.,Caterpillar_Inc.,,Caterpillar_D11,Caterpillar_D11,,broad,True
+CBOE,Cboe Global Markets,Financials,Cboe_Global_Markets,Cboe_Global_Markets|CBOE_Holdings,,,,,broad,True
+CBRE,CBRE Group,Real Estate,CBRE_Group,CBRE_Group,,,,,broad,True
+CDW,CDW Corporation,Information Technology,CDW,CDW,,,,,broad,True
+COR,Cencora,Health Care,Cencora,Cencora|AmerisourceBergen,,,,,broad,True
+CNC,Centene Corporation,Health Care,Centene_Corporation,Centene_Corporation,,,,,broad,True
+CNP,CenterPoint Energy,Utilities,CenterPoint_Energy,CenterPoint_Energy,,,,,broad,True
+CF,CF Industries,Materials,CF_Industries,CF_Industries,,,,,broad,True
+CRL,Charles River Laboratories,Health Care,Charles_River_Laboratories,Charles_River_Laboratories,,,,,broad,True
+SCHW,Charles Schwab Corporation,Financials,Charles_Schwab_Corporation,Charles_Schwab_Corporation,,TD_Ameritrade,TD_Ameritrade,,broad,True
+CHTR,Charter Communications,Communication Services,Charter_Communications,"Charter_Communications|Charter_Communications,_Inc.",,Spectrum_(brand),Spectrum_(brand)|Charter_Spectrum|Spectrum_(Charter)|Spectrum_(TV_service)|Spectrum_(cable_service)|Spectrum_Internet|Time_Warner_Cable_Internet,,broad,True
+CVX,Chevron Corporation,Energy,Chevron_Corporation,Chevron_Corporation,,Texaco,Texaco,,broad,True
+CMG,Chipotle Mexican Grill,Consumer Discretionary,Chipotle_Mexican_Grill,Chipotle_Mexican_Grill,,,,,broad,True
+CB,Chubb Limited,Financials,Chubb_Limited,Chubb_Limited|Chubb_(company)|Chubb_Corp.,,,,,broad,True
+CIEN,Ciena,Information Technology,Ciena,Ciena,,,,,broad,True
+CI,Cigna,Health Care,The_Cigna_Group,The_Cigna_Group|Cigna,,Express_Scripts,Express_Scripts,,broad,True
+CINF,Cincinnati Financial,Financials,Cincinnati_Financial,Cincinnati_Financial,,,,,broad,True
+CTAS,Cintas,Industrials,Cintas,Cintas,,,,,broad,True
+C,Citigroup,Financials,Citigroup,Citigroup,,,,,broad,True
+CFG,Citizens Financial Group,Financials,Citizens_Financial_Group,Citizens_Financial_Group,,,,,broad,True
+CME,CME Group,Financials,CME_Group,CME_Group,,,,,broad,True
+CMS,CMS Energy,Utilities,CMS_Energy,CMS_Energy,,,,,broad,True
+CTSH,Cognizant,Information Technology,Cognizant,Cognizant,,,,,broad,True
+COHR,Coherent Corp.,Information Technology,Coherent_Corp.,Coherent_Corp.|Draft:II-VI_Incorporated|II-VI_Incorporated,,,,,broad,True
+COIN,Coinbase,Financials,Coinbase,Coinbase,,,,,broad,True
+FIX,Comfort Systems USA,Industrials,Comfort_Systems_USA,Comfort_Systems_USA,,,,,broad,True
+COP,ConocoPhillips,Energy,ConocoPhillips,ConocoPhillips,,,,,broad,True
+ED,Consolidated Edison,Utilities,Consolidated_Edison,Consolidated_Edison,,,,,broad,True
+STZ,Constellation Brands,Consumer Staples,Constellation_Brands,Constellation_Brands,,Corona_(beer),Corona_(beer),,broad,True
+STZ,Constellation Brands,Consumer Staples,Constellation_Brands,Constellation_Brands,,Pacífico_(beer),Pacífico_(beer)|Pacífico_(Mexican_beer),,broad,True
+STZ,Constellation Brands,Consumer Staples,Constellation_Brands,Constellation_Brands,,Robert_Mondavi,Robert_Mondavi,,broad,True
+CEG,Constellation Energy,Utilities,Constellation_Energy,Constellation_Energy|Constellation_(An_Exelon_Company)|Constellation_(energy_company)|Constellation_Energy_Group,,,,,broad,True
+COO,Cooper Companies (The),Health Care,The_Cooper_Companies,The_Cooper_Companies|CooperCompanies,,,,,broad,True
+CPRT,Copart,Industrials,Copart,Copart,,,,,broad,True
+GLW,Corning Inc.,Information Technology,Corning_Inc.,Corning_Inc.,,Gorilla_Glass,Gorilla_Glass,,broad,True
+GLW,Corning Inc.,Information Technology,Corning_Inc.,Corning_Inc.,,Pyrex,Pyrex,,broad,True
+GLW,Corning Inc.,Information Technology,Corning_Inc.,Corning_Inc.,,CorningWare,CorningWare,,broad,True
+CPAY,Corpay,Financials,Corpay,Corpay|Fleetcor,,,,,broad,True
+CSGP,CoStar Group,Real Estate,CoStar_Group,CoStar_Group,,,,,broad,True
+COST,Costco,Consumer Staples,Costco,Costco,,Costco_hot_dog,Costco_hot_dog|Costco_Hot_Dog,,broad,True
+CRH,CRH plc,Materials,CRH_plc,CRH_plc|CRH_(company),,,,,broad,True
+CRWD,CrowdStrike,Information Technology,CrowdStrike,"CrowdStrike|CrowdStrike,_Inc.",,,,,broad,True
+CCI,Crown Castle,Real Estate,Crown_Castle,Crown_Castle|Crown_Castle_International_Corp.,,,,,broad,True
+CSX,CSX Corporation,Industrials,CSX_Corporation,CSX_Corporation,,,,,broad,True
+CMI,Cummins,Industrials,Cummins,Cummins|Cummins_(corporation),,,,,broad,True
+CVS,CVS Health,Health Care,CVS_Health,CVS_Health,,CVS_Pharmacy,CVS_Pharmacy,,broad,True
+CVS,CVS Health,Health Care,CVS_Health,CVS_Health,,Aetna,Aetna,,broad,True
+DHR,Danaher Corporation,Health Care,Danaher_Corporation,Danaher_Corporation,,,,,broad,True
+DDOG,Datadog,Information Technology,Datadog,Datadog,,,,,broad,True
+DVA,DaVita,Health Care,DaVita,DaVita|DaVita_Inc.|DaVita_Medical_Group,,,,,broad,True
+DE,Deere & Company,Industrials,John_Deere,John_Deere,,,,,broad,True
+DELL,Dell Technologies,Information Technology,Dell_Technologies,Dell_Technologies,,Dell_Latitude,Dell_Latitude,,broad,True
+DAL,Delta Air Lines,Industrials,Delta_Air_Lines,Delta_Air_Lines,,Delta_Connection,Delta_Connection,,broad,True
+DVN,Devon Energy,Energy,Devon_Energy,Devon_Energy,,,,,broad,True
+DXCM,Dexcom,Health Care,Dexcom,Dexcom,,,,,broad,True
+FANG,Diamondback Energy,Energy,Diamondback_Energy,Diamondback_Energy,,,,,broad,True
+DLR,Digital Realty,Real Estate,Digital_Realty,Digital_Realty,,,,,broad,True
+DG,Dollar General,Consumer Staples,Dollar_General,Dollar_General,,,,,broad,True
+DLTR,Dollar Tree,Consumer Staples,Dollar_Tree,Dollar_Tree,,Family_Dollar,Family_Dollar,,broad,True
+D,Dominion Energy,Utilities,Dominion_Energy,Dominion_Energy|Dominion_Resources,,,,,broad,True
+DPZ,Domino's,Consumer Discretionary,Domino's,Domino's|Domino's_(restaurant_chain)|Domino's_Pizza,,,,,broad,True
+DASH,DoorDash,Consumer Discretionary,DoorDash,DoorDash|Doordash,,Wolt,Wolt,,broad,True
+DOV,Dover Corporation,Industrials,Dover_Corporation,Dover_Corporation,,,,,broad,True
+DOW,Dow Inc.,Materials,Dow_Chemical_Company,Dow_Chemical_Company,,Styrofoam,Styrofoam,,broad,True
+DHI,D. R. Horton,Consumer Discretionary,D._R._Horton,D._R._Horton,,,,,broad,True
+DTE,DTE Energy,Utilities,DTE_Energy,DTE_Energy,,,,,broad,True
+DUK,Duke Energy,Utilities,Duke_Energy,Duke_Energy,,,,,broad,True
+DD,DuPont,Industrials,DuPont,DuPont|DowDuPont|Dow_DuPont_merger|Dow_Dupont_merger,,Kevlar,Kevlar,,broad,True
+DD,DuPont,Industrials,DuPont,DuPont|DowDuPont|Dow_DuPont_merger|Dow_Dupont_merger,,Tyvek,Tyvek,,broad,True
+DD,DuPont,Industrials,DuPont,DuPont|DowDuPont|Dow_DuPont_merger|Dow_Dupont_merger,,Nomex,Nomex,,broad,True
+ETN,Eaton Corporation,Industrials,Eaton_Corporation,Eaton_Corporation,,,,,broad,True
+EBAY,eBay Inc.,Consumer Discretionary,EBay,EBay,,StubHub,StubHub,,broad,True
+ECHO,EchoStar,Communication Services,EchoStar,EchoStar,,Dish_Network,Dish_Network,,broad,True
+ECHO,EchoStar,Communication Services,EchoStar,EchoStar,,Boost_Mobile,Boost_Mobile|Boost_Mobile_(United_States),,broad,True
+ECHO,EchoStar,Communication Services,EchoStar,EchoStar,,Sling_TV,Sling_TV,,broad,True
+ECL,Ecolab,Materials,Ecolab,Ecolab,,,,,broad,True
+EIX,Edison International,Utilities,Edison_International,Edison_International,,,,,broad,True
+EW,Edwards Lifesciences,Health Care,Edwards_Lifesciences,Edwards_Lifesciences,,,,,broad,True
+ELV,Elevance Health,Health Care,Elevance_Health,Elevance_Health|Anthem_(company)|Anthem_Inc.,,,,,broad,True
+EME,Emcor,Construction & Engineering,Emcor,Emcor,,,,,broad,True
+EMR,Emerson Electric,Industrials,Emerson_Electric,Emerson_Electric,,,,,broad,True
+ETR,Entergy,Utilities,Entergy,Entergy,,,,,broad,True
+EOG,EOG Resources,Energy,EOG_Resources,EOG_Resources,,,,,broad,True
+EQT,EQT Corporation,Energy,EQT_Corporation,EQT_Corporation,,,,,broad,True
+EFX,Equifax,Industrials,Equifax,Equifax,,,,,broad,True
+EQIX,Equinix,Real Estate,Equinix,Equinix,,,,,broad,True
+ERIE,Erie Indemnity,Financials,Erie_Insurance_Group,Erie_Insurance_Group,,,,,broad,True
+ESS,Essex Property Trust,Real Estate,Essex_Property_Trust,"Essex_Property_Trust|Essex_Property_Trust,_Inc.",,,,,broad,True
+EG,Everest Group,Financials,Everest_Group,Everest_Group|Everest_Re|User:Mparrault/Everest_Re,,,,,broad,True
+EVRG,Evergy,Utilities,Evergy,Evergy|Westar_Energy,,,,,broad,True
+P,Everpure,Information Technology,Everpure,Everpure|Pure_Storage,,,,,broad,True
+ES,Eversource Energy,Utilities,Eversource_Energy,Eversource_Energy,,,,,broad,True
+EXC,Exelon,Utilities,Exelon,Exelon,,,,,broad,True
+EXE,Expand Energy,Energy,Expand_Energy,Expand_Energy|Chesapeake_Energy,,,,,broad,True
+EXPD,Expeditors International,Industrials,Expeditors_International,Expeditors_International,,,,,broad,True
+EXR,Extra Space Storage,Real Estate,Extra_Space_Storage,Extra_Space_Storage,,,,,broad,True
+XOM,ExxonMobil,Energy,ExxonMobil,ExxonMobil,,Esso,Esso,,broad,True
+XOM,ExxonMobil,Energy,ExxonMobil,ExxonMobil,,Mobil_Oil_Corporation,Mobil_Oil_Corporation|Mobil,,broad,True
+FFIV,"F5, Inc.",Information Technology,"F5,_Inc.","F5,_Inc.|F5_Networks",,,,,broad,True
+FDS,FactSet,Financials,FactSet,FactSet,,,,,broad,True
+FICO,Fair Isaac,Information Technology,FICO,FICO,,,,,broad,True
+FAST,Fastenal,Industrials,Fastenal,Fastenal,,,,,broad,True
+FRT,Federal Realty Investment Trust,Real Estate,Federal_Realty_Investment_Trust,Federal_Realty_Investment_Trust,,,,,broad,True
+FDX,FedEx,Industrials,FedEx,FedEx,,FedEx_Express,FedEx_Express,,broad,True
+FERG,Ferguson Enterprises,Industrials,Ferguson_Enterprises,Ferguson_Enterprises,,,,,broad,True
+FIS,Fidelity National Information Services,Financials,FIS_(company),FIS_(company),,,,,broad,True
+FITB,Fifth Third Bancorp,Financials,Fifth_Third_Bank,Fifth_Third_Bank,,,,,broad,True
+FSLR,First Solar,Information Technology,First_Solar,First_Solar,,,,,broad,True
+FE,FirstEnergy,Utilities,FirstEnergy,FirstEnergy,,,,,broad,True
+FISV,Fiserv,Financials,Fiserv,Fiserv,,,,,broad,True
+FLEX,Flex Ltd.,Information Technology,Flex_Ltd.,Flex_Ltd.|Flex_(company)|Flextronics,,,,,broad,True
+FTNT,Fortinet,Information Technology,Fortinet,Fortinet,,,,,broad,True
+FTV,Fortive,Industrials,Fortive,Fortive|Fortive_Corp,,,,,broad,True
+FOXA,Fox Corporation,Communication Services,Fox_Corporation,Fox_Corporation|Draft:New_Fox|Fox_(company)|New_Fox,,Fox_News,Fox_News|Fox_News_Channel,,broad,True
+FOXA,Fox Corporation,Communication Services,Fox_Corporation,Fox_Corporation|Draft:New_Fox|Fox_(company)|New_Fox,,Fox_Broadcasting_Company,Fox_Broadcasting_Company,,broad,True
+FOXA,Fox Corporation,Communication Services,Fox_Corporation,Fox_Corporation|Draft:New_Fox|Fox_(company)|New_Fox,,Tubi,Tubi|Tubi_TV,,broad,True
+FOXA,Fox Corporation,Communication Services,Fox_Corporation,Fox_Corporation|Draft:New_Fox|Fox_(company)|New_Fox,,Fox_Sports_(United_States),Fox_Sports_(United_States),,broad,True
+BEN,Franklin Resources,Financials,Franklin_Templeton,Franklin_Templeton|Franklin_Templeton_Investments,,,,,broad,True
+FCX,Freeport-McMoRan,Materials,Freeport-McMoRan,Freeport-McMoRan,,,,,broad,True
+IT,Gartner,Information Technology,Gartner,Gartner,,,,,broad,True
+GE,GE Aerospace,Industrials,GE_Aerospace,GE_Aerospace|GE_Aviation,,General_Electric_GE9X,General_Electric_GE9X|GE9X,,broad,False
+GE,GE Aerospace,Industrials,GE_Aerospace,GE_Aerospace|GE_Aviation,,CFM_International_LEAP,CFM_International_LEAP,,broad,False
+GE,GE Aerospace,Industrials,GE_Aerospace,GE_Aerospace|GE_Aviation,,General_Electric_GE90,General_Electric_GE90,,broad,False
+GEHC,GE HealthCare,Health Care,GE_HealthCare,GE_HealthCare|GE_Healthcare,,,,,broad,True
+GEV,GE Vernova,Industrials,GE_Vernova,GE_Vernova|Draft:GE_Vernova,,,,,broad,True
+GEN,Gen Digital,Information Technology,Gen_Digital,Gen_Digital|Gen_Digital_Inc.|NortonLifeLock,,Avast_Antivirus,Avast_Antivirus,,broad,True
+GEN,Gen Digital,Information Technology,Gen_Digital,Gen_Digital|Gen_Digital_Inc.|NortonLifeLock,,CCleaner,CCleaner,,broad,True
+GNRC,Generac,Industrials,Generac,Generac|Generac_Holdings|Generac_Power_Systems,,,,,broad,True
+GPC,Genuine Parts Company,Consumer Discretionary,Genuine_Parts_Company,Genuine_Parts_Company,,,,,broad,True
+GPN,Global Payments,Financials,Global_Payments,Global_Payments|Draft:Global_Payments,,,,,broad,True
+GL,Globe Life,Financials,Globe_Life,Globe_Life|Torchmark,,,,,broad,True
+GDDY,GoDaddy,Information Technology,GoDaddy,GoDaddy,,,,,broad,True
+GS,Goldman Sachs,Financials,Goldman_Sachs,Goldman_Sachs,,,,,broad,True
+HAL,Halliburton,Energy,Halliburton,Halliburton,,,,,broad,True
+HIG,Hartford (The),Financials,The_Hartford,The_Hartford,,,,,broad,True
+HCA,HCA Healthcare,Health Care,HCA_Healthcare,HCA_Healthcare|Hospital_Corporation_of_America,,,,,broad,True
+DOC,Healthpeak Properties,Real Estate,Healthpeak_Properties,"Healthpeak_Properties|HCP,_Inc.|Healthpeak_Properties,_Inc.",,,,,broad,True
+HSIC,Henry Schein,Health Care,Henry_Schein,Henry_Schein,,,,,broad,True
+HPE,Hewlett Packard Enterprise,Information Technology,Hewlett_Packard_Enterprise,Hewlett_Packard_Enterprise,,El_Capitan_(supercomputer),El_Capitan_(supercomputer),,broad,True
+HD,Home Depot (The),Consumer Discretionary,Home_Depot,Home_Depot|The_Home_Depot,,,,,broad,True
+HONA,Honeywell Aerospace,Industrials,Honeywell_Aerospace,Honeywell_Aerospace|Honeywell_Aerospace_Technologies,,,,,broad,False
+HON,Honeywell Technologies,Industrials,Honeywell,Honeywell,,,,,broad,True
+HST,Host Hotels & Resorts,Real Estate,Host_Hotels_&_Resorts,Host_Hotels_&_Resorts,,,,,broad,True
+HWM,Howmet Aerospace,Industrials,Howmet_Aerospace,Howmet_Aerospace,,,,,broad,False
+HPQ,HP Inc.,Information Technology,HP_Inc.,HP_Inc.,,,,,broad,True
+HUBB,Hubbell Incorporated,Industrials,Hubbell_Incorporated,Hubbell_Incorporated,,,,,broad,True
+HUM,Humana,Health Care,Humana,Humana,,,,,broad,True
+HBAN,Huntington Bancshares,Financials,Huntington_Bancshares,Huntington_Bancshares,,,,,broad,True
+HII,Huntington Ingalls Industries,Industrials,Huntington_Ingalls_Industries,Huntington_Ingalls_Industries,,,,,broad,False
+IBM,IBM,Information Technology,IBM,IBM,,IBM_Watson,IBM_Watson|Watson_(computer),,broad,True
+IBM,IBM,Information Technology,IBM,IBM,,IBM_Z,IBM_Z|IBM_System_z,,broad,True
+IBM,IBM,Information Technology,IBM,IBM,,Red_Hat,Red_Hat,,broad,True
+IEX,IDEX Corporation,Industrials,IDEX_Corporation,IDEX_Corporation,,,,,broad,True
+IDXX,Idexx Laboratories,Health Care,Idexx_Laboratories,Idexx_Laboratories,,,,,broad,True
+ITW,Illinois Tool Works,Industrials,Illinois_Tool_Works,Illinois_Tool_Works,,,,,broad,True
+ILMN,"Illumina, Inc.",Health Care,"Illumina,_Inc.","Illumina,_Inc.|Illumina_(company)",,,,,broad,True
+INCY,Incyte,Health Care,Incyte,Incyte,,Ruxolitinib,Ruxolitinib,,broad,True
+IR,Ingersoll Rand,Industrials,Ingersoll_Rand,Ingersoll_Rand|Gardner_Denver,,,,,broad,True
+IBKR,Interactive Brokers,Financials,Interactive_Brokers,Interactive_Brokers,,,,,broad,True
+ICE,Intercontinental Exchange,Financials,Intercontinental_Exchange,Intercontinental_Exchange,,,,,broad,True
+IFF,International Flavors & Fragrances,Materials,International_Flavors_&_Fragrances,International_Flavors_&_Fragrances,,,,,broad,True
+IP,International Paper,Materials,International_Paper,International_Paper,,,,,broad,True
+IVZ,Invesco,Financials,Invesco,Invesco,,,,,broad,True
+INVH,Invitation Homes,Real Estate,Invitation_Homes,Invitation_Homes,,,,,broad,True
+IQV,IQVIA,Health Care,IQVIA,IQVIA|Quintiles|QuintilesIMS,,,,,broad,True
+IRM,Iron Mountain,Real Estate,Iron_Mountain_(company),Iron_Mountain_(company)|Iron_Mountain_Incorporated,,,,,broad,True
+JBHT,J.B. Hunt,Industrials,J._B._Hunt,J._B._Hunt,,,,,broad,True
+JBL,Jabil,Information Technology,Jabil,Jabil|Jabil_Circuit,,,,,broad,True
+JKHY,Jack Henry & Associates,Financials,Jack_Henry_&_Associates,Jack_Henry_&_Associates,,,,,broad,True
+J,Jacobs Solutions,Industrials,Jacobs_Solutions,Jacobs_Solutions|Jacobs_Engineering_Group,,,,,broad,True
+JNJ,Johnson & Johnson,Health Care,Johnson_&_Johnson,Johnson_&_Johnson,,Tylenol,Tylenol|Tylenol_(brand),,broad,True
+JNJ,Johnson & Johnson,Health Care,Johnson_&_Johnson,Johnson_&_Johnson,,Listerine,Listerine,,broad,True
+JNJ,Johnson & Johnson,Health Care,Johnson_&_Johnson,Johnson_&_Johnson,,Band-Aid,Band-Aid,,broad,True
+JCI,Johnson Controls,Industrials,Johnson_Controls,Johnson_Controls,,,,,broad,True
+JPM,JPMorgan Chase,Financials,JPMorgan_Chase,JPMorgan_Chase,,Chase_Bank,Chase_Bank|Chase_(bank),,broad,True
+KEY,KeyCorp,Financials,KeyBank,KeyBank,,,,,broad,True
+KEYS,Keysight Technologies,Information Technology,Keysight,Keysight,,,,,broad,True
+KIM,Kimco Realty,Real Estate,Kimco_Realty,Kimco_Realty,,,,,broad,True
+KMI,Kinder Morgan,Energy,Kinder_Morgan,Kinder_Morgan,,,,,broad,True
+KKR,KKR & Co.,Financials,KKR_&_Co.,KKR_&_Co.|Kohlberg_Kravis_Roberts,,,,,broad,True
+KLAC,KLA Corporation,Information Technology,KLA_Corporation,KLA_Corporation|KLA-Tencor,,,,,broad,True
+KR,Kroger,Consumer Staples,Kroger,Kroger,,Ralphs,Ralphs,,broad,True
+KR,Kroger,Consumer Staples,Kroger,Kroger,,Fred_Meyer,Fred_Meyer,,broad,True
+KR,Kroger,Consumer Staples,Kroger,Kroger,,Harris_Teeter,Harris_Teeter,,broad,True
+KR,Kroger,Consumer Staples,Kroger,Kroger,,King_Soopers,King_Soopers,,broad,True
+LHX,L3Harris,Industrials,L3Harris,L3Harris|L3Harris_Technologies,,AN/PRC-152,AN/PRC-152,,broad,False
+LHX,L3Harris,Industrials,L3Harris,L3Harris|L3Harris_Technologies,,L3Harris_EA-37B_Compass_Call,L3Harris_EA-37B_Compass_Call|EA-37B_Compass_Call,,broad,False
+LH,Labcorp,Health Care,Labcorp,Labcorp|LabCorp,,,,,broad,True
+LRCX,Lam Research,Information Technology,Lam_Research,Lam_Research,,,,,broad,True
+LVS,Las Vegas Sands,Consumer Discretionary,Las_Vegas_Sands,Las_Vegas_Sands,,Marina_Bay_Sands,Marina_Bay_Sands,,broad,True
+LVS,Las Vegas Sands,Consumer Discretionary,Las_Vegas_Sands,Las_Vegas_Sands,,The_Venetian_Macao,The_Venetian_Macao,,broad,True
+LDOS,Leidos,Industrials,Leidos,Leidos,,,,,broad,True
+LEN,Lennar,Consumer Discretionary,Lennar,Lennar|Lennar_Corporation,,,,,broad,True
+LII,Lennox International,Industrials,Lennox_International,Lennox_International,,,,,broad,True
+LIN,Linde plc,Materials,Linde_plc,Linde_plc|The_Linde_Group,,,,,broad,True
+L,Loews Corporation,Financials,Loews_Corporation,Loews_Corporation,,,,,broad,True
+LOW,Lowe's,Consumer Discretionary,Lowe's,"Lowe's|Lowes_Companies,_Inc.|Lowes_Home_Improvement",,,,,broad,True
+LULU,Lululemon Athletica,Consumer Discretionary,Lululemon,Lululemon|Lululemon_Athletica,,,,,broad,True
+LITE,Lumentum,Information Technology,Lumentum,Lumentum|Lumentum_Holdings|User:TonyTheTiger/Sandbox/Lumentum|User:TonyTheTiger/Sandbox/Lumentum_Holdings,,,,,broad,True
+LYB,LyondellBasell,Materials,LyondellBasell,LyondellBasell,,,,,broad,True
+MTB,M&T Bank,Financials,M&T_Bank,M&T_Bank,,,,,broad,True
+MPC,Marathon Petroleum,Energy,Marathon_Petroleum,Marathon_Petroleum,,ARCO,ARCO,,broad,True
+MPC,Marathon Petroleum,Energy,Marathon_Petroleum,Marathon_Petroleum,,Speedway_(store),Speedway_(store)|Speedway_(Store)|Speedway_LL|Speedway_LLC,,broad,True
+MRSH,Marsh McLennan,Financials,Marsh_McLennan,Marsh_McLennan|Marsh_&_McLennan_Companies,,,,,broad,True
+MLM,Martin Marietta Materials,Materials,Martin_Marietta_Materials,Martin_Marietta_Materials|Martin_Marietta_Inc.,,,,,broad,True
+MRVL,Marvell Technology,Information Technology,Marvell_Technology,"Marvell_Technology|Marvell_Technology,_Inc.|Marvell_Technology_Group",,,,,broad,True
+MAS,Masco,Industrials,Masco,Masco,,,,,broad,True
+MA,Mastercard,Financials,Mastercard,Mastercard|MasterCard,,Maestro_(debit_card),Maestro_(debit_card),,broad,True
+MCK,McKesson,Health Care,McKesson,McKesson|McKesson_Corporation,,,,,broad,True
+MDT,Medtronic,Health Care,Medtronic,Medtronic,,,,,broad,True
+MET,MetLife,Financials,MetLife,MetLife,,,,,broad,True
+MTD,Mettler Toledo,Health Care,Mettler_Toledo,Mettler_Toledo,,,,,broad,True
+MGM,MGM Resorts,Consumer Discretionary,MGM_Resorts_International,MGM_Resorts_International,,Bellagio_(resort),Bellagio_(resort),,broad,True
+MGM,MGM Resorts,Consumer Discretionary,MGM_Resorts_International,MGM_Resorts_International,,MGM_Grand_Las_Vegas,MGM_Grand_Las_Vegas,,broad,True
+MCHP,Microchip Technology,Information Technology,Microchip_Technology,Microchip_Technology,,,,,broad,True
+MU,Micron Technology,Information Technology,Micron_Technology,Micron_Technology,,,,,broad,True
+MAA,Mid-America Apartment Communities,Real Estate,Mid-America_Apartment_Communities,Mid-America_Apartment_Communities|Mid-America_Apartments,,,,,broad,True
+MRNA,Moderna,Health Care,Moderna,Moderna|Moderna_Therapeutics,,Moderna_COVID-19_vaccine,Moderna_COVID-19_vaccine|MRNA-1273,,broad,True
+MPWR,Monolithic Power Systems,Information Technology,Monolithic_Power_Systems,"Monolithic_Power_Systems|Monolithic_Power_Systems,_Inc.",,,,,broad,True
+MCO,Moody's Corporation,Financials,Moody's_Corporation,Moody's_Corporation,,,,,broad,True
+MS,Morgan Stanley,Financials,Morgan_Stanley,Morgan_Stanley,,,,,broad,True
+MOS,Mosaic Company (The),Materials,The_Mosaic_Company,The_Mosaic_Company,,,,,broad,True
+MSI,Motorola Solutions,Information Technology,Motorola_Solutions,Motorola_Solutions,,,,,broad,True
+MSCI,MSCI,Financials,MSCI,MSCI,,,,,broad,True
+NDAQ,"Nasdaq, Inc.",Financials,"Nasdaq,_Inc.","Nasdaq,_Inc.",,,,,broad,True
+NTAP,NetApp,Information Technology,NetApp,NetApp,,,,,broad,True
+NEM,Newmont,Materials,Newmont,Newmont|Newmont_Corporation|Newmont_Goldcorp|Newmont_Mining_Corporation,,,,,broad,True
+NEE,NextEra Energy,Utilities,NextEra_Energy,NextEra_Energy,,Florida_Power_&_Light,Florida_Power_&_Light,,broad,True
+NI,NiSource,Utilities,NiSource,NiSource,,,,,broad,True
+NDSN,Nordson Corporation,Industrials,Nordson_Corporation,Nordson_Corporation,,,,,broad,True
+NSC,Norfolk Southern,Industrials,Norfolk_Southern_Railway,Norfolk_Southern_Railway,,,,,broad,True
+NTRS,Northern Trust,Financials,Northern_Trust,Northern_Trust,,,,,broad,True
+NRG,NRG Energy,Utilities,NRG_Energy,NRG_Energy,,,,,broad,True
+NUE,Nucor,Materials,Nucor,Nucor,,,,,broad,True
+NVR,"NVR, Inc.",Consumer Discretionary,"NVR,_Inc.","NVR,_Inc.",,,,,broad,True
+NXPI,NXP Semiconductors,Information Technology,NXP_Semiconductors,NXP_Semiconductors,,,,,broad,True
+ORLY,O'Reilly Automotive,Consumer Discretionary,O'Reilly_Auto_Parts,O'Reilly_Auto_Parts|O'Reilly_Automotive,,,,,broad,True
+OXY,Occidental Petroleum,Energy,Occidental_Petroleum,Occidental_Petroleum,,,,,broad,True
+OKTA,"Okta, Inc.",Information Technology,"Okta,_Inc.","Okta,_Inc.|Okta_(identity_management)|Okta_Inc.",,,,,broad,True
+ODFL,Old Dominion,Industrials,Old_Dominion_Freight_Line,Old_Dominion_Freight_Line,,,,,broad,True
+OMC,Omnicom Group,Communication Services,Omnicom_Group,Omnicom_Group,,BBDO,BBDO,,broad,True
+OMC,Omnicom Group,Communication Services,Omnicom_Group,Omnicom_Group,,DDB_Worldwide,DDB_Worldwide,,broad,True
+ON,ON Semiconductor,Information Technology,Onsemi,Onsemi|ON_Semiconductor,,,,,broad,True
+OKE,Oneok,Energy,Oneok,Oneok|ONEOK,,,,,broad,True
+OTIS,Otis Worldwide,Industrials,Otis_Worldwide,Otis_Worldwide|Otis_Elevator_Company,,,,,broad,True
+PCAR,Paccar,Industrials,Paccar,Paccar,,Kenworth,Kenworth,,broad,True
+PCAR,Paccar,Industrials,Paccar,Paccar,,Peterbilt,Peterbilt,,broad,True
+PCAR,Paccar,Industrials,Paccar,Paccar,,DAF_Trucks,DAF_Trucks,,broad,True
+PKG,Packaging Corporation of America,Materials,Packaging_Corporation_of_America,Packaging_Corporation_of_America,,,,,broad,True
+PLTR,Palantir Technologies,Information Technology,Palantir,Palantir|Palantir_Technologies,,,,,broad,True
+PANW,Palo Alto Networks,Information Technology,Palo_Alto_Networks,Palo_Alto_Networks,,,,,broad,True
+PH,Parker Hannifin,Industrials,Parker_Hannifin,Parker_Hannifin,,,,,broad,True
+PAYX,Paychex,Industrials,Paychex,Paychex,,,,,broad,True
+PNR,Pentair,Industrials,Pentair,Pentair,,,,,broad,True
+PCG,PG&E Corporation,Utilities,Pacific_Gas_and_Electric_Company,Pacific_Gas_and_Electric_Company,,,,,broad,True
+PSX,Phillips 66,Energy,Phillips_66,Phillips_66,,76_(gas_station),76_(gas_station),,broad,True
+PSX,Phillips 66,Energy,Phillips_66,Phillips_66,,Conoco,Conoco,,broad,True
+PNW,Pinnacle West Capital,Utilities,Pinnacle_West_Capital,Pinnacle_West_Capital,,,,,broad,True
+PNC,PNC Financial Services,Financials,PNC_Financial_Services,PNC_Financial_Services,,,,,broad,True
+PPG,PPG Industries,Materials,PPG_Industries,PPG_Industries,,,,,broad,True
+PPL,PPL Corporation,Utilities,PPL_Corporation,PPL_Corporation,,,,,broad,True
+PFG,Principal Financial Group,Financials,Principal_Financial_Group,Principal_Financial_Group,,,,,broad,True
+PGR,Progressive Corporation,Financials,Progressive_Corporation,Progressive_Corporation,,Flo_(Progressive_Insurance),Flo_(Progressive_Insurance)|Flo_(Progressive),,broad,True
+PLD,Prologis,Real Estate,Prologis,Prologis,,,,,broad,True
+PRU,Prudential Financial,Financials,Prudential_Financial,Prudential_Financial,,,,,broad,True
+PTC,PTC Inc.,Information Technology,PTC_Inc.,PTC_Inc.|PTC_(software_company),,Onshape,Onshape,,broad,True
+PEG,Public Service Enterprise Group,Utilities,Public_Service_Enterprise_Group,Public_Service_Enterprise_Group,,,,,broad,True
+PSA,Public Storage,Real Estate,Public_Storage,Public_Storage,,,,,broad,True
+PHM,PulteGroup,Consumer Discretionary,PulteGroup,PulteGroup,,,,,broad,True
+Q,Qnity Electronics,Information Technology,Qnity_Electronics,Qnity_Electronics,,,,,broad,True
+PWR,Quanta Services,Industrials,Quanta_Services,Quanta_Services,,,,,broad,True
+DGX,Quest Diagnostics,Health Care,Quest_Diagnostics,Quest_Diagnostics,,,,,broad,True
+RL,Ralph Lauren Corporation,Consumer Discretionary,Ralph_Lauren_Corporation,Ralph_Lauren_Corporation|Ralph_Lauren_(brand),,,,,broad,True
+RJF,Raymond James Financial,Financials,Raymond_James_Financial,Raymond_James_Financial,,,,,broad,True
+RDDT,Reddit,Communication Services,Reddit,Reddit,,,,,broad,True
+O,Realty Income,Real Estate,Realty_Income,Realty_Income|Realty_Income_Corporation,,,,,broad,True
+REG,Regency Centers,Real Estate,Regency_Centers,Regency_Centers|Regency_Centers_Corporation,,,,,broad,True
+RF,Regions Financial Corporation,Financials,Regions_Financial_Corporation,Regions_Financial_Corporation,,,,,broad,True
+RSG,Republic Services,Industrials,Republic_Services,Republic_Services,,,,,broad,True
+RMD,ResMed,Health Care,ResMed,ResMed,,,,,broad,True
+RVTY,Revvity,Health Care,Revvity,Revvity,,,,,broad,True
+HOOD,Robinhood Markets,Financials,Robinhood_(company),Robinhood_(company)|Robinhood_(Company)|Robinhood_Markets,,,,,broad,True
+ROK,Rockwell Automation,Industrials,Rockwell_Automation,Rockwell_Automation,,,,,broad,True
+ROL,"Rollins, Inc.",Industrials,"Rollins,_Inc.","Rollins,_Inc.|Rollins_Inc.",,,,,broad,True
+ROP,Roper Technologies,Information Technology,Roper_Technologies,Roper_Technologies,,,,,broad,True
+ROST,Ross Stores,Consumer Discretionary,Ross_Stores,Ross_Stores|Ross_Dress_for_Less,,,,,broad,True
+RTX,RTX Corporation,Industrials,RTX_Corporation,RTX_Corporation|RTX_(company)|Raytheon_Technologies,,Pratt_&_Whitney,Pratt_&_Whitney,,broad,False
+RTX,RTX Corporation,Industrials,RTX_Corporation,RTX_Corporation|RTX_(company)|Raytheon_Technologies,,Collins_Aerospace,Collins_Aerospace,,broad,False
+RTX,RTX Corporation,Industrials,RTX_Corporation,RTX_Corporation|RTX_(company)|Raytheon_Technologies,,Raytheon,Raytheon|Raytheon_Company,,broad,False
+RTX,RTX Corporation,Industrials,RTX_Corporation,RTX_Corporation|RTX_(company)|Raytheon_Technologies,,FIM-92_Stinger,FIM-92_Stinger,,broad,False
+SPGI,S&P Global,Financials,S&P_Global,S&P_Global|McGraw_Hill_Financial,,,,,broad,True
+SNDK,Sandisk,Information Technology,Sandisk,Sandisk|SanDisk,,SD_card,SD_card|Secure_Digital,,broad,True
+SBAC,SBA Communications,Real Estate,SBA_Communications,SBA_Communications,,,,,broad,True
+SLB,Schlumberger,Energy,SLB,SLB|Schlumberger,,,,,broad,True
+STX,Seagate Technology,Information Technology,Seagate_Technology,Seagate_Technology,,,,,broad,True
+SRE,Sempra,Utilities,Sempra,Sempra|Sempra_Energy,,,,,broad,True
+NOW,ServiceNow,Information Technology,ServiceNow,ServiceNow,,,,,broad,True
+SHW,Sherwin-Williams,Materials,Sherwin-Williams,Sherwin-Williams,,,,,broad,True
+SPG,Simon Property Group,Real Estate,Simon_Property_Group,Simon_Property_Group,,King_of_Prussia_(shopping_mall),King_of_Prussia_(shopping_mall)|King_of_Prussia_(Mall)|King_of_Prussia_(mall)|King_of_Prussia_Mall,,broad,True
+SKYD,Skydance,Communication Services,Skydance,Skydance|Paramount_Skydance|Paramount_Skydance_Corporation|Skydance_Corp,,Paramount+,Paramount+|CBS_All_Access|Paramount+_(streaming_service),,broad,True
+SKYD,Skydance,Communication Services,Skydance,Skydance|Paramount_Skydance|Paramount_Skydance_Corporation|Skydance_Corp,,CBS,CBS,,broad,True
+SKYD,Skydance,Communication Services,Skydance,Skydance|Paramount_Skydance|Paramount_Skydance_Corporation|Skydance_Corp,,MTV,MTV,,broad,True
+SKYD,Skydance,Communication Services,Skydance,Skydance|Paramount_Skydance|Paramount_Skydance_Corporation|Skydance_Corp,,Nickelodeon,Nickelodeon,,broad,True
+SKYD,Skydance,Communication Services,Skydance,Skydance|Paramount_Skydance|Paramount_Skydance_Corporation|Skydance_Corp,,Pluto_TV,Pluto_TV,,broad,True
+SWKS,Skyworks Solutions,Information Technology,Skyworks_Solutions,Skyworks_Solutions,,,,,broad,True
+SW,Smurfit Westrock,Materials,Smurfit_Westrock,Smurfit_Westrock|Smurfit_Kappa|Smurfit_Kappa_Group|Smurfit_WestRock,,,,,broad,True
+SNA,Snap-on,Industrials,Snap-on,Snap-on,,,,,broad,True
+SOLV,Solventum,Health Care,Solventum,Solventum,,,,,broad,True
+SO,Southern Company,Utilities,Southern_Company,Southern_Company,,,,,broad,True
+LUV,Southwest Airlines,Industrials,Southwest_Airlines,Southwest_Airlines,,,,,broad,True
+SWK,Stanley Black & Decker,Industrials,Stanley_Black_&_Decker,Stanley_Black_&_Decker,,DeWalt,DeWalt,,broad,True
+SWK,Stanley Black & Decker,Industrials,Stanley_Black_&_Decker,Stanley_Black_&_Decker,,Craftsman_(tools),Craftsman_(tools),,broad,True
+SWK,Stanley Black & Decker,Industrials,Stanley_Black_&_Decker,Stanley_Black_&_Decker,,Black+Decker,Black+Decker|Black_&_Decker,,broad,True
+STT,State Street Corporation,Financials,State_Street_Corporation,State_Street_Corporation,,,,,broad,True
+STLD,Steel Dynamics,Materials,Steel_Dynamics,Steel_Dynamics,,,,,broad,True
+STE,Steris,Health Care,Steris,Steris|STERIS_plc,,,,,broad,True
+SYK,Stryker Corporation,Health Care,Stryker_Corporation,Stryker_Corporation,,,,,broad,True
+SMCI,Supermicro,Information Technology,Supermicro,"Supermicro|SuperMicro|Super_Micro_Computer,_Inc.",,,,,broad,True
+SYF,Synchrony Financial,Financials,Synchrony_Financial,Synchrony_Financial,,,,,broad,True
+SNPS,Synopsys,Information Technology,Synopsys,Synopsys,,,,,broad,True
+SYY,Sysco,Consumer Staples,Sysco,Sysco,,,,,broad,True
+TMUS,T-Mobile US,Communication Services,T-Mobile_US,T-Mobile_US|T-Mobile_USA,,Metro_by_T-Mobile,Metro_by_T-Mobile|MetroPCS,,broad,True
+TMUS,T-Mobile US,Communication Services,T-Mobile_US,T-Mobile_US|T-Mobile_USA,,Mint_Mobile,Mint_Mobile|Mint-Mobile,,broad,True
+TROW,T. Rowe Price,Financials,T._Rowe_Price,T._Rowe_Price,,,,,broad,True
+TRGP,Targa Resources,Energy,Targa_Resources,Targa_Resources,,,,,broad,True
+TGT,Target Corporation,Consumer Staples,Target_Corporation,Target_Corporation,,,,,broad,True
+TEL,TE Connectivity,Information Technology,TE_Connectivity,TE_Connectivity,,,,,broad,True
+TDY,Teledyne Technologies,Information Technology,Teledyne_Technologies,Teledyne_Technologies,,,,,broad,True
+TER,Teradyne,Information Technology,Teradyne,Teradyne,,,,,broad,True
+TXN,Texas Instruments,Information Technology,Texas_Instruments,Texas_Instruments,,TI-84_Plus_series,TI-84_Plus_series,,broad,True
+TXN,Texas Instruments,Information Technology,Texas_Instruments,Texas_Instruments,,TI-Nspire_series,TI-Nspire_series,,broad,True
+TPL,Texas Pacific Land Corporation,Energy,Texas_Pacific_Land_Corporation,Texas_Pacific_Land_Corporation|Texas_Pacific_Land_Trust,,,,,broad,True
+TXT,Textron,Industrials,Textron,Textron,,Cessna,Cessna,,broad,False
+TXT,Textron,Industrials,Textron,Textron,,Bell_Textron,Bell_Textron|Bell_Flight|Bell_Helicopter,,broad,False
+TXT,Textron,Industrials,Textron,Textron,,Beechcraft,Beechcraft,,broad,False
+TMO,Thermo Fisher Scientific,Health Care,Thermo_Fisher_Scientific,Thermo_Fisher_Scientific,,,,,broad,True
+TJX,TJX Companies,Consumer Discretionary,TJX,TJX|TJX_Companies,,TJ_Maxx,TJ_Maxx|T.J._Maxx,,broad,True
+TJX,TJX Companies,Consumer Discretionary,TJX,TJX|TJX_Companies,,Marshalls,Marshalls,,broad,True
+TJX,TJX Companies,Consumer Discretionary,TJX,TJX|TJX_Companies,,HomeGoods,HomeGoods,,broad,True
+TJX,TJX Companies,Consumer Discretionary,TJX,TJX|TJX_Companies,,TK_Maxx,TK_Maxx|T.K._Maxx,,broad,True
+TKO,TKO Group Holdings,Communication Services,TKO_Group_Holdings,TKO_Group_Holdings,,Ultimate_Fighting_Championship,Ultimate_Fighting_Championship,,broad,True
+TKO,TKO Group Holdings,Communication Services,TKO_Group_Holdings,TKO_Group_Holdings,,WWE,WWE,,broad,True
+TSCO,Tractor Supply,Consumer Discretionary,Tractor_Supply_Company,Tractor_Supply_Company,,,,,broad,True
+TT,Trane Technologies,Industrials,Trane_Technologies,Trane_Technologies,,Trane,Trane,,broad,True
+TDG,TransDigm Group,Industrials,TransDigm_Group,TransDigm_Group,,,,,broad,False
+TRV,Travelers Companies (The),Financials,The_Travelers_Companies,The_Travelers_Companies,,,,,broad,True
+TRMB,Trimble Inc.,Information Technology,Trimble_Inc.,Trimble_Inc.|Trimble_(company)|Trimble_Navigation,,SketchUp,SketchUp,,broad,True
+TFC,Truist Financial,Financials,Truist,Truist|Truist_Financial,,,,,broad,True
+TWLO,Twilio,Information Technology,Twilio,Twilio,,,,,broad,True
+TYL,Tyler Technologies,Information Technology,Tyler_Technologies,Tyler_Technologies,,,,,broad,True
+TSN,Tyson Foods,Consumer Staples,Tyson_Foods,Tyson_Foods,,,,,broad,True
+USB,U.S. Bancorp,Financials,U.S._Bancorp,U.S._Bancorp,,,,,broad,True
+UBER,Uber,Industrials,Uber,Uber|Uber_(company),,Uber_Eats,Uber_Eats|UberEATS|Ubereats,,broad,True
+UDR,"UDR, Inc.",Real Estate,"UDR,_Inc.","UDR,_Inc.|UDR_Inc",,,,,broad,True
+ULTA,Ulta Beauty,Consumer Discretionary,Ulta_Beauty,Ulta_Beauty,,,,,broad,True
+UNP,Union Pacific Corporation,Industrials,Union_Pacific_Corporation,Union_Pacific_Corporation,,,,,broad,True
+UAL,United Airlines Holdings,Industrials,United_Airlines,United_Airlines,,United_Express,United_Express,,broad,True
+UPS,United Parcel Service,Industrials,United_Parcel_Service,United_Parcel_Service,,UPS_Airlines,UPS_Airlines|UPS_Air_Cargo,,broad,True
+URI,United Rentals,Industrials,United_Rentals,United_Rentals,,,,,broad,True
+UNH,UnitedHealth Group,Health Care,UnitedHealth_Group,UnitedHealth_Group,,Optum,Optum,,broad,True
+UHS,Universal Health Services,Health Care,Universal_Health_Services,Universal_Health_Services,,,,,broad,True
+VLO,Valero Energy,Energy,Valero_Energy,Valero_Energy,,,,,broad,True
+VEEV,Veeva Systems,Health Care,Veeva_Systems,Veeva_Systems,,,,,broad,True
+VTR,Ventas,Real Estate,Ventas_(company),Ventas_(company),,,,,broad,True
+VLTO,Veralto,Industrials,Veralto,Veralto,,,,,broad,True
+VRSN,Verisign,Information Technology,Verisign,Verisign,,,,,broad,True
+VRSK,Verisk Analytics,Industrials,Verisk_Analytics,Verisk_Analytics,,,,,broad,True
+VZ,Verizon,Communication Services,Verizon,Verizon|Verizon_Communications,,Verizon_(wireless_service),Verizon_(wireless_service)|Verizon_(mobile_network)|Verizon_Wireless,,broad,True
+VZ,Verizon,Communication Services,Verizon,Verizon|Verizon_Communications,,Visible_by_Verizon,Visible_by_Verizon|Visible_(wireless_service),,broad,True
+VRT,Vertiv,Industrials,Vertiv,Vertiv,,,,,broad,True
+VTRS,Viatris,Health Care,Viatris,Viatris,,,,,broad,True
+VICI,Vici Properties,Real Estate,Vici_Properties,Vici_Properties,,,,,broad,True
+V,Visa Inc.,Financials,Visa_Inc.,Visa_Inc.,,,,,broad,True
+VST,Vistra Corp,Utilities,Vistra_Corp.,Vistra_Corp.|Vistra_Corp,,,,,broad,True
+VMRK,Vivmark Residential,Real Estate,Vivmark_Residential,Vivmark_Residential|Equity_Residential,,,,,broad,True
+VMC,Vulcan Materials Company,Materials,Vulcan_Materials_Company,Vulcan_Materials_Company,,,,,broad,True
+VYLR,Vylor,Consumer Staples,Corteva,Corteva|Corteva_Agriscience,,,,,broad,True
+WRB,W. R. Berkley Corporation,Financials,W._R._Berkley_Corporation,W._R._Berkley_Corporation,,,,,broad,True
+GWW,W. W. Grainger,Industrials,W._W._Grainger,W._W._Grainger,,,,,broad,True
+WAB,Wabtec,Industrials,Wabtec,Wabtec|Wabtec_Corporation,,GE_Evolution_Series,GE_Evolution_Series,,broad,True
+WM,Waste Management,Industrials,"Waste_Management,_Inc.","Waste_Management,_Inc.|WM_(Waste_Management)_(company)|Waste_Management_(company)|Waste_Management_(corporation)",,,,,broad,True
+WAT,Waters Corporation,Health Care,Waters_Corporation,Waters_Corporation,,,,,broad,True
+WEC,WEC Energy Group,Utilities,WEC_Energy_Group,WEC_Energy_Group,,,,,broad,True
+WFC,Wells Fargo,Financials,Wells_Fargo,Wells_Fargo,,,,,broad,True
+WELL,Welltower,Real Estate,Welltower,Welltower,,,,,broad,True
+WST,West Pharmaceutical Services,Health Care,West_Pharmaceutical_Services,West_Pharmaceutical_Services,,,,,broad,True
+WDC,Western Digital,Information Technology,Western_Digital,Western_Digital,,,,,broad,True
+WY,Weyerhaeuser,Real Estate,Weyerhaeuser,Weyerhaeuser,,,,,broad,True
+WSM,"Williams-Sonoma, Inc.",Consumer Discretionary,"Williams-Sonoma,_Inc.","Williams-Sonoma,_Inc.|Williams-Sonoma,_Inc",,Pottery_Barn,Pottery_Barn,,broad,True
+WMB,Williams Companies,Energy,Williams_Companies,Williams_Companies,,,,,broad,True
+WTW,Willis Towers Watson,Financials,Willis_Towers_Watson,Willis_Towers_Watson,,,,,broad,True
+WDAY,"Workday, Inc.",Information Technology,"Workday,_Inc.","Workday,_Inc.",,,,,broad,True
+WYNN,Wynn Resorts,Consumer Discretionary,Wynn_Resorts,Wynn_Resorts,,Wynn_Las_Vegas,Wynn_Las_Vegas,,broad,True
+XEL,Xcel Energy,Utilities,Xcel_Energy,Xcel_Energy,,,,,broad,True
+XYL,Xylem Inc.,Industrials,Xylem_Inc.,Xylem_Inc.,,,,,broad,True
+ZBRA,Zebra Technologies,Information Technology,Zebra_Technologies,Zebra_Technologies,,,,,broad,True
+ZBH,Zimmer Biomet,Health Care,Zimmer_Biomet,Zimmer_Biomet,,,,,broad,True
+ZTS,Zoetis,Health Care,Zoetis,Zoetis,,,,,broad,True
+ASML,ASML,Information Technology,ASML,ASML|ASML_Holding,,,,,broad,True
+ALNY,Alnylam Pharmaceuticals,Health Care,Alnylam_Pharmaceuticals,Alnylam_Pharmaceuticals,,,,,broad,True
+ARM,Arm Holdings,Information Technology,Arm_Holdings,Arm_Holdings|ARM_Holdings|Arm_(company)|Arm_Ltd.,,ARM_architecture_family,ARM_architecture_family|ARM_(architecture)|ARM_architecture|Arm_architecture_family,,broad,True
+ALAB,Astera Labs,Information Technology,Astera_Labs,Astera_Labs|Astera,,,,,broad,True
+CCEP,Coca-Cola Europacific Partners,Consumer Staples,Coca-Cola_Europacific_Partners,Coca-Cola_Europacific_Partners|Coca-Cola_European_Partners,,,,,broad,True
+CRWV,CoreWeave,Information Technology,CoreWeave,CoreWeave|Draft:CoreWeave,,,,,broad,True
+FER,Ferrovial,Industrials,Ferrovial,Ferrovial,,,,,broad,True
+MELI,MercadoLibre,Consumer Discretionary,MercadoLibre,MercadoLibre|MercadoLibre.com|Mercado_Libre,,,,,broad,True
+MSTR,MicroStrategy,Information Technology,MicroStrategy,MicroStrategy,,,,,broad,True
+NBIS,Nebius Group,Communication Services,Nebius_Group,Nebius_Group,,,,,broad,True
+PDD,Pinduoduo,Consumer Discretionary,Pinduoduo,Pinduoduo|Draft:Pinduoduo,,Temu,Temu|Temu_(company)|Temu_(marketplace)|Temu_(website),,broad,True
+RKLB,Rocket Lab,Industrials,Rocket_Lab,Rocket_Lab,,Rocket_Lab_Electron,Rocket_Lab_Electron|Electron_(rocket),,broad,True
+RKLB,Rocket Lab,Industrials,Rocket_Lab,Rocket_Lab,,Rocket_Lab_Neutron,Rocket_Lab_Neutron|Neutron_(rocket),,broad,True
+SHOP,Shopify,Information Technology,Shopify,Shopify,,,,,broad,True
+SPCX,SpaceX,Industrials,SpaceX,SpaceX,,Falcon_9,Falcon_9,,broad,True
+SPCX,SpaceX,Industrials,SpaceX,SpaceX,,SpaceX_Starship,SpaceX_Starship|Starship_(rocket)|Starship_(rocket_and_spacecraft),,broad,True
+SPCX,SpaceX,Industrials,SpaceX,SpaceX,,Starlink,Starlink|SpaceX_Starlink|SpaceX_satellite_constellation|SpaceX_satellite_development_facility|Starlink_(satellite_constellation),,broad,True
+SPCX,SpaceX,Industrials,SpaceX,SpaceX,,SpaceX_Dragon_2,SpaceX_Dragon_2|Dragon_2|Dragon_V2,,broad,True
+SPCX,SpaceX,Industrials,SpaceX,SpaceX,,Falcon_Heavy,Falcon_Heavy,,broad,True
+TRI,Thomson Reuters,Industrials,Thomson_Reuters,Thomson_Reuters,,Reuters,Reuters,,broad,True

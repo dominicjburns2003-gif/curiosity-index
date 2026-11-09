@@ -115,7 +115,7 @@ def build_events(universe: pd.DataFrame) -> tuple[pd.DataFrame, list[str]]:
     for _, row in universe.iterrows():
         for article, start in [(row["company_article"], row["company_from"]),
                                (row["product_article"], row["product_from"])]:
-            if start:
+            if start and article:
                 daily.loc[daily.index < start, article] = np.nan
 
     earnings = earnings[(earnings["date"] >= START) & earnings["ticker"].isin(universe["ticker"])]
@@ -126,7 +126,7 @@ def build_events(universe: pd.DataFrame) -> tuple[pd.DataFrame, list[str]]:
     rows = []
     for event in earnings.itertuples():
         pages = universe[universe["ticker"] == event.ticker]
-        products = list(pages["product_article"])
+        products = [p for p in pages["product_article"] if p]  # none for company-only rows
         company = [pages["company_article"].iloc[0]]
         beat = np.nan
         if pd.notna(event.eps_estimate):

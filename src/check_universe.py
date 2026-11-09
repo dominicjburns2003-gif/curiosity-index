@@ -209,7 +209,8 @@ def main() -> None:
             f.append("low product views")
         if r["clicks_to_company"] == 0:
             f.append("no clicks to company page")
-        if (r["company_first_month"] or "2017-01") > "2017-01":
+        first_month = r["company_first_month"] if isinstance(r["company_first_month"], str) else "2017-01"
+        if first_month > "2017-01":
             f.append(f"company views start {r['company_first_month']}")
         if r["price_first"] is None or pd.isna(r["price_first"]):
             f.append("no price data")

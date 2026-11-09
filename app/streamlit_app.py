@@ -298,8 +298,8 @@ st.html(f"""
      <b>click through</b> to the company. It then tests whether these predict the following
      month's returns.</p>
   <div class="ci-stats">
-    <div class="ci-stat"><span class="n">{universe['ticker'].nunique()}</span><span class="l">US companies</span></div>
-    <div class="ci-stat"><span class="n">{len(universe)}</span><span class="l">product pages</span></div>
+    <div class="ci-stat"><span class="n">{universe['ticker'].nunique()}</span><span class="l">US-listed companies</span></div>
+    <div class="ci-stat"><span class="n">{(universe['product_article'].fillna('') != '').sum()}</span><span class="l">product pages</span></div>
     <div class="ci-stat"><span class="n">Since {views['month'].min()[:4]}</span><span class="l">daily attention data</span></div>
     <div class="ci-stat"><span class="n">Updated {checked:%-d %b %Y}</span><span class="l">data to {last_day:%-d %b}; checked every evening</span></div>
   </div>
@@ -325,11 +325,12 @@ with explorer:
     pages["month"] = pd.to_datetime(pages["month"])
     clicks = data["conversion"][data["conversion"]["ticker"] == ticker].copy()
     clicks["month"] = pd.to_datetime(clicks["month"])
-    price = prices[ticker].loc[str(pages["month"].min().year):].dropna()
+    price = (prices[ticker].loc[str(pages["month"].min().year):].dropna() if ticker in prices
+             else pd.Series(dtype=float))
     live = latest_prices((ticker,))
-    if ticker in live.index and live.at[ticker, "date"] >= price.index[-1]:
+    if ticker in live.index and (price.empty or live.at[ticker, "date"] >= price.index[-1]):
         price.loc[live.at[ticker, "date"]] = live.at[ticker, "price"]  # today's latest price
-    price_note = price_status(price.index[-1])
+    price_note = price_status(price.index[-1]) if len(price) else "not available"
 
     # Key numbers for the latest complete month, each against its own recent past
     company_series = pages[pages["kind"] == "company"].groupby("month")["views"].sum(min_count=1).dropna()
@@ -343,16 +344,21 @@ with explorer:
     c1, c2, c3, c4 = st.container(key="metrics_row").columns(4)
     c1.metric("Company page", f"{company_series.iloc[-1]:,.0f} views",
               vs_normal(company_series), border=True)
-    c2.metric("Product pages", f"{product_series.iloc[-1]:,.0f} views",
-              vs_normal(product_series), border=True)
+    if len(product_series):
+        c2.metric("Product pages", f"{product_series.iloc[-1]:,.0f} views",
+                  vs_normal(product_series), border=True)
+    else:
+        c2.metric("Product pages", "none tracked", border=True,
+                  help="No product pages on Wikipedia passed the checks for this company, so it is "
+                       "followed by its company page only.")
     if len(clicks) >= 2:
         change = (clicks["conversion"].iloc[-1] - clicks["conversion"].iloc[-2]) * 100
         c3.metric("Click-through rate", f"{clicks['conversion'].iloc[-1]:.2%}", f"{change:+.2f} pts", border=True)
     else:
         c3.metric("Click-through rate", "n/a", border=True)
-    year_ago = price.loc[: price.index[-1] - pd.DateOffset(years=1)]
+    year_ago = price.loc[: price.index[-1] - pd.DateOffset(years=1)] if len(price) else price
     c4.metric(f"Share price, {'live' if price_note.startswith('live') else 'last close'}",
-              f"${price.iloc[-1]:,.2f}",
+              f"${price.iloc[-1]:,.2f}" if len(price) else "n/a",
               f"{price.iloc[-1] / year_ago.iloc[-1] - 1:+.0%} in a year" if len(year_ago) else None,
               border=True)
     # Wikipedia's overall traffic moves too (it fell through 2026), so give the
