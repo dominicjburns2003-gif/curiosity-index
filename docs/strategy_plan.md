@@ -296,3 +296,27 @@ only the picks with a product-attention surge left a handful of companies
 that, on average, then did worse, consistent with the earnings finding (a
 surge in product attention tends to come before disappointing results). The
 live strategy is not changed.
+
+## Change to the live strategy: all 546 companies from 10 November 2026 (written on 9 Nov 2026, during US trading hours)
+
+This replaces the switch to all 112 from December, recorded earlier today.
+From the close on **10 November 2026**, the live strategy uses **every
+company in the universe** (all 546: the S&P 500, the Nasdaq-100 and the 112):
+the same version A (tree model, same settings, top third, equal amounts,
+1 month), trained walk-forward on all of them and choosing from all of them.
+Its track record is compared with the equal-weighted average of all of them
+and with the S&P 500.
+
+- **November 2026:** the 23 picks recorded on 6 Nov 2026 (from the original
+  68) are held from the close on 9 Nov to the close on 10 Nov, as already
+  recorded. New picks for the rest of November, chosen the same way from all
+  546 with data up to the end of October, are recorded today (9 Nov) and,
+  by the existing rule, bought at the close on the next trading day (10 Nov)
+  and held to the end of November. Both are kept in the record; nothing
+  already recorded is changed.
+- **From December:** the picks are chosen from all companies each month.
+- **Why:** for the app there is now one universe of 546 companies, and on it
+  the strategy's edge is if anything clearer (+0.28% a month, t 2.0, in
+  `docs/broad_universe_plan.md`), but this is not a claim that it works: it
+  only affects returns that have not happened yet (the first price used is
+  the close on 10 Nov), so it cannot use hindsight.
