@@ -33,6 +33,7 @@ import numpy as np
 import pandas as pd
 
 from fetch_pageviews import cap_spikes
+from pageview_store import load_daily
 
 START = "2018-01-01"   # a year-on-year comparison needs 2017 data
 MIN_ANNOUNCEMENTS = 10
@@ -107,7 +108,7 @@ def build_events(universe: pd.DataFrame) -> tuple[pd.DataFrame, list[str]]:
     measures; and the companies left out for having too few announcements."""
     earnings = pd.read_csv(DATA_DIR / "earnings_dates.csv", parse_dates=["date"])
     prices = pd.read_csv(DATA_DIR / "prices_daily.csv", index_col="date", parse_dates=True)
-    daily = pd.read_csv(DATA_DIR / "pageviews_daily.csv", index_col="date", parse_dates=True)
+    daily = load_daily()
     daily = cap_spikes(daily)
 
     # Views before a page became usable (e.g. Meta's company page before Dec 2019) are missing

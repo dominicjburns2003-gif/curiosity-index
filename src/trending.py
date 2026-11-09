@@ -25,6 +25,7 @@ from pathlib import Path
 import pandas as pd
 
 from fetch_pageviews import cap_spikes
+from pageview_store import RECENT_PATH
 
 MIN_USUAL_WEEK = 2000
 WEEKS_OF_NORMAL = 8
@@ -43,8 +44,8 @@ def weekly(views: pd.DataFrame, end: pd.Timestamp) -> tuple[pd.Series, pd.Series
 
 def main() -> None:
     universe = pd.read_csv(UNIVERSE_PATH)
-    daily = pd.read_csv(DATA_DIR / "pageviews_daily.csv", index_col="date", parse_dates=True)
-    daily = cap_spikes(daily.iloc[-120:])  # recent days only; enough history for the cap
+    daily = pd.read_csv(RECENT_PATH, index_col="date", parse_dates=True)
+    daily = cap_spikes(daily)  # recent days only; enough history for the cap
     prices = pd.read_csv(DATA_DIR / "prices_daily.csv", index_col="date", parse_dates=True)
 
     end = daily.index.max()

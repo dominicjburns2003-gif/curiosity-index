@@ -212,7 +212,7 @@ PAGE_CSS = """
 DATA_FILES = {
     "universe": PROJECT_DIR / "data" / "mapping" / "products_to_companies.csv",
     "views": DATA_DIR / "pageviews_monthly.csv",
-    "daily": DATA_DIR / "pageviews_daily.csv",
+    "daily": DATA_DIR / "pageviews_recent.csv",
     "prices": DATA_DIR / "prices_daily.csv",
     "conversion": DATA_DIR / "conversion_monthly.csv",
     "sorts": DATA_DIR / "sorts_summary.csv",
