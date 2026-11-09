@@ -599,12 +599,13 @@ with results:
                         and growth_of_100(by_size['net']) > growth_of_100(by_size['spy'])
                         else "the picks add nothing over the companies they are chosen from."),
                      vs_spy_t)
-            + answer("Does product curiosity before results predict how they go?",
-                     f"Yes, but not the way you might expect. Across {int(all_beat['events']):,} quarterly "
-                     f"results, companies whose products drew much more attention than a year earlier "
-                     f"beat analysts' estimates less often ({all_beat['top']:.0%} against "
-                     f"{all_beat['bottom']:.0%}). The share price reaction was no different. The pattern "
-                     f"was found in the first 68 companies and held in the 44 added later.",
+            + answer("Does a surge of interest in a company's products tell you anything before its results?",
+                     f"Yes. When a company's product pages get much more attention than a year earlier "
+                     f"in the weeks before it reports, it is less likely to beat analysts' forecasts: "
+                     f"{all_beat['top']:.0%} did, against {all_beat['bottom']:.0%} when its products "
+                     f"were getting less attention ({int(all_beat['events']):,} quarterly results since "
+                     f"2018). A likely reason: analysts notice the buzz too and raise their forecasts too "
+                     f"far. The share price did not react differently, so the market seems to expect it.",
                      all_beat["t_stat"], label=verdict(abs(all_beat["t_stat"]))[0],
                      style=verdict(abs(all_beat["t_stat"]))[1])
         )
@@ -693,13 +694,11 @@ with results:
         timing = (f"recorded on {recorded:%-d %B %Y}, using data up to the end of {pick_month:%B}; "
                   f"the live record counts from the close on the next trading day, so no returns that "
                   f"had already happened are included")
-        source = ("all 112 companies" if "all 112" in str(current["version"].iloc[0])
-                  else "the first 68 companies (the live strategy covers all 112 from December 2026)")
-        st.caption(f"Chosen at the end of {pick_month:%B %Y} from {source}, and {timing}. Each month's "
+        st.caption(f"Chosen at the end of {pick_month:%B %Y}, {timing}. Each month's "
                    f"picks are added to a permanent record and never changed, so the strategy's live "
                    f"track record can be checked later. Not investment advice.")
 
-    with st.expander("Research detail: how the strategy was developed (on the first 68 companies)"):
+    with st.expander("Research detail: how the strategy was chosen"):
         st.markdown(
             f"The strategy was designed on the first 68 companies. Five changes were "
             f"[planned and written down]({PLAN_URL}) before any were tested; none beat the original "
@@ -774,15 +773,14 @@ with results:
         st.markdown(
             f"- **More product buzz, fewer beats:** {beat_sort['top']:.1%} of companies with the busiest "
             f"product pages beat estimates, against {beat_sort['bottom']:.1%} of the quietest "
-            f"(t = {beat_sort['t_stat']:.1f}), the opposite of what was expected. It was first found in "
-            f"the first 68 companies and held in the 44 added later.\n"
+            f"(t = {beat_sort['t_stat']:.1f}), the opposite of what was expected.\n"
             f"- **No difference in the share-price reaction** around the results "
             f"({reaction_sort['top_minus_bottom'] * 100:+.2f}%, t = {reaction_sort['t_stat']:.1f}).\n"
             "- A likely reading: analysts see the same buzz and raise their forecasts, sometimes too "
             "far, so beating them is harder; and the market, seeing both, is not surprised on average."
         )
 
-    with st.expander("Research detail: checking the findings on companies the tests had never seen"):
+    with st.expander("Research detail: checking the findings on fresh companies"):
         st.markdown(
             f"Every test was first designed on 68 companies. In November 2026, 44 more "
             f"companies with 92 product pages were added and checked by the same rules, and the "
@@ -891,9 +889,9 @@ with results:
 
     with st.expander("Terms used on this page"):
         st.markdown(
-            "- **Top third:** each month the 68 companies are ranked and the best 23 are bought "
+            "- **Top third:** each month the 112 companies are ranked and the best 37 are bought "
             "in equal amounts.\n"
-            "- **Average of the 68 companies:** buying all of them in equal amounts; the fair "
+            "- **Average company:** buying all 112 in equal amounts; the fair "
             "comparison, because the strategy also uses equal amounts.\n"
             "- **Trading costs:** 0.1% of every amount bought or sold.\n"
             "- **t (confidence score):** how far the average result is from zero compared with how "
@@ -928,7 +926,7 @@ with track:
             first_day, last_day_held = track_daily["date"].iloc[0], track_daily["date"].iloc[-1]
             m1, m2, m3 = st.columns(3)
             for column, key, label in [(m1, "strategy", "Strategy picks"),
-                                       (m2, "average_company", "All 68 companies"),
+                                       (m2, "average_company", "Average company"),
                                        (m3, "spy", "S&P 500")]:
                 column.metric(label, f"${track_daily[key].iloc[-1]:,.2f}",
                               f"{track_daily[key].iloc[-1] / 100 - 1:+.2%} so far", border=True)
@@ -937,7 +935,7 @@ with track:
 
             live_chart = go.Figure()
             for key, label, colour, width in [("strategy", "Strategy picks", "#2a78d6", 3),
-                                              ("average_company", "All 68 companies", "#9aa5b1", 2),
+                                              ("average_company", "Average company", "#9aa5b1", 2),
                                               ("spy", "S&P 500", "#0f1b2d", 1.5)]:
                 live_chart.add_trace(go.Scatter(
                     x=track_daily["date"], y=track_daily[key], name=label, mode="lines+markers",
@@ -956,7 +954,7 @@ with track:
             st.plotly_chart(live_chart, width="stretch", config=CHART_CONFIG)
 
             st.html(html_table(
-                ["Month held", "Picks recorded on", "Strategy", "All 68", "S&P 500", "Status"],
+                ["Month held", "Picks recorded on", "Strategy", "Average company", "S&P 500", "Status"],
                 [[f"{pd.Period(r.month_held):%B %Y}", f"{pd.Timestamp(r.recorded_on):%-d %b %Y}",
                   f"{r.strategy:+.2%}", f"{r.average_company:+.2%}", f"{r.spy:+.2%}",
                   "Complete" if r.complete else f"In progress, to {pd.Timestamp(r.through):%-d %b}"]
@@ -981,9 +979,7 @@ with method:
         st.subheader("How it works")
         st.markdown(
             "1. **Universe:** 112 US-listed companies with well-known products on Wikipedia, "
-            "checked by hand (232 product pages, e.g. Novo Nordisk → Ozempic and Semaglutide). The "
-            "first 68 were used to design and run every test; 44 were added in November 2026 to "
-            "check the results on companies the tests had never seen.\n"
+            "checked by hand (232 product pages, e.g. Novo Nordisk → Ozempic and Semaglutide).\n"
             "2. **Attention:** daily page views since 2017, and the monthly clickstream (how many "
             "readers clicked from which page to which) since November 2017.\n"
             "3. **Signals:** each company's attention compared with its own recent past, so large "
@@ -1018,7 +1014,7 @@ with method:
               "The same days a year earlier", "Year on year handles seasonal products; ends before "
               "previews of the results"],
              ["Track record", "From the close on the next trading day after picks are recorded",
-              "All 68 companies and the "
+              "The average company and the "
               "S&P 500 over the same days", "Only returns that had not happened yet"]],
             numeric=set(),
         ))
@@ -1038,7 +1034,7 @@ with method:
         st.subheader("Known limits")
         st.markdown(
             "- **Small universe** (112 large companies, about 9 years): real but small effects "
-            "are hard to prove, and most results did not hold on the 44 companies added later.\n"
+            "are hard to prove, and most results did not hold when checked on fresh companies (see Results).\n"
             "- **Wikipedia quirks:** renamed pages (old titles added up), automated traffic "
             "counted as human before 2020 (one-day spikes capped), clicks hidden when a link has "
             "10 or fewer in a month.\n"
