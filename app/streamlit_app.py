@@ -719,44 +719,6 @@ with results:
         )
         st.caption("Research results, updated monthly. Not investment advice.")
 
-    with st.container(key="card_overview"):
-        st.subheader("Everything we tested")
-        st.markdown(
-            "Every main strategy, measured the way a fund factsheet would, after trading costs. "
-            "**Above the average** is the return above simply holding the same companies in equal "
-            "amounts; **Sharpe** is return per unit of risk (higher is better; the S&P 500 is the "
-            "yardstick); **worst fall** is the largest drop from a previous high. Two rows use "
-            "today's index members for the whole period, which lets the model pick, with hindsight, "
-            "companies that later soared into the index: they are shown only to make that visible. "
-            "The two **short** strategies sell shares they do not own and profit when those shares "
-            "fall; they are compared with shorting the average company, which loses money whenever "
-            "the market rises."
-        )
-        overview = data["overview"]
-
-        def overview_row(r) -> list[str]:
-            hindsight = "today's members" in r.strategy
-            reference = r.family == "Reference"
-            judged = ("—" if reference else
-                      '<span class="ci-chip no">Hindsight</span>' if hindsight else chip(r.t_stat))
-            period = f"{pd.Period(r.first_month):%b %Y} – {pd.Period(r.last_month):%b %Y}"
-            return [f'{r.strategy}<span class="sub">{r.description}. {period}</span>',
-                    f'${r.growth_100:,.0f}<span class="sub">'
-                    + ("shorting the avg" if r.family == "Short" else "avg")
-                    + f' ${r.average_100:,.0f} · S&amp;P ${r.spy_100:,.0f}</span>',
-                    f"{r.sharpe:.2f}", f"{r.worst_fall:.0%}",
-                    "—" if reference else f"{r.excess * 100:+.2f}%<span class=\"sub\">t = {r.t_stat:.1f}</span>",
-                    judged]
-
-        st.html(html_table(
-            ["Strategy", "$100 became", "Sharpe", "Worst fall", "Above average", "Verdict"],
-            [overview_row(r) for r in overview.itertuples()],
-            numeric={1, 2, 3, 4},
-        ))
-        st.caption("No strategy beats simply holding the companies, or the S&P 500, by more than "
-                   "luck could explain once it is tested fairly. The plans, written before each test, "
-                   "and every result are in the project's docs folder on GitHub.")
-
     with st.container(key="card_strategy"):
         st.subheader("The strategy")
         if chosen == "A":
@@ -855,7 +817,54 @@ with results:
                    f"picks are added to a permanent record and never changed, so the strategy's live "
                    f"track record can be checked later. Not investment advice.")
 
-    with st.expander("Research detail: how the strategy was chosen"):
+    with st.container(key="card_overview"):
+        st.subheader("Everything we tested")
+        st.markdown(
+            "Every main strategy, measured the way a fund factsheet would, after trading costs. "
+            "**Above the average** is the return above simply holding the same companies in equal "
+            "amounts; **Sharpe** is return per unit of risk (higher is better; the S&P 500 is the "
+            "yardstick); **worst fall** is the largest drop from a previous high. Two rows use "
+            "today's index members for the whole period, which lets the model pick, with hindsight, "
+            "companies that later soared into the index: they are shown only to make that visible. "
+            "The two **short** strategies sell shares they do not own and profit when those shares "
+            "fall; they are compared with shorting the average company, which loses money whenever "
+            "the market rises."
+        )
+        overview = data["overview"]
+
+        def overview_row(r) -> list[str]:
+            hindsight = "today's members" in r.strategy
+            reference = r.family == "Reference"
+            judged = ("—" if reference else
+                      '<span class="ci-chip no">Hindsight</span>' if hindsight else chip(r.t_stat))
+            period = f"{pd.Period(r.first_month):%b %Y} – {pd.Period(r.last_month):%b %Y}"
+            return [f'{r.strategy}<span class="sub">{r.description}. {period}</span>',
+                    f'${r.growth_100:,.0f}<span class="sub">'
+                    + ("shorting the avg" if r.family == "Short" else "avg")
+                    + f' ${r.average_100:,.0f} · S&amp;P ${r.spy_100:,.0f}</span>',
+                    f"{r.sharpe:.2f}", f"{r.worst_fall:.0%}",
+                    "—" if reference else f"{r.excess * 100:+.2f}%<span class=\"sub\">t = {r.t_stat:.1f}</span>",
+                    judged]
+
+        st.html(html_table(
+            ["Strategy", "$100 became", "Sharpe", "Worst fall", "Above average", "Verdict"],
+            [overview_row(r) for r in overview.itertuples()],
+            numeric={1, 2, 3, 4},
+        ))
+        st.caption("No strategy beats simply holding the companies, or the S&P 500, by more than "
+                   "luck could explain once it is tested fairly. The plans, written before each test, "
+                   "and every result are in the project's docs folder on GitHub.")
+
+    with st.container(key="card_research"):
+        st.subheader("Research detail")
+        st.markdown(
+            "How the results above were reached, in the order the work was done: the strategy was "
+            "designed on 68 companies, checked on 44 more, then on every S&P 500 and Nasdaq-100 "
+            "company and on the FTSE 100. Every test was written down before it was run; the plans "
+            f"and full results are in the project's [docs folder on GitHub]({GITHUB_URL}/tree/main/docs)."
+        )
+
+    with st.expander("1. How the strategy was designed (first 68 companies)"):
         st.markdown(
             f"The strategy was designed on the first 68 companies. Five changes were "
             f"[planned and written down]({PLAN_URL}) before any were tested; none beat the original "
@@ -899,116 +908,7 @@ with results:
             f"nothing. More months did not make the result more certain, so the edge, if real, is small."
         )
 
-    with st.container(key="card_earnings"):
-        st.subheader("Earnings announcements")
-        all_reaction = broad_row("all", "earnings", "reaction: top minus bottom third")
-        beat_sort, reaction_sort = all_beat, all_reaction.rename({"result": "top_minus_bottom"})
-        beat_sort = beat_sort.rename({"result": "top_minus_bottom"})
-        st.markdown(
-            f"The test [planned in advance]({EARNINGS_PLAN_URL}): for {int(beat_sort['events']):,} "
-            f"quarterly results of the {with_products} companies with product pages, from "
-            f"{int(beat_sort['months'])} quarters since "
-            f"2018, measure how much "
-            f"attention the company's product pages got from 35 to 6 days before the results date, "
-            f"compared with the same days a year earlier, then see how the results went. The share-price "
-            f"reaction is measured from the close 2 trading days before the results to the close 1 day after."
-        )
-        thirds = ["Products quieter than a year ago", "About the same", "Products much busier"]
-        beat_chart = go.Figure(go.Bar(
-            x=thirds, y=[beat_sort["bottom"] * 100, beat_sort["middle"] * 100, beat_sort["top"] * 100],
-            marker_color=["#9ec5f4", "#5598e7", "#1c5cab"],
-            text=[f"{v:.1%}" for v in [beat_sort["bottom"], beat_sort["middle"], beat_sort["top"]]],
-            textposition="outside", hovertemplate="%{y:.1f}% beat estimates<extra></extra>",
-        ))
-        beat_chart.update_layout(
-            yaxis=dict(title="Share beating analysts' estimates (%)", range=[0, 100], gridcolor=GRID),
-            height=300, margin=dict(l=10, r=10, t=20, b=10), plot_bgcolor="rgba(0,0,0,0)",
-            paper_bgcolor="rgba(0,0,0,0)", font=dict(family="Inter, sans-serif"), dragmode=False, hoverlabel=HOVER_LABEL,
-        )
-        beat_chart.update_xaxes(fixedrange=True)
-        beat_chart.update_yaxes(fixedrange=True)
-        st.plotly_chart(beat_chart, width="stretch", config=CHART_CONFIG)
-        st.markdown(
-            f"- **No reliable link:** {beat_sort['top']:.1%} of companies with the busiest product pages "
-            f"beat estimates, against {beat_sort['bottom']:.1%} of the quietest (t = {beat_sort['t_stat']:.1f}). "
-            f"On the first companies studied the gap was larger ({earlier_beat['top']:.0%} against "
-            f"{earlier_beat['bottom']:.0%}), but it did not hold on the companies added later.\n"
-            f"- **No difference in the share-price reaction** around the results "
-            f"({reaction_sort['top_minus_bottom'] * 100:+.2f}%, t = {reaction_sort['t_stat']:.1f}).\n"
-            "- The first result was most likely luck, or particular to well-known consumer brands; "
-            "on a broader set, product buzz says little about how results go."
-        )
-
-    with st.expander("Research detail: the test on every S&P 500 and Nasdaq-100 company"):
-        st.markdown(
-            f"On 9 November 2026 the universe grew from 112 companies to {group_size}: every S&P 500 "
-            f"company and the Nasdaq-100. The same tests were [planned in advance]({BROAD_PLAN_URL}) and "
-            f"run once on the {group_size - 112} new companies, every setting unchanged. Most of them "
-            f"have no product pages on Wikipedia and are followed by their company page alone."
-        )
-
-        def broad_line(finding: str, test: str, detail: str, pct: bool = True) -> list[str]:
-            cells = []
-            for g in ["broad new", "broad new, with products"]:
-                r = broad_row(g, test, detail)
-                value = f"{r['result'] * 100:+.2f}%" if pct else f"{r['result'] * 100:+.1f} pts"
-                cells.append(f"{value} (t = {r['t_stat']:.1f})")
-            return [finding, *cells]
-
-        st.html(html_table(
-            ["Finding", "New companies", "New, with product pages"],
-            [broad_line("Strategy beats its own average (a month)", "strategy", "equal amounts"),
-             broad_line("Long-short, company attention only", "long-short", "company"),
-             broad_line("Long-short, with product attention", "long-short", "products"),
-             broad_line("Products getting more attention than the company", "sort", "Gap (products vs company)"),
-             broad_line("Product buzz before results: change in beat rate", "earnings",
-                        "beat: top minus bottom third", pct=False)],
-            numeric={1, 2},
-        ))
-        st.markdown(
-            "- **The strategy's edge in the new companies was mostly hindsight:** they are today's "
-            "index members, including firms that joined because their shares soared. Counting only "
-            "companies in the index at the time, the edge almost disappears (see the strategy plan).\n"
-            "- **None of the product findings hold**, including the earnings one.\n"
-            "- Many tests have now been run, so a t of about 2 is weaker evidence than it looks."
-        )
-
-    if "ftse" in data and len(data["ftse"]):
-        with st.expander("Research detail: the same tests on the FTSE 100"):
-            ftse = data["ftse"].set_index(["test", "detail"])
-            ftse_monthly = data["ftse_monthly"]
-            st.markdown(
-                f"The same tests, [planned in advance]({FTSE_PLAN_URL}) and run once, on the "
-                f"{universe.loc[universe['cohort'] == 'ftse', 'ticker'].nunique()} FTSE 100 companies not "
-                "already tracked through a US listing, ranked among themselves. No record of past "
-                "FTSE 100 membership was available, so today's members are used back to 2017: the "
-                "strategy rows are flattered by hindsight, as they were in the US before correcting it."
-            )
-
-            def ftse_line(label: str, test: str, detail: str, pct: bool = True) -> list[str]:
-                if (test, detail) not in ftse.index:
-                    return [label, "n/a"]
-                r = ftse.loc[(test, detail)]
-                value = f"{r['result'] * 100:+.2f}%" if pct else f"{r['result'] * 100:+.1f} pts"
-                return [label, f"{value} (t = {r['t_stat']:.1f})"]
-
-            st.html(html_table(["Finding (UK)", "Result"], [
-                ftse_line("Strategy beats its own average (a month; flattered)", "strategy",
-                          "equal amounts (today's members)"),
-                ftse_line("Long-short, company attention only", "long-short", "company"),
-                ftse_line("Long-short, with product attention", "long-short", "products"),
-                ftse_line("Products getting more attention than the company", "sort", "Gap (products vs company)"),
-                ftse_line("Abnormal company attention", "sort", "Abnormal company attention"),
-                ftse_line("Product buzz before results: change in beat rate", "earnings",
-                          "beat: top minus bottom third", pct=False)], numeric={1}))
-            equal = ftse_monthly[ftse_monthly["detail"] == "equal amounts (today's members)"]
-            if len(equal):
-                st.caption(f"$100 in the UK strategy became £{100 * (1 + equal['net']).prod():.0f}, against "
-                           f"£{100 * (1 + equal['benchmark']).prod():.0f} for the 95 companies held equally and "
-                           f"£{100 * (1 + equal['ftse_fund']).prod():.0f} for a FTSE 100 fund (with hindsight "
-                           "in the company list).")
-
-    with st.expander("Research detail: checking the findings on fresh companies"):
+    with st.expander("2. Checking it on 44 new companies"):
         st.markdown(
             f"Every test was first designed on 68 companies. In November 2026, 44 more "
             f"companies with 92 product pages were added and checked by the same rules, and the "
@@ -1066,7 +966,115 @@ with results:
             "the plan, linked above."
         )
 
-    with st.expander("Research detail: the final click-through tests"):
+    with st.expander("3. Every S&P 500 and Nasdaq-100 company"):
+        st.markdown(
+            f"On 9 November 2026 the universe grew from 112 companies to {group_size}: every S&P 500 "
+            f"company and the Nasdaq-100. The same tests were [planned in advance]({BROAD_PLAN_URL}) and "
+            f"run once on the {group_size - 112} new companies, every setting unchanged. Most of them "
+            f"have no product pages on Wikipedia and are followed by their company page alone."
+        )
+
+        def broad_line(finding: str, test: str, detail: str, pct: bool = True) -> list[str]:
+            cells = []
+            for g in ["broad new", "broad new, with products"]:
+                r = broad_row(g, test, detail)
+                value = f"{r['result'] * 100:+.2f}%" if pct else f"{r['result'] * 100:+.1f} pts"
+                cells.append(f"{value} (t = {r['t_stat']:.1f})")
+            return [finding, *cells]
+
+        st.html(html_table(
+            ["Finding", "New companies", "New, with product pages"],
+            [broad_line("Strategy beats its own average (a month)", "strategy", "equal amounts"),
+             broad_line("Long-short, company attention only", "long-short", "company"),
+             broad_line("Long-short, with product attention", "long-short", "products"),
+             broad_line("Products getting more attention than the company", "sort", "Gap (products vs company)"),
+             broad_line("Product buzz before results: change in beat rate", "earnings",
+                        "beat: top minus bottom third", pct=False)],
+            numeric={1, 2},
+        ))
+        st.markdown(
+            "- **The strategy's edge in the new companies was mostly hindsight:** they are today's "
+            "index members, including firms that joined because their shares soared. Counting only "
+            "companies in the index at the time, the edge almost disappears (see the strategy plan).\n"
+            "- **None of the product findings hold**, including the earnings one.\n"
+            "- Many tests have now been run, so a t of about 2 is weaker evidence than it looks."
+        )
+
+    if "ftse" in data and len(data["ftse"]):
+        with st.expander("4. The FTSE 100"):
+            ftse = data["ftse"].set_index(["test", "detail"])
+            ftse_monthly = data["ftse_monthly"]
+            st.markdown(
+                f"The same tests, [planned in advance]({FTSE_PLAN_URL}) and run once, on the "
+                f"{universe.loc[universe['cohort'] == 'ftse', 'ticker'].nunique()} FTSE 100 companies not "
+                "already tracked through a US listing, ranked among themselves. No record of past "
+                "FTSE 100 membership was available, so today's members are used back to 2017: the "
+                "strategy rows are flattered by hindsight, as they were in the US before correcting it."
+            )
+
+            def ftse_line(label: str, test: str, detail: str, pct: bool = True) -> list[str]:
+                if (test, detail) not in ftse.index:
+                    return [label, "n/a"]
+                r = ftse.loc[(test, detail)]
+                value = f"{r['result'] * 100:+.2f}%" if pct else f"{r['result'] * 100:+.1f} pts"
+                return [label, f"{value} (t = {r['t_stat']:.1f})"]
+
+            st.html(html_table(["Finding (UK)", "Result"], [
+                ftse_line("Strategy beats its own average (a month; flattered)", "strategy",
+                          "equal amounts (today's members)"),
+                ftse_line("Long-short, company attention only", "long-short", "company"),
+                ftse_line("Long-short, with product attention", "long-short", "products"),
+                ftse_line("Products getting more attention than the company", "sort", "Gap (products vs company)"),
+                ftse_line("Abnormal company attention", "sort", "Abnormal company attention"),
+                ftse_line("Product buzz before results: change in beat rate", "earnings",
+                          "beat: top minus bottom third", pct=False)], numeric={1}))
+            equal = ftse_monthly[ftse_monthly["detail"] == "equal amounts (today's members)"]
+            if len(equal):
+                st.caption(f"$100 in the UK strategy became £{100 * (1 + equal['net']).prod():.0f}, against "
+                           f"£{100 * (1 + equal['benchmark']).prod():.0f} for the 95 companies held equally and "
+                           f"£{100 * (1 + equal['ftse_fund']).prod():.0f} for a FTSE 100 fund (with hindsight "
+                           "in the company list).")
+
+    with st.expander("5. Earnings announcements"):
+        all_reaction = broad_row("all", "earnings", "reaction: top minus bottom third")
+        card_beat, card_reaction = all_beat, all_reaction.rename({"result": "top_minus_bottom"})
+        card_beat = card_beat.rename({"result": "top_minus_bottom"})
+        st.markdown(
+            f"The test [planned in advance]({EARNINGS_PLAN_URL}): for {int(card_beat['events']):,} "
+            f"quarterly results of the {with_products} companies with product pages, from "
+            f"{int(card_beat['months'])} quarters since "
+            f"2018, measure how much "
+            f"attention the company's product pages got from 35 to 6 days before the results date, "
+            f"compared with the same days a year earlier, then see how the results went. The share-price "
+            f"reaction is measured from the close 2 trading days before the results to the close 1 day after."
+        )
+        thirds = ["Products quieter than a year ago", "About the same", "Products much busier"]
+        beat_chart = go.Figure(go.Bar(
+            x=thirds, y=[card_beat["bottom"] * 100, card_beat["middle"] * 100, card_beat["top"] * 100],
+            marker_color=["#9ec5f4", "#5598e7", "#1c5cab"],
+            text=[f"{v:.1%}" for v in [card_beat["bottom"], card_beat["middle"], card_beat["top"]]],
+            textposition="outside", hovertemplate="%{y:.1f}% beat estimates<extra></extra>",
+        ))
+        beat_chart.update_layout(
+            yaxis=dict(title="Share beating analysts' estimates (%)", range=[0, 100], gridcolor=GRID),
+            height=300, margin=dict(l=10, r=10, t=20, b=10), plot_bgcolor="rgba(0,0,0,0)",
+            paper_bgcolor="rgba(0,0,0,0)", font=dict(family="Inter, sans-serif"), dragmode=False, hoverlabel=HOVER_LABEL,
+        )
+        beat_chart.update_xaxes(fixedrange=True)
+        beat_chart.update_yaxes(fixedrange=True)
+        st.plotly_chart(beat_chart, width="stretch", config=CHART_CONFIG)
+        st.markdown(
+            f"- **No reliable link:** {card_beat['top']:.1%} of companies with the busiest product pages "
+            f"beat estimates, against {card_beat['bottom']:.1%} of the quietest (t = {card_beat['t_stat']:.1f}). "
+            f"On the first companies studied the gap was larger ({earlier_beat['top']:.0%} against "
+            f"{earlier_beat['bottom']:.0%}), but it did not hold on the companies added later.\n"
+            f"- **No difference in the share-price reaction** around the results "
+            f"({card_reaction['top_minus_bottom'] * 100:+.2f}%, t = {card_reaction['t_stat']:.1f}).\n"
+            "- The first result was most likely luck, or particular to well-known consumer brands; "
+            "on a broader set, product buzz says little about how results go."
+        )
+
+    with st.expander("6. Click-through: volatility and sectors"):
         clicks_tests = data["clickthrough"].set_index("signal")
         st.markdown(
             f"Two last questions where click-through might show something product attention cannot, "
@@ -1093,7 +1101,7 @@ with results:
             "company behind it, but it does not predict returns."
         )
 
-    with st.expander("Research detail: each signal on its own, and the long-short model"):
+    with st.expander("7. Each signal on its own, and the long-short model"):
         st.markdown(
             "These tests buy the top third **and sell the bottom third**, a standard research "
             "measure of whether a signal separates winners from losers. They are not the strategy "
