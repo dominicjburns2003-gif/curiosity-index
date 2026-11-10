@@ -320,3 +320,27 @@ and with the S&P 500.
   `docs/broad_universe_plan.md`), but this is not a claim that it works: it
   only affects returns that have not happened yet (the first price used is
   the close on 10 Nov), so it cannot use hindsight.
+
+## Addendum: buy the top 100 (written on 10 Nov 2026, before running it)
+
+**Why (Dominic's decision):** with 546 companies, the top third is about 182
+stocks, close to buying the whole index and not something an investor would
+hold or that reads as "picks". 100 is chosen as a practical, round number,
+**not** because it tested better: it has not been tested, and no other sizes
+will be tried.
+
+**Rule:** version A unchanged (same model and settings, trained walk-forward
+on all companies, retrained each January), but each month buy the **100
+highest-scoring companies** instead of the top third, in equal amounts (and,
+as a second view, weighted by size with no company above 15%), held for one
+month, 0.1% trading costs.
+
+**Compared with:** the top-third version on the same companies, the
+equal-weighted average of all companies (and the size-weighted average for
+the size view), and the S&P 500, from January 2022 picks to the latest month.
+Reported once, whatever the result.
+
+**Live strategy:** from the picks chosen at the end of November 2026 (held in
+December), the live strategy buys the top 100. November's picks stay as
+recorded. This is decided now, before the test is run and before any
+December return exists, so the switch does not depend on the result.
