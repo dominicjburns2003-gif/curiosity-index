@@ -84,7 +84,9 @@ in 2018–2021, one in 2022–2026, none in both). Holding cash instead of bonds
   but that year bonds fell together with shares (interest rates rose), so
   switching gave no protection; worry then stayed high while shares recovered
   in 2023, so the strategy missed much of the rebound. Over 2022–2026 every
-  version did worse than simply holding the S&P 500.
+  worry-page version did worse than simply holding the S&P 500; only the
+  market-wide 80th-percentile version did marginally better ($173 against
+  $172, Sharpe 0.52 against 0.49).
 - **Market-wide attention** to company pages smoothed falls a little (worst
   fall −23% against −32%) but gave up more return than it saved.
 - One episode where it worked and one where it did not is not enough to tell
