@@ -252,6 +252,7 @@ DATA_FILES = {
     "ftse": DATA_DIR / "ftse_summary.csv",
     "risk_signals": DATA_DIR / "risk_signals_summary_extended.csv",
     "crypto": DATA_DIR / "crypto_summary.csv",
+    "crypto_strategy": DATA_DIR / "crypto_strategy_summary.csv",
     "ftse_monthly": DATA_DIR / "ftse_monthly.csv",
     "last_update": DATA_DIR / "last_update.json",
 }
@@ -271,7 +272,7 @@ def load_data(versions: tuple) -> dict:
     file, it changes, so the cache is refreshed instead of serving old data."""
     data = {}
     for name, path in DATA_FILES.items():
-        if not path.exists() and name in ("ftse", "ftse_monthly", "risk_signals", "crypto"):
+        if not path.exists() and name in ("ftse", "ftse_monthly", "risk_signals", "crypto", "crypto_strategy"):
             data[name] = pd.DataFrame()  # before the UK tests have first run
         elif name == "daily":
             data[name] = pd.read_csv(path, usecols=["date"])["date"].max()
@@ -754,6 +755,20 @@ with results:
                                coin_row("pooled 2022-2026 (exploratory)"))
         coins = crypto[(crypto["outcome"] == "next_4w") & crypto["group"].str.endswith("-USD")]
         same_sign = int(((coins["attention_b"] > 0) == (pooled["attention_b"] > 0)).sum())
+        crypto_money = ""
+        plan = data["crypto_strategy"]
+        if len(plan):
+            whole = plan[plan["period"] == "whole"].set_index("strategy")
+            att, hold, trend = (whole.loc["Attention strategy"], whole.loc["Holding the coins"],
+                                whole.loc["Price-trend strategy (check)"])
+            crypto_money = (
+                f" As a strategy (hold a coin for 4 weeks after its page gets busier than usual, cash "
+                f"otherwise), $100 from {pd.Timestamp(att['first_week']):%B %Y} became "
+                f"${att['growth_100']:,.0f}, against ${hold['growth_100']:,.0f} for simply holding the coins, "
+                f"but with a far smoother ride (worst fall {att['worst_fall']:.0%} against "
+                f"{hold['worst_fall']:.0%}; Sharpe ratio {att['sharpe']:.2f} against {hold['sharpe']:.2f}). "
+                f"A simple price-trend rule did about as well (Sharpe {trend['sharpe']:.2f}), so attention "
+                f"adds little beyond following the price.")
         crypto_answer = answer(
             "Does attention predict crypto prices?",
             f"Yes, in the test as planned, but only in the boom years. When a coin's Wikipedia page "
@@ -764,7 +779,7 @@ with results:
             f"from the speculative booms of 2017 and 2020–21 ({early['attention_b'] * 100:+.1f}%, "
             f"t = {early['attention_t']:.1f}); since 2022 it is close to zero "
             f"({late['attention_b'] * 100:+.1f}%, t = {late['attention_t']:.1f}). It looks like a feature "
-            f"of hype cycles, not a lasting rule.",
+            f"of hype cycles, not a lasting rule.{crypto_money}",
             pooled["attention_t"], label="Passed, in crypto booms", style="strongest")
 
     with st.container(key="card_summary"):

@@ -59,3 +59,39 @@ April 2017, Ethereum December 2017, Cardano January 2018, Solana September
   together over about 9 years are a small sample, and the strategy uses the
   same data that the test found the signal in, so even a pass is weak
   evidence for the future.
+
+## Results (added on 10 Nov 2026, after running `src/crypto_strategy.py` once)
+
+501 weeks, April 2017 to November 2026, after costs. Equal-weight basket of
+the four coins unless stated.
+
+| Strategy | Time in coins | $100 became | Annual return | Volatility | Sharpe | Worst fall |
+|---|---|---|---|---|---|---|
+| **Attention strategy** | 37% | **$4,023** | 46.7% | 43.4% | **1.02** | **−54%** |
+| Price-trend strategy (check) | 53% | $8,024 | 57.6% | 55.3% | 1.00 | −68% |
+| Holding the coins | 100% | $7,225 | 55.9% | 83.1% | 0.64 | −91% |
+| Bitcoin: attention strategy | 39% | $3,218 | 43.4% | 40.7% | 1.00 | −48% |
+| Bitcoin: holding | 100% | $6,767 | 54.9% | 68.9% | 0.76 | −83% |
+
+For information, Sharpe ratio by half: attention strategy 1.80 (2017–2021)
+and 0.14 (2022–2026); holding the coins 1.69 and −0.16; price trend 1.88 and
+0.15.
+
+**Verdicts, by the rules fixed in advance:**
+
+- **The attention strategy works,** by the rule: over the whole period its
+  Sharpe ratio is 1.02 against 0.64 for holding the coins. It made less money
+  ($4,023 against $7,225 from $100), because it held coins only about a third
+  of the time, but with half the volatility and a much smaller worst fall
+  (−54% against −91%).
+- **It adds almost nothing beyond price trend.** Its Sharpe ratio is higher
+  than the price-trend version's by 0.02 (1.02 against 1.00), which passes the
+  rule as written but is far too small to mean anything; the price-trend rule
+  made twice as much money.
+
+**Reading:** in crypto, almost any rule that steps out of the market for part
+of the time cuts the huge crashes (−80% to −90%) and so improves the Sharpe
+ratio; attention does this about as well as simply following the price,
+which it largely tracks. The gain over holding came mostly in 2017–2021;
+since 2022 both timing rules have barely beaten cash, though they avoided the
+2022 crash that left buy-and-hold below its starting value.
