@@ -94,6 +94,16 @@ def main() -> None:
             out.append({"outcome": outcome, "group": name, "weeks": len(g),
                         "first_week": g.index.min().date(), "attention_b": beta[first], "attention_t": t[first],
                         "past_4w_b": beta[first + 1], "past_4w_t": t[first + 1]})
+    # Exploratory, not part of the plan: the pooled 4-week result in each half of the period
+    for half, (a, b) in {"pooled 2017-2021 (exploratory)": ("2017-01-01", "2021-12-31"),
+                         "pooled 2022-2026 (exploratory)": ("2022-01-01", "2026-12-31")}.items():
+        g = weekly.dropna(subset=["next_4w"])
+        g = g[(g.index >= a) & (g.index <= b)]
+        Xs = g[["attention", "past_4w"]].groupby(g["coin"]).transform(lambda s: (s - s.mean()) / s.std())
+        X = np.column_stack([Xs.to_numpy(), pd.get_dummies(g["coin"], dtype=float).to_numpy()])
+        beta, t = driscoll_kraay(g["next_4w"].to_numpy(), X, g.index.values, 4)
+        out.append({"outcome": "next_4w", "group": half, "weeks": len(g), "first_week": g.index.min().date(),
+                    "attention_b": beta[0], "attention_t": t[0], "past_4w_b": beta[1], "past_4w_t": t[1]})
     summary = pd.DataFrame(out)
     summary.to_csv(DATA_DIR / "crypto_summary.csv", index=False)
     show = summary.copy()

@@ -251,6 +251,7 @@ DATA_FILES = {
     "overview": DATA_DIR / "strategy_overview.csv",
     "ftse": DATA_DIR / "ftse_summary.csv",
     "risk_signals": DATA_DIR / "risk_signals_summary_extended.csv",
+    "crypto": DATA_DIR / "crypto_summary.csv",
     "ftse_monthly": DATA_DIR / "ftse_monthly.csv",
     "last_update": DATA_DIR / "last_update.json",
 }
@@ -270,7 +271,7 @@ def load_data(versions: tuple) -> dict:
     file, it changes, so the cache is refreshed instead of serving old data."""
     data = {}
     for name, path in DATA_FILES.items():
-        if not path.exists() and name in ("ftse", "ftse_monthly", "risk_signals"):
+        if not path.exists() and name in ("ftse", "ftse_monthly", "risk_signals", "crypto"):
             data[name] = pd.DataFrame()  # before the UK tests have first run
         elif name == "daily":
             data[name] = pd.read_csv(path, usecols=["date"])["date"].max()
@@ -730,7 +731,7 @@ with results:
         worry_vol = risk_row("worry", "logvol_next4")
         market_answer = answer(
             "Does a burst of attention across all companies warn of a weaker market?",
-            f"It looks like it, and it is the strongest signal in the project. When the typical company's "
+            f"It looks like it, and it is the strongest signal for the stock market. When the typical company's "
             f"Wikipedia page is unusually busy, the S&P 500 has tended to do worse over the next 4 weeks "
             f"({mw['coefficient'] * 100:+.2f}% after a typical-sized rise in attention, t = {mw['t_stat']:.2f}, "
             f"2016 to 2026), even after allowing for the market's own fear gauge (the VIX) and its trend, "
@@ -741,7 +742,30 @@ with results:
             f"or *Stock market crash* predict a bumpier market, but add little to the VIX "
             f"(t = {worry_vol['t_stat']:.1f}). Switching from shares to bonds on these signals did not "
             f"beat simply holding the S&P 500.".replace("*", ""),
-            abs(mw["t_stat"]), label="Strongest signal so far", style="strongest")
+            abs(mw["t_stat"]), label="Strongest stock-market signal", style="strongest")
+
+    # Crypto: does attention to a coin's page predict its price?
+    crypto_answer = ""
+    crypto = data["crypto"]
+    if len(crypto):
+        def coin_row(group: str) -> pd.Series:
+            return crypto[(crypto["outcome"] == "next_4w") & (crypto["group"] == group)].iloc[0]
+        pooled, early, late = (coin_row("pooled"), coin_row("pooled 2017-2021 (exploratory)"),
+                               coin_row("pooled 2022-2026 (exploratory)"))
+        coins = crypto[(crypto["outcome"] == "next_4w") & crypto["group"].str.endswith("-USD")]
+        same_sign = int(((coins["attention_b"] > 0) == (pooled["attention_b"] > 0)).sum())
+        crypto_answer = answer(
+            "Does attention predict crypto prices?",
+            f"Yes, in the test as planned, but only in the boom years. When a coin's Wikipedia page "
+            f"(Bitcoin, Ethereum, Solana, Cardano) was busier than usual, its price tended to rise over the "
+            f"next 4 weeks: {pooled['attention_b'] * 100:+.1f}% after a typical-sized rise in attention "
+            f"(t = {pooled['attention_t']:.1f}, {same_sign} of the 4 coins the same way), even allowing for "
+            f"its recent price move. That passes the rule set before the test. But almost all of it comes "
+            f"from the speculative booms of 2017 and 2020–21 ({early['attention_b'] * 100:+.1f}%, "
+            f"t = {early['attention_t']:.1f}); since 2022 it is close to zero "
+            f"({late['attention_b'] * 100:+.1f}%, t = {late['attention_t']:.1f}). It looks like a feature "
+            f"of hype cycles, not a lasting rule.",
+            pooled["attention_t"], label="Passed, in crypto booms", style="strongest")
 
     with st.container(key="card_summary"):
         st.subheader("The short answer so far")
@@ -787,6 +811,7 @@ with results:
                         else "the picks add nothing over the companies they are chosen from."),
                      vs_spy_t)
             + market_answer
+            + crypto_answer
             + answer("Does a surge of interest in a company's products tell you anything before its results?",
                      f"Not reliably. On the first companies studied, a surge in product attention in the "
                      f"weeks before results came with fewer beats of analysts' forecasts "

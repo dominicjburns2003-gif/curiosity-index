@@ -17,6 +17,9 @@ whatever they were. Read them in this order:
 | 9 | [short_plan.md](short_plan.md) | Short companies whose attention falls away? | No |
 | 10 | [news_split_plan.md](news_split_plan.md) | Buy only surges that come with good news (price beating the market)? | No: works after 2022, fails before; reverses between periods |
 | 11 | [fundamentals_plan.md](fundamentals_plan.md) | Does attention add anything to company fundamentals (P/E, book value, profitability)? | No (+0.03% a month, t 0.3) |
+| 12 | [risk_off_plan.md](risk_off_plan.md) | Switch from shares to bonds when public worry is high? | No: caught the 2020 crash, failed in 2022 |
+| 13 | [risk_signals_plan.md](risk_signals_plan.md) | Does worry predict the market's return or volatility, beyond the VIX and trend? (and back to 2016) | Worry no; market-wide attention just misses (t −1.99) |
+| 14 | [crypto_plan.md](crypto_plan.md) | Does attention predict Bitcoin, Ethereum, Solana and Cardano prices? | Yes over 4 weeks (t 2.1), but only in the 2017 and 2020–21 booms |
 
 The top-100 version and the survivorship check are in `strategy_plan.md`
 (addendum of 10 Nov 2026). Exploratory checks, not planned in advance, are
