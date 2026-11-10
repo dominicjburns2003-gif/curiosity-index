@@ -167,3 +167,30 @@ before, 2017–2021 and 2022–2026, only companies in the S&P 500 at the time.
 6 versions beat the average company in both periods. Because this is a
 further rule tested on surges and years that have already been looked at, a
 pass would be weak evidence; it is reported whatever the result.
+
+### Follow-up results (added on 10 Nov 2026, after running `src/news_split.py --followup` once)
+
+Good-news surges, leaving out companies more than 20 points ahead of the
+S&P 500 over the previous 13 weeks. Above the average company, % a month (t),
+and $100 became (average company: $223 in 2017–2021, $166 in 2022–2026, $371
+over the whole period).
+
+| Entry | Exit | 2017–2021 | 2022–2026 | Whole period |
+|---|---|---|---|---|
+| 1.5× | normal | −0.59 (−1.9), $158 | −0.24 (−0.6), $142 | −0.41 (−1.7), $225 |
+| 1.5× | half | −0.30 (−1.5), $189 | −0.09 (−0.4), $158 | −0.19 (−1.2), $299 |
+| 2× | normal | −0.75 (−1.8), $143 | −0.37 (−0.7), $127 | −0.56 (−1.6), $181 |
+| 2× | half | −1.04 (−1.9), $117 | −0.18 (−0.2), $136 | −0.61 (−1.3), $160 |
+| 3× | normal | −0.61 (−0.9), $151 | −1.20 (−1.3), $70 | −0.91 (−1.6), $106 |
+| 3× | half | −0.96 (−1.5), $121 | −0.03 (0.0), $153 | −0.49 (−1.1), $185 |
+
+**Verdict: it does not work, and it is worse than without the rule.** None
+of the 6 versions beats the average company in either period (without the
+rule: 5 of 6 in 2022–2026).
+
+**What it shows:** the good-news result in 2022–2026 came almost entirely
+from companies that were *already* far ahead, the momentum stocks of that
+period. Taking them out removes the whole edge. So whatever worked there was
+riding existing price momentum, not attention picking up something new; and
+good-news surges in companies that had not already run up did worse than
+the average in both periods.
