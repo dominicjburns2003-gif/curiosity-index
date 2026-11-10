@@ -16,5 +16,3 @@ data/raw/
 # Secrets
 .env
 
-# Click-through history being re-downloaded for new companies (swapped in when complete)
-data/processed/clickstream_new/

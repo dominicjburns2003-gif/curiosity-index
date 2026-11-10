@@ -1,0 +1,11 @@
+group,test,detail,result,t_stat,months,growth_100,growth_100_benchmark
+broad new,long-short,clicks,0.006082360363644674,2.8071902922538685,57,,
+broad new,sort,Click-through vs normal,0.0030646806780756717,0.9506040488255879,100,,
+broad new,sort,Click-through change,0.00306253389708053,1.083353609307581,105,,
+"broad new, with products",long-short,clicks,-0.006844420427507932,-1.681673381419325,57,,
+"broad new, with products",sort,Click-through vs normal,0.0030646806780756717,0.9506040488255879,100,,
+"broad new, with products",sort,Click-through change,0.00306253389708053,1.083353609307581,105,,
+all,long-short,clicks,0.007147343433921448,2.8289560939756258,57,,
+all,sort,Click-through vs normal,0.0021503598784040952,1.0366470361716473,100,,
+all,sort,Click-through change,0.002029287796742286,1.1839428099880192,105,,
+"all, with products",click-through added (long-only),A + click-through minus A,-0.0006178974079426492,-0.46313945139389745,57,164.37189682592378,170.01049646040966

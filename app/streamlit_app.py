@@ -231,6 +231,7 @@ DATA_FILES = {
     "replication_monthly": DATA_DIR / "replication_monthly.csv",
     "broad": DATA_DIR / "broad_summary.csv",
     "broad_monthly": DATA_DIR / "broad_monthly.csv",
+    "broad_clicks": DATA_DIR / "broad_clickthrough.csv",
     "last_update": DATA_DIR / "last_update.json",
 }
 CLICKTHROUGH_PLAN_URL = GITHUB_URL + "/blob/main/docs/clickthrough_tests_plan.md"
@@ -578,6 +579,10 @@ with results:
     first_clicks = (replication[(replication["group"] == "all 112") & (replication["test"] == "long-short")]
                     .set_index("detail")["result"])
     product_strategy = broad_row("broad new, with products", "strategy", "equal amounts")
+    broad_clicks = data["broad_clicks"]
+    clicks_added = broad_clicks[broad_clicks["test"] == "click-through added (long-only)"].iloc[0]
+    click_sort = broad_clicks[(broad_clicks["group"] == "broad new")
+                              & (broad_clicks["detail"] == "Click-through change")].iloc[0]
     new_products = broad_row("broad new", "long-short", "products")
     new_company = broad_row("broad new", "long-short", "company")
     new_beat = replicated("new 44", "earnings", "beat: top minus bottom third")
@@ -608,11 +613,14 @@ with results:
                      # The verdict recorded in docs/broad_universe_plan.md: does not replicate
                      0, label="Not confirmed", style="maybe")
             + answer("Does click-through from products to the company add anything?",
-                     f"Being tested on all {with_products} companies with product pages (the click "
-                     f"history for the newest pages is still downloading). On the first companies "
-                     f"studied, adding click-through gave {first_clicks['clicks'] * 100:+.2f}% a month in the "
-                     f"research test, against {first_clicks['products'] * 100:+.2f}% without it, and it did "
-                     f"not predict volatility either.", 0, label="Being tested", style="maybe")
+                     f"Not to the strategy. Tested on all {with_products} companies with product pages, "
+                     f"adding click-through to the model changed the picks' return by "
+                     f"{clicks_added['result'] * 100:+.2f}% a month (t = {clicks_added['t_stat']:.1f}). "
+                     f"Rising click-through went with slightly higher returns in the first companies "
+                     f"studied and in the {with_products - 112} with product pages added on 9 November "
+                     f"({click_sort['result'] * 100:+.2f}% a month), though not in the 44 added the day "
+                     f"before: too weak and uneven to rely on. It does not predict volatility either.",
+                     clicks_added["t_stat"], improves=clicks_added["result"] > 0)
             + answer("Does it beat the S&P 500?",
                      f"Weighted by company size, as most funds are, the picks turned $100 into "
                      f"${growth_of_100(by_size['net']):.0f}, against ${growth_of_100(by_size['spy']):.0f} "

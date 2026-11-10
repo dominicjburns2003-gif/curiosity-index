@@ -142,3 +142,35 @@ do not hold up; what shows up instead is a modest effect of attention to the
 company itself, mainly among companies the public does not otherwise follow.
 Many tests have now been run, so even t 2.2 is weaker evidence than it looks.
 Part 2 (click-through) follows once the download is complete.
+
+## Results, part 2: click-through (added on 10 Nov 2026, after running `src/broad_tests.py --clickthrough` once)
+
+The full clickstream history was downloaded again for every company page
+(108 months, November 2017 to October 2026); the 112's click-through values
+came out identical to before. 184 companies have click-through.
+
+| Test | Original 68 / all 112 (for comparison) | Broad new | Broad new, with products | All |
+|---|---|---|---|---|
+| 2. Long-short, + click-through | +0.23 (0.5) / +0.42 (1.2) | +0.61 (2.8) | −0.68 (−1.7) | +0.72 (2.8) |
+| 3. Sort: click-through vs normal | | +0.31 (1.0) | +0.31 (1.0) | +0.22 (1.0) |
+| 3. Sort: click-through change | +0.44 (1.8) | +0.31 (1.1) | +0.31 (1.1) | +0.20 (1.2) |
+| **5. Long-only strategy: A + click-through minus A** | | | | **−0.06 (−0.5)** (all with product pages, 57 months) |
+
+**Verdicts:**
+
+- **The main question (5): click-through does not improve the strategy.**
+  Version A with the click-through features did 0.06% a month *worse* than
+  version A on all companies with product pages (t −0.5).
+- **In the long-short research test (2)** the click-through version is
+  higher than the products version (all: +0.72 against +0.54), but in the 72
+  new companies with product pages it is no better (−0.68 against −0.71), so
+  the difference comes from the companies that have no click-through at all
+  (where the two versions differ only in how the model was trained).
+- **The click-through signals on their own (3) replicate in sign** (+0.31% a
+  month for rising click-through in the new companies, as in the original 68)
+  **but are weak** (t about 1).
+
+**Overall:** click-through measures something real, and rising click-through
+points the right way in the original 68 and in the new companies here (though
+not in the 44 added on 8 Nov 2026, where it was −0.10, t −0.3), but it is too
+weak and uneven to improve a strategy; it is not used.
