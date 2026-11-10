@@ -118,3 +118,28 @@ Reported: the same regressions on the extended period (July 2016 to October
 2026), and on the new weeks alone. The same rules decide; the new weeks alone
 are few (about 20 non-overlapping 4-week periods), so on their own they can
 only show whether the signs agree.
+
+### Extension results (added on 10 Nov 2026, after running `src/risk_signals_test.py --extended` once)
+
+536 weeks, July 2016 to October 2026 (85 of them new: July 2016 to February
+2018). With the VIX and trend included; per one standard deviation (t).
+
+| Signal | Outcome | Jul 2016 – 2026 | New weeks only | 2018–2021 | 2022–2026 |
+|---|---|---|---|---|---|
+| Worry | return | −0.14 (−0.5) | +1.69 (3.8) | −0.04 (−0.1) | −0.45 (−1.3) |
+| Market-wide attention | return | **−0.54 (−2.0)** | −0.46 (−1.1) | −0.34 (−0.6) | −0.64 (−1.7) |
+| Worry | volatility | +0.04 (1.5) | −0.03 (−0.3) | +0.07 (1.0) | +0.05 (1.8) |
+| Market-wide attention | volatility | +0.05 (1.9) | +0.06 (2.2) | +0.05 (1.0) | +0.03 (1.1) |
+
+**Verdicts, by the same rules:**
+
+- **Worry still does not predict returns or volatility** beyond the VIX and
+  trend. In the 85 new weeks it even points the other way for returns, but
+  with so few weeks (and the trend coefficient implausibly large there) that
+  slice is mostly noise.
+- **Market-wide attention comes closest of anything in the project:** when
+  the typical company's page is unusually busy, the S&P 500 tended to do
+  worse over the next 4 weeks, even after the VIX and trend; negative in every
+  sub-period, and over July 2016–2026 its t is −1.99, just short of the bar of
+  −2 fixed in advance. By the rule it does not pass. It is the one attention
+  signal worth following in future data.
