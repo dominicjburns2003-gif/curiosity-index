@@ -112,3 +112,23 @@ company, % a month (t), with the pandemic months left out:
 good-news result *worse* in every version (0 of 6 beat the average in every
 case); before 2020, buying companies after a good-news surge in attention
 consistently lagged the average.
+
+### Check: did the pandemic change how attention works? (exploratory, 10 Nov 2026)
+
+Dominic's question: the pandemic changed investor behaviour (the retail
+trading boom of 2020–2021), so perhaps the pattern changed then. Good-news
+surges, return above the average company, % a month (t):
+
+| Entry | Exit | Jan 2017 – Jan 2020 | Aug 2020 – Dec 2021 (retail boom) | Jan 2022 – Nov 2026 |
+|---|---|---|---|---|
+| 1.5× | normal | −0.82 (−1.8) | −0.83 (−2.5) | +0.19 (0.4) |
+| 1.5× | half | −0.37 (−1.5) | −0.64 (−1.8) | +0.06 (0.2) |
+| 2× | normal | −1.09 (−1.8) | −0.87 (−2.2) | +0.75 (1.2) |
+| 2× | half | −1.41 (−1.8) | −1.14 (−1.4) | +1.14 (1.1) |
+| 3× | normal | −1.13 (−1.3) | −0.87 (−2.1) | +0.71 (0.8) |
+| 3× | half | −1.07 (−1.6) | −1.39 (−1.0) | −0.27 (−0.4) |
+
+**Reading:** the retail boom straight after the pandemic looks like the years
+*before* it (0 of 6 versions beat the average), not like 2022–2026 (5 of 6).
+If there was a change in how attention works, it came in 2022, not with the
+pandemic; with one later period to go on, it cannot be told apart from chance.
