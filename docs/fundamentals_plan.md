@@ -57,3 +57,29 @@ companies in the S&P 500 at the time, after 0.1% trading costs, from January
 - Only one out-of-sample period is available (2022–2026), because the model
   needs earlier years to learn from. Run once and reported whatever the
   result. Nothing in the live strategy changes because of it.
+
+## Results (added on 10 Nov 2026, after running `src/fundamentals_test.py` once)
+
+Accounts for 523 of the 546 US companies (38,930 annual figures from SEC
+EDGAR, each used only from its filing date). Top 100 each month among the
+companies in the S&P 500 at the time, picks from January 2022 to September
+2026 (57 months), after costs. Above the average company, % a month (t).
+
+| Model | Above the average company | Above the S&P 500 | $100 became |
+|---|---|---|---|
+| F: fundamentals + stock measures | +0.05 (0.4) | −0.05 (−0.2) | $172 |
+| A: attention + stock measures (the live model) | +0.21 (1.2) | +0.11 (0.4) | $187 |
+| F + A: both | +0.08 (0.6) | −0.02 (−0.1) | $175 |
+| *Average company* | | | *$169* |
+| *S&P 500* | | | *$179* |
+
+**Main question: does adding attention to fundamentals help? F + A minus F:
++0.03% a month (t 0.3).** By the rule fixed in advance that is "weak support"
+(positive, t below 2), but at t 0.3 it is indistinguishable from zero:
+**attention adds nothing measurable to fundamentals.**
+
+**Also:** the fundamentals themselves did not beat the average company over
+2022–2026 either (+0.05%, t 0.4); value and profitability had a weak period
+among large US companies. Adding fundamentals to the attention model made it
+slightly worse (+0.08% against +0.21%), within noise. Model A reproduces the
+live strategy's figures exactly, as a check that the set-up matches.

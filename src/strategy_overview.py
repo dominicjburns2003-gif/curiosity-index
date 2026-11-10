@@ -89,6 +89,14 @@ def main() -> None:
         runs.append((name, desc + "; checked weekly, index members at the time, 2017-2026",
                      "Event", w["net"], w["average_company"], w["spy"], False))
 
+    fund = load("fundamentals_monthly_returns").set_index("month")
+    for column, name, desc in [("F", "Fundamentals model (top 100)",
+                                "Earnings yield, book-to-market, profitability, asset growth + stock measures; "
+                                "SEC accounts as filed, index members at the time"),
+                               ("F + A", "Fundamentals + attention (top 100)",
+                                "Both sets of measures in one model; index members at the time")]:
+        runs.append((name, desc, "Ranking", fund[column], fund["average_company"], fund["spy"], True))
+
     shorts = load("short_monthly")
     for signal, level, exit_rule, name, desc in [
         ("fade", 0.5, "normal", "Short the fading (main)",
