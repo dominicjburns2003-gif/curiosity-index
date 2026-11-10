@@ -174,3 +174,9 @@ came out identical to before. 184 companies have click-through.
 points the right way in the original 68 and in the new companies here (though
 not in the 44 added on 8 Nov 2026, where it was −0.10, t −0.3), but it is too
 weak and uneven to improve a strategy; it is not used.
+
+**Note added on 10 Nov 2026:** a survivorship check (only companies that
+were in the S&P 500 at the time) shrinks the strategy result over all
+companies from +0.29% a month (t 2.1) to +0.04% (t 0.4); see the top-100
+addendum in `docs/strategy_plan.md`. The strategy's edge in test 1 was
+therefore mostly hindsight from using today's index members.

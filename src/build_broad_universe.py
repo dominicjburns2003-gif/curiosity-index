@@ -119,11 +119,13 @@ def company_list() -> pd.DataFrame:
     table = wikitext[wikitext.index("{|"): wikitext.index("|}", wikitext.index("{|"))]
     rows = []
     for row in table.split("\n|-")[2:]:
-        cells = [c.strip() for c in re.split(r"\n\|\|?", row) if c.strip()]
+        # Cells start a line with "||", or occasionally share a line (e.g. Emcor's row)
+        cells = [c.strip() for c in re.split(r"\n\|\|?|\|\|", row) if c.strip()]
         link = re.search(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]", cells[1])
         rows.append({"ticker": re.search(r"\{\{[^|}]+\|([^}|]+)", cells[0]).group(1).strip().replace(".", "-"),
                      "listed_as": link.group(1).replace(" ", "_"), "company": link.group(2) or link.group(1),
-                     "sector": cells[2], "sub_industry": cells[3], "index": "S&P 500"})
+                     "sector": cells[2], "sub_industry": cells[3], "index": "S&P 500",
+                     "sp500_added": cells[5][:10]})
     companies = pd.DataFrame(rows)
     extra = pd.DataFrame({"listed_as": list(NASDAQ_EXTRA_TICKERS), "ticker": list(NASDAQ_EXTRA_TICKERS.values()),
                           "company": [a.replace("_", " ") for a in NASDAQ_EXTRA_TICKERS],
@@ -237,6 +239,9 @@ def attention_check(cands: pd.DataFrame) -> pd.DataFrame:
 def main() -> None:
     existing = pd.read_csv(UNIVERSE_PATH, keep_default_na=False)
     companies = company_list()
+    # When each company joined the S&P 500, for tests that only use companies in the index at the time
+    companies.loc[companies["index"] == "S&P 500", ["ticker", "sp500_added"]].to_csv(
+        MAPPING_DIR / "index_membership.csv", index=False)
     new = companies[~companies["ticker"].isin(existing["ticker"])
                     & ~companies["company_article"].isin(existing["company_article"])]
     print(f"{len(companies)} companies listed; {len(companies) - len(new)} already in the 112; {len(new)} new")

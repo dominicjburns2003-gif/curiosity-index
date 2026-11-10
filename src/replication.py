@@ -48,10 +48,10 @@ MONTHLY = []  # the strategy's monthly returns, collected for replication_monthl
 
 
 def strategy_result(panel: pd.DataFrame, score: pd.Series, group: str = "", detail: str = "",
-                    by_size: bool = False) -> dict:
+                    by_size: bool = False, n_top: int | None = None) -> dict:
     """Version A's long-only portfolio on `score`, against the group's own average
     (equal amounts, or with by_size, weighted by market cap against the group weighted the same way)."""
-    result = portfolio(panel, score, use_filter=False, hold=1, by_size=by_size)
+    result = portfolio(panel, score, use_filter=False, hold=1, by_size=by_size, n_top=n_top)
     MONTHLY.append(result[["net", "benchmark"]].assign(group=group, detail=detail).reset_index())
     excess = result["net"] - result["benchmark"]
     return {"result": excess.mean(), "t_stat": t_stat(excess), "months": len(result),

@@ -52,6 +52,9 @@ LIVE_ALL_FROM = "2026-11"  # picks chosen from all companies from this month on
 # rest of November, chosen from all companies with data to the end of October,
 # recorded once on this date and bought at the next close (10 Nov 2026)
 SWITCH_MONTH, SWITCH_RECORDED = "2026-10", "2026-11-09"
+# From the picks chosen at the end of November 2026: the top 100 instead of the
+# top third (docs/strategy_plan.md, addendum of 10 Nov 2026)
+TOP_N, TOP_N_FROM = 100, "2026-11"
 COST_PER_TRADE = 0.001
 MAX_WEIGHT = 0.15  # size-weighted version: no company above 15%
 
@@ -122,7 +125,7 @@ def size_weights(market_caps: pd.Series) -> pd.Series:
 
 def portfolio(df: pd.DataFrame, score: pd.Series, use_filter: bool, hold: int,
               by_size: bool = False, share: float = 1 / 3,
-              first_year: int = FIRST_TEST_YEAR) -> pd.DataFrame:
+              first_year: int = FIRST_TEST_YEAR, n_top: int | None = None) -> pd.DataFrame:
     """Monthly returns of buying the top `share` (a third) on `score`, held
     `hold` months, in equal amounts or (by_size) in proportion to market cap."""
     data = df.assign(score=score)
@@ -132,7 +135,7 @@ def portfolio(df: pd.DataFrame, score: pd.Series, use_filter: bool, hold: int,
     for month in months:
         now = data[data["month"] == month]
         candidates = now.dropna(subset=["score"])
-        n_pick = round(len(candidates) * share)
+        n_pick = n_top if n_top else round(len(candidates) * share)  # a fixed number, or a share
         if use_filter:
             # Bad news: the share price is in the bottom third of the 68 this month
             falling = now["ret_now"] <= now["ret_now"].quantile(1 / 3)
@@ -269,7 +272,7 @@ def main() -> None:
     all_scores = walk_forward(rank_within_month(everyone, VERSIONS["products"]), VERSIONS["products"])
     live_112 = []
     for month, now in all_scores[all_scores["month"] >= SWITCH_MONTH].groupby("month"):
-        n_pick = round(len(now.dropna(subset=["prediction"])) / 3)
+        n_pick = TOP_N if month >= TOP_N_FROM else round(len(now.dropna(subset=["prediction"])) / 3)
         for rank, row in enumerate(now.nlargest(n_pick, "prediction").itertuples(), start=1):
             live_112.append((month, rank, row.ticker, row.prediction))
     live_112 = pd.DataFrame(live_112, columns=["month", "rank", "ticker", "score"])
@@ -289,7 +292,8 @@ def main() -> None:
         print(f"Live record: switched to all companies, picks for {SWITCH_MONTH} added")
     if latest not in set(log["month"]):
         if latest >= LIVE_ALL_FROM:
-            new = live_112[live_112["month"] == latest].assign(version=label)
+            version = f"{chosen} top {TOP_N}, all companies" if latest >= TOP_N_FROM else label
+            new = live_112[live_112["month"] == latest].assign(version=version)
         else:
             new = picks[picks["month"] == latest].assign(version=chosen)
         new = new.assign(recorded_on=today)

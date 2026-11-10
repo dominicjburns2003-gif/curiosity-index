@@ -344,3 +344,39 @@ Reported once, whatever the result.
 December), the live strategy buys the top 100. November's picks stay as
 recorded. This is decided now, before the test is run and before any
 December return exists, so the switch does not depend on the result.
+
+### Result (added on 10 Nov 2026, after running it once)
+
+All companies, picks from January 2022 to September 2026 (57 months), after
+costs, against the equal-weighted average of all companies:
+
+| | Above the average, % a month (t) | $100 became | Average company | S&P 500 |
+|---|---|---|---|---|
+| Top third (182) | +0.29 (2.1) | $219 | $189 | $179 |
+| **Top 100 (as planned)** | **+0.76 (3.3)** | **$281** | $189 | $179 |
+| Top 100, weighted by size | +0.41 (1.1) vs the group by size | $219 | $183 | $179 |
+
+**Survivorship check (not planned in advance; added on seeing the result,
+because it was too good to take at face value):** the universe is today's
+index, so it contains companies that joined the S&P 500 *because* their
+shares soared after 2022 (e.g. Palantir, AppLovin, Carvana). A model that
+likes rising attention can pick them with hindsight. Re-run with the same
+scores and rules, but allowing a company only from the month it actually
+joined the S&P 500 (`data/mapping/index_membership.csv`; Nasdaq-100-only and
+non-S&P companies left out; companies that *left* the index are still
+missing, so this still flatters the results):
+
+| Members at the time only | Above the average (t) | $100 became | Average company |
+|---|---|---|---|
+| Top third | +0.04 (0.4) | $171 | $169 |
+| Top 100 | +0.17 (1.0) | $183 | $169 |
+| Top 100, weighted by size | +0.03 (0.1) | $177 | $182 |
+
+**Reading:** most of the top-100 result was hindsight. Allowing only the
+companies an investor could have bought at the time as index members, the
+edge shrinks to +0.17% a month and is not significant. The same applies to
+the broad-universe strategy result in `docs/broad_universe_plan.md`
+(+0.28%, t 2.2), which used today's members. The live strategy is not
+affected (it only uses information available when the picks are made), so
+its record from November 2026 is the clean test. As planned, the live
+strategy buys the top 100 from December.

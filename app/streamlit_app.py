@@ -539,8 +539,15 @@ with results:
         "44 new companies": replication_monthly[(replication_monthly["group"] == "new 44")
                                                 & (replication_monthly["detail"] == "by size")],
     }
-    shown_run = broad_monthly[(broad_monthly["group"] == "all")
-                              & (broad_monthly["detail"] == "equal amounts")].sort_values("month").copy()
+    # The strategy as run live: the top 100. Shown counted fairly, using only companies
+    # that were in the S&P 500 at the time (today's members include firms that joined
+    # because their shares soared, which a backtest could "pick" with hindsight)
+    def broad_run(detail: str) -> pd.DataFrame:
+        return broad_monthly[(broad_monthly["group"] == "all")
+                             & (broad_monthly["detail"] == detail)].sort_values("month").copy()
+
+    shown_run = broad_run("members at the time: top 100")
+    hindsight = broad_row("all", "strategy", "top 100")
     shown_run["excess"] = shown_run["net"] - shown_run["benchmark"]
     shown_t = shown_run["excess"].mean() / (shown_run["excess"].std() / len(shown_run) ** 0.5)
 
@@ -562,8 +569,7 @@ with results:
     def growth_of_100(returns: pd.Series) -> float:
         return 100 * (1 + returns).prod()
 
-    by_size = broad_monthly[(broad_monthly["group"] == "all")
-                            & (broad_monthly["detail"] == "by size")].sort_values("month")
+    by_size = broad_run("members at the time: top 100 by size")
     vs_spy = by_size["net"] - by_size["spy"]
     vs_spy_t = vs_spy.mean() / (vs_spy.std() / len(vs_spy) ** 0.5)
     replication = data["replication"]
@@ -592,15 +598,15 @@ with results:
         st.subheader("The short answer so far")
         st.html(
             answer("Does buying the companies with the most product curiosity beat the average company?",
-                   f"Buying the model's top third each month (no short selling, after trading costs) "
-                   f"{'beat' if shown_run['excess'].mean() > 0 else 'trailed'} the average of the "
-                   f"{group_size} companies by {abs(shown_run['excess'].mean()) * 100:.2f}% a month from "
+                   f"Buying the model's top 100 each month (no short selling, after trading costs) "
+                   f"{'beat' if shown_run['excess'].mean() > 0 else 'trailed'} the average company in the "
+                   f"S&P 500 by {abs(shown_run['excess'].mean()) * 100:.2f}% a month from "
                    f"{first + 1:%B %Y} to {last + 1:%B %Y}"
-                   + (", but not by enough to rule out luck." if shown_t < 2 else ".")
-                   + f" The edge comes from attention to companies' own pages, not their products: among "
-                   f"the companies with product pages added in November 2026 the picks "
-                   f"{'lagged' if product_strategy['result'] < 0 else 'beat'} their average "
-                   f"({product_strategy['result'] * 100:+.2f}% a month).",
+                   + (", not enough to rule out luck." if shown_t < 2 else ".")
+                   + f" This counts only companies that were in the index at the time. Using today's "
+                   f"members instead it looked far better ({hindsight['result'] * 100:+.2f}% a month), but "
+                   f"that was hindsight: it picked companies that later soared into the index. What edge "
+                   f"there is comes from attention to companies' own pages, not their products.",
                    shown_t)
             + answer("Does attention to products add anything to attention to the company?",
                      f"In the research test (buying the top third and selling the bottom third), a model "
@@ -624,7 +630,7 @@ with results:
             + answer("Does it beat the S&P 500?",
                      f"Weighted by company size, as most funds are, the picks turned $100 into "
                      f"${growth_of_100(by_size['net']):.0f}, against ${growth_of_100(by_size['spy']):.0f} "
-                     f"for the S&P 500. Simply holding all {group_size} companies the same way made "
+                     f"for the S&P 500. Simply holding all the index companies the same way made "
                      f"${growth_of_100(by_size['benchmark']):.0f}, so "
                      + ("most of the lead comes from the companies tracked, not the signal."
                         if growth_of_100(by_size['benchmark']) > growth_of_100(by_size['spy'])
@@ -657,9 +663,9 @@ with results:
                 "2. **Turn them into one score per company** with a machine-learning model "
                 "(gradient-boosted trees). The model learned how these measures related to the "
                 "following month's return from past data only, and is retrained every January.\n"
-                f"3. **Buy the highest-scoring third** (about {round(group_size / 3)} of the {group_size} "
-                "companies), in equal amounts "
-                "(or, in the size-weighted version, in proportion to their market value).\n"
+                f"3. **Buy the 100 highest-scoring companies** (of the {group_size}), in equal amounts "
+                "(or, in the size-weighted version, in proportion to their market value). 100 was chosen "
+                "as a practical number before it was tested; earlier versions bought the top third.\n"
                 "4. **Hold them for one month**, then repeat with the new scores. Trading costs of "
                 "0.1% are paid on whatever changes."
             )
@@ -678,11 +684,11 @@ with results:
         size_weighted = weighting != "In equal amounts"
         shown = by_size if size_weighted else shown_run
         st.markdown(
-            f"Following the strategy from {first + 1:%B %Y}: each month, buy the top third of the "
-            f"{group_size} companies as ranked by the model, "
+            f"Following the strategy from {first + 1:%B %Y}: each month, buy the model's top 100 of "
+            "the companies that were in the S&P 500 at the time, "
             + ("in proportion to their market value (no company above 15%), "
                if size_weighted else "in equal amounts, ")
-            + f"after trading costs. Compared with holding all {group_size} companies the same way "
+            + "after trading costs. Compared with holding all of those companies the same way "
             "(the fair comparison) and with the S&P 500."
 
         )
@@ -690,7 +696,7 @@ with results:
         start = dates[0] - pd.offsets.MonthEnd(1)
         lines = {
             "Strategy": (shown["net"], "#2a78d6", 3),
-            (f"All {group_size} companies, by size" if size_weighted else f"All {group_size} companies, equal amounts"):
+            ("All index companies, by size" if size_weighted else "All index companies, equal amounts"):
                 (shown["benchmark"], "#9aa5b1", 2),
             "S&P 500": (shown["spy"], "#0f1b2d", 1.5),
         }
@@ -711,10 +717,10 @@ with results:
         growth.update_yaxes(fixedrange=True)
         st.plotly_chart(growth, width="stretch", config=CHART_CONFIG)
         st.caption(f"Out of sample: the model behind each month's picks was trained only on earlier "
-                   f"years. Equal amounts compare with all {group_size} companies held equally; by size, "
-                   f"with all {group_size} weighted by market value (no company above 15%). Today's index "
-                   f"members are used for the whole period, which flatters every line a little "
-                   f"(companies that fell out of the index are missing).")
+                   f"years. Only companies in the S&P 500 at the time can be picked or count in the "
+                   f"average; companies that later left the index are still missing, which flatters "
+                   f"every line a little. Using today's members, the top 100 would have turned $100 into "
+                   f"${hindsight['growth_100']:.0f}, but that is hindsight.")
 
     with st.container(key="card_picks"):
         live = data["live_picks"]
@@ -851,8 +857,9 @@ with results:
             numeric={1, 2},
         ))
         st.markdown(
-            "- **The strategy's edge holds in the new companies, but only where there are no product "
-            "pages:** it comes from attention to the company itself.\n"
+            "- **The strategy's edge in the new companies was mostly hindsight:** they are today's "
+            "index members, including firms that joined because their shares soared. Counting only "
+            "companies in the index at the time, the edge almost disappears (see the strategy plan).\n"
             "- **None of the product findings hold**, including the earnings one.\n"
             "- Many tests have now been run, so a t of about 2 is weaker evidence than it looks."
         )
@@ -967,8 +974,8 @@ with results:
 
     with st.expander("Terms used on this page"):
         st.markdown(
-            f"- **Top third:** each month the {group_size} companies are ranked and the best third "
-            "are bought in equal amounts.\n"
+            "- **Top 100:** each month the companies are ranked by the model and the best 100 are "
+            "bought in equal amounts.\n"
             f"- **Average company:** buying all {group_size} in equal amounts; the fair "
             "comparison, because the strategy also uses equal amounts.\n"
             "- **Trading costs:** 0.1% of every amount bought or sold.\n"
@@ -1118,8 +1125,9 @@ with method:
         st.markdown(
             "- **About 9 years of data:** real but small effects are hard to prove, and most results "
             "did not hold when checked on fresh companies (see Results).\n"
-            "- **Today's index members** are used back to 2017, so companies that left the index are "
-            "missing; this flatters average returns a little.\n"
+            "- **Index membership:** the strategy results count only companies that were in the S&P 500 "
+            "at the time, but companies that have since left the index are missing, which flatters "
+            "them a little. The other tests use today's members back to 2017.\n"
             "- **Analysts' past estimates** on Yahoo are sometimes revised years later (161 were in "
             "one week of November 2026), which moves the earnings test.\n"
             "- **Wikipedia quirks:** renamed pages (old titles added up), automated traffic "

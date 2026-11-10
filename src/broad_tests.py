@@ -44,6 +44,7 @@ from strategy import portfolio
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_DIR / "data" / "processed"
 UNIVERSE_PATH = PROJECT_DIR / "data" / "mapping" / "products_to_companies.csv"
+MEMBERSHIP_PATH = PROJECT_DIR / "data" / "mapping" / "index_membership.csv"
 
 
 def groups(panel: pd.DataFrame, universe: pd.DataFrame) -> dict:
@@ -78,6 +79,23 @@ def part_one(panel: pd.DataFrame, universe: pd.DataFrame) -> None:
                      **strategy_result(data_panel, score, name, "equal amounts")})
         rows.append({"group": name, "test": "strategy", "detail": "by size",
                      **strategy_result(data_panel, score, name, "by size", by_size=True)})
+        if name == "all":  # the top-100 version (docs/strategy_plan.md, addendum of 10 Nov 2026)
+            rows.append({"group": name, "test": "strategy", "detail": "top 100",
+                         **strategy_result(data_panel, score, name, "top 100", n_top=100)})
+            rows.append({"group": name, "test": "strategy", "detail": "top 100 by size",
+                         **strategy_result(data_panel, score, name, "top 100 by size", by_size=True, n_top=100)})
+            # Survivorship check (added on 10 Nov 2026, after the top-100 result): only companies
+            # that were in the S&P 500 at the time, so firms that joined later because their shares
+            # soared cannot be picked with hindsight. Same scores, same rules.
+            added = pd.read_csv(MEMBERSHIP_PATH).set_index("ticker")["sp500_added"]
+            joined = data_panel["ticker"].map(added)
+            member = (joined.notna() & (joined.str[:7] <= data_panel["month"])).to_numpy()
+            members, member_score = data_panel[member].reset_index(drop=True), score[member].reset_index(drop=True)
+            for detail, n_top, by_size in [("members at the time: top third", None, False),
+                                           ("members at the time: top 100", 100, False),
+                                           ("members at the time: top 100 by size", 100, True)]:
+                rows.append({"group": name, "test": "strategy", "detail": detail,
+                             **strategy_result(members, member_score, name, detail, by_size=by_size, n_top=n_top)})
 
         # 2. Long-short: company only and + products
         for version in ["company", "products"]:
