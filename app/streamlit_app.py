@@ -313,6 +313,12 @@ last_day = pd.Timestamp(data["daily"])
 # When the daily update last ran (it runs every evening, even when there is no new
 # data, e.g. at weekends); the newest data itself lags by a day or two
 checked = pd.Timestamp(data["last_update"]["checked_at_utc"])
+# The evening update runs after the US market close, so its data is the latest there
+# will be until the next evening: it is current for the following day. (Before
+# 20:00 UTC, e.g. a run started by hand, it is current for that same day.)
+current_for = checked.normalize() + pd.Timedelta(days=1 if checked.hour >= 20 else 0)
+checked_local = checked.tz_localize("UTC").tz_convert("Europe/Paris")
+price_day = prices.index.max()
 
 # ---- Header -------------------------------------------------------------------
 st.html(PAGE_CSS)
@@ -329,7 +335,7 @@ st.html(f"""
     <div class="ci-stat"><span class="n">{universe['ticker'].nunique()}</span><span class="l">companies, US and UK</span></div>
     <div class="ci-stat"><span class="n">{(universe['product_article'].fillna('') != '').sum()}</span><span class="l">product pages</span></div>
     <div class="ci-stat"><span class="n">Since {views['month'].min()[:4]}</span><span class="l">daily attention data</span></div>
-    <div class="ci-stat"><span class="n">Updated {checked:%-d %b %Y}</span><span class="l">data to {last_day:%-d %b}; checked every evening</span></div>
+    <div class="ci-stat"><span class="n">Current for {current_for:%a %-d %b}</span><span class="l">updated {checked_local:%-d %b, %H:%M} Paris time; prices to the {price_day:%-d %b} close, Wikipedia to {last_day:%-d %b}</span></div>
   </div>
 </div>
 """)
