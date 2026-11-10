@@ -62,6 +62,7 @@ VERSION_LABELS = {
     "products": "+ product attention",
     "clicks": "+ product attention and click-through",
 }
+STRATEGY_COLOUR = "#e8590c"  # orange: the strategy stands out from the grey and navy benchmarks
 VERSION_COLOURS = {"company": "#9aa5b1", "products": "#2a78d6", "clicks": "#eb6834"}
 
 
@@ -148,6 +149,8 @@ PAGE_CSS = """
             margin: 8px 0 12px; font-size: .9rem; }
 .ci-picks span { color: #6b7280; font-size: .82rem; }
 .ci-chip.yes { background: #e3f3e8; color: #1d6b3a; }
+.ci-table a { color: #1c5cab; text-decoration: none; font-weight: 500; }
+.ci-table a:hover { text-decoration: underline; }
 
 /* Results tables */
 .ci-table-wrap { overflow-x: auto; margin: 6px 0 14px; }
@@ -229,6 +232,7 @@ DATA_FILES = {
     "track_monthly": DATA_DIR / "track_record_monthly.csv",
     "clickthrough": DATA_DIR / "clickthrough_tests_summary.csv",
     "trending": DATA_DIR / "trending.csv",
+    "discovery": DATA_DIR / "discovery.csv",
     "replication": DATA_DIR / "replication_summary.csv",
     "replication_monthly": DATA_DIR / "replication_monthly.csv",
     "broad": DATA_DIR / "broad_summary.csv",
@@ -313,8 +317,8 @@ st.html(f"""
 </div>
 """)
 
-explorer, trending_tab, results, track, method = st.tabs(
-    ["Explorer", "Trending", "Results", "Track record", "Method and data"])
+explorer, trending_tab, discovery_tab, results, track, method = st.tabs(
+    ["Explorer", "Trending", "Discovery", "Results", "Track record", "Method and data"])
 
 # ---- Explorer -------------------------------------------------------------------
 with explorer:
@@ -499,10 +503,58 @@ with trending_tab:
             "- **Product rising, company flat** (for example WhatsApp while Meta's page is quiet) "
             "usually means consumer interest in the product. **Company rising more than its "
             "products** more often means news about the company itself, good or bad.\n"
-            "- **Watch expectations.** This project's earnings test found that companies whose "
-            "products drew much more attention than a year earlier beat analysts' estimates *less* "
-            "often: analysts may already be expecting a lot.\n"
+            "- **Treat huge spikes with care.** In this project's tests, companies whose own page "
+            "views tripled in a week went on to do *worse* than the average company: very large "
+            "surges are often bad news, or hype that fades.\n"
             "- Updated every evening, after the US market close. Not investment advice."
+        )
+
+# ---- Discovery ---------------------------------------------------------------------
+with discovery_tab:
+    found = data["discovery"]
+    with st.container(key="card_discovery"):
+        st.subheader("Listed companies among Wikipedia's most-read pages")
+        start, end = pd.Timestamp(found["week_start"].iloc[0]), pd.Timestamp(found["week_end"].iloc[0])
+        st.markdown(
+            f"Every day English Wikipedia publishes its 1,000 most-read pages. Of those from "
+            f"**{start:%-d %b} to {end:%-d %b %Y}**, these are a company listed in New York or London, "
+            f"or a product, brand or service of one, **including companies this index does not "
+            f"track**. **Surge** compares the page's busiest day with its average over the rest of "
+            f"the week."
+        )
+        show = st.segmented_control("Show", ["All", "New to the index"], default="All",
+                                    key="discovery_filter", label_visibility="collapsed") or "All"
+        rows = found if show == "All" else found[found["status"] == "new to the index"]
+        status_chip = {"new to the index": '<span class="ci-chip yes">New to the index</span>',
+                       "company tracked": '<span class="ci-chip weak">Company tracked</span>',
+                       "page tracked": '<span class="ci-chip no">Already tracked</span>'}
+        st.html(html_table(
+            ["Page", "Company", "Busiest day", "Views that day", "Surge", ""],
+            [[f'<a href="https://en.wikipedia.org/wiki/{r.article}" target="_blank">{pretty(r.article)}</a>'
+              f'<span class="sub">{r.link}</span>',
+              f'{r.company}<span class="sub">{r.ticker} · {r.exchange}</span>',
+              f"{pd.Timestamp(r.peak_day):%a %-d %b}", f"{r.peak_views:,.0f}", f"{r.surge:.1f}×",
+              status_chip.get(r.status, "")] for r in rows.itertuples()],
+            numeric={3, 4},
+        ) if len(rows) else "<p>None this week.</p>")
+        st.caption(
+            "The link between a page and a company comes automatically from Wikidata (Wikipedia's "
+            "database of facts) and can be wrong or out of date, for example a product sold years ago: "
+            "check before relying on it. Only pages popular enough to reach the daily top 1,000 can "
+            "appear (roughly 9,000 views a day or more), so this finds big stories, not quiet ones. "
+            "A day a page was not in the top 1,000 is counted at the 1,000th page's views, so a surge "
+            "can be larger than shown. Updated every evening. Not investment advice."
+        )
+    with st.container(key="card_discovery_read"):
+        st.subheader("How to read this")
+        st.markdown(
+            "- **A list of what the public is suddenly curious about**, and which listed companies "
+            "are behind it. It is a starting point, not a signal to buy or sell: the tests on the "
+            "Results tab found that attention does not reliably predict returns.\n"
+            "- **New to the index** companies are candidates to add to the tracked list, where their "
+            "attention can be followed over time.\n"
+            "- **Very large surges deserve caution:** in the tests, companies whose page views tripled "
+            "in a week went on to do worse than average."
         )
 
 # ---- Results ----------------------------------------------------------------------
@@ -732,7 +784,7 @@ with results:
         dates = pd.PeriodIndex(shown["month"], freq="M").to_timestamp(how="end").normalize() + pd.offsets.MonthEnd(1)
         start = dates[0] - pd.offsets.MonthEnd(1)
         lines = {
-            "Strategy": (shown["net"], "#2a78d6", 3),
+            "Strategy": (shown["net"], STRATEGY_COLOUR, 3.5),
             ("All index companies, by size" if size_weighted else "All index companies, equal amounts"):
                 (shown["benchmark"], "#9aa5b1", 2),
             "S&P 500": (shown["spy"], "#0f1b2d", 1.5),
@@ -1056,7 +1108,7 @@ with track:
                        f"on {last_day_held:%-d %B %Y}.")
 
             live_chart = go.Figure()
-            for key, label, colour, width in [("strategy", "Strategy picks", "#2a78d6", 3),
+            for key, label, colour, width in [("strategy", "Strategy picks", STRATEGY_COLOUR, 3.5),
                                               ("average_company", "Average company", "#9aa5b1", 2),
                                               ("spy", "S&P 500", "#0f1b2d", 1.5)]:
                 live_chart.add_trace(go.Scatter(

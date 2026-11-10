@@ -18,6 +18,7 @@ Runs every step of the pipeline in order, so the data, results and charts
  11. the live track record                     track_record.py
  12. the final click-through tests             clickthrough_tests.py
  13. this week's trending products             trending.py
+ 13b. Discovery: listed companies among the most-read pages  discovery.py
  14. the replication on the 44 new companies   replication.py
 
 If a step fails (e.g. Yahoo Finance is down), the later steps still run on
@@ -54,6 +55,7 @@ STEPS = [
     ["track_record.py"],
     ["clickthrough_tests.py"],
     ["trending.py"],
+    ["discovery.py"],
     ["replication.py"],
     ["broad_tests.py"],
     ["broad_tests.py", "--clickthrough"],
