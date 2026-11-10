@@ -132,3 +132,20 @@ surges, return above the average company, % a month (t):
 *before* it (0 of 6 versions beat the average), not like 2022–2026 (5 of 6).
 If there was a change in how attention works, it came in 2022, not with the
 pandemic; with one later period to go on, it cannot be told apart from chance.
+
+### The whole period, March 2017 to November 2026 (added on 10 Nov 2026, at Dominic's request)
+
+The two periods joined (holdings restart in January 2022, which barely
+matters). $100 became: average company $371, S&P 500 $375.
+
+| Entry | Exit | Good-news surges | Bad-news surges |
+|---|---|---|---|
+| 1.5× | normal | −0.20 (−0.7), $283 | −0.22 (−1.0), $282 |
+| 1.5× | half | −0.12 (−0.7), $324 | +0.06 (0.3), $391 |
+| 2× | normal | −0.02 (0.0), $330 | −0.13 (−0.4), $293 |
+| 2× | half | +0.05 (0.1), $315 | +0.02 (0.0), $320 |
+| 3× | normal | −0.01 (0.0), $301 | −0.45 (−1.1), $193 |
+| 3× | half | −0.62 (−1.3), $156 | −0.49 (−0.8), $164 |
+
+Over nine years, buying good-news surges ends at about the average company or
+below in every version (1 of 6 marginally ahead); the two periods cancel out.
