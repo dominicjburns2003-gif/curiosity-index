@@ -109,3 +109,27 @@ around −1). Very large surges in attention are often bad news (a crisis, a
 scandal, a collapse) or hype that fades, which fits earlier research on
 "attention-grabbing" stocks (Barber and Odean, 2008). Moderate surges are
 about neutral.
+
+## Follow-up: no maximum holding time (written on 10 Nov 2026, after the results above, before running it)
+
+**Change (Dominic's, on reflection):** the 26-week limit is the one rule not
+driven by the data; it forces a sale even while attention stays high (it ended
+42 of the 425 holdings in the main version, including Nvidia twice, Palantir,
+Meta, Apple and Alphabet). In the follow-up **there is no maximum**: a company
+is sold only when its attention fades by the exit rule ("normal" or "half"),
+or when it can no longer be held (no price). Everything else is unchanged.
+
+Because this change was made after seeing the results, it is judged on **two
+periods**:
+
+- **2022 – 2026**, the period already seen (for comparison with the original);
+- **2017 – 2021**, five years this strategy has never been run on
+  (decisions from March 2017, once 8 weeks of views exist). Caveat: before
+  2020 Wikipedia counted some automated traffic as human; the spike cap
+  removes most of it.
+
+For comparison, the original rule (26-week cap) is also run on 2017 – 2021.
+
+**It counts as working only if at least 4 of the 6 company-page versions
+beat the average company in *both* periods.** All versions are reported, run
+once.
