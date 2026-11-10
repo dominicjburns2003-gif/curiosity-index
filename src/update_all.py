@@ -59,6 +59,7 @@ STEPS = [
     ["replication.py"],
     ["broad_tests.py"],
     ["broad_tests.py", "--clickthrough"],
+    ["ftse_tests.py"],
     ["strategy_overview.py"],
 ]
 

@@ -181,6 +181,9 @@ def part_two(panel: pd.DataFrame, universe: pd.DataFrame) -> None:
 def main() -> None:
     panel = pd.read_csv(DATA_DIR / "panel_monthly.csv")
     universe = pd.read_csv(UNIVERSE_PATH, keep_default_na=False)
+    # The US universe (the UK companies have their own tests, src/ftse_tests.py)
+    panel = panel[panel["cohort"] != "ftse"].reset_index(drop=True)
+    universe = universe[universe["cohort"] != "ftse"].reset_index(drop=True)
     if "--clickthrough" in sys.argv:
         part_two(panel, universe)
     else:

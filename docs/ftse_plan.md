@@ -58,3 +58,39 @@ the US.
   2 or more.
 - Run once and reported whatever the result. The UK companies are not added
   to the US tests or to the live strategy.
+
+## Results (added on 10 Nov 2026, after running `src/ftse_tests.py` once)
+
+95 UK companies (20 with product pages that have enough history), ranked
+among themselves; picks from January 2022 (strategy and long-short) or
+2017 (sorts) to October 2026; % a month (t). For comparison, the same tests
+on the 435 new US companies ("broad new").
+
+| Test | UK (FTSE 100) | US, broad new |
+|---|---|---|
+| 1. Strategy vs own average, equal amounts (UK flattered by hindsight) | −0.01 (−0.1) | +0.28 (2.2) |
+| 1. Strategy vs own average, by size (flattered) | −0.26 (−0.8) | +0.33 (1.4) |
+| 2. Long-short, company only | +0.33 (1.2) | +0.55 (2.5) |
+| 2. Long-short, + products | +0.06 (0.3) | +0.52 (2.6) |
+| 3. Sort: abnormal company attention | −0.12 (−0.6) | +0.32 (1.9) |
+| 3. Sort: company attention growth | −0.18 (−0.9) | +0.31 (1.7) |
+| 3. Sort: product attention growth | −0.46 (−1.1) | +0.03 (0.1) |
+| 3. Sort: products ahead of company | +0.10 (0.2) | +0.04 (0.1) |
+
+$100 in the UK strategy became £158, against £161 for the 95 companies held
+equally and £170 for the FTSE 100 fund.
+
+*Correction, same day:* the first run had a bug in the shared price calendar
+(London's extra trading days, which are US holidays, left gaps in the daily
+series), which slightly changed the model's inputs. The bug was fixed before
+anything else was done, and the table shows the corrected run; the verdict
+did not change (first run: strategy +0.01, long-short +0.24 and +0.17).
+
+**Earnings (test 4): not enough data.** Yahoo has analyst estimates for only
+17 of the 95 UK companies, over 6 quarters (417 announcements), too few for
+the test to mean anything; it is not counted.
+
+**Verdict:** nothing replicates in the UK. The strategy does not beat its own
+average even with hindsight in the company list, product attention again adds
+nothing to company attention, and the company-attention signals that were
+mildly positive among the new US companies point the other way in the UK.

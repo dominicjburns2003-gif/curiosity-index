@@ -1,0 +1,77 @@
+ticker,company,sector,company_article,product_article
+ABF.L,Associated British Foods,Food Producers,Associated_British_Foods,Primark
+ABF.L,Associated British Foods,Food Producers,Associated_British_Foods,Twinings
+ABF.L,Associated British Foods,Food Producers,Associated_British_Foods,Ovaltine
+ABF.L,Associated British Foods,Food Producers,Associated_British_Foods,Kingsmill_(bread)
+ABF.L,Associated British Foods,Food Producers,Associated_British_Foods,Silver_Spoon_(brand)
+BA.L,BAE Systems,Aerospace and Defense,BAE_Systems,BAE_Systems_Hawk
+BA.L,BAE Systems,Aerospace and Defense,BAE_Systems,Astute-class_submarine
+BA.L,BAE Systems,Aerospace and Defense,BAE_Systems,Type_26_frigate
+BARC.L,Barclays,Banks,Barclays,Barclaycard
+BP.L,BP,Non-Renewable Energy,BP,Castrol
+BP.L,BP,Non-Renewable Energy,BP,Aral_(company)
+BT-A.L,BT Group,Telecommunications Service Providers,BT_Group,EE_Limited
+BT-A.L,BT Group,Telecommunications Service Providers,BT_Group,Openreach
+BT-A.L,BT Group,Telecommunications Service Providers,BT_Group,Plusnet
+CNA.L,Centrica,"Gas, Water and Multi-utilities",Centrica,British_Gas
+GAW.L,Games Workshop,Leisure Goods,Games_Workshop,"Warhammer_40,000"
+GAW.L,Games Workshop,Leisure Goods,Games_Workshop,Warhammer_Age_of_Sigmar
+GAW.L,Games Workshop,Leisure Goods,Games_Workshop,Warhammer_(game)
+GSK.L,GSK plc,"Pharmaceuticals, Biotechnology and Marijuana Producers",GSK_plc,Shingrix
+GSK.L,GSK plc,"Pharmaceuticals, Biotechnology and Marijuana Producers",GSK_plc,Arexvy
+GSK.L,GSK plc,"Pharmaceuticals, Biotechnology and Marijuana Producers",GSK_plc,Trelegy_Ellipta
+GSK.L,GSK plc,"Pharmaceuticals, Biotechnology and Marijuana Producers",GSK_plc,Dovato
+HLN.L,Haleon,"Pharmaceuticals, Biotechnology and Marijuana Producers",Haleon,Sensodyne
+HLN.L,Haleon,"Pharmaceuticals, Biotechnology and Marijuana Producers",Haleon,Panadol
+HLN.L,Haleon,"Pharmaceuticals, Biotechnology and Marijuana Producers",Haleon,Centrum_(brand)
+HLN.L,Haleon,"Pharmaceuticals, Biotechnology and Marijuana Producers",Haleon,Aquafresh
+HLN.L,Haleon,"Pharmaceuticals, Biotechnology and Marijuana Producers",Haleon,Advil
+HSBA.L,HSBC,Banks,HSBC,First_Direct
+IHG.L,IHG Hotels & Resorts,Travel and Leisure,IHG_Hotels_&_Resorts,Holiday_Inn
+IHG.L,IHG Hotels & Resorts,Travel and Leisure,IHG_Hotels_&_Resorts,Crowne_Plaza
+IHG.L,IHG Hotels & Resorts,Travel and Leisure,IHG_Hotels_&_Resorts,Holiday_Inn_Express
+IHG.L,IHG Hotels & Resorts,Travel and Leisure,IHG_Hotels_&_Resorts,Kimpton_Hotels_&_Restaurants
+IMB.L,Imperial Brands,Tobacco,Imperial_Brands,Davidoff_(cigarette)
+IMB.L,Imperial Brands,Tobacco,Imperial_Brands,JPS_(cigarette)
+IMB.L,Imperial Brands,Tobacco,Imperial_Brands,Rizla
+IMB.L,Imperial Brands,Tobacco,Imperial_Brands,Blu_(electronic_cigarette)
+IAG.L,International Airlines Group,Travel and Leisure,International_Airlines_Group,British_Airways
+IAG.L,International Airlines Group,Travel and Leisure,International_Airlines_Group,Iberia_(airline)
+IAG.L,International Airlines Group,Travel and Leisure,International_Airlines_Group,Aer_Lingus
+IAG.L,International Airlines Group,Travel and Leisure,International_Airlines_Group,Vueling
+IAG.L,International Airlines Group,Travel and Leisure,International_Airlines_Group,Avios
+KGF.L,Kingfisher plc,Retailers,Kingfisher_plc,B&Q
+KGF.L,Kingfisher plc,Retailers,Kingfisher_plc,Screwfix
+KGF.L,Kingfisher plc,Retailers,Kingfisher_plc,Castorama
+LLOY.L,Lloyds Banking Group,Banks,Lloyds_Banking_Group,Halifax_(bank)
+LLOY.L,Lloyds Banking Group,Banks,Lloyds_Banking_Group,Bank_of_Scotland
+LLOY.L,Lloyds Banking Group,Banks,Lloyds_Banking_Group,Lloyds_Bank
+LSEG.L,London Stock Exchange Group,Finance and Credit Services,London_Stock_Exchange_Group,Refinitiv
+MKS.L,Marks & Spencer,"Personal Care, Drug and Grocery Stores",Marks_&_Spencer,Percy_Pig
+MRO.L,Melrose Industries,Aerospace and Defense,Melrose_Industries,GKN_Aerospace
+NWG.L,NatWest Group,Banks,NatWest_Group,NatWest
+NWG.L,NatWest Group,Banks,NatWest_Group,Royal_Bank_of_Scotland
+NWG.L,NatWest Group,Banks,NatWest_Group,Coutts
+PSON.L,Pearson plc,Media,Pearson_plc,Edexcel
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Dettol
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Durex
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Nurofen
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Vanish_(brand)
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Finish_(detergent)
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Strepsils
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Gaviscon
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Lysol
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Air_Wick
+REL.L,RELX,Software and Computer Services,RELX,LexisNexis
+REL.L,RELX,Software and Computer Services,RELX,The_Lancet
+REL.L,RELX,Software and Computer Services,RELX,Elsevier
+RR.L,Rolls-Royce Holdings,Aerospace and Defense,Rolls-Royce_Holdings,Rolls-Royce_Trent
+RR.L,Rolls-Royce Holdings,Aerospace and Defense,Rolls-Royce_Holdings,Rolls-Royce_Trent_XWB
+SBRY.L,Sainsbury's,"Personal Care, Drug and Grocery Stores",Sainsbury's,Argos_(retailer)
+SBRY.L,Sainsbury's,"Personal Care, Drug and Grocery Stores",Sainsbury's,Nectar_(loyalty_card)
+SMIN.L,Smiths Group,General Industrials,Smiths_Group,Smiths_Detection
+TSCO.L,Tesco,"Personal Care, Drug and Grocery Stores",Tesco,Tesco_Clubcard
+TSCO.L,Tesco,"Personal Care, Drug and Grocery Stores",Tesco,Booker_Group
+WTB.L,Whitbread,Travel and Leisure,Whitbread,Premier_Inn
+WTB.L,Whitbread,Travel and Leisure,Whitbread,Beefeater_(restaurant)
+WPP.L,WPP,Media,WPP_plc,Ogilvy_(agency)

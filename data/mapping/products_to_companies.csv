@@ -729,3 +729,120 @@ SPCX,SpaceX,Industrials,SpaceX,SpaceX,,Starlink,Starlink|SpaceX_Starlink|SpaceX_
 SPCX,SpaceX,Industrials,SpaceX,SpaceX,,SpaceX_Dragon_2,SpaceX_Dragon_2|Dragon_2|Dragon_V2,,broad,True
 SPCX,SpaceX,Industrials,SpaceX,SpaceX,,Falcon_Heavy,Falcon_Heavy,,broad,True
 TRI,Thomson Reuters,Industrials,Thomson_Reuters,Thomson_Reuters,,Reuters,Reuters,,broad,True
+III.L,3i,Investment Banking and Brokerage Services,3i,3i,,,,,ftse,True
+ABDN.L,Aberdeen Group,Investment Banking and Brokerage Services,Aberdeen_Group,Aberdeen_Group|Aberdeen_Group_plc|Aberdeen_group|Abrdn|Standard_Life_Aberdeen,,,,,ftse,True
+ADM.L,Admiral Group,Non-life Insurance,Admiral_Group,Admiral_Group,,,,,ftse,True
+AAF.L,Airtel Africa,Telecommunications Service Providers,Airtel_Africa,Airtel_Africa,,,,,ftse,True
+ALW.L,Alliance Witan,Closed End Investments,Alliance_Witan,Alliance_Witan|Alliance_Trust,,,,,ftse,True
+AAL.L,Anglo American plc,Industrial Metals and Mining,Anglo_American_plc,Anglo_American_plc,,,,,ftse,True
+ANTO.L,Antofagasta plc,Industrial Metals and Mining,Antofagasta_plc,Antofagasta_plc|Antofagasta_PLC,,,,,ftse,True
+ABF.L,Associated British Foods,Food Producers,Associated_British_Foods,Associated_British_Foods,,Primark,Primark,,ftse,True
+ABF.L,Associated British Foods,Food Producers,Associated_British_Foods,Associated_British_Foods,,Twinings,Twinings,,ftse,True
+ABF.L,Associated British Foods,Food Producers,Associated_British_Foods,Associated_British_Foods,,Ovaltine,Ovaltine,,ftse,True
+AUTO.L,Autotrader Group,Software and Computer Services,Autotrader_Group,Autotrader_Group|Auto_Trader_Group,,,,,ftse,True
+AV.L,Aviva,Life Insurance,Aviva,Aviva,,,,,ftse,True
+BAB.L,Babcock International,Aerospace and Defense,Babcock_International,Babcock_International,,,,,ftse,False
+BA.L,BAE Systems,Aerospace and Defense,BAE_Systems,BAE_Systems,,BAE_Systems_Hawk,BAE_Systems_Hawk,,ftse,False
+BBY.L,Balfour Beatty,Construction and Materials,Balfour_Beatty,Balfour_Beatty,,,,,ftse,True
+BARC.L,Barclays,Banks,Barclays,Barclays,,,,,ftse,True
+BTRW.L,Barratt Redrow,Household Goods and Home Construction,Barratt_Redrow,Barratt_Redrow|Barratt_Developments,,,,,ftse,True
+BP.L,BP,Non-Renewable Energy,BP,BP|BPAmoco,,Castrol,Castrol,,ftse,True
+BLND.L,British Land,Real Estate Investment Trusts,British_Land,British_Land,,,,,ftse,True
+BT-A.L,BT Group,Telecommunications Service Providers,BT_Group,BT_Group,,EE_(telecommunications),EE_(telecommunications)|EE_(UK)|EE_Limited,,ftse,True
+BNZL.L,Bunzl,General Industrials,Bunzl,Bunzl,,,,,ftse,True
+BRBY.L,Burberry Group,Personal Goods,Burberry,Burberry,,,,,ftse,True
+CNA.L,Centrica,"Gas, Water and Multi-utilities",Centrica,Centrica,,British_Gas,British_Gas,,ftse,True
+CCH.L,Coca-Cola HBC,Beverages,Coca-Cola_HBC,Coca-Cola_HBC|Coca-Cola_HBC_AG|Coca-Cola_Hellenic_Bottling_Company,,,,,ftse,True
+CPG.L,Compass Group,Consumer Services,Compass_Group,Compass_Group,,,,,ftse,True
+CCC.L,Computacenter,Software and Computer Services,Computacenter,Computacenter,,,,,ftse,True
+CTEC.L,Convatec,Medical Equipment and Services,Convatec,Convatec|ConvaTec,,,,,ftse,True
+CRDA.L,Croda International,Chemicals,Croda_International,Croda_International,,,,,ftse,True
+DCC.L,DCC Energy,Industrial Support Services,DCC_Energy,DCC_Energy|DCC_plc,,,,,ftse,True
+DPLM.L,Diploma,Industrial Support Services,Diploma_plc,Diploma_plc,,,,,ftse,True
+EZJ.L,EasyJet,Travel and Leisure,EasyJet,EasyJet,,,,,ftse,True
+EDV.L,Endeavour Mining,Precious Metals and Mining,Endeavour_Mining,Endeavour_Mining,,,,,ftse,True
+EXPN.L,Experian,Industrial Support Services,Experian,Experian,,,,,ftse,True
+FCIT.L,F & C Investment Trust,Closed End Investments,F_&_C_Investment_Trust,F_&_C_Investment_Trust|Foreign_&_Colonial_Investment_Trust,,,,,ftse,True
+FRES.L,Fresnillo plc,Precious Metals and Mining,Fresnillo_plc,Fresnillo_plc,,,,,ftse,True
+GAW.L,Games Workshop,Leisure Goods,Games_Workshop,Games_Workshop,,"Warhammer_40,000","Warhammer_40,000",,ftse,True
+GAW.L,Games Workshop,Leisure Goods,Games_Workshop,Games_Workshop,,Warhammer_Age_of_Sigmar,Warhammer_Age_of_Sigmar,,ftse,True
+GAW.L,Games Workshop,Leisure Goods,Games_Workshop,Games_Workshop,,Warhammer_(game),Warhammer_(game)|Warhammer_Fantasy_Battle,,ftse,True
+GLEN.L,Glencore,Industrial Metals and Mining,Glencore,Glencore,,,,,ftse,True
+GSK.L,GSK plc,"Pharmaceuticals, Biotechnology and Marijuana Producers",GSK_plc,GSK_plc|GlaxoSmithKline,,,,,ftse,True
+HLN.L,Haleon,"Pharmaceuticals, Biotechnology and Marijuana Producers",Haleon,Haleon,,Sensodyne,Sensodyne,,ftse,True
+HLN.L,Haleon,"Pharmaceuticals, Biotechnology and Marijuana Producers",Haleon,Haleon,,Advil,Advil,,ftse,True
+HLMA.L,Halma plc,Electronic and Electrical Equipment,Halma_plc,Halma_plc,,,,,ftse,True
+HSX.L,Hiscox,Non-life Insurance,Hiscox,Hiscox,,,,,ftse,True
+HWDN.L,Howdens Joinery,Retailers,Howdens_Joinery,Howdens_Joinery,,,,,ftse,True
+HSBA.L,HSBC,Banks,HSBC,HSBC,,,,,ftse,True
+ICG.L,ICG,Investment Banking and Brokerage Services,ICG_plc,ICG_plc|ICG_(investment_firm)|Intermediate_Capital_Group,,,,,ftse,True
+IGG.L,IG Group,Investment Banking and Brokerage Services,IG_Group,IG_Group,,,,,ftse,True
+IHG.L,IHG Hotels & Resorts,Travel and Leisure,IHG_Hotels_&_Resorts,IHG_Hotels_&_Resorts|InterContinental_Hotels_Group,,Holiday_Inn,Holiday_Inn,,ftse,True
+IHG.L,IHG Hotels & Resorts,Travel and Leisure,IHG_Hotels_&_Resorts,IHG_Hotels_&_Resorts|InterContinental_Hotels_Group,,Crowne_Plaza,Crowne_Plaza|Crowne_Plaza_by_IHG,,ftse,True
+IMI.L,IMI,Electronic and Electrical Equipment,IMI_plc,IMI_plc,,,,,ftse,True
+IMB.L,Imperial Brands,Tobacco,Imperial_Brands,Imperial_Brands|Imperial_Tobacco,,,,,ftse,True
+INF.L,Informa,Media,Informa,Informa,,,,,ftse,True
+IAG.L,International Airlines Group,Travel and Leisure,International_Airlines_Group,International_Airlines_Group,,British_Airways,British_Airways,,ftse,True
+IAG.L,International Airlines Group,Travel and Leisure,International_Airlines_Group,International_Airlines_Group,,Iberia_(airline),Iberia_(airline),,ftse,True
+IAG.L,International Airlines Group,Travel and Leisure,International_Airlines_Group,International_Airlines_Group,,Aer_Lingus,Aer_Lingus,,ftse,True
+IAG.L,International Airlines Group,Travel and Leisure,International_Airlines_Group,International_Airlines_Group,,Vueling,Vueling,,ftse,True
+ITRK.L,Intertek,Industrial Support Services,Intertek,Intertek,,,,,ftse,True
+INVP.L,Investec,Banks,Investec,Investec,,,,,ftse,True
+ITH.L,Ithaca Energy,Non-Renewable Energy,Ithaca_Energy,Ithaca_Energy,,,,,ftse,True
+JD.L,JD Sports,Retailers,JD_Sports,JD_Sports,,,,,ftse,True
+BGEO.L,Lion Finance Group,Banks,Lion_Finance_Group,Lion_Finance_Group,,,,,ftse,True
+KGF.L,Kingfisher plc,Retailers,Kingfisher_plc,Kingfisher_plc,,B&Q,B&Q,,ftse,True
+KGF.L,Kingfisher plc,Retailers,Kingfisher_plc,Kingfisher_plc,,Screwfix,Screwfix,,ftse,True
+LAND.L,Land Securities,Real Estate Investment Trusts,Landsec,Landsec|Land_Securities,,,,,ftse,True
+LGEN.L,Legal & General,Life Insurance,Legal_&_General,Legal_&_General,,,,,ftse,True
+LLOY.L,Lloyds Banking Group,Banks,Lloyds_Banking_Group,Lloyds_Banking_Group,,Halifax_(bank),Halifax_(bank),,ftse,True
+LLOY.L,Lloyds Banking Group,Banks,Lloyds_Banking_Group,Lloyds_Banking_Group,,Bank_of_Scotland,Bank_of_Scotland,,ftse,True
+LLOY.L,Lloyds Banking Group,Banks,Lloyds_Banking_Group,Lloyds_Banking_Group,,Lloyds_Bank,Lloyds_Bank,,ftse,True
+LMP.L,LondonMetric Property,Real Estate Investment Trusts,LondonMetric_Property,LondonMetric_Property,,,,,ftse,True
+LSEG.L,London Stock Exchange Group,Finance and Credit Services,London_Stock_Exchange_Group,London_Stock_Exchange_Group,,,,,ftse,True
+MNG.L,M&G,Investment Banking and Brokerage Services,M&G,M&G|M&G_Investments,,,,,ftse,True
+MKS.L,Marks & Spencer,"Personal Care, Drug and Grocery Stores",Marks_&_Spencer,Marks_&_Spencer,,Percy_Pig,Percy_Pig,,ftse,True
+MRO.L,Melrose Industries,Aerospace and Defense,Melrose_Industries,Melrose_Industries,,,,,ftse,False
+MTLN.L,Metlen Energy & Metals,"Gas, Water and Multi-utilities",Metlen_Energy_&_Metals,Metlen_Energy_&_Metals|METLEN_Energy_&_Metals|Melten_Energy_&_Metals|Mytilineos_Holdings,,,,,ftse,True
+NG.L,National Grid plc,"Gas, Water and Multi-utilities",National_Grid_plc,National_Grid_plc,,,,,ftse,True
+NWG.L,NatWest Group,Banks,NatWest_Group,NatWest_Group|Royal_Bank_of_Scotland_Group|The_Royal_Bank_of_Scotland_Group,,NatWest,NatWest,,ftse,True
+NWG.L,NatWest Group,Banks,NatWest_Group,NatWest_Group|Royal_Bank_of_Scotland_Group|The_Royal_Bank_of_Scotland_Group,,Royal_Bank_of_Scotland,Royal_Bank_of_Scotland|The_Royal_Bank_of_Scotland,,ftse,True
+NWG.L,NatWest Group,Banks,NatWest_Group,NatWest_Group|Royal_Bank_of_Scotland_Group|The_Royal_Bank_of_Scotland_Group,,Coutts,Coutts,,ftse,True
+NXT.L,Next plc,Retailers,Next_plc,Next_plc|Next_(British_retailer)|Next_(UK_retailer)|Next_(clothing_retailer)|Next_(department_store_retailer),,,,,ftse,True
+PSON.L,Pearson plc,Media,Pearson_plc,Pearson_plc|Pearson_PLC,,,,,ftse,True
+PSH.L,Pershing Square Holdings,Closed End Investments,Pershing_Square_Holdings,Pershing_Square_Holdings,,,,,ftse,True
+PCT.L,Polar Capital Technology Trust,Closed End Investments,Polar_Capital_Technology_Trust,Polar_Capital_Technology_Trust,,,,,ftse,True
+PRU.L,Prudential plc,Life Insurance,Prudential_plc,Prudential_plc,,,,,ftse,True
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Reckitt|Reckitt_Benckiser,,Dettol,Dettol,,ftse,True
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Reckitt|Reckitt_Benckiser,,Durex,Durex,,ftse,True
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Reckitt|Reckitt_Benckiser,,Nurofen,Nurofen,,ftse,True
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Reckitt|Reckitt_Benckiser,,Strepsils,Strepsils,,ftse,True
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Reckitt|Reckitt_Benckiser,,Lysol,Lysol,,ftse,True
+REL.L,RELX,Software and Computer Services,RELX,RELX|RELX_Group,,LexisNexis,LexisNexis,,ftse,True
+REL.L,RELX,Software and Computer Services,RELX,RELX|RELX_Group,,Elsevier,Elsevier,,ftse,True
+RTO.L,Rentokil Initial,Industrial Support Services,Rentokil_Initial,Rentokil_Initial,,,,,ftse,True
+RIO.L,Rio Tinto,Industrial Metals and Mining,Rio_Tinto_(corporation),Rio_Tinto_(corporation)|Rio_Tinto_Group,,,,,ftse,True
+RR.L,Rolls-Royce Holdings,Aerospace and Defense,Rolls-Royce_Holdings,Rolls-Royce_Holdings,,Rolls-Royce_Trent,Rolls-Royce_Trent,,ftse,False
+RR.L,Rolls-Royce Holdings,Aerospace and Defense,Rolls-Royce_Holdings,Rolls-Royce_Holdings,,Rolls-Royce_Trent_XWB,Rolls-Royce_Trent_XWB,,ftse,False
+SGE.L,Sage Group,Software and Computer Services,Sage_Group,Sage_Group,,,,,ftse,True
+SBRY.L,Sainsbury's,"Personal Care, Drug and Grocery Stores",Sainsbury's,Sainsbury's,,Argos_(retailer),Argos_(retailer),,ftse,True
+SBRY.L,Sainsbury's,"Personal Care, Drug and Grocery Stores",Sainsbury's,Sainsbury's,,Nectar_(loyalty_card),Nectar_(loyalty_card)|Nectar_loyalty_card,,ftse,True
+SMT.L,Scottish Mortgage Investment Trust,Closed End Investments,Scottish_Mortgage_Investment_Trust,Scottish_Mortgage_Investment_Trust,,,,,ftse,True
+SGRO.L,Segro,Real Estate Investment Trusts,Segro,Segro,,,,,ftse,True
+SVT.L,Severn Trent,"Gas, Water and Multi-utilities",Severn_Trent,Severn_Trent,,,,,ftse,True
+SHEL.L,Shell plc,Non-Renewable Energy,Shell_plc,Shell_plc|Royal_Dutch_Shell,,,,,ftse,True
+SMIN.L,Smiths Group,General Industrials,Smiths_Group,Smiths_Group,,,,,ftse,True
+SN.L,Smith & Nephew,Medical Equipment and Services,Smith_&_Nephew,Smith_&_Nephew|Smith+Nephew,,,,,ftse,True
+SPX.L,Spirax Group,Industrial Engineering,Spirax_Group,Spirax_Group|Spirax-Sarco_Engineering,,,,,ftse,True
+SSE.L,SSE plc,Electricity,SSE_plc,SSE_plc,,,,,ftse,True
+STAN.L,Standard Chartered,Banks,Standard_Chartered,Standard_Chartered,,,,,ftse,True
+SDLF.L,Standard Life,Life Insurance,Standard_Life_plc,Standard_Life_plc|Phoenix_Group|Phoenix_Group_plc,,,,,ftse,True
+STJ.L,St. James's Place,Investment Banking and Brokerage Services,St._James's_Place_plc,St._James's_Place_plc,,,,,ftse,True
+TSCO.L,Tesco,"Personal Care, Drug and Grocery Stores",Tesco,Tesco,,Booker_Group,Booker_Group,,ftse,True
+BBOX.L,Tritax Big Box REIT,Real Estate Investment Trusts,Tritax_Big_Box_REIT,Tritax_Big_Box_REIT,,,,,ftse,True
+UU.L,United Utilities,"Gas, Water and Multi-utilities",United_Utilities,United_Utilities,,,,,ftse,True
+VOD.L,Vodafone Group,Telecommunications Service Providers,Vodafone,Vodafone|Vodafone_Group,,,,,ftse,True
+WEIR.L,Weir,Industrial Engineering,Weir_plc,Weir_plc|Weir_Group,,,,,ftse,True
+WTB.L,Whitbread,Travel and Leisure,Whitbread,Whitbread,,Premier_Inn,Premier_Inn,,ftse,True
+WTB.L,Whitbread,Travel and Leisure,Whitbread,Whitbread,,Beefeater_(restaurant),Beefeater_(restaurant)|Beefeater_Grill,,ftse,True
+WPP.L,WPP,Media,WPP_plc,WPP_plc,,Ogilvy_(agency),Ogilvy_(agency)|Ogilvy_&_Mather,,ftse,True

@@ -108,6 +108,49 @@ def remove_reversals(monthly: pd.Series) -> pd.Series:
     return monthly.interpolate(limit_area="inside")
 
 
+CURRENCY_PATH = PROJECT_DIR / "data" / "mapping" / "quote_currencies.csv"
+FX_TICKERS = {"GBP": "GBPUSD=X", "EUR": "EURUSD=X"}  # dollars per unit
+
+
+def quote_currencies(tickers: list[str]) -> pd.Series:
+    """The currency each London share is quoted in (most in pence, "GBp"; a few in
+    dollars or pounds), saved once so the daily update does not ask again."""
+    saved = pd.read_csv(CURRENCY_PATH).set_index("ticker")["currency"] if CURRENCY_PATH.exists() else pd.Series(dtype=str)
+    todo = [t for t in tickers if t.endswith(".L") and t not in saved.index]
+    for t in todo:
+        for attempt in range(3):
+            try:
+                saved.loc[t] = yf.Ticker(t).fast_info["currency"]
+                break
+            except Exception:
+                time.sleep(5)
+        else:
+            raise RuntimeError(f"No currency for {t}")
+    if todo:
+        saved.rename("currency").rename_axis("ticker").to_csv(CURRENCY_PATH)
+    return saved
+
+
+def to_dollars(out: pd.DataFrame, currencies: pd.Series) -> pd.DataFrame:
+    """Market caps of London shares in dollars, at each month end's exchange rate,
+    so companies in both markets can be compared by size."""
+    london = out["ticker"].str.endswith(".L")
+    if not london.any():
+        return out
+    fx = yf.download(list(FX_TICKERS.values()), start=START, auto_adjust=False, progress=False)["Close"]
+    fx_month = fx.resample("ME").last()
+    fx_month.index = fx_month.index.strftime("%Y-%m")
+    currency = out["ticker"].map(currencies)
+    rate = pd.Series(1.0, index=out.index)
+    for code, fx_ticker in FX_TICKERS.items():
+        is_code = currency.isin([code, code[:2] + code[2].lower()])  # GBP or GBp (pence)
+        rate[is_code] = out.loc[is_code, "month"].map(fx_month[fx_ticker]).values
+    rate[currency == "GBp"] /= 100  # pence to pounds
+    out = out.copy()
+    out.loc[london, "mcap"] = out.loc[london, "mcap"] * rate[london]
+    return out.dropna(subset=["mcap"])
+
+
 def main() -> None:
     universe = pd.read_csv(UNIVERSE_PATH)
     tickers = sorted(universe["ticker"].unique())
@@ -148,6 +191,7 @@ def main() -> None:
             rows.append((date.strftime("%Y-%m"), ticker, n, n * month_end.at[date, ticker]))
 
     out = pd.DataFrame(rows, columns=["month", "ticker", "shares", "mcap"]).dropna()
+    out = to_dollars(out, quote_currencies(tickers))
     out.to_csv(OUT_DIR / "market_cap_monthly.csv", index=False)
     print(f"Saved {len(out):,} company-months, {out['month'].min()} to {out['month'].max()}")
 

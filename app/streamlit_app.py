@@ -233,18 +233,22 @@ DATA_FILES = {
     "clickthrough": DATA_DIR / "clickthrough_tests_summary.csv",
     "trending": DATA_DIR / "trending.csv",
     "discovery": DATA_DIR / "discovery.csv",
+    "currencies": PROJECT_DIR / "data" / "mapping" / "quote_currencies.csv",
     "replication": DATA_DIR / "replication_summary.csv",
     "replication_monthly": DATA_DIR / "replication_monthly.csv",
     "broad": DATA_DIR / "broad_summary.csv",
     "broad_monthly": DATA_DIR / "broad_monthly.csv",
     "broad_clicks": DATA_DIR / "broad_clickthrough.csv",
     "overview": DATA_DIR / "strategy_overview.csv",
+    "ftse": DATA_DIR / "ftse_summary.csv",
+    "ftse_monthly": DATA_DIR / "ftse_monthly.csv",
     "last_update": DATA_DIR / "last_update.json",
 }
 CLICKTHROUGH_PLAN_URL = GITHUB_URL + "/blob/main/docs/clickthrough_tests_plan.md"
 EARNINGS_PLAN_URL = GITHUB_URL + "/blob/main/docs/earnings_test_plan.md"
 REPLICATION_PLAN_URL = GITHUB_URL + "/blob/main/docs/expansion_replication_plan.md"
 BROAD_PLAN_URL = GITHUB_URL + "/blob/main/docs/broad_universe_plan.md"
+FTSE_PLAN_URL = GITHUB_URL + "/blob/main/docs/ftse_plan.md"
 PLAN_URL = GITHUB_URL + "/blob/main/docs/strategy_plan.md"
 DEV_END = "2024-12"  # last month of the development period (see src/strategy.py)
 
@@ -256,8 +260,13 @@ def load_data(versions: tuple) -> dict:
     file, it changes, so the cache is refreshed instead of serving old data."""
     data = {}
     for name, path in DATA_FILES.items():
-        if name == "daily":
+        if not path.exists() and name in ("ftse", "ftse_monthly"):
+            data[name] = pd.DataFrame()  # before the UK tests have first run
+        elif name == "daily":
             data[name] = pd.read_csv(path, usecols=["date"])["date"].max()
+        elif name == "currencies":
+            data[name] = (pd.read_csv(path).set_index("ticker")["currency"] if path.exists()
+                          else pd.Series(dtype=str))
         elif name == "last_update":
             data[name] = pd.read_json(path, typ="series")
         elif name == "prices":
@@ -290,7 +299,7 @@ def price_status(day: pd.Timestamp) -> str:
     return f"at the close on {day:%-d %b %Y}"
 
 
-data = load_data(tuple(path.stat().st_mtime for path in DATA_FILES.values()))
+data = load_data(tuple(path.stat().st_mtime if path.exists() else 0 for path in DATA_FILES.values()))
 universe, views, prices = data["universe"], data["views"], data["prices"]
 last_day = pd.Timestamp(data["daily"])
 # When the daily update last ran (it runs every evening, even when there is no new
@@ -309,7 +318,7 @@ st.html(f"""
      <b>click through</b> to the company. It then tests whether these predict the following
      month's returns.</p>
   <div class="ci-stats">
-    <div class="ci-stat"><span class="n">{universe['ticker'].nunique()}</span><span class="l">US-listed companies</span></div>
+    <div class="ci-stat"><span class="n">{universe['ticker'].nunique()}</span><span class="l">companies, US and UK</span></div>
     <div class="ci-stat"><span class="n">{(universe['product_article'].fillna('') != '').sum()}</span><span class="l">product pages</span></div>
     <div class="ci-stat"><span class="n">Since {views['month'].min()[:4]}</span><span class="l">daily attention data</span></div>
     <div class="ci-stat"><span class="n">Updated {checked:%-d %b %Y}</span><span class="l">data to {last_day:%-d %b}; checked every evening</span></div>
@@ -342,6 +351,11 @@ with explorer:
     if ticker in live.index and (price.empty or live.at[ticker, "date"] >= price.index[-1]):
         price.loc[live.at[ticker, "date"]] = live.at[ticker, "price"]  # today's latest price
     price_note = price_status(price.index[-1]) if len(price) else "not available"
+    # London shares are mostly quoted in pence: show them in pounds
+    currency = data["currencies"].get(ticker, "USD")
+    if currency == "GBp":
+        price = price / 100
+    symbol = {"GBp": "£", "GBP": "£", "EUR": "€"}.get(currency, "$")
 
     # Key numbers for the latest complete month, each against its own recent past
     company_series = pages[pages["kind"] == "company"].groupby("month")["views"].sum(min_count=1).dropna()
@@ -369,7 +383,7 @@ with explorer:
         c3.metric("Click-through rate", "n/a", border=True)
     year_ago = price.loc[: price.index[-1] - pd.DateOffset(years=1)] if len(price) else price
     c4.metric(f"Share price, {'live' if price_note.startswith('live') else 'last close'}",
-              f"${price.iloc[-1]:,.2f}" if len(price) else "n/a",
+              f"{symbol}{price.iloc[-1]:,.2f}" if len(price) else "n/a",
               f"{price.iloc[-1] / year_ago.iloc[-1] - 1:+.0%} in a year" if len(year_ago) else None,
               border=True)
     # Wikipedia's overall traffic moves too (it fell through 2026), so give the
@@ -410,12 +424,12 @@ with explorer:
     fig.add_trace(go.Scatter(
         x=price.index, y=price, name="Share price", mode="lines",
         line=dict(color=PRICE_COLOUR, width=1.5), yaxis="y3",
-        hovertemplate="$%{y:,.2f}<extra>Share price</extra>",
+        hovertemplate=symbol + "%{y:,.2f}<extra>Share price</extra>",
     ))
     fig.update_layout(
         yaxis=dict(title="Views a month (log)", type="log", dtick=1, gridcolor=GRID, domain=[0.52, 1]),
         yaxis2=dict(title="Click-through (%)", gridcolor=GRID, domain=[0.27, 0.46], rangemode="tozero"),
-        yaxis3=dict(title="Share price ($)", gridcolor=GRID, domain=[0, 0.21]),
+        yaxis3=dict(title=f"Share price ({symbol})", gridcolor=GRID, domain=[0, 0.21]),
         xaxis=dict(showgrid=False, anchor="y3", hoverformat="%b %Y",
                    showspikes=True, spikemode="across", spikesnap="cursor",
                    spikedash="dot", spikethickness=1, spikecolor="#888"),
@@ -577,8 +591,10 @@ with results:
     def broad_row(group: str, test: str, detail: str) -> pd.Series:
         return broad[(broad["group"] == group) & (broad["test"] == test) & (broad["detail"] == detail)].iloc[0]
 
-    group_size = universe["ticker"].nunique()
-    with_products = universe.loc[universe["product_article"].fillna("") != "", "ticker"].nunique()
+    # The US results (the UK has its own section below)
+    us = universe[universe["cohort"] != "ftse"]
+    group_size = us["ticker"].nunique()
+    with_products = us.loc[us["product_article"].fillna("") != "", "ticker"].nunique()
     replication_monthly = data["replication_monthly"]
     group_runs = {
         "Original 68": run.assign(benchmark=run["average_company"]),
@@ -953,6 +969,41 @@ with results:
             "- Many tests have now been run, so a t of about 2 is weaker evidence than it looks."
         )
 
+    if "ftse" in data and len(data["ftse"]):
+        with st.expander("Research detail: the same tests on the FTSE 100"):
+            ftse = data["ftse"].set_index(["test", "detail"])
+            ftse_monthly = data["ftse_monthly"]
+            st.markdown(
+                f"The same tests, [planned in advance]({FTSE_PLAN_URL}) and run once, on the "
+                f"{universe.loc[universe['cohort'] == 'ftse', 'ticker'].nunique()} FTSE 100 companies not "
+                "already tracked through a US listing, ranked among themselves. No record of past "
+                "FTSE 100 membership was available, so today's members are used back to 2017: the "
+                "strategy rows are flattered by hindsight, as they were in the US before correcting it."
+            )
+
+            def ftse_line(label: str, test: str, detail: str, pct: bool = True) -> list[str]:
+                if (test, detail) not in ftse.index:
+                    return [label, "n/a"]
+                r = ftse.loc[(test, detail)]
+                value = f"{r['result'] * 100:+.2f}%" if pct else f"{r['result'] * 100:+.1f} pts"
+                return [label, f"{value} (t = {r['t_stat']:.1f})"]
+
+            st.html(html_table(["Finding (UK)", "Result"], [
+                ftse_line("Strategy beats its own average (a month; flattered)", "strategy",
+                          "equal amounts (today's members)"),
+                ftse_line("Long-short, company attention only", "long-short", "company"),
+                ftse_line("Long-short, with product attention", "long-short", "products"),
+                ftse_line("Products getting more attention than the company", "sort", "Gap (products vs company)"),
+                ftse_line("Abnormal company attention", "sort", "Abnormal company attention"),
+                ftse_line("Product buzz before results: change in beat rate", "earnings",
+                          "beat: top minus bottom third", pct=False)], numeric={1}))
+            equal = ftse_monthly[ftse_monthly["detail"] == "equal amounts (today's members)"]
+            if len(equal):
+                st.caption(f"$100 in the UK strategy became £{100 * (1 + equal['net']).prod():.0f}, against "
+                           f"£{100 * (1 + equal['benchmark']).prod():.0f} for the 95 companies held equally and "
+                           f"£{100 * (1 + equal['ftse_fund']).prod():.0f} for a FTSE 100 fund (with hindsight "
+                           "in the company list).")
+
     with st.expander("Research detail: checking the findings on fresh companies"):
         st.markdown(
             f"Every test was first designed on 68 companies. In November 2026, 44 more "
@@ -1155,10 +1206,13 @@ with method:
     with st.container(key="card_how"):
         st.subheader("How it works")
         st.markdown(
-            f"1. **Universe:** every S&P 500 company and the Nasdaq-100, {universe['ticker'].nunique()} "
-            f"US-listed companies. {with_products} of them have product pages on Wikipedia, checked by "
-            f"hand ({(universe['product_article'].fillna('') != '').sum()} pages, e.g. Novo Nordisk → "
-            "Ozempic, SpaceX → Starlink); the others are followed by their company page alone.\n"
+            f"1. **Universe:** every company in the S&P 500, the Nasdaq-100 and the FTSE 100, "
+            f"{universe['ticker'].nunique()} in all. "
+            f"{universe.loc[universe['product_article'].fillna('') != '', 'ticker'].nunique()} of them have "
+            f"product pages on Wikipedia, checked by hand "
+            f"({(universe['product_article'].fillna('') != '').sum()} pages, e.g. Novo Nordisk → Ozempic, "
+            "SpaceX → Starlink, Games Workshop → Warhammer 40,000); the others are followed by their "
+            "company page alone. London prices are in pounds; company sizes are compared in dollars.\n"
             "2. **Attention:** daily page views since 2017, and the monthly clickstream (how many "
             "readers clicked from which page to which) since November 2017.\n"
             "3. **Signals:** each company's attention compared with its own recent past, so large "

@@ -34,6 +34,8 @@ from wiki_api import HEADERS
 # needs the past 12 months of returns
 START = "2016-01-01"
 BENCHMARK = "SPY"
+UK_BENCHMARK = "CUKX.L"  # iShares FTSE 100, dividends reinvested: the UK equivalent of SPY
+FX = "GBPUSD=X"          # dollars per pound, to compare company sizes across markets
 
 FRENCH_URL = "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/ftp/{name}_CSV.zip"
 FRENCH_FILES = {
@@ -73,6 +75,8 @@ def fetch_french(name: str) -> pd.DataFrame:
 def main() -> None:
     universe = pd.read_csv(UNIVERSE_PATH)
     tickers = sorted(universe["ticker"].unique()) + [BENCHMARK]
+    if universe["ticker"].str.endswith(".L").any():
+        tickers += [UK_BENCHMARK, FX]
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
     # 1. Prices
@@ -94,6 +98,11 @@ def main() -> None:
             time.sleep(5)
         else:
             raise RuntimeError(f"No price data for {ticker} after 3 retries")
+    # One calendar for every market: the days the US market was open. London has
+    # different holidays; keeping its extra days would put gaps in every US
+    # series (and the US days it misses are simply gaps for UK shares)
+    us_days = prices[BENCHMARK].notna()
+    prices, volume = prices[us_days], volume[us_days]
     prices.index.name = volume.index.name = "date"
     prices.round(4).to_csv(OUT_DIR / "prices_daily.csv")
     volume.to_csv(OUT_DIR / "volume_daily.csv")

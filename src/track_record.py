@@ -51,7 +51,7 @@ def main() -> None:
     universe = pd.read_csv(UNIVERSE_PATH)
     original_68 = sorted(universe.loc[universe["cohort"] == "original", "ticker"].unique())
     all_112 = sorted(universe.loc[universe["cohort"].isin(["original", "expansion"]), "ticker"].unique())
-    everyone = sorted(universe["ticker"].unique())
+    everyone = sorted(universe.loc[universe["cohort"] != "ftse", "ticker"].unique())  # US-listed
 
     def chosen_from(version: str) -> list[str]:
         if "all companies" in version:

@@ -45,7 +45,9 @@ def earnings_dates(ticker: str) -> pd.DataFrame:
             print(f"  {ticker}: {error}, retrying ...")
             time.sleep(5)
     else:
-        raise RuntimeError(f"No earnings dates for {ticker} after 3 tries")
+        # Keep going: the company's saved announcements stay, and it is asked again tomorrow
+        print(f"  {ticker}: no answer from Yahoo after 3 tries, skipped this time")
+        return pd.DataFrame()
     if dates is None or dates.empty:
         return pd.DataFrame()
     dates = dates.reset_index()

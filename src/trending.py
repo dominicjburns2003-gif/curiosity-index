@@ -63,7 +63,8 @@ def main() -> None:
             "change": this_week[r.product_article] / usual_week[r.product_article] - 1,
             "company_change": this_week[r.company_article] / usual_week[r.company_article] - 1,
             "price_change": price_change[r.ticker],
-            "price_vs_market": price_change[r.ticker] - price_change["SPY"],
+            "price_vs_market": price_change[r.ticker]
+            - price_change["CUKX.L" if r.ticker.endswith(".L") and "CUKX.L" in price_change else "SPY"],
         })
     trending = pd.DataFrame(rows)
     trending = trending[trending["usual_week"] >= MIN_USUAL_WEEK].sort_values("change", ascending=False)

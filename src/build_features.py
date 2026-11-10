@@ -119,11 +119,12 @@ def to_long(wide: pd.DataFrame, name: str) -> pd.Series:
 def main() -> None:
     views = pd.read_csv(DATA_DIR / "pageviews_monthly.csv")
     returns = pd.read_csv(DATA_DIR / "returns_monthly.csv").pivot(index="month", columns="ticker", values="ret")
-    returns = returns.drop(columns="SPY")  # the market fund, not a company
+    not_companies = ["SPY", "CUKX.L", "GBPUSD=X"]  # market funds and the exchange rate
+    returns = returns.drop(columns=not_companies, errors="ignore")
     factors = pd.read_csv(DATA_DIR / "ff_factors_monthly.csv", index_col="month")
     mcap = pd.read_csv(DATA_DIR / "market_cap_monthly.csv").pivot(index="month", columns="ticker", values="mcap")
     prices = pd.read_csv(DATA_DIR / "prices_daily.csv", index_col="date", parse_dates=True)
-    prices = prices.drop(columns="SPY")
+    prices = prices.drop(columns=not_companies, errors="ignore")
 
     # ---- Company attention ---------------------------------------------------
     company = views[views["kind"] == "company"].pivot(index="month", columns="ticker", values="views")

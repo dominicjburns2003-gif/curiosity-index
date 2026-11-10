@@ -1,0 +1,77 @@
+ticker,company,sector,company_article,product_article,company_current,product_current,product_views_12m,company_views_12m,product_first_month,company_first_month,clicks_to_company,conversion_pct,price_first,price_last,flags
+ABF.L,Associated British Foods,Food Producers,Associated_British_Foods,Primark,Associated_British_Foods,Primark,25463,8572,2017-01,2017-01,2132,4.93,2017-01-03,2026-11-06,
+ABF.L,Associated British Foods,Food Producers,Associated_British_Foods,Twinings,Associated_British_Foods,Twinings,6523,8572,2017-01,2017-01,481,8.18,2017-01-03,2026-11-06,
+ABF.L,Associated British Foods,Food Producers,Associated_British_Foods,Ovaltine,Associated_British_Foods,Ovaltine,16048,8572,2017-01,2017-01,222,1.62,2017-01-03,2026-11-06,
+ABF.L,Associated British Foods,Food Producers,Associated_British_Foods,Kingsmill_(bread),Associated_British_Foods,Associated_British_Foods,8572,8572,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Associated_British_Foods; no clicks to company page
+ABF.L,Associated British Foods,Food Producers,Associated_British_Foods,Silver_Spoon_(brand),Associated_British_Foods,,0,8572,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+BA.L,BAE Systems,Aerospace and Defense,BAE_Systems,BAE_Systems_Hawk,BAE_Systems,BAE_Systems_Hawk,24826,40420,2017-01,2017-01,193,0.97,2017-01-03,2026-11-06,
+BA.L,BAE Systems,Aerospace and Defense,BAE_Systems,Astute-class_submarine,BAE_Systems,Astute-class_submarine,23365,40420,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,no clicks to company page
+BA.L,BAE Systems,Aerospace and Defense,BAE_Systems,Type_26_frigate,BAE_Systems,Type_26_frigate,38537,40420,2017-08,2017-01,0,0.0,2017-01-03,2026-11-06,no clicks to company page
+BARC.L,Barclays,Banks,Barclays,Barclaycard,Barclays,Barclaycard,2082,31325,2017-01,2017-01,124,8.12,2017-01-03,2026-11-06,low product views
+BP.L,BP,Non-Renewable Energy,BP,Castrol,BP,Castrol,7723,55349,2017-01,2017-01,425,7.25,2017-01-03,2026-11-06,
+BP.L,BP,Non-Renewable Energy,BP,Aral_(company),BP,,0,55349,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+BT-A.L,BT Group,Telecommunications Service Providers,BT_Group,EE_Limited,BT_Group,EE_(telecommunications),9760,13628,2024-04,2017-01,846,9.56,2017-01-03,2026-11-06,product redirects to EE_(telecommunications)
+BT-A.L,BT Group,Telecommunications Service Providers,BT_Group,Openreach,BT_Group,Openreach,2136,13628,2017-01,2017-01,245,12.2,2017-01-03,2026-11-06,low product views
+BT-A.L,BT Group,Telecommunications Service Providers,BT_Group,Plusnet,BT_Group,Plusnet,1573,13628,2017-01,2017-01,102,5.42,2017-01-03,2026-11-06,low product views
+CNA.L,Centrica,"Gas, Water and Multi-utilities",Centrica,British_Gas,Centrica,British_Gas,3208,4226,2017-01,2017-01,567,14.86,2017-01-03,2026-11-06,
+GAW.L,Games Workshop,Leisure Goods,Games_Workshop,"Warhammer_40,000",Games_Workshop,"Warhammer_40,000",79487,19591,2017-01,2017-01,1973,3.21,2017-01-03,2026-11-06,
+GAW.L,Games Workshop,Leisure Goods,Games_Workshop,Warhammer_Age_of_Sigmar,Games_Workshop,Warhammer_Age_of_Sigmar,7976,19591,2017-01,2017-01,159,2.45,2017-01-03,2026-11-06,
+GAW.L,Games Workshop,Leisure Goods,Games_Workshop,Warhammer_(game),Games_Workshop,Warhammer_(game),20798,19591,2018-11,2017-01,854,4.42,2017-01-03,2026-11-06,
+GSK.L,GSK plc,"Pharmaceuticals, Biotechnology and Marijuana Producers",GSK_plc,Shingrix,GSK_plc,Zoster_vaccine,4003,13853,2017-01,2022-06,16,0.59,2017-01-03,2026-11-06,product redirects to Zoster_vaccine; company views start 2022-06
+GSK.L,GSK plc,"Pharmaceuticals, Biotechnology and Marijuana Producers",GSK_plc,Arexvy,GSK_plc,Respiratory_syncytial_virus_vaccine,4168,13853,2020-04,2022-06,10,0.19,2017-01-03,2026-11-06,product redirects to Respiratory_syncytial_virus_vaccine; company views start 2022-06
+GSK.L,GSK plc,"Pharmaceuticals, Biotechnology and Marijuana Producers",GSK_plc,Trelegy_Ellipta,GSK_plc,Fluticasone_furoate/umeclidinium_bromide/vilanterol,598,13853,2020-02,2022-06,0,0.0,2017-01-03,2026-11-06,product redirects to Fluticasone_furoate/umeclidinium_bromide/vilanterol; low product views; no clicks to company page; company views start 2022-06
+GSK.L,GSK plc,"Pharmaceuticals, Biotechnology and Marijuana Producers",GSK_plc,Dovato,GSK_plc,Dolutegravir/lamivudine,321,13853,2019-04,2022-06,0,0.0,2017-01-03,2026-11-06,product redirects to Dolutegravir/lamivudine; low product views; no clicks to company page; company views start 2022-06
+HLN.L,Haleon,"Pharmaceuticals, Biotechnology and Marijuana Producers",Haleon,Sensodyne,Haleon,Sensodyne,5776,12475,2017-01,2022-06,647,11.52,2022-07-18,2026-11-06,company views start 2022-06; prices start 2022-07-18
+HLN.L,Haleon,"Pharmaceuticals, Biotechnology and Marijuana Producers",Haleon,Panadol,Haleon,Paracetamol,60982,12475,2017-01,2022-06,0,0.0,2022-07-18,2026-11-06,product redirects to Paracetamol; no clicks to company page; company views start 2022-06; prices start 2022-07-18
+HLN.L,Haleon,"Pharmaceuticals, Biotechnology and Marijuana Producers",Haleon,Centrum_(brand),Haleon,,0,12475,,2022-06,0,,2022-07-18,2026-11-06,product redirects to nan; low product views; no clicks to company page; company views start 2022-06; prices start 2022-07-18
+HLN.L,Haleon,"Pharmaceuticals, Biotechnology and Marijuana Producers",Haleon,Aquafresh,Haleon,Aquafresh,1649,12475,2017-01,2022-06,177,12.89,2022-07-18,2026-11-06,low product views; company views start 2022-06; prices start 2022-07-18
+HLN.L,Haleon,"Pharmaceuticals, Biotechnology and Marijuana Producers",Haleon,Advil,Haleon,Advil,5554,12475,2017-01,2022-06,355,7.61,2022-07-18,2026-11-06,company views start 2022-06; prices start 2022-07-18
+HSBA.L,HSBC,Banks,HSBC,First_Direct,HSBC,First_Direct,1954,49253,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,low product views; no clicks to company page
+IHG.L,IHG Hotels & Resorts,Travel and Leisure,IHG_Hotels_&_Resorts,Holiday_Inn,IHG_Hotels_&_Resorts,Holiday_Inn,9357,18130,2017-01,2021-02,866,10.88,2017-01-03,2026-11-06,company views start 2021-02
+IHG.L,IHG Hotels & Resorts,Travel and Leisure,IHG_Hotels_&_Resorts,Crowne_Plaza,IHG_Hotels_&_Resorts,Crowne_Plaza,3254,18130,2017-01,2021-02,239,10.35,2017-01-03,2026-11-06,company views start 2021-02
+IHG.L,IHG Hotels & Resorts,Travel and Leisure,IHG_Hotels_&_Resorts,Holiday_Inn_Express,IHG_Hotels_&_Resorts,Holiday_Inn_Express,2012,18130,2017-01,2021-02,72,3.7,2017-01-03,2026-11-06,low product views; company views start 2021-02
+IHG.L,IHG Hotels & Resorts,Travel and Leisure,IHG_Hotels_&_Resorts,Kimpton_Hotels_&_Restaurants,IHG_Hotels_&_Resorts,Kimpton_Hotels_&_Restaurants,2412,18130,2017-01,2021-02,189,10.39,2017-01-03,2026-11-06,low product views; company views start 2021-02
+IMB.L,Imperial Brands,Tobacco,Imperial_Brands,Davidoff_(cigarette),Imperial_Brands,,0,8675,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+IMB.L,Imperial Brands,Tobacco,Imperial_Brands,JPS_(cigarette),Imperial_Brands,,0,8675,,2017-01,0,,2017-01-03,2026-11-06,product redirects to nan; low product views; no clicks to company page
+IMB.L,Imperial Brands,Tobacco,Imperial_Brands,Rizla,Imperial_Brands,Rizla,2103,8675,2017-01,2017-01,82,4.82,2017-01-03,2026-11-06,low product views
+IMB.L,Imperial Brands,Tobacco,Imperial_Brands,Blu_(electronic_cigarette),Imperial_Brands,Blu_(electronic_cigarette),1201,8675,2024-08,2017-01,44,4.72,2017-01-03,2026-11-06,low product views
+IAG.L,International Airlines Group,Travel and Leisure,International_Airlines_Group,British_Airways,International_Airlines_Group,British_Airways,47634,19413,2017-01,2017-01,2117,5.37,2017-01-03,2026-11-06,
+IAG.L,International Airlines Group,Travel and Leisure,International_Airlines_Group,Iberia_(airline),International_Airlines_Group,Iberia_(airline),21200,19413,2017-01,2017-01,1001,5.63,2017-01-03,2026-11-06,
+IAG.L,International Airlines Group,Travel and Leisure,International_Airlines_Group,Aer_Lingus,International_Airlines_Group,Aer_Lingus,27668,19413,2017-01,2017-01,1447,6.82,2017-01-03,2026-11-06,
+IAG.L,International Airlines Group,Travel and Leisure,International_Airlines_Group,Vueling,International_Airlines_Group,Vueling,14124,19413,2017-01,2017-01,577,5.09,2017-01-03,2026-11-06,
+IAG.L,International Airlines Group,Travel and Leisure,International_Airlines_Group,Avios,International_Airlines_Group,International_Airlines_Group,19413,19413,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to International_Airlines_Group; no clicks to company page
+KGF.L,Kingfisher plc,Retailers,Kingfisher_plc,B&Q,Kingfisher_plc,B&Q,11964,4559,2017-01,2017-01,622,4.75,2017-01-03,2026-11-06,
+KGF.L,Kingfisher plc,Retailers,Kingfisher_plc,Screwfix,Kingfisher_plc,Screwfix,4445,4559,2017-01,2017-01,258,4.57,2017-01-03,2026-11-06,
+KGF.L,Kingfisher plc,Retailers,Kingfisher_plc,Castorama,Kingfisher_plc,Castorama,1163,4559,2017-01,2017-01,75,6.95,2017-01-03,2026-11-06,low product views
+LLOY.L,Lloyds Banking Group,Banks,Lloyds_Banking_Group,Halifax_(bank),Lloyds_Banking_Group,Halifax_(bank),4339,8201,2017-01,2017-01,346,9.12,2017-01-03,2026-11-06,
+LLOY.L,Lloyds Banking Group,Banks,Lloyds_Banking_Group,Bank_of_Scotland,Lloyds_Banking_Group,Bank_of_Scotland,5423,8201,2017-01,2017-01,492,8.35,2017-01-03,2026-11-06,
+LLOY.L,Lloyds Banking Group,Banks,Lloyds_Banking_Group,Lloyds_Bank,Lloyds_Banking_Group,Lloyds_Bank,11716,8201,2017-01,2017-01,594,4.63,2017-01-03,2026-11-06,
+LSEG.L,London Stock Exchange Group,Finance and Credit Services,London_Stock_Exchange_Group,Refinitiv,London_Stock_Exchange_Group,London_Stock_Exchange_Group,6052,6052,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to London_Stock_Exchange_Group; no clicks to company page
+MKS.L,Marks & Spencer,"Personal Care, Drug and Grocery Stores",Marks_&_Spencer,Percy_Pig,Marks_&_Spencer,Percy_Pig,3942,24654,2017-01,2017-01,117,2.77,2017-01-03,2026-11-06,
+MRO.L,Melrose Industries,Aerospace and Defense,Melrose_Industries,GKN_Aerospace,Melrose_Industries,GKN,7941,2581,2017-01,2017-01,727,14.53,2017-01-03,2026-11-06,product redirects to GKN
+NWG.L,NatWest Group,Banks,NatWest_Group,NatWest,NatWest_Group,NatWest,7897,6057,2017-01,2020-07,676,7.56,2017-01-03,2026-11-06,company views start 2020-07
+NWG.L,NatWest Group,Banks,NatWest_Group,Royal_Bank_of_Scotland,NatWest_Group,Royal_Bank_of_Scotland,6530,6057,2017-01,2020-07,576,8.78,2017-01-03,2026-11-06,company views start 2020-07
+NWG.L,NatWest Group,Banks,NatWest_Group,Coutts,NatWest_Group,Coutts,6326,6057,2017-01,2020-07,81,1.58,2017-01-03,2026-11-06,company views start 2020-07
+PSON.L,Pearson plc,Media,Pearson_plc,Edexcel,Pearson_plc,Pearson_Edexcel,52,6864,2020-03,2018-03,47,28.83,2017-01-03,2026-11-06,product redirects to Pearson_Edexcel; low product views; company views start 2018-03
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Dettol,Reckitt,Dettol,5768,13455,2017-01,2021-03,430,11.13,2017-01-03,2026-11-06,company views start 2021-03
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Durex,Reckitt,Durex,5997,13455,2017-01,2021-03,660,14.92,2017-01-03,2026-11-06,company views start 2021-03
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Nurofen,Reckitt,Nurofen,3413,13455,2017-01,2021-03,113,4.46,2017-01-03,2026-11-06,company views start 2021-03
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Vanish_(brand),Reckitt,Vanish_(toilet_cleaner),281,13455,2021-03,2021-03,0,0.0,2017-01-03,2026-11-06,product redirects to Vanish_(toilet_cleaner); low product views; no clicks to company page; company views start 2021-03
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Finish_(detergent),Reckitt,Finish_(detergent),1386,13455,2019-11,2021-03,173,14.79,2017-01-03,2026-11-06,low product views; company views start 2021-03
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Strepsils,Reckitt,Strepsils,6423,13455,2017-01,2021-03,200,5.07,2017-01-03,2026-11-06,company views start 2021-03
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Gaviscon,Reckitt,Antacid,5413,13455,2017-01,2021-03,0,0.0,2017-01-03,2026-11-06,product redirects to Antacid; no clicks to company page; company views start 2021-03
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Lysol,Reckitt,Lysol,6400,13455,2017-01,2021-03,207,4.58,2017-01-03,2026-11-06,company views start 2021-03
+RKT.L,Reckitt,"Personal Care, Drug and Grocery Stores",Reckitt,Air_Wick,Reckitt,Air_Wick,942,13455,2017-01,2021-03,68,7.77,2017-01-03,2026-11-06,low product views; company views start 2021-03
+REL.L,RELX,Software and Computer Services,RELX,LexisNexis,RELX,LexisNexis,10365,7451,2017-01,2019-02,457,5.63,2017-01-03,2026-11-06,company views start 2019-02
+REL.L,RELX,Software and Computer Services,RELX,The_Lancet,RELX,The_Lancet,8090,7451,2017-01,2019-02,0,0.0,2017-01-03,2026-11-06,no clicks to company page; company views start 2019-02
+REL.L,RELX,Software and Computer Services,RELX,Elsevier,RELX,Elsevier,13533,7451,2017-01,2019-02,696,6.4,2017-01-03,2026-11-06,company views start 2019-02
+RR.L,Rolls-Royce Holdings,Aerospace and Defense,Rolls-Royce_Holdings,Rolls-Royce_Trent,Rolls-Royce_Holdings,Rolls-Royce_Trent,7410,21943,2017-01,2017-01,245,3.92,2017-01-03,2026-11-06,
+RR.L,Rolls-Royce Holdings,Aerospace and Defense,Rolls-Royce_Holdings,Rolls-Royce_Trent_XWB,Rolls-Royce_Holdings,Rolls-Royce_Trent_XWB,8357,21943,2017-01,2017-01,364,5.01,2017-01-03,2026-11-06,
+SBRY.L,Sainsbury's,"Personal Care, Drug and Grocery Stores",Sainsbury's,Argos_(retailer),Sainsbury's,Argos_(retailer),10529,14716,2017-01,2017-01,243,2.22,2017-01-03,2026-11-06,
+SBRY.L,Sainsbury's,"Personal Care, Drug and Grocery Stores",Sainsbury's,Nectar_(loyalty_card),Sainsbury's,Nectar_(loyalty_card),3888,14716,2021-12,2017-01,50,1.94,2017-01-03,2026-11-06,
+SMIN.L,Smiths Group,General Industrials,Smiths_Group,Smiths_Detection,Smiths_Group,Smiths_Group,2897,2897,2017-01,2017-01,0,0.0,2017-01-03,2026-11-06,product redirects to Smiths_Group; low product views; no clicks to company page
+TSCO.L,Tesco,"Personal Care, Drug and Grocery Stores",Tesco,Tesco_Clubcard,Tesco,Tesco_Clubcard,2236,33109,2017-01,2017-01,51,3.1,2017-01-03,2026-11-06,low product views
+TSCO.L,Tesco,"Personal Care, Drug and Grocery Stores",Tesco,Booker_Group,Tesco,Booker_Group,3469,33109,2017-01,2017-01,215,6.46,2017-01-03,2026-11-06,
+WTB.L,Whitbread,Travel and Leisure,Whitbread,Premier_Inn,Whitbread,Premier_Inn,3990,5764,2017-01,2017-01,598,15.96,2017-01-03,2026-11-06,
+WTB.L,Whitbread,Travel and Leisure,Whitbread,Beefeater_(restaurant),Whitbread,Beefeater_(restaurant),3113,5764,2017-01,2017-01,169,5.55,2017-01-03,2026-11-06,
+WPP.L,WPP,Media,WPP_plc,Ogilvy_(agency),WPP_plc,Ogilvy_(agency),5969,10789,2018-10,2017-01,297,7.44,2017-01-03,2026-11-06,
