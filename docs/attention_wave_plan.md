@@ -133,3 +133,31 @@ For comparison, the original rule (26-week cap) is also run on 2017 – 2021.
 **It counts as working only if at least 4 of the 6 company-page versions
 beat the average company in *both* periods.** All versions are reported, run
 once.
+
+### Follow-up results (added on 10 Nov 2026, after running `src/attention_wave.py --followup` once)
+
+Company pages, only companies in the S&P 500 at the time, after costs.
+Return above the average company, % a month (t), and $100 became.
+
+| Entry | Exit | 2017–2021, no maximum | 2017–2021, 26 weeks (original rule) | 2022–2026, no maximum | 2022–2026, 26 weeks (above) |
+|---|---|---|---|---|---|
+| 1.5× | normal | −0.35 (−1.9), $183 | −0.34 (−1.5), $186 | +0.05 (0.2), $169 | −0.04 (−0.1), $160 |
+| 1.5× | half | −0.17 (−1.2), $202 | −0.14 (−0.7), $204 | +0.24 (1.1), $193 | +0.12 (0.4), $179 |
+| **2×** | **normal** | **−0.33 (−1.3), $184** | −0.48 (−1.6), $171 | **+0.42 (1.0), $203** | +0.18 (0.4), $174 |
+| 2× | half | −0.40 (−0.9), $170 | +0.19 (0.3), $230 | +0.55 (0.7), $205 | +0.20 (0.3), $167 |
+| 3× | normal | −0.12 (−0.3), $207 | −0.40 (−0.7), $177 | −0.31 (−0.6), $129 | −0.71 (−1.0), $98 |
+| 3× | half | −0.67 (−1.2), $143 | −0.09 (−0.2), $195 | −1.30 (−1.1), $62 | −1.30 (−1.1), $62 |
+| *Average company* | | *$223* | *$223* | *$166* | *$166* |
+| *S&P 500* | | *$218* | *$218* | *$172* | *$172* |
+
+**Verdict, by the rule fixed for the follow-up:** **it does not work.**
+Without a maximum, 4 of the 6 versions beat the average in 2022–2026, the
+period already seen, but **none of the 6 did in 2017–2021**, the five years
+the strategy had never been run on. The improvement exists only where the
+rule was changed after looking: a clear example of how a change made after
+seeing results can fit noise. With the original rule, 1 of 6 beat the
+average in 2017–2021.
+
+**Overall, across both periods:** buying on a surge in company attention,
+however it is timed, does not beat simply holding the average company. The
+largest surges (3×) do worse in both periods.

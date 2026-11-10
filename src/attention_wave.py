@@ -17,10 +17,12 @@ Writes to data/processed/:
   wave_trades.csv     every purchase and sale (main version, company pages)
 
 Run it from the project folder:
-    python src/attention_wave.py
+    python src/attention_wave.py              # the planned test
+    python src/attention_wave.py --followup   # no maximum holding time, 2017-21 and 2022-26
 """
 
 from pathlib import Path
+import sys
 
 import numpy as np
 import pandas as pd
@@ -53,7 +55,7 @@ def weekly_attention(daily: pd.DataFrame, decision_days: pd.DatetimeIndex) -> tu
 
 
 def simulate(this_week: pd.DataFrame, usual: pd.DataFrame, prices: pd.DataFrame, member: pd.DataFrame,
-             entry: float, exit_rule: str) -> tuple[pd.DataFrame, list[dict]]:
+             entry: float, exit_rule: str, max_weeks: int | None = MAX_WEEKS) -> tuple[pd.DataFrame, list[dict]]:
     days = this_week.index
     held, weights, rows, trades = {}, pd.Series({"SPY": 1.0}), [], []
     for d, d_next in zip(days[:-1], days[1:]):
@@ -65,7 +67,8 @@ def simulate(this_week: pd.DataFrame, usual: pd.DataFrame, prices: pd.DataFrame,
             info["peak"] = max(info["peak"], now) if pd.notna(now) else info["peak"]
             info["weeks"] += 1
             faded = (now <= info["usual_at_entry"]) if exit_rule == "normal" else (now < 0.5 * info["peak"])
-            if pd.isna(now) or faded or info["weeks"] >= MAX_WEEKS or not eligible.get(ticker, False):
+            too_long = max_weeks is not None and info["weeks"] >= max_weeks
+            if pd.isna(now) or faded or too_long or not eligible.get(ticker, False):
                 trades.append({"ticker": ticker, "bought": info["bought"], "sold": d, "weeks": info["weeks"]})
                 del held[ticker]
         # 2. Purchases: a surge to at least `entry` times the usual week
@@ -104,6 +107,9 @@ def t_stat(x: pd.Series) -> float:
 
 
 def main() -> None:
+    if "--followup" in sys.argv:
+        followup()
+        return
     universe = pd.read_csv(MAPPING_DIR / "products_to_companies.csv", keep_default_na=False)
     joined = pd.read_csv(MAPPING_DIR / "index_membership.csv").set_index("ticker")["sp500_added"]
     prices = pd.read_csv(DATA_DIR / "prices_daily.csv", index_col="date", parse_dates=True)
@@ -157,6 +163,55 @@ def main() -> None:
     print(show[["pages", "entry", "exit", "excess", "t_stat", "excess_vs_spy", "t_vs_spy", "growth_100",
                 "growth_100_average", "growth_100_spy", "avg_held", "weeks_empty", "purchases",
                 "avg_weeks_held"]].round(2).to_string(index=False))
+
+
+
+def followup() -> None:
+    """The follow-up in docs/attention_wave_plan.md: no maximum holding time,
+    on 2022-2026 and on 2017-2021 (with the original 26-week rule on 2017-2021
+    for comparison). Company pages only, all six versions."""
+    universe = pd.read_csv(MAPPING_DIR / "products_to_companies.csv", keep_default_na=False)
+    joined = pd.read_csv(MAPPING_DIR / "index_membership.csv").set_index("ticker")["sp500_added"]
+    prices = pd.read_csv(DATA_DIR / "prices_daily.csv", index_col="date", parse_dates=True)
+    company_article = universe.drop_duplicates("ticker").set_index("ticker")["company_article"]
+    daily = cap_spikes(load_daily(columns=list(company_article)))
+    views = daily.reindex(columns=company_article.values).set_axis(company_article.index, axis=1)
+    tickers = [t for t in company_article.index if t in prices.columns]
+
+    rows, monthly_rows = [], []
+    for period, (first, last) in {"2017-2021": ("2017-03-01", "2021-12-31"), "2022-2026": (FIRST_DECISION, None)}.items():
+        trading = prices.loc[first:last].index
+        decision_days = pd.DatetimeIndex(trading.to_series().groupby(trading.to_period("W-FRI")).max().values)
+        member = pd.DataFrame({t: decision_days >= pd.Timestamp(joined[t]) if t in joined.index
+                               else np.zeros(len(decision_days), bool) for t in tickers}, index=decision_days)
+        this_week, usual = weekly_attention(views[tickers], decision_days)
+        caps = {"no maximum": None} if period == "2022-2026" else {"no maximum": None, "26 weeks": MAX_WEEKS}
+        for cap_name, cap in caps.items():
+            for entry in ENTRIES:
+                for exit_rule in EXITS:
+                    weekly, trades = simulate(this_week, usual, prices.reindex(decision_days)[tickers + ["SPY"]],
+                                              member, entry, exit_rule, max_weeks=cap)
+                    m = monthly(weekly)
+                    excess = m["net"] - m["average_company"]
+                    done = [t for t in trades if pd.notna(t["sold"])]
+                    rows.append({
+                        "period": period, "max_hold": cap_name, "entry": entry, "exit": exit_rule,
+                        "main": (entry, exit_rule) == MAIN, "months": len(m),
+                        "excess": excess.mean(), "t_stat": t_stat(excess),
+                        "growth_100": 100 * (1 + m["net"]).prod(),
+                        "growth_100_average": 100 * (1 + m["average_company"]).prod(),
+                        "growth_100_spy": 100 * (1 + m["spy"]).prod(),
+                        "avg_held": weekly["n_held"].mean(), "purchases": len(trades),
+                        "avg_weeks_held": np.mean([t["weeks"] for t in done]) if done else np.nan,
+                    })
+                    monthly_rows.append(m.assign(period=period, max_hold=cap_name, entry=entry,
+                                                 exit=exit_rule).reset_index(names="month"))
+    summary = pd.DataFrame(rows)
+    summary.to_csv(DATA_DIR / "wave_followup_summary.csv", index=False)
+    pd.concat(monthly_rows).to_csv(DATA_DIR / "wave_followup_monthly.csv", index=False)
+    show = summary.assign(excess=summary["excess"] * 100)
+    print(show[["period", "max_hold", "entry", "exit", "excess", "t_stat", "growth_100", "growth_100_average",
+                "growth_100_spy", "avg_held", "purchases", "avg_weeks_held"]].round(2).to_string(index=False))
 
 
 if __name__ == "__main__":
