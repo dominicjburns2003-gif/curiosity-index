@@ -83,7 +83,7 @@ def simulate(this_week, usual, prices, member, rf_week, signal: str, level: floa
 
 def main() -> None:
     universe = pd.read_csv(MAPPING_DIR / "products_to_companies.csv", keep_default_na=False)
-    universe = universe[universe["cohort"] != "ftse"]
+    universe = universe[universe["cohort"].isin(["original", "expansion", "broad"])]
     joined = pd.read_csv(MAPPING_DIR / "index_membership.csv").set_index("ticker")["sp500_added"]
     prices = pd.read_csv(DATA_DIR / "prices_daily.csv", index_col="date", parse_dates=True)
     rf_month = pd.read_csv(DATA_DIR / "ff_factors_monthly.csv", index_col="month")["RF"]

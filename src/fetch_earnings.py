@@ -59,7 +59,8 @@ def earnings_dates(ticker: str) -> pd.DataFrame:
 
 
 def main() -> None:
-    tickers = sorted(pd.read_csv(UNIVERSE_PATH)["ticker"].unique())
+    universe = pd.read_csv(UNIVERSE_PATH)
+    tickers = sorted(universe.loc[universe["cohort"] != "crypto", "ticker"].unique())  # companies only
     saved = (pd.read_csv(OUT_PATH, parse_dates=["date"]) if OUT_PATH.exists() and "--full" not in sys.argv
              else pd.DataFrame(columns=["date", "ticker", "eps_estimate", "eps_reported", "surprise_pct"]))
     last = saved.groupby("ticker")["date"].max()

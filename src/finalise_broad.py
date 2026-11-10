@@ -50,7 +50,7 @@ OVERRIDES = {
 
 def main() -> None:
     universe = pd.read_csv(UNIVERSE_PATH, keep_default_na=False)
-    universe = universe[universe["cohort"].isin(["original", "expansion"])]
+    universe = universe[universe["cohort"] != "broad"]  # re-runnable; keeps every other group
     companies = pd.read_csv(MAPPING_DIR / "broad_companies.csv", keep_default_na=False)
     # A company with no Wikipedia page of its own cannot be tracked (Insulet, PODD)
     no_page = companies["qid"] == ""

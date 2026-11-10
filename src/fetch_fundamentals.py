@@ -78,7 +78,7 @@ def annual_figures(facts: dict, ticker: str) -> list[dict]:
 
 def main() -> None:
     universe = pd.read_csv(UNIVERSE_PATH, keep_default_na=False)
-    tickers = sorted(universe.loc[universe["cohort"] != "ftse", "ticker"].unique())
+    tickers = sorted(universe.loc[universe["cohort"].isin(["original", "expansion", "broad"]), "ticker"].unique())
     ciks = cik_map()
     rows, missing = [], []
     for i, ticker in enumerate(tickers, start=1):

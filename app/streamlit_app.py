@@ -337,7 +337,7 @@ st.html(f"""
      <b>click through</b> to the company. It then tests whether these predict the following
      month's returns.</p>
   <div class="ci-stats">
-    <div class="ci-stat"><span class="n">{universe['ticker'].nunique()}</span><span class="l">US and UK listed stocks</span></div>
+    <div class="ci-stat"><span class="n">{universe.loc[universe['cohort'] != 'crypto', 'ticker'].nunique()}</span><span class="l">US and UK listed stocks, plus {universe.loc[universe['cohort'] == 'crypto', 'ticker'].nunique()} crypto</span></div>
     <div class="ci-stat"><span class="n">{(universe['product_article'].fillna('') != '').sum()}</span><span class="l">product pages</span></div>
     <div class="ci-stat"><span class="n">{last_day.year - int(views['month'].min()[:4])} years</span><span class="l">of daily Wikipedia views</span></div>
     <div class="ci-stat"><span class="n">{current_for:%a %-d %b}</span><span class="l">latest edition</span></div>
@@ -356,13 +356,14 @@ with explorer:
     default = list(labels).index("NVO") if "NVO" in labels else 0
     with st.container(key="picker"):
         st.markdown('<div class="ci-picker-title">Choose a company to explore</div>'
-                    f'<div class="ci-picker-hint">{len(labels)} companies. Click the box below, or start '
+                    f'<div class="ci-picker-hint">{len(labels)} companies and cryptocurrencies. Click the box below, or start '
                     'typing a name or ticker to search.</div>', unsafe_allow_html=True)
         ticker = st.selectbox("Company", list(labels), index=default, format_func=labels.get,
                               label_visibility="collapsed", key="company_picker")
         row = companies.set_index("ticker").loc[ticker]
         about = data["descriptions"].get(ticker, "")
-        market = "London Stock Exchange" if ticker.endswith(".L") else "US-listed"
+        market = ("Cryptocurrency, priced in dollars" if ticker.endswith("-USD")
+                  else "London Stock Exchange" if ticker.endswith(".L") else "US-listed")
         st.markdown(
             f'<div class="ci-about"><b>{row["company"]}</b> · {about[:1].upper() + about[1:] if about else ""}'
             f'{" · " if about else ""}{row["sector"]} · {market} · '
@@ -397,12 +398,17 @@ with explorer:
     # Four boxes, always the same shape: a value and a line underneath. Where a number
     # does not exist for this company, the box says so in grey instead of being shorter
     uk = ticker.endswith(".L")
+    crypto = ticker.endswith("-USD")
     missing = dict(delta_color="off", delta_arrow="off", border=True, height="stretch")
     shown = dict(border=True, height="stretch")
     c1, c2, c3, c4 = st.container(key="metrics_row").columns(4)
-    c1.metric("Company page", f"{company_series.iloc[-1]:,.0f} views", vs_normal(company_series), **shown)
+    c1.metric("Wikipedia page" if crypto else "Company page", f"{company_series.iloc[-1]:,.0f} views",
+              vs_normal(company_series), **shown)
     if len(product_series):
         c2.metric("Product pages", f"{product_series.iloc[-1]:,.0f} views", vs_normal(product_series), **shown)
+    elif crypto:
+        c2.metric("Product pages", "—", "not applicable", **missing,
+                  help="A cryptocurrency has no products of its own; it is followed by its own page.")
     else:
         c2.metric("Product pages", "—", "no product pages tracked", **missing,
                   help="No product page on Wikipedia passed the checks for this company (most banks, "
@@ -411,6 +417,9 @@ with explorer:
     if len(clicks) >= 2:
         change = (clicks["conversion"].iloc[-1] - clicks["conversion"].iloc[-2]) * 100
         c3.metric("Click-through rate", f"{clicks['conversion'].iloc[-1]:.2%}", f"{change:+.2f} pts", **shown)
+    elif crypto:
+        c3.metric("Click-through rate", "—", "not applicable", **missing,
+                  help="Click-through measures readers moving from product pages to a company's page.")
     elif uk:
         c3.metric("Click-through rate", "—", "not collected for UK companies", **missing,
                   help="Click-through needs Wikipedia's whole monthly click history (about 50 GB) "
@@ -421,7 +430,8 @@ with explorer:
                   **missing, help="The share of a company's product-page readers who click through to "
                                   "the company's page; it needs at least one product page.")
     year_ago = price.loc[: price.index[-1] - pd.DateOffset(years=1)] if len(price) else price
-    price_label = f"Share price, {'live' if price_note.startswith('live') else 'last close'}"
+    price_label = (f"{'Price' if crypto else 'Share price'}, "
+                   f"{'live' if price_note.startswith('live') else 'last close'}")
     if len(price):
         c4.metric(price_label, f"{symbol}{price.iloc[-1]:,.2f}",
                   f"{price.iloc[-1] / year_ago.iloc[-1] - 1:+.0%} in a year" if len(year_ago)
@@ -634,7 +644,7 @@ with results:
         return broad[(broad["group"] == group) & (broad["test"] == test) & (broad["detail"] == detail)].iloc[0]
 
     # The US results (the UK has its own section below)
-    us = universe[universe["cohort"] != "ftse"]
+    us = universe[universe["cohort"].isin(["original", "expansion", "broad"])]
     group_size = us["ticker"].nunique()
     with_products = us.loc[us["product_article"].fillna("") != "", "ticker"].nunique()
     replication_monthly = data["replication_monthly"]

@@ -153,7 +153,7 @@ def to_dollars(out: pd.DataFrame, currencies: pd.Series) -> pd.DataFrame:
 
 def main() -> None:
     universe = pd.read_csv(UNIVERSE_PATH)
-    tickers = sorted(universe["ticker"].unique())
+    tickers = sorted(universe.loc[universe["cohort"] != "crypto", "ticker"].unique())  # companies only
 
     print(f"Downloading split-adjusted prices for {len(tickers)} tickers ...")
     prices = yf.download(tickers, start=START, auto_adjust=False, progress=False)["Close"]

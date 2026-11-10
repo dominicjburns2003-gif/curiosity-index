@@ -42,7 +42,7 @@ def t_stat(x: pd.Series) -> float:
 
 def main() -> None:
     panel = pd.read_csv(DATA_DIR / "panel_monthly.csv")
-    panel = panel[panel["cohort"] != "ftse"]
+    panel = panel[panel["cohort"].isin(["original", "expansion", "broad"])]
     fundamentals = pd.read_csv(DATA_DIR / "fundamentals_monthly.csv")
     panel = panel.merge(fundamentals[["month", "ticker", *FUNDAMENTALS]], on=["month", "ticker"], how="left")
     panel = panel.reset_index(drop=True)

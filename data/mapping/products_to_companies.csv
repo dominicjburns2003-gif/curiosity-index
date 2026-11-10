@@ -846,3 +846,7 @@ WEIR.L,Weir,Industrial Engineering,Weir_plc,Weir_plc|Weir_Group,,,,,ftse,True
 WTB.L,Whitbread,Travel and Leisure,Whitbread,Whitbread,,Premier_Inn,Premier_Inn,,ftse,True
 WTB.L,Whitbread,Travel and Leisure,Whitbread,Whitbread,,Beefeater_(restaurant),Beefeater_(restaurant)|Beefeater_Grill,,ftse,True
 WPP.L,WPP,Media,WPP_plc,WPP_plc,,Ogilvy_(agency),Ogilvy_(agency)|Ogilvy_&_Mather,,ftse,True
+BTC-USD,Bitcoin,Cryptocurrency,Bitcoin,Bitcoin,,,,,crypto,False
+ETH-USD,Ethereum,Cryptocurrency,Ethereum,Ethereum,,,,,crypto,False
+SOL-USD,Solana,Cryptocurrency,Solana_(blockchain_platform),Solana_(blockchain_platform),,,,,crypto,False
+ADA-USD,Cardano,Cryptocurrency,Cardano_(blockchain_platform),Cardano_(blockchain_platform)|Cardano_(cryptocurrency)|Cardano_(cryptocurrency_platform),,,,,crypto,False

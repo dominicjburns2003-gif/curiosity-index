@@ -70,7 +70,7 @@ def measures(r: pd.Series, rf: pd.Series) -> dict:
 
 def main() -> None:
     universe = pd.read_csv(MAPPING_DIR / "products_to_companies.csv", keep_default_na=False)
-    universe = universe[universe["cohort"] != "ftse"]
+    universe = universe[universe["cohort"].isin(["original", "expansion", "broad"])]
     prices = pd.read_csv(DATA_DIR / "prices_daily.csv", index_col="date", parse_dates=True)
     bonds = yf.download(BONDS, start="2016-01-01", auto_adjust=True, progress=False)["Close"][BONDS]
     rf_month = pd.read_csv(DATA_DIR / "ff_factors_monthly.csv", index_col="month")["RF"]

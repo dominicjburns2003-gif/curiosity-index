@@ -267,7 +267,7 @@ def main() -> None:
     # Live picks: version A trained on and choosing from every company in the universe
     everyone = pd.read_csv(DATA_DIR / "panel_monthly.csv")
     mapping = pd.read_csv(PROJECT_DIR / "data" / "mapping" / "products_to_companies.csv")
-    tracked = set(mapping.loc[mapping["cohort"] != "ftse", "ticker"])  # the US-listed companies
+    tracked = set(mapping.loc[mapping["cohort"].isin(["original", "expansion", "broad"]), "ticker"])  # the US-listed companies
     everyone = everyone[everyone["ticker"].isin(tracked)].reset_index(drop=True)
     everyone["rank_next"] = everyone.groupby("month")["ret_next"].rank(pct=True)  # across all companies
     all_scores = walk_forward(rank_within_month(everyone, VERSIONS["products"]), VERSIONS["products"])

@@ -108,7 +108,7 @@ def main() -> None:
 
     # Market-wide attention: the median company's views against its usual week
     universe = pd.read_csv(MAPPING_DIR / "products_to_companies.csv", keep_default_na=False)
-    us = universe[universe["cohort"] != "ftse"].drop_duplicates("ticker")
+    us = universe[universe["cohort"].isin(["original", "expansion", "broad"])].drop_duplicates("ticker")
     article = us["company_article"]
     stored = load_daily(columns=list(article))
     if extended:
