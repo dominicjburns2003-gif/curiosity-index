@@ -161,3 +161,23 @@ average in 2017–2021.
 **Overall, across both periods:** buying on a surge in company attention,
 however it is timed, does not beat simply holding the average company. The
 largest surges (3×) do worse in both periods.
+
+### Check: did selling in the 2020 crash cause the 2017–2021 result? (exploratory, 10 Nov 2026)
+
+Dominic's question. In the main version (no maximum), the strategy sold 11
+holdings during March 2020, many near the bottom (e.g. Copart −40% while held,
++72% in the six months after; Morgan Stanley −34%, then +72%), but it was
+buying at the same time (32 holdings rising to 42), and the new purchases
+rebounded too; over February to July 2020 it was about 4.6 points ahead of the
+average company. Two exploratory versions, not part of the planned test:
+
+| | 2017–2021: versions beating the average | Main version, % a month (t), $100 | 2022–2026: versions beating the average | Main version |
+|---|---|---|---|---|
+| As tested (no maximum) | 0 of 6 | −0.33 (−1.3), $184 | 4 of 6 | +0.42 (1.0), $203 |
+| No sales at all from 20 Feb to 30 Jun 2020 (hindsight) | 0 of 6 | −0.36 (−1.4), $181 | | |
+| No sales while the S&P 500 is 20%+ below its high (a rule that could be set in advance; 19 weeks in 2020, 37 in 2022) | 0 of 6 | −0.33 (−1.3), $184 | 4 of 6 | +0.55 (1.2), $217 |
+
+(Average company: $223 in 2017–2021, $166 in 2022–2026.)
+
+**Reading:** holding through the crash does not change the 2017–2021 result;
+the shortfall comes from ordinary years, not from 2020. The verdict stands.
