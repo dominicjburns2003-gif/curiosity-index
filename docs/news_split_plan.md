@@ -215,3 +215,29 @@ versions, 2017–2021 and 2022–2026, only companies in the S&P 500 at the time
 judged by at least 4 of 6 versions beating the average company in both
 periods. This is a further rule on surges and years already looked at, so a
 pass would be weak evidence; it is reported whatever the result.
+
+### Second follow-up results (added on 10 Nov 2026, after running `src/news_split.py --followup2` once)
+
+Every surge except clearly bad news (more than 2 points behind the market in
+the surge week) and companies already more than 20 points ahead. Above the
+average company, % a month (t), and $100 became (average company: $223,
+$166, and $371 over the whole period).
+
+| Entry | Exit | 2017–2021 | 2022–2026 | Whole period |
+|---|---|---|---|---|
+| 1.5× | normal | −0.60 (−2.3), $158 | −0.11 (−0.3), $154 | −0.35 (−1.6), $243 |
+| 1.5× | half | −0.31 (−1.8), $188 | −0.12 (−0.5), $156 | −0.21 (−1.5), $294 |
+| 2× | normal | −0.75 (−2.1), $143 | −0.33 (−0.7), $132 | −0.54 (−1.8), $188 |
+| 2× | half | −1.18 (−2.4), $108 | −0.19 (−0.3), $135 | −0.68 (−1.5), $146 |
+| 3× | normal | −0.37 (−0.6), $174 | −1.61 (−1.5), $52 | −1.00 (−1.6), $90 |
+| 3× | half | −0.79 (−1.3), $136 | −0.18 (−0.3), $141 | −0.48 (−1.1), $192 |
+
+**Verdict: it does not work.** None of the 6 versions beats the average in
+either period; in 2017–2021 three of them do significantly worse (t −2.1 to
+−2.4).
+
+**Overall, across the good-news / bad-news tests:** once companies already
+riding a price rally are taken out, buying on a surge in attention does
+*worse* than holding the average company, whether the surge comes with good
+news or with anything short of clearly bad news. The only version that ever
+looked good (good-news surges, 2022–2026) was price momentum in disguise.

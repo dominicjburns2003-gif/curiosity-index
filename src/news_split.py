@@ -12,6 +12,7 @@ Writes data/processed/news_split_summary.csv and news_split_monthly.csv.
 Run it from the project folder:
     python src/news_split.py              # the planned test
     python src/news_split.py --followup   # good news, leaving out companies already far ahead
+    python src/news_split.py --followup2  # all but clearly bad news, and not already far ahead
 """
 
 from pathlib import Path
@@ -47,10 +48,13 @@ def surge_week_moves(prices: pd.DataFrame, decision_days: pd.DatetimeIndex, tick
 
 
 ALREADY_AHEAD = 0.20  # follow-up: not bought if 20+ points ahead of the S&P 500 over the 13 weeks before
+CLEARLY_BAD = -0.02   # second follow-up: more than 2 points behind the market in the surge week
+                      # (the median absolute weekly move against the market is 1.97%)
 
 
 def main() -> None:
-    followup = "--followup" in sys.argv
+    followup = "--followup" in sys.argv or "--followup2" in sys.argv
+    second = "--followup2" in sys.argv
     universe = pd.read_csv(MAPPING_DIR / "products_to_companies.csv", keep_default_na=False)
     universe = universe[universe["cohort"] != "ftse"]
     joined = pd.read_csv(MAPPING_DIR / "index_membership.csv").set_index("ticker")["sp500_added"]
@@ -71,6 +75,9 @@ def main() -> None:
         if followup:
             before = surge_week_moves(prices, decision_days, tickers, before_days=7, length_days=91)
             kinds = [("good news, not already far ahead", (move > 0) & (before <= ALREADY_AHEAD))]
+            if second:
+                kinds = [("not clearly bad news, not already far ahead",
+                          (move >= CLEARLY_BAD) & (before <= ALREADY_AHEAD))]
         for news, keep in kinds:
             # A surge can only be bought if its week's price move is of this kind:
             # blocking the usual week elsewhere stops purchases, not sales
@@ -89,7 +96,7 @@ def main() -> None:
                     monthly_rows.append(m.assign(period=period, news=news, entry=entry, exit=exit_rule)
                                         .reset_index(names="month"))
     summary = pd.DataFrame(rows)
-    name = "news_split_followup" if followup else "news_split"
+    name = "news_split_followup2" if second else "news_split_followup" if followup else "news_split"
     summary.to_csv(DATA_DIR / f"{name}_summary.csv", index=False)
     pd.concat(monthly_rows).to_csv(DATA_DIR / f"{name}_monthly.csv", index=False)
     show = summary.assign(excess=summary["excess"] * 100)
