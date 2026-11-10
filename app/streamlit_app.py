@@ -71,7 +71,7 @@ def verdict(t: float) -> tuple[str, str]:
     if t >= 2:
         return "Likely real", "yes"
     if t >= 1.5:
-        return "Promising, not proven", "maybe"
+        return "Promising, not proven", "promising"
     if t >= 0.5:
         return "Positive but weak", "weak"
     return "No effect", "no"
@@ -146,6 +146,7 @@ PAGE_CSS = """
 .ci-chip.no { background: #eef1f5; color: #4a5568; }
 .ci-chip.maybe { background: #fdf1dc; color: #8a5a00; }
 .ci-chip.weak { background: #e6eef8; color: #1f4f8f; }
+.ci-chip.promising { background: #cfe3fb; color: #0b4a91; box-shadow: inset 0 0 0 1px #8fbcee; }
 .ci-picks { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 6px 18px;
             margin: 8px 0 12px; font-size: .9rem; }
 .ci-picks span { color: #6b7280; font-size: .82rem; }
@@ -718,16 +719,17 @@ with results:
         worry_vol = risk_row("worry", "logvol_next4")
         market_answer = answer(
             "Does a burst of attention across all companies warn of a weaker market?",
-            f"Possibly, and it is the closest any signal has come. When the typical company's Wikipedia "
-            f"page is unusually busy, the S&P 500 has tended to do worse over the next 4 weeks "
+            f"It looks like it, and it is the strongest signal in the project. When the typical company's "
+            f"Wikipedia page is unusually busy, the S&P 500 has tended to do worse over the next 4 weeks "
             f"({mw['coefficient'] * 100:+.2f}% after a typical-sized rise in attention, t = {mw['t_stat']:.2f}, "
             f"2016 to 2026), even after allowing for the market's own fear gauge (the VIX) and its trend, "
             f"and {'in every sub-period' if all(h < 0 for h in halves) else 'not in every sub-period'}. "
-            f"It just misses the bar of t = 2 set before the test. Views of pages such as *Recession* "
+            f"It only just misses the strict bar of t = 2 set before the test, so it is not yet proven, and "
+            f"it is the signal most worth following as new data comes in. Views of pages such as *Recession* "
             f"or *Stock market crash* predict a bumpier market, but add little to the VIX "
             f"(t = {worry_vol['t_stat']:.1f}). Switching from shares to bonds on these signals did not "
             f"beat simply holding the S&P 500.".replace("*", ""),
-            abs(mw["t_stat"]), label="Close, not proven", style="maybe")
+            abs(mw["t_stat"]), label="Strongest signal so far", style="promising")
 
     with st.container(key="card_summary"):
         st.subheader("The short answer so far")
