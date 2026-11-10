@@ -149,3 +149,21 @@ matters). $100 became: average company $371, S&P 500 $375.
 
 Over nine years, buying good-news surges ends at about the average company or
 below in every version (1 of 6 marginally ahead); the two periods cancel out.
+
+## Follow-up: leave out companies that were already far ahead (written on 10 Nov 2026, after the results above, before running it)
+
+**Idea (Dominic's):** a company whose shares have already soared gets
+attention *because* of the soaring price (news reports about the rally), not
+because of news about the company itself; buying it then is buying the rally
+late.
+
+**Rule, fixed before running:** as "buying only good-news surges" above, but
+a surge is **not bought** if, over the 13 weeks before the surge week (from
+13 weeks before the start of the attention window to its start), the company
+beat the S&P 500 by **more than 20 percentage points**. Six versions as
+before, 2017–2021 and 2022–2026, only companies in the S&P 500 at the time.
+
+**Judged by the same rule:** it counts as working only if at least 4 of the
+6 versions beat the average company in both periods. Because this is a
+further rule tested on surges and years that have already been looked at, a
+pass would be weak evidence; it is reported whatever the result.
