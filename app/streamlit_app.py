@@ -334,9 +334,9 @@ st.html(f"""
      <b>click through</b> to the company. It then tests whether these predict the following
      month's returns.</p>
   <div class="ci-stats">
-    <div class="ci-stat"><span class="n">{universe['ticker'].nunique()}</span><span class="l">companies, US and UK</span></div>
+    <div class="ci-stat"><span class="n">{universe['ticker'].nunique()}</span><span class="l">US and UK listed stocks</span></div>
     <div class="ci-stat"><span class="n">{(universe['product_article'].fillna('') != '').sum()}</span><span class="l">product pages</span></div>
-    <div class="ci-stat"><span class="n">Since {views['month'].min()[:4]}</span><span class="l">daily attention data</span></div>
+    <div class="ci-stat"><span class="n">{last_day.year - int(views['month'].min()[:4])} years</span><span class="l">of daily Wikipedia views</span></div>
     <div class="ci-stat"><span class="n">{current_for:%a %-d %b}</span><span class="l">latest edition</span></div>
   </div>
   <div class="ci-updated">Updated every evening after the US close (last: {checked_local:%-d %b, %H:%M} Paris time) · prices to {price_day:%-d %b} · Wikipedia views to {last_day:%-d %b}</div>
