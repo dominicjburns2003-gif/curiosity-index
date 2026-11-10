@@ -112,12 +112,13 @@ PAGE_CSS = """
               color: #9ec5f4; font-weight: 600; margin-bottom: 14px; }
 .ci-hero h1 { color: #fff; font-size: 2.7rem; font-weight: 700; margin: 0 0 12px;
               line-height: 1.1; padding: 0; letter-spacing: -.02em; }
-.ci-lead { font-size: 1.1rem; color: #d7e3f4; max-width: 760px; margin: 0 0 26px; line-height: 1.6; }
+.ci-lead { font-size: 1.1rem; color: #d7e3f4; max-width: none; margin: 0 0 26px; line-height: 1.6; }
 .ci-lead b { color: #fff; font-weight: 600; }
-.ci-stats { display: flex; flex-wrap: wrap; gap: 14px 44px;
+.ci-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px 28px;
             border-top: 1px solid rgba(255,255,255,.16); padding-top: 20px; }
 .ci-stat .n { display: block; font-size: 1.4rem; font-weight: 600; color: #fff; }
 .ci-stat .l { font-size: .82rem; color: #9fb3cc; }
+.ci-updated { margin-top: 14px; font-size: .78rem; color: #8ea4bf; }
 
 /* Tab bar: a navy strip matching the banner */
 [data-testid="stTabs"] [role="tablist"] { background: #16325a; border-radius: 12px; padding: 6px; gap: 4px; }
@@ -183,7 +184,8 @@ PAGE_CSS = """
 [data-testid="stMetricValue"] { color: #0f1b2d; }
 .st-key-metrics_row [data-testid="stMetricValue"] { font-size: 1.75rem; }
 .st-key-metrics_row [data-testid="stColumn"] > div { height: 100%; }
-.ci-about { margin-top: 12px; color: #d6e2f3; font-size: .95rem; line-height: 1.5; }
+.ci-about { margin: 0 0 6px; color: #d6e2f3; font-size: .95rem; line-height: 1.5; }
+.st-key-picker [data-testid="stElementContainer"]:has(.ci-about) { margin-top: -0.25rem; }
 .ci-about b { color: #fff; }
 .ci-about a { color: #9ec5f4; text-decoration: none; }
 .st-key-metrics_row [data-testid="stMetricValue"] *, .st-key-metrics_row [data-testid="stMetricLabel"] * {
@@ -335,8 +337,9 @@ st.html(f"""
     <div class="ci-stat"><span class="n">{universe['ticker'].nunique()}</span><span class="l">companies, US and UK</span></div>
     <div class="ci-stat"><span class="n">{(universe['product_article'].fillna('') != '').sum()}</span><span class="l">product pages</span></div>
     <div class="ci-stat"><span class="n">Since {views['month'].min()[:4]}</span><span class="l">daily attention data</span></div>
-    <div class="ci-stat"><span class="n">Current for {current_for:%a %-d %b}</span><span class="l">updated {checked_local:%-d %b, %H:%M} Paris time; prices to the {price_day:%-d %b} close, Wikipedia to {last_day:%-d %b}</span></div>
+    <div class="ci-stat"><span class="n">{current_for:%a %-d %b}</span><span class="l">data current for</span></div>
   </div>
+  <div class="ci-updated">Updated every evening after the US close (last: {checked_local:%-d %b, %H:%M} Paris time) · prices to {price_day:%-d %b} · Wikipedia views to {last_day:%-d %b}</div>
 </div>
 """)
 
