@@ -67,3 +67,45 @@ idea.
 - Run once and reported whatever the result. Nothing in the live strategy
   changes because of it; any use would be a separate decision recorded in
   `docs/strategy_plan.md` before it applies.
+
+## Results (added on 10 Nov 2026, after running `src/attention_wave.py` once)
+
+Decisions from 7 January 2022 to 6 November 2026 (59 months), after costs,
+only companies in the S&P 500 at the time. Return above the equal-weighted
+average of those companies, % a month (t); $100 became (average company
+$166, S&P 500 $172 over the same weeks).
+
+**Company pages**
+
+| Entry | Exit | Above average | $100 became | Companies held (avg) | Purchases | Weeks held (avg) |
+|---|---|---|---|---|---|---|
+| 1.5× | normal | −0.04 (−0.1) | $160 | 27.9 | 958 | 7.4 |
+| 1.5× | half | +0.12 (0.4) | $179 | 33.8 | 941 | 9.1 |
+| **2×** | **normal (main)** | **+0.18 (0.4)** | **$174** | 13.3 | 425 | 8.0 |
+| 2× | half | +0.20 (0.3) | $167 | 4.9 | 441 | 2.8 |
+| 3× | normal | −0.71 (−1.0) | $98 | 5.4 | 151 | 9.2 |
+| 3× | half | −1.30 (−1.1) | $62 | 0.9 | 155 | 1.5 |
+
+**Product pages (control; average company $178 for these companies)**
+
+| Entry | Exit | Above average | $100 became |
+|---|---|---|---|
+| 1.5× | normal | +0.15 (0.5) | $193 |
+| 1.5× | half | +0.25 (0.9) | $206 |
+| 2× | normal | −0.78 (−1.4) | $108 |
+| 2× | half | −0.59 (−1.0) | $120 |
+| 3× | normal | −0.02 (0.0) | $154 |
+| 3× | half | −0.57 (−0.9) | $121 |
+
+**Verdict, by the rule fixed in advance:** **it does not work.** Only 3 of
+the 6 company-page versions beat the average company (the rule needed 4),
+and none comes close to t 2. The product-page control does no better (2 of
+6).
+
+**One pattern, for the record (not a test):** the bigger the surge, the worse
+the result. Companies whose page views tripled went on to do clearly worse
+than the average (−0.7% to −1.3% a month, though on few companies and with t
+around −1). Very large surges in attention are often bad news (a crisis, a
+scandal, a collapse) or hype that fades, which fits earlier research on
+"attention-grabbing" stocks (Barber and Odean, 2008). Moderate surges are
+about neutral.
