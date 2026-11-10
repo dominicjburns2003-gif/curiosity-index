@@ -143,3 +143,11 @@ only show whether the signs agree.
   sub-period, and over July 2016–2026 its t is −1.99, just short of the bar of
   −2 fixed in advance. By the rule it does not pass. It is the one attention
   signal worth following in future data.
+
+**Note added on 10 Nov 2026:** the bar fixed in advance was t of 2, the
+rounded form of the usual 5% cut-off of 1.96. Market-wide attention's t of
+−1.99 (July 2016–2026) would pass 1.96 (about a 4.7% chance of a result this
+strong from luck alone), but misses the bar as written, which is kept. It
+also came from the extension rather than the test as first run (t −1.6 over
+2018–2026), and many tests have been run in this project, so it is reported
+as the strongest lead, not as a finding.

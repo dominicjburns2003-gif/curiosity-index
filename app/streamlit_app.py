@@ -147,6 +147,7 @@ PAGE_CSS = """
 .ci-chip.maybe { background: #fdf1dc; color: #8a5a00; }
 .ci-chip.weak { background: #e6eef8; color: #1f4f8f; }
 .ci-chip.promising { background: #cfe3fb; color: #0b4a91; box-shadow: inset 0 0 0 1px #8fbcee; }
+.ci-chip.strongest { background: #e8f6ec; color: #22744a; box-shadow: inset 0 0 0 1px #a9dbbb; }
 .ci-picks { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 6px 18px;
             margin: 8px 0 12px; font-size: .9rem; }
 .ci-picks span { color: #6b7280; font-size: .82rem; }
@@ -724,12 +725,13 @@ with results:
             f"({mw['coefficient'] * 100:+.2f}% after a typical-sized rise in attention, t = {mw['t_stat']:.2f}, "
             f"2016 to 2026), even after allowing for the market's own fear gauge (the VIX) and its trend, "
             f"and {'in every sub-period' if all(h < 0 for h in halves) else 'not in every sub-period'}. "
-            f"It only just misses the strict bar of t = 2 set before the test, so it is not yet proven, and "
-            f"it is the signal most worth following as new data comes in. Views of pages such as *Recession* "
+            f"At t = {mw['t_stat']:.2f} it would pass the usual 1.96 cut-off for statistical significance, "
+            f"but just misses the slightly stricter bar of 2 we set before testing; with so many tests run, "
+            f"it is a lead to follow as new data comes in rather than proof. Views of pages such as *Recession* "
             f"or *Stock market crash* predict a bumpier market, but add little to the VIX "
             f"(t = {worry_vol['t_stat']:.1f}). Switching from shares to bonds on these signals did not "
             f"beat simply holding the S&P 500.".replace("*", ""),
-            abs(mw["t_stat"]), label="Strongest signal so far", style="promising")
+            abs(mw["t_stat"]), label="Strongest signal so far", style="strongest")
 
     with st.container(key="card_summary"):
         st.subheader("The short answer so far")
