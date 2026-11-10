@@ -248,6 +248,7 @@ DATA_FILES = {
     "broad_clicks": DATA_DIR / "broad_clickthrough.csv",
     "overview": DATA_DIR / "strategy_overview.csv",
     "ftse": DATA_DIR / "ftse_summary.csv",
+    "risk_signals": DATA_DIR / "risk_signals_summary_extended.csv",
     "ftse_monthly": DATA_DIR / "ftse_monthly.csv",
     "last_update": DATA_DIR / "last_update.json",
 }
@@ -267,7 +268,7 @@ def load_data(versions: tuple) -> dict:
     file, it changes, so the cache is refreshed instead of serving old data."""
     data = {}
     for name, path in DATA_FILES.items():
-        if not path.exists() and name in ("ftse", "ftse_monthly"):
+        if not path.exists() and name in ("ftse", "ftse_monthly", "risk_signals"):
             data[name] = pd.DataFrame()  # before the UK tests have first run
         elif name == "daily":
             data[name] = pd.read_csv(path, usecols=["date"])["date"].max()
@@ -704,6 +705,30 @@ with results:
     new_beat = replicated("new 44", "earnings", "beat: top minus bottom third")
     earlier_beat = replicated("all 112", "earnings", "beat: top minus bottom third")
     all_beat = broad_row("all", "earnings", "beat: top minus bottom third")
+    # Market timing: does a burst of attention across all companies warn of a weaker market?
+    market_answer = ""
+    risk = data["risk_signals"]
+    if len(risk):
+        def risk_row(signal: str, outcome: str, period: str = "Jul 2016-2026") -> pd.Series:
+            model = "market-wide + VIX + trend" if signal == "market_wide" else "worry + VIX + trend"
+            return risk[(risk["outcome"] == outcome) & (risk["period"] == period) & (risk["model"] == model)
+                        & (risk["signal"] == signal)].iloc[0]
+        mw = risk_row("market_wide", "ret_next4")
+        halves = [risk_row("market_wide", "ret_next4", p)["coefficient"] for p in ("2018-2021", "2022-2026")]
+        worry_vol = risk_row("worry", "logvol_next4")
+        market_answer = answer(
+            "Does a burst of attention across all companies warn of a weaker market?",
+            f"Possibly, and it is the closest any signal has come. When the typical company's Wikipedia "
+            f"page is unusually busy, the S&P 500 has tended to do worse over the next 4 weeks "
+            f"({mw['coefficient'] * 100:+.2f}% after a typical-sized rise in attention, t = {mw['t_stat']:.2f}, "
+            f"2016 to 2026), even after allowing for the market's own fear gauge (the VIX) and its trend, "
+            f"and {'in every sub-period' if all(h < 0 for h in halves) else 'not in every sub-period'}. "
+            f"It just misses the bar of t = 2 set before the test. Views of pages such as *Recession* "
+            f"or *Stock market crash* predict a bumpier market, but add little to the VIX "
+            f"(t = {worry_vol['t_stat']:.1f}). Switching from shares to bonds on these signals did not "
+            f"beat simply holding the S&P 500.".replace("*", ""),
+            abs(mw["t_stat"]), label="Close, not proven", style="maybe")
+
     with st.container(key="card_summary"):
         st.subheader("The short answer so far")
         st.html(
@@ -747,6 +772,7 @@ with results:
                         and growth_of_100(by_size['net']) > growth_of_100(by_size['spy'])
                         else "the picks add nothing over the companies they are chosen from."),
                      vs_spy_t)
+            + market_answer
             + answer("Does a surge of interest in a company's products tell you anything before its results?",
                      f"Not reliably. On the first companies studied, a surge in product attention in the "
                      f"weeks before results came with fewer beats of analysts' forecasts "
