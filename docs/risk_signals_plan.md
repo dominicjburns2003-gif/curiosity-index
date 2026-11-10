@@ -100,3 +100,21 @@ next 4 weeks (0.10 is roughly 10% higher volatility).
 switching test: worry tracks how turbulent markets are about to be, not which
 way they go, and the market's own fear gauge already captures that. So there
 is no case for the next step (older archives) on these signals.
+
+## Extension: back to July 2015 (written on 10 Nov 2026, after the results above, before running it)
+
+Dominic asked to check older data anyway. Wikimedia's page-view service
+starts in July 2015 (older data exists only as very large raw archives, and
+not before December 2011 in usable form, so the 2008 and 2011 crises cannot be
+tested). The test is repeated exactly as above, with every series extended
+back to July 2015: the worry pages and US company pages from the page-view
+service, and the S&P 500 and VIX from Yahoo. Because the worry signal needs a
+year of earlier weeks, the extra weeks run from July 2016 to February 2018
+(about 85 weeks, including the 2016 sell-offs and the February 2018 volatility
+spike). The T-bill rate before 2016 is taken as zero (it was about 0.01% a
+month).
+
+Reported: the same regressions on the extended period (July 2016 to October
+2026), and on the new weeks alone. The same rules decide; the new weeks alone
+are few (about 20 non-overlapping 4-week periods), so on their own they can
+only show whether the signs agree.
