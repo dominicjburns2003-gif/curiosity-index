@@ -15,6 +15,8 @@ whatever they were. Read them in this order:
 | 7 | [earnings_drift_plan.md](earnings_drift_plan.md) | Does low attention slow the reaction to earnings surprises? | No; the drift is larger with high attention |
 | 8 | [ftse_plan.md](ftse_plan.md) | Do the findings hold in the FTSE 100? | No |
 | 9 | [short_plan.md](short_plan.md) | Short companies whose attention falls away? | No |
+| 10 | [news_split_plan.md](news_split_plan.md) | Buy only surges that come with good news (price beating the market)? | No: works after 2022, fails before; reverses between periods |
+| 11 | [fundamentals_plan.md](fundamentals_plan.md) | Does attention add anything to company fundamentals (P/E, book value, profitability)? | No (+0.03% a month, t 0.3) |
 
 The top-100 version and the survivorship check are in `strategy_plan.md`
 (addendum of 10 Nov 2026). Exploratory checks, not planned in advance, are
