@@ -71,3 +71,33 @@ Known limits, accepted in advance: Yahoo's estimates are a consensus that is
 sometimes revised later (161 were in one week of November 2026), and its
 announcement dates are occasionally a day out; companies that left the index
 are missing.
+
+## Results (added on 10 Nov 2026, after running `src/earnings_drift.py` once)
+
+15,996 announcements from 489 companies (in the S&P 500 at the time), 39
+quarters from 2017 Q1 to 2026 Q3. Drift = return above the S&P 500 from 2 to
+60 (or 20) trading days after the announcement; spread = most positive
+surprise third minus most negative third; t across quarters.
+
+| Drift to | Period | Drift spread, all | Low attention | High attention | **Low minus high** |
+|---|---|---|---|---|---|
+| 60 days | 2017–2026 | +1.01% (t 2.2) | +0.84% | +1.25% | **−0.41% (t −0.8)** |
+| 60 days | 2017–2021 | +0.51% (0.7) | +0.61% | +0.53% | +0.08% (0.2) |
+| 60 days | 2022–2026 | +1.54% (2.7) | +1.09% | +2.02% | −0.92% (−1.1) |
+| 20 days | 2017–2026 | +0.66% (3.1) | +0.39% | +0.96% | −0.58% (−2.1) |
+| 20 days | 2017–2021 | +0.41% (1.4) | +0.23% | +0.57% | −0.34% (−0.8) |
+| 20 days | 2022–2026 | +0.92% (3.1) | +0.55% | +1.38% | −0.82% (−2.2) |
+
+**Verdict, by the rule fixed in advance: not supported.** The main result
+(60 days, whole period) is negative, not positive.
+
+**What the data do show:**
+
+- **The drift itself is there.** After the most positive surprises, shares
+  beat the most negative ones by about 1% over the next three months (t 2.2;
+  t 3.1 over 20 days), as the research describes.
+- **It is larger, not smaller, when attention is high**, the opposite of the
+  hypothesis: over 20 days the high-attention drift is about 0.6 points
+  larger (t −2.1 for low minus high). Not part of the plan's test, so read
+  with care; one possible reading is that surprises drawing unusual attention
+  are bigger news, which takes longer to be fully priced in.
