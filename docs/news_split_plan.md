@@ -93,3 +93,22 @@ surges were followed by clear underperformance (reversal), and bad-news
 surges by about average returns. Separating good from bad news does not give
 a stable signal: which one pays depends on the period, which is what a
 fragile, regime-dependent pattern looks like.
+
+### Check: is 2017–2021 driven by the pandemic? (exploratory, 10 Nov 2026)
+
+Dominic's question. Good-news surges, 2017–2021, return above the average
+company, % a month (t), with the pandemic months left out:
+
+| Entry | Exit | All months | Without Feb–Jul 2020 | Without 2020 | 2017–2019 only |
+|---|---|---|---|---|---|
+| 1.5× | normal | −0.60 (−2.0) | −0.82 (−2.6) | −0.82 (−2.3) | −0.83 (−1.8) |
+| 1.5× | half | −0.30 (−1.5) | −0.46 (−2.3) | −0.58 (−2.7) | −0.38 (−1.5) |
+| 2× | normal | −0.80 (−1.9) | −1.02 (−2.4) | −0.96 (−2.0) | −1.07 (−1.7) |
+| 2× | half | −1.06 (−1.9) | −1.32 (−2.2) | −1.46 (−2.2) | −1.46 (−1.8) |
+| 3× | normal | −0.75 (−1.2) | −1.05 (−1.7) | −0.87 (−1.3) | −0.97 (−1.1) |
+| 3× | half | −0.99 (−1.6) | −1.17 (−1.8) | −1.40 (−2.1) | −0.95 (−1.4) |
+
+**Reading:** the pandemic does not explain it. Leaving 2020 out makes the
+good-news result *worse* in every version (0 of 6 beat the average in every
+case); before 2020, buying companies after a good-news surge in attention
+consistently lagged the average.
