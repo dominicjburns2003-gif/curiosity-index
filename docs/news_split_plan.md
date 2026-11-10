@@ -194,3 +194,24 @@ period. Taking them out removes the whole edge. So whatever worked there was
 riding existing price momentum, not attention picking up something new; and
 good-news surges in companies that had not already run up did worse than
 the average in both periods.
+
+## Second follow-up: leave out only clearly bad news (written on 10 Nov 2026, before running it)
+
+**Idea (Dominic's):** counting every surge whose price lagged the market at
+all as "bad news" is too strict: share prices move a little every week, so a
+small dip is not news. Leave out only **clearly** bad news, and still leave
+out companies that were already far ahead.
+
+**Threshold, set from the data before running:** the typical (median) size of
+a company's weekly move against the S&P 500, over all 276,822 company-weeks
+from 2017, is 1.97%, so **clearly bad news = the share price fell more than 2
+percentage points behind the S&P 500 in the surge week** (about a quarter of
+all weeks).
+
+**Rule:** buy every surge **except** clearly bad news (more than 2 points
+behind the market that week) and companies already more than 20 points ahead
+of the market over the previous 13 weeks. Everything else as before: six
+versions, 2017–2021 and 2022–2026, only companies in the S&P 500 at the time,
+judged by at least 4 of 6 versions beating the average company in both
+periods. This is a further rule on surges and years already looked at, so a
+pass would be weak evidence; it is reported whatever the result.
