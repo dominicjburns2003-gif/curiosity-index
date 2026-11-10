@@ -182,6 +182,10 @@ PAGE_CSS = """
 [data-testid="stMetricLabel"] p { color: #16325a; font-weight: 600; }
 [data-testid="stMetricValue"] { color: #0f1b2d; }
 .st-key-metrics_row [data-testid="stMetricValue"] { font-size: 1.75rem; }
+.st-key-metrics_row [data-testid="stColumn"] > div { height: 100%; }
+.ci-about { margin-top: 12px; color: #d6e2f3; font-size: .95rem; line-height: 1.5; }
+.ci-about b { color: #fff; }
+.ci-about a { color: #9ec5f4; text-decoration: none; }
 .st-key-metrics_row [data-testid="stMetricValue"] *, .st-key-metrics_row [data-testid="stMetricLabel"] * {
     white-space: normal; overflow: visible; text-overflow: clip; }
 
@@ -234,6 +238,7 @@ DATA_FILES = {
     "trending": DATA_DIR / "trending.csv",
     "discovery": DATA_DIR / "discovery.csv",
     "currencies": PROJECT_DIR / "data" / "mapping" / "quote_currencies.csv",
+    "descriptions": PROJECT_DIR / "data" / "mapping" / "company_descriptions.csv",
     "replication": DATA_DIR / "replication_summary.csv",
     "replication_monthly": DATA_DIR / "replication_monthly.csv",
     "broad": DATA_DIR / "broad_summary.csv",
@@ -264,6 +269,9 @@ def load_data(versions: tuple) -> dict:
             data[name] = pd.DataFrame()  # before the UK tests have first run
         elif name == "daily":
             data[name] = pd.read_csv(path, usecols=["date"])["date"].max()
+        elif name == "descriptions":
+            data[name] = (pd.read_csv(path, keep_default_na=False).set_index("ticker")["description"]
+                          if path.exists() else pd.Series(dtype=str))
         elif name == "currencies":
             data[name] = (pd.read_csv(path).set_index("ticker")["currency"] if path.exists()
                           else pd.Series(dtype=str))
@@ -340,6 +348,14 @@ with explorer:
                     'typing a name or ticker to search.</div>', unsafe_allow_html=True)
         ticker = st.selectbox("Company", list(labels), index=default, format_func=labels.get,
                               label_visibility="collapsed", key="company_picker")
+        row = companies.set_index("ticker").loc[ticker]
+        about = data["descriptions"].get(ticker, "")
+        market = "London Stock Exchange" if ticker.endswith(".L") else "US-listed"
+        st.markdown(
+            f'<div class="ci-about"><b>{row["company"]}</b> · {about[:1].upper() + about[1:] if about else ""}'
+            f'{" · " if about else ""}{row["sector"]} · {market} · '
+            f'<a href="https://en.wikipedia.org/wiki/{row["company_article"]}" target="_blank">Wikipedia page</a></div>',
+            unsafe_allow_html=True)
 
     pages = views[views["ticker"] == ticker].copy()
     pages["month"] = pd.to_datetime(pages["month"])
@@ -366,26 +382,40 @@ with explorer:
         normal = series.iloc[-7:-1].mean()  # the 6 months before
         return f"{series.iloc[-1] / normal - 1:+.0%} vs normal"
 
+    # Four boxes, always the same shape: a value and a line underneath. Where a number
+    # does not exist for this company, the box says so in grey instead of being shorter
+    uk = ticker.endswith(".L")
+    missing = dict(delta_color="off", delta_arrow="off", border=True, height="stretch")
+    shown = dict(border=True, height="stretch")
     c1, c2, c3, c4 = st.container(key="metrics_row").columns(4)
-    c1.metric("Company page", f"{company_series.iloc[-1]:,.0f} views",
-              vs_normal(company_series), border=True)
+    c1.metric("Company page", f"{company_series.iloc[-1]:,.0f} views", vs_normal(company_series), **shown)
     if len(product_series):
-        c2.metric("Product pages", f"{product_series.iloc[-1]:,.0f} views",
-                  vs_normal(product_series), border=True)
+        c2.metric("Product pages", f"{product_series.iloc[-1]:,.0f} views", vs_normal(product_series), **shown)
     else:
-        c2.metric("Product pages", "none tracked", border=True,
-                  help="No product pages on Wikipedia passed the checks for this company, so it is "
-                       "followed by its company page only.")
+        c2.metric("Product pages", "—", "no product pages tracked", **missing,
+                  help="No product page on Wikipedia passed the checks for this company (most banks, "
+                       "utilities and industrial firms have none), so it is followed by its company "
+                       "page alone.")
     if len(clicks) >= 2:
         change = (clicks["conversion"].iloc[-1] - clicks["conversion"].iloc[-2]) * 100
-        c3.metric("Click-through rate", f"{clicks['conversion'].iloc[-1]:.2%}", f"{change:+.2f} pts", border=True)
+        c3.metric("Click-through rate", f"{clicks['conversion'].iloc[-1]:.2%}", f"{change:+.2f} pts", **shown)
+    elif uk:
+        c3.metric("Click-through rate", "—", "not collected for UK companies", **missing,
+                  help="Click-through needs Wikipedia's whole monthly click history (about 50 GB) "
+                       "downloaded again for each new company; it was not collected for the FTSE 100, "
+                       "as it did not help predict returns in the US.")
     else:
-        c3.metric("Click-through rate", "n/a", border=True)
+        c3.metric("Click-through rate", "—", "no product pages" if not len(product_series) else "not available",
+                  **missing, help="The share of a company's product-page readers who click through to "
+                                  "the company's page; it needs at least one product page.")
     year_ago = price.loc[: price.index[-1] - pd.DateOffset(years=1)] if len(price) else price
-    c4.metric(f"Share price, {'live' if price_note.startswith('live') else 'last close'}",
-              f"{symbol}{price.iloc[-1]:,.2f}" if len(price) else "n/a",
-              f"{price.iloc[-1] / year_ago.iloc[-1] - 1:+.0%} in a year" if len(year_ago) else None,
-              border=True)
+    price_label = f"Share price, {'live' if price_note.startswith('live') else 'last close'}"
+    if len(price):
+        c4.metric(price_label, f"{symbol}{price.iloc[-1]:,.2f}",
+                  f"{price.iloc[-1] / year_ago.iloc[-1] - 1:+.0%} in a year" if len(year_ago)
+                  else "less than a year of prices", **(shown if len(year_ago) else missing))
+    else:
+        c4.metric(price_label, "—", "no price data", **missing)
     # Wikipedia's overall traffic moves too (it fell through 2026), so give the
     # typical company's change as a benchmark for the numbers above
     all_companies = views[views["kind"] == "company"].pivot_table(

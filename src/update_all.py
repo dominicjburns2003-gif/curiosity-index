@@ -54,6 +54,7 @@ STEPS = [
     ["longer_test.py"],
     ["track_record.py"],
     ["clickthrough_tests.py"],
+    ["fetch_descriptions.py"],
     ["trending.py"],
     ["discovery.py"],
     ["replication.py"],
