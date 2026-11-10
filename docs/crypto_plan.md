@@ -40,3 +40,46 @@ alongside it rather than ahead of it.
   and both are reported.
 - Run once and reported whatever the result. Four coins that move largely
   together, over about 5 to 9 years, are a small sample.
+
+## Results (added on 10 Nov 2026, after running `src/crypto_test.py`)
+
+1,599 coin-weeks (Bitcoin from April 2017, Ethereum from December 2017,
+Cardano from January 2018, Solana from September 2021). Effect of a one
+standard deviation rise in attention on the log return, % (t), with the
+previous 4 weeks' return included.
+
+| Outcome | Pooled | Bitcoin | Ethereum | Solana | Cardano |
+|---|---|---|---|---|---|
+| Next week | +0.30 (0.7) | +0.96 (1.7) | +0.54 (0.7) | −0.24 (−0.4) | −0.41 (−0.5) |
+| **Next 4 weeks** | **+2.48 (2.1)** | **+3.12 (2.4)** | **+5.79 (3.1)** | +1.04 (0.7) | −1.57 (−0.5) |
+
+**A correction made before reporting:** the first run of the pooled test gave
+t 2.46 for the next 4 weeks, but its standard errors were wrong: with up to
+four coins per week, the 4-lag correction covered only about one week, and it
+ignored that coins move together within a week. The pooled test was rerun
+with Driscoll–Kraay standard errors (each week's coins grouped, then 4 weeks
+of lags), the correct method for this set-up; that is the t of 2.1 in the
+table. Coin-by-coin results were not affected.
+
+**Verdict, by the rule fixed in advance: it passes, narrowly.** For the next
+4 weeks, the pooled effect has t 2.1 and is positive for 3 of the 4 coins:
+when a coin's Wikipedia page was busier than usual, its price tended to rise
+over the following month, even allowing for its recent price move. Not for
+the next week alone (t 0.7). The only earlier passes in the project (the
+first earnings test on 68 companies, and the strategy on today's index
+members) did not survive later checks, so this one needs the same scrutiny.
+
+**Exploratory check, not part of the plan: the two halves.**
+
+| | Pooled effect, next 4 weeks | Correlation, Bitcoin / Ethereum / Solana / Cardano |
+|---|---|---|
+| 2017–2021 | +5.31 (t 2.6) | 0.20 / 0.29 / 0.30 / −0.04 |
+| 2022–2026 | +0.26 (t 0.2) | 0.07 / 0.03 / 0.01 / 0.00 |
+
+**Reading, with caution:** the whole effect comes from 2017–2021, the two
+big crypto booms (2017 and 2020–21), when rising public curiosity went with
+prices that kept rising; since 2022 it has been close to zero. The four coins
+move largely together, so this is close to one market observed over a few
+cycles, and many tests have been run in this project. It is the strongest
+evidence of any attention signal here, but it looks like a feature of
+speculative booms rather than a lasting rule.
