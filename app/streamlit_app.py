@@ -159,6 +159,8 @@ PAGE_CSS = """
 .ci-table tr:last-child td { border-bottom: none; }
 .ci-table .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .ci-table .sub { display: block; color: #6b7280; font-size: .83rem; margin-top: 2px; }
+.st-key-card_overview .ci-table td:first-child { min-width: 230px; }
+.st-key-card_overview .ci-table .num .sub { font-size: .76rem; }
 
 /* Company picker: a highlighted panel so visitors notice it straight away */
 .st-key-picker { background: #16325a; border-radius: 12px; padding: 18px 22px 20px; }
@@ -232,6 +234,7 @@ DATA_FILES = {
     "broad": DATA_DIR / "broad_summary.csv",
     "broad_monthly": DATA_DIR / "broad_monthly.csv",
     "broad_clicks": DATA_DIR / "broad_clickthrough.csv",
+    "overview": DATA_DIR / "strategy_overview.csv",
     "last_update": DATA_DIR / "last_update.json",
 }
 CLICKTHROUGH_PLAN_URL = GITHUB_URL + "/blob/main/docs/clickthrough_tests_plan.md"
@@ -647,6 +650,40 @@ with results:
                      all_beat["t_stat"])
         )
         st.caption("Research results, updated monthly. Not investment advice.")
+
+    with st.container(key="card_overview"):
+        st.subheader("Everything we tested")
+        st.markdown(
+            "Every main strategy, measured the way a fund factsheet would, after trading costs. "
+            "**Above the average** is the return above simply holding the same companies in equal "
+            "amounts; **Sharpe** is return per unit of risk (higher is better; the S&P 500 is the "
+            "yardstick); **worst fall** is the largest drop from a previous high. Two rows use "
+            "today's index members for the whole period, which lets the model pick, with hindsight, "
+            "companies that later soared into the index: they are shown only to make that visible."
+        )
+        overview = data["overview"]
+
+        def overview_row(r) -> list[str]:
+            hindsight = "today's members" in r.strategy
+            reference = r.family == "Reference"
+            judged = ("—" if reference else
+                      '<span class="ci-chip no">Hindsight</span>' if hindsight else chip(r.t_stat))
+            period = f"{pd.Period(r.first_month):%b %Y} – {pd.Period(r.last_month):%b %Y}"
+            return [f'{r.strategy}<span class="sub">{r.description}. {period}</span>',
+                    f'${r.growth_100:,.0f}<span class="sub">avg ${r.average_100:,.0f} · '
+                    f'S&amp;P ${r.spy_100:,.0f}</span>',
+                    f"{r.sharpe:.2f}", f"{r.worst_fall:.0%}",
+                    "—" if reference else f"{r.excess * 100:+.2f}%<span class=\"sub\">t = {r.t_stat:.1f}</span>",
+                    judged]
+
+        st.html(html_table(
+            ["Strategy", "$100 became", "Sharpe", "Worst fall", "Above average", "Verdict"],
+            [overview_row(r) for r in overview.itertuples()],
+            numeric={1, 2, 3, 4},
+        ))
+        st.caption("No strategy beats simply holding the companies, or the S&P 500, by more than "
+                   "luck could explain once it is tested fairly. The plans, written before each test, "
+                   "and every result are in the project's docs folder on GitHub.")
 
     with st.container(key="card_strategy"):
         st.subheader("The strategy")
