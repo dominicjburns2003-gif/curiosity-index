@@ -727,7 +727,10 @@ with results:
             "amounts; **Sharpe** is return per unit of risk (higher is better; the S&P 500 is the "
             "yardstick); **worst fall** is the largest drop from a previous high. Two rows use "
             "today's index members for the whole period, which lets the model pick, with hindsight, "
-            "companies that later soared into the index: they are shown only to make that visible."
+            "companies that later soared into the index: they are shown only to make that visible. "
+            "The two **short** strategies sell shares they do not own and profit when those shares "
+            "fall; they are compared with shorting the average company, which loses money whenever "
+            "the market rises."
         )
         overview = data["overview"]
 
@@ -738,8 +741,9 @@ with results:
                       '<span class="ci-chip no">Hindsight</span>' if hindsight else chip(r.t_stat))
             period = f"{pd.Period(r.first_month):%b %Y} – {pd.Period(r.last_month):%b %Y}"
             return [f'{r.strategy}<span class="sub">{r.description}. {period}</span>',
-                    f'${r.growth_100:,.0f}<span class="sub">avg ${r.average_100:,.0f} · '
-                    f'S&amp;P ${r.spy_100:,.0f}</span>',
+                    f'${r.growth_100:,.0f}<span class="sub">'
+                    + ("shorting the avg" if r.family == "Short" else "avg")
+                    + f' ${r.average_100:,.0f} · S&amp;P ${r.spy_100:,.0f}</span>',
                     f"{r.sharpe:.2f}", f"{r.worst_fall:.0%}",
                     "—" if reference else f"{r.excess * 100:+.2f}%<span class=\"sub\">t = {r.t_stat:.1f}</span>",
                     judged]

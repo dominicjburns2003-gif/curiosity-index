@@ -89,6 +89,18 @@ def main() -> None:
         runs.append((name, desc + "; checked weekly, index members at the time, 2017-2026",
                      "Event", w["net"], w["average_company"], w["spy"], False))
 
+    shorts = load("short_monthly")
+    for signal, level, exit_rule, name, desc in [
+        ("fade", 0.5, "normal", "Short the fading (main)",
+         "Short when views halve, close when back to normal; vs shorting the average company"),
+        ("surge", 3.0, "half", "Short the biggest surges (check)",
+         "Short at 3x usual views, close below half the peak; vs shorting the average company"),
+    ]:
+        sh = shorts[(shorts["signal"] == signal) & (shorts["level"].round(3) == round(level, 3))
+                    & (shorts["exit"] == exit_rule)].sort_values("month").set_index("month")
+        runs.append((name, desc + "; weekly, index members at the time, 2017-2026", "Short",
+                     sh["net"], sh["average_company"], sh["spy"], False))
+
     rows = []
     for name, desc, family, net, average, spy, by_pick_month in runs:
         rates = rf_next if by_pick_month else rf
