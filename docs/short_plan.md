@@ -66,3 +66,40 @@ because that pattern was found in this same data, a good result would be weak
 evidence. Reported alongside, with that warning: short when views reach **3×**
 the usual week, close when back to normal or below half the peak (as in the
 attention wave), same costs and universe. Its only fair test is the future.
+
+## Results (added on 10 Nov 2026, after running `src/short_strategy.py` once)
+
+US companies in the S&P 500 at the time; after trading costs and the
+borrowing fee. **Above shorting the average** = the short position's return
+minus that of shorting the average company, % a month (t). $100 in the short
+position became (shorting the average company: $37 in 2017–2021, $63 in
+2022–2026: shorting loses money when shares rise, as they mostly did).
+
+| Short when views fall to | Close | 2017–2021 | 2022–2026 | Shorts open (avg) | Weeks with none |
+|---|---|---|---|---|---|
+| ⅔ of usual | normal | +0.20 (1.2), $42 | −0.12 (−0.6), $58 | 65 | 0% |
+| ⅔ of usual | 4 weeks | −0.02 (0.0), $36 | −0.35 (−0.8), $48 | 10 | 2% |
+| **½ of usual (main)** | **normal** | **+0.30 (1.0), $44** | **+0.20 (0.5), $70** | 24 | 1% |
+| ½ of usual | 4 weeks | −0.21 (−0.3), $33 | +0.11 (0.1), $59 | 2 | 22% |
+| ⅓ of usual | normal | −0.26 (−0.6), $31 | −0.27 (−0.5), $51 | 8 | 1% |
+| ⅓ of usual | 4 weeks | +0.91 (1.0), $64 | +0.31 (0.4), $72 | 0.6 | 56% |
+
+**Verdict, by the rule fixed in advance: it does not work.** 3 of the 6
+versions beat shorting the average company in 2017–2021, and 3 of 6 in
+2022–2026 (the rule needed 4 in both). The main version is positive in both
+periods but far from significant (t 1.0 and 0.5). The best-looking version
+(⅓, 4 weeks) holds almost nothing, so most of its result is cash earning
+interest while the market rose, not good shorts. Note also that early
+January weeks look like drop-offs for many pages (holiday reading is lower),
+which adds noise.
+
+**Check: short the biggest surges (3×), labelled in advance as weak
+evidence.**
+
+| Close | 2017–2021 | 2022–2026 |
+|---|---|---|
+| normal | −0.04 (−0.1), $36 | −0.14 (−0.2), $54 |
+| below half the peak | +0.52 (0.9), $47 | +0.31 (0.3), $61 |
+
+Mixed: shorting huge surges does not reliably work either, even though the
+companies concerned did somewhat worse when bought (attention-wave test).
