@@ -1,26 +1,27 @@
 article,company,ticker,exchange,link,peak_day,peak_views,week_views,days_in_top,surge,status,week_start,week_end
-Nvidia,Nvidia,NVDA,Nasdaq,is the company,2026-11-09,142333,398338,4,3.335864533895822,page tracked,2026-11-04,2026-11-11
-YouTube,Alphabet,GOOGL,Nasdaq,owned by,2026-11-11,40870,268596,7,1.0768203894153499,page tracked,2026-11-04,2026-11-11
-DC_Universe_(franchise),Warner Bros. Discovery,WBD,Nasdaq,owned by,2026-11-10,29930,106866,3,2.3341478631589894,new to the index,2026-11-04,2026-11-11
-WhatsApp,Meta Platforms,META,Nasdaq,developed by,2026-11-04,29439,150568,7,1.4582304815527247,page tracked,2026-11-04,2026-11-11
-Tesla_Cybercab,Tesla,TSLA,Nasdaq,made by,2026-11-06,25084,83297,2,2.5854018861766273,company tracked,2026-11-04,2026-11-11
-Facebook,Meta Platforms,META,Nasdaq,owned by,2026-11-04,23962,136495,7,1.2775985710858149,company tracked,2026-11-04,2026-11-11
-Google,Alphabet,GOOGL,Nasdaq,is the company,2026-11-04,21156,131553,7,1.149813853637327,page tracked,2026-11-04,2026-11-11
-Instagram,Meta Platforms,META,Nasdaq,developed by,2026-11-04,20158,126036,7,1.1423336292714257,page tracked,2026-11-04,2026-11-11
-AR-15–style_rifle,"Sturm, Ruger & Co.",RGR,NYSE,made by,2026-11-08,19843,78719,3,2.0221822134655887,new to the index,2026-11-04,2026-11-11
-Manchester_United_F.C.,Manchester United F.C.,MANU,NYSE,is the company,2026-11-08,18267,90196,5,1.5237525893589512,new to the index,2026-11-04,2026-11-11
-Skydance,Skydance,SKYD,NYSE,is the company,2026-11-10,18019,78901,3,1.7757958017147926,page tracked,2026-11-04,2026-11-11
-Google_Search,Alphabet,GOOGL,Nasdaq,owned by,2026-11-10,17357,95808,5,1.3274782985557865,company tracked,2026-11-04,2026-11-11
-The_Legend_of_Zelda,Nintendo,NTDOY,Nasdaq,developed by,2026-11-06,16627,103918,7,1.1428669622297831,company tracked,2026-11-04,2026-11-11
-FiveThirtyEight,The New York Times Company,NYT,NYSE,owned by,2026-11-04,15664,64377,1,1.9293412436105353,company tracked,2026-11-04,2026-11-11
-Wordle,The New York Times Company,NYT,NYSE,owned by,2026-11-06,15465,95702,7,1.156449019778905,page tracked,2026-11-04,2026-11-11
-Gmail,Alphabet,GOOGL,Nasdaq,developed by,2026-11-04,15409,71811,5,1.6391971915889507,page tracked,2026-11-04,2026-11-11
-Tesla_Cybertruck,Tesla,TSLA,Nasdaq,made by,2026-11-06,14098,69427,2,1.5288185219324404,page tracked,2026-11-04,2026-11-11
-Marvel_Cinematic_Universe,Walt Disney,DIS,NYSE,owned by,2026-11-11,13173,65592,3,1.5078120528815888,company tracked,2026-11-04,2026-11-11
-Android_(operating_system),Alphabet,GOOGL,Nasdaq,developed by,2026-11-04,12948,61661,1,1.5948104202163693,company tracked,2026-11-04,2026-11-11
-AMD,AMD,AMD,NYSE,is the company,2026-11-09,12420,66227,2,1.3849499135800174,page tracked,2026-11-04,2026-11-11
-Google_Chrome,Alphabet,GOOGL,Nasdaq,developed by,2026-11-04,11621,71098,6,1.1723187114346723,company tracked,2026-11-04,2026-11-11
-Rockstar_Games,Take-Two Interactive,TTWO,Nasdaq,part of,2026-11-11,11039,64730,2,1.233614572274683,company tracked,2026-11-04,2026-11-11
-Dynatrace,Dynatrace,DT,NYSE,is the company,2026-11-04,10002,61834,5,1.1578175644389568,new to the index,2026-11-04,2026-11-11
-PlayStation_5,Sony,SONY,NYSE,made by,2026-11-04,10002,58739,1,1.2313437429468372,page tracked,2026-11-04,2026-11-11
-Take-Two_Interactive,Take-Two Interactive,TTWO,Nasdaq,is the company,2026-11-04,10002,58880,1,1.2277916445026393,page tracked,2026-11-04,2026-11-11
+Nvidia,Nvidia,NVDA,Nasdaq,is the company,2026-11-12,366417,754753,5,5.661339664620329,page tracked,2026-11-06,2026-11-12
+YouTube,Alphabet,GOOGL,Nasdaq,owned by,2026-11-12,41887,269678,7,1.1033008327809264,page tracked,2026-11-06,2026-11-12
+Manchester_United_F.C.,Manchester United F.C.,MANU,NYSE,is the company,2026-11-12,33883,113345,5,2.5584304447408828,new to the index,2026-11-06,2026-11-12
+DC_Universe_(franchise),Warner Bros. Discovery,WBD,Nasdaq,owned by,2026-11-10,29930,110098,4,2.240045903602435,new to the index,2026-11-06,2026-11-12
+AMD,AMD,AMD,NYSE,is the company,2026-11-12,25595,81820,3,2.7313472654513116,page tracked,2026-11-06,2026-11-12
+Tesla_Cybercab,Tesla,TSLA,Nasdaq,made by,2026-11-06,25084,81156,2,2.684120416607219,company tracked,2026-11-06,2026-11-12
+WhatsApp,Meta Platforms,META,Nasdaq,developed by,2026-11-09,22533,143007,7,1.1222172418945167,page tracked,2026-11-06,2026-11-12
+Facebook,Meta Platforms,META,Nasdaq,owned by,2026-11-11,21978,132368,7,1.1945647250656763,company tracked,2026-11-06,2026-11-12
+Google,Alphabet,GOOGL,Nasdaq,is the company,2026-11-12,20887,131284,7,1.1351938911383461,page tracked,2026-11-06,2026-11-12
+AR-15–style_rifle,"Sturm, Ruger & Co.",RGR,NYSE,made by,2026-11-08,19843,76578,3,2.0984929937428394,new to the index,2026-11-06,2026-11-12
+Instagram,Meta Platforms,META,Nasdaq,developed by,2026-11-06,19615,123636,7,1.1314061583718673,page tracked,2026-11-06,2026-11-12
+Google_Search,Alphabet,GOOGL,Nasdaq,owned by,2026-11-12,18709,98037,5,1.415061516740621,company tracked,2026-11-06,2026-11-12
+Skydance,Skydance,SKYD,NYSE,is the company,2026-11-10,18019,80242,4,1.7375247095125597,page tracked,2026-11-06,2026-11-12
+The_Legend_of_Zelda,Nintendo,NTDOY,Nasdaq,developed by,2026-11-06,16627,101726,7,1.1723051974758811,company tracked,2026-11-06,2026-11-12
+Wordle,The New York Times Company,NYT,NYSE,owned by,2026-11-06,15465,95338,7,1.1617192292764764,page tracked,2026-11-06,2026-11-12
+Tesla_Cybertruck,Tesla,TSLA,Nasdaq,made by,2026-11-06,14098,67286,2,1.5903587275325262,page tracked,2026-11-06,2026-11-12
+Rockstar_Games,Take-Two Interactive,TTWO,Nasdaq,part of,2026-11-12,13766,68494,3,1.5092091799444525,company tracked,2026-11-06,2026-11-12
+Marvel_Cinematic_Universe,Walt Disney,DIS,NYSE,owned by,2026-11-11,13173,67208,4,1.462718608309429,company tracked,2026-11-06,2026-11-12
+Gmail,Alphabet,GOOGL,Nasdaq,developed by,2026-11-11,12183,66436,5,1.3473540633697676,page tracked,2026-11-06,2026-11-12
+Google_Chrome,Alphabet,GOOGL,Nasdaq,developed by,2026-11-12,11435,70912,6,1.153555155774501,company tracked,2026-11-06,2026-11-12
+CUDA,Nvidia,NVDA,Nasdaq,developed by,2026-11-12,11075,59788,1,1.3641122492969022,company tracked,2026-11-06,2026-11-12
+Dynatrace,Dynatrace,DT,NYSE,is the company,2026-11-09,8677,60490,6,1.004805743732268,new to the index,2026-11-06,2026-11-12
+Apple_Inc.,Apple,AAPL,Nasdaq,is the company,2026-11-08,8665,57291,1,1.069181096532719,page tracked,2026-11-06,2026-11-12
+Microsoft,Microsoft,MSFT,Nasdaq,is the company,2026-11-08,8665,57341,1,1.0680828334292054,page tracked,2026-11-06,2026-11-12
+PlayStation_5,Sony,SONY,NYSE,made by,2026-11-08,8665,56598,1,1.0846389752362673,page tracked,2026-11-06,2026-11-12
+Take-Two_Interactive,Take-Two Interactive,TTWO,Nasdaq,is the company,2026-11-08,8665,56739,1,1.08145775263136,page tracked,2026-11-06,2026-11-12
