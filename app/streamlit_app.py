@@ -12,6 +12,7 @@ Run it from the project folder:
     streamlit run app/streamlit_app.py
 """
 
+import math
 from pathlib import Path
 
 import pandas as pd
@@ -253,6 +254,11 @@ DATA_FILES = {
     "risk_signals": DATA_DIR / "risk_signals_summary_extended.csv",
     "crypto": DATA_DIR / "crypto_summary.csv",
     "crypto_strategy": DATA_DIR / "crypto_strategy_summary.csv",
+    "worry_weekly": DATA_DIR / "worry_gauge_weekly.csv",
+    "worry_latest": DATA_DIR / "worry_gauge_latest.csv",
+    "attention_weekly": DATA_DIR / "market_attention_weekly.csv",
+    "attention_log": DATA_DIR / "market_attention_live_log.csv",
+    "attention_track": DATA_DIR / "market_attention_live_track.csv",
     "ftse_monthly": DATA_DIR / "ftse_monthly.csv",
     "last_update": DATA_DIR / "last_update.json",
 }
@@ -262,6 +268,7 @@ REPLICATION_PLAN_URL = GITHUB_URL + "/blob/main/docs/expansion_replication_plan.
 BROAD_PLAN_URL = GITHUB_URL + "/blob/main/docs/broad_universe_plan.md"
 FTSE_PLAN_URL = GITHUB_URL + "/blob/main/docs/ftse_plan.md"
 PLAN_URL = GITHUB_URL + "/blob/main/docs/strategy_plan.md"
+LIVE_TEST_PLAN_URL = GITHUB_URL + "/blob/main/docs/live_market_attention_plan.md"
 DEV_END = "2024-12"  # last month of the development period (see src/strategy.py)
 
 
@@ -272,7 +279,7 @@ def load_data(versions: tuple) -> dict:
     file, it changes, so the cache is refreshed instead of serving old data."""
     data = {}
     for name, path in DATA_FILES.items():
-        if not path.exists() and name in ("ftse", "ftse_monthly", "risk_signals", "crypto", "crypto_strategy"):
+        if not path.exists() and name in ("ftse", "ftse_monthly", "risk_signals", "crypto", "crypto_strategy", "worry_weekly", "worry_latest", "attention_weekly", "attention_log", "attention_track"):
             data[name] = pd.DataFrame()  # before the UK tests have first run
         elif name == "daily":
             data[name] = pd.read_csv(path, usecols=["date"])["date"].max()
@@ -576,6 +583,55 @@ with trending_tab:
             "surges are often bad news, or hype that fades.\n"
             "- Updated every evening, after the US market close. Not investment advice."
         )
+
+    # Worry gauge: what the public is worried about this week (descriptive, no trading rule)
+    worry_weekly, worry_latest = data["worry_weekly"], data["worry_latest"]
+    if len(worry_weekly) and len(worry_latest):
+        with st.container(key="card_worry"):
+            st.subheader("Worry gauge")
+            worry_weekly["week_ending"] = pd.to_datetime(worry_weekly["week_ending"])
+            now = worry_weekly.iloc[-1]
+            week_to = pd.Timestamp(worry_latest["week_ending"].iloc[0])
+            st.markdown(
+                f"Views of five Wikipedia pages about economic worries (*Recession*, *Stock market crash*, "
+                f"*Inflation*, *Stagflation*, *Bank run*) in the 7 days to {week_to:%-d %b %Y}, against "
+                f"their average week over the past year. In this project's tests, high worry was followed "
+                f"by a **bumpier market**, but did not predict its **direction**, and added little to the "
+                f"VIX. The same measure can be built for markets and topics that have no fear index of their own."
+            )
+            g1, g2, g3 = st.columns(3)
+            g1.metric("Worry vs usual week", f"{now['worry_vs_usual']:.2f}x", border=True)
+            g2.metric("Past weeks with less worry", f"{now['percentile']:.0%}",
+                      help="Share of all weeks since January 2018 with a lower reading.", border=True)
+            g3.metric("VIX (fear index)", f"{now['vix']:.1f}" if pd.notna(now["vix"]) else "n/a",
+                      border=True)
+            worry_chart = go.Figure(go.Scatter(
+                x=worry_weekly["week_ending"], y=worry_weekly["worry_vs_usual"], mode="lines",
+                line=dict(color=STRATEGY_COLOUR, width=1.8), name="Worry",
+                hovertemplate="%{y:.2f}x the usual week<extra>Week to %{x|%-d %b %Y}</extra>"))
+            worry_chart.add_hline(y=1, line_color="#888", line_width=1, line_dash="dot")
+            for day, label in [("2020-03-20", "Covid crash"), ("2022-07-29", "2022 recession debate"),
+                               ("2025-04-11", "April 2025 tariffs")]:
+                row = worry_weekly[worry_weekly["week_ending"] == pd.Timestamp(day)]
+                if len(row):
+                    worry_chart.add_annotation(x=row["week_ending"].iloc[0], y=math.log10(row["worry_vs_usual"].iloc[0]),
+                                               text=label, showarrow=False, yshift=12, font=dict(size=11))
+            worry_chart.update_layout(
+                yaxis=dict(title="Worry vs usual week (log scale)", type="log", gridcolor=GRID),
+                xaxis=dict(showgrid=False), height=300, showlegend=False,
+                margin=dict(l=10, r=10, t=20, b=10), plot_bgcolor="rgba(0,0,0,0)",
+                paper_bgcolor="rgba(0,0,0,0)", font=dict(family="Inter, sans-serif"), dragmode=False,
+                hoverlabel=HOVER_LABEL)
+            worry_chart.update_xaxes(fixedrange=True)
+            worry_chart.update_yaxes(fixedrange=True)
+            st.plotly_chart(worry_chart, use_container_width=True, config={"displayModeBar": False})
+            st.markdown("**Page by page, this week**")
+            st.html(html_table(["Page", "Views, latest week", "vs usual week"],
+                               [[r.page, f"{r.views_week:,.0f}", f"{r.vs_usual - 1:+.0%}"]
+                                for r in worry_latest.sort_values("vs_usual", ascending=False).itertuples()],
+                               numeric={1, 2}))
+            st.caption("A description of what the public is reading about, not a trading signal. "
+                       "Updated every evening.")
 
 # ---- Discovery ---------------------------------------------------------------------
 with discovery_tab:
@@ -1330,6 +1386,41 @@ with track:
             st.caption("A few weeks, or even a few months, say almost nothing about whether the strategy "
                        "works: short-term returns are mostly noise. The record becomes meaningful after a "
                        "year or more.")
+
+    # The live test of market-wide attention (docs/live_market_attention_plan.md)
+    attention_weekly = data["attention_weekly"]
+    if len(attention_weekly):
+        with st.container(key="card_live_test"):
+            st.subheader("Live test: does market-wide attention warn of weaker markets?")
+            st.markdown(
+                "Over 2016 to 2026, weeks when the typical company's Wikipedia page was unusually busy "
+                "were followed by a weaker S&P 500 (t = −1.99, significant at 5%). Past data cannot test "
+                "this again fairly, so a simple rule was fixed in advance and is followed here week by "
+                f"week, from Friday 20 November 2026 ([the plan]({LIVE_TEST_PLAN_URL})). **Rule:** when the "
+                "signal is above the 90th percentile of all earlier weeks, hold 50% S&P 500 and 50% cash "
+                "for the next week; otherwise hold the S&P 500."
+            )
+            latest_signal = attention_weekly.iloc[-1]
+            decided = pd.Timestamp(latest_signal["decision_day"])
+            high_now = str(latest_signal["high"]) == "True"
+            status = "High" if high_now else "Normal"
+            track_test = data["attention_track"]
+            log = data["attention_log"]
+            a1, a2, a3 = st.columns(3)
+            before_start = " (before the test)" if decided < pd.Timestamp("2026-11-20") else ""
+            a1.metric(f"Signal, {decided:%-d %b}{before_start}", status, border=True,
+                      help=("Rule: 50% S&P 500, 50% cash. " if high_now else "Rule: 100% S&P 500. ")
+                      + "Page views up to 2 days before that day, against each company's usual week.")
+            if len(track_test):
+                a2.metric("Rule, $100 became", f"${track_test['rule_100'].iloc[-1]:,.2f}", border=True)
+                a3.metric("S&P 500, $100 became", f"${track_test['sp500_100'].iloc[-1]:,.2f}", border=True)
+                st.caption(f"{len(track_test)} completed week(s), {int((track_test['sp500_weight'] < 1).sum())} "
+                           f"of them high. The plan's first check is in November 2027.")
+            else:
+                a2.metric("Weeks recorded", f"{len(log)}", border=True)
+                a3.metric("First check", "Nov 2027", border=True)
+                st.caption("Results appear here once the first recorded week is complete. High weeks are "
+                           "rare (about 1 in 10), so the test needs a year or more of new data.")
 
     with st.expander("Each month's recorded picks"):
         for (month, _), picks in data["live_picks"].groupby(["month", "recorded_on"], sort=False):

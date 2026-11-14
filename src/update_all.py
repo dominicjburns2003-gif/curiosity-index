@@ -62,6 +62,7 @@ STEPS = [
     ["broad_tests.py", "--clickthrough"],
     ["ftse_tests.py"],
     ["strategy_overview.py"],
+    ["risk_monitor.py"],
 ]
 
 

@@ -21,6 +21,7 @@ whatever they were. Read them in this order:
 | 13 | [risk_signals_plan.md](risk_signals_plan.md) | Does worry predict the market's return or volatility, beyond the VIX and trend? (and back to 2016) | Worry no; market-wide attention significant at the 5% level (t −1.99) |
 | 14 | [crypto_plan.md](crypto_plan.md) | Does attention predict Bitcoin, Ethereum, Solana and Cardano prices? | Yes over 4 weeks (t 2.1), but only in the 2017 and 2020–21 booms |
 | 15 | [crypto_strategy_plan.md](crypto_strategy_plan.md) | As a strategy: hold a coin for 4 weeks after its page gets busier, cash otherwise? | Better Sharpe than holding (1.02 vs 0.64) but less money; a price-trend rule does as well (1.00) |
+| 16 | [live_market_attention_plan.md](live_market_attention_plan.md) | Live, from 20 Nov 2026: hold 50% cash when market-wide attention is in its top 10%? (and the worry gauge) | Running; first check November 2027 |
 
 The top-100 version and the survivorship check are in `strategy_plan.md`
 (addendum of 10 Nov 2026). Exploratory checks, not planned in advance, are
