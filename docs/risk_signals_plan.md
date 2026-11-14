@@ -151,3 +151,12 @@ strong from luck alone), but misses the bar as written, which is kept. It
 also came from the extension rather than the test as first run (t −1.6 over
 2018–2026), and many tests have been run in this project, so it is reported
 as the strongest lead, not as a finding.
+
+**Note added on 14 Nov 2026, on how this result is described:** the bar of 2
+was not chosen for any reason of its own; it was simply the rounded form of
+the standard 5% cut-off, 1.96. On the website and in the summaries, the
+market-wide result (t −1.99, July 2016–2026) is therefore described as
+significant at the standard 5% level, with the two cautions above (it came
+from the extension, and many tests have been run). The rule as written in
+advance, and the verdict reached under it, are left unchanged above as the
+record.

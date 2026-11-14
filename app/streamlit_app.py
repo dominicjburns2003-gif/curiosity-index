@@ -737,9 +737,10 @@ with results:
             f"({mw['coefficient'] * 100:+.2f}% after a typical-sized rise in attention, t = {mw['t_stat']:.2f}, "
             f"2016 to 2026), even after allowing for the market's own fear gauge (the VIX) and its trend, "
             f"and {'in every sub-period' if all(h < 0 for h in halves) else 'not in every sub-period'}. "
-            f"At t = {mw['t_stat']:.2f} it would pass the usual 1.96 cut-off for statistical significance, "
-            f"but just misses the slightly stricter bar of 2 we set before testing; with so many tests run, "
-            f"it is a lead to follow as new data comes in rather than proof. Views of pages such as *Recession* "
+            f"That is statistically significant at the standard 5% level (a result this strong would come "
+            f"from luck alone less than 1 time in 20). Two reasons to keep watching it rather than treat it as "
+            f"settled: it became significant once the data was extended back to 2016, and many tests have "
+            f"been run in this project, so one significant result is expected by chance. Views of pages such as *Recession* "
             f"or *Stock market crash* predict a bumpier market, but add little to the VIX "
             f"(t = {worry_vol['t_stat']:.1f}). Switching from shares to bonds on these signals did not "
             f"beat simply holding the S&P 500.".replace("*", ""),
