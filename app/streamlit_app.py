@@ -604,7 +604,19 @@ with trending_tab:
             g2.metric("Past weeks with less worry", f"{now['percentile']:.0%}",
                       help="Share of all weeks since January 2018 with a lower reading.", border=True)
             g3.metric("VIX (fear index)", f"{now['vix']:.1f}" if pd.notna(now["vix"]) else "n/a",
-                      border=True)
+                      border=True, help="The S&P 500's expected volatility over the next 30 days, "
+                                        "implied by options prices, as an annual %.")
+            if pd.notna(now["vix"]):
+                vix_level = ("calm" if now["vix"] < 15 else "normal" if now["vix"] < 20
+                             else "nervous" if now["vix"] < 30 else "stressed")
+                st.markdown(
+                    f"**How to read the VIX.** It is the size of S&P 500 moves that options traders expect "
+                    f"over the next 30 days, as a yearly %. Below 15 is calm, 15 to 20 normal, 20 to 30 "
+                    f"nervous, above 30 stressed (it reached 82 in March 2020). Divided by about 3.5, it "
+                    f"gives a typical one-month move: the latest {now['vix']:.1f} ({vix_level}) means about "
+                    f"±{now['vix'] / 12 ** 0.5:.1f}% over the next month, up or down. It measures expected "
+                    f"turbulence, not direction."
+                )
             worry_chart = go.Figure(go.Scatter(
                 x=worry_weekly["week_ending"], y=worry_weekly["worry_vs_usual"], mode="lines",
                 line=dict(color=STRATEGY_COLOUR, width=1.8), name="Worry",
