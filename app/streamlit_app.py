@@ -185,6 +185,12 @@ PAGE_CSS = """
 [data-testid="stMetric"] { background: #e6eef8; border-color: #cfdcec !important; }
 [data-testid="stMetricLabel"] p { color: #16325a; font-weight: 600; }
 [data-testid="stMetricValue"] { color: #0f1b2d; }
+.st-key-vix_green [data-testid="stMetric"] { background: #e3f3e8; border-color: #a9dbbb !important; }
+.st-key-vix_green [data-testid="stMetricValue"] { color: #1d6b3a; }
+.st-key-vix_amber [data-testid="stMetric"] { background: #fdf1dc; border-color: #f0c987 !important; }
+.st-key-vix_amber [data-testid="stMetricValue"] { color: #8a5a00; }
+.st-key-vix_red [data-testid="stMetric"] { background: #fde7e7; border-color: #f2b1b1 !important; }
+.st-key-vix_red [data-testid="stMetricValue"] { color: #b42318; }
 .st-key-metrics_row [data-testid="stMetricValue"] { font-size: 1.75rem; }
 .st-key-metrics_row [data-testid="stColumn"] > div { height: 100%; }
 .ci-about { margin: 0 0 6px; color: #d6e2f3; font-size: .95rem; line-height: 1.5; }
@@ -355,8 +361,8 @@ st.html(f"""
 </div>
 """)
 
-explorer, trending_tab, discovery_tab, results, track, method = st.tabs(
-    ["Explorer", "Trending", "Discovery", "Results", "Track record", "Method and data"])
+explorer, trending_tab, mood_tab, discovery_tab, results, track, method = st.tabs(
+    ["Explorer", "Trending", "Market mood", "Discovery", "Results", "Track record", "Method and data"])
 
 # ---- Explorer -------------------------------------------------------------------
 with explorer:
@@ -584,6 +590,8 @@ with trending_tab:
             "- Updated every evening, after the US market close. Not investment advice."
         )
 
+# ---- Market mood --------------------------------------------------------------------
+with mood_tab:
     # Worry gauge: what the public is worried about this week (descriptive, no trading rule)
     worry_weekly, worry_latest = data["worry_weekly"], data["worry_latest"]
     if len(worry_weekly) and len(worry_latest):
@@ -603,19 +611,22 @@ with trending_tab:
             g1.metric("Worry vs usual week", f"{now['worry_vs_usual']:.2f}x", border=True)
             g2.metric("Past weeks with less worry", f"{now['percentile']:.0%}",
                       help="Share of all weeks since January 2018 with a lower reading.", border=True)
-            g3.metric("VIX (fear index)", f"{now['vix']:.1f}" if pd.notna(now["vix"]) else "n/a",
-                      border=True, help="The S&P 500's expected volatility over the next 30 days, "
-                                        "implied by options prices, as an annual %.")
-            if pd.notna(now["vix"]):
-                vix_level = ("calm" if now["vix"] < 15 else "normal" if now["vix"] < 20
-                             else "nervous" if now["vix"] < 30 else "stressed")
+            vix_now = now["vix"]
+            vix_level, vix_colour = (("n/a", "none") if pd.isna(vix_now) else ("Calm", "green") if vix_now < 15
+                                     else ("Normal", "green") if vix_now < 20 else ("Nervous", "amber")
+                                     if vix_now < 30 else ("Stressed", "red"))
+            with g3.container(key=f"vix_{vix_colour}"):
+                st.metric("VIX (fear index)", f"{vix_now:.1f} · {vix_level}" if pd.notna(vix_now) else "n/a",
+                          border=True, help="The S&P 500's expected volatility over the next 30 days, "
+                                            "implied by options prices, as an annual %.")
+            if pd.notna(vix_now):
                 st.markdown(
                     f"**How to read the VIX.** It is the size of S&P 500 moves that options traders expect "
-                    f"over the next 30 days, as a yearly %. Below 15 is calm, 15 to 20 normal, 20 to 30 "
-                    f"nervous, above 30 stressed (it reached 82 in March 2020). Divided by about 3.5, it "
-                    f"gives a typical one-month move: the latest {now['vix']:.1f} ({vix_level}) means about "
-                    f"±{now['vix'] / 12 ** 0.5:.1f}% over the next month, up or down. It measures expected "
-                    f"turbulence, not direction."
+                    f"over the next 30 days, as a yearly %. :green[**Below 20: calm to normal.**] "
+                    f":orange[**20 to 30: nervous.**] :red[**Above 30: stressed**] (it reached 82 in March "
+                    f"2020). Divided by about 3.5, it gives a typical one-month move: the latest "
+                    f"{vix_now:.1f} means about ±{vix_now / 12 ** 0.5:.1f}% over the next month, up or "
+                    f"down. It measures expected turbulence, not direction."
                 )
             worry_chart = go.Figure(go.Scatter(
                 x=worry_weekly["week_ending"], y=worry_weekly["worry_vs_usual"], mode="lines",
