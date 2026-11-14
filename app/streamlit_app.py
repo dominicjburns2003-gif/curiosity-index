@@ -1273,6 +1273,12 @@ with track:
             "trading costs. "
             "Nothing here can be tuned with hindsight."
         )
+        st.markdown(
+            "**US-listed shares only.** The strategy picks from the US-listed companies the site follows "
+            "and is compared with the S&P 500. British shares are tracked elsewhere on the site but left "
+            "out here: the same approach did not work when tested on the FTSE 100, they trade in pounds "
+            "and on different days, and they would need a different benchmark."
+        )
         if track_daily.empty:
             first = data["live_picks"].iloc[0]
             st.info(f"The first picks were recorded on {pd.Timestamp(first['recorded_on']):%-d %B %Y} "
