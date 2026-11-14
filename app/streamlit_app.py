@@ -648,6 +648,15 @@ with mood_tab:
             worry_chart.update_xaxes(fixedrange=True)
             worry_chart.update_yaxes(fixedrange=True)
             st.plotly_chart(worry_chart, use_container_width=True, config={"displayModeBar": False})
+            st.markdown(
+                "**How to read this chart.** Each point is one week's worry views against the average week "
+                "of the year before it. The dotted line at 1 is a usual week: 2 means twice as many views "
+                "as usual, 0.5 half as many. The scale is logarithmic, so doubling and halving look the "
+                "same size. Spikes mark moments of public alarm, such as the Covid crash, the 2022 "
+                "recession debate and the April 2025 tariffs, and tend to come with a bumpier market in "
+                "the weeks after. They do not say which way prices will move, and they fade quickly as "
+                "the news becomes the new normal."
+            )
             st.markdown("**Page by page, this week**")
             st.html(html_table(["Page", "Views, latest week", "vs usual week"],
                                [[r.page, f"{r.views_week:,.0f}", f"{r.vs_usual - 1:+.0%}"]
