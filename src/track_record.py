@@ -12,12 +12,16 @@ follows those recorded picks day by day:
     complete, a day or two into the month, and the daily update runs after the
     US market close, so the next close is the first price anyone acting on the
     picks could actually trade at;
-  - if a month has a second record (the switch to all companies, recorded on
-    9 Nov 2026), the first picks are held until the close at which the second
-    ones are bought, and the second from then to the end of the month;
+  - the record starts with the picks recorded on 9 Nov 2026, the first chosen
+    from all US companies the site follows (bought at the close on 10 Nov).
+    The picks recorded on 6 Nov 2026 came from the original 68 companies
+    while the site was still being built: they stay in live_picks_log.csv,
+    unchanged, but are not part of the track record;
+  - if a month has a second record, the first picks are held until the close
+    at which the second ones are bought, and the second from then to the end
+    of the month;
   - compared with buying, in equal amounts, all the companies the picks were
-    chosen from (the original 68 until 10 Nov 2026, all companies from then),
-    and with the S&P 500;
+    chosen from, and with the S&P 500;
   - trading costs of 0.1% of the amount traded are taken at each change.
 
 Writes to data/processed/:
@@ -47,6 +51,7 @@ def growth(prices: pd.DataFrame, tickers: list[str], start: pd.Timestamp, end: p
 
 def main() -> None:
     log = pd.read_csv(DATA_DIR / "live_picks_log.csv")
+    log = log[log["version"].str.contains("all companies")]  # the live strategy, from 9 Nov 2026
     prices = pd.read_csv(DATA_DIR / "prices_daily.csv", index_col="date", parse_dates=True)
     universe = pd.read_csv(UNIVERSE_PATH)
     original_68 = sorted(universe.loc[universe["cohort"] == "original", "ticker"].unique())
@@ -84,8 +89,7 @@ def main() -> None:
         cost = COST_PER_TRADE * turnover  # first month: buying only; then selling and buying
         paths = {
             "strategy": growth(prices, tickers, start, end) * (1 - cost),
-            # Compared with the companies the picks were chosen from that month:
-            # the original 68 until November 2026, all 112 from December
+            # Compared with the companies the picks were chosen from
             "average_company": growth(prices, chosen_from(str(picks["version"].iloc[0])), start, end),
             "spy": growth(prices, ["SPY"], start, end),
         }

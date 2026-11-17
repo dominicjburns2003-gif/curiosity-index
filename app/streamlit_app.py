@@ -1362,13 +1362,20 @@ with track:
             "Nothing here can be tuned with hindsight."
         )
         st.markdown(
+            "**Starts on 10 November 2026**, with the first picks chosen from all the US companies the "
+            "site follows. Picks recorded on 6 November, while the site still covered only the original "
+            "68 companies, were a trial run during the build: they are kept in the published log but "
+            "not counted here."
+        )
+        st.markdown(
             "**US-listed shares only.** The strategy picks from the US-listed companies the site follows "
             "and is compared with the S&P 500. British shares are tracked elsewhere on the site but left "
             "out here: the same approach did not work when tested on the FTSE 100, they trade in pounds "
             "and on different days, and they would need a different benchmark."
         )
+        live_picks = data["live_picks"][data["live_picks"]["version"].str.contains("all companies")]
         if track_daily.empty:
-            first = data["live_picks"].iloc[0]
+            first = live_picks.iloc[0]
             st.info(f"The first picks were recorded on {pd.Timestamp(first['recorded_on']):%-d %B %Y} "
                     f"and are bought at the close on the next trading day. Results appear here from "
                     f"the trading day after that.")
@@ -1408,7 +1415,7 @@ with track:
                 ["Month held", "Picks recorded on", "Strategy", "Average company", "S&P 500", "Status"],
                 [[f"{pd.Period(r.month_held):%B %Y}", f"{pd.Timestamp(r.recorded_on):%-d %b %Y}",
                   f"{r.strategy:+.2%}", f"{r.average_company:+.2%}", f"{r.spy:+.2%}",
-                  (f"Held to {pd.Timestamp(r.through):%-d %b}, then switched to all companies"
+                  (f"Held to {pd.Timestamp(r.through):%-d %b}, then replaced by newer picks"
                    if r.complete and pd.Timestamp(r.through) < pd.Period(r.month_held).end_time.normalize()
                    - pd.offsets.BDay(1) else "Complete" if r.complete
                    else f"In progress, to {pd.Timestamp(r.through):%-d %b}")]
@@ -1455,7 +1462,7 @@ with track:
                            "rare (about 1 in 10), so the test needs a year or more of new data.")
 
     with st.expander("Each month's recorded picks"):
-        for (month, _), picks in data["live_picks"].groupby(["month", "recorded_on"], sort=False):
+        for (month, _), picks in live_picks.groupby(["month", "recorded_on"], sort=False):
             st.markdown(f"**Chosen at the end of {pd.Period(month):%B %Y}**, recorded on "
                         f"{pd.Timestamp(picks['recorded_on'].iloc[0]):%-d %B %Y}")
             st.html('<div class="ci-picks">' + "".join(
