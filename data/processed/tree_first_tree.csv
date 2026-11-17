@@ -1,0 +1,16 @@
+node,depth,is_leaf,feature,threshold,missing_goes_left,left,right,company_months,avg_next_month_rank
+0,0,False,log_mcap,0.26,False,1.0,8.0,56321,
+1,1,False,product_growth,0.825,False,2.0,5.0,14152,
+2,2,False,company_abn,0.413,False,3.0,4.0,2789,
+3,3,True,,,,,,1395,0.4673
+4,3,True,,,,,,1394,0.5003
+5,2,False,momentum,0.816,False,6.0,7.0,11363,
+6,3,True,,,,,,9370,0.5178
+7,3,True,,,,,,1993,0.5543
+8,1,False,momentum,0.95,True,9.0,12.0,42169,
+9,2,False,log_mcap,0.993,True,10.0,11.0,39998,
+10,3,True,,,,,,39601,0.4943
+11,3,True,,,,,,397,0.5402
+12,2,False,log_mcap,0.66,True,13.0,14.0,2171,
+13,3,True,,,,,,1152,0.5309
+14,3,True,,,,,,1019,0.4984
