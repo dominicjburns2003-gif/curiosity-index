@@ -1,11 +1,11 @@
 group,test,detail,result,t_stat,months,growth_100,growth_100_benchmark
-broad new,long-short,clicks,0.005288935813294247,2.5673709227599812,57,,
-broad new,sort,Click-through vs normal,0.0030646730917857547,0.9506018619982576,100,,
-broad new,sort,Click-through change,0.0030625429277455754,1.0833570390228162,105,,
-"broad new, with products",long-short,clicks,-0.0068444229568552445,-1.6816738432155816,57,,
-"broad new, with products",sort,Click-through vs normal,0.0030646730917857547,0.9506018619982576,100,,
-"broad new, with products",sort,Click-through change,0.0030625429277455754,1.0833570390228162,105,,
-all,long-short,clicks,0.006868105904299495,2.7365501619032258,57,,
-all,sort,Click-through vs normal,0.0021503594934749654,1.0366470455825214,100,,
-all,sort,Click-through change,0.0020292965482047887,1.183948079964135,105,,
-"all, with products",click-through added (long-only),A + click-through minus A,0.00035346191533538877,0.2652768269880485,57,166.67963243982265,163.47636769672238
+broad new,long-short,clicks,0.005757575756892757,2.711856134661794,57,,
+broad new,sort,Click-through vs normal,0.0030646778500746747,0.9506032223238973,100,,
+broad new,sort,Click-through change,0.003062541685241219,1.0833563626347014,105,,
+"broad new, with products",long-short,clicks,-0.006844427830615486,-1.6816750122631845,57,,
+"broad new, with products",sort,Click-through vs normal,0.0030646778500746747,0.9506032223238973,100,,
+"broad new, with products",sort,Click-through change,0.003062541685241219,1.0833563626347014,105,,
+all,long-short,clicks,0.0061546974549245214,2.5277968608240062,57,,
+all,sort,Click-through vs normal,0.002150357918500299,1.0366463539707562,100,,
+all,sort,Click-through change,0.0020292890163922995,1.183943801661093,105,,
+"all, with products",click-through added (long-only),A + click-through minus A,-7.705297452125667e-05,-0.05174989987236076,57,157.55834045528437,158.44805336561845
